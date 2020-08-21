@@ -29,8 +29,8 @@ jobs:
       - name: Run eslint
         run: npm run lint:ci
 
-      - name: Run eslint
-        run: npm run test:ci
+      #- name: Run test
+      #  run: npm run test:ci
 
       - name: Run typescript
         run: npm run build
