@@ -1,0 +1,9 @@
+{
+  "hooks": {
+    "pre-commit": "echo npm run git:commit",
+    "pre-push": "echo npm run git:push",
+    "post-merge": "echo npm run git:change",
+    "post-rewrite": "echo npm run git:change",
+    "post-checkout": "echo npm run git:change"
+  }
+}

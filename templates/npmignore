@@ -1,0 +1,33 @@
+# os folders/files
+.DS_Store
+._*
+
+# node.js folders/files
+node_modules
+npm-debug.log
+
+# editors
+/.vscode
+/.idea
+
+# config folders/files
+/.github
+/.dependabot
+/.editorconfig
+/.eslint*
+/.git*
+/.huskyrc
+/.prettier*
+/.releaserc.json
+/jest*
+/tsconfig*
+
+# project folders/files
+/coverage
+/example
+/examples
+/docs
+/src
+/tests
+docker-compose.yml
+Dockerfile

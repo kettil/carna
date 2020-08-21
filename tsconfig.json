@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2019",
+    "module": "CommonJS",
+    "lib": ["DOM", "ES2019", "ES2020"],
+    /* "module": "ESNext", */
+    "outDir": "build",
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": false,
+    /* with Babel 7+ => true  */
+    "isolatedModules": false,
+    "noEmit": false,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": false,
+
+    /* Module Resolution Options */
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+
+    /* alias paths */
+    //"baseUrl": ".",
+    //"paths": {}
+  },
+  "include": ["src/**/*", "tests/**/*", "templates/**/*"],
+  "exclude": ["node_modules", "build"]
+}

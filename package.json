@@ -1,0 +1,66 @@
+{
+  "name": "carna",
+  "version": "0.0.1",
+  "description": "Global management of the config files",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+
+  "scripts": {
+    "build": "tsc --project ./tsconfig.build.json",
+    "build2": "npm run build && rm -rf z && mkdir z && cd z && node ../build/bin/index.js init --help  && node ../build/bin/index.js init  -tpjc && ls -lisa . && tree src",
+    "build3": "npm run build && cd z && node ../build/index.js && ls -lisa . && tree src",
+    "prebuild": "rm -rf ./build",
+    "test": "jest --config=jest.json --coverage",
+    "test:watch": "npm run test -- --watch 'src'",
+    "test:coverage": "jest-cpf --config=jest.json",
+    "test:ci": "jest --config=jest.ci.js --coverage --ci",
+    "lint": "eslint --config .eslintrc.json --ext 'js,ts,tsx' --fix .",
+    "lint:ci": "eslint --config .eslintrc.json --ext 'js,ts,tsx' --format codeframe .",
+    "prelint": "npm run prettier",
+    "prettier": "prettier --config './.prettierrc' --write '.prettierrc' './**/*.{ts,tsx,js,jsx,json,md,scss,yml,html}'",
+    "prettier:ci": "prettier --config './.prettierrc' --list-different '.prettierrc' './**/*.{json,md,scss,yml,html}'",
+    "git:change": "echo npm install",
+    "git:commit": "npm run prettier:ci && npm run lint:ci",
+    "git:push": "npm run git:commit && npm run test"
+  },
+  "keywords": [],
+  "author": "Kjell Dießel <development@kettil.de>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kettil/carna"
+  },
+  "bugs": {
+    "url": "https://github.com/kettil/carna/issues/new"
+  },
+  "bin": {
+    "carna": "build/bin/index.js"
+  },
+  "dependencies": {
+    "@kettil/commitlint-config": "^1.0.1",
+    "@kettil/eslint-config": "^1.4.3",
+    "@kettil/semantic-release-config": "^1.0.3",
+    "@kettil/tool-lib": "^2.6.0",
+    "@types/yargs": "^15.0.5",
+    "chalk": "^4.1.0",
+    "commitlint": "^9.1.0",
+    "eslint": "^7.0.0",
+    "ora": "^5.0.0",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.1.1",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.27",
+    "eslint-plugin-jest": "^23.20.0",
+    "husky": "^4.2.5",
+    "jest": "^26.4.0",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}

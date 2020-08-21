@@ -1,0 +1,14 @@
+{
+  "extends": "@kettil",
+
+  "overrides": [
+    {
+      "files": ["src/sequences/**/*"],
+      "rules": { "import/no-unused-modules": ["off"] }
+    },
+    {
+      "files": ["templates/src/bin/*"],
+      "rules": { "import/no-unused-modules": ["off"], "node/shebang": ["off"] }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+# Butler
+
+- Init/creater
+  - [x] Grober ToDo plan
+    - [x] Wenn noch keine package.json existiert, wird eine angelegt
+    - [x] Wenn der Ordner .git nicht existiert wird „git init“ aufgerufen
+    - [x] Es wird husky installiert und die config-datei angelegt
+    - [x] Die anderen Config datieen werden angelegt
+      - [x] Es sollte einemöglich geben, diese auch zu Aktualisieren bzw. Abzugleichen
+        - [x] Es werden die standard folder angelegt
+      - [x] Src
+      - [x] Test
+    - [x] Überlegen, ob die package.JSON mit scripten gefüllt wird
+  - [ ] `commitlint`
+  - ~~[ ] Per prompt kann man auswählen, welche configuration man haben möchte. Es wird eine default vorgegeben~~
+  - [ ] es sollte auch nach packages gefragt werden
+    - [ ] React -> installiere …
+      - [ ] react @types/react
+      - [ ] react-dom @types/react-dom
+      - [ ] -> Jest
+        - [ ] @testing-library/jest-dom @types/testing-library\_\_jest-dom -D
+        - [ ] @testing-library/react @types/testing-library\_\_react -D
+        - [ ] @testing-library/react-hooks @types/testing-library\_\_react-hooks -D
+    - [ ] Jest -> installiere …
+      - [ ] jest
+      - [ ] @types/jest -D
+    - [ ] Typescript -> installiere …
+      - [ ] @types/node -D
+- [ ] Test [watch][—type <foldername>]
+  - [ ] Ohne type wird unit test gemacht und mit type wird im ./test folder geschaut, ob der Type existiert
+- [ ] Lint [ci]
+  - [ ] package: eslint
+  -
+- [ ] Prettier [ci]
+  - [ ] package: prettier
+  - [ ] Überlegung, ob mit lint/eslint zusammen zu legen (erst prettier und dann ESLint)
+  - [ ] Config muss in root angelegt werden
+- [ ] Husky [commit|push|pull]
+  - [ ] Package: husky
+  - [ ] Registriert sich bei den git hooks
+  - [ ] Type
+    - [ ] Commit - eslint, prettier und vielleicht ob der git branch aktuell ist
+    - [ ] Push - wie commit plus tests
+- [ ] build [—config path-to-config]
+  - [ ] Macht ein TypeScript build
+  - [ ] Löscht vorher den build Ordner
+- [ ] Deps
+  - [ ] Package: `depcheck`
+- [x] Git
+  - ~~[ ] Ein Typ prüft, ob der branch aktuell ist oder man ein git pull machen muss~~
