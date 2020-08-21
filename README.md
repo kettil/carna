@@ -1,5 +1,10 @@
 # Carna
 
+![npm](https://img.shields.io/npm/v/carna)
+![David](https://img.shields.io/david/kettil/carna)
+![Release](https://github.com/kettil/carna/workflows/Release/badge.svg)
+![GitHub](https://img.shields.io/github/license/kettil/carna)
+
 Global management of the config files
 
 ## Installation
