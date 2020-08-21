@@ -42,7 +42,7 @@
   "dependencies": {
     "@kettil/commitlint-config": "^1.0.1",
     "@kettil/eslint-config": "^1.4.3",
-    "@kettil/semantic-release-config": "^1.0.3",
+    "@kettil/semantic-release-config": "^1.0.4",
     "@kettil/tool-lib": "^2.6.0",
     "@types/yargs": "^15.0.5",
     "chalk": "^4.1.0",
