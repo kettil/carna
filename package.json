@@ -47,7 +47,7 @@
     "@types/yargs": "^15.0.5",
     "chalk": "^4.1.0",
     "commitlint": "^9.1.0",
-    "eslint": "^7.0.0",
+    "eslint": "^7.7.0",
     "ora": "^5.0.0",
     "prettier": "^2.0.5",
     "semantic-release": "^17.1.1",
