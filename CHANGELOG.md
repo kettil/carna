@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/kettil/carna/compare/1.0.0...1.0.1) (2020-08-22)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint from 7.6.0 to 7.7.0 ([e32b6bc](https://github.com/kettil/carna/commit/e32b6bc5e062821c1941c8ff875272178d742cee))
+
 # 1.0.0 (2020-08-21)
 
 
