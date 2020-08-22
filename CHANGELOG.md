@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/kettil/carna/compare/1.0.1...1.0.2) (2020-08-22)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 1.4.3 to 1.4.5 ([dbcd264](https://github.com/kettil/carna/commit/dbcd264f2a149480cacefe875855d2e38211cfaa))
+* **deps:** bump commitlint from 9.1.0 to 9.1.2 ([a3c1aa5](https://github.com/kettil/carna/commit/a3c1aa5c5a1ed46f5d92661ebb7504c44241916b))
+
 ## [1.0.1](https://github.com/kettil/carna/compare/1.0.0...1.0.1) (2020-08-22)
 
 
