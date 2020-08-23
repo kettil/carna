@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/kettil/carna/compare/1.0.2...1.0.3) (2020-08-23)
+
+
+### Bug Fixes
+
+* add a epilogue ([fd5c40a](https://github.com/kettil/carna/commit/fd5c40ab96868784a14a8214a9efb042fd052ecb))
+* **lint:** add option descriptions ([f534b3a](https://github.com/kettil/carna/commit/f534b3ae8edd2ea63bfb56fcba454e4509325295))
+
 ## [1.0.2](https://github.com/kettil/carna/compare/1.0.1...1.0.2) (2020-08-22)
 
 
