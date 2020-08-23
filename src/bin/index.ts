@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { join } from 'path';
+import chalk from 'chalk';
 import yargs from 'yargs';
 import logger from '../lib/cli/logger';
 import { PropsGlobal } from '../lib/types';
@@ -7,6 +8,12 @@ import { PropsGlobal } from '../lib/types';
 const cwd = process.cwd();
 const tpl = join(__dirname, '..', '..', 'templates');
 const cfg = join(__dirname, '..', '..', 'configs');
+
+const epilogue = [
+  `Run ${chalk.bold('carna <command> --help')} to display the options of the commands `,
+  '',
+  'For more information, find our manual at https://github.com/kettil/carna',
+];
 
 yargs
   .locale('en')
@@ -19,6 +26,6 @@ yargs
   .commandDir('../sequences')
   .demandCommand(1, 1)
   .usage('Usage: $0 <command> [options]')
-  .epilogue('for more information, find our manual at https://github.com/kettil/carna')
+  .epilogue(epilogue.join('\n'))
   .help()
   .version().argv as Omit<PropsGlobal, 'log'>;
