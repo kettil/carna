@@ -70,7 +70,7 @@ Run the code quality tools
 
 ## The `git:commit` task
 
-Checks the files in staged with prettier and eslint
+Checks the files in staged with prettier and eslint.
 Automatically called by husky during commit.
 
 ## The `git:msg` task
