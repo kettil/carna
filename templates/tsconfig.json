@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "CommonJS",
-    "lib": ["DOM", "ES2019", "ES2020"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
     "outDir": "build",
     "jsx": "react",
     "declaration": true,
-    "sourceMap": false,
-    "isolatedModules": false,
-    "noEmit": false,
+    "isolatedModules": true,
+    "noEmit": true,
 
     "strict": true,
     "noImplicitAny": true,
@@ -27,7 +26,7 @@
     "resolveJsonModule": true,
 
     "baseUrl": ".",
-    "paths": {}
+    "paths": { "~/*": ["./src/*"] }
   },
   "include": ["src/**/*", "tests/**/*"],
   "exclude": ["node_modules", "build"]

@@ -49,13 +49,11 @@ Creates a new project with all config files in the current folder.
 
 ### Options
 
-| Options     | short | Description                                                  |
-| ----------- | ----- | ------------------------------------------------------------ |
-| --package   | -p    | Project is created as a package                              |
-| --cli       | -c    | Extends the package with CLI features (required `--package`) |
-| --no-ts     | -t    | Typescript will be not installed                             |
-| --no-jest   | -j    | Jest will be not installed                                   |
-| --no-commit |       | No initial commit is executed at the end                     |
+| Options    | short | Description                                                  |
+| ---------- | ----- | ------------------------------------------------------------ |
+| --package  | -p    | Project is created as a package                              |
+| --cli      | -c    | Extends the package with CLI features (required `--package`) |
+| --noCommit |       | No initial commit is executed at the end                     |
 
 ## The `lint` task
 

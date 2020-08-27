@@ -7,7 +7,7 @@
       "rules": { "import/no-unused-modules": ["off"] }
     },
     {
-      "files": ["templates/src/bin/*"],
+      "files": ["templates/**/*.js", "templates/src/bin/*"],
       "rules": { "import/no-unused-modules": ["off"], "node/shebang": ["off"] }
     }
   ]

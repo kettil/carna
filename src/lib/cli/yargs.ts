@@ -14,8 +14,7 @@ export type CommandModuleHandler<Props = Record<string, unknown>> = (args: Argum
 
 export const builderDefault = <Props>(cmd: string, fn: CommandModuleBuilder<Props>): CommandModuleBuilder<Props> => (
   yargs,
-) => fn(yargs).usage(`Usage: $0 ${cmd} [options]`).help().version(false)
-  .showHelpOnFail(false);
+) => fn(yargs).usage(`Usage: $0 ${cmd} [options]`).help().version(false).showHelpOnFail(false);
 
 export const errorHandler = (argv: PropsGlobal, error: unknown): void => {
   if (error instanceof ExecutableError) {
