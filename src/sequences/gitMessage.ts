@@ -15,7 +15,7 @@ export const builder: CommandModuleBuilder = builderDefault(command, (yargs) => 
 
 export const handler: CommandModuleHandler = async (argv) => {
   try {
-    await commitlint(argv, {});
+    await commitlint(argv);
   } catch (error) {
     errorHandler(argv, error);
   }

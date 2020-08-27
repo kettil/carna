@@ -9,7 +9,9 @@ export type PropsGlobal = {
   readonly log: Logger;
 };
 
-export type Action<Props extends Record<string, unknown> = Record<string, unknown>, ActionReturn = void> = (
-  argv: PropsGlobal,
-  props: Props,
-) => Promise<ActionReturn>;
+export type Action<
+  Props extends Record<string, unknown> | undefined = undefined,
+  ActionReturn = void
+> = Props extends undefined
+  ? (argv: PropsGlobal) => Promise<ActionReturn>
+  : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;

@@ -1,10 +1,9 @@
 import { join } from 'path';
 import access from '../../lib/cmd/access';
 import readFile from '../../lib/cmd/readFile';
-
 import { Action } from '../../lib/types';
 
-const npmName: Action<{}, string> = async ({ cwd, log }) => {
+const npmName: Action<undefined, string> = async ({ cwd, log }) => {
   const path = join(cwd, 'package.json');
   const isExists = await access(path);
 
@@ -13,10 +12,11 @@ const npmName: Action<{}, string> = async ({ cwd, log }) => {
   }
 
   log.debug('Read the package.json');
+
   const config = await readFile(path, true);
 
   if (typeof config.name !== 'string') {
-    throw new Error('The package name is not found');
+    throw new TypeError('The package name is not found');
   }
 
   return config.name;

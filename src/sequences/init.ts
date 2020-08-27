@@ -1,15 +1,15 @@
+import { toCamelCase } from '@kettil/tool-lib';
 import gitAdd from '../actions/git/add';
 import gitCommit from '../actions/git/commit';
 import gitInit from '../actions/git/init';
 import nodeFiles from '../actions/node/file';
 import nodeFolders from '../actions/node/folder';
 import nodeTemplate from '../actions/node/template';
-import npmName from '../actions/npm/name';
 import npmInit from '../actions/npm/init';
 import npmInstall from '../actions/npm/install';
+import npmName from '../actions/npm/name';
 import npmPackage from '../actions/npm/package';
 import { spinnerAction } from '../lib/cli/spinner';
-import { toCamelCase } from '@kettil/tool-lib';
 import {
   CommandModuleDescribe,
   CommandModuleCommand,
@@ -38,7 +38,7 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
     package: { ...options, alias: 'p', desc: 'Project is created as a package' },
     cli: { ...options, alias: 'c', implies: 'package', desc: 'Extends the package with CLI features' },
 
-    //react: { ...options, alias: 'r', default: undefined, desc: 'React will be installed', },
+    // react: { ...options, alias: 'r', default: undefined, desc: 'React will be installed', },
 
     noCommit: { ...options, desc: 'No initial commit is executed at the end' },
 
@@ -91,7 +91,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
     templates.push(['dependabot/config.yml', '.dependabot/config.yml']);
     templates.push(['github/CODEOWNERS', '.github/CODEOWNERS']);
-    templates.push([`github/workflows/qa.yml`, '.github/workflows/qa.yml']);
+    templates.push(['github/workflows/qa.yml', '.github/workflows/qa.yml']);
   }
 
   // ######################
@@ -106,6 +106,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       templates.push(['github/workflows/release.yml', '.github/workflows/release.yml']);
     }
 
+    // eslint-disable-next-line no-warning-comments
     // @todo Temporary until command release
     templates.push(['releaserc.json', '.releaserc.json']);
     // libraryDevelopment.push('@kettil/semantic-release-config');
@@ -166,10 +167,11 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
   const sourcdeIgnore = ['src/**/*.test.ts', 'src/**/*.test.tsx'];
 
+  // eslint-disable-next-line no-warning-comments
   // @todo Temporary until command build
   packageScripts.checkTypes = 'tsc';
   packageScripts.buildBundle = 'webpack';
-  packageScripts.buildSource = 'babel -d build --extensions .ts,.tsx --ignore "' + sourcdeIgnore.join('","') + '" src';
+  packageScripts.buildSource = `babel -d build --extensions .ts,.tsx --ignore "${sourcdeIgnore.join('","')}" src`;
   packageScripts.buildTypes = 'tsc --noEmit false --emitDeclarationOnly';
   packageScripts.build = 'npm run buildTypes && npm run buildSource && npm run buildBundle';
   packageScripts.prebuild = 'rm -rf ./build';
@@ -199,7 +201,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   // # Jest               #
   // ######################
 
-  //files.push('src/index.test.ts');
+  // files.push('src/index.test.ts');
 
   // ######################
   // # Actions            #
@@ -207,15 +209,17 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
   // NPM
   await spinnerAction(npmInit(argv, { settings: { ...packageInit } }), 'Create the package.json');
-  const packageName = await npmName(argv, {});
 
-  packageUpdate.main = 'build/' + packageName + '.js';
+  const packageName = await npmName(argv);
+
+  packageUpdate.main = `build/${packageName}.js`;
+
   if (argv.cli) {
     packageBin[packageName] = 'build/bin/index.js';
   }
 
   // GIT
-  await spinnerAction(gitInit(argv, {}), 'Create the git repository');
+  await spinnerAction(gitInit(argv), 'Create the git repository');
 
   // FOLDER
   await spinnerAction(
@@ -228,12 +232,13 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
   // TEMPLATES
 
-  /* eslint-disable-next-line @typescript-eslint/naming-convention */
+  /* eslint-disable @typescript-eslint/naming-convention */
   const variables = {
     GITHUB_USERNAME: githubUsername,
     PACKAGE_LIBRARY: toCamelCase(packageName),
     PACKAGE_FILENAME: packageName,
   };
+  /* eslint-enable @typescript-eslint/naming-convention */
 
   await spinnerAction(
     Promise.all(templates.map(([source, target]) => nodeTemplate(argv, { source, target, variables }))),
