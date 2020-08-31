@@ -59,7 +59,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   const templates: Array<[string] | [string, string]> = [
     ['vscode/settings.json', '.vscode/settings.json'],
     ['editorconfig', '.editorconfig'],
-    ['huskyrc', '.huskyrc'],
+    ['huskyrc.json', '.huskyrc'],
     ['eslintignore', '.eslintignore'],
     ['gitignore', '.gitignore'],
     ['npmignore', '.npmignore'],
@@ -155,7 +155,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
   files.push('src/index.ts', 'src/lib/types.ts');
 
-  templates.push(['tsconfig.json']);
+  templates.push(['typescriptrc.json', 'tsconfig.json']);
 
   libraryDevelopment.push('@types/node', 'typescript');
 
