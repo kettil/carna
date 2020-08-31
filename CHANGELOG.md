@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/kettil/carna/compare/1.0.5...1.1.0) (2020-08-31)
+
+
+### Bug Fixes
+
+* **config:** remove paths from typescript config ([8f12272](https://github.com/kettil/carna/commit/8f122727842190a442fec52db9727a05ea05ed67))
+
+
+### Features
+
+* **init:** update the init command ([cbf6810](https://github.com/kettil/carna/commit/cbf681062dfcf6b3b601d4f404db02fc5ce449d8))
+
 ## [1.0.5](https://github.com/kettil/carna/compare/1.0.4...1.0.5) (2020-08-27)
 
 
