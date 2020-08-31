@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/kettil/carna/compare/1.1.0...1.1.1) (2020-08-31)
+
+
+### Bug Fixes
+
+* **config:** Move path config into locale file ([ca66617](https://github.com/kettil/carna/commit/ca6661760bfe44a3a5fb544422ff0a03f2de9fa7))
+* move the logo function to a separate file ([8a5d8ba](https://github.com/kettil/carna/commit/8a5d8ba201deb40a56c14bda36e89e5c543532ca))
+
 # [1.1.0](https://github.com/kettil/carna/compare/1.0.5...1.1.0) (2020-08-31)
 
 
