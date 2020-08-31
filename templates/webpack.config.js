@@ -1,26 +1,13 @@
-const path = require('path');
+const config = require('./node_modules/carna/configs/webpack.config.js');
 
 module.exports = {
-  mode: 'production',
-  entry: './src/index.ts',
+  ...config,
+
   output: {
+    ...config.output,
+
     filename: '%PACKAGE_FILENAME%.js',
-    path: path.resolve(__dirname, 'build'),
     library: '%PACKAGE_LIBRARY%',
-    libraryTarget: 'umd',
-    globalObject: 'this',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?/,
-        include: path.resolve(__dirname, 'src'),
-        use: [{ loader: 'babel-loader', options: { cacheDirectory: true } }],
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   /*
   externals: {

@@ -24,25 +24,23 @@ type Props = {
   readonly react?: boolean;
   readonly github?: string;
   readonly noCommit: boolean;
-  // Idea collection
-  // - react
 };
 
 export const command: CommandModuleCommand = 'init';
 export const desc: CommandModuleDescribe = 'Initializes the project';
 
-const options = { type: 'boolean', default: false, group: `${command}-Options` } as const;
+const options = { type: 'boolean', default: false, group: `${command}-Options:` } as const;
 
 export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yargs) =>
   yargs.options({
     package: { ...options, alias: 'p', desc: 'Project is created as a package' },
     cli: { ...options, alias: 'c', implies: 'package', desc: 'Extends the package with CLI features' },
+    github: { type: 'string', implies: 'package', desc: 'Github username', group: `${command}-Options:` },
 
+    // conflict with cli
     // react: { ...options, alias: 'r', default: undefined, desc: 'React will be installed', },
 
     noCommit: { ...options, desc: 'No initial commit is executed at the end' },
-
-    github: { type: 'string', implies: 'package', desc: 'Github username', group: command },
   }),
 );
 
@@ -136,13 +134,13 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
     '@babel/plugin-transform-runtime',
     '@babel/preset-env',
     '@babel/preset-typescript',
-    '@babel/runtime-corejs3',
     'babel-loader',
     'webpack',
     'webpack-cli',
   );
 
-  if (argv.package) {
+  if (argv.package && !argv.cli) {
+    libraryDevelopment.push('@babel/runtime-corejs3');
     packagePeerDependencies.push('@babel/runtime-corejs3');
   } else {
     libraryProduction.push('@babel/runtime-corejs3');
@@ -181,19 +179,12 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   // ######################
 
   /*
-
-  // PROD oder bei library als DEV und dann mit peerDependencies
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-
-  // dev
-      '@babel/preset-react', + aktivierung des preset in der babel datei
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-
+  // PROD or DEV (with peerDependencies)
+  "react"
+  "react-dom"
 
   if (argv.package) {
-    packagePeerDependencies.push('@types/react', ''@types/react-dom);
+    packagePeerDependencies.push('@babel/preset-react', '@types/react', '@types/react-dom');
   }
   */
 
@@ -201,7 +192,14 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   // # Jest               #
   // ######################
 
-  // files.push('src/index.test.ts');
+  templates.push(['jest.config.js']);
+
+  libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
+
+  files.push('src/index.test.ts');
+
+  packageScripts.test = 'jest --coverage';
+  packageScripts['test:watch'] = "npm run test -- --watch 'src'";
 
   // ######################
   // # Actions            #
@@ -235,6 +233,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   /* eslint-disable @typescript-eslint/naming-convention */
   const variables = {
     GITHUB_USERNAME: githubUsername,
+    BABEL_MODULE_TYPE: !argv.package || argv.cli ? 'commonjs' : false,
     PACKAGE_LIBRARY: toCamelCase(packageName),
     PACKAGE_FILENAME: packageName,
   };

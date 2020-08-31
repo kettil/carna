@@ -6,6 +6,7 @@ import ExecutableError from '../errors/executableError';
 type Options = {
   readonly cmd: string;
   readonly args?: readonly string[];
+  readonly output?: (msg: string) => void;
 
   readonly cwd?: string;
   readonly env?: NodeJS.ProcessEnv;
@@ -16,6 +17,7 @@ type Options = {
 const exec = ({
   cmd,
   args = [],
+  output,
   cwd = process.cwd(),
   env = processEnvironment(),
   log,
@@ -35,11 +37,19 @@ const exec = ({
     stream.stdout.on('data', (data) => {
       stdout += String(data);
       log.debug(String(data));
+
+      if (output) {
+        output(String(data));
+      }
     });
 
     stream.stderr.on('data', (data) => {
       stderr += String(data);
-      log.error(String(data));
+      log.debug(String(data));
+
+      if (output) {
+        output(String(data));
+      }
     });
 
     stream.on('close', (code) => {

@@ -19,8 +19,10 @@ npm-debug.log
 /.huskyrc
 /.prettier*
 /.releaserc.json
+/babel*
 /jest*
 /tsconfig*
+/webpack*
 
 # project folders/files
 /coverage
@@ -31,3 +33,7 @@ npm-debug.log
 /tests
 docker-compose.yml
 Dockerfile
+
+# test files
+/build/**/*.test.d.ts
+/build/**/*.test.d.tsx

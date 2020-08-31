@@ -8,7 +8,13 @@
     },
     {
       "files": ["templates/**/*.js", "templates/src/bin/*"],
-      "rules": { "import/no-unused-modules": ["off"], "node/shebang": ["off"] }
+      "rules": {
+        "import/no-unused-modules": ["off"],
+        "import/no-unresolved": ["off"],
+        "node/shebang": ["off"],
+        "node/no-missing-require": ["off"],
+        "node/no-unpublished-require": ["off"]
+      }
     }
   ]
 }
