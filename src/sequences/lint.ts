@@ -9,6 +9,7 @@ import {
   builderDefault,
   errorHandler,
 } from '../lib/cli/yargs';
+import logo from '../lib/logo';
 
 export const command: CommandModuleCommand = 'lint';
 export const desc: CommandModuleDescribe = 'Run the code quality tools';
@@ -39,6 +40,8 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
         await eslint(argv, { write: false });
       }
     } else {
+      await logo();
+
       await spinnerAction(prettier(argv, { write: true }), 'Prettier');
       await spinnerAction(eslint(argv, { write: true }), 'Eslint');
     }

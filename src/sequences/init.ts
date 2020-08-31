@@ -17,6 +17,7 @@ import {
   builderDefault,
   CommandModuleBuilder,
 } from '../lib/cli/yargs';
+import logo from '../lib/logo';
 
 type Props = {
   readonly cli: boolean;
@@ -45,6 +46,8 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 );
 
 export const handler: CommandModuleHandler<Props> = async (argv) => {
+  await logo();
+
   const githubUsername = argv.github?.trim();
 
   if (githubUsername !== undefined && githubUsername === '') {
