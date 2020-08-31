@@ -1,14 +1,11 @@
-const config = require('./node_modules/carna/configs/webpack.config.js');
+const { output, ...config } = require('./node_modules/carna/configs/webpack.config.js')(__dirname);
 
-module.exports = {
-  ...config,
-
-  output: {
-    ...config.output,
-
+Object.assign(config, {
+  output: Object.assign(output, {
     filename: '%PACKAGE_FILENAME%.js',
     library: '%PACKAGE_LIBRARY%',
-  },
+  }),
+
   /*
   externals: {
     react: {
@@ -19,4 +16,4 @@ module.exports = {
     },
   },
   */
-};
+});
