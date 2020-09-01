@@ -1,17 +1,17 @@
-const project = {
+const commons = {
   clearMocks: true,
   restoreMocks: true,
 };
 
 const projects = {
   unit: {
-    ...project,
+    ...commons,
     displayName: { name: 'unit', color: 'cyan' },
     roots: ['<rootDir>/src'],
     testMatch: ['**/*.test.{js,ts,tsx}'],
   },
   integration: {
-    ...project,
+    ...commons,
     displayName: { name: 'integration', color: 'magenta' },
     roots: ['<rootDir>/src/', '<rootDir>/tests/'],
     testMatch: ['**/*.test.{js,ts,tsx}'],
@@ -29,8 +29,7 @@ const ciThreshold = {
 };
 
 const config = {
-  ...project,
-
+  ...commons,
   bail: 10,
 
   collectCoverage: true,
