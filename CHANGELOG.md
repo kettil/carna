@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/kettil/carna/compare/1.1.2...1.1.3) (2020-09-01)
+
+
+### Bug Fixes
+
+* **config:** update the jest config ([f03885b](https://github.com/kettil/carna/commit/f03885b105915fb8234446f4b941e2187733012a))
+
 ## [1.1.2](https://github.com/kettil/carna/compare/1.1.1...1.1.2) (2020-09-01)
 
 
