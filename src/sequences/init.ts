@@ -195,14 +195,16 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   // # Jest               #
   // ######################
 
-  templates.push(['jest.config.js']);
+  templates.push(['jest.config.js'], ['jest.ci.js']);
 
   libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
 
   files.push('src/index.test.ts');
 
-  packageScripts.test = 'jest --coverage';
-  packageScripts['test:watch'] = "npm run test -- --watch 'src'";
+  packageScripts.test = 'jest --selectProjects unit';
+  packageScripts['test:integration'] = 'jest --selectProjects integration';
+  packageScripts['test:watch'] = 'npm run test -- --watch';
+  packageScripts['test:integration:watch'] = 'npm run test:integration -- --watch';
 
   // ######################
   // # Actions            #

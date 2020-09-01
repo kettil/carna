@@ -1,10 +1,18 @@
-module.exports = {
+const project = {
   testMatch: ['**/*.test.{js,jsx,ts,tsx}'],
-  roots: ['<rootDir>/src/'],
-
   clearMocks: true,
   restoreMocks: true,
+};
 
+const projects = {
+  unit: { ...project, displayName: { name: 'unit', color: 'cyan' }, roots: ['<rootDir>/src/'] },
+  integration: { ...project, displayName: { name: 'integration', color: 'cyan' }, roots: ['<rootDir>/tests/'] },
+};
+
+const config = {
+  bail: 10,
+
+  collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx,js,jsx}'],
   coveragePathIgnorePatterns: ['/__jest__/', 'types.ts'],
   coverageReporters: ['text-summary', 'html'],
@@ -18,3 +26,5 @@ module.exports = {
     },
   },
 };
+
+module.exports = { config, projects };
