@@ -1,20 +1,41 @@
 const project = {
-  testMatch: ['**/*.test.{js,jsx,ts,tsx}'],
   clearMocks: true,
   restoreMocks: true,
 };
 
 const projects = {
-  unit: { ...project, displayName: { name: 'unit', color: 'cyan' }, roots: ['<rootDir>/src/'] },
-  integration: { ...project, displayName: { name: 'integration', color: 'cyan' }, roots: ['<rootDir>/tests/'] },
+  unit: {
+    ...project,
+    displayName: { name: 'unit', color: 'cyan' },
+    roots: ['<rootDir>/src'],
+    testMatch: ['**/*.test.{js,ts,tsx}'],
+  },
+  integration: {
+    ...project,
+    displayName: { name: 'integration', color: 'magenta' },
+    roots: ['<rootDir>/src/', '<rootDir>/tests/'],
+    testMatch: ['**/*.test.{js,ts,tsx}'],
+    testPathIgnorePatterns: ['/node_modules/', '/src/'],
+  },
+};
+
+const ciThreshold = {
+  global: {
+    statements: 100,
+    branches: 100,
+    functions: 100,
+    lines: 100,
+  },
 };
 
 const config = {
+  ...project,
+
   bail: 10,
 
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{ts,tsx,js,jsx}'],
-  coveragePathIgnorePatterns: ['/__jest__/', 'types.ts'],
+  collectCoverageFrom: ['src/**/*.{ts,tsx,js}', '!src/**/*.test.{ts,tsx,js}', '!src/**/types.ts'],
+  coveragePathIgnorePatterns: ['/__jest__/'],
   coverageReporters: ['text-summary', 'html'],
   coverageDirectory: 'coverage',
   coverageThreshold: {
@@ -27,4 +48,4 @@ const config = {
   },
 };
 
-module.exports = { config, projects };
+module.exports = { config, projects, ciThreshold };
