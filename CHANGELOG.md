@@ -1,3 +1,12 @@
+## [1.1.2](https://github.com/kettil/carna/compare/1.1.1...1.1.2) (2020-09-01)
+
+
+### Bug Fixes
+
+* **config:** add missing module.exports ([f34b9a2](https://github.com/kettil/carna/commit/f34b9a2d8fc9ca294dbcb00fd28e3d5b049b4c49))
+* **config:** update jest config and handling ([afd9b8d](https://github.com/kettil/carna/commit/afd9b8d53e825731a365356edfd202c6d72bd037))
+* **deps:** bump @kettil/eslint-config from 1.4.8 to 1.4.12 ([79b98b0](https://github.com/kettil/carna/commit/79b98b0dab8439c5655d8e2a1d247ad2aacfcb76))
+
 ## [1.1.1](https://github.com/kettil/carna/compare/1.1.0...1.1.1) (2020-08-31)
 
 
