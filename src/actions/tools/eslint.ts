@@ -1,6 +1,6 @@
 import { join, relative } from 'path';
-import access from '../../lib/cmd/access';
 import exec from '../../lib/cmd/exec';
+import { existConfigFile } from '../../lib/helper';
 import { Action } from '../../lib/types';
 
 const configs = ['.eslintrc.js', '.eslintrc.cjs', '.eslintrc.yaml', '.eslintrc.yml', '.eslintrc.json', '.eslintrc'];
@@ -13,12 +13,12 @@ type Props = {
 };
 
 const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
-  const isConfigFileFounds = await Promise.all(configs.map((file) => access(join(cwd, file))));
+  const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/eslint';
   const args = ['--color'];
 
-  if (!isConfigFileFounds.every((v) => v)) {
+  if (!hasConfigFile) {
     args.push('--config', relative(cwd, join(cfg, 'eslintrc.json')));
   }
 
