@@ -5,5 +5,5 @@ import access from './cmd/access';
 export const existConfigFile = async (cwd: string, files: string[]): Promise<boolean> => {
   const exists = await Promise.all(files.map((file) => access(join(cwd, file))));
 
-  return exists.every((v) => v);
+  return exists.some((v) => v);
 };
