@@ -9,7 +9,10 @@ const commitlint: Action = async ({ cwd, cfg, log }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/commitlint';
-  const args = ['-E', 'HUSKY_GIT_PARAMS', '--color'];
+  const args: string[] = [];
+
+  args.push('-E', 'HUSKY_GIT_PARAMS');
+  args.push('--color');
 
   if (!hasConfigFile) {
     args.push('--config', relative(cwd, join(cfg, 'commitlintrc.json')));

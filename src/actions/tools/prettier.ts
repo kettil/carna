@@ -26,7 +26,7 @@ const prettier: Action<Props> = async ({ cwd, cfg, log }, { write, files, extens
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/prettier';
-  const args = [];
+  const args: string[] = [];
 
   if (!hasConfigFile) {
     args.push('--config', relative(cwd, join(cfg, 'prettierrc.json')));
