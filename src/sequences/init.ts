@@ -7,8 +7,8 @@ import nodeFolders from '../actions/node/folder';
 import nodeTemplate from '../actions/node/template';
 import npmInit from '../actions/npm/init';
 import npmInstall from '../actions/npm/install';
-import npmName from '../actions/npm/name';
-import npmPackage from '../actions/npm/package';
+import npmPackageLoad from '../actions/npm/packageLoad';
+import npmPackage from '../actions/npm/packageUpdate';
 import { spinnerAction } from '../lib/cli/spinner';
 import {
   CommandModuleDescribe,
@@ -213,7 +213,11 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   // NPM
   await spinnerAction(npmInit(argv, { settings: { ...packageInit } }), 'Create the package.json');
 
-  const packageName = await npmName(argv);
+  const packageName = await npmPackageLoad(argv, { key: 'name', throwError: true });
+
+  if (typeof packageName !== 'string') {
+    throw new TypeError('Package name could not be read');
+  }
 
   packageUpdate.main = `build/${packageName}.js`;
 

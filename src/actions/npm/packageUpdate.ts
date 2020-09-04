@@ -1,9 +1,7 @@
-import { join } from 'path';
 import { isObject, objectKeys } from '@kettil/tool-lib';
-import access from '../../lib/cmd/access';
-import readFile from '../../lib/cmd/readFile';
 import writeFile from '../../lib/cmd/writeFile';
 import { Action } from '../../lib/types';
+import npmPackageLoad, { getPackagePath } from './packageLoad';
 
 type SettingProps = Record<string, string | string[] | number | boolean | Record<string, string>>;
 
@@ -44,18 +42,14 @@ const updatePeerDependencies = (config: Record<string, unknown>, values: string[
   return update(config.peerDependencies, peerDependencies);
 };
 
-const npmPackage: Action<Props> = async (
-  { cwd, log },
-  { settings: { bin, scripts, peerDependencies, ...settings } },
-) => {
-  const path = join(cwd, 'package.json');
-  const isExists = await access(path);
+const npmPackageUpdate: Action<Props> = async (argv, { settings: { bin, scripts, peerDependencies, ...settings } }) => {
+  const { cwd, log } = argv;
 
-  if (!isExists) {
-    throw new Error('package.json is not found');
+  const config = await npmPackageLoad(argv, {});
+
+  if (!isObject(config)) {
+    throw new TypeError('Package could not be interpreted as an object');
   }
-
-  const config = await readFile(path, true);
 
   Object.assign(config, settings);
 
@@ -75,7 +69,7 @@ const npmPackage: Action<Props> = async (
   }
 
   log.info('Extend the package.json');
-  await writeFile(path, config);
+  await writeFile(getPackagePath(cwd), config);
 };
 
-export default npmPackage;
+export default npmPackageUpdate;
