@@ -24,6 +24,11 @@ npm-debug.log
 /tsconfig*
 /webpack*
 
+# test files
+**/*.test.d.js
+**/*.test.d.ts
+**/*.test.d.tsx
+
 # project folders/files
 /coverage
 /example
@@ -33,7 +38,3 @@ npm-debug.log
 /tests
 docker-compose.yml
 Dockerfile
-
-# test files
-/build/**/*.test.d.ts
-/build/**/*.test.d.tsx
