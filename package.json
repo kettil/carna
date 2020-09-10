@@ -52,7 +52,7 @@
     "ora": "^5.0.0",
     "prettier": "^2.1.1",
     "semantic-release": "^17.1.1",
-    "yargs": "^15.4.1"
+    "yargs": "^16.0.2"
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",
