@@ -1,3 +1,11 @@
+## [1.1.4](https://github.com/kettil/carna/compare/1.1.3...1.1.4) (2020-10-21)
+
+
+### Bug Fixes
+
+* **deps:** bump commitlint from 9.1.2 to 11.0.0 ([a35a262](https://github.com/kettil/carna/commit/a35a26238f6997f230524d86ff25e82d90df5d48))
+* **deps:** bump ora from 5.0.0 to 5.1.0 ([f872347](https://github.com/kettil/carna/commit/f872347cb094c163326a07b91d7deda0bf06acc3))
+
 ## [1.1.3](https://github.com/kettil/carna/compare/1.1.2...1.1.3) (2020-09-01)
 
 
