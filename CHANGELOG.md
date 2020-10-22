@@ -1,3 +1,11 @@
+## [1.1.5](https://github.com/kettil/carna/compare/1.1.4...1.1.5) (2020-10-22)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint from 7.7.0 to 7.11.0 ([ecf852f](https://github.com/kettil/carna/commit/ecf852f607e0d79b3eb1c8f3cff866f456ed95e6))
+* **deps:** bump yargs from 15.4.1 to 16.1.0 ([0dd67bb](https://github.com/kettil/carna/commit/0dd67bb85f7444ec44c11c2c4393a79ae69aae9e))
+
 ## [1.1.4](https://github.com/kettil/carna/compare/1.1.3...1.1.4) (2020-10-21)
 
 
