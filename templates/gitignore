@@ -12,3 +12,5 @@ npm-debug.log
 # project folders/files
 /build
 /coverage
+/packages/*/build
+/packages/*/coverage

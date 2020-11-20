@@ -73,7 +73,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   const packageInit: Record<string, string | number | boolean | Record<string, string>> = {
     private: true,
     version: '0.1.0',
-    engines: { node: '>= 12.9' },
+    engines: { node: '>= 14', npm: '>=6' },
   };
   const packageUpdate: Record<string, string | number | boolean | Record<string, string>> = {};
   const packageScripts: Record<string, string> = {
@@ -107,7 +107,6 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       templates.push(['github/workflows/release.yml', '.github/workflows/release.yml']);
     }
 
-    // eslint-disable-next-line no-warning-comments
     // @todo Temporary until command release
     templates.push(['releaserc.json', '.releaserc.json']);
     // libraryDevelopment.push('@kettil/semantic-release-config');
@@ -166,15 +165,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   // # Build              #
   // ######################
 
-  const sourcdeIgnore = ['src/**/*.test.ts', 'src/**/*.test.tsx'];
-
-  // eslint-disable-next-line no-warning-comments
-  // @todo Temporary until command build
-  packageScripts.checkTypes = 'tsc';
-  packageScripts.buildBundle = 'webpack';
-  packageScripts.buildSource = `babel -d build --extensions .ts,.tsx --ignore "${sourcdeIgnore.join('","')}" src`;
-  packageScripts.buildTypes = 'tsc --noEmit false --emitDeclarationOnly';
-  packageScripts.build = 'npm run buildTypes && npm run buildSource && npm run buildBundle';
+  packageScripts.build = 'npx carna build';
   packageScripts.prebuild = 'rm -rf ./build';
 
   // ######################

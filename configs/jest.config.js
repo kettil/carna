@@ -19,15 +19,6 @@ const projects = {
   },
 };
 
-const ciThreshold = {
-  global: {
-    statements: 100,
-    branches: 100,
-    functions: 100,
-    lines: 100,
-  },
-};
-
 const config = {
   ...commons,
   bail: 10,
@@ -47,4 +38,4 @@ const config = {
   },
 };
 
-module.exports = { config, projects, ciThreshold };
+module.exports = { config, projects };

@@ -7,6 +7,7 @@ export type PropsGlobal = {
   readonly tpl: string;
   readonly cfg: string;
   readonly log: Logger;
+  readonly vvv: boolean;
 };
 
 export type Action<
