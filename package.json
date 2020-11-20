@@ -43,7 +43,7 @@
     "@kettil/eslint-config": "^1.6.2",
     "@kettil/semantic-release-config": "^1.0.5",
     "@kettil/tool-lib": "^2.7.0",
-    "@types/figlet": "^1.2.0",
+    "@types/figlet": "^1.2.1",
     "@types/yargs": "^15.0.5",
     "chalk": "^4.1.0",
     "commitlint": "^11.0.0",
