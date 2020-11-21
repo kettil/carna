@@ -1,3 +1,26 @@
+# [1.2.0](https://github.com/kettil/carna/compare/1.1.6...1.2.0) (2020-11-21)
+
+
+### Bug Fixes
+
+* **config:** update npmignore with test files ([68bb70f](https://github.com/kettil/carna/commit/68bb70faff978782b98f3e46110367f6e2380cdd))
+* **deps:** bump @kettil/eslint-config from 1.4.12 to 1.6.2 ([16f0184](https://github.com/kettil/carna/commit/16f01843fc020a17187bd14276bf7141db98a558))
+* **deps:** bump @kettil/eslint-config from 1.6.2 to 1.6.3 ([245974d](https://github.com/kettil/carna/commit/245974db73a10d63224a8a10a0cb455b410afd97))
+* **deps:** bump @kettil/eslint-config from 1.6.3 to 1.6.5 ([f903b3e](https://github.com/kettil/carna/commit/f903b3ee6012aca0e0cbc35c8c8479ae72590988))
+* **deps:** bump @kettil/semantic-release-config from 1.0.5 to 1.0.8 ([1ac689e](https://github.com/kettil/carna/commit/1ac689e2199f980ef59cb6ca7a4f384e80310271))
+* **deps:** bump @types/figlet from 1.2.0 to 1.2.1 ([6cc1132](https://github.com/kettil/carna/commit/6cc1132bbb540fbcd8aad6df337781cfcccd1130))
+* **deps:** bump @types/yargs from 15.0.5 to 15.0.10 ([1efa2a8](https://github.com/kettil/carna/commit/1efa2a8ccf21678eaa94e0ed011e11655d89f4c9))
+* **deps:** bump eslint from 7.11.0 to 7.13.0 ([b226088](https://github.com/kettil/carna/commit/b2260881fb21bcc207f07dce50ee1ee4fa64a425))
+* **deps:** bump eslint from 7.13.0 to 7.14.0 ([4f34e65](https://github.com/kettil/carna/commit/4f34e656e63c240762e617c82a9614cd03a66993))
+* **deps:** bump semantic-release from 17.1.1 to 17.2.3 ([98fe3c3](https://github.com/kettil/carna/commit/98fe3c3ac9931caad5967b4f64da316caae3248e))
+* update existConfigFile() ([5335972](https://github.com/kettil/carna/commit/5335972e03844454fb8b105e38c93612d1535803))
+* **deps:** bump prettier from 2.1.1 to 2.1.2 ([a6e023b](https://github.com/kettil/carna/commit/a6e023b655ddde620dc8c23e5e4798752f39d7e5))
+
+
+### Features
+
+* add build command ([284a77c](https://github.com/kettil/carna/commit/284a77cb1f92d73e71298de7f7a77861650f16bf))
+
 ## [1.1.6](https://github.com/kettil/carna/compare/1.1.5...1.1.6) (2020-10-22)
 
 
