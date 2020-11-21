@@ -2,7 +2,7 @@ import { join } from 'path';
 import access from '../../lib/cmd/access';
 import exec from '../../lib/cmd/exec';
 import { Action } from '../../lib/types';
-import npmPackage, { Props as packageProps } from './package';
+import npmPackage, { Props as packageProps } from './packageUpdate';
 
 type Props = {
   settings: packageProps['settings'];

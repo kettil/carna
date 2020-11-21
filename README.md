@@ -31,6 +31,7 @@ The following commands are available:
 | ------------------------------------ | ----------------------------------- |
 | [`init`](./docs/commands/init.md)    | Initializes the project             |
 | [`lint`](./docs/commands/lint.md)    | Run the code quality tools          |
+| [`build`](./docs/commands/build.md)  | Build the application               |
 | [`git:commit`](docs/commands/git.md) | Handler for the git commit-msg hook |
 | [`git:msg`](docs/commands/git.md)    | Handler for the git pre-commit hook |
 

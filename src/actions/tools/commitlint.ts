@@ -1,17 +1,20 @@
 import { join, relative } from 'path';
-import access from '../../lib/cmd/access';
 import exec from '../../lib/cmd/exec';
+import { existConfigFile } from '../../lib/helper';
 import { Action } from '../../lib/types';
 
 const configs = ['commitlint.config.js', '.commitlintrc.js', '.commitlintrc.json', '.commitlintrc.yml'];
 
 const commitlint: Action = async ({ cwd, cfg, log }) => {
-  const isConfigFileFounds = await Promise.all(configs.map((file) => access(join(cwd, file))));
+  const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/commitlint';
-  const args = ['-E', 'HUSKY_GIT_PARAMS', '--color'];
+  const args: string[] = [];
 
-  if (!isConfigFileFounds.every((v) => v)) {
+  args.push('-E', 'HUSKY_GIT_PARAMS');
+  args.push('--color');
+
+  if (!hasConfigFile) {
     args.push('--config', relative(cwd, join(cfg, 'commitlintrc.json')));
   }
 

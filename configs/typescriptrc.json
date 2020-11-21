@@ -3,7 +3,6 @@
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["DOM", "ESNext"],
-    "outDir": "build",
     "jsx": "react",
     "declaration": true,
     "isolatedModules": true,
@@ -26,6 +25,6 @@
     "resolveJsonModule": true
   },
 
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["../../../src/**/*", "../../../tests/**/*"],
   "exclude": ["node_modules", "build"]
 }
