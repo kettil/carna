@@ -19,14 +19,13 @@ const tsc: Action<Props> = async ({ cwd, log, cfg, vvv }, { mode }) => {
   const cmd = './node_modules/.bin/tsc';
   const args: string[] = [];
 
-  args.push('--outDir', join(cwd, 'build'));
-
   switch (mode) {
     case 'type-check':
       args.push('--noEmit');
       break;
 
     case 'type-create':
+      args.push('--outDir', join(cwd, 'build'));
       args.push('--project', join(cfg, 'typescriptrc.build.json'));
       args.push('--noEmit', 'false');
       args.push('--emitDeclarationOnly');
