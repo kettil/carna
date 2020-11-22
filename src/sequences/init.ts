@@ -4,7 +4,7 @@ import gitCommit from '../actions/git/commit';
 import gitInit from '../actions/git/init';
 import nodeFiles from '../actions/node/file';
 import nodeFolders from '../actions/node/folder';
-import nodeTemplate from '../actions/node/template';
+import nodeTemplate, { TemplateVariable } from '../actions/node/template';
 import npmInit from '../actions/npm/init';
 import npmInstall from '../actions/npm/install';
 import npmPackageLoad from '../actions/npm/packageLoad';
@@ -231,12 +231,20 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   // TEMPLATES
 
   /* eslint-disable @typescript-eslint/naming-convention */
-  const variables = {
+  const variables: Record<string, TemplateVariable> = {
     GITHUB_USERNAME: githubUsername,
-    BABEL_MODULE_TYPE: !argv.package || argv.cli ? 'commonjs' : false,
     PACKAGE_LIBRARY: toCamelCase(packageName),
     PACKAGE_FILENAME: packageName,
   };
+
+  if (!argv.package || argv.cli) {
+    variables.BABEL_MODULE_TYPE = 'commonjs';
+    variables.BABEL_MODULE_TARGET = 'defaults';
+  } else {
+    variables.BABEL_MODULE_TYPE = false;
+    variables.BABEL_MODULE_TARGET = { node: '14' };
+  }
+
   /* eslint-enable @typescript-eslint/naming-convention */
 
   await spinnerAction(
