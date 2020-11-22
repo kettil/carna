@@ -1,3 +1,8 @@
 {
-  "extends": "./node_modules/carna/configs/typescriptrc.json"
+  "extends": "./node_modules/carna/configs/typescriptrc.json",
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {}
+  }
 }

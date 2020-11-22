@@ -4,15 +4,15 @@ import readFile from '../../lib/cmd/readFile';
 import writeFile from '../../lib/cmd/writeFile';
 import { Action } from '../../lib/types';
 
-type Variable = string | boolean | undefined;
+export type TemplateVariable = string | boolean | undefined | Record<string, string | boolean | number>;
 
 type Props = {
   source: string;
   target?: string;
-  variables: Record<string, Variable>;
+  variables: Record<string, TemplateVariable>;
 };
 
-const replaceKey = (text: string, key: string, value: Variable): string => {
+const replaceKey = (text: string, key: string, value: TemplateVariable): string => {
   const keyUpper = key.toUpperCase();
   const a = `%${keyUpper}%`;
   const b = `'%${keyUpper}%'`;
@@ -24,6 +24,10 @@ const replaceKey = (text: string, key: string, value: Variable): string => {
 
   if (typeof value === 'boolean') {
     return text.replace(new RegExp([b, c].join('|'), 'g'), value ? 'true' : 'false');
+  }
+
+  if (typeof value === 'object') {
+    return text.replace(new RegExp([b, c].join('|'), 'g'), JSON.stringify(value));
   }
 
   return text.replace(new RegExp(a, 'g'), value);

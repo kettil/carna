@@ -24,6 +24,8 @@ const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
 
   if (write) {
     args.push('--fix');
+  } else {
+    args.push('--list-different');
   }
 
   if (files) {
