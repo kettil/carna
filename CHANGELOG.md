@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/kettil/carna/compare/1.2.0...1.3.0) (2020-11-22)
+
+
+### Bug Fixes
+
+* **actions:** add --list-different argument ([52e1ecc](https://github.com/kettil/carna/commit/52e1ecca17f245740f4017e0cb30bfd3819138e7))
+* **actions:** no outDir argument for type check ([846f149](https://github.com/kettil/carna/commit/846f14936505530dbb4096707c1a6f9dda13a56e))
+* **sequences:** add missing try-catch block ([1400967](https://github.com/kettil/carna/commit/1400967f46afc68e15c2ccc710aeff4425123945))
+* **templates:** extend @babel/env config ([de3a807](https://github.com/kettil/carna/commit/de3a807fe3622a07a6c30625ba7a80b7ae8871fb))
+
+
+### Features
+
+* **template:** add baseUrl and paths to tsconfig ([066e8b7](https://github.com/kettil/carna/commit/066e8b7e5c11c27e5f83d96a43e52fa621292bee))
+
 # [1.2.0](https://github.com/kettil/carna/compare/1.1.6...1.2.0) (2020-11-21)
 
 
