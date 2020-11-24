@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/kettil/carna/compare/1.3.0...1.3.1) (2020-11-24)
+
+
+### Bug Fixes
+
+* **deps:** bump prettier from 2.1.2 to 2.2.0 ([2a66604](https://github.com/kettil/carna/commit/2a66604350382e02f1ec7ab4207bf51b2fcc3086))
+
 # [1.3.0](https://github.com/kettil/carna/compare/1.2.0...1.3.0) (2020-11-22)
 
 
