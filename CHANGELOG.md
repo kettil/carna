@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/kettil/carna/compare/1.3.3...1.3.4) (2020-11-24)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 1.0.8 to 1.0.9 ([77c8edf](https://github.com/kettil/carna/commit/77c8edf73184ecfc27bc1bc25475aee47a39c26d))
+
 ## [1.3.3](https://github.com/kettil/carna/compare/1.3.2...1.3.3) (2020-11-24)
 
 
