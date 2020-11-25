@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/kettil/carna/compare/1.3.5...1.3.6) (2020-11-25)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 1.6.8 to 1.6.9 ([972a35b](https://github.com/kettil/carna/commit/972a35b83742e941f7c9ae9c648a5f0e4a5685a1))
+
 ## [1.3.5](https://github.com/kettil/carna/compare/1.3.4...1.3.5) (2020-11-24)
 
 
