@@ -41,10 +41,10 @@ module.exports = (root) => ({
     ({ context, request }, callback) => {
       // Marks all external packages as "external" so that they are not integrated
       if (regexpNodeModule.test(context) || !regexpLocale.test(request)) {
-        return callback(null, `commonjs ${request}`);
+        return callback(undefined, `commonjs ${request}`);
       }
 
-      callback();
+      return callback();
     },
   ],
 
