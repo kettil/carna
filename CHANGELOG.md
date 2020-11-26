@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/kettil/carna/compare/1.3.7...1.4.0) (2020-11-26)
+
+
+### Features
+
+* **config:** add support for lerna ([5cfc50f](https://github.com/kettil/carna/commit/5cfc50f160ca16c68c6af74be3670902c26c7be0))
+* **config:** change the webpack handling ([8635526](https://github.com/kettil/carna/commit/86355262e378f0b3e2be7640cbe8503107e706cc))
+* **debs:** add the command debs ([def0453](https://github.com/kettil/carna/commit/def0453b699e1fc5c7f3ce289771427fa838ef63))
+
 ## [1.3.7](https://github.com/kettil/carna/compare/1.3.6...1.3.7) (2020-11-26)
 
 
