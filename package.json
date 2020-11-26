@@ -6,7 +6,7 @@
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
-    "build2": "npm run build && rm -rf z && mkdir z && cd z && node ../build/bin/index.js init --help  && node ../build/bin/index.js init  -tpjc && ls -lisa . && tree src",
+    "build2": "npm run build && rm -rf z && mkdir z && cd z && node ../build/bin/index.js init --help  && node ../build/bin/index.js init -p --noCommit && ls -lisa . && tree src",
     "build3": "npm run build && cd z && node ../build/index.js && ls -lisa . && tree src",
     "prebuild": "rm -rf ./build",
     "test": "jest --config=jest.json --coverage",
@@ -47,6 +47,7 @@
     "@types/yargs": "^15.0.10",
     "chalk": "^4.1.0",
     "commitlint": "^11.0.0",
+    "depcheck": "^1.3.1",
     "eslint": "^7.14.0",
     "figlet": "^1.5.0",
     "ora": "^5.1.0",

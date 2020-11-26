@@ -27,12 +27,13 @@ npx carna
 
 The following commands are available:
 
-| Commands                             | Description                         |
-| ------------------------------------ | ----------------------------------- |
-| [`init`](./docs/commands/init.md)    | Initializes the project             |
-| [`lint`](./docs/commands/lint.md)    | Run the code quality tools          |
-| [`build`](./docs/commands/build.md)  | Build the application               |
-| [`git:commit`](docs/commands/git.md) | Handler for the git commit-msg hook |
-| [`git:msg`](docs/commands/git.md)    | Handler for the git pre-commit hook |
+| Commands                             | Description                           |
+| ------------------------------------ | ------------------------------------- |
+| [`init`](./docs/commands/init.md)    | Initializes the project               |
+| [`lint`](./docs/commands/lint.md)    | Run the code quality tools            |
+| [`debs`](./docs/commands/debs.md)    | Checks if there are orphaned packages |
+| [`build`](./docs/commands/build.md)  | Build the application                 |
+| [`git:commit`](docs/commands/git.md) | Handler for the git commit-msg hook   |
+| [`git:msg`](docs/commands/git.md)    | Handler for the git pre-commit hook   |
 
 For the help text, execute `npx carna --help` and the individual commands `npx carna <command> --help`.
