@@ -24,7 +24,17 @@ const config = {
   bail: 10,
 
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{ts,tsx,js}', '!src/**/*.test.{ts,tsx,js}', '!src/**/types.ts'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.{ts,tsx,js}',
+    '!<rootDir>/src/**/*.test.{ts,tsx,js}',
+    '!<rootDir>/src/**/types.ts',
+    '!<rootDir>/src/index.ts',
+
+    '<rootDir>/packages/*/src/**/*.{ts,tsx,js}',
+    '!<rootDir>/packages/*/src/**/*.test.{ts,tsx,js}',
+    '!<rootDir>/packages/*/src/**/types.ts',
+    '!<rootDir>/packages/*/src/index.ts',
+  ],
   coveragePathIgnorePatterns: ['/__jest__/'],
   coverageReporters: ['text-summary', 'html'],
   coverageDirectory: 'coverage',
