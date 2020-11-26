@@ -8,6 +8,7 @@
 # node.js folders/files
 node_modules
 npm-debug.log
+lerna-debug.log
 
 # project folders/files
 /build
