@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/kettil/carna/compare/1.4.3...1.4.4) (2020-12-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 1.7.0 to 1.7.1 ([ab17965](https://github.com/kettil/carna/commit/ab17965e1d42f584a0eda9f45759d90492dfd588))
+
 ## [1.4.3](https://github.com/kettil/carna/compare/1.4.2...1.4.3) (2020-12-01)
 
 
