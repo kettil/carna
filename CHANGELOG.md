@@ -1,3 +1,11 @@
+## [1.4.5](https://github.com/kettil/carna/compare/1.4.4...1.4.5) (2020-12-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 1.7.1 to 1.8.0 ([4eb34fe](https://github.com/kettil/carna/commit/4eb34fe977fb1259ec8eac591c90a08c5f838d09))
+* **deps:** bump @types/yargs from 15.0.10 to 15.0.11 ([29ab95d](https://github.com/kettil/carna/commit/29ab95da8be898aabbc3d7538c988957700701c6))
+
 ## [1.4.4](https://github.com/kettil/carna/compare/1.4.3...1.4.4) (2020-12-02)
 
 
