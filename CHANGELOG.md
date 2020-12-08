@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/kettil/carna/compare/1.4.6...1.4.7) (2020-12-08)
+
+
+### Bug Fixes
+
+* **deps:** bump yargs from 16.1.1 to 16.2.0 ([4087878](https://github.com/kettil/carna/commit/40878781da71426494ec674cef75b923ff21377c))
+
 ## [1.4.6](https://github.com/kettil/carna/compare/1.4.5...1.4.6) (2020-12-08)
 
 
