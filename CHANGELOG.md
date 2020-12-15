@@ -1,3 +1,10 @@
+## [1.4.12](https://github.com/kettil/carna/compare/1.4.11...1.4.12) (2020-12-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/yargs from 15.0.11 to 15.0.12 ([0fa243f](https://github.com/kettil/carna/commit/0fa243fb82fdd16278c50f6a78841cb8251d4f5e))
+
 ## [1.4.11](https://github.com/kettil/carna/compare/1.4.10...1.4.11) (2020-12-15)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "carna",
-  "version": "1.4.11",
+  "version": "1.4.12",
   "description": "Global management of the config files",
   "main": "build/index.js",
   "types": "build/index.d.ts",
