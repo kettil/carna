@@ -1,3 +1,10 @@
+## [1.4.11](https://github.com/kettil/carna/compare/1.4.10...1.4.11) (2020-12-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/tool-lib from 2.7.0 to 2.8.0 ([341111d](https://github.com/kettil/carna/commit/341111d110e821b246cb16cde8859b483723f0be))
+
 ## [1.4.10](https://github.com/kettil/carna/compare/1.4.9...1.4.10) (2020-12-15)
 
 
