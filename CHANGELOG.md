@@ -1,3 +1,13 @@
+## [1.4.14](https://github.com/kettil/carna/compare/1.4.13...1.4.14) (2021-01-04)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 1.9.5 to 1.9.9 ([4bd38be](https://github.com/kettil/carna/commit/4bd38bebda290d879bcb83ebee653972331ccc99))
+* **deps:** bump @kettil/semantic-release-config from 1.0.9 to 1.0.10 ([67b5487](https://github.com/kettil/carna/commit/67b5487ceefa727d6eed5c050be109f7bf942df1))
+* **deps:** bump eslint from 7.15.0 to 7.17.0 ([148d0d5](https://github.com/kettil/carna/commit/148d0d50da2c4b2f51dce309dc7caf4bfe345889))
+* **deps:** bump ora from 5.1.0 to 5.2.0 ([dfad3b7](https://github.com/kettil/carna/commit/dfad3b755de3de276cf2694df6fb653c652b92c1))
+
 ## [1.4.13](https://github.com/kettil/carna/compare/1.4.12...1.4.13) (2021-01-04)
 
 
