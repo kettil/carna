@@ -1,3 +1,10 @@
+## [1.4.13](https://github.com/kettil/carna/compare/1.4.12...1.4.13) (2021-01-04)
+
+
+### Bug Fixes
+
+* **deps:** bump semantic-release from 17.3.0 to 17.3.1 ([a45c265](https://github.com/kettil/carna/commit/a45c26555d9045ad0d06414e75fa7d0bb89455c9))
+
 ## [1.4.12](https://github.com/kettil/carna/compare/1.4.11...1.4.12) (2020-12-15)
 
 
