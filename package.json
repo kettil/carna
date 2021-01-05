@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@kettil/commitlint-config": "^1.0.1",
-    "@kettil/eslint-config": "^1.9.10",
+    "@kettil/eslint-config": "^1.11.0",
     "@kettil/semantic-release-config": "^1.0.10",
     "@kettil/tool-lib": "^2.8.0",
     "@types/figlet": "^1.2.1",
