@@ -1,3 +1,15 @@
+## [1.4.16](https://github.com/kettil/carna/compare/1.4.15...1.4.16) (2021-02-01)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 1.0.10 to 1.0.11 ([e3012ee](https://github.com/kettil/carna/commit/e3012ee9836563b14f85487fd59f8f7b408d94e0))
+* **deps:** bump @types/yargs from 15.0.12 to 16.0.0 ([9d84ab4](https://github.com/kettil/carna/commit/9d84ab412755d6edfd68f854c17d14981290ec95))
+* **deps:** bump eslint from 7.17.0 to 7.18.0 ([c5bcaf1](https://github.com/kettil/carna/commit/c5bcaf1bbd903f1e55f346ce0c55d83b225cd1a8))
+* **deps:** bump eslint from 7.18.0 to 7.19.0 ([643cf97](https://github.com/kettil/carna/commit/643cf97c213875a17919152447a62f47fa51cb46))
+* **deps:** bump ora from 5.2.0 to 5.3.0 ([1ed9c4b](https://github.com/kettil/carna/commit/1ed9c4be1d73b32f4f7736396e4da4a39f09b7e4))
+* **deps:** bump semantic-release from 17.3.1 to 17.3.7 ([4e65e2c](https://github.com/kettil/carna/commit/4e65e2c6814c5b98b537404fe0aff549991cb842))
+
 ## [1.4.15](https://github.com/kettil/carna/compare/1.4.14...1.4.15) (2021-01-11)
 
 
