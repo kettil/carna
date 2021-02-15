@@ -1,3 +1,11 @@
+## [1.4.17](https://github.com/kettil/carna/compare/1.4.16...1.4.17) (2021-02-15)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint from 7.19.0 to 7.20.0 ([a11c64e](https://github.com/kettil/carna/commit/a11c64e8dc438adf16db78662b200db1c9bee001))
+* **deps:** bump semantic-release from 17.3.7 to 17.3.9 ([51469fb](https://github.com/kettil/carna/commit/51469fb8d99a146b7e954a3d90af3a53069371a8))
+
 ## [1.4.16](https://github.com/kettil/carna/compare/1.4.15...1.4.16) (2021-02-01)
 
 
