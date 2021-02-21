@@ -41,7 +41,7 @@
   "dependencies": {
     "@kettil/commitlint-config": "^1.0.1",
     "@kettil/eslint-config": "^1.9.10",
-    "@kettil/semantic-release-config": "^1.0.12",
+    "@kettil/semantic-release-config": "^1.2.0",
     "@kettil/tool-lib": "^2.8.0",
     "@types/figlet": "^1.2.1",
     "@types/yargs": "^16.0.0",
