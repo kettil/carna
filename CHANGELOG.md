@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.19](https://github.com/kettil/carna/compare/1.4.18...1.4.19) (2021-03-01)
+
+
+### Bug Fixes
+
+* **deps:** bump commitlint from 11.0.0 to 12.0.1 ([83931bd](https://github.com/kettil/carna/commit/83931bdad76d4d1fa2b4fe4b36d27a5934b2fd9f))
+* **deps:** bump eslint from 7.20.0 to 7.21.0 ([043839a](https://github.com/kettil/carna/commit/043839a3a6baadf0753d6648b7f08cd8859a70db))
+* **deps:** bump semantic-release from 17.3.9 to 17.4.0 ([8c99abd](https://github.com/kettil/carna/commit/8c99abd0a51e6366fa8a0f52fb6d467790076400))
+
 ## [1.4.18](https://github.com/kettil/carna/compare/1.4.17...1.4.18) (2021-02-22)
 
 
