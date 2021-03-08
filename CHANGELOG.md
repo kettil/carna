@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.20](https://github.com/kettil/carna/compare/1.4.19...1.4.20) (2021-03-08)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 1.2.1 to 1.2.2 ([eca2a2d](https://github.com/kettil/carna/commit/eca2a2def6a295c8528de60067261f0f9d654111))
+* **deps:** bump semantic-release from 17.4.0 to 17.4.1 ([c4ffcb6](https://github.com/kettil/carna/commit/c4ffcb6c29582ad016e812baa50ff8eb50c140fa))
+
 ## [1.4.19](https://github.com/kettil/carna/compare/1.4.18...1.4.19) (2021-03-01)
 
 
