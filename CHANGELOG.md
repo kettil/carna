@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.4.21](https://github.com/kettil/carna/compare/1.4.20...1.4.21) (2021-03-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 1.2.2 to 1.2.3 ([4432c54](https://github.com/kettil/carna/commit/4432c54eeb7f908457658ecd0cdfcd537d1c4ddc))
+* **deps:** bump @kettil/tool-lib from 2.8.0 to 2.9.0 ([c16365f](https://github.com/kettil/carna/commit/c16365fc854837152648ca27567650b74d88ca81))
+* **deps:** bump eslint from 7.21.0 to 7.22.0 ([c79fcf3](https://github.com/kettil/carna/commit/c79fcf3968ff784f9042741bef55d1b3b71d222d))
+* **deps:** bump semantic-release from 17.4.1 to 17.4.2 ([6e98406](https://github.com/kettil/carna/commit/6e98406c6d39ec5b3f8114bbe0234a0e308c6105))
+
 ## [1.4.20](https://github.com/kettil/carna/compare/1.4.19...1.4.20) (2021-03-08)
 
 
