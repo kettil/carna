@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.22](https://github.com/kettil/carna/compare/1.4.21...1.4.22) (2021-03-22)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 1.2.3 to 1.2.4 ([ebedb60](https://github.com/kettil/carna/commit/ebedb60b678a3df744bfdcb32d2198a639618d98))
+* **deps:** bump ora from 5.3.0 to 5.4.0 ([ae9d381](https://github.com/kettil/carna/commit/ae9d38113a84184d6a56ece56cee44b6700f6a67))
+
 ## [1.4.21](https://github.com/kettil/carna/compare/1.4.20...1.4.21) (2021-03-15)
 
 
