@@ -38,7 +38,7 @@ const logging = (level: string, type: Type): Log => (msg) => {
 
 const log: Log = (msg) => write('stdout', isArray(msg) ? msg.join('\n') : msg);
 
-const logger = ({ v, vvv }: { v: boolean; vvv: boolean }): Logger => {
+const logger = ({ verbose, vvv }: { verbose: boolean; vvv: boolean }): Logger => {
   const error = logging(getMessageLevel('error'), 'stderr');
   const info = logging(getMessageLevel('info'), 'stdout');
   const debug = logging(getMessageLevel('debug'), 'stdout');
@@ -47,7 +47,7 @@ const logger = ({ v, vvv }: { v: boolean; vvv: boolean }): Logger => {
     return { log, error, info, debug };
   }
 
-  if (v) {
+  if (verbose) {
     return { log, error, info, debug: dummy };
   }
 
