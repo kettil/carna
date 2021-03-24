@@ -1,5 +1,7 @@
 {
   "extends": "./node_modules/carna/configs/typescriptrc.json",
+  "include": ["./src/**/*", "./tests/**/*"],
+  "exclude": ["node_modules", "build"],
 
   "compilerOptions": {
     "baseUrl": ".",

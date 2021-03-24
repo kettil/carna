@@ -9,7 +9,7 @@ type Props = {
   mode: 'type-check' | 'type-create';
 };
 
-const tsc: Action<Props> = async ({ cwd, log, cfg, vvv }, { mode }) => {
+const tsc: Action<Props> = async ({ cwd, log, vvv }, { mode }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   if (!hasConfigFile) {
@@ -26,7 +26,7 @@ const tsc: Action<Props> = async ({ cwd, log, cfg, vvv }, { mode }) => {
 
     case 'type-create':
       args.push('--outDir', join(cwd, 'build'));
-      args.push('--project', join(cfg, 'typescriptrc.build.json'));
+      args.push('--project', join(cwd, 'tsconfig.build.json'));
       args.push('--noEmit', 'false');
       args.push('--emitDeclarationOnly');
       break;

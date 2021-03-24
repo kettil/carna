@@ -1,4 +1,4 @@
-const { projects, config } = require('./node_modules/carna/configs/jest.config.js');
+const { projects, config } = require('carna/configs/jest.config.js');
 
 Object.assign(projects.unit, {
   // extend options for unit tests
