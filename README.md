@@ -1,4 +1,4 @@
-# Carna [beta]
+# Carna
 
 ![npm](https://img.shields.io/npm/v/carna)
 ![David](https://img.shields.io/david/kettil/carna)
