@@ -9,7 +9,7 @@ type Props = {
   mode: 'type-check' | 'type-create';
 };
 
-const tsc: Action<Props> = async ({ cwd, log, vvv }, { mode }) => {
+const tsc: Action<Props> = async ({ cwd, log }, { mode }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   if (!hasConfigFile) {
@@ -32,10 +32,6 @@ const tsc: Action<Props> = async ({ cwd, log, vvv }, { mode }) => {
       break;
     default:
       throw new Error(`Mode is unknown: ${String(mode)}`);
-  }
-
-  if (vvv) {
-    await exec({ cmd, args: [...args, '--showConfig'], cwd, log });
   }
 
   log.info('Run TypeScript');
