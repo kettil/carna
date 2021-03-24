@@ -1,15 +1,53 @@
-# os folders/files
+# macOS
+.AppleDB
+.AppleDesktop
+.AppleDouble
 .DS_Store
+.LSOverride
 ._*
+.apdisk
+Network Trash Folder
+Temporary Items
 
-# editors
-.vscode
+# Windows
+*.lnk
+Thumbs.db
+Thumbs.db:encryptable
+[Dd]esktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Editors
 .idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
-# node.js folders/files
+# node
+.cache
+.eslintcache
+.next
+.npm
+.parcel-cache
+.stylelintcache
+coverage
+lerna-debug.log*
 node_modules
-npm-debug.log
+npm-debug.log*
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+yarn-debug.log*
+yarn-error.log*
 
-# project folders/files
+# Project
 /build
-/coverage
+/packages/*/build
+/packages/*/coverage

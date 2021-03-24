@@ -19,8 +19,18 @@ npm-debug.log
 /.huskyrc
 /.prettier*
 /.releaserc.json
+/babel*
 /jest*
 /tsconfig*
+/webpack*
+
+# test files
+**/*.test.js
+**/*.test.ts
+**/*.test.tsx
+**/*.test-d.js
+**/*.test-d.ts
+**/*.test-d.tsx
 
 # project folders/files
 /coverage

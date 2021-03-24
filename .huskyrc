@@ -1,9 +1,10 @@
 {
   "hooks": {
-    "pre-commit": "echo npm run git:commit",
-    "pre-push": "echo npm run git:push",
-    "post-merge": "echo npm run git:change",
-    "post-rewrite": "echo npm run git:change",
-    "post-checkout": "echo npm run git:change"
+    "commit-msg": "npm run build:babel && node ./build/bin/index.js git:msg",
+    "pre-commit": "npm run build:babel && node ./build/bin/index.js git:commit",
+    "pre-push": "npm run build:babel && node ./build/bin/index.js git:push",
+    "post-merge": "echo npm run build:babel && node ./build/bin/index.js git:change",
+    "post-rewrite": "echo npm run build:babel && node ./build/bin/index.js git:change",
+    "post-checkout": "echo npm run build:babel && node ./build/bin/index.js git:change"
   }
 }
