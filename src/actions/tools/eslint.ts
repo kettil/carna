@@ -25,13 +25,14 @@ const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
   if (write) {
     args.push('--fix');
   } else {
-    args.push('--list-different');
+    args.push('--format', 'codeframe');
   }
 
   if (files) {
     args.push(...files);
   } else {
-    args.push('--ext', `"${extensionAll}"`, '.');
+    args.push('--ext', `"${extensionAll}"`);
+    args.push('.');
   }
 
   log.info('Run eslint');
