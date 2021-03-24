@@ -22,6 +22,7 @@ const tsc: Action<Props> = async ({ cwd, log }, { mode }) => {
   switch (mode) {
     case 'type-check':
       args.push('--noEmit');
+      args.push('--isolatedModules', 'false');
       break;
 
     case 'type-create':
