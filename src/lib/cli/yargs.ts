@@ -9,9 +9,9 @@ export type CommandModuleDescribe = NonNullable<CommandModule<PropsGlobal>['desc
 
 export type CommandModuleBuilder<Props = Record<string, unknown>> = (
   yargs: Argv<PropsGlobal>,
-) => Argv<PropsGlobal & Props>;
+) => Argv<Props & PropsGlobal>;
 
-export type CommandModuleHandler<Props = Record<string, unknown>> = (args: Arguments<PropsGlobal & Props>) => void;
+export type CommandModuleHandler<Props = Record<string, unknown>> = (args: Arguments<Props & PropsGlobal>) => void;
 
 export const builderDefault = <Props>(
   cmd: string,

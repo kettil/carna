@@ -47,12 +47,9 @@ const depcheck: Action = async ({ cwd }) => {
   if (dependencies.length > 0 || devDependencies.length > 0) {
     msg.push(red('The dependencies are not used:'));
 
-    dependencies
-      .concat(devDependencies)
-      .sort()
-      .forEach((file) => {
-        msg.push(`- ${file}`);
-      });
+    [...dependencies, ...devDependencies].sort().forEach((file) => {
+      msg.push(`- ${file}`);
+    });
   }
 
   if (msg.length > 0) {
