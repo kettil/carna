@@ -53,7 +53,7 @@ const exec = ({
     });
 
     stream.on('close', (code) => {
-      if (code !== 0) {
+      if (typeof code === 'number' && code !== 0) {
         reject(new ExecutableError(stderr, command, code, stdout, stderr));
       } else {
         resolve({ stdout, stderr });
