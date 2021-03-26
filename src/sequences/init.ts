@@ -90,6 +90,7 @@ const getOptions = (argv: Props): Options => {
     },
     packageUpdate: {},
     packageScripts: {
+      postinstall: 'husky install ./node_modules/carna/configs/husky',
       lint: 'npx carna lint',
     },
     packagePeerDependencies: [],

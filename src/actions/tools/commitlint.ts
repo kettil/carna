@@ -5,13 +5,17 @@ import { Action } from '../../lib/types';
 
 const configs = ['commitlint.config.js', '.commitlintrc.js', '.commitlintrc.json', '.commitlintrc.yml'];
 
-const commitlint: Action = async ({ cwd, cfg, log }) => {
+type Props = {
+  edit: string;
+};
+
+const commitlint: Action<Props> = async ({ cwd, cfg, log }, { edit }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/commitlint';
   const args: string[] = [];
 
-  args.push('-E', 'HUSKY_GIT_PARAMS');
+  args.push('--edit', edit);
   args.push('--color');
 
   if (!hasConfigFile) {
