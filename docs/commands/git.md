@@ -2,7 +2,7 @@
 
 The tasks will be automatically called by husky during commit.
 
-## The `git:commit` task
+## The `git commit` task
 
 Checks the files in staged with prettier and eslint.
 
@@ -13,9 +13,15 @@ Checks the files in staged with prettier and eslint.
 | 0         | Success     |
 | 1         | task failed |
 
-## The `git:msg` task
+## The `git msg` task
 
 Checks the git commit message for a consistent structure.
+
+### Options
+
+| Options | Description                     |
+| ------- | ------------------------------- |
+| --edit  | Path to the COMMIT_EDITMSG file |
 
 ### Exit codes
 

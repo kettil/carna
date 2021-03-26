@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo npm run build:babel
-echo node ./build/bin/index.js git:push --vvv
+echo node ./build/bin/index.js git push --vvv

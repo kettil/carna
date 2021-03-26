@@ -5,7 +5,7 @@ import { Action } from '../../lib/types';
 
 const configs = ['commitlint.config.js', '.commitlintrc.js', '.commitlintrc.json', '.commitlintrc.yml'];
 
-type Props = {
+export type Props = {
   edit: string;
 };
 

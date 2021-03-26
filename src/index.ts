@@ -11,8 +11,8 @@ import commitlint from './actions/tools/commitlint';
 import eslint from './actions/tools/eslint';
 import prettier from './actions/tools/prettier';
 
-export { handler as gitCommit } from './sequences/gitCommit';
-export { handler as gitMsg } from './sequences/gitMessage';
+export { handler as build } from './sequences/build';
+export { handler as git } from './sequences/git';
 export { handler as init } from './sequences/init';
 export { handler as lint } from './sequences/lint';
 
