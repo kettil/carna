@@ -4,8 +4,6 @@ import { Action } from '../../lib/types';
 
 const configs = ['babel.config.js', 'babel.config.json'];
 
-const sourceIgnore = ['src/**/*.test.ts', 'src/**/*.test.tsx'];
-
 const babel: Action = async ({ cwd, log }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
@@ -19,7 +17,6 @@ const babel: Action = async ({ cwd, log }) => {
   // options
   args.push('-d', 'build');
   args.push('--extensions', '.ts,.tsx');
-  args.push('--ignore', `"${sourceIgnore.join('","')}"`);
 
   // path
   args.push('src');

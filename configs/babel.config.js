@@ -1,4 +1,5 @@
 module.exports = {
+  ignore: ['**/*.test.ts', '**/*.test.tsx', '**/*.test-d.ts'],
   presets: ['@babel/env', '@babel/preset-typescript'],
   plugins: [
     [
