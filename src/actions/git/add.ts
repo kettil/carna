@@ -11,6 +11,8 @@ const gitAdd: Action<Props> = async ({ cwd, log }, { files }) => {
   }
 
   log.info('Add files to the staged:');
+  log.info(files.map((file) => `▸ ${file}`));
+
   await exec({ cmd: 'git', args: ['add', ...files.map((file) => (file === '.' ? '.' : `"${file}"`))], cwd, log });
 };
 
