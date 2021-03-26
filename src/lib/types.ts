@@ -1,6 +1,6 @@
 import { Logger } from './cli/logger';
 
-export type NpmInstallMode = 'prod' | 'dev' | 'optional';
+export type NpmInstallMode = 'dev' | 'optional' | 'prod';
 
 export type PropsGlobal = {
   readonly cwd: string;

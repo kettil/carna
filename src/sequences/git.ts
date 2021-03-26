@@ -29,16 +29,16 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 
 export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
-    const { edit } = argv;
+    const { edit, hook } = argv;
 
-    switch (argv.hook) {
+    switch (hook) {
       case 'commit':
         await commit(argv);
         break;
 
       case 'msg':
         if (typeof edit !== 'string' || edit.trim() === '') {
-          throw new Error(`Argument "edit" is required at hook "${argv.hook}"`);
+          throw new Error(`Argument "edit" is required at hook "${hook}"`);
         }
 
         await msg(argv, { edit });
@@ -48,7 +48,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
         await push(argv);
         break;
       default:
-        throw new Error(`The hook "${argv.hook}" is unknown`);
+        throw new Error(`The hook "${hook}" is unknown`);
     }
   } catch (error) {
     errorHandler(argv, error);

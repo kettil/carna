@@ -1,7 +1,7 @@
 import { dummy } from '@kettil/tool-lib';
 import ora from 'ora';
 
-type StopTypes = 'stop' | 'succeed' | 'fail' | 'warn' | 'info';
+type StopTypes = 'fail' | 'info' | 'stop' | 'succeed' | 'warn';
 
 const instance = ora({
   color: 'white',

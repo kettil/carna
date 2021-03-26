@@ -33,12 +33,12 @@ type Props = {
 type Options = {
   files: string[];
   folders: string[];
-  templates: Array<[string] | [string, string]>;
+  templates: Array<[string, string] | [string]>;
   libraryProduction: string[];
   libraryDevelopment: string[];
   packageBin: Record<string, string>;
-  packageInit: Record<string, string | number | boolean | Record<string, string>>;
-  packageUpdate: Record<string, string | number | boolean | Record<string, string>>;
+  packageInit: Record<string, Record<string, string> | boolean | number | string>;
+  packageUpdate: Record<string, Record<string, string> | boolean | number | string>;
   packageScripts: Record<string, string>;
   packagePeerDependencies: string[];
   github: {
@@ -108,7 +108,7 @@ const getOptions = (argv: Props): Options => {
   // # Github             #
   // ######################
 
-  if (options.github.name) {
+  if (typeof options.github.name === 'string') {
     options.folders.push('.dependabot', '.github/workflows');
 
     options.templates.push(['dependabot/config.yml', '.dependabot/config.yml']);
@@ -121,7 +121,7 @@ const getOptions = (argv: Props): Options => {
   // ######################
 
   if (argv.package) {
-    if (options.github.name) {
+    if (typeof options.github.name === 'string') {
       options.packageInit.repository = { type: 'git', url: `https://github.com/${options.github.name}/<repo>` };
       options.packageInit.bugs = { url: `https://github.com/${options.github.name}/<repo>/issues/new` };
 

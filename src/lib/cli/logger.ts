@@ -9,11 +9,11 @@ const levels = {
   debug: chalk.blue,
 };
 
-type Type = 'stdout' | 'stderr';
+type Type = 'stderr' | 'stdout';
 
 type Level = keyof typeof levels;
 
-type Log = (msg: string | string[]) => void;
+type Log = (msg: string[] | string) => void;
 
 export type Logger = Record<Level, Log>;
 

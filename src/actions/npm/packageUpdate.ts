@@ -3,7 +3,7 @@ import writeFile from '../../lib/cmd/writeFile';
 import { Action } from '../../lib/types';
 import npmPackageLoad, { getPackagePath } from './packageLoad';
 
-type SettingProps = Record<string, string | string[] | number | boolean | Record<string, string>>;
+type SettingProps = Record<string, Record<string, string> | string[] | boolean | number | string>;
 
 export type Props = {
   settings: SettingProps & {

@@ -4,7 +4,7 @@ import readFile from '../../lib/cmd/readFile';
 import writeFile from '../../lib/cmd/writeFile';
 import { Action } from '../../lib/types';
 
-export type TemplateVariable = string | boolean | undefined | Record<string, string | boolean | number>;
+export type TemplateVariable = Record<string, boolean | number | string> | boolean | string | undefined;
 
 type Props = {
   source: string;
