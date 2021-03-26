@@ -34,10 +34,3 @@ const gitLs: Action<{ mode: Mode }, string[]> = async ({ cwd, log }, { mode }) =
 };
 
 export default gitLs;
-
-/*
-git ls-files --exclude-standard --modified
-git ls-files --exclude-standard --others
-git ls-files --exclude-standard --others --modified
-
-*/
