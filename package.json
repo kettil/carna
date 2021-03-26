@@ -6,7 +6,7 @@
   "types": "build/index.d.ts",
   "scripts": {
     "start": "node ./build/bin/index.js",
-    "watch":"npm run build:babel -- --watch",
+    "watch": "npm run build:babel -- --watch",
     "build": "npm run build:types && npm run build:babel",
     "build:types": "tsc --outDir ./build --project ./tsconfig.build.json --noEmit false --emitDeclarationOnly",
     "build:babel": "babel -d build --extensions .ts,.tsx src",
