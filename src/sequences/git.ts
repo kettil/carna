@@ -8,11 +8,12 @@ import {
 } from '../lib/cli/yargs';
 import commit from './git/commit';
 import msg, { Props as MessageProps } from './git/msg';
+import push from './git/push';
 
 export const command: CommandModuleCommand = 'git <hook>';
 export const desc: CommandModuleDescribe = 'Handler for the git hooks';
 
-const mode = ['msg', 'commit'] as const;
+const mode = ['msg', 'commit', 'push'] as const;
 const options = { group: `${command.slice(0, Math.max(0, command.indexOf('<'))).trim()}-Options` } as const;
 
 type Props = {
@@ -41,6 +42,10 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
         }
 
         await msg(argv, { edit });
+        break;
+
+      case 'push':
+        await push(argv);
         break;
       default:
         throw new Error(`The hook "${argv.hook}" is unknown`);
