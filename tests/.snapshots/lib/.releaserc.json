@@ -1,0 +1,3 @@
+{
+  "extends": "@kettil/semantic-release-config"
+}

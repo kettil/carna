@@ -16,7 +16,7 @@ const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/eslint';
-  const args: string[] = ['--color'];
+  const args: string[] = ['--color', '--max-warnings', '0'];
 
   if (!hasConfigFile) {
     args.push('--config', relative(cwd, join(cfg, 'eslintrc.json')));
@@ -25,13 +25,14 @@ const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
   if (write) {
     args.push('--fix');
   } else {
-    args.push('--list-different');
+    args.push('--format', 'codeframe');
   }
 
   if (files) {
     args.push(...files);
   } else {
-    args.push('--ext', `"${extensionAll}"`, '.');
+    args.push('--ext', `"${extensionAll}"`);
+    args.push('.');
   }
 
   log.info('Run eslint');

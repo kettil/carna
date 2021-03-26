@@ -1,4 +1,8 @@
 const commons = {
+  bail: 10,
+
+  testEnvironment: 'node',
+
   clearMocks: true,
   restoreMocks: true,
 };
@@ -8,30 +12,31 @@ const projects = {
     ...commons,
     displayName: { name: 'unit', color: 'cyan' },
     roots: ['<rootDir>/src'],
-    testMatch: ['**/*.test.{js,ts,tsx}'],
+    testMatch: ['**/*.test.{js,ts,tsx}', '**/*.test-d.{js,ts,tsx}'],
   },
   integration: {
     ...commons,
     displayName: { name: 'integration', color: 'magenta' },
     roots: ['<rootDir>/src/', '<rootDir>/tests/'],
-    testMatch: ['**/*.test.{js,ts,tsx}'],
+    testMatch: ['**/*.test.{js,ts,tsx}', '**/*.test-d.{js,ts,tsx}'],
     testPathIgnorePatterns: ['/node_modules/', '/src/'],
   },
 };
 
 const config = {
   ...commons,
-  bail: 10,
 
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx,js}',
     '!<rootDir>/src/**/*.test.{ts,tsx,js}',
+    '!<rootDir>/src/**/*.test-d.{ts,tsx,js}',
     '!<rootDir>/src/**/types.ts',
     '!<rootDir>/src/index.ts',
 
     '<rootDir>/packages/*/src/**/*.{ts,tsx,js}',
     '!<rootDir>/packages/*/src/**/*.test.{ts,tsx,js}',
+    '!<rootDir>/packages/*/src/**/*.test-d.{ts,tsx,js}',
     '!<rootDir>/packages/*/src/**/types.ts',
     '!<rootDir>/packages/*/src/index.ts',
   ],

@@ -8,6 +8,7 @@ Run the code quality tools
 | ------- | ------------------------------------------------ |
 | --ci    | Run it in CI mode                                |
 | --only  | Run a single code quality tool (required `--ci`) |
+|         | Choices: eslint, prettier, typescript            |
 
 ## Exit codes
 

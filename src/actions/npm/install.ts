@@ -11,7 +11,7 @@ const npmInstall: Action<Props> = async ({ cwd, log }, { packages, mode }) => {
   if (packages.length > 0) {
     const uniquePackages = uniqueArray(packages.sort(compareAsc));
 
-    const parameters = ['install', ...uniquePackages, `--save-${mode}`];
+    const parameters = ['install', `--save-${mode}`, '--save-exact', ...uniquePackages];
     const logPackages = uniquePackages.map((name) => `▸ ${name}`).join('\n');
 
     log.info(`Install following ${mode} packages:\n${logPackages}`);

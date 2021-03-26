@@ -9,7 +9,7 @@ type Props = {
   mode: 'type-check' | 'type-create';
 };
 
-const tsc: Action<Props> = async ({ cwd, log, cfg, vvv }, { mode }) => {
+const tsc: Action<Props> = async ({ cwd, log }, { mode }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   if (!hasConfigFile) {
@@ -21,21 +21,20 @@ const tsc: Action<Props> = async ({ cwd, log, cfg, vvv }, { mode }) => {
 
   switch (mode) {
     case 'type-check':
+      args.push('--outDir', join(cwd, 'build'));
+      args.push('--project', join(cwd, 'tsconfig.json'));
       args.push('--noEmit');
+      args.push('--isolatedModules', 'false');
       break;
 
     case 'type-create':
       args.push('--outDir', join(cwd, 'build'));
-      args.push('--project', join(cfg, 'typescriptrc.build.json'));
+      args.push('--project', join(cwd, 'tsconfig.build.json'));
       args.push('--noEmit', 'false');
       args.push('--emitDeclarationOnly');
       break;
     default:
       throw new Error(`Mode is unknown: ${String(mode)}`);
-  }
-
-  if (vvv) {
-    await exec({ cmd, args: [...args, '--showConfig'], cwd, log });
   }
 
   log.info('Run TypeScript');

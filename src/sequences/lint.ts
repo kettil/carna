@@ -1,4 +1,3 @@
-import npmPackageLoad from '../actions/npm/packageLoad';
 import eslint from '../actions/tools/eslint';
 import prettier, { extensionCi } from '../actions/tools/prettier';
 import tsc from '../actions/tools/tsc';
@@ -20,8 +19,8 @@ const services = ['eslint', 'prettier', 'typescript'] as const;
 const options = { group: `${command}-Options` } as const;
 
 type Props = {
-  ci: boolean;
-  only: typeof services[number] | undefined;
+  readonly ci: boolean;
+  readonly only: typeof services[number] | undefined;
 };
 
 export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yargs) =>
@@ -33,8 +32,6 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 
 export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
-    const isPrivate = await npmPackageLoad(argv, { key: 'private' });
-
     if (argv.ci) {
       if (typeof argv.only === 'undefined' || argv.only === 'prettier') {
         await prettier(argv, { write: false, extension: extensionCi });
@@ -44,18 +41,15 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
         await eslint(argv, { write: false });
       }
 
-      if ((typeof argv.only === 'undefined' && isPrivate === true) || argv.only === 'typescript') {
-        await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Typescript');
+      if (typeof argv.only === 'undefined' || argv.only === 'typescript') {
+        await tsc(argv, { mode: 'type-check' });
       }
     } else {
       await logo();
 
       await spinnerAction(prettier(argv, { write: true }), 'Prettier');
       await spinnerAction(eslint(argv, { write: true }), 'Eslint');
-
-      if (isPrivate === true) {
-        await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Typescript');
-      }
+      await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Typescript');
     }
   } catch (error) {
     errorHandler(argv, error);

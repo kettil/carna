@@ -13,7 +13,7 @@ const configs = [
   'prettier.config.js',
 ];
 
-export const extensionCi = 'json,md,scss,yml,html';
+export const extensionCi = 'json,md,scss,yml,yaml,html';
 export const extensionAll = `ts,tsx,js,jsx,${extensionCi}`;
 
 type Props = {

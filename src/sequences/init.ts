@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { toCamelCase } from '@kettil/tool-lib';
 import gitAdd from '../actions/git/add';
 import gitCommit from '../actions/git/commit';
@@ -18,6 +19,7 @@ import {
   CommandModuleBuilder,
   errorHandler,
 } from '../lib/cli/yargs';
+import access from '../lib/cmd/access';
 import logo from '../lib/logo';
 
 type Props = {
@@ -28,37 +30,45 @@ type Props = {
   readonly noCommit: boolean;
 };
 
+type Options = {
+  files: string[];
+  folders: string[];
+  templates: Array<[string] | [string, string]>;
+  libraryProduction: string[];
+  libraryDevelopment: string[];
+  packageBin: Record<string, string>;
+  packageInit: Record<string, string | number | boolean | Record<string, string>>;
+  packageUpdate: Record<string, string | number | boolean | Record<string, string>>;
+  packageScripts: Record<string, string>;
+  packagePeerDependencies: string[];
+  github: {
+    name?: string;
+  };
+};
+
 export const command: CommandModuleCommand = 'init';
 export const desc: CommandModuleDescribe = 'Initializes the project';
 
-const options = { type: 'boolean', default: false, group: `${command}-Options:` } as const;
+const args = { type: 'boolean', default: false, group: `${command}-Options:` } as const;
 
 export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yargs) =>
   yargs.options({
-    package: { ...options, alias: 'p', desc: 'Project is created as a package' },
-    cli: { ...options, alias: 'c', implies: 'package', desc: 'Extends the package with CLI features' },
+    package: { ...args, alias: 'p', desc: 'Project is created as a package' },
+    cli: { ...args, alias: 'c', implies: 'package', desc: 'Extends the package with CLI features' },
     github: { type: 'string', implies: 'package', desc: 'Github username', group: `${command}-Options:` },
 
     // conflict with cli
-    // react: { ...options, alias: 'r', default: undefined, desc: 'React will be installed', },
+    // react: { ...args, alias: 'r', default: undefined, desc: 'React will be installed', },
 
-    noCommit: { ...options, desc: 'No initial commit is executed at the end' },
+    noCommit: { ...args, desc: 'No initial commit is executed at the end' },
   }),
 );
 
-export const handler: CommandModuleHandler<Props> = async (argv) => {
-  try {
-    await logo();
-
-    const githubUsername = argv.github?.trim();
-
-    if (githubUsername !== undefined && githubUsername === '') {
-      throw new Error('The github name is empty');
-    }
-
-    const files: string[] = [];
-    const folders: string[] = ['.vscode', 'src', 'src/lib', 'tests'];
-    const templates: Array<[string] | [string, string]> = [
+const getOptions = (argv: Props): Options => {
+  const options: Options = {
+    files: [],
+    folders: ['.vscode', 'src', 'src/lib', 'tests'],
+    templates: [
       ['vscode/settings.json', '.vscode/settings.json'],
       ['editorconfig', '.editorconfig'],
       ['huskyrc.json', '.huskyrc'],
@@ -66,145 +76,162 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       ['gitignore', '.gitignore'],
       ['npmignore', '.npmignore'],
       ['prettierignore', '.prettierignore'],
-    ];
+    ],
 
-    const libraryProduction: string[] = [];
-    const libraryDevelopment: string[] = ['husky', 'carna'];
+    libraryProduction: [],
+    libraryDevelopment: ['husky', 'carna'],
 
-    const packageBin: Record<string, string> = {};
-    const packageInit: Record<string, string | number | boolean | Record<string, string>> = {
+    packageBin: {},
+    packageInit: {
       private: true,
       version: '0.1.0',
       engines: { node: '>= 14', npm: '>=6' },
-    };
-    const packageUpdate: Record<string, string | number | boolean | Record<string, string>> = {};
-    const packageScripts: Record<string, string> = {
+      author: 'name <email>',
+    },
+    packageUpdate: {},
+    packageScripts: {
+      postinstall: 'husky install ./node_modules/carna/configs/husky',
       lint: 'npx carna lint',
-    };
-    const packagePeerDependencies: string[] = [];
+    },
+    packagePeerDependencies: [],
 
-    packageInit.author = 'name <email>';
+    github: {
+      name: argv.github?.trim(),
+    },
+  };
 
-    // ######################
-    // # Github             #
-    // ######################
+  if (typeof options.github.name === 'string' && options.github.name === '') {
+    throw new Error('The github name is empty');
+  }
 
-    if (githubUsername) {
-      folders.push('.dependabot', '.github/workflows');
+  // ######################
+  // # Github             #
+  // ######################
 
-      templates.push(['dependabot/config.yml', '.dependabot/config.yml']);
-      templates.push(['github/CODEOWNERS', '.github/CODEOWNERS']);
-      templates.push(['github/workflows/qa.yml', '.github/workflows/qa.yml']);
+  if (options.github.name) {
+    options.folders.push('.dependabot', '.github/workflows');
+
+    options.templates.push(['dependabot/config.yml', '.dependabot/config.yml']);
+    options.templates.push(['github/CODEOWNERS', '.github/CODEOWNERS']);
+    options.templates.push(['github/workflows/qa.yml', '.github/workflows/qa.yml']);
+  }
+
+  // ######################
+  // # Library            #
+  // ######################
+
+  if (argv.package) {
+    if (options.github.name) {
+      options.packageInit.repository = { type: 'git', url: `https://github.com/${options.github.name}/<repo>` };
+      options.packageInit.bugs = { url: `https://github.com/${options.github.name}/<repo>/issues/new` };
+
+      options.templates.push(['github/workflows/release.yml', '.github/workflows/release.yml']);
     }
 
-    // ######################
-    // # Library            #
-    // ######################
+    // Temporary until command release
+    options.templates.push(['releaserc.json', '.releaserc.json']);
+    // libraryDevelopment.push('@kettil/semantic-release-config');
 
-    if (argv.package) {
-      if (githubUsername) {
-        packageInit.repository = { type: 'git', url: `https://github.com/${githubUsername}/<repo>` };
-        packageInit.bugs = { url: `https://github.com/${githubUsername}/<repo>/issues/new` };
+    options.packageInit.publishConfig = { access: 'public' };
+  }
 
-        templates.push(['github/workflows/release.yml', '.github/workflows/release.yml']);
-      }
+  // ######################
+  // # CLI                #
+  // ######################
 
-      // @todo Temporary until command release
-      templates.push(['releaserc.json', '.releaserc.json']);
-      // libraryDevelopment.push('@kettil/semantic-release-config');
+  if (argv.cli) {
+    options.folders.push('src/bin');
+    options.templates.push(['src/bin/index.ts']);
+  }
 
-      packageInit.publishConfig = { access: 'public' };
-    }
+  // ######################
+  // # Babel/Webpack      #
+  // ######################
 
-    // ######################
-    // # CLI                #
-    // ######################
+  options.templates.push(['babel.config.js']);
+  options.templates.push(['webpack.config.js']);
 
-    if (argv.cli) {
-      folders.push('src/bin');
-      templates.push(['src/bin/index.ts']);
-    }
+  options.libraryDevelopment.push(
+    '@babel/cli',
+    '@babel/core',
+    '@babel/plugin-transform-runtime',
+    '@babel/preset-env',
+    '@babel/preset-typescript',
+    'babel-loader',
+    'webpack',
+    'webpack-cli',
+  );
 
-    // ######################
-    // # Babel/Webpack      #
-    // ######################
+  if (argv.package && !argv.cli) {
+    options.libraryDevelopment.push('@babel/runtime-corejs3');
+    options.packagePeerDependencies.push('@babel/runtime-corejs3');
+  } else {
+    options.libraryProduction.push('@babel/runtime-corejs3');
+  }
 
-    templates.push(['babel.config.js']);
-    templates.push(['webpack.config.js']);
+  // ######################
+  // # Typescript         #
+  // ######################
 
-    libraryDevelopment.push(
-      '@babel/cli',
-      '@babel/core',
-      '@babel/plugin-transform-runtime',
-      '@babel/preset-env',
-      '@babel/preset-typescript',
-      'babel-loader',
-      'webpack',
-      'webpack-cli',
-    );
+  options.files.push('src/index.ts', 'src/lib/types.ts');
 
-    if (argv.package && !argv.cli) {
-      libraryDevelopment.push('@babel/runtime-corejs3');
-      packagePeerDependencies.push('@babel/runtime-corejs3');
-    } else {
-      libraryProduction.push('@babel/runtime-corejs3');
-    }
+  options.templates.push(['typescriptrc.json', 'tsconfig.json']);
+  options.templates.push(['typescriptrc.build.json', 'tsconfig.build.json']);
 
-    // ######################
-    // # Typescript         #
-    // ######################
+  options.libraryDevelopment.push('@types/node', 'typescript');
 
-    files.push('src/index.ts', 'src/lib/types.ts');
+  options.packageUpdate.module = 'build/index.js';
+  options.packageUpdate.types = 'build/index.d.ts';
 
-    templates.push(['typescriptrc.json', 'tsconfig.json']);
+  // ######################
+  // # Build              #
+  // ######################
 
-    libraryDevelopment.push('@types/node', 'typescript');
+  options.packageScripts.build = 'npx carna build';
+  options.packageScripts.prebuild = 'rm -rf ./build';
 
-    packageUpdate.module = 'build/index.js';
-    packageUpdate.types = 'build/index.d.ts';
+  // ######################
+  // # React              #
+  // ######################
 
-    // ######################
-    // # Build              #
-    // ######################
-
-    packageScripts.build = 'npx carna build';
-    packageScripts.prebuild = 'rm -rf ./build';
-
-    // ######################
-    // # React              #
-    // ######################
-
-    /*
+  /*
   // PROD or DEV (with peerDependencies)
   "react"
   "react-dom"
 
   if (argv.package) {
-    packagePeerDependencies.push('@babel/preset-react', '@types/react', '@types/react-dom');
+    options.packagePeerDependencies.push('@babel/preset-react', '@types/react', '@types/react-dom');
   }
   */
 
-    // ######################
-    // # Jest               #
-    // ######################
+  // ######################
+  // # Jest               #
+  // ######################
 
-    templates.push(['jest.config.js'], ['jest.ci.js']);
+  options.templates.push(['jest.config.js'], ['jest.ci.js']);
 
-    libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
+  options.libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
 
-    files.push('src/index.test.ts');
+  options.files.push('src/index.test.ts');
 
-    packageScripts.test = 'jest --selectProjects unit';
-    packageScripts['test:integration'] = 'jest --selectProjects integration';
-    packageScripts['test:watch'] = 'npm run test -- --watch';
-    packageScripts['test:integration:watch'] = 'npm run test:integration -- --watch';
+  options.packageScripts.test = 'jest --selectProjects unit';
+  options.packageScripts['test:integration'] = 'jest --selectProjects integration';
+  options.packageScripts['test:watch'] = 'npm run test -- --watch';
+  options.packageScripts['test:integration:watch'] = 'npm run test:integration -- --watch';
 
-    // ######################
-    // # Actions            #
-    // ######################
+  return options;
+};
+
+export const handler: CommandModuleHandler<Props> = async (argv) => {
+  try {
+    await logo();
+
+    const hasGitFolder = await access(join(argv.cwd, '.git'));
+
+    const options = getOptions(argv);
 
     // NPM
-    await spinnerAction(npmInit(argv, { settings: { ...packageInit } }), 'Create the package.json');
+    await spinnerAction(npmInit(argv, { settings: options.packageInit }), 'Create the package.json');
 
     const packageName = await npmPackageLoad(argv, { key: 'name', throwError: true });
 
@@ -212,10 +239,10 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       throw new TypeError('Package name could not be read');
     }
 
-    packageUpdate.main = `build/${packageName}.js`;
+    options.packageUpdate.main = `build/${packageName}.js`;
 
     if (argv.cli) {
-      packageBin[packageName] = 'build/bin/index.js';
+      options.packageBin[packageName] = 'build/bin/index.js';
     }
 
     // GIT
@@ -223,18 +250,21 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
     // FOLDER
     await spinnerAction(
-      Promise.all(folders.map((folder) => nodeFolders(argv, { folder }))),
+      Promise.all(options.folders.map((folder) => nodeFolders(argv, { folder }))),
       'Create the project folders',
     );
 
     // FILES
-    await spinnerAction(Promise.all(files.map((file) => nodeFiles(argv, { file }))), 'Create the project files');
+    await spinnerAction(
+      Promise.all(options.files.map((file) => nodeFiles(argv, { file }))),
+      'Create the project files',
+    );
 
     // TEMPLATES
 
     /* eslint-disable @typescript-eslint/naming-convention */
     const variables: Record<string, TemplateVariable> = {
-      GITHUB_USERNAME: githubUsername,
+      GITHUB_USERNAME: options.github.name,
       PACKAGE_LIBRARY: toCamelCase(packageName),
       PACKAGE_FILENAME: packageName,
     };
@@ -250,30 +280,36 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
     /* eslint-enable @typescript-eslint/naming-convention */
 
     await spinnerAction(
-      Promise.all(templates.map(([source, target]) => nodeTemplate(argv, { source, target, variables }))),
+      Promise.all(options.templates.map(([source, target]) => nodeTemplate(argv, { source, target, variables }))),
       'Create template files',
     );
 
     // NPM INSTALL PROD
-    await spinnerAction(npmInstall(argv, { packages: libraryProduction, mode: 'prod' }), 'Install prod dependencies');
+    await spinnerAction(
+      npmInstall(argv, { packages: options.libraryProduction, mode: 'prod' }),
+      'Install prod dependencies',
+    );
 
     // NPM INSTALL DEV
-    await spinnerAction(npmInstall(argv, { packages: libraryDevelopment, mode: 'dev' }), 'Install dev dependencies');
+    await spinnerAction(
+      npmInstall(argv, { packages: options.libraryDevelopment, mode: 'dev' }),
+      'Install dev dependencies',
+    );
 
     // UPDATE PACKAGE.JSON
     await spinnerAction(
       npmPackage(argv, {
         settings: {
-          ...packageUpdate,
-          bin: packageBin,
-          scripts: packageScripts,
-          peerDependencies: packagePeerDependencies,
+          ...options.packageUpdate,
+          bin: options.packageBin,
+          scripts: options.packageScripts,
+          peerDependencies: options.packagePeerDependencies,
         },
       }),
       'Update the package.json',
     );
 
-    if (!argv.noCommit) {
+    if (!argv.noCommit && !hasGitFolder) {
       // GIT ADD
       await spinnerAction(gitAdd(argv, { files: ['.'] }), 'Add files to repository');
 

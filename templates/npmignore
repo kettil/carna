@@ -25,9 +25,12 @@ npm-debug.log
 /webpack*
 
 # test files
-**/*.test.d.js
-**/*.test.d.ts
-**/*.test.d.tsx
+**/*.test.js
+**/*.test.ts
+**/*.test.tsx
+**/*.test-d.js
+**/*.test-d.ts
+**/*.test-d.tsx
 
 # project folders/files
 /coverage
