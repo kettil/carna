@@ -4,6 +4,7 @@ import gitLs from '../../actions/git/ls';
 import gitStaged from '../../actions/git/staged';
 import eslint, { extensionAll as eslintExtensionAll } from '../../actions/tools/eslint';
 import prettier, { extensionAll as prettierExtensionAll } from '../../actions/tools/prettier';
+import tsc from '../../actions/tools/tsc';
 import existFiles from '../../lib/cmd/existFiles';
 import { Action } from '../../lib/types';
 
@@ -18,8 +19,8 @@ const commit: Action = async (argv) => {
   }
 
   const files = await existFiles(stagedFiles, argv.cwd);
-  const prettierFiles = files.filter((file) => testPrettier.test(file));
   const eslintFiles = files.filter((file) => testEslint.test(file));
+  const prettierFiles = files.filter((file) => testPrettier.test(file));
   const mergedFiles = uniqueArray([...prettierFiles, ...eslintFiles]);
 
   const unstagedFiles = await gitLs(argv, { mode: 'all' });
@@ -33,6 +34,7 @@ const commit: Action = async (argv) => {
 
   await prettier(argv, { write: true, files: prettierFiles });
   await eslint(argv, { write: true, files: eslintFiles });
+  await tsc(argv, { mode: 'type-check' });
 
   await gitAdd(argv, { files });
 };

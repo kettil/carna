@@ -21,6 +21,8 @@ const tsc: Action<Props> = async ({ cwd, log }, { mode }) => {
 
   switch (mode) {
     case 'type-check':
+      args.push('--outDir', join(cwd, 'build'));
+      args.push('--project', join(cwd, 'tsconfig.json'));
       args.push('--noEmit');
       args.push('--isolatedModules', 'false');
       break;
