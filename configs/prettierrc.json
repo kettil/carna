@@ -13,7 +13,7 @@
     { "files": "{*.json,.prettierrc,.huskyrc}", "options": { "parser": "json" } },
     { "files": "*.md", "options": { "parser": "markdown" } },
     { "files": "*.scss", "options": { "parser": "scss" } },
-    { "files": "*.yml", "options": { "parser": "yaml" } },
+    { "files": ["*.yml", "*.yaml"], "options": { "parser": "yaml" } },
     { "files": "*.html", "options": { "parser": "html" } }
   ]
 }
