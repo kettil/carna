@@ -19,7 +19,7 @@ export const desc: CommandModuleDescribe = 'Run the code quality tools';
 const options = { group: `${command}-Options` } as const;
 
 type Props = {
-  ci: boolean;
+  readonly ci: boolean;
 };
 
 export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yargs) =>

@@ -19,8 +19,8 @@ const services = ['eslint', 'prettier', 'typescript'] as const;
 const options = { group: `${command}-Options` } as const;
 
 type Props = {
-  ci: boolean;
-  only: typeof services[number] | undefined;
+  readonly ci: boolean;
+  readonly only: typeof services[number] | undefined;
 };
 
 export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yargs) =>
