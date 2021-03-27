@@ -42,6 +42,8 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
     } else {
       await logo();
 
+      argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
+
       if (isPrivate !== true) {
         await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Typescript');
       }

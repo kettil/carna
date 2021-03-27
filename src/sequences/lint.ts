@@ -47,6 +47,8 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
     } else {
       await logo();
 
+      argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
+
       await spinnerAction(prettier(argv, { write: true }), 'Prettier');
       await spinnerAction(eslint(argv, { write: true }), 'Eslint');
       await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Typescript');
