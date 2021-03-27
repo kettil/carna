@@ -45,6 +45,12 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
     argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
 
+    const hasPackage = await access(join(argv.cwd, 'package.json'));
+
+    if (hasPackage) {
+      throw new Error('The project is already initialized');
+    }
+
     const hasGitFolder = await access(join(argv.cwd, '.git'));
     const options = getSettings(argv);
 
