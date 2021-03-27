@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/kettil/carna/compare/2.0.0...2.0.1) (2021-03-27)
+
+
+### Bug Fixes
+
+* folder can be initialized only once ([778d2ee](https://github.com/kettil/carna/commit/778d2eeed7244934b641931c8e9a75b3b2badefe))
+
 # [2.0.0](https://github.com/kettil/carna/compare/1.4.22...2.0.0) (2021-03-27)
 
 
