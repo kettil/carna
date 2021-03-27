@@ -43,8 +43,9 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
     await logo();
 
-    const hasGitFolder = await access(join(argv.cwd, '.git'));
+    argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
 
+    const hasGitFolder = await access(join(argv.cwd, '.git'));
     const options = getSettings(argv);
 
     // NPM
