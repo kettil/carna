@@ -29,6 +29,12 @@ const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
   }
 
   if (files) {
+    if (files.length === 0) {
+      log.info('No files found for eslint');
+
+      return;
+    }
+
     args.push(...files);
   } else {
     args.push('--ext', `"${extensionAll}"`);

@@ -39,6 +39,12 @@ const prettier: Action<Props> = async ({ cwd, cfg, log }, { write, files, extens
   }
 
   if (files) {
+    if (files.length === 0) {
+      log.info('No files found for prettier');
+
+      return;
+    }
+
     args.push(...files);
   } else {
     args.push(`"./**/*.{${extension}}"`);
