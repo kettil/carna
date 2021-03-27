@@ -29,7 +29,6 @@ const getSettings = (argv: Props): Settings => {
     templates: [
       ['vscode/settings.json', '.vscode/settings.json'],
       ['editorconfig', '.editorconfig'],
-      ['huskyrc.json', '.huskyrc'],
       ['eslintignore', '.eslintignore'],
       ['gitignore', '.gitignore'],
       ['npmignore', '.npmignore'],

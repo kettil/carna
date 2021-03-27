@@ -10,7 +10,7 @@
   "arrowParens": "always",
   "overrides": [
     { "files": "{*.ts,*.tsx}", "options": { "parser": "typescript" } },
-    { "files": "{*.json,.prettierrc,.huskyrc}", "options": { "parser": "json" } },
+    { "files": "{*.json,.prettierrc}", "options": { "parser": "json" } },
     { "files": "*.md", "options": { "parser": "markdown" } },
     { "files": "*.scss", "options": { "parser": "scss" } },
     { "files": ["*.yml", "*.yaml"], "options": { "parser": "yaml" } },
