@@ -1,5 +1,40 @@
 # Changelog
 
+# [2.0.0](https://github.com/kettil/carna/compare/1.4.22...2.0.0) (2021-03-27)
+
+
+### Bug Fixes
+
+* remove old husky config files ([2553c54](https://github.com/kettil/carna/commit/2553c54d5e6bfd4bd537a75f7ec467574bf70488))
+* runs eslint/prettier only if files are present ([d9e0e31](https://github.com/kettil/carna/commit/d9e0e318a05fa3bdbe363bc6431bcb7172d761b5))
+* **actions:** replace "--list-different" with "--format codeframe" in the eslint action ([f5c16c6](https://github.com/kettil/carna/commit/f5c16c66cdc40d489d2181a7a83957e366abed62))
+* **deps:** bump @kettil/eslint-config from 1.9.10 to 1.14.2 ([5df6393](https://github.com/kettil/carna/commit/5df639357b1b10ad5a16fcbbfcd4240aaca29982))
+* **deps:** bump @types/yargs from 16.0.0 to 16.0.1 ([180a211](https://github.com/kettil/carna/commit/180a2119579a1aed72e69e111379f39a7aa324c0))
+* **deps:** bump eslint from 7.22.0 to 7.23.0 ([7713a8b](https://github.com/kettil/carna/commit/7713a8b1b85761d88675220b1895b6558a75bfc8))
+* change javascript destination version to 12 ([b0a04de](https://github.com/kettil/carna/commit/b0a04dee96cbd522da49f8f97b75b61a370da0c3))
+
+
+### Features
+
+* **actions:** Add --save-exact to "npm install". ([98384c0](https://github.com/kettil/carna/commit/98384c0078ced538a5b865ea8c7aff758bc9d4dc))
+* **actions:** remove tsc debug output ([a1ed5ea](https://github.com/kettil/carna/commit/a1ed5ea86dfe05e97629cf205219a1acc2a6a4d4))
+* **actions:** warnings are handled as errors in eslint ([0283e6f](https://github.com/kettil/carna/commit/0283e6f629900168565e2bd7c55f9d8702917a04))
+* **cli:** show "verbose" parameters in cli help menu ([5573812](https://github.com/kettil/carna/commit/5573812c9b82b90538747466f088184a7384e5cf))
+* **config:** add the yaml extension to the prettier configuration ([ae1beb4](https://github.com/kettil/carna/commit/ae1beb4c29a783cc5654a090735d60a01f511d12))
+* **config:** move the babel ignore parameters to the configuration file ([5a1ca4f](https://github.com/kettil/carna/commit/5a1ca4fa7c4952ab94c078e8bb22d73d78d8238b))
+* **sequences:** adds the hook "push" to the command "git" ([84772f3](https://github.com/kettil/carna/commit/84772f3d41e0a30f23ae241d7457413e5647a476)), closes [#244](https://github.com/kettil/carna/issues/244)
+* **sequences:** merging the "git:*" commands into one ([f542a03](https://github.com/kettil/carna/commit/f542a038c2dfa3a17670bae43d3311cb04383f9b)), closes [#249](https://github.com/kettil/carna/issues/249)
+* **sequences:** type check during the lint check ([a37c85a](https://github.com/kettil/carna/commit/a37c85aa598bf31e6e360bbb7f4f4cd2f125a20c))
+* update config files ([38b07fd](https://github.com/kettil/carna/commit/38b07fd7050b584488c88922f9a2983dee407ad2))
+* update the husky configuration ([7b9eacc](https://github.com/kettil/carna/commit/7b9eacce1fd0ea83671570c8c5ccc3e6ea1f0e73))
+* **sequences:** removes the switch in the lint process whether the ts types are correct. ([c7e7220](https://github.com/kettil/carna/commit/c7e72200f2bbc3732e2130ebeceafd4bb18dd8a2))
+
+
+### BREAKING CHANGES
+
+* **sequences:** By merging the "git:*" commands into one, the structure should be kept simple.
+* Change in handling with husky
+
 ## [1.4.22](https://github.com/kettil/carna/compare/1.4.21...1.4.22) (2021-03-22)
 
 
