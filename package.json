@@ -22,7 +22,7 @@
     "test:integration:watch": "npm run test:integration -- --watch",
     "lint": "node ./build/bin/index.js lint --vvv",
     "prelint": "npm run build:babel",
-    "postinstall": "husky install"
+    "postinstall": "[ \"$CI\" != \"\" ] || husky install"
   },
   "keywords": [],
   "author": "Kjell Dießel <development@kettil.de>",
