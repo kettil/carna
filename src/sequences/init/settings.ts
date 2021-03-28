@@ -47,7 +47,7 @@ const getSettings = (argv: Props): Settings => {
     },
     packageUpdate: {},
     packageScripts: {
-      postinstall: '[ "$CI" != "" ] || husky install ./node_modules/carna/configs/husky',
+      prepare: '[ "$CI" != "" ] || husky install ./node_modules/carna/configs/husky',
       lint: 'npx carna lint',
     },
     packagePeerDependencies: [],
