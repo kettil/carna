@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/kettil/carna/compare/2.0.1...2.0.2) (2021-03-28)
+
+
+### Bug Fixes
+
+* move "husky install" script from postinstall to prepare ([f1d9b90](https://github.com/kettil/carna/commit/f1d9b906cc5bc5aec993503c787b0c46869f5a9f))
+
 ## [2.0.1](https://github.com/kettil/carna/compare/2.0.0...2.0.1) (2021-03-27)
 
 
