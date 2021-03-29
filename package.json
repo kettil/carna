@@ -52,7 +52,7 @@
     "depcheck": "1.4.0",
     "eslint": "7.23.0",
     "figlet": "1.5.0",
-    "husky": "5.2.0",
+    "husky": "6.0.0",
     "ora": "5.4.0",
     "prettier": "2.2.1",
     "semantic-release": "17.4.2",
