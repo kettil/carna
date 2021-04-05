@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/kettil/carna/compare/2.0.2...2.0.3) (2021-04-05)
+
+
+### Bug Fixes
+
+* **deps:** bump husky from 5.2.0 to 6.0.0 ([1b96e39](https://github.com/kettil/carna/commit/1b96e39a411a78d016384627b989ff57168093f8))
+
 ## [2.0.2](https://github.com/kettil/carna/compare/2.0.1...2.0.2) (2021-03-28)
 
 
