@@ -15,6 +15,7 @@ import {
   errorHandler,
 } from '../lib/cli/yargs';
 import access from '../lib/cmd/access';
+import exec from '../lib/cmd/exec';
 import logo from '../lib/logo';
 import dependencieAction from './init/dependencie';
 import ioAction from './init/io';
@@ -87,6 +88,13 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       }),
       'Update the package.json',
     );
+
+    if (typeof options.packageScripts.prepare === 'string') {
+      await spinnerAction(
+        exec({ cmd: 'npm', args: ['run', 'prepare'], cwd: argv.cwd, log: argv.log }),
+        'Enable git hooks handling',
+      );
+    }
 
     if (!argv.noCommit && !hasGitFolder) {
       // GIT ADD
