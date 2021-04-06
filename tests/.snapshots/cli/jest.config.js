@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { projects, config } = require('carna/configs/jest.config.js');
 
 Object.assign(projects.unit, {

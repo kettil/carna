@@ -1,9 +1,11 @@
-import { join, relative } from 'path';
+import { join, relative, basename } from 'path';
 import exec from '../../lib/cmd/exec';
 import { existConfigFile } from '../../lib/helper';
 import { Action } from '../../lib/types';
 
 const configs = ['.eslintrc.js', '.eslintrc.cjs', '.eslintrc.yaml', '.eslintrc.yml', '.eslintrc.json', '.eslintrc'];
+
+const ignoreFiles = new Set(['babel.config.js', 'jest.config.js', 'webpack.config.js']);
 
 export const extensionAll = 'js,ts,tsx';
 
@@ -29,13 +31,15 @@ const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
   }
 
   if (files) {
-    if (files.length === 0) {
+    const filteredFiles = files.filter((file) => !ignoreFiles.has(basename(file)));
+
+    if (filteredFiles.length === 0) {
       log.info('No files found for eslint');
 
       return;
     }
 
-    args.push(...files);
+    args.push(...filteredFiles);
   } else {
     args.push('--ext', `"${extensionAll}"`);
     args.push('.');

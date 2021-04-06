@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { env } = require('carna/configs/babel.config.js');
 
 module.exports = {
