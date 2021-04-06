@@ -1,3 +1,4 @@
+import { join } from 'path';
 import eslint from '../actions/tools/eslint';
 import prettier, { extensionCi } from '../actions/tools/prettier';
 import tsc from '../actions/tools/tsc';
@@ -10,6 +11,7 @@ import {
   builderDefault,
   errorHandler,
 } from '../lib/cli/yargs';
+import access from '../lib/cmd/access';
 import logo from '../lib/logo';
 
 export const command: CommandModuleCommand = 'lint';
@@ -32,6 +34,8 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 
 export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
+    const hasTypescriptConfig = await access(join(argv.cwd, 'tsconfig.json'));
+
     if (argv.ci) {
       if (typeof argv.only === 'undefined' || argv.only === 'prettier') {
         await prettier(argv, { write: false, extension: extensionCi });
@@ -42,7 +46,11 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       }
 
       if (typeof argv.only === 'undefined' || argv.only === 'typescript') {
-        await tsc(argv, { mode: 'type-check' });
+        if (hasTypescriptConfig) {
+          await tsc(argv, { mode: 'type-check' });
+        } else {
+          argv.log.info('Typing check is skipped (tsconfig.json was not found) ');
+        }
       }
     } else {
       await logo();
@@ -51,7 +59,12 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
       await spinnerAction(prettier(argv, { write: true }), 'Prettier');
       await spinnerAction(eslint(argv, { write: true }), 'Eslint');
-      await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Typescript');
+
+      if (hasTypescriptConfig) {
+        await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Typescript');
+      } else {
+        argv.log.info('Typing check is skipped (tsconfig.json was not found) ');
+      }
     }
   } catch (error) {
     errorHandler(argv, error);
