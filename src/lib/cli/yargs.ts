@@ -1,3 +1,4 @@
+import { env } from '@kettil/tool-lib';
 import { CommandModule, Arguments, Argv } from 'yargs';
 import DependencyError from '../errors/dependencyError';
 import ExecutableError from '../errors/executableError';
@@ -12,6 +13,8 @@ export type CommandModuleBuilder<Props = Record<string, unknown>> = (
 ) => Argv<Props & PropsGlobal>;
 
 export type CommandModuleHandler<Props = Record<string, unknown>> = (args: Arguments<Props & PropsGlobal>) => void;
+
+export const ciDefaultValue = (): boolean => env('CI', '') !== '';
 
 export const builderDefault = <Props>(
   cmd: string,

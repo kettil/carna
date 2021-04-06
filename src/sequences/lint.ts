@@ -10,6 +10,7 @@ import {
   CommandModuleHandler,
   builderDefault,
   errorHandler,
+  ciDefaultValue,
 } from '../lib/cli/yargs';
 import access from '../lib/cmd/access';
 import logo from '../lib/logo';
@@ -27,7 +28,7 @@ type Props = {
 
 export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yargs) =>
   yargs.options({
-    ci: { ...options, type: 'boolean', default: false, describe: 'Run it in CI mode' },
+    ci: { ...options, type: 'boolean', default: ciDefaultValue(), describe: 'Run it in CI mode' },
     only: { ...options, choices: services, implies: 'ci', describe: 'Run a single code quality tool' },
   }),
 );

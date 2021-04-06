@@ -64,7 +64,7 @@ Run the code quality tools
 
 | Options | Description                                      |
 | ------- | ------------------------------------------------ |
-| --ci    | Run it in CI mode                                |
+| --ci    | Run it in CI mode (can also be passed as ENV)    |
 | --only  | Run a single code quality tool (required `--ci`) |
 |         | Choices: eslint, prettier, typescript            |
 
@@ -81,9 +81,9 @@ Checks if there are orphaned packages
 
 ### Options
 
-| Options | Description       |
-| ------- | ----------------- |
-| --ci    | Run it in CI mode |
+| Options | Description                                   |
+| ------- | --------------------------------------------- |
+| --ci    | Run it in CI mode (can also be passed as ENV) |
 
 ### Exit codes
 
@@ -98,9 +98,9 @@ Build the application
 
 ### Options
 
-| Options | Description       |
-| ------- | ----------------- |
-| --ci    | Run it in CI mode |
+| Options | Description                                   |
+| ------- | --------------------------------------------- |
+| --ci    | Run it in CI mode (can also be passed as ENV) |
 
 ### Exit codes
 
