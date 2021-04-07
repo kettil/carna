@@ -2,6 +2,7 @@ import { env } from '@kettil/tool-lib';
 import { CommandModule, Arguments, Argv } from 'yargs';
 import DependencyError from '../errors/dependencyError';
 import ExecutableError from '../errors/executableError';
+import logo from '../logo';
 import { PropsGlobal } from '../types';
 
 export type CommandModuleCommand = string;
@@ -12,7 +13,7 @@ export type CommandModuleBuilder<Props = Record<string, unknown>> = (
   yargs: Argv<PropsGlobal>,
 ) => Argv<Props & PropsGlobal>;
 
-export type CommandModuleHandler<Props = Record<string, unknown>> = (args: Arguments<Props & PropsGlobal>) => void;
+export type CommandModuleHandler<Props = Record<string, unknown>> = (argv: Arguments<Props & PropsGlobal>) => void;
 
 export const ciDefaultValue = (): boolean => env('CI', '') !== '';
 
@@ -22,6 +23,14 @@ export const builderDefault = <Props>(
 ): CommandModuleBuilder<Props> => (yargs) =>
   callback(yargs).usage(`Usage: $0 ${cmd} [options]`).help().version(false)
     .showHelpOnFail(false);
+
+export const commonHandler = async (argv: Arguments<PropsGlobal>, showLogo: boolean): Promise<void> => {
+  if (showLogo) {
+    await logo();
+  }
+
+  argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
+};
 
 export const errorHandler = (argv: PropsGlobal, error: unknown): void => {
   if (error instanceof ExecutableError) {

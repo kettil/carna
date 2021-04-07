@@ -13,10 +13,10 @@ import {
   builderDefault,
   CommandModuleBuilder,
   errorHandler,
+  commonHandler,
 } from '../lib/cli/yargs';
 import access from '../lib/cmd/access';
 import exec from '../lib/cmd/exec';
-import logo from '../lib/logo';
 import dependencieAction from './init/dependencie';
 import ioAction from './init/io';
 import getSettings, { Props } from './init/settings';
@@ -42,9 +42,7 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 
 export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
-    await logo();
-
-    argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
+    await commonHandler(argv, true);
 
     const hasPackage = await access(join(argv.cwd, 'package.json'));
 

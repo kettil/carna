@@ -5,6 +5,7 @@ import {
   CommandModuleHandler,
   builderDefault,
   errorHandler,
+  commonHandler,
 } from '../lib/cli/yargs';
 import commit from './git/commit';
 import msg, { Props as MessageProps } from './git/msg';
@@ -30,6 +31,8 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
     const { edit, hook } = argv;
+
+    await commonHandler(argv, false);
 
     switch (hook) {
       case 'commit':
