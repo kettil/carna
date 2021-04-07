@@ -62,11 +62,11 @@ Run the code quality tools
 
 ### Options
 
-| Options | Description                                      |
-| ------- | ------------------------------------------------ |
-| --ci    | Run it in CI mode (can also be passed as ENV)    |
-| --only  | Run a single code quality tool (required `--ci`) |
-|         | Choices: eslint, prettier, typescript            |
+| Options | Description                                   |
+| ------- | --------------------------------------------- |
+| --ci    | Run it in CI mode (can also be passed as ENV) |
+| --only  | Run a single code quality tool                |
+|         | Choices: eslint, prettier, typescript         |
 
 ### Exit codes
 

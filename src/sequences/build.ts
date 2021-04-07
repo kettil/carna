@@ -11,8 +11,8 @@ import {
   builderDefault,
   errorHandler,
   ciDefaultValue,
+  commonHandler,
 } from '../lib/cli/yargs';
-import logo from '../lib/logo';
 
 export const command: CommandModuleCommand = 'build';
 export const desc: CommandModuleDescribe = 'Run the code quality tools';
@@ -31,27 +31,16 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 
 export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
+    await commonHandler(argv, !argv.ci);
+
     const isPrivate = await npmPackageLoad(argv, { key: 'private' });
 
-    if (argv.ci) {
-      if (isPrivate !== true) {
-        await tsc(argv, { mode: 'type-create' });
-      }
-
-      await babel(argv);
-      await webpack(argv);
-    } else {
-      await logo();
-
-      argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
-
-      if (isPrivate !== true) {
-        await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Typescript');
-      }
-
-      await spinnerAction(babel(argv), 'Babel');
-      await spinnerAction(webpack(argv), 'Webpack');
+    if (isPrivate !== true) {
+      await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Typescript');
     }
+
+    await spinnerAction(babel(argv), 'Babel');
+    await spinnerAction(webpack(argv), 'Webpack');
   } catch (error) {
     errorHandler(argv, error);
   }
