@@ -66,7 +66,7 @@ Run the code quality tools
 | ------- | --------------------------------------------- |
 | --ci    | Run it in CI mode (can also be passed as ENV) |
 | --only  | Run a single code quality tool                |
-|         | Choices: eslint, prettier, typescript         |
+|         | Choices: `eslint`, `prettier`, `typescript`   |
 
 ### Exit codes
 
