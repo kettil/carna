@@ -21,7 +21,9 @@
     "test:integration": "jest --selectProjects integration",
     "test:integration:watch": "npm run test:integration -- --watch",
     "lint": "node ./build/bin/index.js lint --vvv",
+    "deps": "node ./build/bin/index.js debs --vvv",
     "prelint": "npm run build:babel",
+    "predeps": "npm run build:babel",
     "prepare": "[ \"$CI\" != \"\" ] || husky install"
   },
   "keywords": [],

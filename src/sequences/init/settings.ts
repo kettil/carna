@@ -49,6 +49,7 @@ const getSettings = (argv: Props): Settings => {
     packageScripts: {
       prepare: '[ "$CI" != "" ] || husky install ./node_modules/carna/configs/husky',
       lint: 'npx carna lint',
+      debs: 'npx carna debs',
     },
     packagePeerDependencies: [],
 

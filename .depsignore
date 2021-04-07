@@ -1,0 +1,15 @@
+@kettil/commitlint-config
+@kettil/semantic-release-config
+commitlint
+eslint
+husky
+prettier
+semantic-release
+
+# dev
+@babel/cli
+babel-jest
+babel-loader
+
+# self
+carna

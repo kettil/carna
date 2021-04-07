@@ -79,6 +79,8 @@ Run the code quality tools
 
 Checks if there are orphaned packages
 
+Packages that are no longer to be listed can be defined in the `.depsignore` file (in the project directory), directly or with a wildcard (e.g. `babel-*`).
+
 ### Options
 
 | Options | Description                                   |
@@ -90,7 +92,6 @@ Checks if there are orphaned packages
 | Exit code | Description |
 | --------- | ----------- |
 | 0         | Success     |
-| 1         | task failed |
 
 ## The `build` task
 

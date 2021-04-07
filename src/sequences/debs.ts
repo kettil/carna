@@ -8,8 +8,8 @@ import {
   builderDefault,
   errorHandler,
   ciDefaultValue,
+  commonHandler,
 } from '../lib/cli/yargs';
-import logo from '../lib/logo';
 
 export const command: CommandModuleCommand = 'debs';
 export const desc: CommandModuleDescribe = 'Run the dependency check';
@@ -28,13 +28,9 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
 
 export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
-    if (argv.ci) {
-      await depcheck(argv);
-    } else {
-      await logo();
+    await commonHandler(argv, !argv.ci);
 
-      await spinnerAction(depcheck(argv), 'DepCheck');
-    }
+    await spinnerAction(depcheck(argv), 'Depcheck');
   } catch (error) {
     errorHandler(argv, error);
   }

@@ -1,59 +1,59 @@
-import { red } from 'chalk';
+import { join } from 'path';
+import { blue, red, yellow } from 'chalk';
 import dependenciesCheck, { Options, parser, detector, special } from 'depcheck';
+import access from '../../lib/cmd/access';
+import readFile from '../../lib/cmd/readFile';
 import DependencyError from '../../lib/errors/dependencyError';
 import { Action } from '../../lib/types';
+
+const ignorePackage = ['typescript'] as const;
 
 const options: Options = {
   ignoreDirs: ['node_modules'],
   parsers: {
-    '*.js': parser.es6,
-    '*.jsx': parser.jsx,
-    '*.ts': parser.typescript,
-    '*.tsx': parser.typescript,
+    '**/*.js': parser.es6,
+    '**/*.jsx': parser.jsx,
+    '**/*.ts': parser.typescript,
+    '**/*.tsx': parser.typescript,
   },
   detectors: [detector.requireCallExpression, detector.importDeclaration],
   specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky, special.webpack],
 };
 
+const getIgnoreMatches = async (cwd: string): Promise<string[]> => {
+  const file = join(cwd, '.depsignore');
+  const isReadable = await access(file, 'readable');
+
+  if (!isReadable) {
+    return [...ignorePackage];
+  }
+
+  const data = await readFile(file);
+
+  return [
+    ...ignorePackage,
+    ...data
+      .trim()
+      .split('\n')
+      .filter((v) => !v.trim().startsWith('#') && v.trim() !== ''),
+  ];
+};
+
 const depcheck: Action = async ({ cwd }) => {
-  const { dependencies, devDependencies, invalidDirs, invalidFiles } = await dependenciesCheck(cwd, options);
+  const result = await dependenciesCheck(cwd, { ...options, ignoreMatches: await getIgnoreMatches(cwd) });
+  const groups = [
+    { title: red('The dependencies are not used'), dependencies: result.dependencies },
+    { title: yellow('The dev-dependencies are not used'), dependencies: result.devDependencies },
+    { title: blue('The dependencies is missing'), dependencies: Object.keys(result.missing) },
+  ];
 
-  const msg: string[] = [];
+  const output = groups
+    .filter(({ dependencies }) => dependencies.length > 0)
+    .map(({ title, dependencies }) => [`▸ ${title}`, ...dependencies.sort().map((v) => `  ∙ ${v}`), ''])
+    .flat();
 
-  if (Object.keys(invalidDirs).length > 0) {
-    msg.push(red('No access to the folders:'));
-
-    Object.keys(invalidDirs)
-      .sort()
-      .forEach((file) => {
-        msg.push(`- ${file}`);
-      });
-
-    msg.push('');
-  }
-
-  if (Object.keys(invalidFiles).length > 0) {
-    msg.push(red('No access or syntax error in the files:'));
-
-    Object.keys(invalidFiles)
-      .sort()
-      .forEach((file) => {
-        msg.push(`- ${file}`);
-      });
-
-    msg.push('');
-  }
-
-  if (dependencies.length > 0 || devDependencies.length > 0) {
-    msg.push(red('The dependencies are not used:'));
-
-    [...dependencies, ...devDependencies].sort().forEach((file) => {
-      msg.push(`- ${file}`);
-    });
-  }
-
-  if (msg.length > 0) {
-    throw new DependencyError('Depcheck error', msg);
+  if (output.length > 0) {
+    throw new DependencyError('Depcheck error', output);
   }
 };
 

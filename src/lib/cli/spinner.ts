@@ -1,5 +1,6 @@
 import { dummy } from '@kettil/tool-lib';
 import ora from 'ora';
+import DependencyError from '../errors/dependencyError';
 
 type StopTypes = 'fail' | 'info' | 'stop' | 'succeed' | 'warn';
 
@@ -27,7 +28,11 @@ const succeed = <T>(p: T) => {
 };
 
 const fail = (error: unknown) => {
-  stop('fail');
+  if (error instanceof DependencyError) {
+    stop('warn');
+  } else {
+    stop('fail');
+  }
 
   throw error;
 };

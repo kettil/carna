@@ -44,8 +44,7 @@ export const errorHandler = (argv: PropsGlobal, error: unknown): void => {
   if (error instanceof DependencyError) {
     argv.log.log(error.list);
 
-    /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
-    process.exit(1);
+    return;
   }
 
   throw error;
