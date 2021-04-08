@@ -30,7 +30,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
   try {
     await commonHandler(argv, !argv.ci);
 
-    await spinnerAction(depcheck(argv), 'Depcheck');
+    await spinnerAction(depcheck(argv), 'Dependency verification');
   } catch (error) {
     errorHandler(argv, error);
   }
