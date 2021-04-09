@@ -32,7 +32,7 @@ export const commonHandler = async (argv: Arguments<PropsGlobal>, showLogo: bool
   argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
 };
 
-export const errorHandler = (argv: PropsGlobal, error: unknown): void => {
+export const errorHandler = (argv: PropsGlobal, error: unknown, onlyExit?: boolean): void => {
   if (error instanceof ExecutableError) {
     argv.log.log(error.stdout);
     argv.log.log(error.stderr);
@@ -45,6 +45,11 @@ export const errorHandler = (argv: PropsGlobal, error: unknown): void => {
     argv.log.log(error.list);
 
     return;
+  }
+
+  if (onlyExit) {
+    /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
+    process.exit(1);
   }
 
   throw error;

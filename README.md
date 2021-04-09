@@ -27,13 +27,14 @@ npx carna
 
 The following commands are available:
 
-| Commands                   | Description                           |
-| -------------------------- | ------------------------------------- |
-| [`init`](#the-init-task)   | Initializes the project               |
-| [`lint`](#the-lint-task)   | Run the code quality tools            |
-| [`debs`](#the-debs-task)   | Checks if there are orphaned packages |
-| [`build`](#the-build-task) | Build the application                 |
-| [`git`](#the-git-tasks)    | Handler for the git hooks             |
+| Commands                       | Description                           |
+| ------------------------------ | ------------------------------------- |
+| [`init`](#the-init-task)       | Initializes the project               |
+| [`lint`](#the-lint-task)       | Run the code quality tools            |
+| [`debs`](#the-debs-task)       | Checks if there are orphaned packages |
+| [`license`](#the-license-task) | Checks for incompatible licenses      |
+| [`build`](#the-build-task)     | Build the application                 |
+| [`git`](#the-git-tasks)        | Handler for the git hooks             |
 
 For the help text, execute `npx carna --help` and the individual commands `npx carna <command> --help`.
 
@@ -92,6 +93,29 @@ Packages that are no longer to be listed can be defined in the `.depsignore` fil
 | Exit code | Description |
 | --------- | ----------- |
 | 0         | Success     |
+
+## The `license` task
+
+Carna checks the license compatibility of each dependency. The license is read from the `package.json` or from [another source](./src/lib/actions/tools/helpers/getPackageInfo.ts) from the dependency. The [compatibility list](./src/configs/licenseCompatibilities.ts) is used to validate the license for compatibility.
+
+If you think that an assignment is incorrect or can be added, please submit a pull request with the change in the [compatibility list](./src/configs/licenseCompatibilities.ts) or [license list](./src/configs/licensePackages.ts).
+
+If the project uses an unknown license, the compatibility check will be disabled.
+
+**_Note: License compatibility checking is only a suggestion and it is not legal advice. If you would like to have a legally binding assessment, please contact a lawyer._**
+
+### Options
+
+| Options | Description                                   |
+| ------- | --------------------------------------------- |
+| --ci    | Run it in CI mode (can also be passed as ENV) |
+
+### Exit codes
+
+| Exit code | Description |
+| --------- | ----------- |
+| 0         | Success     |
+| 1         | task failed |
 
 ## The `build` task
 
