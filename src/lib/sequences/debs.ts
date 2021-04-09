@@ -10,6 +10,7 @@ import {
   ciDefaultValue,
   commonHandler,
 } from '../cli/yargs';
+import DependencyError from '../errors/dependencyError';
 
 export const command: CommandModuleCommand = 'debs';
 export const desc: CommandModuleDescribe = 'Run the dependency check';
@@ -32,6 +33,12 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
     await spinnerAction(depcheck(argv), 'Dependency verification');
   } catch (error) {
+    if (error instanceof DependencyError) {
+      argv.log.log(error.list);
+
+      return;
+    }
+
     errorHandler(argv, error);
   }
 };

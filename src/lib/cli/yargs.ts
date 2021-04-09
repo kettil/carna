@@ -1,6 +1,5 @@
 import { env } from '@kettil/tool-lib';
 import { CommandModule, Arguments, Argv } from 'yargs';
-import DependencyError from '../errors/dependencyError';
 import ExecutableError from '../errors/executableError';
 import logo from '../logo';
 import { PropsGlobal } from '../types';
@@ -39,12 +38,6 @@ export const errorHandler = (argv: PropsGlobal, error: unknown, onlyExit?: boole
 
     /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
     process.exit(1);
-  }
-
-  if (error instanceof DependencyError) {
-    argv.log.log(error.list);
-
-    return;
   }
 
   if (onlyExit) {
