@@ -1,6 +1,10 @@
 {
   "extends": "@kettil",
 
+  "rules": {
+    "unicorn/no-array-push-push": ["off"]
+  },
+
   "overrides": [
     {
       "files": ["src/lib/commands/*.ts"],
