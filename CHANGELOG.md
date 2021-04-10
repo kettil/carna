@@ -1,5 +1,31 @@
 # Changelog
 
+# [2.1.0](https://github.com/kettil/carna/compare/2.0.3...2.1.0) (2021-04-10)
+
+
+### Bug Fixes
+
+* **actions:** add an ignore file list for the direct eslint call ([22da0e0](https://github.com/kettil/carna/commit/22da0e0300db48c7473f496c04e947cce979b196))
+* **deps:** bump @kettil/eslint-config from 1.14.2 to 1.16.1 ([830b292](https://github.com/kettil/carna/commit/830b2925619474f8d35e306019b90d3f071c0467))
+* **deps:** bump @types/figlet from 1.2.1 to 1.5.0 ([719a6cb](https://github.com/kettil/carna/commit/719a6cbe3355fee2ed3e03999c570efab0205b7b))
+* **deps:** bump commitlint from 12.0.1 to 12.1.1 ([5e35368](https://github.com/kettil/carna/commit/5e353688c715ab5405ef237c56c4fb7a701b7374))
+* **deps:** bump eslint from 7.23.0 to 7.24.0 ([d993e54](https://github.com/kettil/carna/commit/d993e54149d04edd4e7ad2daaa602775a65a577c))
+* **sequences:** change the spinner text from debcheck ([4672622](https://github.com/kettil/carna/commit/4672622f2be25cb1ac886780333320b56ff57885))
+* **sequences:** disables type checking for JS only projects ([be4fa9e](https://github.com/kettil/carna/commit/be4fa9ecc3f05176ccfdb51e0ebe5f82f54452eb))
+* **templates:** change in file .npmignore from ".huskyrc" to ".husky" ([2642fa3](https://github.com/kettil/carna/commit/2642fa365ae3473e6c7d3d38f8040e44c2922477))
+* **templates:** remove unused tsc options ([7a38d6e](https://github.com/kettil/carna/commit/7a38d6e1dace3186c15d04a46e0f97ccebbdcd5a))
+* add an "eslint-disable" comment to the templates ([85f7cdd](https://github.com/kettil/carna/commit/85f7cdd2074753de1154a6e1d642f79afb070bff))
+* switch from "postinstall" to "prepare" ([fa508e2](https://github.com/kettil/carna/commit/fa508e28939b0b93157d7c3fe00df86ca3e4d2ec))
+
+
+### Features
+
+* add license command ([fa4c480](https://github.com/kettil/carna/commit/fa4c480650ce7e17fc7ecce4d369855bb00b3955)), closes [#251](https://github.com/kettil/carna/issues/251)
+* integrate .depsignore into .carnarc.json ([dd2a7cd](https://github.com/kettil/carna/commit/dd2a7cd4c82d281aa1ecc796067f4575d8a04f9a))
+* **sequences:** activate "husky" when initializing a project ([3b0c8d3](https://github.com/kettil/carna/commit/3b0c8d30ed40984e912cdb8250cca334eec0e601))
+* **sequences:** ci mode can also be activated via env ([bbafbab](https://github.com/kettil/carna/commit/bbafbaba3d48f0817871c470c4cd06c3f3177042))
+* **sequences:** optimization of the package checking ([0fce58e](https://github.com/kettil/carna/commit/0fce58e19ea6888ad5b931bc8c65f95c6556f065))
+
 ## [2.0.3](https://github.com/kettil/carna/compare/2.0.2...2.0.3) (2021-04-05)
 
 
