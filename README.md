@@ -44,11 +44,12 @@ Creates a new project with all config files in the current folder.
 
 ### Options
 
-| Options    | short | Description                                                  |
-| ---------- | ----- | ------------------------------------------------------------ |
-| --package  | -p    | Project is created as a package                              |
-| --cli      | -c    | Extends the package with CLI features (required `--package`) |
-| --noCommit |       | No initial commit is executed at the end                     |
+| Options    | short | Description                                                                              |
+| ---------- | ----- | ---------------------------------------------------------------------------------------- |
+| --package  | -p    | Project is created as a package                                                          |
+| --cli      | -c    | Extends the package with CLI features (required `--package`)                             |
+| --github   |       | Expects the Github username and then adds the repository data and CI configuration file. |
+| --noCommit |       | No initial commit is executed at the end                                                 |
 
 ### Exit codes
 
