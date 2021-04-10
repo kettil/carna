@@ -1,5 +1,18 @@
 # Changelog
 
+# [2.2.0](https://github.com/kettil/carna/compare/2.1.0...2.2.0) (2021-04-10)
+
+
+### Bug Fixes
+
+* add test files to the babel ignore list ([94e91fa](https://github.com/kettil/carna/commit/94e91fa4bf024a1f6c18a37787d2dd701de93494))
+
+
+### Features
+
+* removes the depency for the "--github" parameter ([ba687a7](https://github.com/kettil/carna/commit/ba687a7b4a701c5f1811f1b63a16e538c4ff7ffc))
+* update in the job-matrix the node and os values ([ba92fd8](https://github.com/kettil/carna/commit/ba92fd8c51c4be4c9717a95a07db84f1d64460ec))
+
 # [2.1.0](https://github.com/kettil/carna/compare/2.0.3...2.1.0) (2021-04-10)
 
 
