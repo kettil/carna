@@ -1,8 +1,7 @@
-import { join } from 'path';
+import { isArray } from '@kettil/tool-lib';
 import { blue, red, yellow } from 'chalk';
 import dependenciesCheck, { Options, parser, detector, special } from 'depcheck';
-import access from '../../cmd/access';
-import readFile from '../../cmd/readFile';
+import getConfig from '../../cli/config';
 import DependencyError from '../../errors/dependencyError';
 import { Action } from '../../types';
 
@@ -20,27 +19,13 @@ const options: Options = {
   specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky, special.webpack],
 };
 
-const getIgnoreMatches = async (cwd: string): Promise<string[]> => {
-  const file = join(cwd, '.depsignore');
-  const isReadable = await access(file, 'readable');
-
-  if (!isReadable) {
-    return [...ignorePackage];
-  }
-
-  const data = await readFile(file);
-
-  return [
-    ...ignorePackage,
-    ...data
-      .trim()
-      .split('\n')
-      .filter((v) => !v.trim().startsWith('#') && v.trim() !== ''),
-  ];
-};
-
 const depcheck: Action = async ({ cwd }) => {
-  const result = await dependenciesCheck(cwd, { ...options, ignoreMatches: await getIgnoreMatches(cwd) });
+  const configIgnoreMatches = await getConfig(cwd, 'debs.ignore.packages');
+  const ignoreMatches = isArray(configIgnoreMatches)
+    ? configIgnoreMatches.filter((v): v is string => typeof v === 'string')
+    : [];
+
+  const result = await dependenciesCheck(cwd, { ...options, ignoreMatches: [...ignoreMatches, ...ignorePackage] });
   const groups = [
     { title: red('The dependencies are not used'), dependencies: result.dependencies },
     { title: yellow('The dev-dependencies are not used'), dependencies: result.devDependencies },
