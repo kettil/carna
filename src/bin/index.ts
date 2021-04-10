@@ -23,7 +23,7 @@ yargs
   .option('tpl', { default: tpl, type: 'string', hidden: true })
   .option('cfg', { default: cfg, type: 'string', hidden: true })
   .middleware((argv) => ({ log: logger(argv) }))
-  .commandDir('../sequences')
+  .commandDir('../lib/commands')
   .demandCommand(1, 1)
   .usage('Usage: $0 <command> [options]')
   .epilogue(epilogue.join('\n'))

@@ -1,4 +1,5 @@
-const { output, ...config } = require('./node_modules/carna/configs/webpack.config.js')(__dirname);
+/* eslint-disable import/no-extraneous-dependencies */
+const { output, ...config } = require('carna/configs/webpack.config.js')(__dirname);
 
 module.exports = Object.assign(config, {
   output: Object.assign(output, {

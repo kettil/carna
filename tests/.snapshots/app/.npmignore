@@ -16,7 +16,7 @@ npm-debug.log
 /.editorconfig
 /.eslint*
 /.git*
-/.huskyrc
+/.husky
 /.prettier*
 /.releaserc.json
 /babel*

@@ -1,0 +1,26 @@
+{
+  "debs": {
+    "ignore": {
+      "packages": [
+        "@kettil/commitlint-config",
+        "@kettil/semantic-release-config",
+        "commitlint",
+        "eslint",
+        "husky",
+        "prettier",
+        "semantic-release",
+
+        "@babel/cli",
+        "babel-jest",
+        "babel-loader",
+
+        "carna"
+      ]
+    }
+  },
+  "license": {
+    "ignore": {
+      "packages": []
+    }
+  }
+}

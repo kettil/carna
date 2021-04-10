@@ -3,8 +3,5 @@
   "include": ["./src/**/*", "./tests/**/*"],
   "exclude": ["node_modules", "build"],
 
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {}
-  }
+  "compilerOptions": {}
 }

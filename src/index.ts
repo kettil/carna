@@ -1,20 +1,20 @@
-import gitAdd from './actions/git/add';
-import gitCommit from './actions/git/commit';
-import gitInit from './actions/git/init';
-import gitStaged from './actions/git/staged';
-import nodeFile from './actions/node/file';
-import nodeFolder from './actions/node/folder';
-import nodeTemplate from './actions/node/template';
-import npmInit from './actions/npm/init';
-import npmInstall from './actions/npm/install';
-import commitlint from './actions/tools/commitlint';
-import eslint from './actions/tools/eslint';
-import prettier from './actions/tools/prettier';
+import gitAdd from './lib/actions/git/add';
+import gitCommit from './lib/actions/git/commit';
+import gitInit from './lib/actions/git/init';
+import gitStaged from './lib/actions/git/staged';
+import nodeFile from './lib/actions/node/file';
+import nodeFolder from './lib/actions/node/folder';
+import nodeTemplate from './lib/actions/node/template';
+import npmInit from './lib/actions/npm/init';
+import npmInstall from './lib/actions/npm/install';
+import commitlint from './lib/actions/tools/commitlint';
+import eslint from './lib/actions/tools/eslint';
+import prettier from './lib/actions/tools/prettier';
 
-export { handler as build } from './sequences/build';
-export { handler as git } from './sequences/git';
-export { handler as init } from './sequences/init';
-export { handler as lint } from './sequences/lint';
+export { handler as build } from './lib/commands/build';
+export { handler as git } from './lib/commands/git';
+export { handler as init } from './lib/commands/init';
+export { handler as lint } from './lib/commands/lint';
 
 export const actions = {
   gitAdd,

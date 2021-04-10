@@ -1,9 +1,13 @@
 {
   "extends": "@kettil",
 
+  "rules": {
+    "unicorn/no-array-push-push": ["off"]
+  },
+
   "overrides": [
     {
-      "files": ["src/sequences/**/*"],
+      "files": ["src/lib/commands/*.ts"],
       "rules": { "import/no-unused-modules": ["off"] }
     },
     {

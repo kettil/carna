@@ -16,3 +16,13 @@ export type Action<
 > = Props extends undefined
   ? (argv: PropsGlobal) => Promise<ActionReturn>
   : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
+
+export type LicenseCompatibilities = Record<string, string[]>;
+export type LicenseHeuristics = Record<string, RegExp>;
+export type LicensePackages = Record<string, Record<string, string>>;
+export type LicensePackageInfo = {
+  path: string;
+  name: string;
+  license: string | 'UNKNOWN';
+  version: string | 'UNKNOWN';
+};
