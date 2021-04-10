@@ -12,7 +12,7 @@ snapshot () {(
 
   # init package
   cd ${1}
-  node ../../../build/bin/index.js init --vvv --noCommit $2
+  node ../../../build/bin/index.js init --vvv --github github-username --noCommit $2
 
   # remove git folde3r
   rm -rf .git

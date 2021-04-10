@@ -1,8 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const { env } = require('carna/configs/babel.config.js');
+const { env, ignore } = require('carna/configs/babel.config.js');
 
 module.exports = {
   extends: './node_modules/carna/configs/babel.config.js',
+  ignore,
   env,
   presets: [
     ['@babel/env', { modules: 'commonjs', targets: 'defaults' }],

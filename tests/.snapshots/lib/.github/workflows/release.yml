@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run prettier
+        run: npm run prettier:ci
+
+      - name: Run eslint
+        run: npm run lint:ci
+
+      - name: Run test
+        run: npm run test:ci
+
+      - name: Run typescript
+        run: npm run build
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.CI_NPM_TOKEN }}
+        run: npx semantic-release

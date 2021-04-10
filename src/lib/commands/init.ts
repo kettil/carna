@@ -31,7 +31,7 @@ export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yar
   yargs.options({
     package: { ...args, alias: 'p', desc: 'Project is created as a package' },
     cli: { ...args, alias: 'c', implies: 'package', desc: 'Extends the package with CLI features' },
-    github: { type: 'string', implies: 'package', desc: 'Github username', group: `${command}-Options:` },
+    github: { type: 'string', desc: 'Github username', group: `${command}-Options:` },
 
     // conflict with cli
     // react: { ...args, alias: 'r', default: undefined, desc: 'React will be installed', },
