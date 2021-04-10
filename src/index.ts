@@ -11,10 +11,10 @@ import commitlint from './lib/actions/tools/commitlint';
 import eslint from './lib/actions/tools/eslint';
 import prettier from './lib/actions/tools/prettier';
 
-export { handler as build } from './lib/sequences/build';
-export { handler as git } from './lib/sequences/git';
-export { handler as init } from './lib/sequences/init';
-export { handler as lint } from './lib/sequences/lint';
+export { handler as build } from './lib/commands/build';
+export { handler as git } from './lib/commands/git';
+export { handler as init } from './lib/commands/init';
+export { handler as lint } from './lib/commands/lint';
 
 export const actions = {
   gitAdd,

@@ -3,7 +3,7 @@
 
   "overrides": [
     {
-      "files": ["src/lib/sequences/*.ts"],
+      "files": ["src/lib/commands/*.ts"],
       "rules": { "import/no-unused-modules": ["off"] }
     },
     {
