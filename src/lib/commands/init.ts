@@ -51,10 +51,10 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
     }
 
     const hasGitFolder = await access(join(argv.cwd, '.git'));
-    const options = getSettings(argv);
+    const settings = getSettings(argv);
 
     // NPM
-    await spinnerAction(npmInit(argv, { settings: options.packageInit }), 'Create the package.json');
+    await spinnerAction(npmInit(argv, { settings: settings.packageInit }), 'Create the package.json');
 
     const packageName = await npmPackageLoad(argv, { key: 'name', throwError: true });
 
@@ -62,32 +62,32 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       throw new TypeError('Package name could not be read');
     }
 
-    options.packageUpdate.main = `build/${packageName}.js`;
+    settings.packageUpdate.main = `build/${packageName}.js`;
 
     if (argv.cli) {
-      options.packageBin[packageName] = 'build/bin/index.js';
+      settings.packageBin[packageName] = 'build/bin/index.js';
     }
 
     await spinnerAction(gitInit(argv), 'Create the git repository');
 
-    await ioAction(argv, options);
-    await templateAction(argv, options, packageName);
-    await dependencieAction(argv, options);
+    await ioAction(argv, settings);
+    await templateAction(argv, settings, packageName);
+    await dependencieAction(argv, settings);
 
     // UPDATE PACKAGE.JSON
     await spinnerAction(
       npmPackage(argv, {
         settings: {
-          ...options.packageUpdate,
-          bin: options.packageBin,
-          scripts: options.packageScripts,
-          peerDependencies: options.packagePeerDependencies,
+          ...settings.packageUpdate,
+          bin: settings.packageBin,
+          scripts: settings.packageScripts,
+          peerDependencies: settings.packagePeerDependencies,
         },
       }),
       'Update the package.json',
     );
 
-    if (typeof options.packageScripts.prepare === 'string') {
+    if (typeof settings.packageScripts.prepare === 'string') {
       await spinnerAction(
         exec({ cmd: 'npm', args: ['run', 'prepare'], cwd: argv.cwd, log: argv.log }),
         'Enable git hooks handling',
