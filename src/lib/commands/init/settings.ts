@@ -36,7 +36,7 @@ const getSettings = (argv: Props): Settings => {
     ],
 
     libraryProduction: [],
-    libraryDevelopment: ['husky', 'carna'],
+    libraryDevelopment: ['carna'],
 
     packageBin: {},
     packageInit: {
