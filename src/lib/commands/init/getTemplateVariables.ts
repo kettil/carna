@@ -1,10 +1,13 @@
 import { toCamelCase } from '@kettil/tool-lib';
-import nodeTemplate, { TemplateVariable } from '../../actions/node/template';
-import { spinnerAction } from '../../cli/spinner';
+import { TemplateVariable } from '../../actions/node/template';
 import { PropsGlobal } from '../../types';
-import { Props, Settings } from './settings';
+import { Props, Settings } from './getSettings';
 
-const templateAction = async (argv: Props & PropsGlobal, settings: Settings, packageName: string): Promise<void> => {
+const getTemplateVariables = (
+  argv: Props & PropsGlobal,
+  settings: Settings,
+  packageName: string,
+): Record<string, TemplateVariable> => {
   /* eslint-disable @typescript-eslint/naming-convention */
   const variables: Record<string, TemplateVariable> = {
     GITHUB_USERNAME: settings.github.name,
@@ -20,12 +23,7 @@ const templateAction = async (argv: Props & PropsGlobal, settings: Settings, pac
     variables.BABEL_MODULE_TARGET = { node: '14' };
   }
 
-  /* eslint-enable @typescript-eslint/naming-convention */
-
-  await spinnerAction(
-    Promise.all(settings.templates.map(([source, target]) => nodeTemplate(argv, { source, target, variables }))),
-    'Create template files',
-  );
+  return variables;
 };
 
-export default templateAction;
+export default getTemplateVariables;

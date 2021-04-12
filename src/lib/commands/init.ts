@@ -2,7 +2,11 @@ import { join } from 'path';
 import gitAdd from '../actions/git/add';
 import gitCommit from '../actions/git/commit';
 import gitInit from '../actions/git/init';
+import nodeFile from '../actions/node/file';
+import nodeFolder from '../actions/node/folder';
+import nodeTemplate from '../actions/node/template';
 import npmInit from '../actions/npm/init';
+import npmInstall from '../actions/npm/install';
 import npmPackageLoad from '../actions/npm/packageLoad';
 import npmPackage from '../actions/npm/packageUpdate';
 import { spinnerAction } from '../cli/spinner';
@@ -17,10 +21,8 @@ import {
 } from '../cli/yargs';
 import access from '../cmd/access';
 import exec from '../cmd/exec';
-import dependencieAction from './init/dependencie';
-import ioAction from './init/io';
-import getSettings, { Props } from './init/settings';
-import templateAction from './init/template';
+import getSettings, { Props } from './init/getSettings';
+import getTemplateVariables from './init/getTemplateVariables';
 
 export const command: CommandModuleCommand = 'init';
 export const desc: CommandModuleDescribe = 'Initializes the project';
@@ -51,10 +53,10 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
     }
 
     const hasGitFolder = await access(join(argv.cwd, '.git'));
-    const options = getSettings(argv);
+    const settings = getSettings(argv);
 
-    // NPM
-    await spinnerAction(npmInit(argv, { settings: options.packageInit }), 'Create the package.json');
+    // npm init
+    await spinnerAction(npmInit(argv, { settings: settings.packageInit }), 'Create the package.json');
 
     const packageName = await npmPackageLoad(argv, { key: 'name', throwError: true });
 
@@ -62,32 +64,64 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
       throw new TypeError('Package name could not be read');
     }
 
-    options.packageUpdate.main = `build/${packageName}.js`;
+    settings.packageUpdate.main = `build/${packageName}.js`;
 
     if (argv.cli) {
-      options.packageBin[packageName] = 'build/bin/index.js';
+      settings.packageBin[packageName] = 'build/bin/index.js';
     }
 
+    // git init
     await spinnerAction(gitInit(argv), 'Create the git repository');
 
-    await ioAction(argv, options);
-    await templateAction(argv, options, packageName);
-    await dependencieAction(argv, options);
+    // create folders and files
+    await spinnerAction(
+      Promise.all(settings.folders.map((folder) => nodeFolder(argv, { folder }))),
+      'Create the project folders',
+    );
 
-    // UPDATE PACKAGE.JSON
+    await spinnerAction(
+      Promise.all(settings.files.map((file) => nodeFile(argv, { file }))),
+      'Create the project files',
+    );
+
+    // create template files
+    const templateVariables = getTemplateVariables(argv, settings, packageName);
+
+    await spinnerAction(
+      Promise.all(
+        settings.templates.map(([source, target]) =>
+          nodeTemplate(argv, { source, target, variables: templateVariables }),
+        ),
+      ),
+      'Create template files',
+    );
+
+    // npm install
+    await spinnerAction(
+      npmInstall(argv, { packages: settings.libraryProduction, mode: 'prod' }),
+      'Install prod dependencies',
+    );
+
+    await spinnerAction(
+      npmInstall(argv, { packages: settings.libraryDevelopment, mode: 'dev' }),
+      'Install dev dependencies',
+    );
+
+    // update package.json with settings
     await spinnerAction(
       npmPackage(argv, {
         settings: {
-          ...options.packageUpdate,
-          bin: options.packageBin,
-          scripts: options.packageScripts,
-          peerDependencies: options.packagePeerDependencies,
+          ...settings.packageUpdate,
+          bin: settings.packageBin,
+          scripts: settings.packageScripts,
+          peerDependencies: settings.packagePeerDependencies,
         },
       }),
       'Update the package.json',
     );
 
-    if (typeof options.packageScripts.prepare === 'string') {
+    // install package.json "prepare" command
+    if (typeof settings.packageScripts.prepare === 'string') {
       await spinnerAction(
         exec({ cmd: 'npm', args: ['run', 'prepare'], cwd: argv.cwd, log: argv.log }),
         'Enable git hooks handling',
@@ -95,10 +129,10 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
     }
 
     if (!argv.noCommit && !hasGitFolder) {
-      // GIT ADD
+      // git add
       await spinnerAction(gitAdd(argv, { files: ['.'] }), 'Add files to repository');
 
-      // GIT COMMIT
+      // git commit
       await spinnerAction(gitCommit(argv, { msg: 'feat: 🐣' }), 'Create the initial commit');
     }
   } catch (error) {

@@ -23,7 +23,7 @@ export type Props = {
 };
 
 const getSettings = (argv: Props): Settings => {
-  const options: Settings = {
+  const settings: Settings = {
     files: [],
     folders: ['.vscode', 'src', 'src/lib', 'tests'],
     templates: [
@@ -36,7 +36,7 @@ const getSettings = (argv: Props): Settings => {
     ],
 
     libraryProduction: [],
-    libraryDevelopment: ['husky', 'carna'],
+    libraryDevelopment: ['carna'],
 
     packageBin: {},
     packageInit: {
@@ -59,7 +59,7 @@ const getSettings = (argv: Props): Settings => {
     },
   };
 
-  if (typeof options.github.name === 'string' && options.github.name === '') {
+  if (typeof settings.github.name === 'string' && settings.github.name === '') {
     throw new Error('The github name is empty');
   }
 
@@ -67,12 +67,12 @@ const getSettings = (argv: Props): Settings => {
   // # Github             #
   // ######################
 
-  if (typeof options.github.name === 'string') {
-    options.folders.push('.dependabot', '.github/workflows');
+  if (typeof settings.github.name === 'string') {
+    settings.folders.push('.dependabot', '.github/workflows');
 
-    options.templates.push(['dependabot/config.yml', '.dependabot/config.yml']);
-    options.templates.push(['github/CODEOWNERS', '.github/CODEOWNERS']);
-    options.templates.push(['github/workflows/qa.yml', '.github/workflows/qa.yml']);
+    settings.templates.push(['dependabot/config.yml', '.dependabot/config.yml']);
+    settings.templates.push(['github/CODEOWNERS', '.github/CODEOWNERS']);
+    settings.templates.push(['github/workflows/qa.yml', '.github/workflows/qa.yml']);
   }
 
   // ######################
@@ -80,18 +80,18 @@ const getSettings = (argv: Props): Settings => {
   // ######################
 
   if (argv.package) {
-    if (typeof options.github.name === 'string') {
-      options.packageInit.repository = { type: 'git', url: `https://github.com/${options.github.name}/<repo>` };
-      options.packageInit.bugs = { url: `https://github.com/${options.github.name}/<repo>/issues/new` };
+    if (typeof settings.github.name === 'string') {
+      settings.packageInit.repository = { type: 'git', url: `https://github.com/${settings.github.name}/<repo>` };
+      settings.packageInit.bugs = { url: `https://github.com/${settings.github.name}/<repo>/issues/new` };
 
-      options.templates.push(['github/workflows/release.yml', '.github/workflows/release.yml']);
+      settings.templates.push(['github/workflows/release.yml', '.github/workflows/release.yml']);
     }
 
     // Temporary until command release
-    options.templates.push(['releaserc.json', '.releaserc.json']);
+    settings.templates.push(['releaserc.json', '.releaserc.json']);
     // libraryDevelopment.push('@kettil/semantic-release-config');
 
-    options.packageInit.publishConfig = { access: 'public' };
+    settings.packageInit.publishConfig = { access: 'public' };
   }
 
   // ######################
@@ -99,18 +99,18 @@ const getSettings = (argv: Props): Settings => {
   // ######################
 
   if (argv.cli) {
-    options.folders.push('src/bin');
-    options.templates.push(['src/bin/index.ts']);
+    settings.folders.push('src/bin');
+    settings.templates.push(['src/bin/index.ts']);
   }
 
   // ######################
   // # Babel/Webpack      #
   // ######################
 
-  options.templates.push(['babel.config.js']);
-  options.templates.push(['webpack.config.js']);
+  settings.templates.push(['babel.config.js']);
+  settings.templates.push(['webpack.config.js']);
 
-  options.libraryDevelopment.push(
+  settings.libraryDevelopment.push(
     '@babel/cli',
     '@babel/core',
     '@babel/plugin-transform-runtime',
@@ -122,32 +122,32 @@ const getSettings = (argv: Props): Settings => {
   );
 
   if (argv.package && !argv.cli) {
-    options.libraryDevelopment.push('@babel/runtime-corejs3');
-    options.packagePeerDependencies.push('@babel/runtime-corejs3');
+    settings.libraryDevelopment.push('@babel/runtime-corejs3');
+    settings.packagePeerDependencies.push('@babel/runtime-corejs3');
   } else {
-    options.libraryProduction.push('@babel/runtime-corejs3');
+    settings.libraryProduction.push('@babel/runtime-corejs3');
   }
 
   // ######################
   // # Typescript         #
   // ######################
 
-  options.files.push('src/index.ts', 'src/lib/types.ts');
+  settings.files.push('src/index.ts', 'src/lib/types.ts');
 
-  options.templates.push(['typescriptrc.json', 'tsconfig.json']);
-  options.templates.push(['typescriptrc.build.json', 'tsconfig.build.json']);
+  settings.templates.push(['typescriptrc.json', 'tsconfig.json']);
+  settings.templates.push(['typescriptrc.build.json', 'tsconfig.build.json']);
 
-  options.libraryDevelopment.push('@types/node', 'typescript');
+  settings.libraryDevelopment.push('@types/node', 'typescript');
 
-  options.packageUpdate.module = 'build/index.js';
-  options.packageUpdate.types = 'build/index.d.ts';
+  settings.packageUpdate.module = 'build/index.js';
+  settings.packageUpdate.types = 'build/index.d.ts';
 
   // ######################
   // # Build              #
   // ######################
 
-  options.packageScripts.build = 'npx carna build';
-  options.packageScripts.prebuild = 'rm -rf ./build';
+  settings.packageScripts.build = 'npx carna build';
+  settings.packageScripts.prebuild = 'rm -rf ./build';
 
   // ######################
   // # React              #
@@ -159,7 +159,7 @@ const getSettings = (argv: Props): Settings => {
   "react-dom"
 
   if (argv.package) {
-    options.packagePeerDependencies.push('@babel/preset-react', '@types/react', '@types/react-dom');
+    settings.packagePeerDependencies.push('@babel/preset-react', '@types/react', '@types/react-dom');
   }
   */
 
@@ -167,18 +167,18 @@ const getSettings = (argv: Props): Settings => {
   // # Jest               #
   // ######################
 
-  options.templates.push(['jest.config.js'], ['jest.ci.js']);
+  settings.templates.push(['jest.config.js'], ['jest.ci.js']);
 
-  options.libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
+  settings.libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
 
-  options.files.push('src/index.test.ts');
+  settings.files.push('src/index.test.ts');
 
-  options.packageScripts.test = 'jest --selectProjects unit';
-  options.packageScripts['test:integration'] = 'jest --selectProjects integration';
-  options.packageScripts['test:watch'] = 'npm run test -- --watch';
-  options.packageScripts['test:integration:watch'] = 'npm run test:integration -- --watch';
+  settings.packageScripts.test = 'jest --selectProjects unit';
+  settings.packageScripts['test:integration'] = 'jest --selectProjects integration';
+  settings.packageScripts['test:watch'] = 'npm run test -- --watch';
+  settings.packageScripts['test:integration:watch'] = 'npm run test:integration -- --watch';
 
-  return options;
+  return settings;
 };
 
 export default getSettings;
