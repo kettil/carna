@@ -17,7 +17,7 @@ export type Settings = {
 export type Props = {
   readonly cli: boolean;
   readonly package: boolean;
-  readonly react?: boolean;
+  // readonly react?: boolean;
   readonly github?: string;
   readonly noCommit: boolean;
 };
@@ -25,7 +25,7 @@ export type Props = {
 const getSettings = (argv: Props): Settings => {
   const settings: Settings = {
     files: [],
-    folders: ['.vscode', 'src', 'src/lib', 'tests'],
+    folders: ['.vscode', 'src', 'src/lib'],
     templates: [
       ['vscode/settings.json', '.vscode/settings.json'],
       ['editorconfig', '.editorconfig'],
@@ -171,7 +171,14 @@ const getSettings = (argv: Props): Settings => {
 
   settings.libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
 
-  settings.files.push('src/index.test.ts');
+  settings.files.push('tests/helpers/.keep', 'tests/type/.keep');
+  settings.folders.push('tests/helpers', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
+
+  settings.templates.push(
+    ['index.test.ts', 'tests/unit/index.test.ts'],
+    ['index.test.ts', 'tests/integration/index.test.ts'],
+    ['index.test.ts', 'tests/e2e/index.test.ts'],
+  );
 
   settings.packageScripts.test = 'jest --selectProjects unit';
   settings.packageScripts['test:integration'] = 'jest --selectProjects integration';
