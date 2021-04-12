@@ -1,0 +1,2297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getSettings() it should work (cli: false, package: false, noCimmit: false, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: false, package: false, noCimmit: false, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: false, package: false, noCimmit: true, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: false, package: false, noCimmit: true, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: false, package: true, noCimmit: false, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@babel/runtime-corejs3",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "bugs": Object {
+      "url": "https://github.com/username/<repo>/issues/new",
+    },
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "repository": Object {
+      "type": "git",
+      "url": "https://github.com/username/<repo>",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/workflows/release.yml",
+      ".github/workflows/release.yml",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: false, package: true, noCimmit: false, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@babel/runtime-corejs3",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: false, package: true, noCimmit: true, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@babel/runtime-corejs3",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "bugs": Object {
+      "url": "https://github.com/username/<repo>/issues/new",
+    },
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "repository": Object {
+      "type": "git",
+      "url": "https://github.com/username/<repo>",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/workflows/release.yml",
+      ".github/workflows/release.yml",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: false, package: true, noCimmit: true, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@babel/runtime-corejs3",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: false, noCimmit: false, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: false, noCimmit: false, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: false, noCimmit: true, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: false, noCimmit: true, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: true, noCimmit: false, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "bugs": Object {
+      "url": "https://github.com/username/<repo>/issues/new",
+    },
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "repository": Object {
+      "type": "git",
+      "url": "https://github.com/username/<repo>",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/workflows/release.yml",
+      ".github/workflows/release.yml",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: true, noCimmit: false, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: true, noCimmit: true, github: "username") 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    ".dependabot",
+    ".github/workflows",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": "username",
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "bugs": Object {
+      "url": "https://github.com/username/<repo>/issues/new",
+    },
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "repository": Object {
+      "type": "git",
+      "url": "https://github.com/username/<repo>",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "dependabot/config.yml",
+      ".dependabot/config.yml",
+    ],
+    Array [
+      "github/CODEOWNERS",
+      ".github/CODEOWNERS",
+    ],
+    Array [
+      "github/workflows/qa.yml",
+      ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/workflows/release.yml",
+      ".github/workflows/release.yml",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
+
+exports[`getSettings() it should work (cli: true, package: true, noCimmit: true, github: undefined) 1`] = `
+Object {
+  "files": Array [
+    "src/index.ts",
+    "src/lib/types.ts",
+    "tests/helpers/.keep",
+    "tests/type/.keep",
+  ],
+  "folders": Array [
+    ".vscode",
+    "src",
+    "src/lib",
+    "src/bin",
+    "tests/helpers",
+    "tests/type",
+    "tests/unit",
+    "tests/integration",
+    "tests/e2e",
+  ],
+  "github": Object {
+    "name": undefined,
+  },
+  "libraryDevelopment": Array [
+    "carna",
+    "@babel/cli",
+    "@babel/core",
+    "@babel/plugin-transform-runtime",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "babel-loader",
+    "webpack",
+    "webpack-cli",
+    "@types/node",
+    "typescript",
+    "jest",
+    "@types/jest",
+    "babel-jest",
+  ],
+  "libraryProduction": Array [
+    "@babel/runtime-corejs3",
+  ],
+  "packageBin": Object {},
+  "packageInit": Object {
+    "author": "name <email>",
+    "engines": Object {
+      "node": ">= 14",
+      "npm": ">=6",
+    },
+    "private": true,
+    "publishConfig": Object {
+      "access": "public",
+    },
+    "version": "0.1.0",
+  },
+  "packagePeerDependencies": Array [],
+  "packageScripts": Object {
+    "build": "npx carna build",
+    "debs": "npx carna debs",
+    "license": "npx carna license",
+    "lint": "npx carna lint",
+    "prebuild": "rm -rf ./build",
+    "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
+    "test": "jest --selectProjects unit",
+    "test:integration": "jest --selectProjects integration",
+    "test:integration:watch": "npm run test:integration -- --watch",
+    "test:watch": "npm run test -- --watch",
+  },
+  "packageUpdate": Object {
+    "module": "build/index.js",
+    "types": "build/index.d.ts",
+  },
+  "templates": Array [
+    Array [
+      "vscode/settings.json",
+      ".vscode/settings.json",
+    ],
+    Array [
+      "editorconfig",
+      ".editorconfig",
+    ],
+    Array [
+      "eslintignore",
+      ".eslintignore",
+    ],
+    Array [
+      "gitignore",
+      ".gitignore",
+    ],
+    Array [
+      "npmignore",
+      ".npmignore",
+    ],
+    Array [
+      "prettierignore",
+      ".prettierignore",
+    ],
+    Array [
+      "releaserc.json",
+      ".releaserc.json",
+    ],
+    Array [
+      "src/bin/index.ts",
+    ],
+    Array [
+      "babel.config.js",
+    ],
+    Array [
+      "webpack.config.js",
+    ],
+    Array [
+      "typescriptrc.json",
+      "tsconfig.json",
+    ],
+    Array [
+      "typescriptrc.build.json",
+      "tsconfig.build.json",
+    ],
+    Array [
+      "jest.config.js",
+    ],
+    Array [
+      "jest.ci.js",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/unit/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/integration/index.test.ts",
+    ],
+    Array [
+      "index.test.ts",
+      "tests/e2e/index.test.ts",
+    ],
+  ],
+}
+`;
