@@ -1,3 +1,12 @@
 {
-  "prettier.configPath": "./configs/prettierrc.json"
+  "prettier.configPath": "./configs/prettierrc.json",
+
+  "vsicons.associations.files": [
+    { "icon": "jest", "extensions": ["jest.ci.js"], "filename": true, "format": "svg" },
+    { "icon": "typescript", "extensions": ["tsconfig.build.json"], "filename": true, "format": "svg" }
+  ],
+
+  "vsicons.associations.folders": [
+    { "icon": "test", "extensions": ["type", "unit", "integration", "e2e"], "format": "svg" }
+  ]
 }

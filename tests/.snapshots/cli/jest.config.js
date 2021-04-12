@@ -12,4 +12,16 @@ Object.assign(projects.integration, {
 module.exports = Object.assign(config, {
   projects: Object.values(projects),
   // extend options for this project
+
+  // ####################
+  // Temporary entry for the project start
+  coverageThreshold: {
+    global: {
+      statements: 0,
+      branches: 0,
+      functions: 0,
+      lines: 0,
+    },
+  },
+  // ####################
 });
