@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/kettil/carna/compare/2.2.0...2.2.1) (2021-04-12)
+
+
+### Bug Fixes
+
+* remove husky from installation list ([a7d14f4](https://github.com/kettil/carna/commit/a7d14f4fad06ff35c029c39667608876cad84a6d))
+
 # [2.2.0](https://github.com/kettil/carna/compare/2.1.0...2.2.0) (2021-04-10)
 
 
