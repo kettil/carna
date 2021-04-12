@@ -4,8 +4,8 @@ import { PropsGlobal } from '../../types';
 import { Props, Settings } from './getSettings';
 
 const getTemplateVariables = (
-  argv: Props & PropsGlobal,
-  settings: Settings,
+  argv: Pick<Props & PropsGlobal, 'cli' | 'package'>,
+  settings: Pick<Settings, 'github'>,
   packageName: string,
 ): Record<string, TemplateVariable> => {
   /* eslint-disable @typescript-eslint/naming-convention */
