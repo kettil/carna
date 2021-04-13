@@ -1,4 +1,5 @@
-import { spawn } from 'child_process';
+import { spawn, ChildProcessByStdio, ChildProcessWithoutNullStreams } from 'child_process';
+import { Readable } from 'stream';
 import { env as processEnvironment } from '@kettil/tool-lib';
 import { Logger } from '../cli/logger';
 import ExecutableError from '../errors/executableError';
@@ -6,7 +7,8 @@ import ExecutableError from '../errors/executableError';
 type Options = {
   readonly cmd: string;
   readonly args?: readonly string[];
-  readonly output?: (msg: string) => void;
+  readonly withInteraction?: boolean;
+  readonly withDirectOutput?: boolean;
 
   readonly cwd?: string;
   readonly env?: NodeJS.ProcessEnv;
@@ -17,46 +19,61 @@ type Options = {
 const exec = ({
   cmd,
   args = [],
-  output,
+  withInteraction,
+  withDirectOutput,
   cwd = process.cwd(),
   env = processEnvironment(),
   log,
-}: Options): Promise<{
-  stdout: string;
-  stderr: string;
-}> =>
-  new Promise<{ stdout: string; stderr: string }>((resolve, reject) => {
+}: Options): Promise<{ stdout: string; stderr: string; output: string }> =>
+  new Promise<{ stdout: string; stderr: string; output: string }>((resolve, reject) => {
     const command = `${cmd} ${args.join(' ')}`;
 
     log.debug(`\nexec: ${command}`);
 
-    const stream = spawn(cmd, args, { cwd, env, shell: true });
+    let stream: ChildProcessByStdio<null, Readable, Readable> | ChildProcessWithoutNullStreams;
+    let output = '';
     let stdout = '';
     let stderr = '';
 
-    stream.stdout.on('data', (data) => {
-      stdout += String(data);
-      log.debug(String(data));
+    if (withInteraction) {
+      stream = spawn(cmd, args, { cwd, env, shell: true, stdio: [process.stdin, 'pipe', 'pipe'] });
+    } else {
+      stream = spawn(cmd, args, { cwd, env, shell: true });
+    }
 
-      if (output) {
-        output(String(data));
-      }
-    });
+    if (withInteraction || withDirectOutput) {
+      stream.stdout.on('data', (entry) => {
+        log.log(String(entry));
+      });
 
-    stream.stderr.on('data', (data) => {
-      stderr += String(data);
-      log.debug(String(data));
+      stream.stderr.on('data', (entry) => {
+        log.log(String(entry));
+      });
+    } else {
+      stream.stdout.on('data', (data) => {
+        const value = String(data);
 
-      if (output) {
-        output(String(data));
-      }
-    });
+        output += String(value);
+        stdout += String(value);
+
+        log.debug(String(value));
+      });
+
+      stream.stderr.on('data', (data) => {
+        const value = String(data);
+
+        output += String(value);
+        stderr += String(value);
+
+        log.debug(String(value));
+      });
+    }
 
     stream.on('close', (code) => {
       if (typeof code === 'number' && code !== 0) {
-        reject(new ExecutableError(stderr, command, code, stdout, stderr));
+        reject(new ExecutableError('An error occurred during execution ', command, code, output));
       } else {
-        resolve({ stdout, stderr });
+        resolve({ stdout, stderr, output });
       }
     });
   });

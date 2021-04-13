@@ -180,10 +180,10 @@ const getSettings = (argv: Props): Settings => {
     ['index.test.ts', 'tests/e2e/index.test.ts'],
   );
 
-  settings.packageScripts.test = 'jest --selectProjects unit';
-  settings.packageScripts['test:integration'] = 'jest --selectProjects integration';
-  settings.packageScripts['test:watch'] = 'npm run test -- --watch';
-  settings.packageScripts['test:integration:watch'] = 'npm run test:integration -- --watch';
+  settings.packageScripts.test = 'npx carna test';
+  settings.packageScripts['test:unit'] = 'npx carna test -p unit -w';
+  settings.packageScripts['test:integration'] = 'npx carna test -p integration -w';
+  settings.packageScripts['test:e2e'] = 'npx carna test -p e2e -w';
 
   return settings;
 };

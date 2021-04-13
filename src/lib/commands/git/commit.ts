@@ -3,6 +3,7 @@ import gitAdd from '../../actions/git/add';
 import gitLs from '../../actions/git/ls';
 import gitStaged from '../../actions/git/staged';
 import eslint, { extensionAll as eslintExtensionAll } from '../../actions/tools/eslint';
+import jest from '../../actions/tools/jest';
 import prettier, { extensionAll as prettierExtensionAll } from '../../actions/tools/prettier';
 import tsc from '../../actions/tools/tsc';
 import existFiles from '../../cmd/existFiles';
@@ -34,9 +35,11 @@ const commit: Action = async (argv) => {
 
   await prettier(argv, { write: true, files: prettierFiles });
   await eslint(argv, { write: true, files: eslintFiles });
-  await tsc(argv, { mode: 'type-check' });
 
   await gitAdd(argv, { files });
+
+  await tsc(argv, { mode: 'type-check' });
+  await jest(argv, {});
 };
 
 export default commit;

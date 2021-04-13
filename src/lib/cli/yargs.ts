@@ -33,8 +33,9 @@ export const commonHandler = async (argv: Arguments<PropsGlobal>, showLogo: bool
 
 export const errorHandler = (argv: PropsGlobal, error: unknown, onlyExit?: boolean): void => {
   if (error instanceof ExecutableError) {
-    argv.log.log(error.stdout);
-    argv.log.log(error.stderr);
+    argv.log.log('');
+    argv.log.log(error.entries);
+    argv.log.log('');
 
     /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
     process.exit(1);
