@@ -36,7 +36,13 @@ const logging = (level: string, type: Type): Log => (msg) => {
   resume();
 };
 
-const log: Log = (msg) => write('stdout', isArray(msg) ? msg.join('\n') : msg);
+const log: Log = (msg) => {
+  const resume = spinnerBreak();
+
+  write('stdout', isArray(msg) ? msg.join('\n') : msg);
+
+  resume();
+};
 
 const logger = ({ verbose, vvv }: { verbose: boolean; vvv: boolean }): Logger => {
   const error = logging(getMessageLevel('error'), 'stderr');

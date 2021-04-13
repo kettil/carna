@@ -25,6 +25,8 @@ yargs
   .middleware((argv) => ({ log: logger(argv) }))
   .commandDir('../lib/commands')
   .demandCommand(1, 1)
+  .strictCommands()
+  .strictOptions()
   .usage('Usage: $0 <command> [options]')
   .epilogue(epilogue.join('\n'))
   .help()

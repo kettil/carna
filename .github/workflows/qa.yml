@@ -31,3 +31,6 @@ jobs:
 
       - name: Run lint
         run: node ./build/bin/index.js lint --ci
+
+      - name: Run test
+        run: node ./build/bin/index.js test --ci

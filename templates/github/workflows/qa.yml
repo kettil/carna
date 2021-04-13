@@ -26,11 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run prettier
-        run: npm run prettier:ci
+      - name: Run lint
+        run: npx carna lint --ci
 
-      - name: Run eslint
-        run: npm run lint:ci
+      - name: Run test
+        run: npx carna test --ci
 
-      - name: Run eslint
-        run: npm run test:ci
+      - name: Run build
+        run: npx carna build --ci

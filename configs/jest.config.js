@@ -8,25 +8,23 @@ const commons = {
 };
 
 const projectCommon = {
+  ...commons,
   testMatch: ['**/*.test.{js,ts,tsx}'],
   testPathIgnorePatterns: ['/node_modules/', '/src/'],
 };
 
 const projects = {
   unit: {
-    ...commons,
     ...projectCommon,
     displayName: { name: 'unit', color: 'cyan' },
     roots: ['<rootDir>/src', '<rootDir>/tests/unit'],
   },
   integration: {
-    ...commons,
     ...projectCommon,
     displayName: { name: 'integration', color: 'magenta' },
     roots: ['<rootDir>/src/', '<rootDir>/tests/integration'],
   },
   e2e: {
-    ...commons,
     ...projectCommon,
     displayName: { name: 'e2e', color: 'yellow' },
     roots: ['<rootDir>/src/', '<rootDir>/tests/e2e'],
@@ -60,4 +58,4 @@ const config = {
   },
 };
 
-module.exports = { config, projects };
+module.exports = { config, projects, projectCommon };
