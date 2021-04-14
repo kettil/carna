@@ -167,7 +167,7 @@ const getSettings = (argv: Props): Settings => {
   // # Jest               #
   // ######################
 
-  settings.templates.push(['jest.config.js'], ['jest.ci.js']);
+  settings.templates.push(['jest.config.js']);
 
   settings.libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
 

@@ -124,9 +124,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -250,9 +247,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
@@ -394,9 +388,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -520,9 +511,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
@@ -683,9 +671,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -817,9 +802,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
@@ -980,9 +962,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -1114,9 +1093,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
@@ -1262,9 +1238,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -1392,9 +1365,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
@@ -1540,9 +1510,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -1670,9 +1637,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
@@ -1836,9 +1800,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -1973,9 +1934,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
@@ -2139,9 +2097,6 @@ Object {
       "jest.config.js",
     ],
     Array [
-      "jest.ci.js",
-    ],
-    Array [
       "index.test.ts",
       "tests/unit/index.test.ts",
     ],
@@ -2276,9 +2231,6 @@ Object {
     ],
     Array [
       "jest.config.js",
-    ],
-    Array [
-      "jest.ci.js",
     ],
     Array [
       "index.test.ts",
