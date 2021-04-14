@@ -23,7 +23,7 @@ jobs:
         id: cache-node-modules
         with:
           path: node_modules
-          key: install-${{ runner.OS }}-v${{ matrix.node-version }}-${{ hashFiles('package.json') }}
+          key: install-${{ runner.OS }}-v${{ matrix.node-version }}-${{ hashFiles('**/package.json', '**/package-lock.json') }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
