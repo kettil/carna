@@ -171,8 +171,8 @@ const getSettings = (argv: Props): Settings => {
 
   settings.libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
 
-  settings.files.push('tests/helpers/.keep', 'tests/type/.keep');
-  settings.folders.push('tests/helpers', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
+  settings.files.push('tests/helpers/.keep', 'tests/shared/.keep', 'tests/type/.keep');
+  settings.folders.push('tests/helpers', 'tests/shared', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
 
   settings.templates.push(
     ['dummy.test.ts', 'tests/unit/dummy.test.ts'],

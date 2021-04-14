@@ -2,7 +2,7 @@ import { readdir } from 'fs/promises';
 import { join } from 'path';
 import { PropsGlobal } from '../../types';
 
-const ignoreFolders = new Set(['helpers', 'type']);
+const ignoreFolders = new Set(['helpers', 'shared', 'type']);
 const specialFolders = ['unit', 'integration', 'e2e'];
 
 export type Props = Pick<PropsGlobal, 'cwd'> & {
