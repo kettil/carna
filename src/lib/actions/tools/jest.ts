@@ -13,11 +13,10 @@ export type Props = {
 };
 
 const configFiles = ['jest.config.js', 'jest.config.ts'];
-const configCiFiles = ['jest.ci.js', 'jest.ci.ts', ...configFiles];
 const options: Array<keyof Props> = ['ci', 'updateSnapshot', 'runInBand', 'watch'];
 
 const jest: Action<Props> = async ({ cwd, cfg, log }, props) => {
-  const files = await existFiles(props.ci ? configCiFiles : configFiles, cwd);
+  const files = await existFiles(configFiles, cwd);
 
   files.push(relative(cwd, join(cfg, 'jest.config.js')));
 
@@ -35,6 +34,12 @@ const jest: Action<Props> = async ({ cwd, cfg, log }, props) => {
       args.push(`--${option}`);
     }
   });
+
+  if (props.ci) {
+    args.push('--coverage');
+    args.push('--coverageReporters', 'text');
+    args.push('--coverageReporters', 'text-summary');
+  }
 
   log.info('Run test');
 
