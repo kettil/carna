@@ -175,9 +175,9 @@ const getSettings = (argv: Props): Settings => {
   settings.folders.push('tests/helpers', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
 
   settings.templates.push(
-    ['index.test.ts', 'tests/unit/index.test.ts'],
-    ['index.test.ts', 'tests/integration/index.test.ts'],
-    ['index.test.ts', 'tests/e2e/index.test.ts'],
+    ['dummy.test.ts', 'tests/unit/dummy.test.ts'],
+    ['dummy.test.ts', 'tests/integration/dummy.test.ts'],
+    ['dummy.test.ts', 'tests/e2e/dummy.test.ts'],
   );
 
   settings.packageScripts.test = 'npx carna test';
