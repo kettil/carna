@@ -7,10 +7,10 @@ import {
   errorHandler,
   commonHandler,
 } from '../cli/yargs';
-import licenseTask from '../tasks/licenseTask';
+import depsTask from '../tasks/depsTask';
 
-export const command: CommandModuleCommand = 'license';
-export const desc: CommandModuleDescribe = 'Run the license check';
+export const command: CommandModuleCommand = 'deps';
+export const desc: CommandModuleDescribe = 'Run the dependency check';
 
 export const builder: CommandModuleBuilder = builderDefault(command, (yargs) => yargs);
 
@@ -18,7 +18,7 @@ export const handler: CommandModuleHandler = async (argv) => {
   try {
     await commonHandler(argv, !argv.ci);
 
-    await licenseTask(argv);
+    await depsTask(argv);
   } catch (error) {
     errorHandler(argv, error);
   }

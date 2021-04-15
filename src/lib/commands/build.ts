@@ -1,8 +1,3 @@
-import npmPackageLoad from '../actions/npm/packageLoad';
-import babel from '../actions/tools/babel';
-import tsc from '../actions/tools/tsc';
-import webpack from '../actions/tools/webpack';
-import { spinnerAction } from '../cli/spinner';
 import {
   CommandModuleBuilder,
   CommandModuleDescribe,
@@ -10,37 +5,20 @@ import {
   CommandModuleHandler,
   builderDefault,
   errorHandler,
-  ciDefaultValue,
   commonHandler,
 } from '../cli/yargs';
+import buildTask from '../tasks/buildTask';
 
 export const command: CommandModuleCommand = 'build';
 export const desc: CommandModuleDescribe = 'Run the code quality tools';
 
-const options = { group: `${command}-Options` } as const;
+export const builder: CommandModuleBuilder = builderDefault(command, (yargs) => yargs);
 
-type Props = {
-  readonly ci: boolean;
-};
-
-export const builder: CommandModuleBuilder<Props> = builderDefault(command, (yargs) =>
-  yargs.options({
-    ci: { ...options, type: 'boolean', default: ciDefaultValue(), describe: 'Run it in CI mode' },
-  }),
-);
-
-export const handler: CommandModuleHandler<Props> = async (argv) => {
+export const handler: CommandModuleHandler = async (argv) => {
   try {
     await commonHandler(argv, !argv.ci);
 
-    const isPrivate = await npmPackageLoad(argv, { key: 'private' });
-
-    if (isPrivate !== true) {
-      await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Typescript');
-    }
-
-    await spinnerAction(babel(argv), 'Babel');
-    await spinnerAction(webpack(argv), 'Webpack');
+    await buildTask(argv);
   } catch (error) {
     errorHandler(argv, error);
   }

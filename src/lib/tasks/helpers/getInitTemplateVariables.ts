@@ -1,11 +1,10 @@
 import { toCamelCase } from '@kettil/tool-lib';
 import { TemplateVariable } from '../../actions/node/template';
-import { PropsGlobal } from '../../types';
-import { Props, Settings } from './getSettings';
+import { InitSettingProps, InitSettings } from './getInitSettings';
 
-const getTemplateVariables = (
-  argv: Pick<Props & PropsGlobal, 'cli' | 'package'>,
-  settings: Pick<Settings, 'github'>,
+const getInitTemplateVariables = (
+  props: Pick<InitSettingProps, 'cli' | 'package'>,
+  settings: Pick<InitSettings, 'github'>,
   packageName: string,
 ): Record<string, TemplateVariable> => {
   /* eslint-disable @typescript-eslint/naming-convention */
@@ -15,7 +14,7 @@ const getTemplateVariables = (
     PACKAGE_FILENAME: packageName,
   };
 
-  if (!argv.package || argv.cli) {
+  if (!props.package || props.cli) {
     variables.BABEL_MODULE_TYPE = 'commonjs';
     variables.BABEL_MODULE_TARGET = 'defaults';
   } else {
@@ -26,4 +25,4 @@ const getTemplateVariables = (
   return variables;
 };
 
-export default getTemplateVariables;
+export default getInitTemplateVariables;

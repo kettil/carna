@@ -1,4 +1,4 @@
-import getTemplateVariables from '../../../../../src/lib/commands/init/getTemplateVariables';
+import getInitTemplateVariables from '../../../../../src/lib/tasks/helpers/getInitTemplateVariables';
 
 describe('getTemplateVariables()', () => {
   const params: Array<[boolean, boolean, string | undefined]> = [
@@ -13,7 +13,7 @@ describe('getTemplateVariables()', () => {
   ];
 
   test.each(params)('it should work (cli: %p, package: %p, github: %p)', (cli, isPackage, github) => {
-    const settings = getTemplateVariables({ cli, package: isPackage }, { github: { name: github } }, 'packageName');
+    const settings = getInitTemplateVariables({ cli, package: isPackage }, { github: { name: github } }, 'packageName');
 
     expect(settings).toMatchSnapshot();
   });

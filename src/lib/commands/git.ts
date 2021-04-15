@@ -7,9 +7,9 @@ import {
   errorHandler,
   commonHandler,
 } from '../cli/yargs';
-import commit from './git/commit';
-import msg, { Props as MessageProps } from './git/msg';
-import push from './git/push';
+import gitCommitTask from '../tasks/gitCommitTask';
+import gitMessageTask, { GitMessageProps } from '../tasks/gitMessageTask';
+import gitPushTask from '../tasks/gitPushTask';
 
 export const command: CommandModuleCommand = 'git <hook>';
 export const desc: CommandModuleDescribe = 'Handler for the git hooks';
@@ -18,7 +18,7 @@ const mode = ['msg', 'commit', 'push'] as const;
 const options = { group: `${command.slice(0, Math.max(0, command.indexOf('<'))).trim()}-Options` } as const;
 
 type Props = {
-  readonly edit: MessageProps['edit'] | undefined;
+  readonly edit: GitMessageProps['edit'] | undefined;
   readonly hook: typeof mode[number];
 };
 
@@ -36,7 +36,7 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
 
     switch (hook) {
       case 'commit':
-        await commit(argv);
+        await gitCommitTask(argv);
         break;
 
       case 'msg':
@@ -44,11 +44,11 @@ export const handler: CommandModuleHandler<Props> = async (argv) => {
           throw new Error(`Argument "edit" is required at hook "${hook}"`);
         }
 
-        await msg(argv, { edit });
+        await gitMessageTask(argv, { edit });
         break;
 
       case 'push':
-        await push(argv);
+        await gitPushTask(argv);
         break;
       default:
         throw new Error(`The hook "${hook}" is unknown`);
