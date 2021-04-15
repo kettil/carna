@@ -31,12 +31,22 @@ The following commands are available:
 | ------------------------------ | ------------------------------------- |
 | [`init`](#the-init-task)       | Initializes the project               |
 | [`lint`](#the-lint-task)       | Run the code quality tools            |
-| [`debs`](#the-debs-task)       | Checks if there are orphaned packages |
+| [`deps`](#the-deps-task)       | Checks if there are orphaned packages |
 | [`license`](#the-license-task) | Checks for incompatible licenses      |
 | [`build`](#the-build-task)     | Build the application                 |
 | [`git`](#the-git-tasks)        | Handler for the git hooks             |
 
 For the help text, execute `npx carna --help` and the individual commands `npx carna <command> --help`.
+
+### Global options
+
+| Options   | short | Description               |
+| --------- | ----- | ------------------------- |
+| --ci      |       | Run carna in CI mode      |
+| --help    |       | Show help                 |
+| --verbose | -v    | Print info messages       |
+| --vvv     |       | Print info/debug messages |
+| --version |       | Show version number       |
 
 ## The `init` task
 
@@ -64,11 +74,10 @@ Run the code quality tools
 
 ### Options
 
-| Options | Description                                   |
-| ------- | --------------------------------------------- |
-| --ci    | Run it in CI mode (can also be passed as ENV) |
-| --only  | Run a single code quality tool                |
-|         | Choices: `eslint`, `prettier`, `typescript`   |
+| Options | Description                                 |
+| ------- | ------------------------------------------- |
+| --only  | Run a single code quality tool              |
+|         | Choices: `eslint`, `prettier`, `typescript` |
 
 ### Exit codes
 
@@ -77,7 +86,7 @@ Run the code quality tools
 | 0         | Success     |
 | 1         | task failed |
 
-## The `debs` task
+## The `deps` task
 
 Checks if there are orphaned packages
 
@@ -85,9 +94,7 @@ Packages that are no longer to be listed can be defined in the `.depsignore` fil
 
 ### Options
 
-| Options | Description                                   |
-| ------- | --------------------------------------------- |
-| --ci    | Run it in CI mode (can also be passed as ENV) |
+None
 
 ### Exit codes
 
@@ -107,9 +114,7 @@ If the project uses an unknown license, the compatibility check will be disabled
 
 ### Options
 
-| Options | Description                                   |
-| ------- | --------------------------------------------- |
-| --ci    | Run it in CI mode (can also be passed as ENV) |
+None
 
 ### Exit codes
 
@@ -124,9 +129,7 @@ Build the application
 
 ### Options
 
-| Options | Description                                   |
-| ------- | --------------------------------------------- |
-| --ci    | Run it in CI mode (can also be passed as ENV) |
+None
 
 ### Exit codes
 

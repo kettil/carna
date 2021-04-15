@@ -20,7 +20,7 @@ const options: Options = {
 };
 
 const depcheck: Action = async ({ cwd }) => {
-  const configIgnoreMatches = await getConfig(cwd, 'debs.ignore.packages');
+  const configIgnoreMatches = await getConfig(cwd, 'deps.ignore.packages');
   const ignoreMatches = isArray(configIgnoreMatches)
     ? configIgnoreMatches.filter((v): v is string => typeof v === 'string')
     : [];

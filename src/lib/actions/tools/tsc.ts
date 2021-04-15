@@ -5,11 +5,11 @@ import { Action } from '../../types';
 
 const configs = ['tsconfig.json'];
 
-type Props = {
+type TscProps = {
   mode: 'type-check' | 'type-create';
 };
 
-const tsc: Action<Props> = async ({ cwd, log }, { mode }) => {
+const tsc: Action<TscProps> = async ({ cwd, log }, { mode }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   if (!hasConfigFile) {

@@ -1,4 +1,4 @@
-import getSettings from '../../../../../src/lib/commands/init/getSettings';
+import getInitSettings from '../../../../../src/lib/tasks/helpers/getInitSettings';
 
 describe('getSettings()', () => {
   const params: Array<[boolean, boolean, boolean, string | undefined]> = [
@@ -24,7 +24,7 @@ describe('getSettings()', () => {
   test.each(params)(
     'it should work (cli: %p, package: %p, noCimmit: %p, github: %p)',
     (cli, isPackage, noCommit, github) => {
-      const settings = getSettings({ cli, noCommit, package: isPackage, github });
+      const settings = getInitSettings({ cli, noCommit, package: isPackage, github });
 
       expect(settings).toMatchSnapshot();
     },
@@ -32,7 +32,7 @@ describe('getSettings()', () => {
 
   test('throw an error if github is an blank string', () => {
     expect(() => {
-      getSettings({ cli: true, package: true, noCommit: false, github: '' });
+      getInitSettings({ cli: true, package: true, noCommit: false, github: '' });
     }).toThrow();
   });
 });

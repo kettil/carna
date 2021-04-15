@@ -21,7 +21,7 @@
     "test:integration": "node ./build/bin/index.js test --vvv -p integration -w",
     "test:e2e": "node ./build/bin/index.js test --vvv -p e2e -w",
     "lint": "node ./build/bin/index.js lint --vvv",
-    "deps": "node ./build/bin/index.js debs --vvv",
+    "deps": "node ./build/bin/index.js deps --vvv",
     "license": "node ./build/bin/index.js license --vvv",
     "pretest": "npm run build:babel",
     "pretest:unit": "npm run build:babel",

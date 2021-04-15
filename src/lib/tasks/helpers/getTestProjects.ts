@@ -1,15 +1,11 @@
 import { readdir } from 'fs/promises';
 import { join } from 'path';
-import { PropsGlobal } from '../../types';
+import { Task } from '../../types';
 
 const ignoreFolders = new Set(['helpers', 'shared', 'type']);
 const specialFolders = ['unit', 'integration', 'e2e'];
 
-export type Props = Pick<PropsGlobal, 'cwd'> & {
-  project?: string;
-};
-
-const getProjects = async ({ cwd, project }: Props): Promise<string[]> => {
+const getTestProjects: Task<{ project?: string }, string[]> = async ({ cwd }, { project }) => {
   const files = await readdir(join(cwd, 'tests'), { withFileTypes: true });
 
   const folders = files
@@ -36,4 +32,4 @@ const getProjects = async ({ cwd, project }: Props): Promise<string[]> => {
   return projects.filter((v) => selectedProjects.includes(v));
 };
 
-export default getProjects;
+export default getTestProjects;

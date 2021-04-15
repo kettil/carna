@@ -1,4 +1,4 @@
-export type Settings = {
+export type InitSettings = {
   files: string[];
   folders: string[];
   templates: Array<[string, string] | [string]>;
@@ -14,7 +14,7 @@ export type Settings = {
   };
 };
 
-export type Props = {
+export type InitSettingProps = {
   readonly cli: boolean;
   readonly package: boolean;
   // readonly react?: boolean;
@@ -22,8 +22,8 @@ export type Props = {
   readonly noCommit: boolean;
 };
 
-const getSettings = (argv: Props): Settings => {
-  const settings: Settings = {
+const getInitSettings = (props: InitSettingProps): InitSettings => {
+  const settings: InitSettings = {
     files: [],
     folders: ['.vscode', 'src', 'src/lib'],
     templates: [
@@ -49,13 +49,13 @@ const getSettings = (argv: Props): Settings => {
     packageScripts: {
       prepare: '[ "$CI" != "" ] || husky install ./node_modules/carna/configs/husky',
       lint: 'npx carna lint',
-      debs: 'npx carna debs',
+      deps: 'npx carna deps',
       license: 'npx carna license',
     },
     packagePeerDependencies: [],
 
     github: {
-      name: argv.github?.trim(),
+      name: props.github?.trim(),
     },
   };
 
@@ -79,7 +79,7 @@ const getSettings = (argv: Props): Settings => {
   // # Library            #
   // ######################
 
-  if (argv.package) {
+  if (props.package) {
     if (typeof settings.github.name === 'string') {
       settings.packageInit.repository = { type: 'git', url: `https://github.com/${settings.github.name}/<repo>` };
       settings.packageInit.bugs = { url: `https://github.com/${settings.github.name}/<repo>/issues/new` };
@@ -98,7 +98,7 @@ const getSettings = (argv: Props): Settings => {
   // # CLI                #
   // ######################
 
-  if (argv.cli) {
+  if (props.cli) {
     settings.folders.push('src/bin');
     settings.templates.push(['src/bin/index.ts']);
   }
@@ -121,7 +121,7 @@ const getSettings = (argv: Props): Settings => {
     'webpack-cli',
   );
 
-  if (argv.package && !argv.cli) {
+  if (props.package && !props.cli) {
     settings.libraryDevelopment.push('@babel/runtime-corejs3');
     settings.packagePeerDependencies.push('@babel/runtime-corejs3');
   } else {
@@ -158,7 +158,7 @@ const getSettings = (argv: Props): Settings => {
   "react"
   "react-dom"
 
-  if (argv.package) {
+  if (props.package) {
     settings.packagePeerDependencies.push('@babel/preset-react', '@types/react', '@types/react-dom');
   }
   */
@@ -188,4 +188,4 @@ const getSettings = (argv: Props): Settings => {
   return settings;
 };
 
-export default getSettings;
+export default getInitSettings;
