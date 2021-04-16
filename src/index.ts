@@ -14,7 +14,7 @@ import prettier from './lib/actions/tools/prettier';
 export { handler as build } from './lib/commands/build';
 export { handler as git } from './lib/commands/git';
 export { handler as init } from './lib/commands/init';
-export { handler as lint } from './lib/commands/lint';
+export { handler as analyse } from './lib/commands/analyse';
 
 export const actions = {
   gitAdd,
