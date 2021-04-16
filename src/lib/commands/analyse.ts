@@ -9,7 +9,7 @@ import {
 } from '../cli/yargs';
 import analyseTask, { analyseServices, AnalyseProps } from '../tasks/analyseTask';
 
-export const command: CommandModuleCommand = 'lint';
+export const command: CommandModuleCommand = 'analyse';
 export const desc: CommandModuleDescribe = 'Run the code quality tools';
 
 const options = { group: `${command}-Options` } as const;

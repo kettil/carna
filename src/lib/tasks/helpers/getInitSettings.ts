@@ -48,7 +48,7 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
     packageUpdate: {},
     packageScripts: {
       prepare: '[ "$CI" != "" ] || husky install ./node_modules/carna/configs/husky',
-      lint: 'npx carna lint',
+      analyse: 'npx carna analyse',
       deps: 'npx carna deps',
       license: 'npx carna license',
     },

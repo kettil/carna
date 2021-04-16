@@ -30,7 +30,7 @@ The following commands are available:
 | Commands                       | Description                           |
 | ------------------------------ | ------------------------------------- |
 | [`init`](#the-init-task)       | Initializes the project               |
-| [`lint`](#the-lint-task)       | Run the code quality tools            |
+| [`analyse`](#the-analyse-task) | Run the code quality tools            |
 | [`deps`](#the-deps-task)       | Checks if there are orphaned packages |
 | [`license`](#the-license-task) | Checks for incompatible licenses      |
 | [`build`](#the-build-task)     | Build the application                 |
@@ -68,7 +68,7 @@ Creates a new project with all config files in the current folder.
 | 0         | Success     |
 | 1         | task failed |
 
-## The `lint` task
+## The `analyse` task
 
 Run the code quality tools
 
