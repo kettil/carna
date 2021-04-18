@@ -48,6 +48,14 @@ For the help text, execute `npx carna --help` and the individual commands `npx c
 | --vvv     |       | Print info/debug messages |
 | --version |       | Show version number       |
 
+## Hook system
+
+Each time a command is executed, different hooks are called. Every hook corresponds to a script in the npm `package.json`.
+
+The hooks have the structure `<pre|post>carna:<task>[:<subtask>]`.
+
+If you add the option `--verbose` when calling a command, all possible hooks will be displayed.
+
 ## The `init` task
 
 Creates a new project with all config files in the current folder.

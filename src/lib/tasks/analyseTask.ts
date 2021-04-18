@@ -5,6 +5,7 @@ import tsc from '../actions/tools/tsc';
 import { spinnerAction } from '../cli/spinner';
 import access from '../cmd/access';
 import { Task } from '../types';
+import npmHookTask from './subTasks/npmHookTask';
 
 export const analyseServices = ['eslint', 'prettier', 'typescript'] as const;
 
@@ -16,6 +17,8 @@ const isSelectedService = (value: string | undefined, service: typeof analyseSer
   typeof value === 'undefined' || value === service;
 
 const analyseTask: Task<AnalyseProps> = async (argv, { selectedService }) => {
+  await npmHookTask(argv, { task: 'analyse', type: 'pre' });
+
   const hasTypescriptConfig = await access(join(argv.cwd, 'tsconfig.json'), 'readable');
 
   if (isSelectedService(selectedService, 'prettier')) {
@@ -36,6 +39,8 @@ const analyseTask: Task<AnalyseProps> = async (argv, { selectedService }) => {
       argv.log.info('Typing check is skipped (tsconfig.json was not found) ');
     }
   }
+
+  await npmHookTask(argv, { task: 'analyse', type: 'post' });
 };
 
 export default analyseTask;

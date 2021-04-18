@@ -2,6 +2,7 @@ import jest, { JestProps } from '../actions/tools/jest';
 import { spinnerAction } from '../cli/spinner';
 import { Task } from '../types';
 import getTestProjects from './helpers/getTestProjects';
+import npmHookTask from './subTasks/npmHookTask';
 
 export type TestProps = Omit<JestProps, 'project'> & {
   project?: string;
@@ -9,6 +10,8 @@ export type TestProps = Omit<JestProps, 'project'> & {
 };
 
 const testTask: Task<TestProps> = async (argv, props) => {
+  await npmHookTask(argv, { task: 'test', type: 'pre' });
+
   const projects = await getTestProjects(argv, { project: props.project });
 
   if (props.watch) {
@@ -22,6 +25,8 @@ const testTask: Task<TestProps> = async (argv, props) => {
   } else {
     await spinnerAction(jest(argv, { ...props, project: undefined }), 'Jest');
   }
+
+  await npmHookTask(argv, { task: 'test', type: 'post' });
 };
 
 export default testTask;
