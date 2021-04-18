@@ -36,6 +36,7 @@ const jest: Action<JestProps> = async ({ cwd, cfg, ci, log }, props) => {
 
   if (ci) {
     args.push('--ci');
+    args.push('--verbose');
     args.push('--coverage');
     // args.push('--no-coverage');
     args.push('--coverageReporters', 'text');
