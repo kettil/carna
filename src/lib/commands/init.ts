@@ -1,4 +1,3 @@
-import { join } from 'path';
 import {
   CommandModuleDescribe,
   CommandModuleCommand,
@@ -8,7 +7,6 @@ import {
   errorHandler,
   commonHandler,
 } from '../cli/yargs';
-import access from '../cmd/access';
 import initTask, { InitProps } from '../tasks/initTask';
 
 export const command: CommandModuleCommand = 'init';
@@ -32,12 +30,6 @@ export const builder: CommandModuleBuilder<InitProps> = builderDefault(command, 
 export const handler: CommandModuleHandler<InitProps> = async (argv) => {
   try {
     await commonHandler(argv, true);
-
-    const hasPackage = await access(join(argv.cwd, 'package.json'));
-
-    if (hasPackage) {
-      throw new Error('The project is already initialized');
-    }
 
     await initTask(argv, argv);
   } catch (error) {

@@ -6,12 +6,15 @@ import { errorHandler } from '../cli/yargs';
 import LicenseDisabledError from '../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
 import { Task } from '../types';
+import npmHookTask from './subTasks/npmHookTask';
 
 const notice = `the check is only a suggestion and is ${underline('not')} legal advice`;
 
 const licenseTask: Task = async (argv) => {
   try {
+    await npmHookTask(argv, { task: 'license', type: 'pre' });
     await spinnerAction(license(argv), `License verification (${notice})`);
+    await npmHookTask(argv, { task: 'license', type: 'post' });
   } catch (error) {
     if (error instanceof LicenseDisabledError) {
       return;
