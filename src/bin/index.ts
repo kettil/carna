@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 import { join } from 'path';
+import { env } from '@kettil/tool-lib';
 import chalk from 'chalk';
 import yargs from 'yargs';
 import logger from '../lib/cli/logger';
-import { ciDefaultValue } from '../lib/cli/yargs';
 import { PropsGlobal } from '../lib/types';
 
 const cwd = process.cwd();
@@ -18,7 +18,7 @@ const epilogue = [
 
 yargs
   .locale('en')
-  .option('ci', { default: ciDefaultValue(), type: 'boolean', describe: 'Run carna in CI mode' })
+  .option('ci', { default: env('CI', '') !== '', type: 'boolean', describe: 'Run carna in CI mode' })
   .option('verbose', { default: false, alias: 'v', type: 'boolean', desc: 'Print info messages' })
   .option('vvv', { default: false, type: 'boolean', desc: 'Print info/debug messages' })
   .option('cwd', { default: cwd, type: 'string', hidden: true })

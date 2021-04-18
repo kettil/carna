@@ -4,7 +4,9 @@ import DependencyError from '../errors/dependencyError';
 import { Task } from '../types';
 import npmHookTask from './subTasks/npmHookTask';
 
-const depsTask: Task = async (argv) => {
+export type DepsProps = {};
+
+const depsTask: Task<DepsProps> = async (argv) => {
   try {
     await npmHookTask(argv, { task: ['deps'], type: 'pre' });
     await spinnerAction(depcheck(argv), 'Dependency verification');

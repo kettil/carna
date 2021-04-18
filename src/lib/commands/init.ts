@@ -1,20 +1,13 @@
-import {
-  CommandModuleDescribe,
-  CommandModuleCommand,
-  CommandModuleHandler,
-  builderDefault,
-  CommandModuleBuilder,
-  errorHandler,
-  commonHandler,
-} from '../cli/yargs';
+import { createBuilder, createHandler } from '../cli/yargs';
 import initTask, { InitProps } from '../tasks/initTask';
 
-export const command: CommandModuleCommand = 'init';
-export const desc: CommandModuleDescribe = 'Initializes the project';
+export const command = 'init';
+export const desc = 'Initializes the project';
 
 const args = { type: 'boolean', default: false, group: `${command}-Options:` } as const;
 
-export const builder: CommandModuleBuilder<InitProps> = builderDefault(command, (yargs) =>
+export const handler = createHandler<InitProps>(initTask);
+export const builder = createBuilder<InitProps>(command, (yargs) =>
   yargs.options({
     package: { ...args, alias: 'p', desc: 'Project is created as a package' },
     cli: { ...args, alias: 'c', implies: 'package', desc: 'Extends the package with CLI features' },
@@ -26,13 +19,3 @@ export const builder: CommandModuleBuilder<InitProps> = builderDefault(command, 
     noCommit: { ...args, desc: 'No initial commit is executed at the end' },
   }),
 );
-
-export const handler: CommandModuleHandler<InitProps> = async (argv) => {
-  try {
-    await commonHandler(argv, true);
-
-    await initTask(argv, argv);
-  } catch (error) {
-    errorHandler(argv, error);
-  }
-};
