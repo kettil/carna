@@ -1,16 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const { projects, config } = require('carna/configs/jest.config.js');
-
-Object.assign(projects.unit, {
-  // extend options for unit tests
-});
-
-Object.assign(projects.integration, {
-  // extend options for integration tests
-});
+const { config, createProject } = require('carna/configs/jest.config.js');
 
 module.exports = Object.assign(config, {
-  projects: Object.values(projects),
+  projects: [
+    // createProject('<foldername>', '<color>', { /* extend config */})
+    // => colors: red green yellow blue magenta cyan gray
+    createProject('unit', 'cyan', {}),
+    createProject('integration', 'magenta', {}),
+    createProject('e2e', 'yellow', {}),
+  ],
+
   // extend options for this project
 
   // ####################
