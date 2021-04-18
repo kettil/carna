@@ -4,9 +4,9 @@ import { Task } from '../types';
 import getTestProjects from './helpers/getTestProjects';
 import npmHookTask from './subTasks/npmHookTask';
 
-export type TestProps = Omit<JestProps, 'project'> & {
+export type TestProps = Required<Omit<JestProps, 'project'>> & {
   project?: string;
-  sequence?: boolean;
+  sequence: boolean;
 };
 
 const testTask: Task<TestProps> = async (argv, props) => {

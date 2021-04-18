@@ -8,7 +8,9 @@ import access from '../cmd/access';
 import { Task } from '../types';
 import npmHookTask from './subTasks/npmHookTask';
 
-const buildTask: Task = async (argv) => {
+export type BuildProps = {};
+
+const buildTask: Task<BuildProps> = async (argv) => {
   await npmHookTask(argv, { task: 'build', type: 'pre' });
 
   const isPrivate = await npmPackageLoad(argv, { key: 'private' });

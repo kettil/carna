@@ -1,35 +1,18 @@
-import { env } from '@kettil/tool-lib';
-import { CommandModule, Arguments, Argv } from 'yargs';
+import { Arguments, Argv } from 'yargs';
 import ExecutableError from '../errors/executableError';
 import logo from '../logo';
-import { PropsGlobal } from '../types';
+import { PropsGlobal, Task } from '../types';
 
-export type CommandModuleCommand = string;
+type CommandBuilder<TaskProps = Record<string, unknown>> = (yargs: Argv<PropsGlobal>) => Argv<PropsGlobal & TaskProps>;
+type CommandHandler<TaskProps = Record<string, unknown>> = (argv: Arguments<PropsGlobal & TaskProps>) => void;
 
-export type CommandModuleDescribe = NonNullable<CommandModule<PropsGlobal>['describe']>;
+const globalOptions = ['cwd', 'tpl', 'cfg', 'log', 'vvv', 'ci'] as const;
 
-export type CommandModuleBuilder<Props = Record<string, unknown>> = (
-  yargs: Argv<PropsGlobal>,
-) => Argv<Props & PropsGlobal>;
+const filterOptions = ([key]: [key: string, value: unknown]) =>
+  globalOptions.includes(key as typeof globalOptions[number]);
 
-export type CommandModuleHandler<Props = Record<string, unknown>> = (argv: Arguments<Props & PropsGlobal>) => void;
-
-export const ciDefaultValue = (): boolean => env('CI', '') !== '';
-
-export const builderDefault = <Props>(
-  cmd: string,
-  callback: CommandModuleBuilder<Props>,
-): CommandModuleBuilder<Props> => (yargs) =>
-  callback(yargs).usage(`Usage: $0 ${cmd} [options]`).help().version(false)
-    .showHelpOnFail(false);
-
-export const commonHandler = async (argv: Arguments<PropsGlobal>, showLogo: boolean): Promise<void> => {
-  if (showLogo) {
-    await logo();
-  }
-
-  argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
-};
+const filterProps = ([key]: [key: string, value: unknown]) =>
+  ![...globalOptions, '_', '$0r '].includes(key as typeof globalOptions[number]);
 
 export const errorHandler = (argv: PropsGlobal, error: unknown, onlyExit?: boolean): void => {
   if (error instanceof ExecutableError) {
@@ -48,3 +31,29 @@ export const errorHandler = (argv: PropsGlobal, error: unknown, onlyExit?: boole
 
   throw error;
 };
+
+export const createHandler = <TaskProps extends Record<string, unknown>>(
+  task: Task<TaskProps>,
+): CommandHandler<TaskProps> => async (argv) => {
+  try {
+    if (!argv.ci) {
+      await logo();
+    }
+
+    argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
+
+    const options = Object.fromEntries(Object.entries(argv).filter(filterOptions)) as PropsGlobal;
+    const props = Object.fromEntries(Object.entries(argv).filter(filterProps)) as TaskProps;
+
+    await task(options, props);
+  } catch (error) {
+    errorHandler(argv, error);
+  }
+};
+
+export const createBuilder = <TaskProps>(
+  command: string,
+  callback: CommandBuilder<TaskProps>,
+): CommandBuilder<TaskProps> => (yargs) =>
+  callback(yargs).usage(`Usage: $0 ${command} [options]`).help().version(false)
+    .showHelpOnFail(false);

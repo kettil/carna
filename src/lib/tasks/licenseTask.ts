@@ -10,7 +10,9 @@ import npmHookTask from './subTasks/npmHookTask';
 
 const notice = `the check is only a suggestion and is ${underline('not')} legal advice`;
 
-const licenseTask: Task = async (argv) => {
+export type LicenseProps = {};
+
+const licenseTask: Task<LicenseProps> = async (argv) => {
   try {
     await npmHookTask(argv, { task: 'license', type: 'pre' });
     await spinnerAction(license(argv), `License verification (${notice})`);
