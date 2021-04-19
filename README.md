@@ -31,6 +31,7 @@ The following commands are available:
 | ------------------------------ | ------------------------------------- |
 | [`init`](#the-init-task)       | Initializes the project               |
 | [`analyse`](#the-analyse-task) | Run the code quality tools            |
+| [`test`](#the-test-task)       | Run the tests                         |
 | [`deps`](#the-deps-task)       | Checks if there are orphaned packages |
 | [`license`](#the-license-task) | Checks for incompatible licenses      |
 | [`build`](#the-build-task)     | Build the application                 |
@@ -86,6 +87,35 @@ Run the code quality tools
 | ------- | ------------------------------------------- |
 | --only  | Run a single code quality tool              |
 |         | Choices: `eslint`, `prettier`, `typescript` |
+
+### Exit codes
+
+| Exit code | Description |
+| --------- | ----------- |
+| 0         | Success     |
+| 1         | task failed |
+
+## The `test` task
+
+Runs the unit, integration and other tests with `jest`.
+
+Each subfolder in the [tests folder](./tests) is a test project, such as `unit` or `integration` test. By default, the projects `unit`, `integration` and `e2e` are created. For a new test project, a folder must be created in the [tests folder](./tests) and the [jest-config](./jest.config.js) must be adjusted.
+
+The test projects are executed in the following order: `unit`, `integration`, `e2e` and the rest alphabetically.
+
+For helper functions and/or functions for multiple test projects can be stored in the folder [test/shared](./tests/shared). This folder is not interpreted as a test project. Likewise, the folder [test/type](./tests/type) is ignored, since this is for `type` tests and are checked by Typescript directly.
+
+For each test project there are corresponding [hooks](#hook-system).
+
+### Options
+
+| Options          | short | Description                                                               |
+| ---------------- | ----- | ------------------------------------------------------------------------- |
+| --coverage       | -c    | Runs the coverage projects together and builds the coverage from them     |
+| --project        | -p    | Run only the tests of the specified projects                              |
+| --runInBand      | -i    | Run all tests serially in the current process                             |
+| --updateSnapshot | -u    | Use this flag to re-record every snapshot that fails during this test run |
+| --watch          | -w    | Watch files for changes and rerun tests related to changed files          |
 
 ### Exit codes
 
@@ -168,6 +198,34 @@ The following subtask exists:
 | --------- | ----------- |
 | 0         | Success     |
 | 1         | task failed |
+
+## Carna config file
+
+Carna can be adjusted via the configuration file [.carnarc.json](./.carnarc.json).
+The file is structured as follows
+
+```json
+{
+  "deps": {
+    "ignore": {
+      // Ignores the packets when checking whether a packet is used or not
+      "packages": []
+    }
+  },
+  "license": {
+    "ignore": {
+      // The packages are ignored during the license check
+      "packages": []
+    }
+  },
+  "test": {
+    "coverage": {
+      // Overwrites default coverage test projects ("unit" and "integration")
+      "projects": []
+    }
+  }
+}
+```
 
 ## Default config files
 
