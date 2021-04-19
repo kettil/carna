@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: daily
+      time: '04:00'
+    open-pull-requests-limit: 10
+    reviewers:
+      - kettil
+    assignees:
+      - kettil
+    labels:
+      - dependencies
+    versioning-strategy: increase
+    allow:
+      - dependency-type: direct
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
