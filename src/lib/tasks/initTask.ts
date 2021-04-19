@@ -20,7 +20,12 @@ export type InitProps = InitSettingProps;
 
 const initTask: Action<InitProps> = async (argv, props) => {
   const hasGitFolder = await access(join(argv.cwd, '.git'));
+  const hasPackage = await access(join(argv.cwd, 'package.json'));
   const settings = getInitSettings(props);
+
+  if (hasPackage) {
+    throw new Error('The project is already initialized');
+  }
 
   // npm init
   await spinnerAction(npmInit(argv, { settings: settings.packageInit }), 'Create the package.json');

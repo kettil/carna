@@ -1,5 +1,5 @@
-import commitlint, { CommitlintProps } from '../actions/tools/commitlint';
-import { Task } from '../types';
+import commitlint, { CommitlintProps } from '../../actions/tools/commitlint';
+import { Task } from '../../types';
 
 export type GitMessageProps = CommitlintProps;
 

@@ -1,25 +1,8 @@
-import {
-  CommandModuleBuilder,
-  CommandModuleDescribe,
-  CommandModuleCommand,
-  CommandModuleHandler,
-  builderDefault,
-  errorHandler,
-  commonHandler,
-} from '../cli/yargs';
-import buildTask from '../tasks/buildTask';
+import { createBuilder, createHandler } from '../cli/yargs';
+import buildTask, { BuildProps } from '../tasks/buildTask';
 
-export const command: CommandModuleCommand = 'build';
-export const desc: CommandModuleDescribe = 'Run the code quality tools';
+export const command = 'build';
+export const desc = 'Run the build process';
 
-export const builder: CommandModuleBuilder = builderDefault(command, (yargs) => yargs);
-
-export const handler: CommandModuleHandler = async (argv) => {
-  try {
-    await commonHandler(argv, !argv.ci);
-
-    await buildTask(argv);
-  } catch (error) {
-    errorHandler(argv, error);
-  }
-};
+export const handler = createHandler<BuildProps>(buildTask);
+export const builder = createBuilder<BuildProps>(command, (yargs) => yargs);

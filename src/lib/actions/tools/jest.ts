@@ -1,4 +1,3 @@
-import { join, relative } from 'path';
 import { isArray } from '@kettil/tool-lib';
 import exec from '../../cmd/exec';
 import existFiles from '../../cmd/existFiles';
@@ -7,6 +6,7 @@ import { Action } from '../../types';
 export type JestProps = {
   project?: string[] | string;
   updateSnapshot?: boolean;
+  coverage?: boolean;
   runInBand?: boolean;
   watch?: boolean;
 };
@@ -14,10 +14,12 @@ export type JestProps = {
 const configFiles = ['jest.config.js', 'jest.config.ts'];
 const options: Array<keyof JestProps> = ['updateSnapshot', 'runInBand', 'watch'];
 
-const jest: Action<JestProps> = async ({ cwd, cfg, ci, log }, props) => {
+const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
   const files = await existFiles(configFiles, cwd);
 
-  files.push(relative(cwd, join(cfg, 'jest.config.js')));
+  if (files.length === 0) {
+    throw new Error('Jest config file was not found');
+  }
 
   const cmd = './node_modules/.bin/jest';
   const args: string[] = ['--colors', '--config', files[0]];
@@ -34,15 +36,18 @@ const jest: Action<JestProps> = async ({ cwd, cfg, ci, log }, props) => {
     }
   });
 
-  if (ci) {
+  if (ci && props.coverage) {
     args.push('--ci');
+    args.push('--silent');
     args.push('--coverage');
-    // args.push('--no-coverage');
     args.push('--coverageReporters', 'text');
     args.push('--coverageReporters', 'text-summary');
+  } else if (ci && !props.coverage) {
+    args.push('--ci');
+    args.push('--no-coverage');
+  } else if (!ci && !props.coverage) {
+    args.push('--coverageThreshold', '\'{"global":{"statements":0,"branches":0,"functions":0,"lines":0}}\'');
   }
-
-  // args.push('--coverageThreshold', `'{"global":{"statements":0,"branches":0,"functions":0,"lines":0}}'`);
 
   log.info('Run test');
 

@@ -7,33 +7,21 @@ const commons = {
   restoreMocks: true,
 };
 
-const projectCommon = {
+const createProject = (folder, color, config) => ({
   ...commons,
+
+  displayName: { name: folder, color },
+  roots: ['<rootDir>/src', `<rootDir>/tests/${folder}`],
+
   testMatch: ['**/*.test.{js,ts,tsx}'],
   testPathIgnorePatterns: ['/node_modules/', '/src/'],
-};
 
-const projects = {
-  unit: {
-    ...projectCommon,
-    displayName: { name: 'unit', color: 'cyan' },
-    roots: ['<rootDir>/src', '<rootDir>/tests/unit'],
-  },
-  integration: {
-    ...projectCommon,
-    displayName: { name: 'integration', color: 'magenta' },
-    roots: ['<rootDir>/src/', '<rootDir>/tests/integration'],
-  },
-  e2e: {
-    ...projectCommon,
-    displayName: { name: 'e2e', color: 'yellow' },
-    roots: ['<rootDir>/src/', '<rootDir>/tests/e2e'],
-  },
-};
+  ...config,
+});
 
 const config = {
   ...commons,
-  projects,
+  projects: [],
 
   collectCoverage: true,
   collectCoverageFrom: [
@@ -58,4 +46,4 @@ const config = {
   },
 };
 
-module.exports = { config, projects, projectCommon };
+module.exports = { config, createProject };

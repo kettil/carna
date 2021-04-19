@@ -22,5 +22,10 @@
     "ignore": {
       "packages": []
     }
+  },
+  "test": {
+    "coverage": {
+      "projects": []
+    }
   }
 }

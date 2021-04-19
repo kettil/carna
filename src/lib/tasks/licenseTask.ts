@@ -2,16 +2,21 @@ import { underline } from 'chalk';
 import { getBorderCharacters, table } from 'table';
 import license from '../actions/tools/licensecheck';
 import { spinnerAction } from '../cli/spinner';
-import { errorHandler } from '../cli/yargs';
 import LicenseDisabledError from '../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
+import { exit } from '../helper';
 import { Task } from '../types';
+import npmHookTask from './subTasks/npmHookTask';
 
 const notice = `the check is only a suggestion and is ${underline('not')} legal advice`;
 
-const licenseTask: Task = async (argv) => {
+export type LicenseProps = {};
+
+const licenseTask: Task<LicenseProps> = async (argv) => {
   try {
+    await npmHookTask(argv, { task: 'license', type: 'pre' });
     await spinnerAction(license(argv), `License verification (${notice})`);
+    await npmHookTask(argv, { task: 'license', type: 'post' });
   } catch (error) {
     if (error instanceof LicenseDisabledError) {
       return;
@@ -22,7 +27,7 @@ const licenseTask: Task = async (argv) => {
       argv.log.log(table(error.list, { border: getBorderCharacters('norc') }));
       argv.log.log(' ');
 
-      errorHandler(argv, error, true);
+      exit();
     }
 
     throw error;

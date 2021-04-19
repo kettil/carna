@@ -1,19 +1,14 @@
-const { projects, config } = require('./configs/jest.config.js');
-
-Object.assign(projects.unit, {
-  // extend options for unit tests
-});
-
-Object.assign(projects.integration, {
-  // extend options for integration tests
-});
-
-Object.assign(projects.e2e, {
-  // extend options for e2e tests
-});
+const { config, createProject } = require('./configs/jest.config.js');
 
 module.exports = Object.assign(config, {
-  projects: Object.values(projects),
+  projects: [
+    // createProject('<foldername>', '<color>', { /* extend config */})
+    // => colors: red green yellow blue magenta cyan gray
+    createProject('unit', 'cyan', {}),
+    createProject('integration', 'magenta', {}),
+    createProject('e2e', 'yellow', {}),
+  ],
+
   // extend options for this project
 
   coverageThreshold: {

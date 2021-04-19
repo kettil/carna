@@ -1,13 +1,13 @@
 import { uniqueArray } from '@kettil/tool-lib';
-import gitAdd from '../actions/git/add';
-import gitLs from '../actions/git/ls';
-import gitStaged from '../actions/git/staged';
-import eslint, { eslintExtensionAll } from '../actions/tools/eslint';
-import jest from '../actions/tools/jest';
-import prettier, { prettierExtensionAll } from '../actions/tools/prettier';
-import tsc from '../actions/tools/tsc';
-import existFiles from '../cmd/existFiles';
-import { Task } from '../types';
+import gitAdd from '../../actions/git/add';
+import gitLs from '../../actions/git/ls';
+import gitStaged from '../../actions/git/staged';
+import eslint, { eslintExtensionAll } from '../../actions/tools/eslint';
+import jest from '../../actions/tools/jest';
+import prettier, { prettierExtensionAll } from '../../actions/tools/prettier';
+import tsc from '../../actions/tools/tsc';
+import existFiles from '../../cmd/existFiles';
+import { Task } from '../../types';
 
 const testEslint = new RegExp(`(${eslintExtensionAll.replace(/,/g, '|')})$`);
 const testPrettier = new RegExp(`(${prettierExtensionAll.replace(/,/g, '|')})$`);

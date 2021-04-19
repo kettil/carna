@@ -11,6 +11,10 @@
       "rules": { "import/no-unused-modules": ["off"] }
     },
     {
+      "files": ["src/lib/tasks/*.ts"],
+      "rules": { "@typescript-eslint/ban-types": ["off"] }
+    },
+    {
       "files": ["templates/**/*.js", "templates/src/bin/*"],
       "rules": {
         "import/no-unused-modules": ["off"],
