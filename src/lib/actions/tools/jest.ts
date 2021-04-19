@@ -44,7 +44,6 @@ const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
     args.push('--coverageReporters', 'text-summary');
   } else if (ci && !props.coverage) {
     args.push('--ci');
-    args.push('--verbose');
     args.push('--no-coverage');
   } else if (!ci && !props.coverage) {
     args.push('--coverageThreshold', '\'{"global":{"statements":0,"branches":0,"functions":0,"lines":0}}\'');
