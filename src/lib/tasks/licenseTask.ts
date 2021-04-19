@@ -2,9 +2,9 @@ import { underline } from 'chalk';
 import { getBorderCharacters, table } from 'table';
 import license from '../actions/tools/licensecheck';
 import { spinnerAction } from '../cli/spinner';
-import { errorHandler } from '../cli/yargs';
 import LicenseDisabledError from '../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
+import { exit } from '../helper';
 import { Task } from '../types';
 import npmHookTask from './subTasks/npmHookTask';
 
@@ -27,7 +27,7 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
       argv.log.log(table(error.list, { border: getBorderCharacters('norc') }));
       argv.log.log(' ');
 
-      errorHandler(argv, error, true);
+      exit();
     }
 
     throw error;
