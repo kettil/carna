@@ -25,6 +25,7 @@ yargs
   .option('tpl', { default: tpl, type: 'string', hidden: true })
   .option('cfg', { default: cfg, type: 'string', hidden: true })
   .middleware((argv) => ({ log: logger(argv) }))
+  .parserConfiguration({ 'strip-aliased': true })
   .commandDir('../lib/commands')
   .demandCommand(1, 1)
   .strictCommands()
