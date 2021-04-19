@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.2](https://github.com/kettil/carna/compare/2.2.1...2.2.2) (2021-04-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 1.16.1 to 1.16.2 ([0a5b497](https://github.com/kettil/carna/commit/0a5b497542b1af9586ad15bed980d737228d4efc))
+* **deps:** bump table from 6.0.9 to 6.1.0 ([d63e5d2](https://github.com/kettil/carna/commit/d63e5d240408bf3dd848555b395f1cc83fc9fcf3))
+
 ## [2.2.1](https://github.com/kettil/carna/compare/2.2.0...2.2.1) (2021-04-12)
 
 
