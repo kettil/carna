@@ -14,7 +14,7 @@ const filterOptions = ([key]: [key: string, value: unknown]) =>
   globalOptions.includes(key as typeof globalOptions[number]);
 
 const filterProps = ([key]: [key: string, value: unknown]) =>
-  ![...globalOptions, '_', '$0r '].includes(key as typeof globalOptions[number]);
+  ![...globalOptions, '_', '$0'].includes(key as typeof globalOptions[number]);
 
 const errorHandler = (argv: PropsGlobal, error: unknown): void => {
   if (error instanceof ExecutableError) {
