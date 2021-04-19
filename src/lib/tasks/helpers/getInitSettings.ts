@@ -110,16 +110,7 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   settings.templates.push(['babel.config.js']);
   settings.templates.push(['webpack.config.js']);
 
-  settings.libraryDevelopment.push(
-    '@babel/cli',
-    '@babel/core',
-    '@babel/plugin-transform-runtime',
-    '@babel/preset-env',
-    '@babel/preset-typescript',
-    'babel-loader',
-    'webpack',
-    'webpack-cli',
-  );
+  settings.libraryDevelopment.push('webpack', 'webpack-cli');
 
   if (props.package && !props.cli) {
     settings.libraryDevelopment.push('@babel/runtime-corejs3');
@@ -168,8 +159,6 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   // ######################
 
   settings.templates.push(['jest.config.js']);
-
-  settings.libraryDevelopment.push('jest', '@types/jest', 'babel-jest');
 
   settings.files.push('tests/shared/.keep', 'tests/type/.keep');
   settings.folders.push('tests/shared', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
