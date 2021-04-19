@@ -68,9 +68,9 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   // ######################
 
   if (typeof settings.github.name === 'string') {
-    settings.folders.push('.dependabot', '.github/workflows');
+    settings.folders.push('.github', '.github/workflows');
 
-    settings.templates.push(['dependabot/config.yml', '.dependabot/config.yml']);
+    settings.templates.push(['github/dependabot.yml', '.github/dependabot.yml']);
     settings.templates.push(['github/CODEOWNERS', '.github/CODEOWNERS']);
     settings.templates.push(['github/workflows/qa.yml', '.github/workflows/qa.yml']);
   }

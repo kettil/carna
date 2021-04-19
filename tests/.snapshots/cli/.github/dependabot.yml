@@ -7,9 +7,9 @@ updates:
       time: '04:00'
     open-pull-requests-limit: 10
     reviewers:
-      - kettil
+      - 'github-username'
     assignees:
-      - kettil
+      - 'github-username'
     labels:
       - dependencies
     versioning-strategy: increase

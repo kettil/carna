@@ -12,7 +12,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "tests/shared",
     "tests/type",
@@ -95,8 +95,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
@@ -276,7 +276,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "tests/shared",
     "tests/type",
@@ -359,8 +359,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
@@ -540,7 +540,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "tests/shared",
     "tests/type",
@@ -634,8 +634,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
@@ -831,7 +831,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "tests/shared",
     "tests/type",
@@ -925,8 +925,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
@@ -1122,7 +1122,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "src/bin",
     "tests/shared",
@@ -1206,8 +1206,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
@@ -1394,7 +1394,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "src/bin",
     "tests/shared",
@@ -1478,8 +1478,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
@@ -1666,7 +1666,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "src/bin",
     "tests/shared",
@@ -1760,8 +1760,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
@@ -1963,7 +1963,7 @@ Object {
     ".vscode",
     "src",
     "src/lib",
-    ".dependabot",
+    ".github",
     ".github/workflows",
     "src/bin",
     "tests/shared",
@@ -2057,8 +2057,8 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "dependabot/config.yml",
-      ".dependabot/config.yml",
+      "github/dependabot.yml",
+      ".github/dependabot.yml",
     ],
     Array [
       "github/CODEOWNERS",
