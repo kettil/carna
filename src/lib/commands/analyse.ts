@@ -2,7 +2,7 @@ import { createBuilder, createHandler } from '../cli/yargs';
 import analyseTask, { analyseServices, AnalyseProps } from '../tasks/analyseTask';
 
 export const command = 'analyse';
-export const desc = 'Run the code quality tools';
+export const desc = 'Run code quality tools';
 
 const options = { group: `${command}-Options` } as const;
 

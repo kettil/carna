@@ -2,7 +2,7 @@ import { createBuilder, createHandler } from '../cli/yargs';
 import testTask, { TestProps } from '../tasks/testTask';
 
 export const command = 'test';
-export const desc = 'Run the jest tests';
+export const desc = 'Run tests';
 
 const options = { group: `${command}-Options` } as const;
 const boolOptions = { ...options, type: 'boolean', default: false } as const;
