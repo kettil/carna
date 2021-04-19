@@ -1,5 +1,64 @@
 # Changelog
 
+# [3.0.0](https://github.com/kettil/carna/compare/2.2.2...3.0.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 1.2.4 to 1.2.5 ([4cfdcb7](https://github.com/kettil/carna/commit/4cfdcb778e1593c8954e96295acf83ab6587eb69))
+* wrong ci setting in the git commit task ([78f4040](https://github.com/kettil/carna/commit/78f40405fa527cbddd0d00baca1eb4a93e7f3150))
+* **deps:** bump @kettil/eslint-config from 1.16.2 to 1.16.3 ([bfd49c9](https://github.com/kettil/carna/commit/bfd49c9f14011d1bb546ee8206f051b00f9bad19))
+* **deps:** bump @kettil/tool-lib from 2.9.0 to 2.9.2 ([2db5a19](https://github.com/kettil/carna/commit/2db5a19f1bc51ebd3ca44272f761129b2e36c176))
+* **deps:** bump @types/figlet from 1.5.0 to 1.5.1 ([f0cf27c](https://github.com/kettil/carna/commit/f0cf27c97adb256236330daf71e7431c0dcd1f30))
+* change github ci cache key ([60584fb](https://github.com/kettil/carna/commit/60584fb9b7c8b62b357957df27da5d8157658771))
+* change github ci cache key ([9ddbf15](https://github.com/kettil/carna/commit/9ddbf1543d7dc3150b4119820f3a6c638eda3f4d))
+* remove jest ci config file ([627a213](https://github.com/kettil/carna/commit/627a2135f3d0869ff6c6f4afa227db83984e18a9))
+* remove jest ci config file ([8bf5d13](https://github.com/kettil/carna/commit/8bf5d13c301370fe6b4e111c6f5982f3644797f5))
+* remove the verbose mode at jest ([95a3c4f](https://github.com/kettil/carna/commit/95a3c4f1c862d800dff88890bc4cf11a65d5d288))
+* remove the verbose mode at jest ([0c65970](https://github.com/kettil/carna/commit/0c65970e3aac78c8d9022de114b5bc3c0dbf5445))
+* remove typo on the option parser ([3ff4268](https://github.com/kettil/carna/commit/3ff4268f58564c7dd0b5ddcea78dca36d2bbcafc))
+* remove typo on the option parser ([a8e7551](https://github.com/kettil/carna/commit/a8e75519ff5e3672a99f221a8ce3e200091e2f9b))
+* rename dummy test files ([684d7b8](https://github.com/kettil/carna/commit/684d7b801e8c15df210d8fd81a3ccd78d7ade544))
+* rename dummy test files ([c992ef6](https://github.com/kettil/carna/commit/c992ef62e4874e02e0c5a9a9e18ee58bff7e2bcc))
+
+
+### Features
+
+* add a hook system ([#286](https://github.com/kettil/carna/issues/286)) ([e8b562a](https://github.com/kettil/carna/commit/e8b562abf1e856f75ce40246564c901aa5fd314d))
+* add a hook system ([#286](https://github.com/kettil/carna/issues/286)) ([fb23cdc](https://github.com/kettil/carna/commit/fb23cdc358bcb2d3b51a712e74053b8686373b08))
+* add cache action in the github ci ([bf5eedf](https://github.com/kettil/carna/commit/bf5eedfaf34a1a68199eafc0e14ecf0454ed70df))
+* add cache action in the github ci ([ac64359](https://github.com/kettil/carna/commit/ac64359389740c6e387902e40bc365d2faab4d1a))
+* add ci command ([69625e1](https://github.com/kettil/carna/commit/69625e1e9043dfe12b8845bf5839227c30315ddf))
+* add ci command ([261634b](https://github.com/kettil/carna/commit/261634b8e170d6bf80244045b480605748280be0))
+* add new test folder structure and template file ([713fc0b](https://github.com/kettil/carna/commit/713fc0b33aeb8b20b88cb59158f3c74548ca69d7))
+* add new test folder structure and template file ([bc81667](https://github.com/kettil/carna/commit/bc816673f984897f5fed9838d749c5edc2e8c074))
+* add shared folder for tests ([3520c36](https://github.com/kettil/carna/commit/3520c36d607d279d5f8110cd805f7c8d6f7b52e0))
+* add shared folder for tests ([3fde8f2](https://github.com/kettil/carna/commit/3fde8f291024af64c08722b82d0bf8832e7b1aa3))
+* add test command ([1e352b2](https://github.com/kettil/carna/commit/1e352b2eecbdb2ad9741ae5ccd0028023bc15965))
+* add test command ([b21c716](https://github.com/kettil/carna/commit/b21c716903b2202623f63bf283ede1153a9784d8))
+* add test coverage mode to git commit task ([cb24e71](https://github.com/kettil/carna/commit/cb24e71ee0abf48d4dba3c0e96f2fedd21ef8a75))
+* add the coverage mode at test command ([7c1ace6](https://github.com/kettil/carna/commit/7c1ace66c26d7e9911949eafdfb62d045534cfa3))
+* add the coverage mode at test command ([9179c9d](https://github.com/kettil/carna/commit/9179c9d40b86e3de446ce6a18b8ba114c5b09593))
+* add verbose option (in ci context) when calling jest ([78e2e3f](https://github.com/kettil/carna/commit/78e2e3f2e98257c37088a1e8e713362e8a315468))
+* add verbose option (in ci context) when calling jest ([34bf2a5](https://github.com/kettil/carna/commit/34bf2a56ea0a70bf65eda6e6683d36cd39943495))
+* adjustment of the config files for the test command ([e29ca37](https://github.com/kettil/carna/commit/e29ca37a54b0ded2a61a770d858cc65e9fb56c44))
+* adjustment of the config files for the test command ([6482f1e](https://github.com/kettil/carna/commit/6482f1e5de21e7b9f8482cf60c37000e1cf34dec))
+* enable "strip-aliased" option from yargs ([6cfa935](https://github.com/kettil/carna/commit/6cfa935a647f49005704e8caeb4e3ad93d9af11d))
+* enable "strip-aliased" option from yargs ([84785ae](https://github.com/kettil/carna/commit/84785aeded66d43f6531fcbf8b3d37684fb505bd))
+* rename command "lint" to "analyse" ([c406fc1](https://github.com/kettil/carna/commit/c406fc18727a195506fa9144f4baea26b6e81783))
+* rename command "lint" to "analyse" ([42b9a41](https://github.com/kettil/carna/commit/42b9a4102cec29bc5f842430a856dc0fdf469614))
+* simplification of the jest configuration ([9f97a48](https://github.com/kettil/carna/commit/9f97a48046a4cd99f358d470e5971a6055abbc1d))
+* simplification of the jest configuration ([2dfc22c](https://github.com/kettil/carna/commit/2dfc22c50973a6a2f42088686b9aceec07725560))
+* update Dependabot config files ([b2977de](https://github.com/kettil/carna/commit/b2977de2d63a56f7465049598a1685974d457f44))
+
+
+### BREAKING CHANGES
+
+* Simplifies the adding of test projects and the whole handling.
+* The command "lint" is renamed to "analyse", as this better describes the task of the command.
+* Simplifies the adding of test projects and the whole handling.
+* The command "lint" is renamed to "analyse", as this better describes the task of the command.
+
 ## [2.2.2](https://github.com/kettil/carna/compare/2.2.1...2.2.2) (2021-04-19)
 
 
