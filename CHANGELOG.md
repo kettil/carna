@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/kettil/carna/compare/3.1.0...3.1.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* update template folder handling in .npmignore file ([315c5f5](https://github.com/kettil/carna/commit/315c5f50447e45d792344907b2c668ecb1221cea))
+
 # [3.1.0](https://github.com/kettil/carna/compare/3.0.1...3.1.0) (2021-04-19)
 
 
