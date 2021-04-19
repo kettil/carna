@@ -33,7 +33,7 @@ const gitCommitTask: Task = async (argv) => {
     );
   }
 
-  await analyseTask({ ...argv, ci: true }, { eslintFiles, prettierFiles });
+  await analyseTask({ ...argv, ci: false }, { eslintFiles, prettierFiles });
 
   await gitAdd(argv, { files });
 
