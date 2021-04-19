@@ -41,6 +41,7 @@ const gitCommitTask: Task = async (argv) => {
   await tsc(argv, { mode: 'type-check' });
 
   await jest(argv, {});
+  await jest(argv, { coverage: true });
 };
 
 export default gitCommitTask;
