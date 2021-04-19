@@ -1,5 +1,7 @@
+import { red } from 'chalk';
 import { Arguments, Argv } from 'yargs';
 import ExecutableError from '../errors/executableError';
+import { exit } from '../helper';
 import logo from '../logo';
 import { PropsGlobal, Task } from '../types';
 
@@ -14,19 +16,19 @@ const filterOptions = ([key]: [key: string, value: unknown]) =>
 const filterProps = ([key]: [key: string, value: unknown]) =>
   ![...globalOptions, '_', '$0r '].includes(key as typeof globalOptions[number]);
 
-export const errorHandler = (argv: PropsGlobal, error: unknown, onlyExit?: boolean): void => {
+const errorHandler = (argv: PropsGlobal, error: unknown): void => {
   if (error instanceof ExecutableError) {
     argv.log.log('');
     argv.log.log(error.entries);
     argv.log.log('');
 
-    /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
-    process.exit(1);
+    exit();
   }
 
-  if (onlyExit) {
-    /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
-    process.exit(1);
+  if (error instanceof Error) {
+    argv.log.log('');
+    argv.log.log(red(error.message));
+    argv.log.log('');
   }
 
   throw error;

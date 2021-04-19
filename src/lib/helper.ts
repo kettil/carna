@@ -7,3 +7,8 @@ export const existConfigFile = async (cwd: string, files: string[]): Promise<boo
 
   return exists.some((v) => v);
 };
+
+export const exit = (code = 1): never => {
+  /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
+  process.exit(code);
+};
