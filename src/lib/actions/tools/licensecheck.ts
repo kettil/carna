@@ -2,7 +2,6 @@ import { isArray } from '@kettil/tool-lib';
 import { red } from 'chalk';
 import licenseCompatibilities from '../../../configs/licenseCompatibilities';
 import licensePackages from '../../../configs/licensePackages';
-import getConfig from '../../cli/config';
 import LicenseDisabledError from '../../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../../errors/licenseIncompatibleError';
 import { Action, LicensePackageInfo } from '../../types';
@@ -10,7 +9,7 @@ import getPackageInfo from './helpers/getPackageInfo';
 import getPackagePaths from './helpers/getPackagePaths';
 import isLicenseCompatible from './helpers/isLicenseCompatible';
 
-const licensecheck: Action = async (argv) => {
+const licensecheck: Action<[string[]]> = async (argv, ignorePackages = []) => {
   const { cwd, log } = argv;
 
   const projectInfo = await getPackageInfo(argv, { packagePath: cwd, ignorePackages: [], licensePackages: {} });
@@ -29,11 +28,6 @@ const licensecheck: Action = async (argv) => {
       `License verification is disabled (${projectLicense} != ${supportedLicenses.join('|')})`,
     );
   }
-
-  const configIgnorePackages = await getConfig(cwd, 'license.ignore.packages');
-  const ignorePackages = isArray(configIgnorePackages)
-    ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
-    : [];
 
   log.info('Get the paths of the packages');
 

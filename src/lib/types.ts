@@ -12,11 +12,13 @@ export type PropsGlobal = {
 };
 
 export type Action<
-  Props extends Record<string, unknown> | undefined = undefined,
+  Props extends Record<string, unknown> | unknown[] | undefined = undefined,
   ActionReturn = void
 > = Props extends undefined
   ? (argv: PropsGlobal) => Promise<ActionReturn>
-  : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
+  : Props extends unknown[]
+    ? (argv: PropsGlobal, ...props: Props) => Promise<ActionReturn>
+    : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
 
 export type Task<
   Props extends Record<string, unknown> | unknown[] | undefined = undefined,
