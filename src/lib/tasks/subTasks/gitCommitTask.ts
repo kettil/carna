@@ -2,12 +2,12 @@ import { uniqueArray } from '@kettil/tool-lib';
 import gitAdd from '../../actions/git/add';
 import gitLs from '../../actions/git/ls';
 import gitStaged from '../../actions/git/staged';
-import eslint, { eslintExtensionAll } from '../../actions/tools/eslint';
-import jest from '../../actions/tools/jest';
-import prettier, { prettierExtensionAll } from '../../actions/tools/prettier';
-import tsc from '../../actions/tools/tsc';
+import { eslintExtensionAll } from '../../actions/tools/eslint';
+import { prettierExtensionAll } from '../../actions/tools/prettier';
 import existFiles from '../../cmd/existFiles';
 import { Task } from '../../types';
+import analyseTask from '../analyseTask';
+import testTask from '../testTask';
 
 const testEslint = new RegExp(`(${eslintExtensionAll.replace(/,/g, '|')})$`);
 const testPrettier = new RegExp(`(${prettierExtensionAll.replace(/,/g, '|')})$`);
@@ -33,15 +33,12 @@ const gitCommitTask: Task = async (argv) => {
     );
   }
 
-  await prettier(argv, { write: true, files: prettierFiles });
-  await eslint(argv, { write: true, files: eslintFiles });
+  await analyseTask({ ...argv, ci: true }, { eslintFiles, prettierFiles });
 
   await gitAdd(argv, { files });
 
-  await tsc(argv, { mode: 'type-check' });
-
-  await jest(argv, {});
-  await jest(argv, { coverage: true });
+  await testTask({ ...argv, ci: true }, { coverage: false });
+  await testTask({ ...argv, ci: true }, { coverage: true });
 };
 
 export default gitCommitTask;

@@ -16,7 +16,7 @@ const configs = [
 export const prettierExtensionCi = 'json,md,scss,yml,yaml,html';
 export const prettierExtensionAll = `ts,tsx,js,jsx,${prettierExtensionCi}`;
 
-type PrettierProps = {
+export type PrettierProps = {
   write?: boolean;
   extension?: string;
   files?: string[];

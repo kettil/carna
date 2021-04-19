@@ -1,6 +1,6 @@
 import { join } from 'path';
-import eslint from '../actions/tools/eslint';
-import prettier, { prettierExtensionCi } from '../actions/tools/prettier';
+import eslint, { EslintProps } from '../actions/tools/eslint';
+import prettier, { prettierExtensionCi, PrettierProps } from '../actions/tools/prettier';
 import tsc from '../actions/tools/tsc';
 import { spinnerAction } from '../cli/spinner';
 import access from '../cmd/access';
@@ -14,22 +14,33 @@ const isSelectedService = (value: string | undefined, service: typeof analyseSer
 
 export type AnalyseProps = {
   only?: typeof analyseServices[number];
+  // internal
+  prettierFiles?: string[];
+  eslintFiles?: string[];
 };
 
-const analyseTask: Task<AnalyseProps> = async (argv, { only }) => {
+const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, prettierFiles }) => {
   await npmHookTask(argv, { task: 'analyse', type: 'pre' });
 
   const hasTypescriptConfig = await access(join(argv.cwd, 'tsconfig.json'), 'readable');
 
   if (isSelectedService(only, 'prettier')) {
-    await spinnerAction(
-      prettier(argv, argv.ci ? { write: false, extension: prettierExtensionCi } : { write: true }),
-      'Prettier',
-    );
+    const prettierOptions: PrettierProps = {
+      write: !argv.ci,
+      extension: argv.ci ? prettierExtensionCi : undefined,
+      files: prettierFiles,
+    };
+
+    await spinnerAction(prettier(argv, prettierOptions), 'Prettier');
   }
 
   if (isSelectedService(only, 'eslint')) {
-    await spinnerAction(eslint(argv, argv.ci ? { write: false } : { write: true }), 'ESLint');
+    const eslintOptions: EslintProps = {
+      write: !argv.ci,
+      files: eslintFiles,
+    };
+
+    await spinnerAction(eslint(argv, eslintOptions), 'ESLint');
   }
 
   if (isSelectedService(only, 'typescript')) {
