@@ -9,7 +9,7 @@ const ignoreFiles = new Set(['babel.config.js', 'jest.config.js', 'webpack.confi
 
 export const eslintExtensionAll = 'js,ts,tsx';
 
-type EslintProps = {
+export type EslintProps = {
   write?: boolean;
   files?: string[];
 };

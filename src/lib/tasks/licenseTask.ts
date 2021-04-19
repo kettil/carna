@@ -1,6 +1,8 @@
+import { isArray } from '@kettil/tool-lib';
 import { underline } from 'chalk';
 import { getBorderCharacters, table } from 'table';
 import license from '../actions/tools/licensecheck';
+import getConfig from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import LicenseDisabledError from '../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
@@ -14,8 +16,13 @@ export type LicenseProps = {};
 
 const licenseTask: Task<LicenseProps> = async (argv) => {
   try {
+    const configIgnorePackages = await getConfig(argv.cwd, 'license.ignore.packages');
+    const ignorePackages = isArray(configIgnorePackages)
+      ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
+      : [];
+
     await npmHookTask(argv, { task: 'license', type: 'pre' });
-    await spinnerAction(license(argv), `License verification (${notice})`);
+    await spinnerAction(license(argv, ignorePackages), `License verification (${notice})`);
     await npmHookTask(argv, { task: 'license', type: 'post' });
   } catch (error) {
     if (error instanceof LicenseDisabledError) {

@@ -1,7 +1,5 @@
-import { isArray } from '@kettil/tool-lib';
 import { blue, red, yellow } from 'chalk';
 import dependenciesCheck, { Options, parser, detector, special } from 'depcheck';
-import getConfig from '../../cli/config';
 import DependencyError from '../../errors/dependencyError';
 import { Action } from '../../types';
 
@@ -19,13 +17,8 @@ const options: Options = {
   specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky, special.webpack],
 };
 
-const depcheck: Action = async ({ cwd }) => {
-  const configIgnoreMatches = await getConfig(cwd, 'deps.ignore.packages');
-  const ignoreMatches = isArray(configIgnoreMatches)
-    ? configIgnoreMatches.filter((v): v is string => typeof v === 'string')
-    : [];
-
-  const result = await dependenciesCheck(cwd, { ...options, ignoreMatches: [...ignoreMatches, ...ignorePackage] });
+const depcheck: Action<[string[]]> = async ({ cwd }, ignorePackages = []) => {
+  const result = await dependenciesCheck(cwd, { ...options, ignoreMatches: [...ignorePackages, ...ignorePackage] });
   const groups = [
     { title: red('The dependencies are not used'), dependencies: result.dependencies },
     { title: yellow('The dev-dependencies are not used'), dependencies: result.devDependencies },
