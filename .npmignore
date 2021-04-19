@@ -12,7 +12,7 @@ npm-debug.log
 
 # config folders/files
 /.github
-/.dependabot
+/.carnarc.json
 /.editorconfig
 /.eslint*
 /.git*

@@ -204,26 +204,26 @@ The following subtask exists:
 Carna can be adjusted via the configuration file [.carnarc.json](./.carnarc.json).
 The file is structured as follows
 
-```json
+```json5
 {
-  "deps": {
-    "ignore": {
+  deps: {
+    ignore: {
       // Ignores the packets when checking whether a packet is used or not
-      "packages": []
-    }
+      packages: [],
+    },
   },
-  "license": {
-    "ignore": {
+  license: {
+    ignore: {
       // The packages are ignored during the license check
-      "packages": []
-    }
+      packages: [],
+    },
   },
-  "test": {
-    "coverage": {
+  test: {
+    coverage: {
       // Overwrites default coverage test projects ("unit" and "integration")
-      "projects": []
-    }
-  }
+      projects: [],
+    },
+  },
 }
 ```
 
