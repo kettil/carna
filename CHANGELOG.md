@@ -1,5 +1,17 @@
 # Changelog
 
+# [3.1.0](https://github.com/kettil/carna/compare/3.0.1...3.1.0) (2021-04-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 1.2.5 to 1.3.0 ([bff9299](https://github.com/kettil/carna/commit/bff9299436d23bd2e45d805cf5cfdc8646b18741))
+
+
+### Features
+
+* move some dev dependency into dependency ([ba0a18d](https://github.com/kettil/carna/commit/ba0a18d916988a6084ee43121a6a174aaa71988f))
+
 ## [3.0.1](https://github.com/kettil/carna/compare/3.0.0...3.0.1) (2021-04-19)
 
 
