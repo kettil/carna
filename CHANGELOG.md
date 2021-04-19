@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/kettil/carna/compare/3.0.0...3.0.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* add .carnarc.json ([c7fff9a](https://github.com/kettil/carna/commit/c7fff9a46c46e8c29f36e67968cee81683c7ee38))
+
 # [3.0.0](https://github.com/kettil/carna/compare/2.2.2...3.0.0) (2021-04-19)
 
 
