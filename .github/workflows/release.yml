@@ -11,24 +11,40 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        os: [ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: install-${{ runner.OS }}-v${{ matrix.node-version }}-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Run build script
         run: npm run build
 
-      - name: Run lint
-        run: node ./build/bin/index.js lint --ci
+      - name: Run analyse
+        run: node ./build/bin/index.js analyse --ci
+
+      - name: Run test
+        run: node ./build/bin/index.js test --ci
 
       - name: Release
         env:

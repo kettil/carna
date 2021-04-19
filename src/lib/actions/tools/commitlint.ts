@@ -5,11 +5,11 @@ import { Action } from '../../types';
 
 const configs = ['commitlint.config.js', '.commitlintrc.js', '.commitlintrc.json', '.commitlintrc.yml'];
 
-export type Props = {
+export type CommitlintProps = {
   edit: string;
 };
 
-const commitlint: Action<Props> = async ({ cwd, cfg, log }, { edit }) => {
+const commitlint: Action<CommitlintProps> = async ({ cwd, cfg, log }, { edit }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/commitlint';

@@ -7,36 +7,41 @@ const commons = {
   restoreMocks: true,
 };
 
+const projectCommon = {
+  ...commons,
+  testMatch: ['**/*.test.{js,ts,tsx}'],
+  testPathIgnorePatterns: ['/node_modules/', '/src/'],
+};
+
 const projects = {
   unit: {
-    ...commons,
+    ...projectCommon,
     displayName: { name: 'unit', color: 'cyan' },
-    roots: ['<rootDir>/src'],
-    testMatch: ['**/*.test.{js,ts,tsx}', '**/*.test-d.{js,ts,tsx}'],
+    roots: ['<rootDir>/src', '<rootDir>/tests/unit'],
   },
   integration: {
-    ...commons,
+    ...projectCommon,
     displayName: { name: 'integration', color: 'magenta' },
-    roots: ['<rootDir>/src/', '<rootDir>/tests/'],
-    testMatch: ['**/*.test.{js,ts,tsx}', '**/*.test-d.{js,ts,tsx}'],
-    testPathIgnorePatterns: ['/node_modules/', '/src/'],
+    roots: ['<rootDir>/src/', '<rootDir>/tests/integration'],
+  },
+  e2e: {
+    ...projectCommon,
+    displayName: { name: 'e2e', color: 'yellow' },
+    roots: ['<rootDir>/src/', '<rootDir>/tests/e2e'],
   },
 };
 
 const config = {
   ...commons,
+  projects,
 
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx,js}',
-    '!<rootDir>/src/**/*.test.{ts,tsx,js}',
-    '!<rootDir>/src/**/*.test-d.{ts,tsx,js}',
     '!<rootDir>/src/**/types.ts',
     '!<rootDir>/src/index.ts',
 
     '<rootDir>/packages/*/src/**/*.{ts,tsx,js}',
-    '!<rootDir>/packages/*/src/**/*.test.{ts,tsx,js}',
-    '!<rootDir>/packages/*/src/**/*.test-d.{ts,tsx,js}',
     '!<rootDir>/packages/*/src/**/types.ts',
     '!<rootDir>/packages/*/src/index.ts',
   ],
@@ -53,4 +58,4 @@ const config = {
   },
 };
 
-module.exports = { config, projects };
+module.exports = { config, projects, projectCommon };

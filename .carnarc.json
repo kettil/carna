@@ -1,5 +1,5 @@
 {
-  "debs": {
+  "deps": {
     "ignore": {
       "packages": [
         "@kettil/commitlint-config",

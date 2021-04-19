@@ -7,14 +7,14 @@ const configs = ['.eslintrc.js', '.eslintrc.cjs', '.eslintrc.yaml', '.eslintrc.y
 
 const ignoreFiles = new Set(['babel.config.js', 'jest.config.js', 'webpack.config.js']);
 
-export const extensionAll = 'js,ts,tsx';
+export const eslintExtensionAll = 'js,ts,tsx';
 
-type Props = {
+type EslintProps = {
   write?: boolean;
   files?: string[];
 };
 
-const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
+const eslint: Action<EslintProps> = async ({ cwd, cfg, log }, { write, files }) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/eslint';
@@ -41,7 +41,7 @@ const eslint: Action<Props> = async ({ cwd, cfg, log }, { write, files }) => {
 
     args.push(...filteredFiles);
   } else {
-    args.push('--ext', `"${extensionAll}"`);
+    args.push('--ext', `"${eslintExtensionAll}"`);
     args.push('.');
   }
 

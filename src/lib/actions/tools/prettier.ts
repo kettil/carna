@@ -13,16 +13,19 @@ const configs = [
   'prettier.config.js',
 ];
 
-export const extensionCi = 'json,md,scss,yml,yaml,html';
-export const extensionAll = `ts,tsx,js,jsx,${extensionCi}`;
+export const prettierExtensionCi = 'json,md,scss,yml,yaml,html';
+export const prettierExtensionAll = `ts,tsx,js,jsx,${prettierExtensionCi}`;
 
-type Props = {
+type PrettierProps = {
   write?: boolean;
   extension?: string;
   files?: string[];
 };
 
-const prettier: Action<Props> = async ({ cwd, cfg, log }, { write, files, extension = extensionAll }) => {
+const prettier: Action<PrettierProps> = async (
+  { cwd, cfg, log },
+  { write, files, extension = prettierExtensionAll },
+) => {
   const hasConfigFile = await existConfigFile(cwd, configs);
 
   const cmd = './node_modules/.bin/prettier';

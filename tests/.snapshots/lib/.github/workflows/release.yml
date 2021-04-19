@@ -8,30 +8,40 @@ on:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        os: [ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        id: cache-node-modules
+        with:
+          path: node_modules
+          key: install-${{ runner.OS }}-v${{ matrix.node-version }}-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Run prettier
-        run: npm run prettier:ci
-
-      - name: Run eslint
-        run: npm run lint:ci
+      - name: Run analyse
+        run: npx carna analyse --ci
 
       - name: Run test
-        run: npm run test:ci
+        run: npx carna test --ci
 
-      - name: Run typescript
-        run: npm run build
+      - name: Run build
+        run: npx carna build --ci
 
       - name: Release
         env:

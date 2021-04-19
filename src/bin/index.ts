@@ -3,6 +3,7 @@ import { join } from 'path';
 import chalk from 'chalk';
 import yargs from 'yargs';
 import logger from '../lib/cli/logger';
+import { ciDefaultValue } from '../lib/cli/yargs';
 import { PropsGlobal } from '../lib/types';
 
 const cwd = process.cwd();
@@ -17,6 +18,7 @@ const epilogue = [
 
 yargs
   .locale('en')
+  .option('ci', { default: ciDefaultValue(), type: 'boolean', describe: 'Run carna in CI mode' })
   .option('verbose', { default: false, alias: 'v', type: 'boolean', desc: 'Print info messages' })
   .option('vvv', { default: false, type: 'boolean', desc: 'Print info/debug messages' })
   .option('cwd', { default: cwd, type: 'string', hidden: true })
@@ -25,6 +27,8 @@ yargs
   .middleware((argv) => ({ log: logger(argv) }))
   .commandDir('../lib/commands')
   .demandCommand(1, 1)
+  .strictCommands()
+  .strictOptions()
   .usage('Usage: $0 <command> [options]')
   .epilogue(epilogue.join('\n'))
   .help()
