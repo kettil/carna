@@ -1,5 +1,6 @@
 import { red } from 'chalk';
 import { Arguments, Argv } from 'yargs';
+import access from '../cmd/access';
 import ExecutableError from '../errors/executableError';
 import { exit } from '../helper';
 import logo from '../logo';
@@ -40,6 +41,24 @@ export const createHandler = <TaskProps extends Record<string, unknown>>(
   try {
     if (!argv.ci) {
       await logo();
+    }
+
+    const [isReadableCwd, isReadableCfg, isReadableTpl] = await Promise.all([
+      access(argv.cwd, 'readable'),
+      access(argv.cfg, 'readable'),
+      access(argv.tpl, 'readable'),
+    ]);
+
+    if (!isReadableCwd) {
+      throw new Error(`The folder ${argv.cwd} is not readable`);
+    }
+
+    if (!isReadableCfg) {
+      throw new Error(`The folder ${argv.cfg} is not readable`);
+    }
+
+    if (!isReadableTpl) {
+      throw new Error(`The folder ${argv.tpl} is not readable`);
     }
 
     argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
