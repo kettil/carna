@@ -16,7 +16,7 @@ const gitCommitTask: Task = async (argv) => {
   const stagedFiles = await gitStaged(argv, {});
 
   if (stagedFiles.length === 0) {
-    throw new Error('No stage files found');
+    return;
   }
 
   const files = await existFiles(stagedFiles, argv.cwd);
