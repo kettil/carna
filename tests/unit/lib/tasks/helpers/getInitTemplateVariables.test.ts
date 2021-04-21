@@ -13,7 +13,7 @@ describe('getTemplateVariables()', () => {
   ];
 
   test.each(params)('it should work (cli: %p, package: %p, github: %p)', (cli, isPackage, github) => {
-    const settings = getInitTemplateVariables({ cli, package: isPackage }, { github: { name: github } }, 'packageName');
+    const settings = getInitTemplateVariables({ cli, package: isPackage }, { github: { name: github } });
 
     expect(settings).toMatchSnapshot();
   });

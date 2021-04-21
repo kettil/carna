@@ -14,7 +14,7 @@ const options: Options = {
     '**/*.tsx': parser.typescript,
   },
   detectors: [detector.requireCallExpression, detector.importDeclaration],
-  specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky, special.webpack],
+  specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky],
 };
 
 const depcheck: Action<[string[]]> = async ({ cwd }, ignorePackages = []) => {

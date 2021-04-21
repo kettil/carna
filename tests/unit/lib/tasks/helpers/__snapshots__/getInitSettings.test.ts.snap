@@ -25,8 +25,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -101,9 +99,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -153,8 +148,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -215,9 +208,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -271,8 +261,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -347,9 +335,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -399,8 +384,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -461,9 +444,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -517,8 +497,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
@@ -612,9 +590,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -664,8 +639,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
@@ -734,9 +707,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -790,8 +760,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
@@ -885,9 +853,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -937,8 +902,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
@@ -1007,9 +970,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1064,8 +1024,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -1143,9 +1101,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -1196,8 +1151,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -1261,9 +1214,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1318,8 +1268,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -1397,9 +1345,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -1450,8 +1395,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -1515,9 +1458,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1572,8 +1512,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -1669,9 +1607,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -1722,8 +1657,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -1794,9 +1727,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1851,8 +1781,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -1948,9 +1876,6 @@ Object {
       "babel.config.js",
     ],
     Array [
-      "webpack.config.js",
-    ],
-    Array [
       "typescriptrc.json",
       "tsconfig.json",
     ],
@@ -2001,8 +1926,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "webpack",
-    "webpack-cli",
     "@types/node",
     "typescript",
   ],
@@ -2073,9 +1996,6 @@ Object {
     ],
     Array [
       "babel.config.js",
-    ],
-    Array [
-      "webpack.config.js",
     ],
     Array [
       "typescriptrc.json",

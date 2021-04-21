@@ -5,7 +5,7 @@ import { Action } from '../../types';
 
 const configs = ['.eslintrc.js', '.eslintrc.cjs', '.eslintrc.yaml', '.eslintrc.yml', '.eslintrc.json', '.eslintrc'];
 
-const ignoreFiles = new Set(['babel.config.js', 'jest.config.js', 'webpack.config.js']);
+const ignoreFiles = new Set(['babel.config.js', 'jest.config.js']);
 
 export const eslintExtensionAll = 'js,ts,tsx';
 

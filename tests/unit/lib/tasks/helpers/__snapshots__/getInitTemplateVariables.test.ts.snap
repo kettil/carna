@@ -5,8 +5,6 @@ Object {
   "BABEL_MODULE_TARGET": "defaults",
   "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
@@ -15,8 +13,6 @@ Object {
   "BABEL_MODULE_TARGET": "defaults",
   "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
@@ -27,8 +23,6 @@ Object {
   },
   "BABEL_MODULE_TYPE": false,
   "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
@@ -39,8 +33,6 @@ Object {
   },
   "BABEL_MODULE_TYPE": false,
   "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
@@ -49,8 +41,6 @@ Object {
   "BABEL_MODULE_TARGET": "defaults",
   "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
@@ -59,8 +49,6 @@ Object {
   "BABEL_MODULE_TARGET": "defaults",
   "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
@@ -69,8 +57,6 @@ Object {
   "BABEL_MODULE_TARGET": "defaults",
   "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
@@ -79,7 +65,5 @@ Object {
   "BABEL_MODULE_TARGET": "defaults",
   "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;

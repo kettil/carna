@@ -104,13 +104,10 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   }
 
   // ######################
-  // # Babel/Webpack      #
+  // # Babel              #
   // ######################
 
   settings.templates.push(['babel.config.js']);
-  settings.templates.push(['webpack.config.js']);
-
-  settings.libraryDevelopment.push('webpack', 'webpack-cli');
 
   if (props.package && !props.cli) {
     settings.libraryDevelopment.push('@babel/runtime-corejs3');
