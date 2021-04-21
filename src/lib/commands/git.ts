@@ -4,7 +4,7 @@ import gitTask, { GitProps } from '../tasks/gitTask';
 export const command = 'git <hook>';
 export const desc = 'Handler for the git hooks';
 
-const mode = ['msg', 'commit', 'push'] as const;
+const mode = ['msg', 'commit'] as const;
 const options = { group: `${command.slice(0, Math.max(0, command.indexOf('<'))).trim()}-Options` } as const;
 
 export const handler = createHandler<GitProps>(gitTask);

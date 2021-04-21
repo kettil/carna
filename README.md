@@ -184,7 +184,6 @@ The following subtask exists:
 
 - `git commit`: Checks the files in staged with prettier, eslint and typescript (git-hook: `pre-commit`).
 - `git msg`: Checks the git commit message for a consistent structure (git-hook: `commit-msg`).
-- `git push`: Checks the files with prettier, eslint and typescript (git-hook: `pre-push`).
 
 ### Options
 
