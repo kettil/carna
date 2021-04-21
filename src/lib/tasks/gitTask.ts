@@ -1,7 +1,6 @@
 import { Task } from '../types';
 import gitCommitTask from './subTasks/gitCommitTask';
 import gitMessageTask, { GitMessageProps } from './subTasks/gitMessageTask';
-import gitPushTask from './subTasks/gitPushTask';
 import npmHookTask from './subTasks/npmHookTask';
 
 export type GitProps = {
@@ -29,11 +28,6 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
       await npmHookTask(argv, { task: ['git', 'msg'], type: 'post' });
       break;
 
-    case 'push':
-      await npmHookTask(argv, { task: ['git', 'push'], type: 'pre' });
-      await gitPushTask(argv);
-      await npmHookTask(argv, { task: ['git', 'push'], type: 'post' });
-      break;
     default:
       throw new Error(`The hook "${hook}" is unknown`);
   }
