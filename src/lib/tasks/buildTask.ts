@@ -2,7 +2,6 @@ import { join } from 'path';
 import npmPackageLoad from '../actions/npm/packageLoad';
 import babel from '../actions/tools/babel';
 import tsc from '../actions/tools/tsc';
-import webpack from '../actions/tools/webpack';
 import { spinnerAction } from '../cli/spinner';
 import access from '../cmd/access';
 import { Task } from '../types';
@@ -21,7 +20,6 @@ const buildTask: Task<BuildProps> = async (argv) => {
   }
 
   await spinnerAction(babel(argv), 'Babel');
-  await spinnerAction(webpack(argv), 'Webpack');
 
   await npmHookTask(argv, { task: 'build', type: 'post' });
 };

@@ -54,7 +54,7 @@ const initTask: Action<InitProps> = async (argv, props) => {
   await spinnerAction(Promise.all(settings.files.map((file) => nodeFile(argv, { file }))), 'Create the project files');
 
   // create template files
-  const templateVariables = getTemplateVariables(props, settings, packageName);
+  const templateVariables = getTemplateVariables(settings);
 
   await spinnerAction(
     Promise.all(

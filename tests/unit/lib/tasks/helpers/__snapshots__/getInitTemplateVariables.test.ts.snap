@@ -1,85 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getTemplateVariables() it should work (cli: false, package: false, github: "username") 1`] = `
+exports[`getTemplateVariables() it should work with github username 1`] = `
 Object {
-  "BABEL_MODULE_TARGET": "defaults",
-  "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
 
-exports[`getTemplateVariables() it should work (cli: false, package: false, github: undefined) 1`] = `
+exports[`getTemplateVariables() it should work without github username 1`] = `
 Object {
-  "BABEL_MODULE_TARGET": "defaults",
-  "BABEL_MODULE_TYPE": "commonjs",
   "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
-}
-`;
-
-exports[`getTemplateVariables() it should work (cli: false, package: true, github: "username") 1`] = `
-Object {
-  "BABEL_MODULE_TARGET": Object {
-    "node": "14",
-  },
-  "BABEL_MODULE_TYPE": false,
-  "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
-}
-`;
-
-exports[`getTemplateVariables() it should work (cli: false, package: true, github: undefined) 1`] = `
-Object {
-  "BABEL_MODULE_TARGET": Object {
-    "node": "14",
-  },
-  "BABEL_MODULE_TYPE": false,
-  "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
-}
-`;
-
-exports[`getTemplateVariables() it should work (cli: true, package: false, github: "username") 1`] = `
-Object {
-  "BABEL_MODULE_TARGET": "defaults",
-  "BABEL_MODULE_TYPE": "commonjs",
-  "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
-}
-`;
-
-exports[`getTemplateVariables() it should work (cli: true, package: false, github: undefined) 1`] = `
-Object {
-  "BABEL_MODULE_TARGET": "defaults",
-  "BABEL_MODULE_TYPE": "commonjs",
-  "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
-}
-`;
-
-exports[`getTemplateVariables() it should work (cli: true, package: true, github: "username") 1`] = `
-Object {
-  "BABEL_MODULE_TARGET": "defaults",
-  "BABEL_MODULE_TYPE": "commonjs",
-  "GITHUB_USERNAME": "username",
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
-}
-`;
-
-exports[`getTemplateVariables() it should work (cli: true, package: true, github: undefined) 1`] = `
-Object {
-  "BABEL_MODULE_TARGET": "defaults",
-  "BABEL_MODULE_TYPE": "commonjs",
-  "GITHUB_USERNAME": undefined,
-  "PACKAGE_FILENAME": "packageName",
-  "PACKAGE_LIBRARY": "packageName",
 }
 `;
