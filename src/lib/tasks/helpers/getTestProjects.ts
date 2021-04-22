@@ -18,7 +18,8 @@ const getTestProjects: Task<[string[] | undefined, boolean | undefined], string[
   const folders = files
     .filter((file) => file.isDirectory() && !file.name.startsWith('.'))
     .map((folder) => folder.name)
-    .filter((folder) => !ignoreFolders.has(folder));
+    .filter((folder) => !ignoreFolders.has(folder))
+    .sort();
 
   const projects = [
     ...specialFolders.filter((folder) => folders.includes(folder)),
