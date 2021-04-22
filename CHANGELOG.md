@@ -1,5 +1,33 @@
 # Changelog
 
+# [4.0.0](https://github.com/kettil/carna/compare/3.1.1...4.0.0) (2021-04-22)
+
+
+### Bug Fixes
+
+* remove carna logo ([ba1ab8f](https://github.com/kettil/carna/commit/ba1ab8fd192a208f99901efcb063102a791adff6))
+* **deps:** bump @babel/cli from 7.13.14 to 7.13.16 ([998e0b8](https://github.com/kettil/carna/commit/998e0b8e113711ea2969bae533b017d8fc22a839))
+* **deps:** bump chalk from 4.1.0 to 4.1.1 ([82123b3](https://github.com/kettil/carna/commit/82123b35a8e316ecb150394e02f5c810147fb0dd))
+* checks if the folders cwd, cfg and tpl are readable ([2d5cb02](https://github.com/kettil/carna/commit/2d5cb02ca493b368eafa96610466aaee77aeafa9))
+* extend the deps ignore list ([c12f8f4](https://github.com/kettil/carna/commit/c12f8f495d51ffe18a5fd10b4bdd460425f97640))
+* no error if no staged files are found ([d487587](https://github.com/kettil/carna/commit/d4875872177f1cc34974229736985a9d2ce196f9))
+* **deps:** bump @babel/core from 7.13.15 to 7.13.16 ([3daf6f6](https://github.com/kettil/carna/commit/3daf6f6050dab0219303dcfda096f8860e017989))
+* **deps:** bump table from 6.1.0 to 6.3.2 ([60909ab](https://github.com/kettil/carna/commit/60909ab7dd7490443f1fe7803cb3d21e2b1387a0))
+
+
+### Features
+
+* babel always converts to CommonJS and node v14 ([0c9616a](https://github.com/kettil/carna/commit/0c9616a3b999ab4efbb0766e75df82d2a9a3de5e))
+* create a json test report in the ci command ([a26e281](https://github.com/kettil/carna/commit/a26e281cf009f6cc3034f20a04fe35f9169794da))
+* remove git pre-push hook ([8d378c1](https://github.com/kettil/carna/commit/8d378c13a119503824aa2d049afb030aea9b91dc))
+* remove webpack ([5244234](https://github.com/kettil/carna/commit/5244234cc5ae422bc4d772818588e0818fa567a3))
+* run webpack only if the configuration file exists (build-command) ([01034e7](https://github.com/kettil/carna/commit/01034e7fd15fea931ca9721a7d66020d4c2f4e96))
+
+
+### BREAKING CHANGES
+
+* Webpack had no added value in the context of carna and so I removed it
+
 ## [3.1.1](https://github.com/kettil/carna/compare/3.1.0...3.1.1) (2021-04-19)
 
 
