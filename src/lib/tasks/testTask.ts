@@ -1,5 +1,7 @@
-import jest, { JestProps } from '../actions/tools/jest';
+import { join } from 'path';
+import jest, { JestProps, coverageFolderName } from '../actions/tools/jest';
 import { spinnerAction } from '../cli/spinner';
+import mkdir from '../cmd/mkdir';
 import { Task } from '../types';
 import getTestProjects from './helpers/getTestProjects';
 import npmHookTask from './subTasks/npmHookTask';
@@ -11,7 +13,11 @@ export type TestProps = Omit<JestProps, 'project'> & {
 const testTask: Task<TestProps> = async (argv, props) => {
   await npmHookTask(argv, { task: 'test', type: 'pre' });
 
+  const projectList = await getTestProjects(argv, undefined, props.coverage);
   const projects = await getTestProjects(argv, props.project, props.coverage);
+
+  // create a coverage folder
+  await mkdir(join(argv.cwd, coverageFolderName));
 
   if (props.watch || props.coverage) {
     /* eslint-disable-next-line no-restricted-syntax */
@@ -21,9 +27,9 @@ const testTask: Task<TestProps> = async (argv, props) => {
     }
 
     if (props.coverage) {
-      await spinnerAction(jest(argv, { ...props, project: projects }), 'Jest: coverage');
+      await spinnerAction(jest(argv, { ...props, projectList, project: projects }), 'Jest: coverage');
     } else {
-      await jest(argv, { ...props, project: projects });
+      await jest(argv, { ...props, projectList, project: projects });
     }
 
     /* eslint-disable-next-line no-restricted-syntax */
@@ -36,7 +42,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
     for (const project of projects) {
       /* eslint-disable no-await-in-loop */
       await npmHookTask(argv, { task: ['test', project], type: 'pre' });
-      await spinnerAction(jest(argv, { ...props, project }), `Jest: ${project}`);
+      await spinnerAction(jest(argv, { ...props, projectList, project }), `Jest: ${project}`);
       await npmHookTask(argv, { task: ['test', project], type: 'post' });
       /* eslint-enable no-await-in-loop */
     }

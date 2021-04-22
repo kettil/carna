@@ -33,15 +33,13 @@ const config = {
     '!<rootDir>/packages/*/src/**/types.ts',
     '!<rootDir>/packages/*/src/index.ts',
   ],
-  coveragePathIgnorePatterns: ['/__jest__/'],
   coverageReporters: ['text-summary', 'html'],
-  coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {
-      statements: 90,
-      branches: 90,
-      functions: 90,
-      lines: 90,
+      statements: 95,
+      branches: 95,
+      functions: 95,
+      lines: 95,
     },
   },
 };

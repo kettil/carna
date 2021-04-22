@@ -3,7 +3,6 @@ import { Arguments, Argv } from 'yargs';
 import access from '../cmd/access';
 import ExecutableError from '../errors/executableError';
 import { exit } from '../helper';
-import logo from '../logo';
 import { PropsGlobal, Task } from '../types';
 
 type CommandBuilder<TaskProps = Record<string, unknown>> = (yargs: Argv<PropsGlobal>) => Argv<PropsGlobal & TaskProps>;
@@ -39,10 +38,6 @@ export const createHandler = <TaskProps extends Record<string, unknown>>(
   task: Task<TaskProps>,
 ): CommandHandler<TaskProps> => async (argv) => {
   try {
-    if (!argv.ci) {
-      await logo();
-    }
-
     const [isReadableCwd, isReadableCfg, isReadableTpl] = await Promise.all([
       access(argv.cwd, 'readable'),
       access(argv.cfg, 'readable'),
