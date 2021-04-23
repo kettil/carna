@@ -33,6 +33,7 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
       ['gitignore', '.gitignore'],
       ['npmignore', '.npmignore'],
       ['prettierignore', '.prettierignore'],
+      ['babel.config.js'],
     ],
 
     libraryProduction: [],
@@ -101,19 +102,6 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   if (props.cli) {
     settings.folders.push('src/bin');
     settings.templates.push(['src/bin/index.ts']);
-  }
-
-  // ######################
-  // # Babel              #
-  // ######################
-
-  settings.templates.push(['babel.config.js']);
-
-  if (props.package && !props.cli) {
-    settings.libraryDevelopment.push('@babel/runtime-corejs3');
-    settings.packagePeerDependencies.push('@babel/runtime-corejs3');
-  } else {
-    settings.libraryProduction.push('@babel/runtime-corejs3');
   }
 
   // ######################

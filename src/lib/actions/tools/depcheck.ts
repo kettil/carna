@@ -3,7 +3,7 @@ import dependenciesCheck, { Options, parser, detector, special } from 'depcheck'
 import DependencyError from '../../errors/dependencyError';
 import { Action } from '../../types';
 
-const ignorePackage = ['typescript'] as const;
+const ignorePackage = ['@types/node', 'typescript'] as const;
 
 const options: Options = {
   ignoreDirs: ['node_modules'],
