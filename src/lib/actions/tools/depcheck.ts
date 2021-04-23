@@ -27,8 +27,7 @@ const depcheck: Action<[string[]]> = async ({ cwd }, ignorePackages = []) => {
 
   const output = groups
     .filter(({ dependencies }) => dependencies.length > 0)
-    .map(({ title, dependencies }) => [`▸ ${title}`, ...dependencies.sort().map((v) => `  ∙ ${v}`), ''])
-    .flat();
+    .flatMap(({ title, dependencies }) => [`▸ ${title}`, ...dependencies.sort().map((v) => `  ∙ ${v}`), '']);
 
   if (output.length > 0) {
     throw new DependencyError('Depcheck error', output);
