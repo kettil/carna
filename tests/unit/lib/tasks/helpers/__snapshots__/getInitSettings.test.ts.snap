@@ -28,9 +28,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -84,6 +82,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -94,9 +95,6 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -151,9 +149,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -264,9 +260,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -320,6 +314,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -330,9 +327,6 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -387,9 +381,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -497,7 +489,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
   ],
@@ -522,9 +513,7 @@ Object {
     },
     "version": "0.1.0",
   },
-  "packagePeerDependencies": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "packagePeerDependencies": Array [],
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
@@ -567,6 +556,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -585,9 +577,6 @@ Object {
     Array [
       "releaserc.json",
       ".releaserc.json",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -639,7 +628,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
   ],
@@ -657,9 +645,7 @@ Object {
     },
     "version": "0.1.0",
   },
-  "packagePeerDependencies": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "packagePeerDependencies": Array [],
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
@@ -702,11 +688,11 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "releaserc.json",
-      ".releaserc.json",
+      "babel.config.js",
     ],
     Array [
-      "babel.config.js",
+      "releaserc.json",
+      ".releaserc.json",
     ],
     Array [
       "typescriptrc.json",
@@ -760,7 +746,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
   ],
@@ -785,9 +770,7 @@ Object {
     },
     "version": "0.1.0",
   },
-  "packagePeerDependencies": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "packagePeerDependencies": Array [],
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
@@ -830,6 +813,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -848,9 +834,6 @@ Object {
     Array [
       "releaserc.json",
       ".releaserc.json",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -902,7 +885,6 @@ Object {
   },
   "libraryDevelopment": Array [
     "carna",
-    "@babel/runtime-corejs3",
     "@types/node",
     "typescript",
   ],
@@ -920,9 +902,7 @@ Object {
     },
     "version": "0.1.0",
   },
-  "packagePeerDependencies": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "packagePeerDependencies": Array [],
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
@@ -965,11 +945,11 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "releaserc.json",
-      ".releaserc.json",
+      "babel.config.js",
     ],
     Array [
-      "babel.config.js",
+      "releaserc.json",
+      ".releaserc.json",
     ],
     Array [
       "typescriptrc.json",
@@ -1027,9 +1007,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1083,6 +1061,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -1096,9 +1077,6 @@ Object {
     ],
     Array [
       "src/bin/index.ts",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1154,9 +1132,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1210,10 +1186,10 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "src/bin/index.ts",
+      "babel.config.js",
     ],
     Array [
-      "babel.config.js",
+      "src/bin/index.ts",
     ],
     Array [
       "typescriptrc.json",
@@ -1271,9 +1247,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1327,6 +1301,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -1340,9 +1317,6 @@ Object {
     ],
     Array [
       "src/bin/index.ts",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1398,9 +1372,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1454,10 +1426,10 @@ Object {
       ".prettierignore",
     ],
     Array [
-      "src/bin/index.ts",
+      "babel.config.js",
     ],
     Array [
-      "babel.config.js",
+      "src/bin/index.ts",
     ],
     Array [
       "typescriptrc.json",
@@ -1515,9 +1487,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1581,6 +1551,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -1602,9 +1575,6 @@ Object {
     ],
     Array [
       "src/bin/index.ts",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1660,9 +1630,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1719,14 +1687,14 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "releaserc.json",
       ".releaserc.json",
     ],
     Array [
       "src/bin/index.ts",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1784,9 +1752,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1850,6 +1816,9 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "github/dependabot.yml",
       ".github/dependabot.yml",
     ],
@@ -1871,9 +1840,6 @@ Object {
     ],
     Array [
       "src/bin/index.ts",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",
@@ -1929,9 +1895,7 @@ Object {
     "@types/node",
     "typescript",
   ],
-  "libraryProduction": Array [
-    "@babel/runtime-corejs3",
-  ],
+  "libraryProduction": Array [],
   "packageBin": Object {},
   "packageInit": Object {
     "author": "name <email>",
@@ -1988,14 +1952,14 @@ Object {
       ".prettierignore",
     ],
     Array [
+      "babel.config.js",
+    ],
+    Array [
       "releaserc.json",
       ".releaserc.json",
     ],
     Array [
       "src/bin/index.ts",
-    ],
-    Array [
-      "babel.config.js",
     ],
     Array [
       "typescriptrc.json",

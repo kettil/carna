@@ -1,11 +1,5 @@
 module.exports = {
-  presets: ['@babel/env', '@babel/preset-typescript'],
-  plugins: [
-    [
-      '@babel/plugin-transform-runtime', // replace helper code with runtime imports (deduplication)
-      { corejs: 3 }, // import corejs polyfills exactly where they are needed
-    ],
-  ],
+  presets: [['@babel/env', { modules: 'commonjs', targets: { node: '14' } }], '@babel/preset-typescript'],
   env: {
     test: {
       // extra configuration for process.env.NODE_ENV === 'test'
