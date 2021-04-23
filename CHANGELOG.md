@@ -1,5 +1,17 @@
 # Changelog
 
+# [4.1.0](https://github.com/kettil/carna/compare/4.0.1...4.1.0) (2021-04-23)
+
+
+### Bug Fixes
+
+* add @types/node to the deps default ignore list ([ea81b39](https://github.com/kettil/carna/commit/ea81b3935fcaad0e07dcfd178a723b836285a8a4))
+
+
+### Features
+
+* simplification of the babel config ([aa5dc59](https://github.com/kettil/carna/commit/aa5dc59785e7551ef8fa3538e914ba7c922673fc))
+
 ## [4.0.1](https://github.com/kettil/carna/compare/4.0.0...4.0.1) (2021-04-23)
 
 
