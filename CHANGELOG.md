@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.0.1](https://github.com/kettil/carna/compare/4.0.0...4.0.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* update release job ([3e380fe](https://github.com/kettil/carna/commit/3e380fe711f11af9dc46a55038b563a687ca661e))
+* **deps:** bump @kettil/eslint-config from 1.16.3 to 1.17.1 ([59b3617](https://github.com/kettil/carna/commit/59b36176bda0cd041c5bfe70addd0b92d3bbee8d))
+* **deps:** bump table from 6.3.2 to 6.3.4 ([6cd15aa](https://github.com/kettil/carna/commit/6cd15aa81249303cd144da0b3ec7719b9a19c746))
+* **deps:** bump table from 6.3.4 to 6.4.0 ([50931fe](https://github.com/kettil/carna/commit/50931fe8702882511b67d8702ec5810dbfa53726))
+
 # [4.0.0](https://github.com/kettil/carna/compare/3.1.1...4.0.0) (2021-04-22)
 
 
