@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.1.1](https://github.com/kettil/carna/compare/4.1.0...4.1.1) (2021-04-24)
+
+
+### Bug Fixes
+
+* add @babel/plugin-transform-runtime for testing needs ([3c8b26a](https://github.com/kettil/carna/commit/3c8b26a7e5775359ac929f2350c7c22b4aeae0dd))
+* change the main/module hanlding in packages.json ([3f60d82](https://github.com/kettil/carna/commit/3f60d82034dbee51f69ef1ad68e8819e3c7ee8de))
+* update dependabot and release action config ([cc86870](https://github.com/kettil/carna/commit/cc86870f70a42b6d17fd2c49d260800c87479bb2))
+
 # [4.1.0](https://github.com/kettil/carna/compare/4.0.1...4.1.0) (2021-04-23)
 
 
