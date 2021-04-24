@@ -46,7 +46,9 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
       engines: { node: '>= 14', npm: '>=6' },
       author: 'name <email>',
     },
-    packageUpdate: {},
+    packageUpdate: {
+      main: 'build/index.js',
+    },
     packageScripts: {
       prepare: '[ "$CI" != "" ] || husky install ./node_modules/carna/configs/husky',
       analyse: 'npx carna analyse',
@@ -115,7 +117,6 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
 
   settings.libraryDevelopment.push('@types/node', 'typescript');
 
-  settings.packageUpdate.module = 'build/index.js';
   settings.packageUpdate.types = 'build/index.d.ts';
 
   // ######################
