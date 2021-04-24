@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.1.2](https://github.com/kettil/carna/compare/4.1.1...4.1.2) (2021-04-24)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 1.17.1 to 1.17.2 ([5d2b0e8](https://github.com/kettil/carna/commit/5d2b0e88cd79eb7b7cd2c4ddb7fa694d42302939))
+* **deps:** bump eslint from 7.24.0 to 7.25.0 ([03dbb9d](https://github.com/kettil/carna/commit/03dbb9d9e4d950d6c68fcfaa77e2d5433b564f44))
+* **deps:** bump table from 6.4.0 to 6.5.1 ([bb84b31](https://github.com/kettil/carna/commit/bb84b31a4e8161e62cadf189728852231a7bce24))
+
 ## [4.1.1](https://github.com/kettil/carna/compare/4.1.0...4.1.1) (2021-04-24)
 
 
