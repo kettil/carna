@@ -53,7 +53,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -174,7 +174,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -285,7 +285,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -406,7 +406,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -527,7 +527,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -659,7 +659,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -784,7 +784,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -916,7 +916,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1032,7 +1032,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1157,7 +1157,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1272,7 +1272,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1397,7 +1397,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1522,7 +1522,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1658,7 +1658,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1787,7 +1787,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [
@@ -1923,7 +1923,7 @@ Object {
     "test:unit": "npx carna test -p unit -w",
   },
   "packageUpdate": Object {
-    "module": "build/index.js",
+    "main": "build/index.js",
     "types": "build/index.d.ts",
   },
   "templates": Array [

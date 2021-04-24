@@ -36,8 +36,6 @@ const initTask: Action<InitProps> = async (argv, props) => {
     throw new TypeError('Package name could not be read');
   }
 
-  settings.packageUpdate.main = `build/${packageName}.js`;
-
   if (props.cli) {
     settings.packageBin[packageName] = 'build/bin/index.js';
   }
