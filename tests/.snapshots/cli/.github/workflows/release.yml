@@ -3,7 +3,7 @@ name: Release
 on:
   workflow_dispatch:
   schedule:
-    - cron: '42 7 * * 1'
+    - cron: '42 7 * * 2'
   #push:
   #  branches:
   #    - 'main'
