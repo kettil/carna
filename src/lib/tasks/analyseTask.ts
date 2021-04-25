@@ -31,7 +31,7 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, pretti
       files: prettierFiles,
     };
 
-    await spinnerAction(prettier(argv, prettierOptions), 'Prettier');
+    await spinnerAction(prettier(argv, prettierOptions), 'Analyse: Prettier');
   }
 
   if (isSelectedService(only, 'eslint')) {
@@ -40,12 +40,12 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, pretti
       files: eslintFiles,
     };
 
-    await spinnerAction(eslint(argv, eslintOptions), 'ESLint');
+    await spinnerAction(eslint(argv, eslintOptions), 'Analyse: ESLint');
   }
 
   if (isSelectedService(only, 'typescript')) {
     if (hasTypescriptConfig) {
-      await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Typescript');
+      await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Analyse: Typescript');
     } else {
       argv.log.info('Typing check is skipped (tsconfig.json was not found) ');
     }
