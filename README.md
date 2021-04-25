@@ -105,6 +105,8 @@ The test projects are executed in the following order: `unit`, `integration`, `e
 
 For helper functions and/or functions for multiple test projects can be stored in the folder [test/shared](./tests/shared). This folder is not interpreted as a test project. Likewise, the folder [test/type](./tests/type) is ignored, since this is for `type` tests and are checked by Typescript directly.
 
+If a `setup.[js|ts]` or `teardown.[js|ts]` file is found in the test project folder, then these files are automatically added as [globalSetup](https://jestjs.io/docs/configuration#globalsetup-string) or [globalTeardown](https://jestjs.io/docs/configuration#globalteardown-string) in the jest configuration.
+
 For each test project there are corresponding [hooks](#hook-system).
 
 ### Options

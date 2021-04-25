@@ -16,7 +16,7 @@ const babel: Action = async ({ cwd, log }) => {
 
   // options
   args.push('-d', 'build');
-  args.push('--extensions', '.ts,.tsx');
+  args.push('--extensions', '.js,.ts,.tsx');
 
   // path
   args.push('src');

@@ -33,7 +33,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -43,8 +43,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -154,7 +152,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -164,8 +162,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -265,7 +261,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -275,8 +271,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -386,7 +380,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -396,8 +390,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -500,7 +492,7 @@ Object {
       "url": "https://github.com/username/<repo>/issues/new",
     },
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -517,8 +509,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -636,7 +626,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -649,8 +639,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -757,7 +745,7 @@ Object {
       "url": "https://github.com/username/<repo>/issues/new",
     },
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -774,8 +762,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -893,7 +879,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -906,8 +892,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1012,7 +996,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1022,8 +1006,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1137,7 +1119,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1147,8 +1129,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1252,7 +1232,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1262,8 +1242,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1377,7 +1355,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1387,8 +1365,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1495,7 +1471,7 @@ Object {
       "url": "https://github.com/username/<repo>/issues/new",
     },
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1512,8 +1488,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1635,7 +1609,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1648,8 +1622,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1760,7 +1732,7 @@ Object {
       "url": "https://github.com/username/<repo>/issues/new",
     },
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1777,8 +1749,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",
@@ -1900,7 +1870,7 @@ Object {
   "packageInit": Object {
     "author": "name <email>",
     "engines": Object {
-      "node": ">= 14",
+      "node": ">=14",
       "npm": ">=6",
     },
     "private": true,
@@ -1913,8 +1883,6 @@ Object {
   "packageScripts": Object {
     "analyse": "npx carna analyse",
     "build": "npx carna build",
-    "deps": "npx carna deps",
-    "license": "npx carna license",
     "prebuild": "rm -rf ./build",
     "prepare": "[ \\"$CI\\" != \\"\\" ] || husky install ./node_modules/carna/configs/husky",
     "test": "npx carna test",

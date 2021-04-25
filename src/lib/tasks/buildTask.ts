@@ -16,10 +16,10 @@ const buildTask: Task<BuildProps> = async (argv) => {
   const hasTypescriptConfig = await access(join(argv.cwd, 'tsconfig.json'), 'readable');
 
   if (hasTypescriptConfig && isPrivate !== true) {
-    await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Typescript');
+    await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Build: Typescript');
   }
 
-  await spinnerAction(babel(argv), 'Babel');
+  await spinnerAction(babel(argv), 'Build: Babel');
 
   await npmHookTask(argv, { task: 'build', type: 'post' });
 };

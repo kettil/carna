@@ -43,7 +43,7 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
     packageInit: {
       private: true,
       version: '0.1.0',
-      engines: { node: '>= 14', npm: '>=6' },
+      engines: { node: '>=14', npm: '>=6' },
       author: 'name <email>',
     },
     packageUpdate: {
@@ -52,8 +52,6 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
     packageScripts: {
       prepare: '[ "$CI" != "" ] || husky install ./node_modules/carna/configs/husky',
       analyse: 'npx carna analyse',
-      deps: 'npx carna deps',
-      license: 'npx carna license',
     },
     packagePeerDependencies: [],
 

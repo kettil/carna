@@ -1,3 +1,24 @@
+const { accessSync, constants } = require('fs');
+const { join } = require('path');
+
+const globalScriptReadable = (path, type, extendsion) => {
+  try {
+    const file = join(path, `${type}.${extendsion}`);
+
+    accessSync(file, constants.R_OK);
+
+    return file;
+  } catch (error) {
+    return undefined;
+  }
+};
+
+const globalScript = (folder, type) => {
+  const path = join(process.cwd(), 'tests', folder);
+
+  return globalScriptReadable(path, type, 'ts') ?? globalScriptReadable(path, type, 'js');
+};
+
 const commons = {
   bail: 10,
 
@@ -15,6 +36,9 @@ const createProject = (folder, color, config) => ({
 
   testMatch: ['**/*.test.{js,ts,tsx}'],
   testPathIgnorePatterns: ['/node_modules/', '/src/'],
+
+  globalSetup: globalScript(folder, 'setup'),
+  globalTeardown: globalScript(folder, 'teardown'),
 
   ...config,
 });

@@ -27,7 +27,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
     }
 
     if (props.coverage) {
-      await spinnerAction(jest(argv, { ...props, projectList, project: projects }), 'Jest: coverage');
+      await spinnerAction(jest(argv, { ...props, projectList, project: projects }), 'Test: coverage');
     } else {
       await jest(argv, { ...props, projectList, project: projects });
     }
@@ -42,7 +42,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
     for (const project of projects) {
       /* eslint-disable no-await-in-loop */
       await npmHookTask(argv, { task: ['test', project], type: 'pre' });
-      await spinnerAction(jest(argv, { ...props, projectList, project }), `Jest: ${project}`);
+      await spinnerAction(jest(argv, { ...props, projectList, project }), `Test: ${project}`);
       await npmHookTask(argv, { task: ['test', project], type: 'post' });
       /* eslint-enable no-await-in-loop */
     }
