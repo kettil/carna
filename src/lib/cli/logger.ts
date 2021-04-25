@@ -1,13 +1,6 @@
 import { isArray, dummy } from '@kettil/tool-lib';
 import chalk from 'chalk';
-import { spinnerBreak } from './spinner';
-
-const levels = {
-  log: (msg: string) => msg,
-  error: chalk.red,
-  info: chalk.green,
-  debug: chalk.blue,
-};
+import { spinnerBreak, isSpinning } from './spinner';
 
 type Type = 'stderr' | 'stdout';
 
@@ -16,6 +9,13 @@ type Level = keyof typeof levels;
 type Log = (msg: string[] | string) => void;
 
 export type Logger = Record<Level, Log>;
+
+const levels = {
+  log: (msg: string) => msg,
+  error: chalk.red,
+  info: chalk.green,
+  debug: chalk.blue,
+};
 
 const maxLevelLength = Object.keys(levels).reduce((p, c) => Math.max(p, c.length), 0);
 
@@ -37,9 +37,11 @@ const logging = (level: string, type: Type): Log => (msg) => {
 };
 
 const log: Log = (msg) => {
+  const indent = isSpinning() ? '  ' : '';
   const resume = spinnerBreak();
+  const messages = isArray(msg) ? msg : msg.trimEnd().split('\n');
 
-  write('stdout', isArray(msg) ? msg.join('\n') : msg);
+  write('stdout', messages.map((v) => indent + v).join('\n'));
 
   resume();
 };
