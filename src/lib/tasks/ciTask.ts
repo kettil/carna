@@ -1,5 +1,6 @@
 import { PropsGlobal, Task } from '../types';
 import analyseTask from './analyseTask';
+import buildTask from './buildTask';
 import depsTask from './depsTask';
 import licenseTask from './licenseTask';
 import testTask from './testTask';
@@ -14,6 +15,7 @@ const ciTask: Task<CiProps> = async (argv) => {
   await testTask(extendArgv, { coverage: true });
   await licenseTask(extendArgv, {});
   await depsTask(extendArgv, {});
+  await buildTask(extendArgv, {});
 };
 
 export default ciTask;
