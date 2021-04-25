@@ -9,7 +9,7 @@ const instance = ora({
   spinner: 'dots',
 });
 
-const isSpinning = (): boolean => instance.isSpinning;
+export const isSpinning = (): boolean => instance.isSpinning;
 
 const start = (text: string) => {
   instance.start(text);
