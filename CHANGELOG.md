@@ -1,5 +1,19 @@
 # Changelog
 
+# [4.3.0](https://github.com/kettil/carna/compare/4.2.0...4.3.0) (2021-04-26)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/commitlint-config from 1.0.1 to 2.0.0 ([99ae95c](https://github.com/kettil/carna/commit/99ae95c0ab01ecc193278322a2cfb06eaf013aa2))
+* **deps:** bump @kettil/eslint-config from 1.17.2 to 2.1.0 ([f38126a](https://github.com/kettil/carna/commit/f38126a9bc0171f5ff93e506b3f6db134b0958b1))
+* **deps:** bump @kettil/semantic-release-config from 1.3.0 to 2.0.0 ([583d33d](https://github.com/kettil/carna/commit/583d33def7c0433f59970f2e05043c3128760f82))
+
+
+### Features
+
+* add semver check ([#305](https://github.com/kettil/carna/issues/305)) ([67c542d](https://github.com/kettil/carna/commit/67c542d9bb47156302717a745440cd5006d282d0))
+
 # [4.2.0](https://github.com/kettil/carna/compare/4.1.2...4.2.0) (2021-04-26)
 
 
