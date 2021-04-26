@@ -1,5 +1,26 @@
 # Changelog
 
+# [4.2.0](https://github.com/kettil/carna/compare/4.1.2...4.2.0) (2021-04-26)
+
+
+### Bug Fixes
+
+* remove eslint errors ([c14843c](https://github.com/kettil/carna/commit/c14843c67272298a61ea5737d886e8d7ed002f4e))
+* remove the build task from the ci task ([4226b12](https://github.com/kettil/carna/commit/4226b126acbf8855ec8a5f35d311f9a17aea0d81))
+* update .npmignore file ([f504cce](https://github.com/kettil/carna/commit/f504cce36257ae6f3b43d100ac767ffb0f28f1d7))
+* **deps:** bump @kettil/tool-lib from 2.9.2 to 3.0.0 ([f165848](https://github.com/kettil/carna/commit/f1658489dac3ee4098bcd34c353d4f4e7e64c03a))
+
+
+### Features
+
+* add globalSetup and globalTeardown handling in the jest config ([d05c87a](https://github.com/kettil/carna/commit/d05c87af148187b8705337e7fa8cbd45231af5b2))
+* add js extension to babel calling ([d96df79](https://github.com/kettil/carna/commit/d96df7940c7baaea98eb0202c3b21338e9b799d5))
+* add the build task as subtask to the ci task ([5ca2838](https://github.com/kettil/carna/commit/5ca283806fbc9a467cf424fa4a6d42890499b52d))
+* export only tasks ([db22d04](https://github.com/kettil/carna/commit/db22d040a0b08cead9ade345d9b741dc49893696))
+* indentation of the output while spinners is active ([d2c2965](https://github.com/kettil/carna/commit/d2c2965ff8a03224ef55529ba88269351eeba0bf))
+* update of the task description ([08ff2d9](https://github.com/kettil/carna/commit/08ff2d9ef513ec4fb12bf593be844a17803e0597))
+* update packages.json config ([87bf36c](https://github.com/kettil/carna/commit/87bf36c616dffa4ca78e50e26eb06cca1c4c782f))
+
 ## [4.1.2](https://github.com/kettil/carna/compare/4.1.1...4.1.2) (2021-04-24)
 
 
