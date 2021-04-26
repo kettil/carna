@@ -1,7 +1,9 @@
 import { red } from 'chalk';
+import { getBorderCharacters, table } from 'table';
 import { Arguments, Argv } from 'yargs';
 import access from '../cmd/access';
 import ExecutableError from '../errors/executableError';
+import TableError from '../errors/tableError';
 import { exit } from '../helper';
 import { PropsGlobal, Task } from '../types';
 
@@ -17,6 +19,16 @@ const filterProps = ([key]: [key: string, value: unknown]) =>
   ![...globalOptions, '_', '$0'].includes(key as typeof globalOptions[number]);
 
 const errorHandler = (argv: PropsGlobal, error: unknown): void => {
+  if (error instanceof TableError) {
+    argv.log.log(' ');
+    argv.log.log(`${red('Error')}: ${error.message}`);
+    argv.log.log(' ');
+    argv.log.log(table(error.list, { border: getBorderCharacters('norc') }));
+    argv.log.log(' ');
+
+    exit();
+  }
+
   if (error instanceof ExecutableError) {
     argv.log.log('');
     argv.log.log(error.entries);

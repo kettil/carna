@@ -1,5 +1,6 @@
 import { isArray } from '@kettil/tool-lib';
 import depcheck from '../actions/tools/depcheck';
+import semver from '../actions/tools/semver';
 import getConfig from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import DependencyError from '../errors/dependencyError';
@@ -17,6 +18,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
 
     await npmHookTask(argv, { task: ['deps'], type: 'pre' });
     await spinnerAction(depcheck(argv, ignorePackages), 'Dependency verification');
+    await spinnerAction(semver(argv), 'Semver check');
     await npmHookTask(argv, { task: ['deps'], type: 'post' });
   } catch (error) {
     if (error instanceof DependencyError) {
