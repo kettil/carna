@@ -10,25 +10,26 @@ import npmHookTask from './subTasks/npmHookTask';
 export type DepsProps = {};
 
 const depsTask: Task<DepsProps> = async (argv) => {
+  const configIgnorePackages = await getConfig(argv.cwd, 'deps.ignore.packages');
+  const ignorePackages = isArray(configIgnorePackages)
+    ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
+    : [];
+
+  await npmHookTask(argv, { task: ['deps'], type: 'pre' });
+
   try {
-    const configIgnorePackages = await getConfig(argv.cwd, 'deps.ignore.packages');
-    const ignorePackages = isArray(configIgnorePackages)
-      ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
-      : [];
-
-    await npmHookTask(argv, { task: ['deps'], type: 'pre' });
     await spinnerAction(depcheck(argv, ignorePackages), 'Dependency verification');
-    await spinnerAction(semver(argv), 'Semver check');
-    await npmHookTask(argv, { task: ['deps'], type: 'post' });
   } catch (error) {
-    if (error instanceof DependencyError) {
-      argv.log.log(error.list);
-
-      return;
+    if (!(error instanceof DependencyError)) {
+      throw error;
     }
 
-    throw error;
+    argv.log.log(error.list);
   }
+
+  await spinnerAction(semver(argv), 'Semver check');
+
+  await npmHookTask(argv, { task: ['deps'], type: 'post' });
 };
 
 export default depsTask;

@@ -1,11 +1,11 @@
 import { red } from 'chalk';
-import { getBorderCharacters, table } from 'table';
 import { Arguments, Argv } from 'yargs';
 import access from '../cmd/access';
 import ExecutableError from '../errors/executableError';
 import TableError from '../errors/tableError';
 import { exit } from '../helper';
 import { PropsGlobal, Task } from '../types';
+import table from './table';
 
 type CommandBuilder<TaskProps = Record<string, unknown>> = (yargs: Argv<PropsGlobal>) => Argv<PropsGlobal & TaskProps>;
 type CommandHandler<TaskProps = Record<string, unknown>> = (argv: Arguments<PropsGlobal & TaskProps>) => void;
@@ -23,7 +23,7 @@ const errorHandler = (argv: PropsGlobal, error: unknown): void => {
     argv.log.log(' ');
     argv.log.log(`${red('Error')}: ${error.message}`);
     argv.log.log(' ');
-    argv.log.log(table(error.list, { border: getBorderCharacters('norc') }));
+    argv.log.log(table(error.list));
     argv.log.log(' ');
 
     exit();

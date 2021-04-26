@@ -12,3 +12,6 @@ export const exit = (code = 1): never => {
   /* eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit */
   process.exit(code);
 };
+
+/* eslint-disable-next-line no-control-regex */
+export const cleanCliValue = (v: string): string => v.replace(/(\u001B)?\[[0-9]{1,2}m/gu, '');
