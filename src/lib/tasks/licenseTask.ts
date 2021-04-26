@@ -1,9 +1,9 @@
 import { isArray } from '@kettil/tool-lib';
 import { underline } from 'chalk';
-import { getBorderCharacters, table } from 'table';
 import license from '../actions/tools/licensecheck';
 import getConfig from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
+import table from '../cli/table';
 import LicenseDisabledError from '../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
 import { exit } from '../helper';
@@ -31,7 +31,7 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
 
     if (error instanceof LicenseIncompatibleError) {
       argv.log.log(' ');
-      argv.log.log(table(error.list, { border: getBorderCharacters('norc') }));
+      argv.log.log(table(error.list));
       argv.log.log(' ');
 
       exit();
