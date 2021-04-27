@@ -60,7 +60,7 @@
     "@kettil/semantic-release-config": "2.0.0",
     "@kettil/tool-lib": "3.0.0",
     "@types/jest": "26.0.22",
-    "@types/semver": "7.3.4",
+    "@types/semver": "7.3.5",
     "@types/yargs": "16.0.1",
     "babel-jest": "26.6.3",
     "babel-loader": "8.2.2",
