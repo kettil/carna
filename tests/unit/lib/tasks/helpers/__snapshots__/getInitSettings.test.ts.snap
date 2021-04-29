@@ -60,6 +60,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -179,6 +183,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -286,6 +294,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
@@ -407,6 +419,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -524,6 +540,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
@@ -656,6 +676,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -777,6 +801,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
@@ -909,6 +937,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -1021,6 +1053,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
@@ -1146,6 +1182,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -1257,6 +1297,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
@@ -1382,6 +1426,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -1503,6 +1551,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
@@ -1639,6 +1691,10 @@ Object {
       ".vscode/settings.json",
     ],
     Array [
+      "carnarc.json",
+      ".carnarc.json",
+    ],
+    Array [
       "editorconfig",
       ".editorconfig",
     ],
@@ -1764,6 +1820,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
@@ -1898,6 +1958,10 @@ Object {
     Array [
       "vscode/settings.json",
       ".vscode/settings.json",
+    ],
+    Array [
+      "carnarc.json",
+      ".carnarc.json",
     ],
     Array [
       "editorconfig",
