@@ -10,8 +10,7 @@ const ciTask: Task<CiProps> = async (argv) => {
   const extendArgv: PropsGlobal = { ...argv, ci: true };
 
   await analyseTask(extendArgv, {});
-  await testTask(extendArgv, { coverage: false });
-  await testTask(extendArgv, { coverage: true });
+  await testTask(extendArgv, {});
   await licenseTask(extendArgv, {});
   await depsTask(extendArgv, {});
 };

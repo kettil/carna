@@ -28,6 +28,7 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
     folders: ['.vscode', 'src', 'src/lib'],
     templates: [
       ['vscode/settings.json', '.vscode/settings.json'],
+      ['carnarc.json', '.carnarc.json'],
       ['editorconfig', '.editorconfig'],
       ['eslintignore', '.eslintignore'],
       ['gitignore', '.gitignore'],

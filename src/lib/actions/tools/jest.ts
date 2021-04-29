@@ -1,25 +1,23 @@
 import { join } from 'path';
-import { isArray } from '@kettil/tool-lib';
 import exec from '../../cmd/exec';
 import existFiles from '../../cmd/existFiles';
 import { Action } from '../../types';
 
 export type JestProps = {
-  project?: string[] | string;
-  projectList?: string[];
+  projects: string[];
   updateSnapshot?: boolean;
   runInBand?: boolean;
-  coverage?: boolean;
   watch?: boolean;
 };
-
-export const coverageFolderName = 'coverage';
 
 const configFiles = ['jest.config.js', 'jest.config.ts'];
 const options: Array<keyof JestProps> = ['updateSnapshot', 'runInBand', 'watch'];
 
+export const getCoverageFolder = (cwd: string, projects: JestProps['projects']): string =>
+  join(cwd, 'coverage', projects.length === 1 ? `_${projects}` : '');
+
 const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
-  const coverageFolder = join(cwd, coverageFolderName);
+  const coverageFolder = getCoverageFolder(cwd, props.projects);
   const files = await existFiles(configFiles, cwd);
 
   if (files.length === 0) {
@@ -29,10 +27,10 @@ const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
   const cmd = './node_modules/.bin/jest';
   const args: string[] = ['--colors', '--config', files[0]];
 
-  if (typeof props.project === 'string') {
-    args.push('--selectProjects', props.project);
-  } else if (isArray(props.project)) {
-    args.push('--selectProjects', ...props.project);
+  if (props.projects.length === 1) {
+    args.push('--selectProjects', props.projects[0]);
+  } else if (props.projects.length > 1) {
+    args.push('--selectProjects', ...props.projects);
   }
 
   options.forEach((option) => {
@@ -41,41 +39,21 @@ const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
     }
   });
 
-  if (ci && props.coverage) {
+  if (ci) {
     args.push('--ci');
     args.push('--silent');
-    args.push('--coverage');
-    args.push('--coverageDirectory', coverageFolder);
-    // args.push('--coverageReporters', 'text');
-    args.push('--coverageReporters', 'text-summary');
-    args.push('--coverageReporters', 'json-summary');
-  } else if (ci && !props.coverage) {
-    args.push('--ci');
-    args.push('--no-coverage');
-
-    if (typeof props.project === 'string' && isArray(props.projectList) && props.projectList.length > 0) {
-      const projectIndex = props.projectList.indexOf(props.project) + 1;
-
-      // Also outputs the test result as JSON so that it
-      // can be further interpreted (e.g. as a comment in PR/MR)
-      args.push('--json');
-      args.push('--outputFile', join(coverageFolder, `jest-project-${projectIndex}-${props.project}-summary.json`));
-    }
-  } else if (!ci && !props.coverage) {
-    args.push('--coverage');
-    args.push('--coverageDirectory', coverageFolder);
-    args.push('--coverageThreshold', '\'{"global":{"statements":0,"branches":0,"functions":0,"lines":0}}\'');
+    args.push('--json');
+    args.push('--outputFile', join(coverageFolder, 'jest-final.json'));
   }
+
+  args.push('--coverage');
+  args.push('--coverageDirectory', coverageFolder);
+  args.push('--coverageReporters', 'json');
+  args.push('--coverageThreshold', '\'{"global":{"statements":0,"branches":0,"functions":0,"lines":0}}\'');
 
   log.info('Run test');
 
-  const { stdout } = await exec({ cmd, args, cwd, log, withInteraction: props.watch, withDirectOutput: ci });
-
-  if (stdout.trim() !== '') {
-    log.log('');
-    log.log(stdout);
-    log.log('');
-  }
+  await exec({ cmd, args, cwd, log, withInteraction: props.watch, withDirectOutput: true });
 };
 
 export default jest;

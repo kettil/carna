@@ -103,6 +103,8 @@ Each subfolder in the [tests folder](./tests) is a test project, such as `unit` 
 
 The test projects are executed in the following order: `unit`, `integration`, `e2e` and the rest alphabetically.
 
+The Code Coverage Threshold can be configured in [.carnarc.json](#carna-config-file).
+
 For helper functions and/or functions for multiple test projects can be stored in the folder [test/shared](./tests/shared). This folder is not interpreted as a test project. Likewise, the folder [test/type](./tests/type) is ignored, since this is for `type` tests and are checked by Typescript directly.
 
 If a `setup.[js|ts]` or `teardown.[js|ts]` file is found in the test project folder, then these files are automatically added as [globalSetup](https://jestjs.io/docs/configuration#globalsetup-string) or [globalTeardown](https://jestjs.io/docs/configuration#globalteardown-string) in the jest configuration.
@@ -113,7 +115,6 @@ For each test project there are corresponding [hooks](#hook-system).
 
 | Options          | short | Description                                                               |
 | ---------------- | ----- | ------------------------------------------------------------------------- |
-| --coverage       | -c    | Runs the coverage projects together and builds the coverage from them     |
 | --project        | -p    | Run only the tests of the specified projects                              |
 | --runInBand      | -i    | Run all tests serially in the current process                             |
 | --updateSnapshot | -u    | Use this flag to re-record every snapshot that fails during this test run |
@@ -221,8 +222,13 @@ The file is structured as follows
   },
   test: {
     coverage: {
-      // Overwrites default coverage test projects ("unit" and "integration")
-      projects: [],
+      // Overwrites default coverage threshold
+      threshold: {
+        statements: 90,
+        branches: 90,
+        functions: 90,
+        lines: [50, 90],
+      },
     },
   },
 }

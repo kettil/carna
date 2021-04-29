@@ -1,5 +1,7 @@
-class ExecutableError extends Error {
-  constructor(message: string, readonly command: string | undefined, readonly code: number, readonly entries: string) {
+import MessageError from './messageError';
+
+class ExecutableError extends MessageError {
+  constructor(message: string, readonly command: string | undefined, readonly code: number) {
     super(message);
   }
 }

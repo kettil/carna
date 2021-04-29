@@ -1,18 +1,11 @@
 import { readdir } from 'fs/promises';
 import { join } from 'path';
-import { isArray } from '@kettil/tool-lib';
-import getConfig from '../../cli/config';
 import { Task } from '../../types';
 
 const ignoreFolders = new Set(['shared', 'type']);
 const specialFolders = ['unit', 'integration', 'e2e'];
-const defaultCoverageProjects = ['unit', 'integration'];
 
-const getTestProjects: Task<[string[] | undefined, boolean | undefined], string[]> = async (
-  { cwd },
-  selectedProjects,
-  withCoverage,
-) => {
+const getTestProjects: Task<[string[] | undefined], string[]> = async ({ cwd }, selectedProjects) => {
   const files = await readdir(join(cwd, 'tests'), { withFileTypes: true });
 
   const folders = files
@@ -27,14 +20,6 @@ const getTestProjects: Task<[string[] | undefined, boolean | undefined], string[
   ];
 
   if (selectedProjects === undefined || selectedProjects.length === 0) {
-    if (withCoverage) {
-      const configCoverageProjects = await getConfig(cwd, 'test.coverage.projects');
-
-      return isArray(configCoverageProjects) && configCoverageProjects.length > 0
-        ? configCoverageProjects.filter((v): v is string => typeof v === 'string')
-        : defaultCoverageProjects;
-    }
-
     return projects;
   }
 

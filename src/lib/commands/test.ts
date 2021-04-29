@@ -10,11 +10,6 @@ const boolOptions = { ...options, type: 'boolean', default: false } as const;
 export const handler = createHandler<TestProps>(testTask);
 export const builder = createBuilder<TestProps>(command, (yargs) =>
   yargs.options({
-    coverage: {
-      ...boolOptions,
-      alias: 'c',
-      describe: 'Runs the coverage projects together and builds the coverage from them',
-    },
     project: {
       ...options,
       array: true,
