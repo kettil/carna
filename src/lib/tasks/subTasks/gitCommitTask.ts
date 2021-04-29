@@ -37,8 +37,7 @@ const gitCommitTask: Task = async (argv) => {
 
   await gitAdd(argv, { files });
 
-  await testTask({ ...argv, ci: true }, { coverage: false });
-  await testTask({ ...argv, ci: true }, { coverage: true });
+  await testTask({ ...argv, ci: true }, {});
 };
 
 export default gitCommitTask;

@@ -1,7 +1,7 @@
 import { red } from 'chalk';
 import { Arguments, Argv } from 'yargs';
 import access from '../cmd/access';
-import ExecutableError from '../errors/executableError';
+import MessageError from '../errors/messageError';
 import TableError from '../errors/tableError';
 import { exit } from '../helper';
 import { PropsGlobal, Task } from '../types';
@@ -29,9 +29,9 @@ const errorHandler = (argv: PropsGlobal, error: unknown): void => {
     exit();
   }
 
-  if (error instanceof ExecutableError) {
+  if (error instanceof MessageError) {
     argv.log.log('');
-    argv.log.log(error.entries);
+    argv.log.log(error.message);
     argv.log.log('');
 
     exit();

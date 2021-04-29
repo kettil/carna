@@ -47,7 +47,6 @@ const config = {
   ...commons,
   projects: [],
 
-  collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx,js}',
     '!<rootDir>/src/**/types.ts',
@@ -57,15 +56,6 @@ const config = {
     '!<rootDir>/packages/*/src/**/types.ts',
     '!<rootDir>/packages/*/src/index.ts',
   ],
-  coverageReporters: ['text-summary', 'html'],
-  coverageThreshold: {
-    global: {
-      statements: 95,
-      branches: 95,
-      functions: 95,
-      lines: 95,
-    },
-  },
 };
 
 module.exports = { config, createProject };

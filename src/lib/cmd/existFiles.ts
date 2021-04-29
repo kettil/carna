@@ -7,7 +7,7 @@ const filterFile = async (cwd: string, file: string): Promise<string> => {
   return hasAccess ? file : '';
 };
 
-const existFiles = async (files: string[], cwd: string): Promise<string[]> => {
+const existFiles = async (files: string[], cwd = ''): Promise<string[]> => {
   const filterFiles = await Promise.all(files.map((file) => filterFile(cwd, file)));
 
   return filterFiles.filter((file) => file !== '');

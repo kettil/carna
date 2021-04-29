@@ -221,8 +221,13 @@ The file is structured as follows
   },
   test: {
     coverage: {
-      // Overwrites default coverage test projects ("unit" and "integration")
-      projects: [],
+      // Overwrites default coverage threshold
+      threshold: {
+        statements: 90,
+        branches: 90,
+        functions: 90,
+        lines: [50, 90],
+      },
     },
   },
 }
