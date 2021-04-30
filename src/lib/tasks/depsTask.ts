@@ -15,7 +15,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
     ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
     : [];
 
-  await npmHookTask(argv, { task: ['deps'], type: 'pre' });
+  await npmHookTask(argv, { task: 'deps', type: 'pre' });
 
   try {
     await spinnerAction(depcheck(argv, ignorePackages), 'Dependency verification');
@@ -29,7 +29,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
 
   await spinnerAction(semver(argv), 'Semver check');
 
-  await npmHookTask(argv, { task: ['deps'], type: 'post' });
+  await npmHookTask(argv, { task: 'deps', type: 'post' });
 };
 
 export default depsTask;

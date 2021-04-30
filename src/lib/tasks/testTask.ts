@@ -5,6 +5,7 @@ import getConfig from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import { Task } from '../types';
 import getTestProjects from './helpers/getTestProjects';
+import testHook from './helpers/testHook';
 import npmHookTask from './subTasks/npmHookTask';
 
 export type TestProps = Omit<JestProps, 'projects'> & {
@@ -32,30 +33,29 @@ const testTask: Task<TestProps> = async (argv, props) => {
   const projects = await getTestProjects(argv, props.projects);
 
   if (props.watch) {
-    /* eslint-disable-next-line no-restricted-syntax */
-    for (const project of projects) {
-      /* eslint-disable-next-line no-await-in-loop */
-      await npmHookTask(argv, { task: ['test', project], type: 'pre' });
-    }
+    await projects.reduce(
+      (promise, project) => promise.then(() => testHook(argv, { project, type: 'pre' })),
+      Promise.resolve(),
+    );
 
     await jest(argv, { ...props, projects });
 
-    /* eslint-disable-next-line no-restricted-syntax */
-    for (const project of projects) {
-      /* eslint-disable-next-line no-await-in-loop */
-      await npmHookTask(argv, { task: ['test', project], type: 'post' });
-    }
+    await projects.reduce(
+      (promise, project) => promise.then(() => testHook(argv, { project, type: 'post' })),
+      Promise.resolve(),
+    );
   } else {
-    /* eslint-disable-next-line no-restricted-syntax */
-    for (const project of projects) {
-      /* eslint-disable no-await-in-loop */
-      await npmHookTask(argv, { task: ['test', project], type: 'pre' });
-      await spinnerAction(jest(argv, { ...props, projects: [project] }), `Test: ${project}`);
-      await npmHookTask(argv, { task: ['test', project], type: 'post' });
-      /* eslint-enable no-await-in-loop */
-    }
+    await projects.reduce(
+      (promise, project) =>
+        promise.then(async () => {
+          await testHook(argv, { project, type: 'pre' });
+          await spinnerAction(jest(argv, { ...props, projects: [project] }), `Test: ${project}`);
+          await testHook(argv, { project, type: 'post' });
+        }),
+      Promise.resolve(),
+    );
 
-    await spinnerAction(coverage(argv, { projects, watermarks: coverageThreshold }), 'Coverage');
+    await coverage(argv, { projects, watermarks: coverageThreshold });
   }
 
   await npmHookTask(argv, { task: 'test', type: 'post' });

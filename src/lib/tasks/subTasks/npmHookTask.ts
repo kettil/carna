@@ -1,17 +1,17 @@
-import { isArray, isObject } from '@kettil/tool-lib';
+import { isObject } from '@kettil/tool-lib';
 import npmPackageLoad from '../../actions/npm/packageLoad';
 import npmRun from '../../actions/npm/run';
 import { spinnerAction } from '../../cli/spinner';
 import { Task } from '../../types';
 
 type NpmProps = {
-  task: string[] | string;
+  task: string;
   type: 'post' | 'pre';
 };
 
 const npmHookTask: Task<NpmProps> = async (argv, { task, type }) => {
   const scripts = await npmPackageLoad(argv, { key: 'scripts' });
-  const script = `${type}carna:${isArray(task) ? task.join(':') : task}`;
+  const script = `${type}carna:${task}`;
 
   if (isObject(scripts) && typeof scripts[script] === 'string') {
     await spinnerAction(npmRun(argv, { script }), `Run npm script: ${script}`);
