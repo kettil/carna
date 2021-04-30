@@ -1,5 +1,22 @@
 # Changelog
 
+# [4.4.0](https://github.com/kettil/carna/compare/4.3.0...4.4.0) (2021-04-30)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.13.16 to 7.14.0 ([e2b9939](https://github.com/kettil/carna/commit/e2b9939762308ce7d230da7b2cdef7ac363962f1))
+* **deps:** bump @babel/preset-env from 7.13.15 to 7.14.0 ([b0bb76e](https://github.com/kettil/carna/commit/b0bb76e3df223c6c4f8ee0d3231cd2bcc4d62919))
+* **deps:** bump @kettil/eslint-config from 2.1.0 to 2.1.1 ([0530b31](https://github.com/kettil/carna/commit/0530b31b7774b85518ee30a5dd931530aa7c57f1))
+* **deps:** bump @types/jest from 26.0.22 to 26.0.23 ([bd989f1](https://github.com/kettil/carna/commit/bd989f189f305369270f098fbf4fcab9422bca90))
+* **deps:** bump @types/semver from 7.3.4 to 7.3.5 ([25fd485](https://github.com/kettil/carna/commit/25fd4852bd90372e7051c0e25347a2dcf585c484))
+
+
+### Features
+
+* add a lifecycle hook for the test projects ([332a62e](https://github.com/kettil/carna/commit/332a62e32947c56a4b00deaaf80912d03ce3f449))
+* creation of code coverage has been optimized ([#337](https://github.com/kettil/carna/issues/337)) ([1cbb290](https://github.com/kettil/carna/commit/1cbb290e7e994507fb713dff86fec2ee345cde58)), closes [#335](https://github.com/kettil/carna/issues/335)
+
 # [4.3.0](https://github.com/kettil/carna/compare/4.2.0...4.3.0) (2021-04-26)
 
 
