@@ -8,7 +8,7 @@ import LicenseDisabledError from '../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
 import { exit } from '../helper';
 import { Task } from '../types';
-import npmHookTask from './subTasks/npmHookTask';
+import taskHook from './helpers/taskHook';
 
 const notice = `the check is only a suggestion and is ${underline('not')} legal advice`;
 
@@ -21,9 +21,9 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
       ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
       : [];
 
-    await npmHookTask(argv, { task: 'license', type: 'pre' });
+    await taskHook(argv, { task: 'license', type: 'pre' });
     await spinnerAction(license(argv, ignorePackages), `License verification (${notice})`);
-    await npmHookTask(argv, { task: 'license', type: 'post' });
+    await taskHook(argv, { task: 'license', type: 'post' });
   } catch (error) {
     if (error instanceof LicenseDisabledError) {
       return;
