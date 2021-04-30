@@ -39,6 +39,17 @@ const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
     }
   });
 
+  if (!props.runInBand) {
+    // see https://ivantanev.com/make-jest-faster
+    if (ci) {
+      args.push('--runInBand');
+    } else if (props.watch) {
+      args.push('--maxWorkers', '25%');
+    } else {
+      args.push('--maxWorkers', '50%');
+    }
+  }
+
   if (ci) {
     args.push('--ci');
     args.push('--silent');
