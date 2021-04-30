@@ -53,7 +53,7 @@ For the help text, execute `npx carna --help` and the individual commands `npx c
 
 Each time a command is executed, different hooks are called. Every hook corresponds to a script in the npm `package.json`.
 
-The hooks have the structure `<pre|post>carna:<task>[:<subtask>]`.
+The hooks have the structure `<pre|post>carna:<task>`.
 
 If you add the option `--verbose` when calling a command, all possible hooks will be displayed.
 
@@ -107,9 +107,7 @@ The Code Coverage Threshold can be configured in [.carnarc.json](#carna-config-f
 
 For helper functions and/or functions for multiple test projects can be stored in the folder [test/shared](./tests/shared). This folder is not interpreted as a test project. Likewise, the folder [test/type](./tests/type) is ignored, since this is for `type` tests and are checked by Typescript directly.
 
-If a `setup.[js|ts]` or `teardown.[js|ts]` file is found in the test project folder, then these files are automatically added as [globalSetup](https://jestjs.io/docs/configuration#globalsetup-string) or [globalTeardown](https://jestjs.io/docs/configuration#globalteardown-string) in the jest configuration.
-
-For each test project there are corresponding [hooks](#hook-system).
+If there is an `pre.[js|ts]` or `post.[js|ts]` file in the test project folder, then it is called before or after from the respective test project.
 
 ### Options
 

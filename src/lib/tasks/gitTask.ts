@@ -13,9 +13,8 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
 
   switch (hook) {
     case 'commit':
-      await npmHookTask(argv, { task: ['git', 'commit'], type: 'pre' });
       await gitCommitTask(argv);
-      await npmHookTask(argv, { task: ['git', 'commit'], type: 'post' });
+
       break;
 
     case 'msg':
@@ -23,9 +22,8 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
         throw new Error(`Argument "edit" is required at hook "${hook}"`);
       }
 
-      await npmHookTask(argv, { task: ['git', 'msg'], type: 'pre' });
       await gitMessageTask(argv, { edit });
-      await npmHookTask(argv, { task: ['git', 'msg'], type: 'post' });
+
       break;
 
     default:
