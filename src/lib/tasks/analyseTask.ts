@@ -5,7 +5,7 @@ import tsc from '../actions/tools/tsc';
 import { spinnerAction } from '../cli/spinner';
 import access from '../cmd/access';
 import { Task } from '../types';
-import npmHookTask from './subTasks/npmHookTask';
+import taskHook from './helpers/taskHook';
 
 export const analyseServices = ['eslint', 'prettier', 'typescript'] as const;
 
@@ -20,7 +20,7 @@ export type AnalyseProps = {
 };
 
 const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, prettierFiles }) => {
-  await npmHookTask(argv, { task: 'analyse', type: 'pre' });
+  await taskHook(argv, { task: 'analyse', type: 'pre' });
 
   const hasTypescriptConfig = await access(join(argv.cwd, 'tsconfig.json'), 'readable');
 
@@ -51,7 +51,7 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, pretti
     }
   }
 
-  await npmHookTask(argv, { task: 'analyse', type: 'post' });
+  await taskHook(argv, { task: 'analyse', type: 'post' });
 };
 
 export default analyseTask;

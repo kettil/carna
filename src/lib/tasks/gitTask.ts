@@ -1,7 +1,7 @@
 import { Task } from '../types';
+import taskHook from './helpers/taskHook';
 import gitCommitTask from './subTasks/gitCommitTask';
 import gitMessageTask, { GitMessageProps } from './subTasks/gitMessageTask';
-import npmHookTask from './subTasks/npmHookTask';
 
 export type GitProps = {
   edit: GitMessageProps['edit'] | undefined;
@@ -9,7 +9,7 @@ export type GitProps = {
 };
 
 const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
-  await npmHookTask(argv, { task: 'git', type: 'pre' });
+  await taskHook(argv, { task: 'git', type: 'pre' });
 
   switch (hook) {
     case 'commit':
@@ -30,7 +30,7 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
       throw new Error(`The hook "${hook}" is unknown`);
   }
 
-  await npmHookTask(argv, { task: 'git', type: 'post' });
+  await taskHook(argv, { task: 'git', type: 'post' });
 };
 
 export default gitTask;

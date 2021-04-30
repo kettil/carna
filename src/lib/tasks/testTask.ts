@@ -5,8 +5,8 @@ import getConfig from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import { Task } from '../types';
 import getTestProjects from './helpers/getTestProjects';
+import taskHook from './helpers/taskHook';
 import testHook from './helpers/testHook';
-import npmHookTask from './subTasks/npmHookTask';
 
 export type TestProps = Omit<JestProps, 'projects'> & {
   projects?: string[];
@@ -28,7 +28,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
   const configThreshold = await getConfig(argv.cwd, 'test.coverage.threshold');
   const coverageThreshold = isObject(configThreshold) ? objectMap(configThreshold, transformThreshold) : undefined;
 
-  await npmHookTask(argv, { task: 'test', type: 'pre' });
+  await taskHook(argv, { task: 'test', type: 'pre' });
 
   const projects = await getTestProjects(argv, props.projects);
 
@@ -58,7 +58,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
     await coverage(argv, { projects, watermarks: coverageThreshold });
   }
 
-  await npmHookTask(argv, { task: 'test', type: 'post' });
+  await taskHook(argv, { task: 'test', type: 'post' });
 };
 
 export default testTask;

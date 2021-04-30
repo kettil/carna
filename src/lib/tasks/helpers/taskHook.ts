@@ -9,7 +9,7 @@ type NpmProps = {
   type: 'post' | 'pre';
 };
 
-const npmHookTask: Task<NpmProps> = async (argv, { task, type }) => {
+const taskHook: Task<NpmProps> = async (argv, { task, type }) => {
   const scripts = await npmPackageLoad(argv, { key: 'scripts' });
   const script = `${type}carna:${task}`;
 
@@ -20,4 +20,4 @@ const npmHookTask: Task<NpmProps> = async (argv, { task, type }) => {
   }
 };
 
-export default npmHookTask;
+export default taskHook;

@@ -5,7 +5,7 @@ import getConfig from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import DependencyError from '../errors/dependencyError';
 import { Task } from '../types';
-import npmHookTask from './subTasks/npmHookTask';
+import taskHook from './helpers/taskHook';
 
 export type DepsProps = {};
 
@@ -15,7 +15,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
     ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
     : [];
 
-  await npmHookTask(argv, { task: 'deps', type: 'pre' });
+  await taskHook(argv, { task: 'deps', type: 'pre' });
 
   try {
     await spinnerAction(depcheck(argv, ignorePackages), 'Dependency verification');
@@ -29,7 +29,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
 
   await spinnerAction(semver(argv), 'Semver check');
 
-  await npmHookTask(argv, { task: 'deps', type: 'post' });
+  await taskHook(argv, { task: 'deps', type: 'post' });
 };
 
 export default depsTask;
