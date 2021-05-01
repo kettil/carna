@@ -1,4 +1,4 @@
-import { isArray, isObject, objectMap } from '@kettil/tool-lib';
+import { allSettledSequence, isArray, isObject, objectMap } from '@kettil/tool-lib';
 import coverage, { WatermarkThreshold } from '../actions/tools/coverage';
 import jest, { JestProps } from '../actions/tools/jest';
 import getConfig from '../cli/config';
@@ -33,29 +33,33 @@ const testTask: Task<TestProps> = async (argv, props) => {
   const projects = await getTestProjects(argv, props.projects);
 
   if (props.watch) {
-    await projects.reduce(
-      (promise, project) => promise.then(() => testHook(argv, { project, type: 'pre' })),
-      Promise.resolve(),
-    );
+    try {
+      await projects.reduce(
+        (promise, project) => promise.then(() => testHook(argv, { project, type: 'pre' })),
+        Promise.resolve(),
+      );
 
-    await jest(argv, { ...props, projects });
-
-    await projects.reduce(
-      (promise, project) => promise.then(() => testHook(argv, { project, type: 'post' })),
-      Promise.resolve(),
-    );
+      await jest(argv, { ...props, projects });
+    } finally {
+      await allSettledSequence(projects.map((project) => () => testHook(argv, { project, type: 'post' })));
+    }
   } else {
-    await projects.reduce(
-      (promise, project) =>
-        promise.then(async () => {
-          await testHook(argv, { project, type: 'pre' });
-          await spinnerAction(jest(argv, { ...props, projects: [project] }), `Test: ${project}`);
-          await testHook(argv, { project, type: 'post' });
-        }),
-      Promise.resolve(),
-    );
-
-    await coverage(argv, { projects, watermarks: coverageThreshold });
+    try {
+      await projects.reduce(
+        (promise, project) =>
+          promise.then(async () => {
+            try {
+              await testHook(argv, { project, type: 'pre' });
+              await spinnerAction(jest(argv, { ...props, projects: [project] }), `Test: ${project}`);
+            } finally {
+              await testHook(argv, { project, type: 'post' });
+            }
+          }),
+        Promise.resolve(),
+      );
+    } finally {
+      await coverage(argv, { projects, watermarks: coverageThreshold });
+    }
   }
 
   await taskHook(argv, { task: 'test', type: 'post' });

@@ -1,5 +1,6 @@
 import { basename, join } from 'path';
 import { Logger } from '../../cli/logger';
+import { spinnerAction } from '../../cli/spinner';
 import access from '../../cmd/access';
 import exec from '../../cmd/exec';
 import { Task } from '../../types';
@@ -19,7 +20,7 @@ const testHook: Task<{ project: string; type: 'post' | 'pre' }> = async (argv, {
   const isReadableTs = await access(pathTs, 'readable');
 
   if (isReadableTs) {
-    await runHook(argv.cwd, argv.log, project, pathTs);
+    await spinnerAction(runHook(argv.cwd, argv.log, project, pathTs), `Test: ${project} [${type} hook]`);
 
     return;
   }
@@ -27,7 +28,7 @@ const testHook: Task<{ project: string; type: 'post' | 'pre' }> = async (argv, {
   const isReadableJs = await access(pathJs, 'readable');
 
   if (isReadableJs) {
-    await runHook(argv.cwd, argv.log, project, pathJs);
+    await spinnerAction(runHook(argv.cwd, argv.log, project, pathJs), `Test: ${project} [${type} hook]`);
   }
 };
 
