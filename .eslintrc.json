@@ -31,6 +31,15 @@
         "node/no-missing-require": "off",
         "node/shebang": "off"
       }
+    },
+    {
+      "files": [
+        "tests/.snapshots/*/tests/*/pre.ts",
+        "tests/.snapshots/*/tests/*/post.ts",
+        "tests/.snapshots/*/tests/*/pre.js",
+        "tests/.snapshots/*/tests/*/post.js"
+      ],
+      "rules": { "import/no-unused-modules": ["off"], "@typescript-eslint/no-floating-promises": ["off"] }
     }
   ]
 }

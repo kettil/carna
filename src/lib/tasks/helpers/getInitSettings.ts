@@ -152,12 +152,12 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
     ['dummy.test.ts', 'tests/unit/dummy.test.ts'],
     ['dummy.test.ts', 'tests/integration/dummy.test.ts'],
     ['dummy.test.ts', 'tests/e2e/dummy.test.ts'],
+    ['dummyHook.test.ts', 'tests/e2e/pre.ts'],
+    ['dummyHook.test.ts', 'tests/e2e/post.ts'],
   );
 
   settings.packageScripts.test = 'npx carna test';
-  settings.packageScripts['test:unit'] = 'npx carna test -p unit -w';
-  settings.packageScripts['test:integration'] = 'npx carna test -p integration -w';
-  settings.packageScripts['test:e2e'] = 'npx carna test -p e2e -w';
+  settings.packageScripts['test:watch'] = 'npx carna test -w';
 
   return settings;
 };
