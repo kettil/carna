@@ -35,6 +35,7 @@ The following commands are available:
 | [`deps`](#the-deps-task)       | Checks if there are orphaned packages |
 | [`license`](#the-license-task) | Checks for incompatible licenses      |
 | [`build`](#the-build-task)     | Build the application                 |
+| [`start`](#the-start-task)     | Run a script                          |
 | [`git`](#the-git-tasks)        | Handler for the git hooks             |
 
 For the help text, execute `npx carna --help` and the individual commands `npx carna <command> --help`.
@@ -169,6 +170,24 @@ Build the application
 ### Options
 
 None
+
+### Exit codes
+
+| Exit code | Description |
+| --------- | ----------- |
+| 0         | Success     |
+| 1         | task failed |
+
+## The `start` task
+
+Calls the application directly, without build process.
+
+### Options
+
+| Options  | short | Description                                         |
+| -------- | ----- | --------------------------------------------------- |
+| --script | -s    | Script to be called (default: `src/index.[ts\|js]`) |
+| --watch  | -w    | Watch files for changes and rerun script            |
 
 ### Exit codes
 

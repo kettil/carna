@@ -1,22 +1,20 @@
 import exec from '../../cmd/exec';
-import { existConfigFile } from '../../helper';
+import { getFirstExistFile } from '../../helper';
 import { Action } from '../../types';
 
-const configs = ['babel.config.js', 'babel.config.json'];
+export const babelConfigFiles = ['babel.config.js', 'babel.config.json'];
+export const babelExtensions = '.js,.jsx,.ts,.tsx';
 
 const babel: Action = async ({ cwd, log }) => {
-  const hasConfigFile = await existConfigFile(cwd, configs);
-
-  if (!hasConfigFile) {
-    throw new Error(`Babel config file was not found (${configs.join(', ')})`);
-  }
+  const configPath = await getFirstExistFile(cwd, babelConfigFiles);
 
   const cmd = './node_modules/.bin/babel';
   const args: string[] = [];
 
   // options
   args.push('-d', 'build');
-  args.push('--extensions', '.js,.ts,.tsx');
+  args.push('--config-file', configPath);
+  args.push('--extensions', babelExtensions);
 
   // path
   args.push('src');

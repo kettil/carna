@@ -5,4 +5,5 @@ export { default as depsTask } from './lib/tasks/depsTask';
 export { default as gitTask } from './lib/tasks/gitTask';
 export { default as initTask } from './lib/tasks/initTask';
 export { default as licenseTask } from './lib/tasks/licenseTask';
+export { default as startTask } from './lib/tasks/startTask';
 export { default as testTask } from './lib/tasks/testTask';
