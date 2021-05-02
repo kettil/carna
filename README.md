@@ -239,7 +239,7 @@ The file is structured as follows
   },
   test: {
     coverage: {
-      // Overwrites default coverage threshold
+      // Overwrites default coverage threshold (value: number or tuple with two numbers)
       threshold: {
         statements: 90,
         branches: 90,
