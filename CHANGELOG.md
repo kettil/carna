@@ -1,5 +1,20 @@
 # Changelog
 
+# [4.5.0](https://github.com/kettil/carna/compare/4.4.0...4.5.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 2.1.1 to 2.1.2 ([2760351](https://github.com/kettil/carna/commit/2760351b6cbe7aeae6af6e110ecc9b124c507e9d))
+* post lifecycle was not executed on error ([b39a21b](https://github.com/kettil/carna/commit/b39a21b00120dd548705347173dd52d421dfa2ef))
+* **deps:** bump @kettil/tool-lib from 3.0.0 to 3.1.0 ([169cb81](https://github.com/kettil/carna/commit/169cb814fdff1141feaf24608687d40eacb6756b))
+
+
+### Features
+
+* add start command ([#346](https://github.com/kettil/carna/issues/346)) ([a7fc317](https://github.com/kettil/carna/commit/a7fc31718f11ce5457cbc34106e72bcf5bddab85))
+* update the init task ([7948ccf](https://github.com/kettil/carna/commit/7948ccfc45b316c1c451f31139dd107e186ab901))
+
 # [4.4.0](https://github.com/kettil/carna/compare/4.3.0...4.4.0) (2021-04-30)
 
 
