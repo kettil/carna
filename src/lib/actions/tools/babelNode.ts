@@ -1,4 +1,3 @@
-// import { join } from 'path';
 import exec from '../../cmd/exec';
 import { getFirstExistFile } from '../../helper';
 import { Action } from '../../types';
@@ -27,7 +26,7 @@ const babelNode: Action<BabelNodeProps> = async ({ cwd, log }, { script, watch }
   // script
   args.push(script ?? (await getFirstExistFile(cwd, scriptFiles)));
 
-  log.info('Run babel-node');
+  log.info(`Run babel-${watch ? 'watch' : 'node'}`);
   await exec({ cmd, args, cwd, log, withInteraction: true, withDirectOutput: true });
 };
 
