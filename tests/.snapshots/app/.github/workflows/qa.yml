@@ -9,11 +9,18 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
-        os: [ubuntu-latest, macos-latest]
+        node-version: [14.x, 15.x, 16.x]
+        os: [ubuntu-latest]
+        architecture: [x64]
         include:
-          - node-version: 15.x
-            os: ubuntu-latest
+          # current node LTS on the macOS (intel)
+          - node-version: 14.x
+            os: macos-latest
+            architecture: x64
+          # current node LTS on the macOS (arm)
+          - node-version: 14.x
+            os: macos-latest
+            architecture: arm64
 
     steps:
       - uses: actions/checkout@v2
@@ -23,12 +30,18 @@ jobs:
         id: cache-node-modules
         with:
           path: node_modules
-          key: install-${{ runner.OS }}-v${{ matrix.node-version }}-${{ hashFiles('**/package.json', '**/package-lock.json') }}
+          key: >-
+            npm-install
+            -${{ runner.OS }}
+            -v${{ matrix.node-version }}
+            -${{ matrix.architecture }}
+            -${{ hashFiles('**/package.json', '**/package-lock.json') }}
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }} (${{ matrix.architecture }}) on ${{ matrix.os }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          architecture: ${{ matrix.architecture }}
 
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
