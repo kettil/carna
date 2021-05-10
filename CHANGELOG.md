@@ -1,5 +1,20 @@
 # Changelog
 
+# [4.6.0](https://github.com/kettil/carna/compare/4.5.0...4.6.0) (2021-05-10)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/preset-env from 7.14.0 to 7.14.1 ([af55152](https://github.com/kettil/carna/commit/af55152b01518bc048f1050fcd447dfe73de7f08))
+* **deps:** bump @kettil/tool-lib from 3.1.0 to 3.2.0 ([21e6e66](https://github.com/kettil/carna/commit/21e6e663e3968f614a4db5161f0312c2a9ae9303))
+* **deps:** bump yargs from 16.2.0 to 17.0.0 ([46f2a43](https://github.com/kettil/carna/commit/46f2a4334d5f99b53f42d8feb6bf53b8b001288a))
+* **deps:** bump yargs from 17.0.0 to 17.0.1 ([dd67a35](https://github.com/kettil/carna/commit/dd67a359d835dc3be178f94bb8ed4d6a09a3f00b))
+
+
+### Features
+
+* add different node versions (ci template) ([ad9df68](https://github.com/kettil/carna/commit/ad9df68d397b45df0bbf744fb9a4dd091892a349))
+
 # [4.5.0](https://github.com/kettil/carna/compare/4.4.0...4.5.0) (2021-05-03)
 
 
