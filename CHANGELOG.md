@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.6.1](https://github.com/kettil/carna/compare/4.6.0...4.6.1) (2021-05-17)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.14.0 to 7.14.2 ([2f35b01](https://github.com/kettil/carna/commit/2f35b01f65b8ca4e544f57b02a28e1d0c0f3201c))
+* **deps:** bump @babel/node from 7.13.13 to 7.14.2 ([74793b8](https://github.com/kettil/carna/commit/74793b8f31898259c82d6d659c98f3cba972016b))
+* **deps:** bump @babel/plugin-transform-runtime from 7.13.15 to 7.14.2 ([a9ec945](https://github.com/kettil/carna/commit/a9ec9454230bcfbbc883fa481d15bae994384268))
+* **deps:** bump @babel/preset-env from 7.14.1 to 7.14.2 ([6c69051](https://github.com/kettil/carna/commit/6c69051c40d4d88a71ff9d6b263cefcca6726202))
+* **deps:** bump @commitlint/cli from 12.1.1 to 12.1.3 ([ff3505d](https://github.com/kettil/carna/commit/ff3505de627492800a004e8479d6dbdf8b2d68da))
+* **deps:** bump @commitlint/cli from 12.1.3 to 12.1.4 ([9902ae2](https://github.com/kettil/carna/commit/9902ae284ebfa0e9574db0caa5708969d2d211d7))
+* **deps:** bump @kettil/eslint-config from 2.1.2 to 2.2.0 ([b5d76a4](https://github.com/kettil/carna/commit/b5d76a408f739ccc2dc87bc92b44f5d9a4e7278d))
+* **deps:** bump @kettil/eslint-config from 2.2.0 to 2.2.1 ([7ad05f3](https://github.com/kettil/carna/commit/7ad05f3deb27b769a49f015b98cfc04b3a2a4250))
+* **deps:** bump @types/semver from 7.3.5 to 7.3.6 ([619b666](https://github.com/kettil/carna/commit/619b6664d910b7b4d56943f9ee376ab6b15e4568))
+* **deps:** bump depcheck from 1.4.0 to 1.4.1 ([a91618d](https://github.com/kettil/carna/commit/a91618d3e9cf15be85f4da49646b30ae6ac2f6b9))
+* **deps:** bump eslint from 7.25.0 to 7.26.0 ([0960592](https://github.com/kettil/carna/commit/096059249685440d58deb933d453088b2428bd17))
+* **deps:** bump prettier from 2.2.1 to 2.3.0 ([668b2ee](https://github.com/kettil/carna/commit/668b2ee8ffe71e1100dac80222621aba6b192089))
+* **deps:** bump semantic-release from 17.4.2 to 17.4.3 ([f78d742](https://github.com/kettil/carna/commit/f78d7428daa70387187dd988d2b7ff2520c64579))
+
 # [4.6.0](https://github.com/kettil/carna/compare/4.5.0...4.6.0) (2021-05-10)
 
 
