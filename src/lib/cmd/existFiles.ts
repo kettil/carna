@@ -2,9 +2,10 @@ import { join } from 'path';
 import access from './access';
 
 const existFile = async (cwd: string, file: string): Promise<string> => {
-  const hasAccess = await access(join(cwd, file));
+  const path = join(cwd, file);
+  const hasAccess = await access(path);
 
-  return hasAccess ? file : '';
+  return hasAccess ? path : '';
 };
 
 const existFiles = async (files: string[], cwd = ''): Promise<string[]> => {

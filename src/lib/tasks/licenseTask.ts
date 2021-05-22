@@ -4,9 +4,9 @@ import license from '../actions/tools/licensecheck';
 import getConfig from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import table from '../cli/table';
+import exit from '../cmd/exit';
 import LicenseDisabledError from '../errors/licenseDisabledError';
 import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
-import { exit } from '../helper';
 import { Task } from '../types';
 import taskHook from './helpers/taskHook';
 

@@ -3,7 +3,7 @@ import { isArray } from '@kettil/tool-lib';
 import { bold, red } from 'chalk';
 import { createCoverageMap, CoverageMapData, CoverageSummary } from 'istanbul-lib-coverage';
 import { createContext, ReportBase, Watermark, Watermarks } from 'istanbul-lib-report';
-import { create } from 'istanbul-reports';
+import { create, ReportOptions } from 'istanbul-reports';
 import existFiles from '../../cmd/existFiles';
 import readFile from '../../cmd/readFile';
 import writeFile from '../../cmd/writeFile';
@@ -68,17 +68,16 @@ const coverage: Action<CoverageProps> = async (argv, { projects, watermarks = {}
     watermarks: watermarkKeys.reduce((data, key) => Object.assign(data, { [key]: getWatermark(watermarks[key]) }), {}),
   });
 
-  // create reports
-  ((create('lcovonly', {}) as unknown) as ReportBase).execute(context);
-  ((create('json-summary', {}) as unknown) as ReportBase).execute(context);
-  ((create('text-summary', {}) as unknown) as ReportBase).execute(context);
+  const reports: Array<keyof ReportOptions> = ['lcovonly', 'json-summary', 'text-summary'];
 
   if (!argv.ci) {
-    ((create('html', {}) as unknown) as ReportBase).execute(context);
+    reports.push('html');
   }
 
-  const coverageSummary = coverageMap.getCoverageSummary();
+  // create reports
+  reports.forEach((report) => ((create(report, {}) as unknown) as ReportBase).execute(context));
 
+  const coverageSummary = coverageMap.getCoverageSummary();
   const coverageErrors = watermarkKeys.filter(
     (key) => !coverageSuccessKeys.has(context.classForPercent(key, coverageSummary[key].pct)),
   );

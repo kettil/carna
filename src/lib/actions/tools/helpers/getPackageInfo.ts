@@ -1,11 +1,11 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
-import { readdir } from 'fs/promises';
 import { join } from 'path';
 import { isObject, objectEntries } from '@kettil/tool-lib';
 import licenseHeuristics from '../../../../configs/licenseHeuristics';
 import access from '../../../cmd/access';
 import exec from '../../../cmd/exec';
+import readdir from '../../../cmd/readdir';
 import readFile from '../../../cmd/readFile';
 import { Action, LicensePackageInfo, LicensePackages } from '../../../types';
 
@@ -61,7 +61,7 @@ const getPackageInfo: GetPackageInfo = async ({ cwd, log }, { packagePath, ignor
   }
 
   // License from copying|license|readme file
-  const entries = await readdir(packagePath, { encoding: 'utf8', withFileTypes: true });
+  const entries = await readdir(packagePath);
   const files = entries
     .filter((entry) => entry.isFile() && !entry.name.startsWith('.') && regexpFilename.test(entry.name))
     .map((entry) => entry.name)

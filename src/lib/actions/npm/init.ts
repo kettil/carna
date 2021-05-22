@@ -2,7 +2,7 @@ import { join } from 'path';
 import access from '../../cmd/access';
 import exec from '../../cmd/exec';
 import { Action } from '../../types';
-import npmPackage, { Props as packageProps } from './packageUpdate';
+import npmPackageUpdate, { Props as packageProps } from './packageUpdate';
 
 type Props = {
   settings: packageProps['settings'];
@@ -16,7 +16,7 @@ const npmInit: Action<Props> = async (argv, { settings }) => {
     argv.log.info('Initialize the package.json');
     await exec({ ...argv, cmd: 'npm', args: ['init', '-y'] });
 
-    await npmPackage(argv, { settings });
+    await npmPackageUpdate(argv, { settings });
   } else {
     argv.log.info('package.json already exists');
   }

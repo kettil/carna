@@ -36,7 +36,7 @@ const logging = (level: string, type: Type): Log => (msg) => {
   resume();
 };
 
-const log: Log = (msg) => {
+export const log: Log = (msg) => {
   const indent = isSpinning() ? '  ' : '';
   const resume = spinnerBreak();
   const messages = isArray(msg) ? msg : msg.trimEnd().split('\n');

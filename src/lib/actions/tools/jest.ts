@@ -62,6 +62,12 @@ const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
   args.push('--coverageReporters', 'json');
   args.push('--coverageThreshold', '\'{"global":{"statements":0,"branches":0,"functions":0,"lines":0}}\'');
 
+  if (props.watch) {
+    args.push('--coverageReporters', 'json-summary');
+    args.push('--coverageReporters', 'lcovonly');
+    args.push('--coverageReporters', 'html');
+  }
+
   log.info('Run test');
 
   await exec({ cmd, args, cwd, log, withInteraction: props.watch, withDirectOutput: true });

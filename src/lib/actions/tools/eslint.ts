@@ -1,6 +1,6 @@
-import { join, relative, basename } from 'path';
+import { join, basename } from 'path';
 import exec from '../../cmd/exec';
-import { existConfigFile } from '../../helper';
+import existFiles from '../../cmd/existFiles';
 import { Action } from '../../types';
 
 const configs = ['.eslintrc.js', '.eslintrc.cjs', '.eslintrc.yaml', '.eslintrc.yml', '.eslintrc.json', '.eslintrc'];
@@ -15,14 +15,16 @@ export type EslintProps = {
 };
 
 const eslint: Action<EslintProps> = async ({ cwd, cfg, log }, { write, files }) => {
-  const hasConfigFile = await existConfigFile(cwd, configs);
+  const configFiles = await existFiles(configs, cwd);
+
+  configFiles.push(join(cfg, 'eslintrc.json'));
 
   const cmd = './node_modules/.bin/eslint';
-  const args: string[] = ['--color', '--max-warnings', '0'];
+  const args: string[] = [];
 
-  if (!hasConfigFile) {
-    args.push('--config', relative(cwd, join(cfg, 'eslintrc.json')));
-  }
+  args.push('--color');
+  args.push('--max-warnings', '0');
+  args.push('--config', configFiles[0]);
 
   if (write) {
     args.push('--fix');

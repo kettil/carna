@@ -1,6 +1,6 @@
-import { join, relative } from 'path';
+import { join } from 'path';
 import exec from '../../cmd/exec';
-import { existConfigFile } from '../../helper';
+import existFiles from '../../cmd/existFiles';
 import { Action } from '../../types';
 
 const configs = [
@@ -26,14 +26,14 @@ const prettier: Action<PrettierProps> = async (
   { cwd, cfg, log },
   { write, files, extension = prettierExtensionAll },
 ) => {
-  const hasConfigFile = await existConfigFile(cwd, configs);
+  const configFiles = await existFiles(configs, cwd);
+
+  configFiles.push(join(cfg, 'prettierrc.json'));
 
   const cmd = './node_modules/.bin/prettier';
   const args: string[] = [];
 
-  if (!hasConfigFile) {
-    args.push('--config', relative(cwd, join(cfg, 'prettierrc.json')));
-  }
+  args.push('--config', configFiles[0]);
 
   if (write) {
     args.push('--write');
