@@ -200,16 +200,17 @@ Calls the application directly, without build process.
 
 The tasks will be automatically called by husky (via git hooks).
 
-The following subtask exists:
+The following hooks exists:
 
-- `git commit`: Checks the files in staged with prettier, eslint and typescript (git-hook: `pre-commit`).
-- `git msg`: Checks the git commit message for a consistent structure (git-hook: `commit-msg`).
+- `commit`: Checks the files in staged with prettier, eslint and typescript (git-hook: `pre-commit`).
+- `msg`: Checks the git commit message for a consistent structure (git-hook: `commit-msg`).
 
 ### Options
 
-| Options | Description                                         |
-| ------- | --------------------------------------------------- |
-| --edit  | Path to the COMMIT_EDITMSG file (only by `git msg`) |
+| Options | Description                                          |
+| ------- | ---------------------------------------------------- |
+| --hook  | The git hook to execute (Choices: `commit`, `msg`)   |
+| --edit  | Path to the COMMIT_EDITMSG file (only by `msg` hook) |
 
 ### Exit codes
 
