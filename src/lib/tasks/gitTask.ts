@@ -4,8 +4,8 @@ import gitCommitTask from './subTasks/gitCommitTask';
 import gitMessageTask, { GitMessageProps } from './subTasks/gitMessageTask';
 
 export type GitProps = {
-  edit: GitMessageProps['edit'] | undefined;
-  hook: string;
+  edit?: GitMessageProps['edit'];
+  hook: 'commit' | 'msg';
 };
 
 const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
@@ -27,7 +27,7 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
       break;
 
     default:
-      throw new Error(`The hook "${hook}" is unknown`);
+      throw new Error(`The git hook "${hook}" is unknown`);
   }
 
   await taskHook(argv, { task: 'git', type: 'post' });
