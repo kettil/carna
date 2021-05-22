@@ -1,23 +1,10 @@
 import * as fs from 'fs';
 import { Argv } from 'yargs';
-import { handler, builder, command, desc } from '../../src/lib/commands/analyse';
-import { PropsGlobal } from '../../src/lib/types';
-import { getAccessFiles, getArgv, getReadFileFiles, getReadFileWithHooksFiles } from '../shared/configs';
-
-jest.mock('child_process', () => require('../shared/__mock__/childProcess'));
-jest.mock('fs', () => require('../shared/__mock__/fs'));
-jest.mock('ora', () => require('../shared/__mock__/ora'));
-jest.mock('exit', () => require('../shared/__mock__/exit'));
-jest.mock('semver', () => require('../shared/__mock__/semver'));
-jest.mock('depcheck', () => require('../shared/__mock__/depcheck'));
-jest.mock('istanbul-reports', () => require('../shared/__mock__/istanbulReports'));
+import { handler, builder, command, desc } from '../../../src/lib/commands/analyse';
+import { PropsGlobal } from '../../../src/lib/types';
+import { getAccessFiles, getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
 
 describe('command analyse', () => {
-  beforeEach(() => {
-    (fs as any).setMockAccessFiles(getAccessFiles());
-    (fs as any).setMockReadFileFiles(getReadFileFiles());
-  });
-
   test('it should be complete the yargs command structure', () => {
     expect(typeof command).toBe('string');
     expect(typeof desc).toBe('string');

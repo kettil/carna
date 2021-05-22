@@ -1,24 +1,9 @@
 import * as fs from 'fs';
 import { join } from 'path';
-import { handler } from '../../src/lib/commands/init';
-import {
-  cwd,
-  getAccessFiles,
-  getArgv,
-  getReaddirFiles,
-  getReadFileFiles,
-  getReadFileWithHooksFiles,
-} from '../shared/configs';
+import { handler } from '../../../src/lib/commands/init';
+import { cwd, getAccessFiles, getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
 
-jest.mock('child_process', () => require('../shared/__mock__/childProcess'));
-jest.mock('fs', () => require('../shared/__mock__/fs'));
-jest.mock('ora', () => require('../shared/__mock__/ora'));
-jest.mock('exit', () => require('../shared/__mock__/exit'));
-jest.mock('semver', () => require('../shared/__mock__/semver'));
-jest.mock('depcheck', () => require('../shared/__mock__/depcheck'));
-jest.mock('istanbul-reports', () => require('../shared/__mock__/istanbulReports'));
-
-describe('command init (app)', () => {
+describe('command init (cli)', () => {
   beforeEach(() => {
     (fs as any).setMockAccessFiles(
       getAccessFiles({
@@ -37,31 +22,28 @@ describe('command init (app)', () => {
         [join(cwd, 'tests', 'e2e')]: false,
       }),
     );
-
-    (fs as any).setMockReadFileFiles(getReadFileFiles());
-    (fs as any).setMockReaddirFiles(getReaddirFiles());
   });
 
   test('it should work with init commit', async () => {
-    const result = await handler(getArgv({ package: false, cli: false, noCommit: false }));
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: false }));
 
     expect(result).toBeUndefined();
   });
 
   test('it should work without init commit', async () => {
-    const result = await handler(getArgv({ package: false, cli: false, noCommit: true }));
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: true }));
 
     expect(result).toBeUndefined();
   });
 
   test('it should work with init commit and with github username', async () => {
-    const result = await handler(getArgv({ package: false, cli: false, noCommit: false, github: 'username' }));
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: false, github: 'username' }));
 
     expect(result).toBeUndefined();
   });
 
   test('it should work without init commit and with github username', async () => {
-    const result = await handler(getArgv({ package: false, cli: false, noCommit: true, github: 'username' }));
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: true, github: 'username' }));
 
     expect(result).toBeUndefined();
   });
@@ -69,7 +51,7 @@ describe('command init (app)', () => {
   test('it should work with hooks and with init commit', async () => {
     (fs as any).setMockReadFileFiles(getReadFileWithHooksFiles());
 
-    const result = await handler(getArgv({ package: false, cli: false, noCommit: false }));
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: false }));
 
     expect(result).toBeUndefined();
   });
@@ -77,7 +59,7 @@ describe('command init (app)', () => {
   test('it should work with hooks and without init commit', async () => {
     (fs as any).setMockReadFileFiles(getReadFileWithHooksFiles());
 
-    const result = await handler(getArgv({ package: false, cli: false, noCommit: true }));
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: true }));
 
     expect(result).toBeUndefined();
   });

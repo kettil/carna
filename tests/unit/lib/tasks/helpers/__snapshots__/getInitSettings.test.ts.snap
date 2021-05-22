@@ -145,12 +145,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -270,12 +278,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -434,12 +450,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -559,12 +583,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -741,12 +773,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -873,12 +913,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -1055,12 +1103,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -1187,12 +1243,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -1355,12 +1419,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -1484,12 +1556,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -1652,12 +1732,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -1781,12 +1869,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -1967,12 +2063,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -2103,12 +2207,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -2289,12 +2401,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",
@@ -2425,12 +2545,20 @@ Object {
       "tests/e2e/dummy.test.ts",
     ],
     Array [
+      "tests/setupTests.ts",
+      "tests/integration/setupTests.ts",
+    ],
+    Array [
       "tests/pre.ts",
       "tests/integration/pre.ts",
     ],
     Array [
       "tests/post.ts",
       "tests/integration/post.ts",
+    ],
+    Array [
+      "tests/setupTests.ts",
+      "tests/e2e/setupTests.ts",
     ],
     Array [
       "tests/pre.ts",

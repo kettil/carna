@@ -1,22 +1,7 @@
 import * as fs from 'fs';
 import { join } from 'path';
-import { handler } from '../../src/lib/commands/init';
-import {
-  cwd,
-  getAccessFiles,
-  getArgv,
-  getReaddirFiles,
-  getReadFileFiles,
-  getReadFileWithHooksFiles,
-} from '../shared/configs';
-
-jest.mock('child_process', () => require('../shared/__mock__/childProcess'));
-jest.mock('fs', () => require('../shared/__mock__/fs'));
-jest.mock('ora', () => require('../shared/__mock__/ora'));
-jest.mock('exit', () => require('../shared/__mock__/exit'));
-jest.mock('semver', () => require('../shared/__mock__/semver'));
-jest.mock('depcheck', () => require('../shared/__mock__/depcheck'));
-jest.mock('istanbul-reports', () => require('../shared/__mock__/istanbulReports'));
+import { handler } from '../../../src/lib/commands/init';
+import { cwd, getAccessFiles, getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
 
 describe('command init (package)', () => {
   beforeEach(() => {
@@ -37,9 +22,6 @@ describe('command init (package)', () => {
         [join(cwd, 'tests', 'e2e')]: false,
       }),
     );
-
-    (fs as any).setMockReadFileFiles(getReadFileFiles());
-    (fs as any).setMockReaddirFiles(getReaddirFiles());
   });
 
   test('it should work with init commit', async () => {

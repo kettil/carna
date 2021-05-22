@@ -110,6 +110,8 @@ For helper functions and/or functions for multiple test projects can be stored i
 
 If there is an `pre.[js|ts]` or `post.[js|ts]` file in the test project folder, then it is called before or after from the respective test project.
 
+If there is an `setupTests.[js|ts]` file in the test project folder, then the file is called before each test file.
+
 ### Options
 
 | Options          | short | Description                                                               |
