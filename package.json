@@ -57,7 +57,7 @@
     "@babel/preset-typescript": "7.13.0",
     "@commitlint/cli": "12.1.4",
     "@kettil/commitlint-config": "2.0.0",
-    "@kettil/eslint-config": "2.2.2",
+    "@kettil/eslint-config": "2.3.0",
     "@kettil/semantic-release-config": "2.0.1",
     "@kettil/tool-lib": "3.2.0",
     "@types/istanbul-lib-coverage": "2.0.3",
