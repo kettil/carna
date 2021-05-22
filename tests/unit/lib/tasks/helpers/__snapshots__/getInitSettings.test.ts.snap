@@ -14,6 +14,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "tests/shared",
     "tests/type",
     "tests/unit",
@@ -95,6 +96,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "typescriptrc.json",
@@ -262,6 +287,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "tests/shared",
     "tests/type",
     "tests/unit",
@@ -343,6 +369,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "typescriptrc.json",
@@ -510,6 +560,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "tests/shared",
     "tests/type",
     "tests/unit",
@@ -601,6 +652,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "github/workflows/release.yml",
@@ -783,6 +858,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "tests/shared",
     "tests/type",
     "tests/unit",
@@ -874,6 +950,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "github/workflows/release.yml",
@@ -1056,6 +1156,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "src/bin",
     "tests/shared",
     "tests/type",
@@ -1138,6 +1239,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "src/bin/index.ts",
@@ -1312,6 +1437,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "src/bin",
     "tests/shared",
     "tests/type",
@@ -1394,6 +1520,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "src/bin/index.ts",
@@ -1568,6 +1718,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "src/bin",
     "tests/shared",
     "tests/type",
@@ -1660,6 +1811,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "github/workflows/release.yml",
@@ -1849,6 +2024,7 @@ Object {
     "src/lib",
     ".github",
     ".github/workflows",
+    ".github/ISSUE_TEMPLATE",
     "src/bin",
     "tests/shared",
     "tests/type",
@@ -1941,6 +2117,30 @@ Object {
     Array [
       "github/workflows/qa.yml",
       ".github/workflows/qa.yml",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/bug.md",
+      ".github/ISSUE_TEMPLATE/bug.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/concept.md",
+      ".github/ISSUE_TEMPLATE/concept.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/epic.md",
+      ".github/ISSUE_TEMPLATE/epic.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/feature.md",
+      ".github/ISSUE_TEMPLATE/feature.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/question.md",
+      ".github/ISSUE_TEMPLATE/question.md",
+    ],
+    Array [
+      "github/ISSUE_TEMPLATE/task.md",
+      ".github/ISSUE_TEMPLATE/task.md",
     ],
     Array [
       "github/workflows/release.yml",

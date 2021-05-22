@@ -54,6 +54,18 @@ describe('command init (cli)', () => {
     expect(result).toBeUndefined();
   });
 
+  test('it should work with init commit and with github username', async () => {
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: false, github: 'username' }));
+
+    expect(result).toBeUndefined();
+  });
+
+  test('it should work without init commit and with github username', async () => {
+    const result = await handler(getArgv({ package: true, cli: true, noCommit: true, github: 'username' }));
+
+    expect(result).toBeUndefined();
+  });
+
   test('it should work with hooks and with init commit', async () => {
     (fs as any).setMockReadFileFiles(getReadFileWithHooksFiles());
 

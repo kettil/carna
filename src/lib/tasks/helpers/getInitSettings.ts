@@ -70,11 +70,18 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   // ######################
 
   if (typeof settings.github.name === 'string') {
-    settings.folders.push('.github', '.github/workflows');
+    settings.folders.push('.github', '.github/workflows', '.github/ISSUE_TEMPLATE');
 
     settings.templates.push(['github/dependabot.yml', '.github/dependabot.yml']);
     settings.templates.push(['github/CODEOWNERS', '.github/CODEOWNERS']);
     settings.templates.push(['github/workflows/qa.yml', '.github/workflows/qa.yml']);
+
+    settings.templates.push(['github/ISSUE_TEMPLATE/bug.md', '.github/ISSUE_TEMPLATE/bug.md']);
+    settings.templates.push(['github/ISSUE_TEMPLATE/concept.md', '.github/ISSUE_TEMPLATE/concept.md']);
+    settings.templates.push(['github/ISSUE_TEMPLATE/epic.md', '.github/ISSUE_TEMPLATE/epic.md']);
+    settings.templates.push(['github/ISSUE_TEMPLATE/feature.md', '.github/ISSUE_TEMPLATE/feature.md']);
+    settings.templates.push(['github/ISSUE_TEMPLATE/question.md', '.github/ISSUE_TEMPLATE/question.md']);
+    settings.templates.push(['github/ISSUE_TEMPLATE/task.md', '.github/ISSUE_TEMPLATE/task.md']);
   }
 
   // ######################
