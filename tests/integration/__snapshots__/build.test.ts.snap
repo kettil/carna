@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`command build it should be create the expected builder: usage 1`] = `
+Array [
+  "Usage: $0 build [options]",
+]
+`;
+
+exports[`command build it should work with hooks: child-process 1`] = `
+Object {
+  "args": Array [
+    "run",
+    "precarna:build",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command build it should work with hooks: child-process 2`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/build",
+    "--project",
+    "/path/to/project/tsconfig.build.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "./node_modules/.bin/tsc",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command build it should work with hooks: child-process 3`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx",
+    "src",
+  ],
+  "command": "./node_modules/.bin/babel",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command build it should work with hooks: child-process 4`] = `
+Object {
+  "args": Array [
+    "run",
+    "postcarna:build",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command build it should work: child-process 1`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/build",
+    "--project",
+    "/path/to/project/tsconfig.build.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "./node_modules/.bin/tsc",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command build it should work: child-process 2`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx",
+    "src",
+  ],
+  "command": "./node_modules/.bin/babel",
+  "cwd": "/path/to/project",
+}
+`;

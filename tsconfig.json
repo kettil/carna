@@ -1,6 +1,6 @@
 {
   "extends": "./configs/typescriptrc.json",
-  "include": ["./src/**/*", "./templates/**/*", "./tests/**/*", "./tests/.snapshots/**/*"],
+  "include": ["./src/**/*", "./templates/**/*", "./tests/**/*"],
   "exclude": ["node_modules", "build"],
 
   "compilerOptions": {}
