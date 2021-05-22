@@ -14,7 +14,7 @@ export type TestProps = Omit<JestProps, 'projects'> & {
 
 const transformThreshold = (key: number | string, value: unknown): [number | string, WatermarkThreshold] => {
   if (isArray(value) && value.length === 2 && typeof value[0] === 'number' && typeof value[1] === 'number') {
-    return [key, (value as unknown) as [number, number]];
+    return [key, value as unknown as [number, number]];
   }
 
   if (typeof value === 'number') {

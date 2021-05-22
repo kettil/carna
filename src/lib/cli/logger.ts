@@ -25,16 +25,18 @@ const write = (type: Type, message: string) => {
   process[type].write(`${message.trimEnd()}\n`);
 };
 
-const logging = (level: string, type: Type): Log => (msg) => {
-  const resume = spinnerBreak();
-  const messages = isArray(msg) ? msg : msg.replace(/\n$/, '').split('\n');
+const logging =
+  (level: string, type: Type): Log =>
+    (msg) => {
+      const resume = spinnerBreak();
+      const messages = isArray(msg) ? msg : msg.replace(/\n$/, '').split('\n');
 
-  messages.forEach((m) => {
-    write(type, `[${new Date().toISOString()}] ${level}: ${m}`);
-  });
+      messages.forEach((m) => {
+        write(type, `[${new Date().toISOString()}] ${level}: ${m}`);
+      });
 
-  resume();
-};
+      resume();
+    };
 
 export const log: Log = (msg) => {
   const indent = isSpinning() ? '  ' : '';

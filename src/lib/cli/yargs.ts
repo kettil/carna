@@ -55,38 +55,37 @@ export const errorHandler = (msg: string, error: Error): void => {
   throw error;
 };
 
-export const createHandler = <TaskProps extends Record<string, unknown>>(
-  task: Task<TaskProps>,
-): CommandHandler<TaskProps> => async (argv) => {
-  const [isReadableCwd, isReadableCfg, isReadableTpl] = await Promise.all([
-    access(argv.cwd, 'readable'),
-    access(argv.cfg, 'readable'),
-    access(argv.tpl, 'readable'),
-  ]);
+export const createHandler =
+  <TaskProps extends Record<string, unknown>>(task: Task<TaskProps>): CommandHandler<TaskProps> =>
+    async (argv) => {
+      const [isReadableCwd, isReadableCfg, isReadableTpl] = await Promise.all([
+        access(argv.cwd, 'readable'),
+        access(argv.cfg, 'readable'),
+        access(argv.tpl, 'readable'),
+      ]);
 
-  if (!isReadableCwd) {
-    throw new Error(`The folder ${argv.cwd} is not readable`);
-  }
+      if (!isReadableCwd) {
+        throw new Error(`The folder ${argv.cwd} is not readable`);
+      }
 
-  if (!isReadableCfg) {
-    throw new Error(`The folder ${argv.cfg} is not readable`);
-  }
+      if (!isReadableCfg) {
+        throw new Error(`The folder ${argv.cfg} is not readable`);
+      }
 
-  if (!isReadableTpl) {
-    throw new Error(`The folder ${argv.tpl} is not readable`);
-  }
+      if (!isReadableTpl) {
+        throw new Error(`The folder ${argv.tpl} is not readable`);
+      }
 
-  argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
+      argv.log.debug(['Paths:', `▸ cwd: ${argv.cwd}`, `▸ cfg: ${argv.cfg}`, `▸ tpl: ${argv.tpl}`, '']);
 
-  const options = Object.fromEntries(Object.entries(argv).filter(filterOptions)) as PropsGlobal;
-  const props = Object.fromEntries(Object.entries(argv).filter(filterProps)) as TaskProps;
+      const options = Object.fromEntries(Object.entries(argv).filter(filterOptions)) as PropsGlobal;
+      const props = Object.fromEntries(Object.entries(argv).filter(filterProps)) as TaskProps;
 
-  await task(options, props);
-};
+      await task(options, props);
+    };
 
-export const createBuilder = <TaskProps>(
-  command: string,
-  callback: CommandBuilder<TaskProps>,
-): CommandBuilder<TaskProps> => (yargs) =>
-  callback(yargs).usage(`Usage: $0 ${command} [options]`).help().version(false)
-    .showHelpOnFail(false);
+export const createBuilder =
+  <TaskProps>(command: string, callback: CommandBuilder<TaskProps>): CommandBuilder<TaskProps> =>
+    (yargs) =>
+      callback(yargs).usage(`Usage: $0 ${command} [options]`).help().version(false)
+        .showHelpOnFail(false);

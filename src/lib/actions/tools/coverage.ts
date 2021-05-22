@@ -75,7 +75,7 @@ const coverage: Action<CoverageProps> = async (argv, { projects, watermarks = {}
   }
 
   // create reports
-  reports.forEach((report) => ((create(report, {}) as unknown) as ReportBase).execute(context));
+  reports.forEach((report) => (create(report, {}) as unknown as ReportBase).execute(context));
 
   const coverageSummary = coverageMap.getCoverageSummary();
   const coverageErrors = watermarkKeys.filter(
