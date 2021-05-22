@@ -166,8 +166,9 @@ export const getReadFileFiles = (files: Record<string, string> = {}): Record<str
   [join(cwd, 'node_modules', 'carna', 'templates', 'src', 'bin', 'index.ts')]: '// index.ts',
   [join(cwd, 'node_modules', 'carna', 'templates', 'babel.config.js')]: '// babel.config.js',
   [join(cwd, 'node_modules', 'carna', 'templates', 'jest.config.js')]: '// jest.config.js',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'dummy.test.ts')]: '// dummy.test.ts',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'dummyHook.test.ts')]: '// dummyHook.test.ts',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'dummy.test.ts')]: '// dummy.test.ts',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'pre.ts')]: '// pre.ts',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'post.ts')]: '// post.ts',
 
   [join(cwd, 'node_modules/module1/package.json')]: JSON.stringify({
     name: 'sub-project-name-1',

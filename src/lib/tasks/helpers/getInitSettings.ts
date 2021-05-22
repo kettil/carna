@@ -156,11 +156,14 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   settings.folders.push('tests/shared', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
 
   settings.templates.push(
-    ['dummy.test.ts', 'tests/unit/dummy.test.ts'],
-    ['dummy.test.ts', 'tests/integration/dummy.test.ts'],
-    ['dummy.test.ts', 'tests/e2e/dummy.test.ts'],
-    ['dummyHook.test.ts', 'tests/e2e/pre.ts'],
-    ['dummyHook.test.ts', 'tests/e2e/post.ts'],
+    ['tests/dummy.test.ts', 'tests/unit/dummy.test.ts'],
+    ['tests/dummy.test.ts', 'tests/integration/dummy.test.ts'],
+    ['tests/dummy.test.ts', 'tests/e2e/dummy.test.ts'],
+
+    ['tests/pre.ts', 'tests/integration/pre.ts'],
+    ['tests/post.ts', 'tests/integration/post.ts'],
+    ['tests/pre.ts', 'tests/e2e/pre.ts'],
+    ['tests/post.ts', 'tests/e2e/post.ts'],
   );
 
   settings.packageScripts.test = 'npx carna test';

@@ -15,7 +15,7 @@
       "rules": { "@typescript-eslint/ban-types": ["off"] }
     },
     {
-      "files": ["templates/**/*.js", "templates/src/bin/*"],
+      "files": ["templates/**/*.ts", "templates/**/*.js", "templates/src/bin/*"],
       "rules": {
         "import/no-unused-modules": ["off"],
         "import/no-unresolved": ["off"],
