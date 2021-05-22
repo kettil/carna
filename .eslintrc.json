@@ -40,6 +40,25 @@
         "tests/.snapshots/*/tests/*/post.js"
       ],
       "rules": { "import/no-unused-modules": ["off"], "@typescript-eslint/no-floating-promises": ["off"] }
+    },
+    {
+      "files": ["tests/**/*.test.ts", "tests/**/*.test.tsx"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "node/global-require": ["off"]
+      }
+    },
+    {
+      "files": ["tests/shared/__mock__/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "@typescript-eslint/no-unused-vars": ["off"],
+        "@typescript-eslint/require-await": ["off"],
+        "import/no-unused-modules": ["off"],
+        "import/no-anonymous-default-export": ["off"],
+        "import/prefer-default-export": ["off"],
+        "jest/no-standalone-expect": ["off"]
+      }
     }
   ]
 }
