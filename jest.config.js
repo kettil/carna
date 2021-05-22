@@ -6,7 +6,6 @@ module.exports = Object.assign(config, {
     // => colors: red green yellow blue magenta cyan gray
     createProject('unit', 'cyan', {}),
     createProject('integration', 'magenta', {}),
-    createProject('e2e', 'yellow', {}),
   ],
 
   // extend options for this project
