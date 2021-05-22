@@ -5,27 +5,28 @@ import ExecutableError from '../errors/executableError';
 
 type Options = {
   readonly cmd: string;
-  readonly args?: readonly string[];
+  readonly args: readonly string[];
   readonly withInteraction?: boolean;
   readonly withDirectOutput?: boolean;
 
-  readonly cwd?: string;
+  readonly cwd: string;
   readonly env?: NodeJS.ProcessEnv;
 
   readonly log: Logger;
 };
 
 const exec = ({
+  cwd,
   cmd,
-  args = [],
+  args,
   withInteraction,
   withDirectOutput,
-  cwd = process.cwd(),
-  env = processEnvironment(),
+  env: envExtend = {},
   log,
 }: Options): Promise<{ stdout: string; stderr: string; output: string }> =>
   new Promise<{ stdout: string; stderr: string; output: string }>((resolve, reject) => {
     const command = `${cmd} ${args.join(' ')}`;
+    const env = { ...processEnvironment(), ...envExtend };
 
     log.debug(`\nexec: ${command}`);
 
@@ -51,19 +52,19 @@ const exec = ({
         stream.stdout.on('data', (data) => {
           const value = String(data);
 
-          output += String(value);
-          stdout += String(value);
+          output += value;
+          stdout += value;
 
-          log.debug(String(value));
+          log.debug(value);
         });
 
         stream.stderr.on('data', (data) => {
           const value = String(data);
 
-          output += String(value);
-          stderr += String(value);
+          output += value;
+          stderr += value;
 
-          log.debug(String(value));
+          log.debug(value);
         });
       }
     }

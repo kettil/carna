@@ -17,7 +17,11 @@ const getInaccurateVersions = (packages: unknown): Array<[string, string, string
     .filter(([, version]) => !version.startsWith('file'))
     .filter(([, version]) => !version.startsWith('http'))
     .filter(([, version]) => !version.startsWith('git'))
-    .map<[string, string, string]>(([name, version]) => [name, version, coerce(version)?.version ?? 'exactly version'])
+    .map<[string, string, string]>(([name, version]) => [
+      name,
+      version,
+      coerce(version)?.version ?? 'could not be detected',
+    ])
     .filter(([, version, result]) => version !== result);
 };
 
@@ -25,7 +29,7 @@ const semver: Action = async (argv) => {
   const packagesJson = await npmPackageLoad(argv, {});
 
   if (!isObject(packagesJson)) {
-    return;
+    throw new Error('The package.json was not found');
   }
 
   const packages = keys

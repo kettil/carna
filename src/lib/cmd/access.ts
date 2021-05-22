@@ -23,6 +23,10 @@ const access = async (path: string, type: 'exists' | 'readable' | 'writable' = '
 
     return true;
   } catch (error) {
+    if (error.code !== 'ENOENT' && error.syscall !== 'access') {
+      throw error;
+    }
+
     return false;
   }
 };

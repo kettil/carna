@@ -1,12 +1,12 @@
-import { readdir } from 'fs/promises';
 import { join } from 'path';
+import readdir from '../../cmd/readdir';
 import { Task } from '../../types';
 
 const ignoreFolders = new Set(['shared', 'type']);
 const specialFolders = ['unit', 'integration', 'e2e'];
 
 const getTestProjects: Task<[string[] | undefined], string[]> = async ({ cwd }, selectedProjects) => {
-  const files = await readdir(join(cwd, 'tests'), { withFileTypes: true });
+  const files = await readdir(join(cwd, 'tests'));
 
   const folders = files
     .filter((file) => file.isDirectory() && !file.name.startsWith('.'))
