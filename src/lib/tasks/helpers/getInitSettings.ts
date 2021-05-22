@@ -160,8 +160,10 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
     ['tests/dummy.test.ts', 'tests/integration/dummy.test.ts'],
     ['tests/dummy.test.ts', 'tests/e2e/dummy.test.ts'],
 
+    ['tests/setupTests.ts', 'tests/integration/setupTests.ts'],
     ['tests/pre.ts', 'tests/integration/pre.ts'],
     ['tests/post.ts', 'tests/integration/post.ts'],
+    ['tests/setupTests.ts', 'tests/e2e/setupTests.ts'],
     ['tests/pre.ts', 'tests/e2e/pre.ts'],
     ['tests/post.ts', 'tests/e2e/post.ts'],
   );

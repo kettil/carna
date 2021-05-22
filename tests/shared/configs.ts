@@ -167,6 +167,7 @@ export const getReadFileFiles = (files: Record<string, string> = {}): Record<str
   [join(cwd, 'node_modules', 'carna', 'templates', 'babel.config.js')]: '// babel.config.js',
   [join(cwd, 'node_modules', 'carna', 'templates', 'jest.config.js')]: '// jest.config.js',
   [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'dummy.test.ts')]: '// dummy.test.ts',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'setupTests.ts')]: '// setupTests.ts',
   [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'pre.ts')]: '// pre.ts',
   [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'post.ts')]: '// post.ts',
 

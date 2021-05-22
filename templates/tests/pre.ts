@@ -1,5 +1,5 @@
 /**
- * The file is called once when the test is started.
+ * The file is called once when the test environment is started.
  *
  * The file can be deleted if it is not needed.
  */

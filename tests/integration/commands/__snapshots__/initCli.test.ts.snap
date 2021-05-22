@@ -294,13 +294,21 @@ Object {
 
 exports[`command init (cli) it should work with hooks and with init commit: fs 29`] = `
 Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/integration/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with hooks and with init commit: fs 30`] = `
+Object {
   "data": "// pre.ts
 ",
   "path": "/path/to/project/tests/integration/pre.ts",
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 30`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 31`] = `
 Object {
   "data": "// post.ts
 ",
@@ -308,7 +316,15 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 31`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 32`] = `
+Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/e2e/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with hooks and with init commit: fs 33`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -316,7 +332,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 32`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 34`] = `
 Object {
   "data": "// post.ts
 ",
@@ -324,7 +340,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 33`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 35`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -638,13 +654,21 @@ Object {
 
 exports[`command init (cli) it should work with hooks and without init commit: fs 29`] = `
 Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/integration/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with hooks and without init commit: fs 30`] = `
+Object {
   "data": "// pre.ts
 ",
   "path": "/path/to/project/tests/integration/pre.ts",
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 30`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 31`] = `
 Object {
   "data": "// post.ts
 ",
@@ -652,7 +676,15 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 31`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 32`] = `
+Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/e2e/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with hooks and without init commit: fs 33`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -660,7 +692,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 32`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 34`] = `
 Object {
   "data": "// post.ts
 ",
@@ -668,7 +700,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 33`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 35`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -1112,13 +1144,21 @@ Object {
 
 exports[`command init (cli) it should work with init commit and with github username: fs 42`] = `
 Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/integration/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with init commit and with github username: fs 43`] = `
+Object {
   "data": "// pre.ts
 ",
   "path": "/path/to/project/tests/integration/pre.ts",
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 43`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 44`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1126,7 +1166,15 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 44`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 45`] = `
+Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/e2e/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with init commit and with github username: fs 46`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1134,7 +1182,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 45`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 47`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1142,7 +1190,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 46`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 48`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -1463,13 +1511,21 @@ Object {
 
 exports[`command init (cli) it should work with init commit: fs 29`] = `
 Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/integration/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with init commit: fs 30`] = `
+Object {
   "data": "// pre.ts
 ",
   "path": "/path/to/project/tests/integration/pre.ts",
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 30`] = `
+exports[`command init (cli) it should work with init commit: fs 31`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1477,7 +1533,15 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 31`] = `
+exports[`command init (cli) it should work with init commit: fs 32`] = `
+Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/e2e/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work with init commit: fs 33`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1485,7 +1549,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 32`] = `
+exports[`command init (cli) it should work with init commit: fs 34`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1493,7 +1557,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 33`] = `
+exports[`command init (cli) it should work with init commit: fs 35`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -1898,13 +1962,21 @@ Object {
 
 exports[`command init (cli) it should work without init commit and with github username: fs 42`] = `
 Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/integration/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work without init commit and with github username: fs 43`] = `
+Object {
   "data": "// pre.ts
 ",
   "path": "/path/to/project/tests/integration/pre.ts",
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 43`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 44`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1912,7 +1984,15 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 44`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 45`] = `
+Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/e2e/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work without init commit and with github username: fs 46`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1920,7 +2000,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 45`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 47`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1928,7 +2008,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 46`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 48`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -2226,13 +2306,21 @@ Object {
 
 exports[`command init (cli) it should work without init commit: fs 29`] = `
 Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/integration/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work without init commit: fs 30`] = `
+Object {
   "data": "// pre.ts
 ",
   "path": "/path/to/project/tests/integration/pre.ts",
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 30`] = `
+exports[`command init (cli) it should work without init commit: fs 31`] = `
 Object {
   "data": "// post.ts
 ",
@@ -2240,7 +2328,15 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 31`] = `
+exports[`command init (cli) it should work without init commit: fs 32`] = `
+Object {
+  "data": "// setupTests.ts
+",
+  "path": "/path/to/project/tests/e2e/setupTests.ts",
+}
+`;
+
+exports[`command init (cli) it should work without init commit: fs 33`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -2248,7 +2344,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 32`] = `
+exports[`command init (cli) it should work without init commit: fs 34`] = `
 Object {
   "data": "// post.ts
 ",
@@ -2256,7 +2352,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 33`] = `
+exports[`command init (cli) it should work without init commit: fs 35`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
