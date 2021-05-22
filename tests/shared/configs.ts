@@ -86,6 +86,9 @@ export const getAccessFiles = (files: Record<string, boolean> = {}): Record<stri
   [tpl]: true,
   [mockFilePackage]: true,
   [join(cwd, '.git')]: false,
+  [join(cwd, '.github')]: false,
+  [join(cwd, '.github/ISSUE_TEMPLATE')]: false,
+  [join(cwd, '.github/workflows')]: false,
   [join(cwd, '.carnarc.json')]: false,
   [join(cwd, '.commitlintrc.js')]: false,
   [join(cwd, '.commitlintrc.json')]: false,
@@ -138,6 +141,17 @@ export const getAccessFiles = (files: Record<string, boolean> = {}): Record<stri
 
 export const getReadFileFiles = (files: Record<string, string> = {}): Record<string, string> => ({
   [mockFilePackage]: JSON.stringify(packageJson),
+
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'dependabot.yml')]: 'yaml: file',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'CODEOWNERS')]: '* @username',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'workflows', 'qa.yml')]: 'yml: file',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'workflows', 'release.yml')]: 'yml: file',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'bug.md')]: '# markdown',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'concept.md')]: '# markdown',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'epic.md')]: '# markdown',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'feature.md')]: '# markdown',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'question.md')]: '# markdown',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'task.md')]: '# markdown',
 
   [join(cwd, 'node_modules', 'carna', 'templates', 'vscode', 'settings.json')]: '{"file":"settings.json"}',
   [join(cwd, 'node_modules', 'carna', 'templates', 'carnarc.json')]: '{"file":"carnarc.json"}',

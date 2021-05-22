@@ -623,6 +623,412 @@ Object {
 }
 `;
 
+exports[`command init (app) it should work with init commit and with github username: child-process 1`] = `
+Object {
+  "args": Array [
+    "init",
+  ],
+  "command": "git",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: child-process 2`] = `
+Object {
+  "args": Array [
+    "install",
+    "--save-dev",
+    "--save-exact",
+    "@types/node",
+    "carna",
+    "typescript",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: child-process 3`] = `
+Object {
+  "args": Array [
+    "run",
+    "prepare",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: child-process 4`] = `
+Object {
+  "args": Array [
+    "add",
+    ".",
+  ],
+  "command": "git",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: child-process 5`] = `
+Object {
+  "args": Array [
+    "commit",
+    "-m",
+    "\\"feat: 🐣\\"",
+  ],
+  "command": "git",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 1`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.vscode",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 2`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/src",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 3`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/src/lib",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 4`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.github",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 5`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.github/workflows",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 6`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 7`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/shared",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 8`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/type",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 9`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/unit",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 10`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/integration",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 11`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 12`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/src/lib/types.ts",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 13`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/shared/.keep",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 14`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 15`] = `
+Object {
+  "data": "{\\"file\\":\\"settings.json\\"}
+",
+  "path": "/path/to/project/.vscode/settings.json",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 16`] = `
+Object {
+  "data": "{\\"file\\":\\"carnarc.json\\"}
+",
+  "path": "/path/to/project/.carnarc.json",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 17`] = `
+Object {
+  "data": "editorconfig
+",
+  "path": "/path/to/project/.editorconfig",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 18`] = `
+Object {
+  "data": "eslintignore
+",
+  "path": "/path/to/project/.eslintignore",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 19`] = `
+Object {
+  "data": "gitignore
+",
+  "path": "/path/to/project/.gitignore",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 20`] = `
+Object {
+  "data": "npmignore
+",
+  "path": "/path/to/project/.npmignore",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 21`] = `
+Object {
+  "data": "prettierignore
+",
+  "path": "/path/to/project/.prettierignore",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 22`] = `
+Object {
+  "data": "// babel.config.js
+",
+  "path": "/path/to/project/babel.config.js",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 23`] = `
+Object {
+  "data": "yaml: file
+",
+  "path": "/path/to/project/.github/dependabot.yml",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 24`] = `
+Object {
+  "data": "* @username
+",
+  "path": "/path/to/project/.github/CODEOWNERS",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 25`] = `
+Object {
+  "data": "yml: file
+",
+  "path": "/path/to/project/.github/workflows/qa.yml",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 26`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/bug.md",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 27`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/concept.md",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 28`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/epic.md",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 29`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/feature.md",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 30`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/question.md",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 31`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/task.md",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 32`] = `
+Object {
+  "data": "{\\"file\\":\\"typescriptrc.json\\"}
+",
+  "path": "/path/to/project/tsconfig.json",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 33`] = `
+Object {
+  "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
+",
+  "path": "/path/to/project/tsconfig.build.json",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 34`] = `
+Object {
+  "data": "// jest.config.js
+",
+  "path": "/path/to/project/jest.config.js",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 35`] = `
+Object {
+  "data": "// dummy.test.ts
+",
+  "path": "/path/to/project/tests/unit/dummy.test.ts",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 36`] = `
+Object {
+  "data": "// dummy.test.ts
+",
+  "path": "/path/to/project/tests/integration/dummy.test.ts",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 37`] = `
+Object {
+  "data": "// dummy.test.ts
+",
+  "path": "/path/to/project/tests/e2e/dummy.test.ts",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 38`] = `
+Object {
+  "data": "// dummyHook.test.ts
+",
+  "path": "/path/to/project/tests/e2e/pre.ts",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 39`] = `
+Object {
+  "data": "// dummyHook.test.ts
+",
+  "path": "/path/to/project/tests/e2e/post.ts",
+}
+`;
+
+exports[`command init (app) it should work with init commit and with github username: fs 40`] = `
+Object {
+  "data": "{
+  \\"name\\": \\"project-name\\",
+  \\"license\\": \\"MIT\\",
+  \\"scripts\\": {
+    \\"prepare\\": \\"[ \\\\\\"$CI\\\\\\" != \\\\\\"\\\\\\" ] || husky install ./node_modules/carna/configs/husky\\",
+    \\"analyse\\": \\"npx carna analyse\\",
+    \\"build\\": \\"npx carna build\\",
+    \\"prebuild\\": \\"rm -rf ./build\\",
+    \\"test\\": \\"npx carna test\\",
+    \\"test:watch\\": \\"npx carna test -w\\"
+  },
+  \\"dependencies\\": {
+    \\"package\\": \\"0.1.0\\"
+  },
+  \\"main\\": \\"build/index.js\\",
+  \\"types\\": \\"build/index.d.ts\\"
+}
+",
+  "path": "/path/to/project/package.json",
+}
+`;
+
 exports[`command init (app) it should work with init commit: child-process 1`] = `
 Object {
   "args": Array [
@@ -907,6 +1313,389 @@ Object {
 `;
 
 exports[`command init (app) it should work with init commit: fs 28`] = `
+Object {
+  "data": "{
+  \\"name\\": \\"project-name\\",
+  \\"license\\": \\"MIT\\",
+  \\"scripts\\": {
+    \\"prepare\\": \\"[ \\\\\\"$CI\\\\\\" != \\\\\\"\\\\\\" ] || husky install ./node_modules/carna/configs/husky\\",
+    \\"analyse\\": \\"npx carna analyse\\",
+    \\"build\\": \\"npx carna build\\",
+    \\"prebuild\\": \\"rm -rf ./build\\",
+    \\"test\\": \\"npx carna test\\",
+    \\"test:watch\\": \\"npx carna test -w\\"
+  },
+  \\"dependencies\\": {
+    \\"package\\": \\"0.1.0\\"
+  },
+  \\"main\\": \\"build/index.js\\",
+  \\"types\\": \\"build/index.d.ts\\"
+}
+",
+  "path": "/path/to/project/package.json",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: child-process 1`] = `
+Object {
+  "args": Array [
+    "init",
+  ],
+  "command": "git",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: child-process 2`] = `
+Object {
+  "args": Array [
+    "install",
+    "--save-dev",
+    "--save-exact",
+    "@types/node",
+    "carna",
+    "typescript",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: child-process 3`] = `
+Object {
+  "args": Array [
+    "run",
+    "prepare",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 1`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.vscode",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 2`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/src",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 3`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/src/lib",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 4`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.github",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 5`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.github/workflows",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 6`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 7`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/shared",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 8`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/type",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 9`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/unit",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 10`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/integration",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 11`] = `
+Object {
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 12`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/src/lib/types.ts",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 13`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/shared/.keep",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 14`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 15`] = `
+Object {
+  "data": "{\\"file\\":\\"settings.json\\"}
+",
+  "path": "/path/to/project/.vscode/settings.json",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 16`] = `
+Object {
+  "data": "{\\"file\\":\\"carnarc.json\\"}
+",
+  "path": "/path/to/project/.carnarc.json",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 17`] = `
+Object {
+  "data": "editorconfig
+",
+  "path": "/path/to/project/.editorconfig",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 18`] = `
+Object {
+  "data": "eslintignore
+",
+  "path": "/path/to/project/.eslintignore",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 19`] = `
+Object {
+  "data": "gitignore
+",
+  "path": "/path/to/project/.gitignore",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 20`] = `
+Object {
+  "data": "npmignore
+",
+  "path": "/path/to/project/.npmignore",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 21`] = `
+Object {
+  "data": "prettierignore
+",
+  "path": "/path/to/project/.prettierignore",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 22`] = `
+Object {
+  "data": "// babel.config.js
+",
+  "path": "/path/to/project/babel.config.js",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 23`] = `
+Object {
+  "data": "yaml: file
+",
+  "path": "/path/to/project/.github/dependabot.yml",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 24`] = `
+Object {
+  "data": "* @username
+",
+  "path": "/path/to/project/.github/CODEOWNERS",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 25`] = `
+Object {
+  "data": "yml: file
+",
+  "path": "/path/to/project/.github/workflows/qa.yml",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 26`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/bug.md",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 27`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/concept.md",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 28`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/epic.md",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 29`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/feature.md",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 30`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/question.md",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 31`] = `
+Object {
+  "data": "# markdown
+",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE/task.md",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 32`] = `
+Object {
+  "data": "{\\"file\\":\\"typescriptrc.json\\"}
+",
+  "path": "/path/to/project/tsconfig.json",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 33`] = `
+Object {
+  "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
+",
+  "path": "/path/to/project/tsconfig.build.json",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 34`] = `
+Object {
+  "data": "// jest.config.js
+",
+  "path": "/path/to/project/jest.config.js",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 35`] = `
+Object {
+  "data": "// dummy.test.ts
+",
+  "path": "/path/to/project/tests/unit/dummy.test.ts",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 36`] = `
+Object {
+  "data": "// dummy.test.ts
+",
+  "path": "/path/to/project/tests/integration/dummy.test.ts",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 37`] = `
+Object {
+  "data": "// dummy.test.ts
+",
+  "path": "/path/to/project/tests/e2e/dummy.test.ts",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 38`] = `
+Object {
+  "data": "// dummyHook.test.ts
+",
+  "path": "/path/to/project/tests/e2e/pre.ts",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 39`] = `
+Object {
+  "data": "// dummyHook.test.ts
+",
+  "path": "/path/to/project/tests/e2e/post.ts",
+}
+`;
+
+exports[`command init (app) it should work without init commit and with github username: fs 40`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
