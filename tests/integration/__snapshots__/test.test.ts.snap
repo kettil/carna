@@ -1,0 +1,565 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`command test it should be create the expected builder: options 1`] = `
+Array [
+  Object {
+    "project": Object {
+      "alias": "p",
+      "array": true,
+      "describe": "Run only the tests of the specified projects",
+      "group": "test-Options",
+      "type": "string",
+    },
+    "runInBand": Object {
+      "alias": "i",
+      "default": false,
+      "describe": "Run all tests serially in the current process",
+      "group": "test-Options",
+      "type": "boolean",
+    },
+    "updateSnapshot": Object {
+      "alias": "u",
+      "default": false,
+      "describe": "Use this flag to re-record every snapshot that fails during this test run",
+      "group": "test-Options",
+      "type": "boolean",
+    },
+    "watch": Object {
+      "alias": "w",
+      "default": false,
+      "describe": "Watch files for changes and rerun tests related to changed files",
+      "group": "test-Options",
+      "type": "boolean",
+    },
+  },
+]
+`;
+
+exports[`command test it should be create the expected builder: usage 1`] = `
+Array [
+  "Usage: $0 test [options]",
+]
+`;
+
+exports[`command test it should work with ci mode: child-process 1`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "unit",
+    "--runInBand",
+    "--ci",
+    "--silent",
+    "--json",
+    "--outputFile",
+    "/path/to/project/coverage/_unit/jest-final.json",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_unit",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with ci mode: child-process 2`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "e2e",
+    "--runInBand",
+    "--ci",
+    "--silent",
+    "--json",
+    "--outputFile",
+    "/path/to/project/coverage/_e2e/jest-final.json",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_e2e",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with ci mode: fs 1`] = `
+Object {
+  "data": "{\\"/path/to/project/src/index.ts\\":{\\"path\\":\\"/path/to/project/src/index.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":4,\\"column\\":41},\\"end\\":{\\"line\\":15,\\"column\\":1}}},\\"fnMap\\":{},\\"branchMap\\":{},\\"s\\":{\\"0\\":1},\\"f\\":{},\\"b\\":{}},\\"/path/to/project/src/lib/app.ts\\":{\\"path\\":\\"/path/to/project/src/lib/app.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":10,\\"column\\":12},\\"end\\":{\\"line\\":10,\\"column\\":52}}},\\"fnMap\\":{\\"0\\":{\\"name\\":\\"(anonymous_0)\\",\\"decl\\":{\\"start\\":{\\"line\\":19,\\"column\\":12},\\"end\\":{\\"line\\":19,\\"column\\":13}},\\"loc\\":{\\"start\\":{\\"line\\":19,\\"column\\":53},\\"end\\":{\\"line\\":42,\\"column\\":1}},\\"line\\":19}},\\"branchMap\\":{},\\"s\\":{\\"0\\":1,\\"1\\":1,\\"2\\":1,\\"3\\":1,\\"4\\":1,\\"5\\":1,\\"6\\":1},\\"f\\":{\\"0\\":1,\\"1\\":1},\\"b\\":{}}}
+",
+  "path": "/path/to/project/coverage/coverage-final.json",
+}
+`;
+
+exports[`command test it should work with ci mode: istanbul-reports 1`] = `
+Array [
+  "lcovonly",
+  Object {},
+]
+`;
+
+exports[`command test it should work with ci mode: istanbul-reports 2`] = `
+Array [
+  "json-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with ci mode: istanbul-reports 3`] = `
+Array [
+  "text-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with hooks: child-process 1`] = `
+Object {
+  "args": Array [
+    "run",
+    "precarna:test",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with hooks: child-process 2`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "unit",
+    "--maxWorkers",
+    "50%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_unit",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with hooks: child-process 3`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "e2e",
+    "--maxWorkers",
+    "50%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_e2e",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with hooks: child-process 4`] = `
+Object {
+  "args": Array [
+    "run",
+    "postcarna:test",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with hooks: fs 1`] = `
+Object {
+  "data": "{\\"/path/to/project/src/index.ts\\":{\\"path\\":\\"/path/to/project/src/index.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":4,\\"column\\":41},\\"end\\":{\\"line\\":15,\\"column\\":1}}},\\"fnMap\\":{},\\"branchMap\\":{},\\"s\\":{\\"0\\":1},\\"f\\":{},\\"b\\":{}},\\"/path/to/project/src/lib/app.ts\\":{\\"path\\":\\"/path/to/project/src/lib/app.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":10,\\"column\\":12},\\"end\\":{\\"line\\":10,\\"column\\":52}}},\\"fnMap\\":{\\"0\\":{\\"name\\":\\"(anonymous_0)\\",\\"decl\\":{\\"start\\":{\\"line\\":19,\\"column\\":12},\\"end\\":{\\"line\\":19,\\"column\\":13}},\\"loc\\":{\\"start\\":{\\"line\\":19,\\"column\\":53},\\"end\\":{\\"line\\":42,\\"column\\":1}},\\"line\\":19}},\\"branchMap\\":{},\\"s\\":{\\"0\\":1,\\"1\\":1,\\"2\\":1,\\"3\\":1,\\"4\\":1,\\"5\\":1,\\"6\\":1},\\"f\\":{\\"0\\":1,\\"1\\":1},\\"b\\":{}}}
+",
+  "path": "/path/to/project/coverage/coverage-final.json",
+}
+`;
+
+exports[`command test it should work with hooks: istanbul-reports 1`] = `
+Array [
+  "lcovonly",
+  Object {},
+]
+`;
+
+exports[`command test it should work with hooks: istanbul-reports 2`] = `
+Array [
+  "json-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with hooks: istanbul-reports 3`] = `
+Array [
+  "text-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with hooks: istanbul-reports 4`] = `
+Array [
+  "html",
+  Object {},
+]
+`;
+
+exports[`command test it should work with run-in-band mode: child-process 1`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "unit",
+    "--runInBand",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_unit",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with run-in-band mode: child-process 2`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "e2e",
+    "--runInBand",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_e2e",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with run-in-band mode: fs 1`] = `
+Object {
+  "data": "{\\"/path/to/project/src/index.ts\\":{\\"path\\":\\"/path/to/project/src/index.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":4,\\"column\\":41},\\"end\\":{\\"line\\":15,\\"column\\":1}}},\\"fnMap\\":{},\\"branchMap\\":{},\\"s\\":{\\"0\\":1},\\"f\\":{},\\"b\\":{}},\\"/path/to/project/src/lib/app.ts\\":{\\"path\\":\\"/path/to/project/src/lib/app.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":10,\\"column\\":12},\\"end\\":{\\"line\\":10,\\"column\\":52}}},\\"fnMap\\":{\\"0\\":{\\"name\\":\\"(anonymous_0)\\",\\"decl\\":{\\"start\\":{\\"line\\":19,\\"column\\":12},\\"end\\":{\\"line\\":19,\\"column\\":13}},\\"loc\\":{\\"start\\":{\\"line\\":19,\\"column\\":53},\\"end\\":{\\"line\\":42,\\"column\\":1}},\\"line\\":19}},\\"branchMap\\":{},\\"s\\":{\\"0\\":1,\\"1\\":1,\\"2\\":1,\\"3\\":1,\\"4\\":1,\\"5\\":1,\\"6\\":1},\\"f\\":{\\"0\\":1,\\"1\\":1},\\"b\\":{}}}
+",
+  "path": "/path/to/project/coverage/coverage-final.json",
+}
+`;
+
+exports[`command test it should work with run-in-band mode: istanbul-reports 1`] = `
+Array [
+  "lcovonly",
+  Object {},
+]
+`;
+
+exports[`command test it should work with run-in-band mode: istanbul-reports 2`] = `
+Array [
+  "json-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with run-in-band mode: istanbul-reports 3`] = `
+Array [
+  "text-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with run-in-band mode: istanbul-reports 4`] = `
+Array [
+  "html",
+  Object {},
+]
+`;
+
+exports[`command test it should work with selected project: child-process 1`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "e2e",
+    "--maxWorkers",
+    "50%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_e2e",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with selected project: fs 1`] = `
+Object {
+  "data": "{\\"/path/to/project/src/lib/app.ts\\":{\\"path\\":\\"/path/to/project/src/lib/app.ts\\",\\"statementMap\\":{},\\"fnMap\\":{},\\"branchMap\\":{},\\"s\\":{},\\"f\\":{},\\"b\\":{}}}
+",
+  "path": "/path/to/project/coverage/coverage-final.json",
+}
+`;
+
+exports[`command test it should work with selected project: istanbul-reports 1`] = `
+Array [
+  "lcovonly",
+  Object {},
+]
+`;
+
+exports[`command test it should work with selected project: istanbul-reports 2`] = `
+Array [
+  "json-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with selected project: istanbul-reports 3`] = `
+Array [
+  "text-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with selected project: istanbul-reports 4`] = `
+Array [
+  "html",
+  Object {},
+]
+`;
+
+exports[`command test it should work with update-snapshot mode: child-process 1`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "unit",
+    "--updateSnapshot",
+    "--maxWorkers",
+    "50%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_unit",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with update-snapshot mode: child-process 2`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "e2e",
+    "--updateSnapshot",
+    "--maxWorkers",
+    "50%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_e2e",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work with update-snapshot mode: fs 1`] = `
+Object {
+  "data": "{\\"/path/to/project/src/index.ts\\":{\\"path\\":\\"/path/to/project/src/index.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":4,\\"column\\":41},\\"end\\":{\\"line\\":15,\\"column\\":1}}},\\"fnMap\\":{},\\"branchMap\\":{},\\"s\\":{\\"0\\":1},\\"f\\":{},\\"b\\":{}},\\"/path/to/project/src/lib/app.ts\\":{\\"path\\":\\"/path/to/project/src/lib/app.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":10,\\"column\\":12},\\"end\\":{\\"line\\":10,\\"column\\":52}}},\\"fnMap\\":{\\"0\\":{\\"name\\":\\"(anonymous_0)\\",\\"decl\\":{\\"start\\":{\\"line\\":19,\\"column\\":12},\\"end\\":{\\"line\\":19,\\"column\\":13}},\\"loc\\":{\\"start\\":{\\"line\\":19,\\"column\\":53},\\"end\\":{\\"line\\":42,\\"column\\":1}},\\"line\\":19}},\\"branchMap\\":{},\\"s\\":{\\"0\\":1,\\"1\\":1,\\"2\\":1,\\"3\\":1,\\"4\\":1,\\"5\\":1,\\"6\\":1},\\"f\\":{\\"0\\":1,\\"1\\":1},\\"b\\":{}}}
+",
+  "path": "/path/to/project/coverage/coverage-final.json",
+}
+`;
+
+exports[`command test it should work with update-snapshot mode: istanbul-reports 1`] = `
+Array [
+  "lcovonly",
+  Object {},
+]
+`;
+
+exports[`command test it should work with update-snapshot mode: istanbul-reports 2`] = `
+Array [
+  "json-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with update-snapshot mode: istanbul-reports 3`] = `
+Array [
+  "text-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work with update-snapshot mode: istanbul-reports 4`] = `
+Array [
+  "html",
+  Object {},
+]
+`;
+
+exports[`command test it should work with watch mode: child-process 1`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "unit",
+    "e2e",
+    "--watch",
+    "--maxWorkers",
+    "25%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+    "--coverageReporters",
+    "json-summary",
+    "--coverageReporters",
+    "lcovonly",
+    "--coverageReporters",
+    "html",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work: child-process 1`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "unit",
+    "--maxWorkers",
+    "50%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_unit",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work: child-process 2`] = `
+Object {
+  "args": Array [
+    "--colors",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--selectProjects",
+    "e2e",
+    "--maxWorkers",
+    "50%",
+    "--coverage",
+    "--coverageDirectory",
+    "/path/to/project/coverage/_e2e",
+    "--coverageReporters",
+    "json",
+    "--coverageThreshold",
+    "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command test it should work: fs 1`] = `
+Object {
+  "data": "{\\"/path/to/project/src/index.ts\\":{\\"path\\":\\"/path/to/project/src/index.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":4,\\"column\\":41},\\"end\\":{\\"line\\":15,\\"column\\":1}}},\\"fnMap\\":{},\\"branchMap\\":{},\\"s\\":{\\"0\\":1},\\"f\\":{},\\"b\\":{}},\\"/path/to/project/src/lib/app.ts\\":{\\"path\\":\\"/path/to/project/src/lib/app.ts\\",\\"statementMap\\":{\\"0\\":{\\"start\\":{\\"line\\":10,\\"column\\":12},\\"end\\":{\\"line\\":10,\\"column\\":52}}},\\"fnMap\\":{\\"0\\":{\\"name\\":\\"(anonymous_0)\\",\\"decl\\":{\\"start\\":{\\"line\\":19,\\"column\\":12},\\"end\\":{\\"line\\":19,\\"column\\":13}},\\"loc\\":{\\"start\\":{\\"line\\":19,\\"column\\":53},\\"end\\":{\\"line\\":42,\\"column\\":1}},\\"line\\":19}},\\"branchMap\\":{},\\"s\\":{\\"0\\":1,\\"1\\":1,\\"2\\":1,\\"3\\":1,\\"4\\":1,\\"5\\":1,\\"6\\":1},\\"f\\":{\\"0\\":1,\\"1\\":1},\\"b\\":{}}}
+",
+  "path": "/path/to/project/coverage/coverage-final.json",
+}
+`;
+
+exports[`command test it should work: istanbul-reports 1`] = `
+Array [
+  "lcovonly",
+  Object {},
+]
+`;
+
+exports[`command test it should work: istanbul-reports 2`] = `
+Array [
+  "json-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work: istanbul-reports 3`] = `
+Array [
+  "text-summary",
+  Object {},
+]
+`;
+
+exports[`command test it should work: istanbul-reports 4`] = `
+Array [
+  "html",
+  Object {},
+]
+`;

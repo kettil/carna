@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`command start it should be create the expected builder: options 1`] = `
+Array [
+  Object {
+    "script": Object {
+      "describe": "Script to be called (default: src/index.[ts|js])",
+      "group": "start-Options",
+      "type": "string",
+    },
+    "watch": Object {
+      "alias": "w",
+      "default": false,
+      "describe": "Reload your app on source file changes",
+      "group": "start-Options",
+      "type": "boolean",
+    },
+  },
+]
+`;
+
+exports[`command start it should be create the expected builder: usage 1`] = `
+Array [
+  "Usage: $0 start [options]",
+]
+`;
+
+exports[`command start it should work with hooks: child-process 1`] = `
+Object {
+  "args": Array [
+    "run",
+    "precarna:start",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command start it should work with hooks: child-process 2`] = `
+Object {
+  "args": Array [
+    "--extensions",
+    ".js,.jsx,.ts,.tsx",
+    "--config-file",
+    "/path/to/project/path/to/project/babel.config.js",
+    "/path/to/project/path/to/project/src/index.ts",
+  ],
+  "command": "./node_modules/.bin/babel-node",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command start it should work with hooks: child-process 3`] = `
+Object {
+  "args": Array [
+    "run",
+    "postcarna:start",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command start it should work: child-process 1`] = `
+Object {
+  "args": Array [
+    "--extensions",
+    ".js,.jsx,.ts,.tsx",
+    "--config-file",
+    "/path/to/project/path/to/project/babel.config.js",
+    "/path/to/project/path/to/project/src/index.ts",
+  ],
+  "command": "./node_modules/.bin/babel-node",
+  "cwd": "/path/to/project",
+}
+`;

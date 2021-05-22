@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`command license it should be create the expected builder: usage 1`] = `
+Array [
+  "Usage: $0 license [options]",
+]
+`;
+
+exports[`command license it should work with hooks: child-process 1`] = `
+Object {
+  "args": Array [
+    "run",
+    "precarna:license",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command license it should work with hooks: child-process 2`] = `
+Object {
+  "args": Array [
+    "run",
+    "postcarna:license",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;

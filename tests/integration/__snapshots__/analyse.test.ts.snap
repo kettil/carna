@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`command analyse it should be create the expected builder: options 1`] = `
+Array [
+  Object {
+    "only": Object {
+      "choices": Array [
+        "eslint",
+        "prettier",
+        "typescript",
+      ],
+      "describe": "Run a single code quality tool",
+      "group": "analyse-Options",
+    },
+  },
+]
+`;
+
+exports[`command analyse it should be create the expected builder: usage 1`] = `
+Array [
+  "Usage: $0 analyse [options]",
+]
+`;
+
+exports[`command analyse it should work with hooks: child-process 1`] = `
+Object {
+  "args": Array [
+    "run",
+    "precarna:analyse",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work with hooks: child-process 2`] = `
+Object {
+  "args": Array [
+    "--config",
+    "/path/to/project/node_modules/carna/configs/prettierrc.json",
+    "--write",
+    "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
+  ],
+  "command": "./node_modules/.bin/prettier",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work with hooks: child-process 3`] = `
+Object {
+  "args": Array [
+    "--color",
+    "--max-warnings",
+    "0",
+    "--config",
+    "/path/to/project/node_modules/carna/configs/eslintrc.json",
+    "--fix",
+    "--ext",
+    "\\"js,ts,tsx\\"",
+    ".",
+  ],
+  "command": "./node_modules/.bin/eslint",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work with hooks: child-process 4`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/build",
+    "--project",
+    "/path/to/project/tsconfig.json",
+    "--noEmit",
+    "--isolatedModules",
+    "false",
+  ],
+  "command": "./node_modules/.bin/tsc",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work with hooks: child-process 5`] = `
+Object {
+  "args": Array [
+    "run",
+    "postcarna:analyse",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work with only "eslint": child-process 1`] = `
+Object {
+  "args": Array [
+    "--color",
+    "--max-warnings",
+    "0",
+    "--config",
+    "/path/to/project/node_modules/carna/configs/eslintrc.json",
+    "--fix",
+    "--ext",
+    "\\"js,ts,tsx\\"",
+    ".",
+  ],
+  "command": "./node_modules/.bin/eslint",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work with only "prettier": child-process 1`] = `
+Object {
+  "args": Array [
+    "--config",
+    "/path/to/project/node_modules/carna/configs/prettierrc.json",
+    "--write",
+    "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
+  ],
+  "command": "./node_modules/.bin/prettier",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work with only "typescript": child-process 1`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/build",
+    "--project",
+    "/path/to/project/tsconfig.json",
+    "--noEmit",
+    "--isolatedModules",
+    "false",
+  ],
+  "command": "./node_modules/.bin/tsc",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work: child-process 1`] = `
+Object {
+  "args": Array [
+    "--config",
+    "/path/to/project/node_modules/carna/configs/prettierrc.json",
+    "--write",
+    "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
+  ],
+  "command": "./node_modules/.bin/prettier",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work: child-process 2`] = `
+Object {
+  "args": Array [
+    "--color",
+    "--max-warnings",
+    "0",
+    "--config",
+    "/path/to/project/node_modules/carna/configs/eslintrc.json",
+    "--fix",
+    "--ext",
+    "\\"js,ts,tsx\\"",
+    ".",
+  ],
+  "command": "./node_modules/.bin/eslint",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command analyse it should work: child-process 3`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/build",
+    "--project",
+    "/path/to/project/tsconfig.json",
+    "--noEmit",
+    "--isolatedModules",
+    "false",
+  ],
+  "command": "./node_modules/.bin/tsc",
+  "cwd": "/path/to/project",
+}
+`;

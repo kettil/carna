@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`command git it should be create the expected builder: options 1`] = `
+Array [
+  Object {
+    "edit": Object {
+      "desc": "Path to the COMMIT_EDITMSG file (only at hook \\"msg\\")",
+      "group": "git-Options",
+      "type": "string",
+    },
+    "hook": Object {
+      "choices": Array [
+        "msg",
+        "commit",
+      ],
+      "demandOption": true,
+      "group": "git-Options",
+    },
+  },
+]
+`;
+
+exports[`command git it should be create the expected builder: usage 1`] = `
+Array [
+  "Usage: $0 git [options]",
+]
+`;
+
+exports[`command git with unknwon hook it should throw an error with hooks: child-process 1`] = `
+Object {
+  "args": Array [
+    "run",
+    "precarna:git",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
