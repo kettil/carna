@@ -11,23 +11,19 @@ export type PropsGlobal = {
   readonly ci: boolean;
 };
 
-export type Action<
-  Props extends Record<string, unknown> | unknown[] | undefined = undefined,
-  ActionReturn = void
-> = Props extends undefined
-  ? (argv: PropsGlobal) => Promise<ActionReturn>
-  : Props extends unknown[]
-    ? (argv: PropsGlobal, ...props: Props) => Promise<ActionReturn>
-    : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
+export type Action<Props extends Record<string, unknown> | unknown[] | undefined = undefined, ActionReturn = void> =
+  Props extends undefined
+    ? (argv: PropsGlobal) => Promise<ActionReturn>
+    : Props extends unknown[]
+      ? (argv: PropsGlobal, ...props: Props) => Promise<ActionReturn>
+      : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
 
-export type Task<
-  Props extends Record<string, unknown> | unknown[] | undefined = undefined,
-  ActionReturn = void
-> = Props extends undefined
-  ? (argv: PropsGlobal) => Promise<ActionReturn>
-  : Props extends unknown[]
-    ? (argv: PropsGlobal, ...props: Props) => Promise<ActionReturn>
-    : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
+export type Task<Props extends Record<string, unknown> | unknown[] | undefined = undefined, ActionReturn = void> =
+  Props extends undefined
+    ? (argv: PropsGlobal) => Promise<ActionReturn>
+    : Props extends unknown[]
+      ? (argv: PropsGlobal, ...props: Props) => Promise<ActionReturn>
+      : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
 
 export type LicenseCompatibilities = Record<string, string[]>;
 export type LicenseHeuristics = Record<string, RegExp>;
