@@ -5,7 +5,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -15,7 +15,7 @@ Object {
     ".github",
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -177,14 +177,14 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
     ".vscode",
     "src",
     "src/lib",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -310,7 +310,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -320,7 +320,7 @@ Object {
     ".github",
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -482,14 +482,14 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
     ".vscode",
     "src",
     "src/lib",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -615,7 +615,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -625,7 +625,7 @@ Object {
     ".github",
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -805,14 +805,14 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
     ".vscode",
     "src",
     "src/lib",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -945,7 +945,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -955,7 +955,7 @@ Object {
     ".github",
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -1135,14 +1135,14 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
     ".vscode",
     "src",
     "src/lib",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -1275,7 +1275,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -1286,7 +1286,7 @@ Object {
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -1451,7 +1451,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -1459,7 +1459,7 @@ Object {
     "src",
     "src/lib",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -1588,7 +1588,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -1599,7 +1599,7 @@ Object {
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -1764,7 +1764,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -1772,7 +1772,7 @@ Object {
     "src",
     "src/lib",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -1901,7 +1901,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -1912,7 +1912,7 @@ Object {
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -2095,7 +2095,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -2103,7 +2103,7 @@ Object {
     "src",
     "src/lib",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -2239,7 +2239,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -2250,7 +2250,7 @@ Object {
     ".github/workflows",
     ".github/ISSUE_TEMPLATE",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",
@@ -2433,7 +2433,7 @@ Object {
   "files": Array [
     "src/index.ts",
     "src/lib/types.ts",
-    "tests/shared/.keep",
+    "tests/shared/__mock__/.keep",
     "tests/type/.keep",
   ],
   "folders": Array [
@@ -2441,7 +2441,7 @@ Object {
     "src",
     "src/lib",
     "src/bin",
-    "tests/shared",
+    "tests/shared/__mock__",
     "tests/type",
     "tests/unit",
     "tests/integration",

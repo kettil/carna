@@ -100,7 +100,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -152,7 +152,7 @@ exports[`command init (cli) it should work with hooks and with init commit: fs 1
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
@@ -460,7 +460,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -512,7 +512,7 @@ exports[`command init (cli) it should work with hooks and without init commit: f
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
@@ -870,7 +870,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -922,7 +922,7 @@ exports[`command init (cli) it should work with init commit and with github user
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
@@ -1317,7 +1317,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -1369,7 +1369,7 @@ exports[`command init (cli) it should work with init commit: fs 11`] = `
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
@@ -1688,7 +1688,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -1740,7 +1740,7 @@ exports[`command init (cli) it should work without init commit and with github u
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
@@ -2112,7 +2112,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -2164,7 +2164,7 @@ exports[`command init (cli) it should work without init commit: fs 11`] = `
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
