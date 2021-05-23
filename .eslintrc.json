@@ -23,33 +23,6 @@
         "node/no-missing-require": ["off"],
         "node/no-unpublished-require": ["off"]
       }
-    },
-    {
-      "files": [
-        "tests/**/*.test.js",
-        "tests/**/*.test.ts",
-        "tests/**/*.test.tsx",
-        "tests/*/setupTests.ts",
-        "tests/*/setupTests.js"
-      ],
-      "rules": {
-        "@typescript-eslint/no-explicit-any": ["off"],
-        "import/no-unused-modules": ["off"],
-        "node/global-require": ["off"]
-      }
-    },
-    {
-      "files": ["tests/shared/__mock__/*.ts"],
-      "rules": {
-        "@typescript-eslint/no-explicit-any": ["off"],
-        "@typescript-eslint/no-unused-vars": ["off"],
-        "@typescript-eslint/require-await": ["off"],
-        "import/no-anonymous-default-export": ["off"],
-        "import/no-import-module-exports": ["off"],
-        "import/no-unused-modules": ["off"],
-        "import/prefer-default-export": ["off"],
-        "jest/no-standalone-expect": ["off"]
-      }
     }
   ]
 }
