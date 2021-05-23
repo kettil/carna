@@ -152,8 +152,8 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
 
   settings.templates.push(['jest.config.js']);
 
-  settings.files.push('tests/shared/.keep', 'tests/type/.keep');
-  settings.folders.push('tests/shared', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
+  settings.files.push('tests/shared/__mock__/.keep', 'tests/type/.keep');
+  settings.folders.push('tests/shared/__mock__', 'tests/type', 'tests/unit', 'tests/integration', 'tests/e2e');
 
   settings.templates.push(
     ['tests/dummy.test.ts', 'tests/unit/dummy.test.ts'],
