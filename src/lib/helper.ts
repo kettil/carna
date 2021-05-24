@@ -19,5 +19,5 @@ export const getFirstExistFile = async (cwd: string, files: string[]): Promise<s
     throw new Error(`None of the following files were found: ${files.join(', ')}`);
   }
 
-  return join(cwd, checkedFiles[0]);
+  return checkedFiles[0];
 };
