@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.7.1](https://github.com/kettil/carna/compare/4.7.0...4.7.1) (2021-05-24)
+
+
+### Bug Fixes
+
+* the path to the babel config file was resolved incorrectly ([d3571df](https://github.com/kettil/carna/commit/d3571dfcb6acd3b345b6b5c6549a02fede162ca8))
+
 # [4.7.0](https://github.com/kettil/carna/compare/4.6.1...4.7.0) (2021-05-24)
 
 
