@@ -1,5 +1,30 @@
 # Changelog
 
+# [4.7.0](https://github.com/kettil/carna/compare/4.6.1...4.7.0) (2021-05-24)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.13.16 to 7.14.3 ([05ca469](https://github.com/kettil/carna/commit/05ca469fd87e154537429b1ec5f5a493d477394d))
+* **deps:** bump @babel/core from 7.14.2 to 7.14.3 ([26422aa](https://github.com/kettil/carna/commit/26422aaefdd4c7e284abe264a8356db79fe89172))
+* **deps:** bump @babel/plugin-transform-runtime from 7.14.2 to 7.14.3 ([4348c4e](https://github.com/kettil/carna/commit/4348c4e5e384d098b3dd230d94554a055069c952))
+* **deps:** bump @kettil/eslint-config from 2.2.1 to 2.2.2 ([ffe083d](https://github.com/kettil/carna/commit/ffe083db00233eeccf94551021e6703f72263955))
+* **deps:** bump @kettil/eslint-config from 2.2.2 to 2.3.0 ([8981005](https://github.com/kettil/carna/commit/8981005a20a580d210bec08fa43fa7a052366721))
+* **deps:** bump @kettil/eslint-config from 2.3.0 to 2.3.1 ([7109f9b](https://github.com/kettil/carna/commit/7109f9b5013513cbcb0febfda37b236e767fc750))
+* **deps:** bump @kettil/semantic-release-config from 2.0.0 to 2.0.1 ([1db6748](https://github.com/kettil/carna/commit/1db6748a137d96fa74bc7cae3d7f5b765651573a))
+* **deps:** bump @types/yargs from 16.0.1 to 16.0.2 ([97a74df](https://github.com/kettil/carna/commit/97a74df93a7f5e27c25caa498084550a8e95b10f))
+* **deps:** bump @types/yargs from 16.0.2 to 17.0.0 ([df15a53](https://github.com/kettil/carna/commit/df15a532ee1a43ba5c105f2d6e47e8a7b67a2431))
+* **deps:** bump eslint from 7.26.0 to 7.27.0 ([7774206](https://github.com/kettil/carna/commit/7774206a531b42b977b17f7954cf73cf380b678f))
+
+
+### Features
+
+* add __mock__ folder in shared ([6846841](https://github.com/kettil/carna/commit/6846841a9984fa5efc9c21dd6361d85b5b6d2485))
+* add dummy pre/post test hooks ([e6b7298](https://github.com/kettil/carna/commit/e6b72987bf2289ee4d8da842c01f0e13274edbf4))
+* add github issue templates ([5ea4ea6](https://github.com/kettil/carna/commit/5ea4ea692b7f1f408dca2d9171aaeccb3d5c02d0))
+* add setupFilesAfterEnv config handler ([a7f2635](https://github.com/kettil/carna/commit/a7f26353e5f2e1ecb1db693b5416e239c20a2ae5))
+* converting the git hook subcommand to a parameter ([e921d7c](https://github.com/kettil/carna/commit/e921d7c6657e40c96d16624f539e83a567aba7e3))
+
 ## [4.6.1](https://github.com/kettil/carna/compare/4.6.0...4.6.1) (2021-05-17)
 
 
