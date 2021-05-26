@@ -21,7 +21,7 @@ exports[`command ci it should work with hooks: child-process 2`] = `
 Object {
   "args": Array [
     "run",
-    "precarna:analyse",
+    "precarna:build",
   ],
   "command": "npm",
   "cwd": "/path/to/project",
@@ -29,6 +29,60 @@ Object {
 `;
 
 exports[`command ci it should work with hooks: child-process 3`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/build",
+    "--project",
+    "/path/to/project/tsconfig.build.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "./node_modules/.bin/tsc",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work with hooks: child-process 4`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx",
+    "src",
+  ],
+  "command": "./node_modules/.bin/babel",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work with hooks: child-process 5`] = `
+Object {
+  "args": Array [
+    "run",
+    "postcarna:build",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work with hooks: child-process 6`] = `
+Object {
+  "args": Array [
+    "run",
+    "precarna:analyse",
+  ],
+  "command": "npm",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work with hooks: child-process 7`] = `
 Object {
   "args": Array [
     "--config",
@@ -41,7 +95,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 4`] = `
+exports[`command ci it should work with hooks: child-process 8`] = `
 Object {
   "args": Array [
     "--color",
@@ -60,7 +114,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 5`] = `
+exports[`command ci it should work with hooks: child-process 9`] = `
 Object {
   "args": Array [
     "--outDir",
@@ -76,7 +130,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 6`] = `
+exports[`command ci it should work with hooks: child-process 10`] = `
 Object {
   "args": Array [
     "run",
@@ -87,7 +141,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 7`] = `
+exports[`command ci it should work with hooks: child-process 11`] = `
 Object {
   "args": Array [
     "run",
@@ -98,7 +152,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 8`] = `
+exports[`command ci it should work with hooks: child-process 12`] = `
 Object {
   "args": Array [
     "--colors",
@@ -125,7 +179,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 9`] = `
+exports[`command ci it should work with hooks: child-process 13`] = `
 Object {
   "args": Array [
     "--colors",
@@ -152,7 +206,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 10`] = `
+exports[`command ci it should work with hooks: child-process 14`] = `
 Object {
   "args": Array [
     "run",
@@ -163,7 +217,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 11`] = `
+exports[`command ci it should work with hooks: child-process 15`] = `
 Object {
   "args": Array [
     "run",
@@ -174,7 +228,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 12`] = `
+exports[`command ci it should work with hooks: child-process 16`] = `
 Object {
   "args": Array [
     "run",
@@ -185,7 +239,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 13`] = `
+exports[`command ci it should work with hooks: child-process 17`] = `
 Object {
   "args": Array [
     "run",
@@ -196,7 +250,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 14`] = `
+exports[`command ci it should work with hooks: child-process 18`] = `
 Object {
   "args": Array [
     "run",
@@ -207,7 +261,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 15`] = `
+exports[`command ci it should work with hooks: child-process 19`] = `
 Object {
   "args": Array [
     "run",
@@ -282,6 +336,38 @@ Array [
 exports[`command ci it should work: child-process 1`] = `
 Object {
   "args": Array [
+    "--outDir",
+    "/path/to/project/build",
+    "--project",
+    "/path/to/project/tsconfig.build.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "./node_modules/.bin/tsc",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work: child-process 2`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx",
+    "src",
+  ],
+  "command": "./node_modules/.bin/babel",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work: child-process 3`] = `
+Object {
+  "args": Array [
     "--config",
     "/path/to/project/node_modules/carna/configs/prettierrc.json",
     "--list-different",
@@ -292,7 +378,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work: child-process 2`] = `
+exports[`command ci it should work: child-process 4`] = `
 Object {
   "args": Array [
     "--color",
@@ -311,7 +397,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work: child-process 3`] = `
+exports[`command ci it should work: child-process 5`] = `
 Object {
   "args": Array [
     "--outDir",
@@ -327,7 +413,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work: child-process 4`] = `
+exports[`command ci it should work: child-process 6`] = `
 Object {
   "args": Array [
     "--colors",
@@ -354,7 +440,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work: child-process 5`] = `
+exports[`command ci it should work: child-process 7`] = `
 Object {
   "args": Array [
     "--colors",

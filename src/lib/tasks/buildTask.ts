@@ -1,9 +1,8 @@
-import { join } from 'path';
 import npmPackageLoad from '../actions/npm/packageLoad';
 import babel from '../actions/tools/babel';
 import tsc from '../actions/tools/tsc';
 import { spinnerAction } from '../cli/spinner';
-import access from '../cmd/access';
+import FirstExistFileError from '../errors/firstExistFileError';
 import { Task } from '../types';
 import taskHook from './helpers/taskHook';
 
@@ -13,13 +12,24 @@ const buildTask: Task<BuildProps> = async (argv) => {
   await taskHook(argv, { task: 'build', type: 'pre' });
 
   const isPrivate = await npmPackageLoad(argv, { key: 'private' });
-  const hasTypescriptConfig = await access(join(argv.cwd, 'tsconfig.json'), 'readable');
 
-  if (hasTypescriptConfig && isPrivate !== true) {
-    await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Build: Typescript');
+  try {
+    if (isPrivate !== true) {
+      await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Build: Typescript');
+    }
+  } catch (error) {
+    if (!(error instanceof FirstExistFileError)) {
+      throw error;
+    }
   }
 
-  await spinnerAction(babel(argv), 'Build: Babel');
+  try {
+    await spinnerAction(babel(argv), 'Build: Babel');
+  } catch (error) {
+    if (!(error instanceof FirstExistFileError)) {
+      throw error;
+    }
+  }
 
   await taskHook(argv, { task: 'build', type: 'post' });
 };
