@@ -4,15 +4,17 @@
       "packages": [
         "@kettil/commitlint-config",
         "@kettil/semantic-release-config",
-        "commitlint",
+        "@commitlint/cli",
         "eslint",
         "husky",
         "prettier",
         "semantic-release",
 
         "@babel/cli",
+        "@babel/node",
         "babel-jest",
         "babel-loader",
+        "babel-watch",
 
         "@types/jest",
         "jest",
