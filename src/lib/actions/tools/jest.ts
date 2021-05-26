@@ -52,6 +52,7 @@ const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
 
   if (ci) {
     args.push('--ci');
+    args.push('--verbose');
     args.push('--silent');
     args.push('--json');
     args.push('--outputFile', join(coverageFolder, 'jest-final.json'));
