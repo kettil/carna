@@ -49,6 +49,3 @@ jobs:
 
       - name: Run carna
         run: npx carna ci
-
-      - name: Run build
-        run: npx carna build --ci

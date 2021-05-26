@@ -1,9 +1,8 @@
-import { join } from 'path';
 import eslint, { EslintProps } from '../actions/tools/eslint';
 import prettier, { prettierExtensionCi, PrettierProps } from '../actions/tools/prettier';
 import tsc from '../actions/tools/tsc';
 import { spinnerAction } from '../cli/spinner';
-import access from '../cmd/access';
+import FirstExistFileError from '../errors/firstExistFileError';
 import { Task } from '../types';
 import taskHook from './helpers/taskHook';
 
@@ -21,8 +20,6 @@ export type AnalyseProps = {
 
 const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, prettierFiles }) => {
   await taskHook(argv, { task: 'analyse', type: 'pre' });
-
-  const hasTypescriptConfig = await access(join(argv.cwd, 'tsconfig.json'), 'readable');
 
   if (isSelectedService(only, 'prettier')) {
     const prettierOptions: PrettierProps = {
@@ -44,10 +41,14 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, pretti
   }
 
   if (isSelectedService(only, 'typescript')) {
-    if (hasTypescriptConfig) {
+    try {
       await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Analyse: Typescript');
-    } else {
-      argv.log.info('Typing check is skipped (tsconfig.json was not found) ');
+    } catch (error) {
+      if (error instanceof FirstExistFileError) {
+        argv.log.info('Typing check is skipped (tsconfig.json was not found) ');
+      } else {
+        throw error;
+      }
     }
   }
 
