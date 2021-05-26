@@ -1,5 +1,22 @@
 # Changelog
 
+# [4.8.0](https://github.com/kettil/carna/compare/4.7.1...4.8.0) (2021-05-26)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 2.3.1 to 2.3.2 ([57a566b](https://github.com/kettil/carna/commit/57a566b0078becbd970226678b0f96d5add87b54))
+* **deps:** bump babel-jest from 26.6.3 to 27.0.1 ([5243f61](https://github.com/kettil/carna/commit/5243f61ef7ee1b0e84706021bd4c4a32754a8d6d))
+* **deps:** bump jest from 26.6.3 to 27.0.0 ([45f156b](https://github.com/kettil/carna/commit/45f156bb17f76bf8f104fd0a2d0209341bb986f3))
+* **deps:** bump jest from 27.0.0 to 27.0.1 ([1fa0837](https://github.com/kettil/carna/commit/1fa0837b6c51ea402ff50fa8ecfa4a37bf979b86))
+
+
+### Features
+
+* build task integrated into the CI task ([6651e50](https://github.com/kettil/carna/commit/6651e5001bdf69b4a2e36db1b096ecf035820241))
+* change the default coverage value ([67ccdd9](https://github.com/kettil/carna/commit/67ccdd93f51bfebb89cf78a091f480c3615a37d8))
+* show the individual test results in CI mode ([094dd9d](https://github.com/kettil/carna/commit/094dd9d39398356218242f1701b4b29e2efd1bc1))
+
 ## [4.7.1](https://github.com/kettil/carna/compare/4.7.0...4.7.1) (2021-05-24)
 
 
