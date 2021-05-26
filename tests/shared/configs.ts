@@ -112,6 +112,7 @@ export const getAccessFiles = (files: Record<string, boolean> = {}): Record<stri
   [join(cwd, 'jest.config.ts')]: false,
   [join(cwd, 'jest.config.js')]: true,
   [join(cwd, 'tsconfig.json')]: true,
+  [join(cwd, 'tsconfig.build.json')]: true,
   [join(cwd, 'src/index.ts')]: true,
   [join(cwd, 'src/index.js')]: false,
   [join(cwd, 'src/lib/app.ts')]: true,
