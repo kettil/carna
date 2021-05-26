@@ -31,7 +31,7 @@ const getWatermark = (watermark?: Watermark | number | undefined): Watermark => 
     return [watermark, watermark];
   }
 
-  return [90, 99];
+  return [90, 95];
 };
 
 const getErrorMessage = (
