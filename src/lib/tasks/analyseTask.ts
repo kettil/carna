@@ -1,6 +1,6 @@
 import eslint, { EslintProps } from '../actions/tools/eslint';
 import prettier, { prettierExtensionCi, PrettierProps } from '../actions/tools/prettier';
-import tsc from '../actions/tools/tsc';
+import tsc, { getTscConfigPath } from '../actions/tools/tsc';
 import { spinnerAction } from '../cli/spinner';
 import FirstExistFileError from '../errors/firstExistFileError';
 import { Task } from '../types';
@@ -42,6 +42,7 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, pretti
 
   if (isSelectedService(only, 'typescript')) {
     try {
+      await getTscConfigPath(argv.cwd, 'type-check');
       await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Analyse: Typescript');
     } catch (error) {
       if (error instanceof FirstExistFileError) {

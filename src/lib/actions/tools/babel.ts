@@ -2,11 +2,14 @@ import exec from '../../cmd/exec';
 import { getFirstExistFile } from '../../helper';
 import { Action } from '../../types';
 
-export const babelConfigFiles = ['babel.config.js', 'babel.config.json'];
+const babelConfigFiles = ['babel.config.js', 'babel.config.json'];
+
 export const babelExtensions = '.js,.jsx,.ts,.tsx';
 
+export const getBabelConfigPath = async (cwd: string): Promise<string> => getFirstExistFile(cwd, babelConfigFiles);
+
 const babel: Action = async ({ cwd, log }) => {
-  const configPath = await getFirstExistFile(cwd, babelConfigFiles);
+  const configPath = await getBabelConfigPath(cwd);
 
   const cmd = './node_modules/.bin/babel';
   const args: string[] = [];

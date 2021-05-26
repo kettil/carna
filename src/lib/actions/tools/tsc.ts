@@ -10,8 +10,11 @@ type TscProps = {
   mode: 'type-check' | 'type-create';
 };
 
+export const getTscConfigPath = async (cwd: string, mode: TscProps['mode']): Promise<string> =>
+  getFirstExistFile(cwd, mode === 'type-create' ? buildConfigs : configs);
+
 const tsc: Action<TscProps> = async ({ cwd, log }, { mode }) => {
-  const configPath = await getFirstExistFile(cwd, mode === 'type-create' ? buildConfigs : configs);
+  const configPath = await getTscConfigPath(cwd, mode);
 
   const cmd = './node_modules/.bin/tsc';
   const args: string[] = [];
