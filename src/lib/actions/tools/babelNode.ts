@@ -1,7 +1,7 @@
 import exec from '../../cmd/exec';
 import { getFirstExistFile } from '../../helper';
 import { Action } from '../../types';
-import { babelConfigFiles, babelExtensions } from './babel';
+import { babelExtensions, getBabelConfigPath } from './babel';
 
 type BabelNodeProps = {
   watch: boolean;
@@ -11,7 +11,7 @@ type BabelNodeProps = {
 const scriptFiles = ['src/index.ts', 'src/index.js'];
 
 const babelNode: Action<BabelNodeProps> = async ({ cwd, log }, { script, watch }) => {
-  const configPath = await getFirstExistFile(cwd, babelConfigFiles);
+  const configPath = await getBabelConfigPath(cwd);
 
   const cmd = `./node_modules/.bin/babel-${watch ? 'watch' : 'node'}`;
   const args: string[] = [];
