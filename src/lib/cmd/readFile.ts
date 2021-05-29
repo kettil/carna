@@ -8,7 +8,7 @@ type FunctionType = {
 const readFile: FunctionType = async (path: string, toJson = false) => {
   const data = await promises.readFile(path, { encoding: 'utf8' });
 
-  if (toJson) {
+  if (toJson === true) {
     return JSON.parse(data);
   }
 
