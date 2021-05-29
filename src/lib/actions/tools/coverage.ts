@@ -1,51 +1,22 @@
 import { join } from 'path';
-import { isArray } from '@kettil/tool-lib';
-import { bold, red } from 'chalk';
-import { createCoverageMap, CoverageMapData, CoverageSummary } from 'istanbul-lib-coverage';
-import { createContext, ReportBase, Watermark, Watermarks } from 'istanbul-lib-report';
+import { createCoverageMap, CoverageMapData } from 'istanbul-lib-coverage';
+import { createContext, ReportBase, Watermarks } from 'istanbul-lib-report';
 import { create, ReportOptions } from 'istanbul-reports';
-import existFiles from '../../cmd/existFiles';
-import readFile from '../../cmd/readFile';
-import writeFile from '../../cmd/writeFile';
-import MessageError from '../../errors/messageError';
+import { existFiles } from '../../cmd/existFiles';
+import { readFile } from '../../cmd/readFile';
+import { writeFile } from '../../cmd/writeFile';
+import { MessageError } from '../../errors/messageError';
 import { Action } from '../../types';
-import { getCoverageFolder } from './jest';
-
-export type WatermarkThreshold = Watermark | number | undefined;
-
-type CoverageProps = {
-  projects: string[];
-  watermarks?: Partial<Record<keyof Watermarks, WatermarkThreshold>>;
-};
+import { getCoverageErrorMessage } from '../../utils/getCoverageErrorMessage';
+import { getCoverageFolder } from '../../utils/getCoverageFolder';
+import { getCoverageWatermark } from '../../utils/getCoverageWatermark';
+import { CoverageActionProps } from '../types';
 
 const coverageFileName = 'coverage-final.json';
 const coverageSuccessKeys = new Set(['high', 'medium']);
 const watermarkKeys: Array<keyof Watermarks> = ['statements', 'functions', 'branches', 'lines'];
 
-const getWatermark = (watermark?: Watermark | number | undefined): Watermark => {
-  if (isArray(watermark)) {
-    return watermark;
-  }
-
-  if (typeof watermark === 'number') {
-    return [watermark, watermark];
-  }
-
-  return [90, 95];
-};
-
-const getErrorMessage = (
-  key: keyof Watermarks,
-  watermarks: Partial<Record<keyof Watermarks, Watermark | number>>,
-  coverageSummary: CoverageSummary,
-): string => {
-  const limit = Math.min(...getWatermark(watermarks[key]));
-  const value = coverageSummary[key].pct;
-
-  return red(`Coverage threshold for ${bold(key)} (${limit}%) not met: ${value}%`);
-};
-
-const coverage: Action<CoverageProps> = async (argv, { projects, watermarks = {} }) => {
+const coverageAction: Action<CoverageActionProps> = async (argv, { projects, watermarks = {} }) => {
   const coverageFiles = await existFiles(
     projects.map((project) => join(getCoverageFolder(argv.cwd, [project]), coverageFileName)),
   );
@@ -65,7 +36,10 @@ const coverage: Action<CoverageProps> = async (argv, { projects, watermarks = {}
     // The summarizer to default to (may be overridden by some reports)
     // values can be nested/flat/pkg. Defaults to 'pkg'
     defaultSummarizer: 'pkg',
-    watermarks: watermarkKeys.reduce((data, key) => Object.assign(data, { [key]: getWatermark(watermarks[key]) }), {}),
+    watermarks: watermarkKeys.reduce(
+      (data, key) => Object.assign(data, { [key]: getCoverageWatermark(watermarks[key]) }),
+      {},
+    ),
   });
 
   const reports: Array<keyof ReportOptions> = ['lcovonly', 'json-summary', 'text-summary'];
@@ -83,8 +57,10 @@ const coverage: Action<CoverageProps> = async (argv, { projects, watermarks = {}
   );
 
   if (coverageErrors.length > 0) {
-    throw new MessageError(coverageErrors.map((key) => getErrorMessage(key, watermarks, coverageSummary)).join('\n'));
+    throw new MessageError(
+      coverageErrors.map((key) => getCoverageErrorMessage(key, watermarks, coverageSummary)).join('\n'),
+    );
   }
 };
 
-export default coverage;
+export { coverageAction };

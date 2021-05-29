@@ -1,7 +1,7 @@
-import exec from '../../cmd/exec';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 
-const gitStaged: Action<Record<string, undefined>, string[]> = async ({ cwd, log }) => {
+const gitStagedAction: Action<Record<string, undefined>, string[]> = async ({ cwd, log }) => {
   log.info('Get the list of staged files');
 
   const { stdout } = await exec({ cmd: 'git', args: ['diff', '--staged', '--name-only'], cwd, log });
@@ -19,4 +19,4 @@ const gitStaged: Action<Record<string, undefined>, string[]> = async ({ cwd, log
   return files;
 };
 
-export default gitStaged;
+export { gitStagedAction };

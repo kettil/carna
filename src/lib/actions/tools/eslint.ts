@@ -1,21 +1,12 @@
 import { join, basename } from 'path';
-import exec from '../../cmd/exec';
-import existFiles from '../../cmd/existFiles';
+import { eslintConfigFiles, eslintExtensions, eslintIgnoreFiles } from '../../../configs/actionConfigs';
+import { exec } from '../../cmd/exec';
+import { existFiles } from '../../cmd/existFiles';
 import { Action } from '../../types';
+import { EslintActionProps } from '../types';
 
-const configs = ['.eslintrc.js', '.eslintrc.cjs', '.eslintrc.yaml', '.eslintrc.yml', '.eslintrc.json', '.eslintrc'];
-
-const ignoreFiles = new Set(['babel.config.js', 'jest.config.js']);
-
-export const eslintExtensionAll = 'js,ts,tsx';
-
-export type EslintProps = {
-  write?: boolean;
-  files?: string[];
-};
-
-const eslint: Action<EslintProps> = async ({ cwd, cfg, log }, { write, files }) => {
-  const configFiles = await existFiles(configs, cwd);
+const eslintAction: Action<EslintActionProps> = async ({ cwd, cfg, log }, { write, files }) => {
+  const configFiles = await existFiles(eslintConfigFiles, cwd);
 
   configFiles.push(join(cfg, 'eslintrc.json'));
 
@@ -33,7 +24,7 @@ const eslint: Action<EslintProps> = async ({ cwd, cfg, log }, { write, files }) 
   }
 
   if (files) {
-    const filteredFiles = files.filter((file) => !ignoreFiles.has(basename(file)));
+    const filteredFiles = files.filter((file) => !eslintIgnoreFiles.has(basename(file)));
 
     if (filteredFiles.length === 0) {
       log.info('No files found for eslint');
@@ -43,7 +34,7 @@ const eslint: Action<EslintProps> = async ({ cwd, cfg, log }, { write, files }) 
 
     args.push(...filteredFiles);
   } else {
-    args.push('--ext', `"${eslintExtensionAll}"`);
+    args.push('--ext', `"${eslintExtensions}"`);
     args.push('.');
   }
 
@@ -51,4 +42,4 @@ const eslint: Action<EslintProps> = async ({ cwd, cfg, log }, { write, files }) 
   await exec({ cmd, args, cwd, log });
 };
 
-export default eslint;
+export { eslintAction };

@@ -1,9 +1,8 @@
 import { blue, red, yellow } from 'chalk';
 import dependenciesCheck, { Options, parser, detector, special } from 'depcheck';
-import DependencyError from '../../errors/dependencyError';
+import { depcheckIgnorePackages } from '../../../configs/actionConfigs';
+import { DependencyError } from '../../errors/dependencyError';
 import { Action } from '../../types';
-
-const ignorePackage = ['@types/node', 'typescript'] as const;
 
 const options: Options = {
   ignoreDirs: ['node_modules'],
@@ -17,8 +16,12 @@ const options: Options = {
   specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky],
 };
 
-const depcheck: Action<[string[]]> = async ({ cwd }, ignorePackages = []) => {
-  const result = await dependenciesCheck(cwd, { ...options, ignoreMatches: [...ignorePackages, ...ignorePackage] });
+const depcheckAction: Action<[string[]]> = async ({ cwd }, ignorePackages = []) => {
+  const result = await dependenciesCheck(cwd, {
+    ...options,
+    ignoreMatches: [...ignorePackages, ...depcheckIgnorePackages],
+  });
+
   const groups = [
     { title: red('The dependencies are not used'), dependencies: result.dependencies },
     { title: yellow('The dev-dependencies are not used'), dependencies: result.devDependencies },
@@ -34,4 +37,4 @@ const depcheck: Action<[string[]]> = async ({ cwd }, ignorePackages = []) => {
   }
 };
 
-export default depcheck;
+export { depcheckAction };

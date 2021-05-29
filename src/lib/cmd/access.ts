@@ -31,4 +31,4 @@ const access = async (path: string, type: 'exists' | 'readable' | 'writable' = '
   }
 };
 
-export default access;
+export { access };

@@ -1,11 +1,11 @@
 import { isObject, objectKeys } from '@kettil/tool-lib';
-import writeFile from '../../cmd/writeFile';
+import { writeFile } from '../../cmd/writeFile';
 import { Action } from '../../types';
-import npmPackageLoad, { getPackagePath } from './packageLoad';
+import { npmPackageLoadAction, getPackagePath } from './packageLoad';
 
 type SettingProps = Record<string, Record<string, string> | string[] | boolean | number | string>;
 
-export type Props = {
+type NpmPackageUpdateProps = {
   settings: SettingProps & {
     scripts?: Record<string, string>;
     bin?: Record<string, string>;
@@ -42,10 +42,13 @@ const updatePeerDependencies = (config: Record<string, unknown>, values: string[
   return update(config.peerDependencies, peerDependencies);
 };
 
-const npmPackageUpdate: Action<Props> = async (argv, { settings: { bin, scripts, peerDependencies, ...settings } }) => {
+const npmPackageUpdateAction: Action<NpmPackageUpdateProps> = async (
+  argv,
+  { settings: { bin, scripts, peerDependencies, ...settings } },
+) => {
   const { cwd, log } = argv;
 
-  const config = await npmPackageLoad(argv, {});
+  const config = await npmPackageLoadAction(argv, {});
 
   if (!isObject(config)) {
     throw new TypeError('Package could not be interpreted as an object');
@@ -72,4 +75,5 @@ const npmPackageUpdate: Action<Props> = async (argv, { settings: { bin, scripts,
   await writeFile(getPackagePath(cwd), config);
 };
 
-export default npmPackageUpdate;
+export type { NpmPackageUpdateProps };
+export { npmPackageUpdateAction };

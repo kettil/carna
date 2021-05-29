@@ -1,6 +1,6 @@
 import { join } from 'path';
-import readdir from '../../cmd/readdir';
-import { Task } from '../../types';
+import { readdir } from '../cmd/readdir';
+import { Task } from '../types';
 
 const ignoreFolders = new Set(['shared', 'type']);
 const specialFolders = ['unit', 'integration', 'e2e'];
@@ -32,4 +32,4 @@ const getTestProjects: Task<[string[] | undefined], string[]> = async ({ cwd }, 
   return projects.filter((v) => selectedProjects.includes(v));
 };
 
-export default getTestProjects;
+export { getTestProjects };

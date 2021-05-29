@@ -1,11 +1,11 @@
-import exec from '../../cmd/exec';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 
 const modes = ['modified', 'others'] as const;
 
 type Mode = typeof modes[number] | 'all';
 
-const gitLs: Action<{ mode: Mode }, string[]> = async ({ cwd, log }, { mode }) => {
+const gitLsAction: Action<{ mode: Mode }, string[]> = async ({ cwd, log }, { mode }) => {
   log.info('Get the list of modified or other files');
 
   const args = ['ls-files', '--exclude-standard'];
@@ -33,4 +33,4 @@ const gitLs: Action<{ mode: Mode }, string[]> = async ({ cwd, log }, { mode }) =
   return files;
 };
 
-export default gitLs;
+export { gitLsAction };

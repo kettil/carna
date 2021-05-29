@@ -44,9 +44,9 @@ Array [
 exports[`command test it should work with ci mode: child-process 1`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "--runInBand",
@@ -72,9 +72,9 @@ Object {
 exports[`command test it should work with ci mode: child-process 2`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--runInBand",
@@ -140,9 +140,9 @@ Object {
 exports[`command test it should work with hooks: child-process 2`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "--maxWorkers",
@@ -163,9 +163,9 @@ Object {
 exports[`command test it should work with hooks: child-process 3`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--maxWorkers",
@@ -233,9 +233,9 @@ Array [
 exports[`command test it should work with run-in-band mode: child-process 1`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "--runInBand",
@@ -255,9 +255,9 @@ Object {
 exports[`command test it should work with run-in-band mode: child-process 2`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--runInBand",
@@ -313,9 +313,9 @@ Array [
 exports[`command test it should work with selected project: child-process 1`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--maxWorkers",
@@ -372,9 +372,9 @@ Array [
 exports[`command test it should work with update-snapshot mode: child-process 1`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "--updateSnapshot",
@@ -396,9 +396,9 @@ Object {
 exports[`command test it should work with update-snapshot mode: child-process 2`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--updateSnapshot",
@@ -456,9 +456,9 @@ Array [
 exports[`command test it should work with watch mode: child-process 1`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "e2e",
@@ -487,9 +487,9 @@ Object {
 exports[`command test it should work: child-process 1`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "--maxWorkers",
@@ -510,9 +510,9 @@ Object {
 exports[`command test it should work: child-process 2`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--maxWorkers",

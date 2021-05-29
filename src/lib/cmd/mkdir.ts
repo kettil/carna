@@ -4,4 +4,4 @@ const mkdir = async (path: string): Promise<void> => {
   await promises.mkdir(path, { recursive: true });
 };
 
-export default mkdir;
+export { mkdir };

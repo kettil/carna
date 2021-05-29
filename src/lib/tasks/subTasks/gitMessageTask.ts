@@ -1,10 +1,12 @@
-import commitlint, { CommitlintProps } from '../../actions/tools/commitlint';
+import { commitlintAction } from '../../actions/tools/commitlint';
+import { CommitlintActionProps } from '../../actions/types';
 import { Task } from '../../types';
 
-export type GitMessageProps = CommitlintProps;
+type GitMessageProps = CommitlintActionProps;
 
 const gitMessageTask: Task<GitMessageProps> = async (argv, props) => {
-  await commitlint(argv, props);
+  await commitlintAction(argv, props);
 };
 
-export default gitMessageTask;
+export type { GitMessageProps };
+export { gitMessageTask };

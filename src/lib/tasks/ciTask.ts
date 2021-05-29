@@ -1,12 +1,12 @@
 import { PropsGlobal, Task } from '../types';
-import analyseTask from './analyseTask';
-import buildTask from './buildTask';
-import depsTask from './depsTask';
-import taskHook from './helpers/taskHook';
-import licenseTask from './licenseTask';
-import testTask from './testTask';
+import { taskHook } from '../utils/taskHook';
+import { analyseTask } from './analyseTask';
+import { buildTask } from './buildTask';
+import { depsTask } from './depsTask';
+import { licenseTask } from './licenseTask';
+import { testTask } from './testTask';
 
-export type CiProps = {};
+type CiProps = {};
 
 const ciTask: Task<CiProps> = async (argv) => {
   const extendArgv: PropsGlobal = { ...argv, ci: true };
@@ -22,4 +22,5 @@ const ciTask: Task<CiProps> = async (argv) => {
   await taskHook(argv, { task: 'ci', type: 'post' });
 };
 
-export default ciTask;
+export type { CiProps };
+export { ciTask };

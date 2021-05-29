@@ -3,7 +3,8 @@ import * as fs from 'fs';
 import { Argv } from 'yargs';
 import { handler, builder, command, desc } from '../../../src/lib/commands/license';
 import { PropsGlobal } from '../../../src/lib/types';
-import { getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
+import { getArgv } from '../../shared/setup/argv';
+import { getReadFileWithHooksFiles } from '../../shared/setup/readFileFiles';
 
 describe('command license', () => {
   test('it should be complete the yargs command structure', () => {

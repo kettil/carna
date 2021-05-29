@@ -1,5 +1,5 @@
-import SpinnerWarnError from './spinnerWarnError';
+import { SpinnerWarnError } from './spinnerWarnError';
 
 class LicenseDisabledError extends SpinnerWarnError {}
 
-export default LicenseDisabledError;
+export { LicenseDisabledError };

@@ -1,7 +1,9 @@
 import * as fs from 'fs';
 import { join } from 'path';
 import { handler } from '../../../src/lib/commands/init';
-import { cwd, getAccessFiles, getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
+import { getAccessFiles } from '../../shared/setup/accessFiles';
+import { cwd, getArgv } from '../../shared/setup/argv';
+import { getReadFileWithHooksFiles } from '../../shared/setup/readFileFiles';
 
 describe('command init (package)', () => {
   beforeEach(() => {

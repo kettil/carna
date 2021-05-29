@@ -2,21 +2,24 @@
 /* eslint-disable no-await-in-loop */
 import { join } from 'path';
 import { isObject, objectEntries } from '@kettil/tool-lib';
-import licenseHeuristics from '../../../../configs/licenseHeuristics';
-import access from '../../../cmd/access';
-import exec from '../../../cmd/exec';
-import readdir from '../../../cmd/readdir';
-import readFile from '../../../cmd/readFile';
-import { Action, LicensePackageInfo, LicensePackages } from '../../../types';
+import { licenseHeuristics } from '../../configs/licenseHeuristics';
+import { access } from '../cmd/access';
+import { exec } from '../cmd/exec';
+import { readdir } from '../cmd/readdir';
+import { readFile } from '../cmd/readFile';
+import { Action, LicensePackageInfo, LicensePackages } from '../types';
 
-type GetPackageInfo = Action<
+type GetNodePackageInfo = Action<
   { packagePath: string; ignorePackages: string[]; licensePackages: LicensePackages },
   LicensePackageInfo | undefined
 >;
 
 const regexpFilename = /^(copying|license|license-\w+|licence|licence-\w+|readme)(\.markdown|\.md|\.txt)?$/iu;
 
-const getPackageInfo: GetPackageInfo = async ({ cwd, log }, { packagePath, ignorePackages, licensePackages }) => {
+const getNodePackageInfo: GetNodePackageInfo = async (
+  { cwd, log },
+  { packagePath, ignorePackages, licensePackages },
+) => {
   const packageJsonPath = join(packagePath, 'package.json');
 
   const hasPackageJson = await access(packageJsonPath);
@@ -87,4 +90,4 @@ const getPackageInfo: GetPackageInfo = async ({ cwd, log }, { packagePath, ignor
   return data;
 };
 
-export default getPackageInfo;
+export { getNodePackageInfo };

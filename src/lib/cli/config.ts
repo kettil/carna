@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { isObject } from '@kettil/tool-lib';
-import access from '../cmd/access';
-import readFile from '../cmd/readFile';
+import { access } from '../cmd/access';
+import { readFile } from '../cmd/readFile';
 
 const getDataRecursive = (data: unknown, keys: string[]): unknown => {
   const key = keys.shift();
@@ -28,4 +28,4 @@ const getConfig = async (cwd: string, keyPath?: string): Promise<unknown> => {
   return typeof keyPath === 'string' ? getDataRecursive(data, keyPath.split('.')) : data;
 };
 
-export default getConfig;
+export { getConfig };

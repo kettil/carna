@@ -1,18 +1,18 @@
 import { isArray } from '@kettil/tool-lib';
 import { underline } from 'chalk';
-import license from '../actions/tools/licensecheck';
-import getConfig from '../cli/config';
+import { licensecheckAction } from '../actions/tools/licensecheck';
+import { getConfig } from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
-import table from '../cli/table';
-import exit from '../cmd/exit';
-import LicenseDisabledError from '../errors/licenseDisabledError';
-import LicenseIncompatibleError from '../errors/licenseIncompatibleError';
+import { table } from '../cli/table';
+import { exit } from '../cmd/exit';
+import { LicenseDisabledError } from '../errors/licenseDisabledError';
+import { LicenseIncompatibleError } from '../errors/licenseIncompatibleError';
 import { Task } from '../types';
-import taskHook from './helpers/taskHook';
+import { taskHook } from '../utils/taskHook';
 
 const notice = `the check is only a suggestion and is ${underline('not')} legal advice`;
 
-export type LicenseProps = {};
+type LicenseProps = {};
 
 const licenseTask: Task<LicenseProps> = async (argv) => {
   try {
@@ -22,7 +22,7 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
       : [];
 
     await taskHook(argv, { task: 'license', type: 'pre' });
-    await spinnerAction(license(argv, ignorePackages), `License verification (${notice})`);
+    await spinnerAction(licensecheckAction(argv, ignorePackages), `License verification (${notice})`);
     await taskHook(argv, { task: 'license', type: 'post' });
   } catch (error) {
     if (error instanceof LicenseDisabledError) {
@@ -41,4 +41,5 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
   }
 };
 
-export default licenseTask;
+export type { LicenseProps };
+export { licenseTask };

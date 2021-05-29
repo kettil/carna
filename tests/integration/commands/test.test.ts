@@ -3,7 +3,8 @@ import { join } from 'path';
 import { Argv } from 'yargs';
 import { handler, builder, command, desc } from '../../../src/lib/commands/test';
 import { PropsGlobal } from '../../../src/lib/types';
-import { cwd, getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
+import { cwd, getArgv } from '../../shared/setup/argv';
+import { getReadFileWithHooksFiles } from '../../shared/setup/readFileFiles';
 
 describe('command test', () => {
   test('it should be complete the yargs command structure', () => {

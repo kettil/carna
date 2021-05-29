@@ -1,5 +1,5 @@
 import { uniqueArray, compareAsc } from '@kettil/tool-lib';
-import exec from '../../cmd/exec';
+import { exec } from '../../cmd/exec';
 import { NpmInstallMode, Action } from '../../types';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   mode: NpmInstallMode;
 };
 
-const npmInstall: Action<Props> = async ({ cwd, log }, { packages, mode }) => {
+const npmInstallAction: Action<Props> = async ({ cwd, log }, { packages, mode }) => {
   if (packages.length > 0) {
     const uniquePackages = uniqueArray(packages.sort(compareAsc));
 
@@ -19,4 +19,4 @@ const npmInstall: Action<Props> = async ({ cwd, log }, { packages, mode }) => {
   }
 };
 
-export default npmInstall;
+export { npmInstallAction };

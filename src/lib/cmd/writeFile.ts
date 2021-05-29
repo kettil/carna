@@ -6,4 +6,4 @@ const writeFile = async (path: string, data: Record<string, unknown> | string): 
   await promises.writeFile(path, `${fileData.trim()}\n`, { encoding: 'utf8' });
 };
 
-export default writeFile;
+export { writeFile };

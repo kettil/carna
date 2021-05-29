@@ -1,17 +1,12 @@
-import exec from '../../cmd/exec';
-import { getFirstExistFile } from '../../helper';
+import { babelExtensions, babelScriptFiles } from '../../../configs/actionConfigs';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
-import { babelExtensions, getBabelConfigPath } from './babel';
+import { getBabelConfigPath } from '../../utils/getConfigPath';
+import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
+import { BabelNodeActionProps } from '../types';
 
-type BabelNodeProps = {
-  watch: boolean;
-  script?: string;
-};
-
-const scriptFiles = ['src/index.ts', 'src/index.js'];
-
-const babelNode: Action<BabelNodeProps> = async ({ cwd, log }, { script, watch }) => {
-  const configPath = await getBabelConfigPath(cwd);
+const babelNodeAction: Action<BabelNodeActionProps> = async ({ cwd, log }, { script, watch }) => {
+  const configPath = await getBabelConfigPath({ cwd });
 
   const cmd = `./node_modules/.bin/babel-${watch ? 'watch' : 'node'}`;
   const args: string[] = [];
@@ -24,10 +19,10 @@ const babelNode: Action<BabelNodeProps> = async ({ cwd, log }, { script, watch }
   }
 
   // script
-  args.push(script ?? (await getFirstExistFile(cwd, scriptFiles)));
+  args.push(script ?? (await getFirstExistingFile({ cwd, files: babelScriptFiles })));
 
   log.info(`Run babel-${watch ? 'watch' : 'node'}`);
   await exec({ cmd, args, cwd, log, withInteraction: true, withDirectOutput: true });
 };
 
-export default babelNode;
+export { babelNodeAction };

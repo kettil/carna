@@ -2,7 +2,7 @@ import { join } from 'path';
 import { env } from '@kettil/tool-lib';
 import chalk from 'chalk';
 import yargs from 'yargs';
-import logger from './cli/logger';
+import { logger } from './cli/logger';
 import { errorHandler } from './cli/yargs';
 import { PropsGlobal } from './types';
 
@@ -41,4 +41,4 @@ const app = async (argv: string[]): Promise<void> => {
     .parse()) as Omit<PropsGlobal, 'log'>;
 };
 
-export default app;
+export { app };

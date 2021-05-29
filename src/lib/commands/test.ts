@@ -1,14 +1,14 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import testTask, { TestProps } from '../tasks/testTask';
+import { testTask, TestProps } from '../tasks/testTask';
 
-export const command = 'test';
-export const desc = 'Run tests';
+const command = 'test';
+const desc = 'Run tests';
 
 const options = { group: `${command}-Options` } as const;
 const boolOptions = { ...options, type: 'boolean', default: false } as const;
 
-export const handler = createHandler<TestProps>(testTask);
-export const builder = createBuilder<TestProps>(command, (yargs) =>
+const handler = createHandler<TestProps>(testTask);
+const builder = createBuilder<TestProps>(command, (yargs) =>
   yargs.options({
     project: {
       ...options,
@@ -26,3 +26,5 @@ export const builder = createBuilder<TestProps>(command, (yargs) =>
     watch: { ...boolOptions, alias: 'w', describe: 'Watch files for changes and rerun tests related to changed files' },
   }),
 );
+
+export { command, desc, builder, handler };

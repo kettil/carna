@@ -1,31 +1,19 @@
 import { join } from 'path';
-import exec from '../../cmd/exec';
-import existFiles from '../../cmd/existFiles';
+import { jestConfigFiles } from '../../../configs/actionConfigs';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
+import { getCoverageFolder } from '../../utils/getCoverageFolder';
+import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
+import { JestActionProps } from '../types';
 
-export type JestProps = {
-  projects: string[];
-  updateSnapshot?: boolean;
-  runInBand?: boolean;
-  watch?: boolean;
-};
+const options: Array<keyof JestActionProps> = ['updateSnapshot', 'runInBand', 'watch'];
 
-const configFiles = ['jest.config.js', 'jest.config.ts'];
-const options: Array<keyof JestProps> = ['updateSnapshot', 'runInBand', 'watch'];
-
-export const getCoverageFolder = (cwd: string, projects: JestProps['projects']): string =>
-  join(cwd, 'coverage', projects.length === 1 ? `_${projects}` : '');
-
-const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
+const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
   const coverageFolder = getCoverageFolder(cwd, props.projects);
-  const files = await existFiles(configFiles, cwd);
-
-  if (files.length === 0) {
-    throw new Error('Jest config file was not found');
-  }
+  const configFile = await getFirstExistingFile({ cwd, files: jestConfigFiles });
 
   const cmd = './node_modules/.bin/jest';
-  const args: string[] = ['--colors', '--config', files[0]];
+  const args: string[] = ['--config', configFile, '--colors'];
 
   if (props.projects.length === 1) {
     args.push('--selectProjects', props.projects[0]);
@@ -74,4 +62,4 @@ const jest: Action<JestProps> = async ({ cwd, ci, log }, props) => {
   await exec({ cmd, args, cwd, log, withInteraction: props.watch, withDirectOutput: true });
 };
 
-export default jest;
+export { jestAction };

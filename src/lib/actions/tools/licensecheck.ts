@@ -1,18 +1,18 @@
 import { isArray } from '@kettil/tool-lib';
 import { red } from 'chalk';
-import licenseCompatibilities from '../../../configs/licenseCompatibilities';
-import licensePackages from '../../../configs/licensePackages';
-import LicenseDisabledError from '../../errors/licenseDisabledError';
-import LicenseIncompatibleError from '../../errors/licenseIncompatibleError';
+import { licenseCompatibilities } from '../../../configs/licenseCompatibilities';
+import { licensePackages } from '../../../configs/licensePackages';
+import { LicenseDisabledError } from '../../errors/licenseDisabledError';
+import { LicenseIncompatibleError } from '../../errors/licenseIncompatibleError';
 import { Action, LicensePackageInfo } from '../../types';
-import getPackageInfo from './helpers/getPackageInfo';
-import getPackagePaths from './helpers/getPackagePaths';
-import isLicenseCompatible from './helpers/isLicenseCompatible';
+import { getNodeModulePaths } from '../../utils/getNodeModulePaths';
+import { getNodePackageInfo } from '../../utils/getNodePackageInfo';
+import { isLicenseCompatible } from '../../utils/isLicenseCompatible';
 
-const licensecheck: Action<[string[]]> = async (argv, ignorePackages = []) => {
+const licensecheckAction: Action<[string[]]> = async (argv, ignorePackages = []) => {
   const { cwd, log } = argv;
 
-  const projectInfo = await getPackageInfo(argv, { packagePath: cwd, ignorePackages: [], licensePackages: {} });
+  const projectInfo = await getNodePackageInfo(argv, { packagePath: cwd, ignorePackages: [], licensePackages: {} });
 
   if (!projectInfo) {
     throw new Error('Project package data was not found');
@@ -31,12 +31,12 @@ const licensecheck: Action<[string[]]> = async (argv, ignorePackages = []) => {
 
   log.info('Get the paths of the packages');
 
-  const packagePaths = await getPackagePaths(cwd);
+  const packagePaths = await getNodeModulePaths(cwd);
 
   log.info('Read the license data');
 
   const packageInfos = await Promise.all(
-    packagePaths.map((packagePath) => getPackageInfo(argv, { packagePath, ignorePackages, licensePackages })),
+    packagePaths.map((packagePath) => getNodePackageInfo(argv, { packagePath, ignorePackages, licensePackages })),
   );
 
   log.info('Validation of the license data');
@@ -58,4 +58,4 @@ const licensecheck: Action<[string[]]> = async (argv, ignorePackages = []) => {
   }
 };
 
-export default licensecheck;
+export { licensecheckAction };

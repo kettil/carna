@@ -1,9 +1,9 @@
 import { compareTransformAsc, isObject, objectEntries } from '@kettil/tool-lib';
 import { red } from 'chalk';
 import { coerce } from 'semver';
-import TableError from '../../errors/tableError';
+import { TableError } from '../../errors/tableError';
 import { Action } from '../../types';
-import npmPackageLoad from '../npm/packageLoad';
+import { npmPackageLoadAction } from '../npm/packageLoad';
 
 const keys = ['dependencies', 'devDependencies'] as const;
 
@@ -25,8 +25,8 @@ const getInaccurateVersions = (packages: unknown): Array<[string, string, string
     .filter(([, version, result]) => version !== result);
 };
 
-const semver: Action = async (argv) => {
-  const packagesJson = await npmPackageLoad(argv, {});
+const semverAction: Action = async (argv) => {
+  const packagesJson = await npmPackageLoadAction(argv, {});
 
   if (!isObject(packagesJson)) {
     throw new Error('The package.json was not found');
@@ -44,7 +44,7 @@ const semver: Action = async (argv) => {
   }
 };
 
-export default semver;
+export { semverAction };
 
 /*
 const p: Record<string, string> = {

@@ -15,4 +15,4 @@ const readFile: FunctionType = async (path: string, toJson = false) => {
   return data;
 };
 
-export default readFile;
+export { readFile };

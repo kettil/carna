@@ -1,12 +1,12 @@
 import { red } from 'chalk';
 import { Arguments, Argv } from 'yargs';
-import access from '../cmd/access';
-import exit from '../cmd/exit';
-import MessageError from '../errors/messageError';
-import TableError from '../errors/tableError';
+import { access } from '../cmd/access';
+import { exit } from '../cmd/exit';
+import { MessageError } from '../errors/messageError';
+import { TableError } from '../errors/tableError';
 import { PropsGlobal, Task } from '../types';
 import { log } from './logger';
-import table from './table';
+import { table } from './table';
 
 type CommandBuilder<TaskProps = Record<string, unknown>> = (yargs: Argv<PropsGlobal>) => Argv<PropsGlobal & TaskProps>;
 type CommandHandler<TaskProps = Record<string, unknown>> = (argv: Arguments<PropsGlobal & TaskProps>) => Promise<void>;
@@ -19,7 +19,7 @@ const filterOptions = ([key]: [key: string, value: unknown]) =>
 const filterProps = ([key]: [key: string, value: unknown]) =>
   ![...globalOptions, '_', '$0'].includes(key as typeof globalOptions[number]);
 
-export const errorHandler = (msg: string, error: Error): void => {
+const errorHandler = (msg: string, error: Error): void => {
   if (typeof msg === 'string' && typeof error === 'undefined') {
     log(' ');
     log(msg);
@@ -55,7 +55,7 @@ export const errorHandler = (msg: string, error: Error): void => {
   throw error;
 };
 
-export const createHandler =
+const createHandler =
   <TaskProps extends Record<string, unknown>>(task: Task<TaskProps>): CommandHandler<TaskProps> =>
     async (argv) => {
       const [isReadableCwd, isReadableCfg, isReadableTpl] = await Promise.all([
@@ -84,8 +84,10 @@ export const createHandler =
       await task(options, props);
     };
 
-export const createBuilder =
+const createBuilder =
   <TaskProps>(command: string, callback: CommandBuilder<TaskProps>): CommandBuilder<TaskProps> =>
     (yargs) =>
       callback(yargs).usage(`Usage: $0 ${command} [options]`).help().version(false)
         .showHelpOnFail(false);
+
+export { createBuilder, createHandler, errorHandler };

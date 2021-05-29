@@ -35,4 +35,4 @@ const licenseCompatibilities: LicenseCompatibilities = {
   ],
 };
 
-export default licenseCompatibilities;
+export { licenseCompatibilities };

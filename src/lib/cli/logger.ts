@@ -8,7 +8,7 @@ type Level = keyof typeof levels;
 
 type Log = (msg: string[] | string) => void;
 
-export type Logger = Record<Level, Log>;
+type Logger = Record<Level, Log>;
 
 const levels = {
   log: (msg: string) => msg,
@@ -38,7 +38,7 @@ const logging =
       resume();
     };
 
-export const log: Log = (msg) => {
+const log: Log = (msg) => {
   const indent = isSpinning() ? '  ' : '';
   const resume = spinnerBreak();
   const messages = isArray(msg) ? msg : msg.trimEnd().split('\n');
@@ -64,4 +64,5 @@ const logger = ({ verbose, vvv }: { verbose: boolean; vvv: boolean }): Logger =>
   return { log, error: dummy, info: dummy, debug: dummy };
 };
 
-export default logger;
+export type { Logger };
+export { logger, log };

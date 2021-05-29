@@ -1,7 +1,7 @@
 import { spawn, ChildProcessByStdio, ChildProcessWithoutNullStreams } from 'child_process';
 import { env as processEnvironment } from '@kettil/tool-lib';
 import { Logger } from '../cli/logger';
-import ExecutableError from '../errors/executableError';
+import { ExecutableError } from '../errors/executableError';
 
 type Options = {
   readonly cmd: string;
@@ -78,4 +78,4 @@ const exec = ({
     });
   });
 
-export default exec;
+export { exec };

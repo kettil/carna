@@ -1,5 +1,5 @@
 import { join } from 'path';
-import access from './access';
+import { access } from './access';
 
 const existFile = async (cwd: string, file: string): Promise<string> => {
   const path = join(cwd, file);
@@ -14,4 +14,4 @@ const existFiles = async (files: string[], cwd = ''): Promise<string[]> => {
   return checkedFiles.filter((file) => file !== '');
 };
 
-export default existFiles;
+export { existFiles };
