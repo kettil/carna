@@ -4,4 +4,4 @@ class LicenseIncompatibleError extends Error {
   }
 }
 
-export default LicenseIncompatibleError;
+export { LicenseIncompatibleError };

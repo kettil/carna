@@ -1,18 +1,19 @@
 import { allSettledSequence, isArray, isObject, objectMap } from '@kettil/tool-lib';
-import coverage, { WatermarkThreshold } from '../actions/tools/coverage';
-import jest, { JestProps } from '../actions/tools/jest';
-import getConfig from '../cli/config';
+import { coverageAction } from '../actions/tools/coverage';
+import { jestAction } from '../actions/tools/jest';
+import { JestActionProps, CoverageWatermarkThreshold } from '../actions/types';
+import { getConfig } from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import { Task } from '../types';
-import getTestProjects from './helpers/getTestProjects';
-import taskHook from './helpers/taskHook';
-import testHook from './helpers/testHook';
+import { getTestProjects } from '../utils/getTestProjects';
+import { taskHook } from '../utils/taskHook';
+import { testHook } from '../utils/testHook';
 
-export type TestProps = Omit<JestProps, 'projects'> & {
+type TestProps = Omit<JestActionProps, 'projects'> & {
   projects?: string[];
 };
 
-const transformThreshold = (key: number | string, value: unknown): [number | string, WatermarkThreshold] => {
+const transformThreshold = (key: number | string, value: unknown): [number | string, CoverageWatermarkThreshold] => {
   if (isArray(value) && value.length === 2 && typeof value[0] === 'number' && typeof value[1] === 'number') {
     return [key, value as unknown as [number, number]];
   }
@@ -39,7 +40,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
         Promise.resolve(),
       );
 
-      await jest(argv, { ...props, projects });
+      await jestAction(argv, { ...props, projects });
     } finally {
       await allSettledSequence(projects.map((project) => () => testHook(argv, { project, type: 'post' })));
     }
@@ -50,7 +51,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
           promise.then(async () => {
             try {
               await testHook(argv, { project, type: 'pre' });
-              await spinnerAction(jest(argv, { ...props, projects: [project] }), `Test: ${project}`);
+              await spinnerAction(jestAction(argv, { ...props, projects: [project] }), `Test: ${project}`);
             } finally {
               await testHook(argv, { project, type: 'post' });
             }
@@ -58,11 +59,12 @@ const testTask: Task<TestProps> = async (argv, props) => {
         Promise.resolve(),
       );
     } finally {
-      await coverage(argv, { projects, watermarks: coverageThreshold });
+      await coverageAction(argv, { projects, watermarks: coverageThreshold });
     }
   }
 
   await taskHook(argv, { task: 'test', type: 'post' });
 };
 
-export default testTask;
+export type { TestProps };
+export { testTask };

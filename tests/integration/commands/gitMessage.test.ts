@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import { handler } from '../../../src/lib/commands/git';
-import { getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
+import { getArgv } from '../../shared/setup/argv';
+import { getReadFileWithHooksFiles } from '../../shared/setup/readFileFiles';
 
 describe('command git with git "msg" hook', () => {
   test('it should work', async () => {

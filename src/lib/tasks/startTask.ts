@@ -1,8 +1,8 @@
-import babelNode from '../actions/tools/babelNode';
+import { babelNodeAction } from '../actions/tools/babelNode';
 import { Task } from '../types';
-import taskHook from './helpers/taskHook';
+import { taskHook } from '../utils/taskHook';
 
-export type StartProps = {
+type StartProps = {
   watch: boolean;
   script?: string;
 };
@@ -10,9 +10,10 @@ export type StartProps = {
 const startTask: Task<StartProps> = async (argv, props) => {
   await taskHook(argv, { task: 'start', type: 'pre' });
 
-  await babelNode(argv, props);
+  await babelNodeAction(argv, props);
 
   await taskHook(argv, { task: 'start', type: 'post' });
 };
 
-export default startTask;
+export type { StartProps };
+export { startTask };

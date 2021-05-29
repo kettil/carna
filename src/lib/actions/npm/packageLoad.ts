@@ -1,16 +1,16 @@
 import { join } from 'path';
-import access from '../../cmd/access';
-import readFile from '../../cmd/readFile';
+import { access } from '../../cmd/access';
+import { readFile } from '../../cmd/readFile';
 import { Action } from '../../types';
 
-type Props = {
+type NpmPackageLoadProps = {
   key?: string;
   throwError?: boolean;
 };
 
-export const getPackagePath = (cwd: string): string => join(cwd, 'package.json');
+const getPackagePath = (cwd: string): string => join(cwd, 'package.json');
 
-const npmPackageLoad: Action<Props, unknown> = async ({ cwd, log }, { key, throwError }) => {
+const npmPackageLoadAction: Action<NpmPackageLoadProps, unknown> = async ({ cwd, log }, { key, throwError }) => {
   const path = getPackagePath(cwd);
   const isExists = await access(path);
 
@@ -35,4 +35,4 @@ const npmPackageLoad: Action<Props, unknown> = async ({ cwd, log }, { key, throw
   return value;
 };
 
-export default npmPackageLoad;
+export { npmPackageLoadAction, getPackagePath };

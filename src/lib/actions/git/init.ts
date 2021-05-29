@@ -1,9 +1,9 @@
 import { join } from 'path';
-import access from '../../cmd/access';
-import exec from '../../cmd/exec';
+import { access } from '../../cmd/access';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 
-const gitInit: Action = async ({ cwd, log }) => {
+const gitInitAction: Action = async ({ cwd, log }) => {
   const path = join(cwd, '.git');
   const isExists = await access(path);
 
@@ -15,4 +15,4 @@ const gitInit: Action = async ({ cwd, log }) => {
   }
 };
 
-export default gitInit;
+export { gitInitAction };

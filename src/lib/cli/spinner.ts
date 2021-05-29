@@ -1,6 +1,6 @@
 import { dummy } from '@kettil/tool-lib';
 import ora from 'ora';
-import SpinnerWarnError from '../errors/spinnerWarnError';
+import { SpinnerWarnError } from '../errors/spinnerWarnError';
 
 type StopTypes = 'fail' | 'info' | 'stop' | 'succeed' | 'warn';
 
@@ -9,7 +9,7 @@ const instance = ora({
   spinner: 'dots',
 });
 
-export const isSpinning = (): boolean => instance.isSpinning;
+const isSpinning = (): boolean => instance.isSpinning;
 
 const start = (text: string) => {
   instance.start(text);
@@ -37,13 +37,13 @@ const fail = (error: unknown) => {
   throw error;
 };
 
-export const spinnerAction = <T>(action: Promise<T>, text: string): Promise<T> => {
+const spinnerAction = <T>(action: Promise<T>, text: string): Promise<T> => {
   start(text);
 
   return action.then(succeed, fail);
 };
 
-export const spinnerBreak = (): (() => void) => {
+const spinnerBreak = (): (() => void) => {
   if (isSpinning()) {
     stop('stop');
 
@@ -52,3 +52,5 @@ export const spinnerBreak = (): (() => void) => {
 
   return dummy;
 };
+
+export { isSpinning, spinnerAction, spinnerBreak };

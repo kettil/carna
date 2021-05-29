@@ -1,20 +1,11 @@
 import { join } from 'path';
-import exec from '../../cmd/exec';
-import { getFirstExistFile } from '../../helper';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
+import { getTypescriptConfigPath } from '../../utils/getTypescriptConfigPath';
+import { TscActionProps } from '../types';
 
-const configs = ['tsconfig.json'];
-const buildConfigs = ['tsconfig.build.json'];
-
-type TscProps = {
-  mode: 'type-check' | 'type-create';
-};
-
-export const getTscConfigPath = async (cwd: string, mode: TscProps['mode']): Promise<string> =>
-  getFirstExistFile(cwd, mode === 'type-create' ? buildConfigs : configs);
-
-const tsc: Action<TscProps> = async ({ cwd, log }, { mode }) => {
-  const configPath = await getTscConfigPath(cwd, mode);
+const tscAction: Action<TscActionProps> = async ({ cwd, log }, { mode }) => {
+  const configPath = await getTypescriptConfigPath(cwd, mode);
 
   const cmd = './node_modules/.bin/tsc';
   const args: string[] = [];
@@ -41,4 +32,4 @@ const tsc: Action<TscProps> = async ({ cwd, log }, { mode }) => {
   await exec({ cmd, args, cwd, log });
 };
 
-export default tsc;
+export { tscAction };

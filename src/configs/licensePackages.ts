@@ -14,4 +14,4 @@ const licensePackages: LicensePackages = {
   },
 };
 
-export default licensePackages;
+export { licensePackages };

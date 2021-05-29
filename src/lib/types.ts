@@ -1,8 +1,8 @@
 import { Logger } from './cli/logger';
 
-export type NpmInstallMode = 'dev' | 'optional' | 'prod';
+type NpmInstallMode = 'dev' | 'optional' | 'prod';
 
-export type PropsGlobal = {
+type PropsGlobal = {
   readonly cwd: string;
   readonly tpl: string;
   readonly cfg: string;
@@ -11,26 +11,37 @@ export type PropsGlobal = {
   readonly ci: boolean;
 };
 
-export type Action<Props extends Record<string, unknown> | unknown[] | undefined = undefined, ActionReturn = void> =
+type Action<Props extends Record<string, unknown> | unknown[] | undefined = undefined, ActionReturn = void> =
   Props extends undefined
     ? (argv: PropsGlobal) => Promise<ActionReturn>
     : Props extends unknown[]
       ? (argv: PropsGlobal, ...props: Props) => Promise<ActionReturn>
       : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
 
-export type Task<Props extends Record<string, unknown> | unknown[] | undefined = undefined, ActionReturn = void> =
+type Task<Props extends Record<string, unknown> | unknown[] | undefined = undefined, ActionReturn = void> =
   Props extends undefined
     ? (argv: PropsGlobal) => Promise<ActionReturn>
     : Props extends unknown[]
       ? (argv: PropsGlobal, ...props: Props) => Promise<ActionReturn>
       : (argv: PropsGlobal, props: Props) => Promise<ActionReturn>;
 
-export type LicenseCompatibilities = Record<string, string[]>;
-export type LicenseHeuristics = Record<string, RegExp>;
-export type LicensePackages = Record<string, Record<string, string>>;
-export type LicensePackageInfo = {
+type LicenseCompatibilities = Record<string, string[]>;
+type LicenseHeuristics = Record<string, RegExp>;
+type LicensePackages = Record<string, Record<string, string>>;
+type LicensePackageInfo = {
   path: string;
   name: string;
   license: string | 'UNKNOWN';
   version: string | 'UNKNOWN';
+};
+
+export type {
+  NpmInstallMode,
+  PropsGlobal,
+  Action,
+  Task,
+  LicenseCompatibilities,
+  LicenseHeuristics,
+  LicensePackages,
+  LicensePackageInfo,
 };

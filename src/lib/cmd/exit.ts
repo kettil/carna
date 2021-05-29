@@ -3,4 +3,4 @@ const exit = (code = 1): never => {
   process.exit(code);
 };
 
-export default exit;
+export { exit };

@@ -1,13 +1,13 @@
 import { join } from 'path';
-import access from '../../cmd/access';
-import writeFile from '../../cmd/writeFile';
+import { access } from '../../cmd/access';
+import { writeFile } from '../../cmd/writeFile';
 import { Action } from '../../types';
 
 type Props = {
   file: string;
 };
 
-const nodeFile: Action<Props> = async ({ cwd, log }, { file }) => {
+const nodeFileAction: Action<Props> = async ({ cwd, log }, { file }) => {
   const path = join(cwd, file);
   const isExists = await access(path);
 
@@ -19,4 +19,4 @@ const nodeFile: Action<Props> = async ({ cwd, log }, { file }) => {
   }
 };
 
-export default nodeFile;
+export { nodeFileAction };

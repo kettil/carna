@@ -4,4 +4,4 @@ class SpinnerWarnError extends Error {
   }
 }
 
-export default SpinnerWarnError;
+export { SpinnerWarnError };

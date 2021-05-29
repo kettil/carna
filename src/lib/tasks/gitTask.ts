@@ -1,9 +1,9 @@
 import { Task } from '../types';
-import taskHook from './helpers/taskHook';
-import gitCommitTask from './subTasks/gitCommitTask';
-import gitMessageTask, { GitMessageProps } from './subTasks/gitMessageTask';
+import { taskHook } from '../utils/taskHook';
+import { gitCommitTask } from './subTasks/gitCommitTask';
+import { gitMessageTask, GitMessageProps } from './subTasks/gitMessageTask';
 
-export type GitProps = {
+type GitProps = {
   edit?: GitMessageProps['edit'];
   hook: 'commit' | 'msg';
 };
@@ -33,4 +33,5 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
   await taskHook(argv, { task: 'git', type: 'post' });
 };
 
-export default gitTask;
+export type { GitProps };
+export { gitTask };

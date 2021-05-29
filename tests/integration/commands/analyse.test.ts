@@ -2,7 +2,9 @@ import * as fs from 'fs';
 import { Argv } from 'yargs';
 import { handler, builder, command, desc } from '../../../src/lib/commands/analyse';
 import { PropsGlobal } from '../../../src/lib/types';
-import { getAccessFiles, getArgv, getReadFileWithHooksFiles } from '../../shared/configs';
+import { getAccessFiles } from '../../shared/setup/accessFiles';
+import { getArgv } from '../../shared/setup/argv';
+import { getReadFileWithHooksFiles } from '../../shared/setup/readFileFiles';
 
 describe('command analyse', () => {
   test('it should be complete the yargs command structure', () => {

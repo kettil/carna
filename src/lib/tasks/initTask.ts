@@ -1,31 +1,32 @@
+/* eslint-disable import/max-dependencies */
 import { join } from 'path';
-import gitAdd from '../actions/git/add';
-import gitCommit from '../actions/git/commit';
-import gitInit from '../actions/git/init';
-import nodeFile from '../actions/node/file';
-import nodeFolder from '../actions/node/folder';
-import nodeTemplate from '../actions/node/template';
-import npmInit from '../actions/npm/init';
-import npmInstall from '../actions/npm/install';
-import npmPackageLoad from '../actions/npm/packageLoad';
-import npmPackageUpdate from '../actions/npm/packageUpdate';
+import { gitAddAction } from '../actions/git/add';
+import { gitCommitAction } from '../actions/git/commit';
+import { gitInitAction } from '../actions/git/init';
+import { nodeFileAction } from '../actions/node/file';
+import { nodeFolderAction } from '../actions/node/folder';
+import { nodeTemplateAction } from '../actions/node/template';
+import { npmInitAction } from '../actions/npm/init';
+import { npmInstallAction } from '../actions/npm/install';
+import { npmPackageLoadAction } from '../actions/npm/packageLoad';
+import { npmPackageUpdateAction } from '../actions/npm/packageUpdate';
 import { spinnerAction } from '../cli/spinner';
-import access from '../cmd/access';
-import exec from '../cmd/exec';
+import { access } from '../cmd/access';
+import { exec } from '../cmd/exec';
 import { Action } from '../types';
-import getInitSettings, { InitSettingProps } from './helpers/getInitSettings';
-import getTemplateVariables from './helpers/getInitTemplateVariables';
+import { getInitTaskSettings, InitSettingProps } from '../utils/getInitTaskSettings';
+import { getInitTaskTemplateVariables } from '../utils/getInitTaskTemplateVariables';
 
-export type InitProps = InitSettingProps;
+type InitProps = InitSettingProps;
 
 const initTask: Action<InitProps> = async (argv, props) => {
   const hasGitFolder = await access(join(argv.cwd, '.git'));
-  const settings = getInitSettings(props);
+  const settings = getInitTaskSettings(props);
 
   // npm init
-  await spinnerAction(npmInit(argv, { settings: settings.packageInit }), 'Create the package.json');
+  await spinnerAction(npmInitAction(argv, { settings: settings.packageInit }), 'Create the package.json');
 
-  const packageName = await npmPackageLoad(argv, { key: 'name' });
+  const packageName = await npmPackageLoadAction(argv, { key: 'name' });
 
   if (typeof packageName !== 'string') {
     throw new TypeError('Package name could not be read');
@@ -36,23 +37,26 @@ const initTask: Action<InitProps> = async (argv, props) => {
   }
 
   // git init
-  await spinnerAction(gitInit(argv), 'Create the git repository');
+  await spinnerAction(gitInitAction(argv), 'Create the git repository');
 
   // create folders and files
   await spinnerAction(
-    Promise.all(settings.folders.map((folder) => nodeFolder(argv, { folder }))),
+    Promise.all(settings.folders.map((folder) => nodeFolderAction(argv, { folder }))),
     'Create the project folders',
   );
 
-  await spinnerAction(Promise.all(settings.files.map((file) => nodeFile(argv, { file }))), 'Create the project files');
+  await spinnerAction(
+    Promise.all(settings.files.map((file) => nodeFileAction(argv, { file }))),
+    'Create the project files',
+  );
 
   // create template files
-  const templateVariables = getTemplateVariables(settings);
+  const templateVariables = getInitTaskTemplateVariables(settings);
 
   await spinnerAction(
     Promise.all(
       settings.templates.map(([source, target]) =>
-        nodeTemplate(argv, { source, target, variables: templateVariables }),
+        nodeTemplateAction(argv, { source, target, variables: templateVariables }),
       ),
     ),
     'Create template files',
@@ -60,18 +64,18 @@ const initTask: Action<InitProps> = async (argv, props) => {
 
   // npm install
   await spinnerAction(
-    npmInstall(argv, { packages: settings.libraryProduction, mode: 'prod' }),
+    npmInstallAction(argv, { packages: settings.libraryProduction, mode: 'prod' }),
     'Install prod dependencies',
   );
 
   await spinnerAction(
-    npmInstall(argv, { packages: settings.libraryDevelopment, mode: 'dev' }),
+    npmInstallAction(argv, { packages: settings.libraryDevelopment, mode: 'dev' }),
     'Install dev dependencies',
   );
 
   // update package.json with settings
   await spinnerAction(
-    npmPackageUpdate(argv, {
+    npmPackageUpdateAction(argv, {
       settings: {
         ...settings.packageUpdate,
         bin: settings.packageBin,
@@ -92,11 +96,12 @@ const initTask: Action<InitProps> = async (argv, props) => {
 
   if (!props.noCommit && !hasGitFolder) {
     // git add
-    await spinnerAction(gitAdd(argv, { files: ['.'] }), 'Add files to repository');
+    await spinnerAction(gitAddAction(argv, { files: ['.'] }), 'Add files to repository');
 
     // git commit
-    await spinnerAction(gitCommit(argv, { msg: 'feat: 🐣' }), 'Create the initial commit');
+    await spinnerAction(gitCommitAction(argv, { msg: 'feat: 🐣' }), 'Create the initial commit');
   }
 };
 
-export default initTask;
+export type { InitProps };
+export { initTask };

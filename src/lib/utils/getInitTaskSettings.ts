@@ -1,4 +1,4 @@
-export type InitSettings = {
+type InitSettings = {
   files: string[];
   folders: string[];
   templates: Array<[string, string] | [string]>;
@@ -14,7 +14,7 @@ export type InitSettings = {
   };
 };
 
-export type InitSettingProps = {
+type InitSettingProps = {
   readonly cli: boolean;
   readonly package: boolean;
   // readonly react?: boolean;
@@ -22,7 +22,7 @@ export type InitSettingProps = {
   readonly noCommit: boolean;
 };
 
-const getInitSettings = (props: InitSettingProps): InitSettings => {
+const getInitTaskSettings = (props: InitSettingProps): InitSettings => {
   const settings: InitSettings = {
     files: [],
     folders: ['.vscode', 'src', 'src/lib'],
@@ -174,4 +174,5 @@ const getInitSettings = (props: InitSettingProps): InitSettings => {
   return settings;
 };
 
-export default getInitSettings;
+export type { InitSettings, InitSettingProps };
+export { getInitTaskSettings };

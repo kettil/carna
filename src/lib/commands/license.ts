@@ -1,8 +1,10 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import licenseTask, { LicenseProps } from '../tasks/licenseTask';
+import { licenseTask, LicenseProps } from '../tasks/licenseTask';
 
-export const command = 'license';
-export const desc = 'Run license check';
+const command = 'license';
+const desc = 'Run license check';
 
-export const handler = createHandler<LicenseProps>(licenseTask);
-export const builder = createBuilder<LicenseProps>(command, (yargs) => yargs);
+const handler = createHandler<LicenseProps>(licenseTask);
+const builder = createBuilder<LicenseProps>(command, (yargs) => yargs);
+
+export { command, desc, builder, handler };

@@ -1,8 +1,10 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import depsTask, { DepsProps } from '../tasks/depsTask';
+import { depsTask, DepsProps } from '../tasks/depsTask';
 
-export const command = 'deps';
-export const desc = 'Run dependency check';
+const command = 'deps';
+const desc = 'Run dependency check';
 
-export const handler = createHandler<DepsProps>(depsTask);
-export const builder = createBuilder<DepsProps>(command, (yargs) => yargs);
+const handler = createHandler<DepsProps>(depsTask);
+const builder = createBuilder<DepsProps>(command, (yargs) => yargs);
+
+export { command, desc, builder, handler };

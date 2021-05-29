@@ -1,19 +1,18 @@
 import { uniqueArray } from '@kettil/tool-lib';
-import gitAdd from '../../actions/git/add';
-import gitLs from '../../actions/git/ls';
-import gitStaged from '../../actions/git/staged';
-import { eslintExtensionAll } from '../../actions/tools/eslint';
-import { prettierExtensionAll } from '../../actions/tools/prettier';
-import existFiles from '../../cmd/existFiles';
+import { eslintExtensions, prettierExtensions } from '../../../configs/actionConfigs';
+import { gitAddAction } from '../../actions/git/add';
+import { gitLsAction } from '../../actions/git/ls';
+import { gitStagedAction } from '../../actions/git/staged';
+import { existFiles } from '../../cmd/existFiles';
 import { Task } from '../../types';
-import analyseTask from '../analyseTask';
-import testTask from '../testTask';
+import { analyseTask } from '../analyseTask';
+import { testTask } from '../testTask';
 
-const testEslint = new RegExp(`(${eslintExtensionAll.replace(/,/g, '|')})$`);
-const testPrettier = new RegExp(`(${prettierExtensionAll.replace(/,/g, '|')})$`);
+const testEslint = new RegExp(`(${eslintExtensions.replace(/,/g, '|')})$`);
+const testPrettier = new RegExp(`(${prettierExtensions.replace(/,/g, '|')})$`);
 
 const gitCommitTask: Task = async (argv) => {
-  const stagedFiles = await gitStaged(argv, {});
+  const stagedFiles = await gitStagedAction(argv, {});
 
   if (stagedFiles.length === 0) {
     return;
@@ -24,7 +23,7 @@ const gitCommitTask: Task = async (argv) => {
   const prettierFiles = files.filter((file) => testPrettier.test(file));
   const mergedFiles = uniqueArray([...prettierFiles, ...eslintFiles]);
 
-  const unstagedFiles = await gitLs(argv, { mode: 'all' });
+  const unstagedFiles = await gitLsAction(argv, { mode: 'all' });
   const intersectFiles = mergedFiles.filter((file) => unstagedFiles.includes(file));
 
   if (intersectFiles.length > 0) {
@@ -35,9 +34,9 @@ const gitCommitTask: Task = async (argv) => {
 
   await analyseTask({ ...argv, ci: false }, { eslintFiles, prettierFiles });
 
-  await gitAdd(argv, { files });
+  await gitAddAction(argv, { files });
 
   await testTask({ ...argv, ci: true }, {});
 };
 
-export default gitCommitTask;
+export { gitCommitTask };

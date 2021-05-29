@@ -1,21 +1,6 @@
 import { join } from 'path';
-import { isArray } from '@kettil/tool-lib';
-import { Arguments } from 'yargs';
-import { PropsGlobal } from '../../src/lib/types';
-import { ReaddirMockFiles } from './__mock__/fs';
-
-export const cwd = '/path/to/project';
-
-const cfg = join(cwd, 'node_modules', 'carna', 'configs');
-const tpl = join(cwd, 'node_modules', 'carna', 'templates');
-
-const mockFilePackage = join(cwd, 'package.json');
-const packageJson = {
-  name: 'project-name',
-  license: 'MIT',
-  scripts: {},
-  dependencies: { package: '0.1.0' },
-};
+import { cwd } from './argv';
+import { mockFilePackage, packageJson } from './packageJson';
 
 const coverageForUnit = {
   [join(cwd, 'src', 'index.ts')]: {
@@ -61,86 +46,7 @@ const coverageForE2e = {
   },
 };
 
-export const getArgv = <T extends Record<string, unknown>>(props: T): Arguments<PropsGlobal & T> => {
-  const log = jest.fn((msg: unknown) => {
-    expect(typeof msg === 'string' || isArray(msg)).toBeTruthy();
-  });
-
-  return {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    _: [],
-    $0: '',
-    cwd,
-    cfg,
-    tpl,
-    ci: false,
-    vvv: false,
-    log: { debug: log, error: log, info: log, log },
-    ...props,
-  };
-};
-
-export const getAccessFiles = (files: Record<string, boolean> = {}): Record<string, boolean> => ({
-  [cwd]: true,
-  [cfg]: true,
-  [tpl]: true,
-  [mockFilePackage]: true,
-  [join(cwd, '.git')]: false,
-  [join(cwd, '.github')]: false,
-  [join(cwd, '.github/ISSUE_TEMPLATE')]: false,
-  [join(cwd, '.github/workflows')]: false,
-  [join(cwd, '.carnarc.json')]: false,
-  [join(cwd, '.commitlintrc.js')]: false,
-  [join(cwd, '.commitlintrc.json')]: false,
-  [join(cwd, '.commitlintrc.yml')]: false,
-  [join(cwd, '.eslintrc.js')]: false,
-  [join(cwd, '.eslintrc.cjs')]: false,
-  [join(cwd, '.eslintrc.yaml')]: false,
-  [join(cwd, '.eslintrc.yml')]: false,
-  [join(cwd, '.eslintrc.json')]: false,
-  [join(cwd, '.eslintrc')]: false,
-  [join(cwd, '.prettierrc')]: false,
-  [join(cwd, '.prettierrc.json')]: false,
-  [join(cwd, '.prettierrc.yml')]: false,
-  [join(cwd, '.prettierrc.yaml')]: false,
-  [join(cwd, '.prettierrc.toml')]: false,
-  [join(cwd, '.prettierrc.js')]: false,
-  [join(cwd, 'prettier.config.js')]: false,
-  [join(cwd, 'babel.config.js')]: true,
-  [join(cwd, 'babel.config.json')]: false,
-  [join(cwd, 'commitlint.config.js')]: false,
-  [join(cwd, 'jest.config.ts')]: false,
-  [join(cwd, 'jest.config.js')]: true,
-  [join(cwd, 'tsconfig.json')]: true,
-  [join(cwd, 'tsconfig.build.json')]: true,
-  [join(cwd, 'src/index.ts')]: true,
-  [join(cwd, 'src/index.js')]: false,
-  [join(cwd, 'src/lib/app.ts')]: true,
-  [join(cwd, 'node_modules')]: true,
-  [join(cwd, 'node_modules/module1/package.json')]: true,
-  [join(cwd, 'node_modules/module1/node_modules')]: true,
-  [join(cwd, 'node_modules/module1/node_modules/module1-1')]: true,
-  [join(cwd, 'node_modules/module1/node_modules/module1-1/package.json')]: true,
-  [join(cwd, 'node_modules/module1/node_modules/module1-1/node_modules')]: false,
-  [join(cwd, 'node_modules/module2/package.json')]: true,
-  [join(cwd, 'node_modules/module2/node_modules')]: false,
-  [join(cwd, 'node_modules/module3/package.json')]: true,
-  [join(cwd, 'node_modules/module3/node_modules')]: false,
-  [join(cwd, 'coverage', '_e2e', 'coverage-final.json')]: true,
-  [join(cwd, 'coverage', '_unit', 'coverage-final.json')]: true,
-  [join(cwd, 'tests')]: true,
-  [join(cwd, 'tests', 'e2e', 'pre.ts')]: false,
-  [join(cwd, 'tests', 'e2e', 'pre.js')]: false,
-  [join(cwd, 'tests', 'e2e', 'post.ts')]: false,
-  [join(cwd, 'tests', 'e2e', 'post.js')]: false,
-  [join(cwd, 'tests', 'unit', 'pre.ts')]: false,
-  [join(cwd, 'tests', 'unit', 'pre.js')]: false,
-  [join(cwd, 'tests', 'unit', 'post.ts')]: false,
-  [join(cwd, 'tests', 'unit', 'post.js')]: false,
-  ...files,
-});
-
-export const getReadFileFiles = (files: Record<string, string> = {}): Record<string, string> => ({
+const getReadFileFiles = (files: Record<string, string> = {}): Record<string, string> => ({
   [mockFilePackage]: JSON.stringify(packageJson),
 
   [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'dependabot.yml')]: 'yaml: file',
@@ -193,7 +99,7 @@ export const getReadFileFiles = (files: Record<string, string> = {}): Record<str
   ...files,
 });
 
-export const getReadFileWithHooksFiles = (files: Record<string, string> = {}): Record<string, string> => ({
+const getReadFileWithHooksFiles = (files: Record<string, string> = {}): Record<string, string> => ({
   ...getReadFileFiles(files),
   [mockFilePackage]: JSON.stringify({
     ...packageJson,
@@ -218,30 +124,4 @@ export const getReadFileWithHooksFiles = (files: Record<string, string> = {}): R
   }),
 });
 
-export const getReaddirFiles = (files: ReaddirMockFiles = {}): ReaddirMockFiles => ({
-  [cwd]: [
-    { name: 'node_modules', isFile: () => false, isDirectory: () => true },
-    { name: 'README.md', isFile: () => true, isDirectory: () => false },
-  ],
-  [join(cwd, 'node_modules')]: [
-    { name: 'module1', isFile: () => false, isDirectory: () => true },
-    { name: 'module2', isFile: () => false, isDirectory: () => true },
-    { name: 'module3', isFile: () => false, isDirectory: () => true },
-    { name: 'README.md', isFile: () => true, isDirectory: () => false },
-  ],
-  [join(cwd, 'node_modules', 'module1')]: [
-    { name: 'node_modules', isFile: () => false, isDirectory: () => true },
-    { name: 'README.md', isFile: () => true, isDirectory: () => false },
-    { name: 'package.json', isFile: () => true, isDirectory: () => false },
-  ],
-  [join(cwd, 'node_modules', 'module1', 'node_modules')]: [
-    { name: 'module1-1', isFile: () => false, isDirectory: () => true },
-    { name: 'README.md', isFile: () => true, isDirectory: () => false },
-  ],
-  [join(cwd, 'tests')]: [
-    { name: 'unit', isFile: () => false, isDirectory: () => true },
-    { name: 'e2e', isFile: () => false, isDirectory: () => true },
-    { name: '.gitignore', isFile: () => true, isDirectory: () => false },
-  ],
-  ...files,
-});
+export { getReadFileFiles, getReadFileWithHooksFiles };

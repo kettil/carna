@@ -155,9 +155,9 @@ Object {
 exports[`command ci it should work with hooks: child-process 12`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "--runInBand",
@@ -183,9 +183,9 @@ Object {
 exports[`command ci it should work with hooks: child-process 13`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--runInBand",
@@ -418,9 +418,9 @@ Object {
 exports[`command ci it should work: child-process 6`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "unit",
     "--runInBand",
@@ -446,9 +446,9 @@ Object {
 exports[`command ci it should work: child-process 7`] = `
 Object {
   "args": Array [
-    "--colors",
     "--config",
     "/path/to/project/jest.config.js",
+    "--colors",
     "--selectProjects",
     "e2e",
     "--runInBand",

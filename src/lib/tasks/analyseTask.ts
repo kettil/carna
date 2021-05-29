@@ -1,17 +1,20 @@
-import eslint, { EslintProps } from '../actions/tools/eslint';
-import prettier, { prettierExtensionCi, PrettierProps } from '../actions/tools/prettier';
-import tsc, { getTscConfigPath } from '../actions/tools/tsc';
+import { prettierCiExtensions } from '../../configs/actionConfigs';
+import { eslintAction } from '../actions/tools/eslint';
+import { prettierAction } from '../actions/tools/prettier';
+import { tscAction } from '../actions/tools/tsc';
+import { EslintActionProps, PrettierActionProps } from '../actions/types';
 import { spinnerAction } from '../cli/spinner';
-import FirstExistFileError from '../errors/firstExistFileError';
+import { FirstExistFileError } from '../errors/firstExistFileError';
 import { Task } from '../types';
-import taskHook from './helpers/taskHook';
+import { getTypescriptConfigPath } from '../utils/getTypescriptConfigPath';
+import { taskHook } from '../utils/taskHook';
 
-export const analyseServices = ['eslint', 'prettier', 'typescript'] as const;
+const analyseServices = ['eslint', 'prettier', 'typescript'] as const;
 
 const isSelectedService = (value: string | undefined, service: typeof analyseServices[number]): boolean =>
   typeof value === 'undefined' || value === service;
 
-export type AnalyseProps = {
+type AnalyseProps = {
   only?: typeof analyseServices[number];
   // internal
   prettierFiles?: string[];
@@ -22,28 +25,28 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, pretti
   await taskHook(argv, { task: 'analyse', type: 'pre' });
 
   if (isSelectedService(only, 'prettier')) {
-    const prettierOptions: PrettierProps = {
+    const prettierOptions: PrettierActionProps = {
       write: !argv.ci,
-      extension: argv.ci ? prettierExtensionCi : undefined,
+      extension: argv.ci ? prettierCiExtensions : undefined,
       files: prettierFiles,
     };
 
-    await spinnerAction(prettier(argv, prettierOptions), 'Analyse: Prettier');
+    await spinnerAction(prettierAction(argv, prettierOptions), 'Analyse: Prettier');
   }
 
   if (isSelectedService(only, 'eslint')) {
-    const eslintOptions: EslintProps = {
+    const eslintOptions: EslintActionProps = {
       write: !argv.ci,
       files: eslintFiles,
     };
 
-    await spinnerAction(eslint(argv, eslintOptions), 'Analyse: ESLint');
+    await spinnerAction(eslintAction(argv, eslintOptions), 'Analyse: ESLint');
   }
 
   if (isSelectedService(only, 'typescript')) {
     try {
-      await getTscConfigPath(argv.cwd, 'type-check');
-      await spinnerAction(tsc(argv, { mode: 'type-check' }), 'Analyse: Typescript');
+      await getTypescriptConfigPath(argv.cwd, 'type-check');
+      await spinnerAction(tscAction(argv, { mode: 'type-check' }), 'Analyse: Typescript');
     } catch (error) {
       if (error instanceof FirstExistFileError) {
         argv.log.info('Typing check is skipped (tsconfig.json was not found) ');
@@ -56,4 +59,5 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, eslintFiles, pretti
   await taskHook(argv, { task: 'analyse', type: 'post' });
 };
 
-export default analyseTask;
+export type { AnalyseProps };
+export { analyseTask, analyseServices };

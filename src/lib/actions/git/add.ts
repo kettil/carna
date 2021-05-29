@@ -1,11 +1,11 @@
-import exec from '../../cmd/exec';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 
 type Props = {
   files: string[];
 };
 
-const gitAdd: Action<Props> = async ({ cwd, log }, { files }) => {
+const gitAddAction: Action<Props> = async ({ cwd, log }, { files }) => {
   if (files.length === 0) {
     return;
   }
@@ -16,4 +16,4 @@ const gitAdd: Action<Props> = async ({ cwd, log }, { files }) => {
   await exec({ cmd: 'git', args: ['add', ...files.map((file) => (file === '.' ? '.' : `"${file}"`))], cwd, log });
 };
 
-export default gitAdd;
+export { gitAddAction };

@@ -1,13 +1,13 @@
 import { join } from 'path';
-import access from '../../cmd/access';
-import mkdir from '../../cmd/mkdir';
+import { access } from '../../cmd/access';
+import { mkdir } from '../../cmd/mkdir';
 import { Action } from '../../types';
 
 type Props = {
   folder: string;
 };
 
-const nodeFolder: Action<Props> = async ({ cwd, log }, { folder }) => {
+const nodeFolderAction: Action<Props> = async ({ cwd, log }, { folder }) => {
   const path = join(cwd, folder);
   const isExists = await access(path);
 
@@ -19,4 +19,4 @@ const nodeFolder: Action<Props> = async ({ cwd, log }, { folder }) => {
   }
 };
 
-export default nodeFolder;
+export { nodeFolderAction };

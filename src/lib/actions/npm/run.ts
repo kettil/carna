@@ -1,13 +1,13 @@
-import exec from '../../cmd/exec';
+import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 
 type Props = {
   script: string;
 };
 
-const npmRun: Action<Props> = async ({ cwd, log }, { script }) => {
+const npmRunAction: Action<Props> = async ({ cwd, log }, { script }) => {
   log.info(`The npm script "${script}" is executed`);
   await exec({ cmd: 'npm', args: ['run', script], cwd, log });
 };
 
-export default npmRun;
+export { npmRunAction };

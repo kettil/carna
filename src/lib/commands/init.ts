@@ -1,13 +1,13 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import initTask, { InitProps } from '../tasks/initTask';
+import { initTask, InitProps } from '../tasks/initTask';
 
-export const command = 'init';
-export const desc = 'Initializes the project';
+const command = 'init';
+const desc = 'Initializes the project';
 
 const args = { type: 'boolean', default: false, group: `${command}-Options:` } as const;
 
-export const handler = createHandler<InitProps>(initTask);
-export const builder = createBuilder<InitProps>(command, (yargs) =>
+const handler = createHandler<InitProps>(initTask);
+const builder = createBuilder<InitProps>(command, (yargs) =>
   yargs.options({
     package: { ...args, alias: 'p', desc: 'Project is created as a package' },
     cli: { ...args, alias: 'c', implies: 'package', desc: 'Extends the package with CLI features' },
@@ -19,3 +19,5 @@ export const builder = createBuilder<InitProps>(command, (yargs) =>
     noCommit: { ...args, desc: 'No initial commit is executed at the end' },
   }),
 );
+
+export { command, desc, builder, handler };

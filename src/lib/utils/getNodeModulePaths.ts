@@ -1,8 +1,8 @@
 import { join } from 'path';
-import access from '../../../cmd/access';
-import readdir from '../../../cmd/readdir';
+import { access } from '../cmd/access';
+import { readdir } from '../cmd/readdir';
 
-const getPackagePaths = async (packagePath: string): Promise<readonly string[]> => {
+const getNodeModulePaths = async (packagePath: string): Promise<readonly string[]> => {
   const nodeModulesPath = join(packagePath, 'node_modules');
   const packagePaths: string[] = [packagePath];
 
@@ -13,7 +13,7 @@ const getPackagePaths = async (packagePath: string): Promise<readonly string[]> 
 
     const filePromises = files
       .filter((file) => file.isDirectory() && !file.name.startsWith('.'))
-      .map((folder) => getPackagePaths(join(nodeModulesPath, folder.name)));
+      .map((folder) => getNodeModulePaths(join(nodeModulesPath, folder.name)));
 
     packagePaths.push(...(await Promise.all(filePromises)).flat());
   }
@@ -21,4 +21,4 @@ const getPackagePaths = async (packagePath: string): Promise<readonly string[]> 
   return packagePaths;
 };
 
-export default getPackagePaths;
+export { getNodeModulePaths };

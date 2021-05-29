@@ -13,4 +13,4 @@ const licenseHeuristics: LicenseHeuristics = {
   'WTFPL*': /DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE/u,
 };
 
-export default licenseHeuristics;
+export { licenseHeuristics };

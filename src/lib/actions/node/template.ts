@@ -1,10 +1,10 @@
 import { join } from 'path';
 import { objectEntries } from '@kettil/tool-lib';
-import readFile from '../../cmd/readFile';
-import writeFile from '../../cmd/writeFile';
+import { readFile } from '../../cmd/readFile';
+import { writeFile } from '../../cmd/writeFile';
 import { Action } from '../../types';
 
-export type TemplateVariable = Record<string, boolean | number | string> | boolean | string | undefined;
+type TemplateVariable = Record<string, boolean | number | string> | boolean | string | undefined;
 
 type Props = {
   source: string;
@@ -33,7 +33,7 @@ const replaceKey = (text: string, key: string, value: TemplateVariable): string 
   return text.replace(new RegExp(a, 'g'), value);
 };
 
-const nodeTemplate: Action<Props> = async ({ cwd, tpl, log }, { source, target = source, variables }) => {
+const nodeTemplateAction: Action<Props> = async ({ cwd, tpl, log }, { source, target = source, variables }) => {
   try {
     log.debug(`Read the template file ${source}`);
 
@@ -52,4 +52,5 @@ const nodeTemplate: Action<Props> = async ({ cwd, tpl, log }, { source, target =
   }
 };
 
-export default nodeTemplate;
+export type { TemplateVariable };
+export { nodeTemplateAction };

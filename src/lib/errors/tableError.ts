@@ -4,4 +4,4 @@ class TableError extends Error {
   }
 }
 
-export default TableError;
+export { TableError };

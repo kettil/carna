@@ -1,4 +1,4 @@
-import { LicensePackageInfo } from '../../../types';
+import { LicensePackageInfo } from '../types';
 
 type IsLicenseCompatible = (props: {
   packageInfo: LicensePackageInfo;
@@ -17,4 +17,4 @@ const isLicenseCompatible: IsLicenseCompatible = (props) => {
   return compatibleLicences.includes(license.toUpperCase());
 };
 
-export default isLicenseCompatible;
+export { isLicenseCompatible };

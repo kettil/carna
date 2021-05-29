@@ -1,22 +1,24 @@
-import npmPackageLoad from '../actions/npm/packageLoad';
-import babel, { getBabelConfigPath } from '../actions/tools/babel';
-import tsc, { getTscConfigPath } from '../actions/tools/tsc';
+import { npmPackageLoadAction } from '../actions/npm/packageLoad';
+import { babelAction } from '../actions/tools/babel';
+import { tscAction } from '../actions/tools/tsc';
 import { spinnerAction } from '../cli/spinner';
-import FirstExistFileError from '../errors/firstExistFileError';
+import { FirstExistFileError } from '../errors/firstExistFileError';
 import { Task } from '../types';
-import taskHook from './helpers/taskHook';
+import { getBabelConfigPath } from '../utils/getConfigPath';
+import { getTypescriptConfigPath } from '../utils/getTypescriptConfigPath';
+import { taskHook } from '../utils/taskHook';
 
-export type BuildProps = {};
+type BuildProps = {};
 
 const buildTask: Task<BuildProps> = async (argv) => {
   await taskHook(argv, { task: 'build', type: 'pre' });
 
-  const isPrivate = await npmPackageLoad(argv, { key: 'private' });
+  const isPrivate = await npmPackageLoadAction(argv, { key: 'private' });
 
   if (isPrivate !== true) {
     try {
-      await getTscConfigPath(argv.cwd, 'type-create');
-      await spinnerAction(tsc(argv, { mode: 'type-create' }), 'Build: Typescript');
+      await getTypescriptConfigPath(argv.cwd, 'type-create');
+      await spinnerAction(tscAction(argv, { mode: 'type-create' }), 'Build: Typescript');
     } catch (error) {
       if (!(error instanceof FirstExistFileError)) {
         throw error;
@@ -25,8 +27,8 @@ const buildTask: Task<BuildProps> = async (argv) => {
   }
 
   try {
-    await getBabelConfigPath(argv.cwd);
-    await spinnerAction(babel(argv), 'Build: Babel');
+    await getBabelConfigPath({ cwd: argv.cwd });
+    await spinnerAction(babelAction(argv), 'Build: Babel');
   } catch (error) {
     if (!(error instanceof FirstExistFileError)) {
       throw error;
@@ -36,4 +38,5 @@ const buildTask: Task<BuildProps> = async (argv) => {
   await taskHook(argv, { task: 'build', type: 'post' });
 };
 
-export default buildTask;
+export type { BuildProps };
+export { buildTask };
