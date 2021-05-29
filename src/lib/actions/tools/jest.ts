@@ -6,7 +6,7 @@ import { getCoverageFolder } from '../../utils/getCoverageFolder';
 import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
 import { JestActionProps } from '../types';
 
-const options: Array<keyof JestActionProps> = ['updateSnapshot', 'runInBand', 'watch'];
+const options: Array<keyof JestActionProps> = ['updateSnapshot', 'runInBand', 'watch', 'verbose'];
 
 const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
   const coverageFolder = getCoverageFolder(cwd, props.projects);
@@ -29,9 +29,7 @@ const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
 
   if (!props.runInBand) {
     // see https://ivantanev.com/make-jest-faster
-    if (ci) {
-      args.push('--runInBand');
-    } else if (props.watch) {
+    if (props.watch) {
       args.push('--maxWorkers', '25%');
     } else {
       args.push('--maxWorkers', '50%');
@@ -40,7 +38,6 @@ const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
 
   if (ci) {
     args.push('--ci');
-    args.push('--verbose');
     args.push('--silent');
     args.push('--json');
     args.push('--outputFile', join(coverageFolder, 'jest-final.json'));

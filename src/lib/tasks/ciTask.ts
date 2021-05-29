@@ -15,7 +15,7 @@ const ciTask: Task<CiProps> = async (argv) => {
 
   await buildTask(extendArgv, {});
   await analyseTask(extendArgv, {});
-  await testTask(extendArgv, {});
+  await testTask(extendArgv, { verbose: true, runInBand: true });
   await licenseTask(extendArgv, {});
   await depsTask(extendArgv, {});
 
