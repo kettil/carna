@@ -13,6 +13,7 @@ describe('command init (app)', () => {
         [join(cwd, 'src')]: false,
         [join(cwd, 'src/bin')]: false,
         [join(cwd, 'src/lib')]: false,
+        [join(cwd, 'src/lib/utils')]: false,
         [join(cwd, 'src/lib/types.ts')]: false,
         [join(cwd, 'tests')]: false,
         [join(cwd, 'tests', 'shared', '__mock__')]: false,

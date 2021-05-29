@@ -91,7 +91,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/src/bin",
+  "path": "/path/to/project/src/lib/utils",
 }
 `;
 
@@ -100,7 +100,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared/__mock__",
+  "path": "/path/to/project/src/bin",
 }
 `;
 
@@ -109,7 +109,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/type",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -118,7 +118,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/unit",
+  "path": "/path/to/project/tests/type",
 }
 `;
 
@@ -127,7 +127,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/integration",
+  "path": "/path/to/project/tests/unit",
 }
 `;
 
@@ -136,15 +136,16 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/e2e",
+  "path": "/path/to/project/tests/integration",
 }
 `;
 
 exports[`command init (cli) it should work with hooks and with init commit: fs 10`] = `
 Object {
-  "data": "
-",
-  "path": "/path/to/project/src/lib/types.ts",
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
 }
 `;
 
@@ -152,7 +153,7 @@ exports[`command init (cli) it should work with hooks and with init commit: fs 1
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/__mock__/.keep",
+  "path": "/path/to/project/src/lib/types.ts",
 }
 `;
 
@@ -160,11 +161,19 @@ exports[`command init (cli) it should work with hooks and with init commit: fs 1
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/type/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
 exports[`command init (cli) it should work with hooks and with init commit: fs 13`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (cli) it should work with hooks and with init commit: fs 14`] = `
 Object {
   "data": "{\\"file\\":\\"settings.json\\"}
 ",
@@ -172,7 +181,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 14`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 15`] = `
 Object {
   "data": "{\\"file\\":\\"carnarc.json\\"}
 ",
@@ -180,7 +189,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 15`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 16`] = `
 Object {
   "data": "editorconfig
 ",
@@ -188,7 +197,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 16`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 17`] = `
 Object {
   "data": "eslintignore
 ",
@@ -196,7 +205,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 17`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 18`] = `
 Object {
   "data": "gitignore
 ",
@@ -204,7 +213,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 18`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 19`] = `
 Object {
   "data": "npmignore
 ",
@@ -212,7 +221,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 19`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 20`] = `
 Object {
   "data": "prettierignore
 ",
@@ -220,7 +229,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 20`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 21`] = `
 Object {
   "data": "// babel.config.js
 ",
@@ -228,7 +237,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 21`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 22`] = `
 Object {
   "data": "{\\"file\\":\\"releaserc.json\\"}
 ",
@@ -236,7 +245,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 22`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 23`] = `
 Object {
   "data": "// index.ts
 ",
@@ -244,7 +253,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 23`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 24`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.json\\"}
 ",
@@ -252,7 +261,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 24`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 25`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
 ",
@@ -260,7 +269,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 25`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 26`] = `
 Object {
   "data": "// jest.config.js
 ",
@@ -268,7 +277,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 26`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 27`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -276,7 +285,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 27`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 28`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -284,7 +293,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 28`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 29`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -292,7 +301,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 29`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 30`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -300,7 +309,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 30`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 31`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -308,7 +317,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 31`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 32`] = `
 Object {
   "data": "// post.ts
 ",
@@ -316,7 +325,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 32`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 33`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -324,7 +333,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 33`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 34`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -332,7 +341,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 34`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 35`] = `
 Object {
   "data": "// post.ts
 ",
@@ -340,7 +349,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and with init commit: fs 35`] = `
+exports[`command init (cli) it should work with hooks and with init commit: fs 36`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -451,7 +460,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/src/bin",
+  "path": "/path/to/project/src/lib/utils",
 }
 `;
 
@@ -460,7 +469,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared/__mock__",
+  "path": "/path/to/project/src/bin",
 }
 `;
 
@@ -469,7 +478,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/type",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -478,7 +487,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/unit",
+  "path": "/path/to/project/tests/type",
 }
 `;
 
@@ -487,7 +496,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/integration",
+  "path": "/path/to/project/tests/unit",
 }
 `;
 
@@ -496,15 +505,16 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/e2e",
+  "path": "/path/to/project/tests/integration",
 }
 `;
 
 exports[`command init (cli) it should work with hooks and without init commit: fs 10`] = `
 Object {
-  "data": "
-",
-  "path": "/path/to/project/src/lib/types.ts",
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
 }
 `;
 
@@ -512,7 +522,7 @@ exports[`command init (cli) it should work with hooks and without init commit: f
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/__mock__/.keep",
+  "path": "/path/to/project/src/lib/types.ts",
 }
 `;
 
@@ -520,11 +530,19 @@ exports[`command init (cli) it should work with hooks and without init commit: f
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/type/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
 exports[`command init (cli) it should work with hooks and without init commit: fs 13`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (cli) it should work with hooks and without init commit: fs 14`] = `
 Object {
   "data": "{\\"file\\":\\"settings.json\\"}
 ",
@@ -532,7 +550,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 14`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 15`] = `
 Object {
   "data": "{\\"file\\":\\"carnarc.json\\"}
 ",
@@ -540,7 +558,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 15`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 16`] = `
 Object {
   "data": "editorconfig
 ",
@@ -548,7 +566,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 16`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 17`] = `
 Object {
   "data": "eslintignore
 ",
@@ -556,7 +574,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 17`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 18`] = `
 Object {
   "data": "gitignore
 ",
@@ -564,7 +582,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 18`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 19`] = `
 Object {
   "data": "npmignore
 ",
@@ -572,7 +590,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 19`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 20`] = `
 Object {
   "data": "prettierignore
 ",
@@ -580,7 +598,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 20`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 21`] = `
 Object {
   "data": "// babel.config.js
 ",
@@ -588,7 +606,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 21`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 22`] = `
 Object {
   "data": "{\\"file\\":\\"releaserc.json\\"}
 ",
@@ -596,7 +614,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 22`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 23`] = `
 Object {
   "data": "// index.ts
 ",
@@ -604,7 +622,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 23`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 24`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.json\\"}
 ",
@@ -612,7 +630,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 24`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 25`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
 ",
@@ -620,7 +638,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 25`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 26`] = `
 Object {
   "data": "// jest.config.js
 ",
@@ -628,7 +646,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 26`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 27`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -636,7 +654,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 27`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 28`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -644,7 +662,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 28`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 29`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -652,7 +670,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 29`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 30`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -660,7 +678,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 30`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 31`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -668,7 +686,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 31`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 32`] = `
 Object {
   "data": "// post.ts
 ",
@@ -676,7 +694,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 32`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 33`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -684,7 +702,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 33`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 34`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -692,7 +710,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 34`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 35`] = `
 Object {
   "data": "// post.ts
 ",
@@ -700,7 +718,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with hooks and without init commit: fs 35`] = `
+exports[`command init (cli) it should work with hooks and without init commit: fs 36`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -834,7 +852,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/.github",
+  "path": "/path/to/project/src/lib/utils",
 }
 `;
 
@@ -843,7 +861,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/.github/workflows",
+  "path": "/path/to/project/.github",
 }
 `;
 
@@ -852,7 +870,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/.github/ISSUE_TEMPLATE",
+  "path": "/path/to/project/.github/workflows",
 }
 `;
 
@@ -861,7 +879,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/src/bin",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE",
 }
 `;
 
@@ -870,7 +888,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared/__mock__",
+  "path": "/path/to/project/src/bin",
 }
 `;
 
@@ -879,7 +897,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/type",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -888,7 +906,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/unit",
+  "path": "/path/to/project/tests/type",
 }
 `;
 
@@ -897,7 +915,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/integration",
+  "path": "/path/to/project/tests/unit",
 }
 `;
 
@@ -906,15 +924,16 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/e2e",
+  "path": "/path/to/project/tests/integration",
 }
 `;
 
 exports[`command init (cli) it should work with init commit and with github username: fs 13`] = `
 Object {
-  "data": "
-",
-  "path": "/path/to/project/src/lib/types.ts",
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
 }
 `;
 
@@ -922,7 +941,7 @@ exports[`command init (cli) it should work with init commit and with github user
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/__mock__/.keep",
+  "path": "/path/to/project/src/lib/types.ts",
 }
 `;
 
@@ -930,11 +949,19 @@ exports[`command init (cli) it should work with init commit and with github user
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/type/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
 exports[`command init (cli) it should work with init commit and with github username: fs 16`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (cli) it should work with init commit and with github username: fs 17`] = `
 Object {
   "data": "{\\"file\\":\\"settings.json\\"}
 ",
@@ -942,7 +969,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 17`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 18`] = `
 Object {
   "data": "{\\"file\\":\\"carnarc.json\\"}
 ",
@@ -950,7 +977,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 18`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 19`] = `
 Object {
   "data": "editorconfig
 ",
@@ -958,7 +985,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 19`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 20`] = `
 Object {
   "data": "eslintignore
 ",
@@ -966,7 +993,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 20`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 21`] = `
 Object {
   "data": "gitignore
 ",
@@ -974,7 +1001,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 21`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 22`] = `
 Object {
   "data": "npmignore
 ",
@@ -982,7 +1009,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 22`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 23`] = `
 Object {
   "data": "prettierignore
 ",
@@ -990,7 +1017,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 23`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 24`] = `
 Object {
   "data": "// babel.config.js
 ",
@@ -998,7 +1025,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 24`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 25`] = `
 Object {
   "data": "yaml: file
 ",
@@ -1006,7 +1033,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 25`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 26`] = `
 Object {
   "data": "* @username
 ",
@@ -1014,7 +1041,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 26`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 27`] = `
 Object {
   "data": "yml: file
 ",
@@ -1022,7 +1049,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 27`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 28`] = `
 Object {
   "data": "# markdown
 ",
@@ -1030,7 +1057,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 28`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 29`] = `
 Object {
   "data": "# markdown
 ",
@@ -1038,7 +1065,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 29`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 30`] = `
 Object {
   "data": "# markdown
 ",
@@ -1046,7 +1073,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 30`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 31`] = `
 Object {
   "data": "# markdown
 ",
@@ -1054,7 +1081,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 31`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 32`] = `
 Object {
   "data": "# markdown
 ",
@@ -1062,7 +1089,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 32`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 33`] = `
 Object {
   "data": "# markdown
 ",
@@ -1070,7 +1097,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 33`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 34`] = `
 Object {
   "data": "yml: file
 ",
@@ -1078,7 +1105,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 34`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 35`] = `
 Object {
   "data": "{\\"file\\":\\"releaserc.json\\"}
 ",
@@ -1086,7 +1113,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 35`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 36`] = `
 Object {
   "data": "// index.ts
 ",
@@ -1094,7 +1121,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 36`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 37`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.json\\"}
 ",
@@ -1102,7 +1129,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 37`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 38`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
 ",
@@ -1110,7 +1137,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 38`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 39`] = `
 Object {
   "data": "// jest.config.js
 ",
@@ -1118,7 +1145,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 39`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 40`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1126,7 +1153,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 40`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 41`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1134,7 +1161,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 41`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 42`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1142,7 +1169,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 42`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 43`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -1150,7 +1177,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 43`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 44`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1158,7 +1185,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 44`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 45`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1166,7 +1193,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 45`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 46`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -1174,7 +1201,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 46`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 47`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1182,7 +1209,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 47`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 48`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1190,7 +1217,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit and with github username: fs 48`] = `
+exports[`command init (cli) it should work with init commit and with github username: fs 49`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -1308,7 +1335,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/src/bin",
+  "path": "/path/to/project/src/lib/utils",
 }
 `;
 
@@ -1317,7 +1344,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared/__mock__",
+  "path": "/path/to/project/src/bin",
 }
 `;
 
@@ -1326,7 +1353,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/type",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -1335,7 +1362,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/unit",
+  "path": "/path/to/project/tests/type",
 }
 `;
 
@@ -1344,7 +1371,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/integration",
+  "path": "/path/to/project/tests/unit",
 }
 `;
 
@@ -1353,15 +1380,16 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/e2e",
+  "path": "/path/to/project/tests/integration",
 }
 `;
 
 exports[`command init (cli) it should work with init commit: fs 10`] = `
 Object {
-  "data": "
-",
-  "path": "/path/to/project/src/lib/types.ts",
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
 }
 `;
 
@@ -1369,7 +1397,7 @@ exports[`command init (cli) it should work with init commit: fs 11`] = `
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/__mock__/.keep",
+  "path": "/path/to/project/src/lib/types.ts",
 }
 `;
 
@@ -1377,11 +1405,19 @@ exports[`command init (cli) it should work with init commit: fs 12`] = `
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/type/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
 exports[`command init (cli) it should work with init commit: fs 13`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (cli) it should work with init commit: fs 14`] = `
 Object {
   "data": "{\\"file\\":\\"settings.json\\"}
 ",
@@ -1389,7 +1425,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 14`] = `
+exports[`command init (cli) it should work with init commit: fs 15`] = `
 Object {
   "data": "{\\"file\\":\\"carnarc.json\\"}
 ",
@@ -1397,7 +1433,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 15`] = `
+exports[`command init (cli) it should work with init commit: fs 16`] = `
 Object {
   "data": "editorconfig
 ",
@@ -1405,7 +1441,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 16`] = `
+exports[`command init (cli) it should work with init commit: fs 17`] = `
 Object {
   "data": "eslintignore
 ",
@@ -1413,7 +1449,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 17`] = `
+exports[`command init (cli) it should work with init commit: fs 18`] = `
 Object {
   "data": "gitignore
 ",
@@ -1421,7 +1457,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 18`] = `
+exports[`command init (cli) it should work with init commit: fs 19`] = `
 Object {
   "data": "npmignore
 ",
@@ -1429,7 +1465,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 19`] = `
+exports[`command init (cli) it should work with init commit: fs 20`] = `
 Object {
   "data": "prettierignore
 ",
@@ -1437,7 +1473,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 20`] = `
+exports[`command init (cli) it should work with init commit: fs 21`] = `
 Object {
   "data": "// babel.config.js
 ",
@@ -1445,7 +1481,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 21`] = `
+exports[`command init (cli) it should work with init commit: fs 22`] = `
 Object {
   "data": "{\\"file\\":\\"releaserc.json\\"}
 ",
@@ -1453,7 +1489,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 22`] = `
+exports[`command init (cli) it should work with init commit: fs 23`] = `
 Object {
   "data": "// index.ts
 ",
@@ -1461,7 +1497,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 23`] = `
+exports[`command init (cli) it should work with init commit: fs 24`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.json\\"}
 ",
@@ -1469,7 +1505,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 24`] = `
+exports[`command init (cli) it should work with init commit: fs 25`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
 ",
@@ -1477,7 +1513,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 25`] = `
+exports[`command init (cli) it should work with init commit: fs 26`] = `
 Object {
   "data": "// jest.config.js
 ",
@@ -1485,7 +1521,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 26`] = `
+exports[`command init (cli) it should work with init commit: fs 27`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1493,7 +1529,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 27`] = `
+exports[`command init (cli) it should work with init commit: fs 28`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1501,7 +1537,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 28`] = `
+exports[`command init (cli) it should work with init commit: fs 29`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1509,7 +1545,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 29`] = `
+exports[`command init (cli) it should work with init commit: fs 30`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -1517,7 +1553,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 30`] = `
+exports[`command init (cli) it should work with init commit: fs 31`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1525,7 +1561,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 31`] = `
+exports[`command init (cli) it should work with init commit: fs 32`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1533,7 +1569,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 32`] = `
+exports[`command init (cli) it should work with init commit: fs 33`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -1541,7 +1577,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 33`] = `
+exports[`command init (cli) it should work with init commit: fs 34`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1549,7 +1585,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 34`] = `
+exports[`command init (cli) it should work with init commit: fs 35`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1557,7 +1593,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work with init commit: fs 35`] = `
+exports[`command init (cli) it should work with init commit: fs 36`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -1652,7 +1688,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/.github",
+  "path": "/path/to/project/src/lib/utils",
 }
 `;
 
@@ -1661,7 +1697,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/.github/workflows",
+  "path": "/path/to/project/.github",
 }
 `;
 
@@ -1670,7 +1706,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/.github/ISSUE_TEMPLATE",
+  "path": "/path/to/project/.github/workflows",
 }
 `;
 
@@ -1679,7 +1715,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/src/bin",
+  "path": "/path/to/project/.github/ISSUE_TEMPLATE",
 }
 `;
 
@@ -1688,7 +1724,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared/__mock__",
+  "path": "/path/to/project/src/bin",
 }
 `;
 
@@ -1697,7 +1733,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/type",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -1706,7 +1742,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/unit",
+  "path": "/path/to/project/tests/type",
 }
 `;
 
@@ -1715,7 +1751,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/integration",
+  "path": "/path/to/project/tests/unit",
 }
 `;
 
@@ -1724,15 +1760,16 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/e2e",
+  "path": "/path/to/project/tests/integration",
 }
 `;
 
 exports[`command init (cli) it should work without init commit and with github username: fs 13`] = `
 Object {
-  "data": "
-",
-  "path": "/path/to/project/src/lib/types.ts",
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
 }
 `;
 
@@ -1740,7 +1777,7 @@ exports[`command init (cli) it should work without init commit and with github u
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/__mock__/.keep",
+  "path": "/path/to/project/src/lib/types.ts",
 }
 `;
 
@@ -1748,11 +1785,19 @@ exports[`command init (cli) it should work without init commit and with github u
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/type/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
 exports[`command init (cli) it should work without init commit and with github username: fs 16`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (cli) it should work without init commit and with github username: fs 17`] = `
 Object {
   "data": "{\\"file\\":\\"settings.json\\"}
 ",
@@ -1760,7 +1805,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 17`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 18`] = `
 Object {
   "data": "{\\"file\\":\\"carnarc.json\\"}
 ",
@@ -1768,7 +1813,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 18`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 19`] = `
 Object {
   "data": "editorconfig
 ",
@@ -1776,7 +1821,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 19`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 20`] = `
 Object {
   "data": "eslintignore
 ",
@@ -1784,7 +1829,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 20`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 21`] = `
 Object {
   "data": "gitignore
 ",
@@ -1792,7 +1837,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 21`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 22`] = `
 Object {
   "data": "npmignore
 ",
@@ -1800,7 +1845,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 22`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 23`] = `
 Object {
   "data": "prettierignore
 ",
@@ -1808,7 +1853,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 23`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 24`] = `
 Object {
   "data": "// babel.config.js
 ",
@@ -1816,7 +1861,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 24`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 25`] = `
 Object {
   "data": "yaml: file
 ",
@@ -1824,7 +1869,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 25`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 26`] = `
 Object {
   "data": "* @username
 ",
@@ -1832,7 +1877,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 26`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 27`] = `
 Object {
   "data": "yml: file
 ",
@@ -1840,7 +1885,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 27`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 28`] = `
 Object {
   "data": "# markdown
 ",
@@ -1848,7 +1893,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 28`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 29`] = `
 Object {
   "data": "# markdown
 ",
@@ -1856,7 +1901,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 29`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 30`] = `
 Object {
   "data": "# markdown
 ",
@@ -1864,7 +1909,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 30`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 31`] = `
 Object {
   "data": "# markdown
 ",
@@ -1872,7 +1917,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 31`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 32`] = `
 Object {
   "data": "# markdown
 ",
@@ -1880,7 +1925,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 32`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 33`] = `
 Object {
   "data": "# markdown
 ",
@@ -1888,7 +1933,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 33`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 34`] = `
 Object {
   "data": "yml: file
 ",
@@ -1896,7 +1941,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 34`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 35`] = `
 Object {
   "data": "{\\"file\\":\\"releaserc.json\\"}
 ",
@@ -1904,7 +1949,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 35`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 36`] = `
 Object {
   "data": "// index.ts
 ",
@@ -1912,7 +1957,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 36`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 37`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.json\\"}
 ",
@@ -1920,7 +1965,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 37`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 38`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
 ",
@@ -1928,7 +1973,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 38`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 39`] = `
 Object {
   "data": "// jest.config.js
 ",
@@ -1936,7 +1981,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 39`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 40`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1944,7 +1989,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 40`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 41`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1952,7 +1997,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 41`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 42`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -1960,7 +2005,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 42`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 43`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -1968,7 +2013,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 43`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 44`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -1976,7 +2021,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 44`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 45`] = `
 Object {
   "data": "// post.ts
 ",
@@ -1984,7 +2029,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 45`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 46`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -1992,7 +2037,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 46`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 47`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -2000,7 +2045,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 47`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 48`] = `
 Object {
   "data": "// post.ts
 ",
@@ -2008,7 +2053,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit and with github username: fs 48`] = `
+exports[`command init (cli) it should work without init commit and with github username: fs 49`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",
@@ -2103,7 +2148,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/src/bin",
+  "path": "/path/to/project/src/lib/utils",
 }
 `;
 
@@ -2112,7 +2157,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/shared/__mock__",
+  "path": "/path/to/project/src/bin",
 }
 `;
 
@@ -2121,7 +2166,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/type",
+  "path": "/path/to/project/tests/shared/__mock__",
 }
 `;
 
@@ -2130,7 +2175,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/unit",
+  "path": "/path/to/project/tests/type",
 }
 `;
 
@@ -2139,7 +2184,7 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/integration",
+  "path": "/path/to/project/tests/unit",
 }
 `;
 
@@ -2148,15 +2193,16 @@ Object {
   "options": Object {
     "recursive": true,
   },
-  "path": "/path/to/project/tests/e2e",
+  "path": "/path/to/project/tests/integration",
 }
 `;
 
 exports[`command init (cli) it should work without init commit: fs 10`] = `
 Object {
-  "data": "
-",
-  "path": "/path/to/project/src/lib/types.ts",
+  "options": Object {
+    "recursive": true,
+  },
+  "path": "/path/to/project/tests/e2e",
 }
 `;
 
@@ -2164,7 +2210,7 @@ exports[`command init (cli) it should work without init commit: fs 11`] = `
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/shared/__mock__/.keep",
+  "path": "/path/to/project/src/lib/types.ts",
 }
 `;
 
@@ -2172,11 +2218,19 @@ exports[`command init (cli) it should work without init commit: fs 12`] = `
 Object {
   "data": "
 ",
-  "path": "/path/to/project/tests/type/.keep",
+  "path": "/path/to/project/tests/shared/__mock__/.keep",
 }
 `;
 
 exports[`command init (cli) it should work without init commit: fs 13`] = `
+Object {
+  "data": "
+",
+  "path": "/path/to/project/tests/type/.keep",
+}
+`;
+
+exports[`command init (cli) it should work without init commit: fs 14`] = `
 Object {
   "data": "{\\"file\\":\\"settings.json\\"}
 ",
@@ -2184,7 +2238,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 14`] = `
+exports[`command init (cli) it should work without init commit: fs 15`] = `
 Object {
   "data": "{\\"file\\":\\"carnarc.json\\"}
 ",
@@ -2192,7 +2246,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 15`] = `
+exports[`command init (cli) it should work without init commit: fs 16`] = `
 Object {
   "data": "editorconfig
 ",
@@ -2200,7 +2254,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 16`] = `
+exports[`command init (cli) it should work without init commit: fs 17`] = `
 Object {
   "data": "eslintignore
 ",
@@ -2208,7 +2262,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 17`] = `
+exports[`command init (cli) it should work without init commit: fs 18`] = `
 Object {
   "data": "gitignore
 ",
@@ -2216,7 +2270,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 18`] = `
+exports[`command init (cli) it should work without init commit: fs 19`] = `
 Object {
   "data": "npmignore
 ",
@@ -2224,7 +2278,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 19`] = `
+exports[`command init (cli) it should work without init commit: fs 20`] = `
 Object {
   "data": "prettierignore
 ",
@@ -2232,7 +2286,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 20`] = `
+exports[`command init (cli) it should work without init commit: fs 21`] = `
 Object {
   "data": "// babel.config.js
 ",
@@ -2240,7 +2294,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 21`] = `
+exports[`command init (cli) it should work without init commit: fs 22`] = `
 Object {
   "data": "{\\"file\\":\\"releaserc.json\\"}
 ",
@@ -2248,7 +2302,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 22`] = `
+exports[`command init (cli) it should work without init commit: fs 23`] = `
 Object {
   "data": "// index.ts
 ",
@@ -2256,7 +2310,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 23`] = `
+exports[`command init (cli) it should work without init commit: fs 24`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.json\\"}
 ",
@@ -2264,7 +2318,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 24`] = `
+exports[`command init (cli) it should work without init commit: fs 25`] = `
 Object {
   "data": "{\\"file\\":\\"typescriptrc.build.json\\"}
 ",
@@ -2272,7 +2326,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 25`] = `
+exports[`command init (cli) it should work without init commit: fs 26`] = `
 Object {
   "data": "// jest.config.js
 ",
@@ -2280,7 +2334,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 26`] = `
+exports[`command init (cli) it should work without init commit: fs 27`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -2288,7 +2342,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 27`] = `
+exports[`command init (cli) it should work without init commit: fs 28`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -2296,7 +2350,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 28`] = `
+exports[`command init (cli) it should work without init commit: fs 29`] = `
 Object {
   "data": "// dummy.test.ts
 ",
@@ -2304,7 +2358,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 29`] = `
+exports[`command init (cli) it should work without init commit: fs 30`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -2312,7 +2366,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 30`] = `
+exports[`command init (cli) it should work without init commit: fs 31`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -2320,7 +2374,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 31`] = `
+exports[`command init (cli) it should work without init commit: fs 32`] = `
 Object {
   "data": "// post.ts
 ",
@@ -2328,7 +2382,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 32`] = `
+exports[`command init (cli) it should work without init commit: fs 33`] = `
 Object {
   "data": "// setupTests.ts
 ",
@@ -2336,7 +2390,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 33`] = `
+exports[`command init (cli) it should work without init commit: fs 34`] = `
 Object {
   "data": "// pre.ts
 ",
@@ -2344,7 +2398,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 34`] = `
+exports[`command init (cli) it should work without init commit: fs 35`] = `
 Object {
   "data": "// post.ts
 ",
@@ -2352,7 +2406,7 @@ Object {
 }
 `;
 
-exports[`command init (cli) it should work without init commit: fs 35`] = `
+exports[`command init (cli) it should work without init commit: fs 36`] = `
 Object {
   "data": "{
   \\"name\\": \\"project-name\\",

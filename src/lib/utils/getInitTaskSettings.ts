@@ -25,7 +25,7 @@ type InitSettingProps = {
 const getInitTaskSettings = (props: InitSettingProps): InitSettings => {
   const settings: InitSettings = {
     files: [],
-    folders: ['.vscode', 'src', 'src/lib'],
+    folders: ['.vscode', 'src', 'src/lib', 'src/lib/utils'],
     templates: [
       ['vscode/settings.json', '.vscode/settings.json'],
       ['carnarc.json', '.carnarc.json'],
