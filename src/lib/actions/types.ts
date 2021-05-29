@@ -24,6 +24,7 @@ type JestActionProps = {
   projects: string[];
   updateSnapshot?: boolean;
   runInBand?: boolean;
+  verbose?: boolean;
   watch?: boolean;
 };
 
