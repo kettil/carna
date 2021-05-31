@@ -1,5 +1,20 @@
 # Changelog
 
+# [4.9.0](https://github.com/kettil/carna/compare/4.8.0...4.9.0) (2021-05-31)
+
+
+### Bug Fixes
+
+* disabled the "verbose" and "runInBand" options in the git task ([c99b242](https://github.com/kettil/carna/commit/c99b242f6f8da5cc643cd6a89dc6939b804cb610))
+* **deps:** bump @babel/preset-env from 7.14.2 to 7.14.4 ([17da7d1](https://github.com/kettil/carna/commit/17da7d1913c905ed3d8fa560c5045a26f736bcb8))
+* **deps:** bump @kettil/eslint-config from 2.3.2 to 2.5.0 ([87a2147](https://github.com/kettil/carna/commit/87a214751476abcdedb8edba39f207db48d46e22))
+* fix the wrong spinner status ([bbc0702](https://github.com/kettil/carna/commit/bbc070235e3562595f25cc64c1bfdc0585d1a1f0))
+
+
+### Features
+
+* add the folder "utils" (init-command) ([20840ac](https://github.com/kettil/carna/commit/20840ac0a45e18a6f91e6764d9336d3eed579816))
+
 # [4.8.0](https://github.com/kettil/carna/compare/4.7.1...4.8.0) (2021-05-26)
 
 
