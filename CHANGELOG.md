@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.9.1](https://github.com/kettil/carna/compare/4.9.0...4.9.1) (2021-06-03)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 2.5.0 to 2.5.1 ([0a36e74](https://github.com/kettil/carna/commit/0a36e740732780aed7dcd8abb45a22243ca5bfe8))
+* **deps:** bump @kettil/eslint-config from 2.5.1 to 2.5.2 ([4df8f88](https://github.com/kettil/carna/commit/4df8f8884792cf7c6c7e2d14602ded613fd4490e))
+* **deps:** bump @types/istanbul-reports from 3.0.0 to 3.0.1 ([8eea7a5](https://github.com/kettil/carna/commit/8eea7a57f1c05f0e1c973f4329a46a22dd3cad59))
+* **deps:** bump babel-jest from 27.0.1 to 27.0.2 ([8f6312f](https://github.com/kettil/carna/commit/8f6312f0c30a6e9506f51c7d59ec0f792a6f42e6))
+* **deps:** bump jest from 27.0.1 to 27.0.3 ([2cda0ff](https://github.com/kettil/carna/commit/2cda0ffa84fc7aa260ff55a3916e83ebcd258de9))
+* **deps:** bump jest from 27.0.3 to 27.0.4 ([2ad91bf](https://github.com/kettil/carna/commit/2ad91bf10fbe946a496d3de59e458134e9ce0c98))
+
 # [4.9.0](https://github.com/kettil/carna/compare/4.8.0...4.9.0) (2021-05-31)
 
 
