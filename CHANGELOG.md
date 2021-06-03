@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.9.2](https://github.com/kettil/carna/compare/4.9.1...4.9.2) (2021-06-03)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 2.5.2 to 2.5.3 ([38babb5](https://github.com/kettil/carna/commit/38babb5caab7479b7f35198736bc1103b83432a5))
+
 ## [4.9.1](https://github.com/kettil/carna/compare/4.9.0...4.9.1) (2021-06-03)
 
 
