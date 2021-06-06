@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.10.1](https://github.com/kettil/carna/compare/4.10.0...4.10.1) (2021-06-06)
+
+
+### Bug Fixes
+
+* update semver action with handling versions with postfix ([4f1aaf0](https://github.com/kettil/carna/commit/4f1aaf0fc803d320c3f447eb305578c4a6561fe9))
+
 # [4.10.0](https://github.com/kettil/carna/compare/4.9.2...4.10.0) (2021-06-06)
 
 
