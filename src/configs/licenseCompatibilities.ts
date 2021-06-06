@@ -14,6 +14,7 @@ const licenseCompatibilities: LicenseCompatibilities = {
     'CC-BY-4.0',
     'CC0-1.0',
     'ISC',
+    'LGPL-3.0',
     'MIT',
     'MIT*',
     // https://www.mozilla.org/en-US/MPL/license-policy/
