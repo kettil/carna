@@ -6,6 +6,8 @@ import { gitStagedAction } from '../../actions/git/staged';
 import { existFiles } from '../../cmd/existFiles';
 import { Task } from '../../types';
 import { analyseTask } from '../analyseTask';
+import { depsTask } from '../depsTask';
+import { licenseTask } from '../licenseTask';
 import { testTask } from '../testTask';
 
 const testEslint = new RegExp(`(${eslintExtensions.replace(/,/g, '|')})$`);
@@ -37,6 +39,10 @@ const gitCommitTask: Task = async (argv) => {
   await gitAddAction(argv, { files });
 
   await testTask({ ...argv, ci: true }, {});
+
+  await licenseTask(argv, {});
+
+  await depsTask(argv, {});
 };
 
 export { gitCommitTask };
