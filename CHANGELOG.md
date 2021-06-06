@@ -1,5 +1,18 @@
 # Changelog
 
+# [4.10.0](https://github.com/kettil/carna/compare/4.9.2...4.10.0) (2021-06-06)
+
+
+### Bug Fixes
+
+* update eslint-disable comment in the template files ([f1127d6](https://github.com/kettil/carna/commit/f1127d61faa84ae57f16dc14c15e608388a8a969))
+
+
+### Features
+
+* add LGPL-3.0 license to MIT compatibility list ([c82102f](https://github.com/kettil/carna/commit/c82102f8f67711e8b772fe067c34b22cfb54d103))
+* add license and deps task to git commit subtask ([8662b9d](https://github.com/kettil/carna/commit/8662b9d3acf9af595f892e218508c951bba1b052))
+
 ## [4.9.2](https://github.com/kettil/carna/compare/4.9.1...4.9.2) (2021-06-03)
 
 
