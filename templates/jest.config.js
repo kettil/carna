@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
+// eslint-disable-next-line import/no-extraneous-dependencies -- is ok, because config file
 const { config, createProject } = require('carna/configs/jest.config.js');
 
 module.exports = Object.assign(config, {
