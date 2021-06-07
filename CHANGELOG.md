@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.10.2](https://github.com/kettil/carna/compare/4.10.1...4.10.2) (2021-06-07)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint from 7.27.0 to 7.28.0 ([b39ebec](https://github.com/kettil/carna/commit/b39ebec8d75c9fc1544ca17eb3434ce7a1357963))
+* **deps:** bump prettier from 2.3.0 to 2.3.1 ([4b42499](https://github.com/kettil/carna/commit/4b42499e1d06d1b8a9979c7c66d8623513208cae))
+
 ## [4.10.1](https://github.com/kettil/carna/compare/4.10.0...4.10.1) (2021-06-06)
 
 
