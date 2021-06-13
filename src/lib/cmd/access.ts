@@ -5,12 +5,12 @@ const access = async (path: string, type: 'exists' | 'readable' | 'writable' = '
 
   switch (type) {
     case 'readable':
-      // eslint-disable-next-line no-bitwise
+      // eslint-disable-next-line no-bitwise -- is needed for file handling
       mode = constants.F_OK | constants.R_OK;
       break;
 
     case 'writable':
-      // eslint-disable-next-line no-bitwise
+      // eslint-disable-next-line no-bitwise -- is needed for file handling
       mode = constants.F_OK | constants.W_OK;
       break;
 

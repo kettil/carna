@@ -14,15 +14,12 @@ export const spawn = (
   eventEmitter.stdout = new Readable({ read: () => true });
   eventEmitter.stderr = new Readable({ read: () => true });
 
-  switch (true) {
-    case args.includes('--staged'):
-      eventEmitter.stdout.push(Buffer.from('src/index.ts\nsrc/lib/app.ts'));
-      eventEmitter.stderr.push(Buffer.from('stderr'));
-      break;
-
-    default:
-      eventEmitter.stdout.push(Buffer.from('stdout'));
-      eventEmitter.stderr.push(Buffer.from('stderr'));
+  if (args.includes('--staged')) {
+    eventEmitter.stdout.push(Buffer.from('src/index.ts\nsrc/lib/app.ts'));
+    eventEmitter.stderr.push(Buffer.from('stderr'));
+  } else {
+    eventEmitter.stdout.push(Buffer.from('stdout'));
+    eventEmitter.stderr.push(Buffer.from('stderr'));
   }
 
   setTimeout(() => {

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { LicensePackages } from '../lib/types';
 
 const licensePackages: LicensePackages = {
