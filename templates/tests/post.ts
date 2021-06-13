@@ -11,8 +11,8 @@ const hookPost = async (): Promise<void> => {
 };
 
 hookPost().catch((error) => {
-  // eslint-disable-next-line no-console
+  // eslint-disable-next-line no-console -- helper file, without dependencies
   console.log(error);
-  // eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit
+  // eslint-disable-next-line node/no-process-exit, unicorn/no-process-exit -- helper file, without dependencies
   process.exit(1);
 });

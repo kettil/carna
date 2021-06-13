@@ -986,7 +986,7 @@ Object {
 
 exports[`command init (app) it should work with init commit and with github username: fs 27`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - bug
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/bug.md",
 }
@@ -994,7 +994,7 @@ Object {
 
 exports[`command init (app) it should work with init commit and with github username: fs 28`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - concept
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/concept.md",
 }
@@ -1002,7 +1002,7 @@ Object {
 
 exports[`command init (app) it should work with init commit and with github username: fs 29`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - epic
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/epic.md",
 }
@@ -1010,7 +1010,7 @@ Object {
 
 exports[`command init (app) it should work with init commit and with github username: fs 30`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - feature
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/feature.md",
 }
@@ -1018,7 +1018,7 @@ Object {
 
 exports[`command init (app) it should work with init commit and with github username: fs 31`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - question
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/question.md",
 }
@@ -1026,7 +1026,7 @@ Object {
 
 exports[`command init (app) it should work with init commit and with github username: fs 32`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - task
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/task.md",
 }
@@ -1758,7 +1758,7 @@ Object {
 
 exports[`command init (app) it should work without init commit and with github username: fs 27`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - bug
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/bug.md",
 }
@@ -1766,7 +1766,7 @@ Object {
 
 exports[`command init (app) it should work without init commit and with github username: fs 28`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - concept
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/concept.md",
 }
@@ -1774,7 +1774,7 @@ Object {
 
 exports[`command init (app) it should work without init commit and with github username: fs 29`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - epic
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/epic.md",
 }
@@ -1782,7 +1782,7 @@ Object {
 
 exports[`command init (app) it should work without init commit and with github username: fs 30`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - feature
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/feature.md",
 }
@@ -1790,7 +1790,7 @@ Object {
 
 exports[`command init (app) it should work without init commit and with github username: fs 31`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - question
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/question.md",
 }
@@ -1798,7 +1798,7 @@ Object {
 
 exports[`command init (app) it should work without init commit and with github username: fs 32`] = `
 Object {
-  "data": "# markdown
+  "data": "# markdown - task
 ",
   "path": "/path/to/project/.github/ISSUE_TEMPLATE/task.md",
 }

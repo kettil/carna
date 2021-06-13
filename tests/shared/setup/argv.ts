@@ -14,7 +14,7 @@ const getArgv = <T extends Record<string, unknown>>(props: T): Arguments<PropsGl
   });
 
   return {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
+    // eslint-disable-next-line @typescript-eslint/naming-convention -- external dependency
     _: [],
     $0: '',
     cwd,

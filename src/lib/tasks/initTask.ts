@@ -1,4 +1,4 @@
-/* eslint-disable import/max-dependencies */
+/* eslint-disable import/max-dependencies -- task has many subtasks */
 import { join } from 'path';
 import { gitAddAction } from '../actions/git/add';
 import { gitCommitAction } from '../actions/git/commit';

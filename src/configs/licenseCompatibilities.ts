@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/naming-convention -- The keys are license names */
 import { LicenseCompatibilities } from '../lib/types';
 
 const licenseCompatibilities: LicenseCompatibilities = {

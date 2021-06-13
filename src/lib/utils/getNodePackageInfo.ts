@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-await-in-loop */
 import { join } from 'path';
 import { isObject, objectEntries } from '@kettil/tool-lib';
 import { licenseHeuristics } from '../../configs/licenseHeuristics';
@@ -9,17 +7,41 @@ import { readdir } from '../cmd/readdir';
 import { readFile } from '../cmd/readFile';
 import { Action, LicensePackageInfo, LicensePackages } from '../types';
 
-type GetNodePackageInfo = Action<
-  { packagePath: string; ignorePackages: string[]; licensePackages: LicensePackages },
-  LicensePackageInfo | undefined
->;
-
 const regexpFilename = /^(copying|license|license-\w+|licence|licence-\w+|readme)(\.markdown|\.md|\.txt)?$/iu;
 
-const getNodePackageInfo: GetNodePackageInfo = async (
-  { cwd, log },
-  { packagePath, ignorePackages, licensePackages },
-) => {
+const getLicenseFromFiles = async ({
+  packagePath,
+  data,
+}: {
+  packagePath: string;
+  data: LicensePackageInfo;
+}): Promise<LicensePackageInfo | undefined> => {
+  const entries = await readdir(packagePath);
+  const files = entries
+    .filter((entry) => entry.isFile() && !entry.name.startsWith('.') && regexpFilename.test(entry.name))
+    .map((entry) => entry.name)
+    .sort();
+
+  // eslint-disable-next-line no-restricted-syntax -- the loop should be canceled after the first find
+  for (const file of files) {
+    // eslint-disable-next-line no-await-in-loop -- the loop should be canceled after the first find
+    const content = await readFile(join(packagePath, file));
+
+    // eslint-disable-next-line no-restricted-syntax -- the loop should be canceled after the first find
+    for (const [aliasLicense, regexp] of objectEntries(licenseHeuristics)) {
+      if (regexp.test(content)) {
+        return { ...data, license: aliasLicense };
+      }
+    }
+  }
+
+  return undefined;
+};
+
+const getNodePackageInfo: Action<
+  { packagePath: string; ignorePackages: string[]; licensePackages: LicensePackages },
+  LicensePackageInfo | undefined
+> = async ({ cwd, log }, { packagePath, ignorePackages, licensePackages }) => {
   const packageJsonPath = join(packagePath, 'package.json');
 
   const hasPackageJson = await access(packageJsonPath);
@@ -64,20 +86,10 @@ const getNodePackageInfo: GetNodePackageInfo = async (
   }
 
   // License from copying|license|readme file
-  const entries = await readdir(packagePath);
-  const files = entries
-    .filter((entry) => entry.isFile() && !entry.name.startsWith('.') && regexpFilename.test(entry.name))
-    .map((entry) => entry.name)
-    .sort();
+  const fileLicense = await getLicenseFromFiles({ packagePath, data });
 
-  for (const file of files) {
-    const content = await readFile(join(packagePath, file));
-
-    for (const [aliasLicense, regexp] of objectEntries(licenseHeuristics)) {
-      if (regexp.test(content)) {
-        return { ...data, license: aliasLicense };
-      }
-    }
+  if (fileLicense) {
+    return fileLicense;
   }
 
   // License over "npm view"

@@ -33,7 +33,7 @@ const coverageForUnit = {
   },
 };
 
-// eslint-disable-next-line unicorn/prevent-abbreviations
+// eslint-disable-next-line unicorn/prevent-abbreviations -- e2e is correkt name
 const coverageForE2e = {
   [join(cwd, 'src', 'lib', 'app.ts')]: {
     path: join(cwd, 'src', 'lib', 'app.ts'),
@@ -53,12 +53,12 @@ const getReadFileFiles = (files: Record<string, string> = {}): Record<string, st
   [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'CODEOWNERS')]: '* @username',
   [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'workflows', 'qa.yml')]: 'yml: file',
   [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'workflows', 'release.yml')]: 'yml: file',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'bug.md')]: '# markdown',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'concept.md')]: '# markdown',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'epic.md')]: '# markdown',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'feature.md')]: '# markdown',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'question.md')]: '# markdown',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'task.md')]: '# markdown',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'bug.md')]: '# markdown - bug',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'concept.md')]: '# markdown - concept',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'epic.md')]: '# markdown - epic',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'feature.md')]: '# markdown - feature',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'question.md')]: '# markdown - question',
+  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'task.md')]: '# markdown - task',
 
   [join(cwd, 'node_modules', 'carna', 'templates', 'vscode', 'settings.json')]: '{"file":"settings.json"}',
   [join(cwd, 'node_modules', 'carna', 'templates', 'carnarc.json')]: '{"file":"carnarc.json"}',

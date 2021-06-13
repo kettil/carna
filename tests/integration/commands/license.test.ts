@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import * as fs from 'fs';
 import { Argv } from 'yargs';
 import { handler, builder, command, desc } from '../../../src/lib/commands/license';

@@ -24,8 +24,7 @@ type Border = typeof defaultBorder;
 type TableBorder = (columnLengths: number[], line: string, first: string, cross: string, last: string) => string;
 type TableRow = (columnLengths: number[], row: string[], separator: string, first: string, last: string) => string;
 
-/* eslint-disable-next-line no-control-regex */
-const cleanCliValue = (v: string): string => v.replace(/(\u001B)?\[[0-9]{1,2}m/gu, '');
+const cleanCliValue = (v: string): string => v.replace(/(\u{1B})?\[\d{1,2}m/gu, '');
 
 const getMaxColumnLengths = (maxLengths: number[], row: string[]): number[] => {
   if (maxLengths.length > 0 && maxLengths.length !== row.length) {

@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable max-len */
+/* eslint-disable @typescript-eslint/naming-convention -- The keys are license names */
+/* eslint-disable max-len -- The length of the line depends on the regexps */
 import { LicenseHeuristics } from '../lib/types';
 
 const licenseHeuristics: LicenseHeuristics = {

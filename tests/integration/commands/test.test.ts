@@ -73,7 +73,7 @@ describe('command test', () => {
       },
     };
 
-    // eslint-disable-next-line unicorn/prevent-abbreviations
+    // eslint-disable-next-line unicorn/prevent-abbreviations -- e2e is correkt name
     const coverageForE2e = {
       [join(cwd, 'src', 'lib', 'app.ts')]: {
         path: join(cwd, 'src', 'lib', 'app.ts'),
