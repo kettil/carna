@@ -1,5 +1,19 @@
 # Changelog
 
+## [4.10.3](https://github.com/kettil/carna/compare/4.10.2...4.10.3) (2021-06-14)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.14.3 to 7.14.5 ([93f1f61](https://github.com/kettil/carna/commit/93f1f617cb0295f2fb8c3d4291742abe06b53364))
+* **deps:** bump @babel/core from 7.14.3 to 7.14.5 ([d6da5e0](https://github.com/kettil/carna/commit/d6da5e0d6ca1f5df72489caaccab1f5d2977550a))
+* **deps:** bump @babel/node from 7.14.2 to 7.14.5 ([50406d2](https://github.com/kettil/carna/commit/50406d27a8c7d1544f7b01649f04634727aa4006))
+* **deps:** bump @babel/plugin-transform-runtime from 7.14.3 to 7.14.5 ([bd49a86](https://github.com/kettil/carna/commit/bd49a86625425d83d1050ad5c4d880e048b4bc33))
+* **deps:** bump @babel/preset-env from 7.14.4 to 7.14.5 ([120bb16](https://github.com/kettil/carna/commit/120bb162af2f6b9760fd23ae1b1d473427f81b2e))
+* **deps:** bump @babel/preset-typescript from 7.13.0 to 7.14.5 ([8bd830a](https://github.com/kettil/carna/commit/8bd830a31aea604c803308736bb78d07760af2e5))
+* **deps:** bump @kettil/eslint-config from 2.5.3 to 3.0.2 ([adddaf6](https://github.com/kettil/carna/commit/adddaf6b9cd94b7eed6db3fff8c32b8bec19962a))
+* **deps:** bump ora from 5.4.0 to 5.4.1 ([f4b7939](https://github.com/kettil/carna/commit/f4b79393823d5376d82416c9e97064630d897252))
+
 ## [4.10.2](https://github.com/kettil/carna/compare/4.10.1...4.10.2) (2021-06-07)
 
 
