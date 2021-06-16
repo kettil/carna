@@ -74,7 +74,7 @@
     "jest": "27.0.4",
     "ora": "5.4.1",
     "prettier": "2.3.1",
-    "semantic-release": "17.4.3",
+    "semantic-release": "17.4.4",
     "semver": "7.3.5",
     "yargs": "17.0.1"
   },
