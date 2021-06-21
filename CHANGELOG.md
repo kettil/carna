@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.10.5](https://github.com/kettil/carna/compare/4.10.4...4.10.5) (2021-06-21)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 3.1.0 to 3.2.0 ([d38fa6d](https://github.com/kettil/carna/commit/d38fa6d727da84996bf855b0aca8aed67839f5a8))
+
 ## [4.10.4](https://github.com/kettil/carna/compare/4.10.3...4.10.4) (2021-06-21)
 
 
