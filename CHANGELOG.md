@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.10.6](https://github.com/kettil/carna/compare/4.10.5...4.10.6) (2021-06-28)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/node from 7.14.5 to 7.14.7 ([03a45fa](https://github.com/kettil/carna/commit/03a45fa3bb8fbbff21f8017475fb58505cc03c9f))
+* **deps:** bump @babel/preset-env from 7.14.5 to 7.14.7 ([53c0492](https://github.com/kettil/carna/commit/53c04928ec4c1e5ac7e6e33124bbd254998d167d))
+* **deps:** bump babel-jest from 27.0.2 to 27.0.5 ([627cb69](https://github.com/kettil/carna/commit/627cb698f223e542e1ce40483e00d07ed1e41e47))
+* **deps:** bump jest from 27.0.4 to 27.0.5 ([0298375](https://github.com/kettil/carna/commit/029837509d5b631f5b394107aa267e31290906bf))
+
 ## [4.10.5](https://github.com/kettil/carna/compare/4.10.4...4.10.5) (2021-06-21)
 
 
