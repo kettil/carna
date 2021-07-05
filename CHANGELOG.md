@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.10.7](https://github.com/kettil/carna/compare/4.10.6...4.10.7) (2021-07-05)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 3.2.0 to 3.2.1 ([41a3565](https://github.com/kettil/carna/commit/41a3565c158b29147e1a946c75d7ba715e52ed36))
+* **deps:** bump babel-jest from 27.0.5 to 27.0.6 ([67ba1e4](https://github.com/kettil/carna/commit/67ba1e4dc8f2a2271450bf3236359c037e93d28f))
+* **deps:** bump depcheck from 1.4.1 to 1.4.2 ([e6ee0be](https://github.com/kettil/carna/commit/e6ee0bedd9a9dae05196045e74414ce2f5191522))
+* **deps:** bump jest from 27.0.5 to 27.0.6 ([43ad0c0](https://github.com/kettil/carna/commit/43ad0c0dd47e51f7d9bc6928f9b91bf109300c83))
+* **deps:** bump prettier from 2.3.1 to 2.3.2 ([1bea6c5](https://github.com/kettil/carna/commit/1bea6c5f0872ac342039b9c3a4d94395f1177914))
+
 ## [4.10.6](https://github.com/kettil/carna/compare/4.10.5...4.10.6) (2021-06-28)
 
 
