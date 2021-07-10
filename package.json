@@ -60,7 +60,7 @@
     "@types/istanbul-reports": "3.0.1",
     "@types/jest": "26.0.24",
     "@types/semver": "7.3.7",
-    "@types/yargs": "17.0.0",
+    "@types/yargs": "17.0.2",
     "babel-jest": "27.0.6",
     "babel-loader": "8.2.2",
     "babel-watch": "7.4.1",
