@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.10.8](https://github.com/kettil/carna/compare/4.10.7...4.10.8) (2021-07-12)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/jest from 26.0.23 to 26.0.24 ([51d1542](https://github.com/kettil/carna/commit/51d1542647a1688b675ab361d469d790c394d97c))
+* **deps:** bump @types/semver from 7.3.6 to 7.3.7 ([92068d3](https://github.com/kettil/carna/commit/92068d3bd97320d8f5b269f334a0d672a3bbef0c))
+* **deps:** bump @types/yargs from 17.0.0 to 17.0.2 ([b466ca5](https://github.com/kettil/carna/commit/b466ca58df932c680ed8029edd2309ead50f6dd4))
+* **deps:** bump eslint from 7.29.0 to 7.30.0 ([e3f35ee](https://github.com/kettil/carna/commit/e3f35ee5bdf22f22b05f4007ab7efd2eb7a1ec63))
+
 ## [4.10.7](https://github.com/kettil/carna/compare/4.10.6...4.10.7) (2021-07-05)
 
 
