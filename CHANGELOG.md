@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.10.9](https://github.com/kettil/carna/compare/4.10.8...4.10.9) (2021-07-26)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.14.5 to 7.14.8 ([76e2976](https://github.com/kettil/carna/commit/76e297688b2cf7d64c1641cea10b565a1e51669e))
+* **deps:** bump @babel/core from 7.14.6 to 7.14.8 ([c39d70f](https://github.com/kettil/carna/commit/c39d70fb84d57f653522df73b6bc131f33e0b54b))
+* **deps:** bump @babel/preset-env from 7.14.7 to 7.14.8 ([c8efeb4](https://github.com/kettil/carna/commit/c8efeb47194b30bf472cd779be517b174b45cce0))
+* **deps:** bump @kettil/eslint-config from 3.2.1 to 3.2.3 ([8d51786](https://github.com/kettil/carna/commit/8d51786bc865b7ec5b6ce7c457f3b565637cc152))
+* **deps:** bump eslint from 7.30.0 to 7.31.0 ([6d016dd](https://github.com/kettil/carna/commit/6d016dd2c5063e26027d92c225720a4beadbae73))
+
 ## [4.10.8](https://github.com/kettil/carna/compare/4.10.7...4.10.8) (2021-07-12)
 
 
