@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.10.10](https://github.com/kettil/carna/compare/4.10.9...4.10.10) (2021-08-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/cli from 12.1.4 to 13.1.0 ([1dcedb0](https://github.com/kettil/carna/commit/1dcedb09e1238c451f567cf38a167f8c0a6b91a7))
+* **deps:** bump @kettil/eslint-config from 3.2.3 to 3.2.4 ([6adc317](https://github.com/kettil/carna/commit/6adc317d572bd4dd889d2d09004ccdfa52867dcb))
+* **deps:** bump @types/semver from 7.3.7 to 7.3.8 ([3374d1e](https://github.com/kettil/carna/commit/3374d1e56609d0e8f9c523c01d6ae1ee3e098fcd))
+
 ## [4.10.9](https://github.com/kettil/carna/compare/4.10.8...4.10.9) (2021-07-26)
 
 
