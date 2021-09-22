@@ -63,7 +63,7 @@
     "@types/yargs": "17.0.3",
     "babel-jest": "27.2.1",
     "babel-loader": "8.2.2",
-    "babel-watch": "7.4.1",
+    "babel-watch": "7.5.0",
     "chalk": "4.1.2",
     "depcheck": "1.4.2",
     "eslint": "7.32.0",
