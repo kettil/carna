@@ -24,7 +24,7 @@ type Border = typeof defaultBorder;
 type TableBorder = (columnLengths: number[], line: string, first: string, cross: string, last: string) => string;
 type TableRow = (columnLengths: number[], row: string[], separator: string, first: string, last: string) => string;
 
-const cleanCliValue = (v: string): string => v.replace(/(\u{1B})?\[\d{1,2}m/gu, '');
+const cleanCliValue = (v: string): string => v.replace(/\u{1B}?\[\d{1,2}m/gu, '');
 
 const getMaxColumnLengths = (maxLengths: number[], row: string[]): number[] => {
   if (maxLengths.length > 0 && maxLengths.length !== row.length) {
@@ -41,8 +41,11 @@ const cellFill = (cell: string, length: number): string => cell + ' '.repeat(len
 const tableBorder: TableBorder = (columnLengths, line, first, cross, last) =>
   first + line + columnLengths.map((l) => line.repeat(l)).join(line + cross + line) + line + last;
 
-const tableRow: TableRow = (columnLengths, row, separator, first, last) =>
-  `${first} ${columnLengths.map((length, i) => cellFill(row[i], length)).join(` ${separator} `)} ${last}`;
+const tableRow: TableRow = (columnLengths, row, separator, first, last) => {
+  const data = columnLengths.map((length, i) => cellFill(row[i], length)).join(` ${separator} `);
+
+  return `${first} ${data} ${last}`;
+};
 
 const table = (rows: string[][], border: Border = defaultBorder): string => {
   const { b, bl, br, bt, c, ch, cv, l, lr, r, rl, t, tb, tl, tr } = border;

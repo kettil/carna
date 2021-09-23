@@ -7,7 +7,7 @@ import { readdir } from '../cmd/readdir';
 import { readFile } from '../cmd/readFile';
 import { Action, LicensePackageInfo, LicensePackages } from '../types';
 
-const regexpFilename = /^(copying|license|license-\w+|licence|licence-\w+|readme)(\.markdown|\.md|\.txt)?$/iu;
+const regexpFilename = /^(?:copying|licen[cs]e|licen[cs]e-\w+|readme)(?:\.markdown|\.md|\.txt)?$/iu;
 
 const getLicenseFromFiles = async ({
   packagePath,
