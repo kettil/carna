@@ -6,6 +6,9 @@ updates:
       interval: daily
       time: '09:00'
       timezone: 'UTC'
+    ignore:
+      - dependency-name: 'ora'
+        versions: ['6.x']
     open-pull-requests-limit: 10
     reviewers:
       - kettil
