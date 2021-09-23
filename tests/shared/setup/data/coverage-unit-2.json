@@ -1,0 +1,20 @@
+{
+  "statementMap": {
+    "0": { "start": { "line": 10, "column": 36 }, "end": { "line": 16, "column": 1 } },
+    "1": { "start": { "line": 11, "column": 2 }, "end": { "line": 11, "column": 55 } },
+    "2": { "start": { "line": 13, "column": 2 }, "end": { "line": 13, "column": 37 } },
+    "3": { "start": { "line": 15, "column": 2 }, "end": { "line": 15, "column": 56 } }
+  },
+  "fnMap": {
+    "0": {
+      "name": "(anonymous_0)",
+      "decl": { "start": { "line": 10, "column": 36 }, "end": { "line": 10, "column": 37 } },
+      "loc": { "start": { "line": 10, "column": 59 }, "end": { "line": 16, "column": 1 } },
+      "line": 10
+    }
+  },
+  "branchMap": {},
+  "s": { "0": 0, "1": 0, "2": 0, "3": 0 },
+  "f": { "0": 0 },
+  "b": {}
+}
