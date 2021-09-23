@@ -1,48 +1,26 @@
 import { join } from 'path';
 import { cwd } from './argv';
+import coverageE2E1 from './data/coverage-e2e-1.json';
+import coverageUnit1 from './data/coverage-unit-1.json';
+import coverageUnit2 from './data/coverage-unit-2.json';
 import { mockFilePackage, packageJson } from './packageJson';
 
 const coverageForUnit = {
   [join(cwd, 'src', 'index.ts')]: {
+    ...coverageUnit1,
     path: join(cwd, 'src', 'index.ts'),
-    statementMap: { 0: { start: { line: 4, column: 41 }, end: { line: 15, column: 1 } } },
-    fnMap: {},
-    branchMap: {},
-    s: { 0: 1 },
-    f: {},
-    b: {},
   },
-
   [join(cwd, 'src', 'lib', 'app.ts')]: {
+    ...coverageUnit2,
     path: join(cwd, 'src', 'lib', 'app.ts'),
-    statementMap: {
-      0: { start: { line: 10, column: 12 }, end: { line: 10, column: 52 } },
-    },
-    fnMap: {
-      0: {
-        name: '(anonymous_0)',
-        decl: { start: { line: 19, column: 12 }, end: { line: 19, column: 13 } },
-        loc: { start: { line: 19, column: 53 }, end: { line: 42, column: 1 } },
-        line: 19,
-      },
-    },
-    branchMap: {},
-    s: { 0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1 },
-    f: { 0: 1, 1: 1 },
-    b: {},
   },
 };
 
 // eslint-disable-next-line unicorn/prevent-abbreviations -- e2e is correkt name
 const coverageForE2e = {
-  [join(cwd, 'src', 'lib', 'app.ts')]: {
-    path: join(cwd, 'src', 'lib', 'app.ts'),
-    statementMap: {},
-    fnMap: {},
-    branchMap: {},
-    s: {},
-    f: {},
-    b: {},
+  [join(cwd, 'src', 'index.ts')]: {
+    ...coverageE2E1,
+    path: join(cwd, 'src', 'index.ts'),
   },
 };
 
