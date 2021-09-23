@@ -10,6 +10,7 @@ const licensePackages: LicensePackages = {
     // https://github.com/salesforce-ux/scss-parser/blob/v1.0.4/LICENSE
     // is not MIT, but the right is very similar
     '1.0.4': 'MIT',
+    '1.0.5': 'MIT',
   },
 };
 
