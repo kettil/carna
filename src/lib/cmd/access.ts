@@ -1,4 +1,5 @@
 import { constants, promises } from 'fs';
+import { isObject } from '@kettil/tool-lib';
 
 const access = async (path: string, type: 'exists' | 'readable' | 'writable' = 'exists'): Promise<boolean> => {
   let mode;
@@ -23,7 +24,7 @@ const access = async (path: string, type: 'exists' | 'readable' | 'writable' = '
 
     return true;
   } catch (error) {
-    if (error.code !== 'ENOENT' && error.syscall !== 'access') {
+    if (!isObject(error) || (error.code !== 'ENOENT' && error.syscall !== 'access')) {
       throw error;
     }
 
