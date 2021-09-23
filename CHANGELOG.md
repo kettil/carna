@@ -1,5 +1,12 @@
 # Changelog
 
+# [4.12.0](https://github.com/kettil/carna/compare/4.11.0...4.12.0) (2021-09-23)
+
+
+### Features
+
+* update license package list ([cad1333](https://github.com/kettil/carna/commit/cad1333b37d2c198889e4b62b56f64246af1d837))
+
 # [4.11.0](https://github.com/kettil/carna/compare/4.10.10...4.11.0) (2021-09-23)
 
 
