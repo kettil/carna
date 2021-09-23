@@ -29,9 +29,9 @@ const gitCommitTask: Task = async (argv) => {
   const intersectFiles = mergedFiles.filter((file) => unstagedFiles.includes(file));
 
   if (intersectFiles.length > 0) {
-    throw new Error(
-      `The following files were changed after adding:\n${intersectFiles.map((file) => `       ▸ ${file}\n`).join('')}`,
-    );
+    const changedFiles = intersectFiles.map((file) => `       ▸ ${file}\n`).join('');
+
+    throw new Error(`The following files were changed after adding:\n${changedFiles}`);
   }
 
   await analyseTask({ ...argv, ci: false }, { eslintFiles, prettierFiles });
