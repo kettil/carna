@@ -7,7 +7,7 @@ const babelConfigFiles = ['babel.config.js', 'babel.config.json'];
 const commitlintConfigFiles = ['commitlint.config.js', '.commitlintrc.js', '.commitlintrc.json', '.commitlintrc.yml'];
 
 // jest/coverage
-const coverageDefaultWatermark: [number, number] = [90, 50];
+const coverageDefaultWatermark: [number, number] = [50, 90];
 const jestConfigFiles = ['jest.config.js', 'jest.config.ts'];
 
 // eslint
