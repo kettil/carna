@@ -1,5 +1,41 @@
 # Changelog
 
+# [4.11.0](https://github.com/kettil/carna/compare/4.10.10...4.11.0) (2021-09-23)
+
+
+### Bug Fixes
+
+* wrong order at default coverage watermarks ([0489fc1](https://github.com/kettil/carna/commit/0489fc1525d261bfd9c74ce388b1d712e84cddb5))
+* **deps:** bump @babel/cli from 7.14.8 to 7.15.7 ([f2ebb2f](https://github.com/kettil/carna/commit/f2ebb2f9b6d468d262c77be350680c7a9912e05f))
+* **deps:** bump @babel/core from 7.14.8 to 7.15.5 ([f49e561](https://github.com/kettil/carna/commit/f49e561e782d20318131bfcd15aaf4c30bbe8667))
+* **deps:** bump @babel/node from 7.14.7 to 7.15.4 ([16aeb7c](https://github.com/kettil/carna/commit/16aeb7c4bfd58d169346e2c6de577bfbf6231fd6))
+* **deps:** bump @babel/plugin-transform-runtime from 7.14.5 to 7.15.0 ([77e5d65](https://github.com/kettil/carna/commit/77e5d6514d2bd3e05bf1f3b778928ca929e10fb5))
+* **deps:** bump @babel/preset-env from 7.14.8 to 7.15.6 ([7ffdb93](https://github.com/kettil/carna/commit/7ffdb9316ce53b8018c533bd9f04a3a79c347db0))
+* **deps:** bump @babel/preset-typescript from 7.14.5 to 7.15.0 ([fd19f8e](https://github.com/kettil/carna/commit/fd19f8e6d487e635c2bfc19d2f24509a9bab644f))
+* **deps:** bump @kettil/eslint-config from 3.2.4 to 3.3.0 ([7702159](https://github.com/kettil/carna/commit/77021592ddfd12e2a0cd69d6c19a00c894fbc8d0))
+* **deps:** bump @kettil/eslint-config from 3.3.0 to 3.5.0 ([4e1e80c](https://github.com/kettil/carna/commit/4e1e80c573b1b5cab4867caedab09222f335dca2))
+* **deps:** bump @types/jest from 26.0.24 to 27.0.2 ([41e69df](https://github.com/kettil/carna/commit/41e69dfa35b45e1a37b46f161891e51fd0a33adf))
+* **deps:** bump @types/yargs from 17.0.2 to 17.0.3 ([2ce2e25](https://github.com/kettil/carna/commit/2ce2e25ac3296c7c6a16a2d76a54e48f274c2d03))
+* **deps:** bump babel-jest from 27.0.6 to 27.2.1 ([ee88db7](https://github.com/kettil/carna/commit/ee88db793380f50191e8de36c50b27bb5e3e5cfe))
+* **deps:** bump babel-watch from 7.4.1 to 7.5.0 ([74bfbcd](https://github.com/kettil/carna/commit/74bfbcd20b4eef60dc8dcde89115531dac24e084))
+* **deps:** bump chalk from 4.1.1 to 4.1.2 ([4fa79ec](https://github.com/kettil/carna/commit/4fa79ecf893b3f97a82b412c609421fec899f86b))
+* **deps:** bump eslint from 7.31.0 to 7.32.0 ([ac382d9](https://github.com/kettil/carna/commit/ac382d90dba964999f28ed3add735696517b65d2))
+* **deps:** bump husky from 6.0.0 to 7.0.2 ([cf05d4d](https://github.com/kettil/carna/commit/cf05d4de2200c86463773354f66bffe48ef26164))
+* **deps:** bump istanbul-lib-coverage from 3.0.0 to 3.0.1 ([f5825eb](https://github.com/kettil/carna/commit/f5825eb2306df11ce5fe78fb1d00afa5ff757b27))
+* faulty error handling ([559a6c6](https://github.com/kettil/carna/commit/559a6c68f5836a6696f1bb928383046e27fdedd6))
+* **deps:** bump jest from 27.0.6 to 27.2.1 ([1c8a74a](https://github.com/kettil/carna/commit/1c8a74a5d3c400ab1215f89c0e8a94a2ea155386))
+* **deps:** bump prettier from 2.3.2 to 2.4.1 ([42d9e19](https://github.com/kettil/carna/commit/42d9e193c78947efcd6ed521c89fc82008462ed9))
+* **deps:** bump semantic-release from 17.4.4 to 17.4.7 ([872099a](https://github.com/kettil/carna/commit/872099ae2c9e91a9ada2073762cb8c7083d60074))
+* **deps:** bump yargs from 17.0.1 to 17.1.1 ([eb584c2](https://github.com/kettil/carna/commit/eb584c255cf344ba5a8edd63796bd3cea6cb1b91))
+* **deps:** bump yargs from 17.1.1 to 17.2.0 ([b0c7fab](https://github.com/kettil/carna/commit/b0c7fabc0398a8139367fe77425398ea2820cd1c))
+
+
+### Features
+
+* add noImplicitOverride typescript option ([0880cfd](https://github.com/kettil/carna/commit/0880cfdfa81d19dc080a5daad263af5cfc2152cb))
+* add noImplicitOverride typescript option ([990bb51](https://github.com/kettil/carna/commit/990bb5199ff59436c61c303f86f25ca2a1c8cdb5))
+* checks the order in coverage watermarks ([9429dcd](https://github.com/kettil/carna/commit/9429dcdb916f064e475ee434824afe882fee0ed0))
+
 ## [4.10.10](https://github.com/kettil/carna/compare/4.10.9...4.10.10) (2021-08-02)
 
 
