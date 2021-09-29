@@ -71,7 +71,7 @@
     "istanbul-lib-coverage": "3.0.1",
     "istanbul-lib-report": "3.0.0",
     "istanbul-reports": "3.0.2",
-    "jest": "27.2.2",
+    "jest": "27.2.3",
     "ora": "5.4.1",
     "prettier": "2.4.1",
     "semantic-release": "17.4.7",
