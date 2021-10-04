@@ -9,6 +9,8 @@ const commitlintConfigFiles = ['commitlint.config.js', '.commitlintrc.js', '.com
 // jest/coverage
 const coverageDefaultWatermark: [number, number] = [50, 90];
 const jestConfigFiles = ['jest.config.js', 'jest.config.ts'];
+const jestCommand = './node_modules/.bin/jest';
+const jestPreOrderProjects = ['unit', 'integration', 'e2e'];
 
 // eslint
 const eslintIgnoreFiles = new Set(['babel.config.js', 'jest.config.js']);
@@ -47,15 +49,17 @@ export {
   babelExtensions,
   babelScriptFiles,
   commitlintConfigFiles,
-  jestConfigFiles,
   coverageDefaultWatermark,
   depcheckIgnorePackages,
   eslintConfigFiles,
   eslintExtensions,
   eslintIgnoreFiles,
-  prettierConfigFiles,
+  jestCommand,
+  jestConfigFiles,
+  jestPreOrderProjects,
   prettierCiExtensions,
+  prettierConfigFiles,
   prettierExtensions,
-  typescriptConfigFiles,
   typescriptBuildConfigFiles,
+  typescriptConfigFiles,
 };

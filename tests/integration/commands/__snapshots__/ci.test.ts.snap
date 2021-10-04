@@ -157,6 +157,18 @@ Object {
   "args": Array [
     "--config",
     "/path/to/project/jest.config.js",
+    "--showConfig",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work with hooks: child-process 13`] = `
+Object {
+  "args": Array [
+    "--config",
+    "/path/to/project/jest.config.js",
     "--colors",
     "--selectProjects",
     "unit",
@@ -180,7 +192,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 13`] = `
+exports[`command ci it should work with hooks: child-process 14`] = `
 Object {
   "args": Array [
     "--config",
@@ -208,7 +220,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 14`] = `
+exports[`command ci it should work with hooks: child-process 15`] = `
 Object {
   "args": Array [
     "run",
@@ -219,7 +231,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 15`] = `
+exports[`command ci it should work with hooks: child-process 16`] = `
 Object {
   "args": Array [
     "run",
@@ -230,7 +242,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 16`] = `
+exports[`command ci it should work with hooks: child-process 17`] = `
 Object {
   "args": Array [
     "run",
@@ -241,7 +253,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 17`] = `
+exports[`command ci it should work with hooks: child-process 18`] = `
 Object {
   "args": Array [
     "run",
@@ -252,7 +264,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 18`] = `
+exports[`command ci it should work with hooks: child-process 19`] = `
 Object {
   "args": Array [
     "run",
@@ -263,7 +275,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work with hooks: child-process 19`] = `
+exports[`command ci it should work with hooks: child-process 20`] = `
 Object {
   "args": Array [
     "run",
@@ -420,6 +432,18 @@ Object {
   "args": Array [
     "--config",
     "/path/to/project/jest.config.js",
+    "--showConfig",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command ci it should work: child-process 7`] = `
+Object {
+  "args": Array [
+    "--config",
+    "/path/to/project/jest.config.js",
     "--colors",
     "--selectProjects",
     "unit",
@@ -443,7 +467,7 @@ Object {
 }
 `;
 
-exports[`command ci it should work: child-process 7`] = `
+exports[`command ci it should work: child-process 8`] = `
 Object {
   "args": Array [
     "--config",

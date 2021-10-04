@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { jestConfigFiles } from '../../../configs/actionConfigs';
+import { jestCommand, jestConfigFiles } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 import { getCoverageFolder } from '../../utils/getCoverageFolder';
@@ -12,7 +12,6 @@ const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
   const coverageFolder = getCoverageFolder(cwd, props.projects);
   const configFile = await getFirstExistingFile({ cwd, files: jestConfigFiles });
 
-  const cmd = './node_modules/.bin/jest';
   const args: string[] = ['--config', configFile, '--colors'];
 
   if (props.projects.length === 1) {
@@ -56,7 +55,7 @@ const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
 
   log.info('Run test');
 
-  await exec({ cmd, args, cwd, log, withInteraction: props.watch, withDirectOutput: true });
+  await exec({ cmd: jestCommand, args, cwd, log, withInteraction: props.watch, withDirectOutput: true });
 };
 
 export { jestAction };

@@ -133,6 +133,18 @@ Object {
   "args": Array [
     "--config",
     "/path/to/project/jest.config.js",
+    "--showConfig",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command git with git "commit" hook it should work with hooks: child-process 12`] = `
+Object {
+  "args": Array [
+    "--config",
+    "/path/to/project/jest.config.js",
     "--colors",
     "--selectProjects",
     "unit",
@@ -156,7 +168,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work with hooks: child-process 12`] = `
+exports[`command git with git "commit" hook it should work with hooks: child-process 13`] = `
 Object {
   "args": Array [
     "--config",
@@ -184,7 +196,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work with hooks: child-process 13`] = `
+exports[`command git with git "commit" hook it should work with hooks: child-process 14`] = `
 Object {
   "args": Array [
     "run",
@@ -195,7 +207,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work with hooks: child-process 14`] = `
+exports[`command git with git "commit" hook it should work with hooks: child-process 15`] = `
 Object {
   "args": Array [
     "run",
@@ -206,7 +218,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work with hooks: child-process 15`] = `
+exports[`command git with git "commit" hook it should work with hooks: child-process 16`] = `
 Object {
   "args": Array [
     "run",
@@ -217,7 +229,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work with hooks: child-process 16`] = `
+exports[`command git with git "commit" hook it should work with hooks: child-process 17`] = `
 Object {
   "args": Array [
     "run",
@@ -228,7 +240,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work with hooks: child-process 17`] = `
+exports[`command git with git "commit" hook it should work with hooks: child-process 18`] = `
 Object {
   "args": Array [
     "run",
@@ -239,7 +251,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work with hooks: child-process 18`] = `
+exports[`command git with git "commit" hook it should work with hooks: child-process 19`] = `
 Object {
   "args": Array [
     "run",
@@ -400,6 +412,18 @@ Object {
   "args": Array [
     "--config",
     "/path/to/project/jest.config.js",
+    "--showConfig",
+  ],
+  "command": "./node_modules/.bin/jest",
+  "cwd": "/path/to/project",
+}
+`;
+
+exports[`command git with git "commit" hook it should work: child-process 8`] = `
+Object {
+  "args": Array [
+    "--config",
+    "/path/to/project/jest.config.js",
     "--colors",
     "--selectProjects",
     "unit",
@@ -423,7 +447,7 @@ Object {
 }
 `;
 
-exports[`command git with git "commit" hook it should work: child-process 8`] = `
+exports[`command git with git "commit" hook it should work: child-process 9`] = `
 Object {
   "args": Array [
     "--config",
