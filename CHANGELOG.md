@@ -1,5 +1,14 @@
 # Changelog
 
+# [4.13.0-beta.1](https://github.com/kettil/carna/compare/4.12.1...4.13.0-beta.1) (2021-10-04)
+
+
+### Features
+
+* detection of the test projects based on the jest config ([aca3e86](https://github.com/kettil/carna/commit/aca3e86606a67d933175e597d8442d1c3f548891))
+* run babel-watch with --config-file option ([a5efd29](https://github.com/kettil/carna/commit/a5efd294a6f1149d18dc853ef5deec4a2c2389da))
+* set "analyse" as default command ([7954e9e](https://github.com/kettil/carna/commit/7954e9e2f4e055aa085789765dbdde12d750e14b))
+
 ## [4.12.1](https://github.com/kettil/carna/compare/4.12.0...4.12.1) (2021-10-04)
 
 
