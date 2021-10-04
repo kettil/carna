@@ -14,13 +14,19 @@ export const spawn = (
   eventEmitter.stdout = new Readable({ read: () => true });
   eventEmitter.stderr = new Readable({ read: () => true });
 
-  if (args.includes('--staged')) {
-    eventEmitter.stdout.push(Buffer.from('src/index.ts\nsrc/lib/app.ts'));
-    eventEmitter.stderr.push(Buffer.from('stderr'));
-  } else {
-    eventEmitter.stdout.push(Buffer.from('stdout'));
-    eventEmitter.stderr.push(Buffer.from('stderr'));
+  let stdoutContent = 'stdout';
+  const stderrContent = 'stderr';
+
+  if (command.includes('jest') && args.includes('--showConfig')) {
+    stdoutContent = JSON.stringify({
+      configs: [{ displayName: 'unit' }, { displayName: { name: 'e2e', color: 'black' } }],
+    });
+  } else if (args.includes('--staged')) {
+    stdoutContent = 'src/index.ts\nsrc/lib/app.ts';
   }
+
+  eventEmitter.stdout.push(Buffer.from(stdoutContent));
+  eventEmitter.stderr.push(Buffer.from(stderrContent));
 
   setTimeout(() => {
     eventEmitter.emit('close', 0);

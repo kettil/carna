@@ -10,7 +10,7 @@ import { taskHook } from '../utils/taskHook';
 import { testHook } from '../utils/testHook';
 
 type TestProps = Omit<JestActionProps, 'projects'> & {
-  projects?: string[];
+  project?: string[];
 };
 
 const transformThreshold = (key: number | string, value: unknown): [number | string, CoverageWatermarkThreshold] => {
@@ -31,7 +31,7 @@ const testTask: Task<TestProps> = async (argv, props) => {
 
   await taskHook(argv, { task: 'test', type: 'pre' });
 
-  const projects = await getTestProjects(argv, props.projects);
+  const projects = await getTestProjects(argv, props.project);
 
   if (props.watch) {
     try {

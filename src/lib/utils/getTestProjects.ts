@@ -1,23 +1,32 @@
-import { join } from 'path';
-import { readdir } from '../cmd/readdir';
+import { isArray, isObject } from '@kettil/tool-lib';
+import { jestCommand, jestConfigFiles, jestPreOrderProjects } from '../../configs/actionConfigs';
+import { exec } from '../cmd/exec';
 import { Task } from '../types';
+import { getFirstExistingFile } from './getFirstExistingFile';
+import { sortProjectNames } from './sortProjectNames';
 
-const ignoreFolders = new Set(['shared', 'type']);
-const specialFolders = ['unit', 'integration', 'e2e'];
+const getTestProjects: Task<[string[] | undefined], string[]> = async ({ cwd, log }, selectedProjects) => {
+  const configFile = await getFirstExistingFile({ cwd, files: jestConfigFiles });
+  const args: string[] = ['--config', configFile, '--showConfig'];
 
-const getTestProjects: Task<[string[] | undefined], string[]> = async ({ cwd }, selectedProjects) => {
-  const files = await readdir(join(cwd, 'tests'));
+  const { stdout } = await exec({ cmd: jestCommand, args, cwd, log });
 
-  const folders = files
-    .filter((file) => file.isDirectory() && !file.name.startsWith('.'))
-    .map((folder) => folder.name)
-    .filter((folder) => !ignoreFolders.has(folder))
-    .sort();
+  const data = JSON.parse(stdout.trim()) as unknown;
 
-  const projects = [
-    ...specialFolders.filter((folder) => folders.includes(folder)),
-    ...folders.filter((folder) => !specialFolders.includes(folder)),
-  ];
+  const projects =
+    isObject(data) && isArray(data.configs)
+      ? data.configs
+        .filter(isObject)
+        .map((config) => (isObject(config.displayName) ? config.displayName.name : config.displayName))
+        .filter((name): name is string => typeof name === 'string')
+        .map((name) => name.split(':').reverse().join(':'))
+        .sort(sortProjectNames(jestPreOrderProjects))
+        .map((name) => name.split(':').reverse().join(':'))
+      : [];
+
+  const logProjects = projects.map((name) => `▸ ${name}`).join('\n');
+
+  log.info(`Found following test project(s):\n${logProjects}`);
 
   if (selectedProjects === undefined || selectedProjects.length === 0) {
     return projects;
@@ -29,7 +38,12 @@ const getTestProjects: Task<[string[] | undefined], string[]> = async ({ cwd }, 
     throw new Error(`The following test project(s) are unknown: ${unknownProjects.join(', ')}`);
   }
 
-  return projects.filter((v) => selectedProjects.includes(v));
+  const runningProjects = projects.filter((v) => selectedProjects.includes(v));
+  const logRunningProjects = runningProjects.map((name) => `▸ ${name}`).join('\n');
+
+  log.info(`Run the following test project(s):\n${logRunningProjects}`);
+
+  return runningProjects;
 };
 
 export { getTestProjects };
