@@ -13,10 +13,7 @@ const babelNodeAction: Action<BabelNodeActionProps> = async ({ cwd, log }, { scr
 
   // options
   args.push('--extensions', babelExtensions);
-
-  if (!watch) {
-    args.push('--config-file', configPath);
-  }
+  args.push('--config-file', configPath);
 
   // script
   args.push(script ?? (await getFirstExistingFile({ cwd, files: babelScriptFiles })));
