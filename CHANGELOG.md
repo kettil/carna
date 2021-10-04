@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.12.1](https://github.com/kettil/carna/compare/4.12.0...4.12.1) (2021-10-04)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/cli from 13.1.0 to 13.2.0 ([6a80835](https://github.com/kettil/carna/commit/6a808359e151ae0ef575f0ea0a5f1203e7661483))
+* **deps:** bump @kettil/eslint-config from 3.5.0 to 3.5.1 ([cf26ca7](https://github.com/kettil/carna/commit/cf26ca7e6facd44e8c001ceac13fcf43acbc9aa3))
+* **deps:** bump babel-jest from 27.2.1 to 27.2.2 ([d101666](https://github.com/kettil/carna/commit/d1016660316a49a7f4f60c0e1a7f5564d75ffe9a))
+* **deps:** bump babel-jest from 27.2.2 to 27.2.4 ([586930b](https://github.com/kettil/carna/commit/586930b7a04afd9aea22a4f1974f5fdcb9cadb5f))
+* **deps:** bump jest from 27.2.1 to 27.2.2 ([1896b99](https://github.com/kettil/carna/commit/1896b995f770beb2f1b4f3e58e2c5ea21fb9d12d))
+* **deps:** bump jest from 27.2.2 to 27.2.4 ([d86d6d8](https://github.com/kettil/carna/commit/d86d6d8c9d6f1d2579cc8856becfc78b669ec82c))
+* **deps:** bump yargs from 17.2.0 to 17.2.1 ([f0b0a3b](https://github.com/kettil/carna/commit/f0b0a3b17b1115a7aba4c1469ab02984c3c68a38))
+
 # [4.12.0](https://github.com/kettil/carna/compare/4.11.0...4.12.0) (2021-09-23)
 
 
