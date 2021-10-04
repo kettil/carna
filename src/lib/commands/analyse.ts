@@ -4,6 +4,7 @@ import { analyseServices, AnalyseProps, analyseTask } from '../tasks/analyseTask
 const command = 'analyse';
 const desc = 'Run code quality tools';
 
+const aliases = ['$0'];
 const options = { group: `${command}-Options` } as const;
 
 const handler = createHandler<AnalyseProps>(analyseTask);
@@ -13,4 +14,4 @@ const builder = createBuilder<AnalyseProps>(command, (yargs) =>
   }),
 );
 
-export { command, desc, builder, handler };
+export { aliases, command, desc, builder, handler };
