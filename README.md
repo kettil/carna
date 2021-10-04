@@ -292,7 +292,6 @@ For VS Code users the entry `prettier.configPath` in the `.vscode/settings.json`
   "singleQuote": true,
   "trailingComma": "all",
   "bracketSpacing": true,
-  "jsxBracketSameLine": false,
   "arrowParens": "always",
   "overrides": [
     { "files": "{*.ts,*.tsx}", "options": { "parser": "typescript" } },
