@@ -29,7 +29,6 @@ The following commands are available:
 
 | Commands                       | Description                           |
 | ------------------------------ | ------------------------------------- |
-| [`init`](#the-init-task)       | Initializes the project               |
 | [`analyse`](#the-analyse-task) | Run the code quality tools            |
 | [`test`](#the-test-task)       | Run the tests                         |
 | [`deps`](#the-deps-task)       | Checks if there are orphaned packages |
@@ -57,26 +56,6 @@ Each time a command is executed, different hooks are called. Every hook correspo
 The hooks have the structure `<pre|post>carna:<task>`.
 
 If you add the option `--verbose` when calling a command, all possible hooks will be displayed.
-
-## The `init` task
-
-Creates a new project with all config files in the current folder.
-
-### Options
-
-| Options    | short | Description                                                                              |
-| ---------- | ----- | ---------------------------------------------------------------------------------------- |
-| --package  | -p    | Project is created as a package                                                          |
-| --cli      | -c    | Extends the package with CLI features (required `--package`)                             |
-| --github   |       | Expects the Github username and then adds the repository data and CI configuration file. |
-| --noCommit |       | No initial commit is executed at the end                                                 |
-
-### Exit codes
-
-| Exit code | Description |
-| --------- | ----------- |
-| 0         | Success     |
-| 1         | task failed |
 
 ## The `analyse` task
 

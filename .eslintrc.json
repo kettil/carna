@@ -24,6 +24,10 @@
         "node/no-unpublished-require": ["off"],
         "eslint-comments/no-unused-disable": ["off"]
       }
+    },
+    {
+      "files": ["*.test.ts"],
+      "rules": { "consistent-function-scoping": ["off"] }
     }
   ]
 }

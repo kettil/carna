@@ -1,10 +1,7 @@
 import { Logger } from './cli/logger';
 
-type NpmInstallMode = 'dev' | 'optional' | 'prod';
-
 type PropsGlobal = {
   readonly cwd: string;
-  readonly tpl: string;
   readonly cfg: string;
   readonly log: Logger;
   readonly vvv: boolean;
@@ -36,12 +33,11 @@ type LicensePackageInfo = {
 };
 
 export type {
-  NpmInstallMode,
-  PropsGlobal,
   Action,
-  Task,
   LicenseCompatibilities,
   LicenseHeuristics,
-  LicensePackages,
   LicensePackageInfo,
+  LicensePackages,
+  PropsGlobal,
+  Task,
 };

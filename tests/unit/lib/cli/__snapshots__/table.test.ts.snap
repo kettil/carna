@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`table it should works 1`] = `
+"┌─────┬───┐
+│ foo │ 4 │
+├─────┼───┤
+│ bar │ 7 │
+└─────┴───┘"
+`;

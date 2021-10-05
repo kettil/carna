@@ -8,10 +8,8 @@ type NpmPackageLoadProps = {
   throwError?: boolean;
 };
 
-const getPackagePath = (cwd: string): string => join(cwd, 'package.json');
-
 const npmPackageLoadAction: Action<NpmPackageLoadProps, unknown> = async ({ cwd, log }, { key, throwError }) => {
-  const path = getPackagePath(cwd);
+  const path = join(cwd, 'package.json');
   const isExists = await access(path);
 
   if (!isExists) {
@@ -35,4 +33,4 @@ const npmPackageLoadAction: Action<NpmPackageLoadProps, unknown> = async ({ cwd,
   return value;
 };
 
-export { npmPackageLoadAction, getPackagePath };
+export { npmPackageLoadAction };
