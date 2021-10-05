@@ -1,5 +1,23 @@
 # Changelog
 
+# [5.0.0-beta.1](https://github.com/kettil/carna/compare/4.13.0-beta.1...5.0.0-beta.1) (2021-10-05)
+
+
+### Bug Fixes
+
+* incorrect handling of special characters in getCoverageFolder() ([dd18d32](https://github.com/kettil/carna/commit/dd18d3295145fb070c9aff6383b7b4eb356b2cd0))
+
+
+### Features
+
+* add support for monorepo's ([399bf04](https://github.com/kettil/carna/commit/399bf042d0305d709b081f7452abad129836f54f))
+* remove init command ([d7f8814](https://github.com/kettil/carna/commit/d7f8814168c970c3b69681b23b9a3cc74f14608e)), closes [#540](https://github.com/kettil/carna/issues/540)
+
+
+### BREAKING CHANGES
+
+* The `init` command has been removed and instead Github repo templates have been created.
+
 # [4.13.0-beta.1](https://github.com/kettil/carna/compare/4.12.1...4.13.0-beta.1) (2021-10-04)
 
 
