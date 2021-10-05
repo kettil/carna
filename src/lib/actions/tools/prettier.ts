@@ -6,10 +6,10 @@ import { Action } from '../../types';
 import { PrettierActionProps } from '../types';
 
 const prettierAction: Action<PrettierActionProps> = async (
-  { cwd, cfg, log },
+  { root, cfg, log },
   { write, files, extension = prettierExtensions },
 ) => {
-  const configFiles = await existFiles(prettierConfigFiles, cwd);
+  const configFiles = await existFiles(prettierConfigFiles, root);
 
   configFiles.push(join(cfg, 'prettierrc.json'));
 
@@ -37,7 +37,7 @@ const prettierAction: Action<PrettierActionProps> = async (
   }
 
   log.info('Run prettier');
-  await exec({ cmd, args, cwd, log });
+  await exec({ cmd, args, cwd: root, log });
 };
 
 export { prettierAction };

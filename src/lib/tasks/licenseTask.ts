@@ -1,5 +1,7 @@
+import { basename } from 'path';
 import { isArray } from '@kettil/tool-lib';
 import { underline } from 'chalk';
+import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { licensecheckAction } from '../actions/tools/licensecheck';
 import { getConfig } from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
@@ -10,20 +12,32 @@ import { LicenseIncompatibleError } from '../errors/licenseIncompatibleError';
 import { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 
-const notice = `the check is only a suggestion and is ${underline('not')} legal advice`;
+const notice = `the license check(s) is only a suggestion and is ${underline('not')} legal advice`;
 
 type LicenseProps = {};
 
 const licenseTask: Task<LicenseProps> = async (argv) => {
-  try {
-    const configIgnorePackages = await getConfig(argv.cwd, 'license.ignore.packages');
-    const ignorePackages = isArray(configIgnorePackages)
-      ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
-      : [];
+  const configIgnorePackages = await getConfig(argv.root, 'license.ignore.packages');
+  const workspacePaths = await npmPackageWorkspacesAction(argv);
+  const ignorePackages = isArray(configIgnorePackages)
+    ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
+    : [];
 
-    await taskHook(argv, { task: 'license', type: 'pre' });
-    await spinnerAction(licensecheckAction(argv, ignorePackages), `License verification (${notice})`);
-    await taskHook(argv, { task: 'license', type: 'post' });
+  await taskHook(argv, { task: 'license', type: 'pre' });
+
+  try {
+    await spinnerAction(licensecheckAction(argv, { ignorePackages }), `License verification (${notice})`);
+
+    await workspacePaths.reduce(
+      (promise, workspacePath) =>
+        promise.then(() =>
+          spinnerAction(
+            licensecheckAction(argv, { path: workspacePath, ignorePackages }),
+            `License verification: ${basename(workspacePath)}`,
+          ),
+        ),
+      Promise.resolve(),
+    );
   } catch (error) {
     if (error instanceof LicenseDisabledError) {
       return;
@@ -39,6 +53,8 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
 
     throw error;
   }
+
+  await taskHook(argv, { task: 'license', type: 'post' });
 };
 
 export type { LicenseProps };

@@ -1,6 +1,7 @@
 import { Logger } from './cli/logger';
 
 type PropsGlobal = {
+  readonly root: string;
   readonly cwd: string;
   readonly cfg: string;
   readonly log: Logger;

@@ -8,9 +8,9 @@ import { JestActionProps } from '../types';
 
 const options: Array<keyof JestActionProps> = ['updateSnapshot', 'runInBand', 'watch', 'verbose'];
 
-const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
-  const coverageFolder = getCoverageFolder(cwd, props.projects);
-  const configFile = await getFirstExistingFile({ cwd, files: jestConfigFiles });
+const jestAction: Action<JestActionProps> = async ({ root, ci, log }, props) => {
+  const coverageFolder = getCoverageFolder(root, props.projects);
+  const configFile = await getFirstExistingFile({ cwd: root, files: jestConfigFiles });
 
   const args: string[] = ['--config', configFile, '--colors'];
 
@@ -55,7 +55,7 @@ const jestAction: Action<JestActionProps> = async ({ cwd, ci, log }, props) => {
 
   log.info('Run test');
 
-  await exec({ cmd: jestCommand, args, cwd, log, withInteraction: props.watch, withDirectOutput: true });
+  await exec({ cmd: jestCommand, args, cwd: root, log, withInteraction: props.watch, withDirectOutput: true });
 };
 
 export { jestAction };

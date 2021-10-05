@@ -5,8 +5,8 @@ import { existFiles } from '../../cmd/existFiles';
 import { Action } from '../../types';
 import { EslintActionProps } from '../types';
 
-const eslintAction: Action<EslintActionProps> = async ({ cwd, cfg, log }, { write, files }) => {
-  const configFiles = await existFiles(eslintConfigFiles, cwd);
+const eslintAction: Action<EslintActionProps> = async ({ root, cfg, log }, { write, files }) => {
+  const configFiles = await existFiles(eslintConfigFiles, root);
 
   configFiles.push(join(cfg, 'eslintrc.json'));
 
@@ -39,7 +39,7 @@ const eslintAction: Action<EslintActionProps> = async ({ cwd, cfg, log }, { writ
   }
 
   log.info('Run eslint');
-  await exec({ cmd, args, cwd, log });
+  await exec({ cmd, args, cwd: root, log });
 };
 
 export { eslintAction };

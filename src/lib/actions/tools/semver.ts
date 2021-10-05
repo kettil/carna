@@ -3,12 +3,13 @@ import { red } from 'chalk';
 import { TableError } from '../../errors/tableError';
 import { Action } from '../../types';
 import { npmPackageLoadAction } from '../npm/packageLoad';
+import { SemverActionProps } from '../types';
 import { getInaccurateVersions } from './utils/getInaccurateVersions';
 
 const keys = ['dependencies', 'devDependencies'] as const;
 
-const semverAction: Action = async (argv) => {
-  const packagesJson = await npmPackageLoadAction(argv, {});
+const semverAction: Action<SemverActionProps> = async (argv, { path }) => {
+  const packagesJson = await npmPackageLoadAction(argv, { path });
 
   if (!isObject(packagesJson)) {
     throw new Error('The package.json was not found');

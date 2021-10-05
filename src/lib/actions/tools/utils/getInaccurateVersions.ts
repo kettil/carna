@@ -3,12 +3,12 @@ import { coerce } from 'semver';
 
 const regexpPostfix = /\d+\.\d+\.\d+[-.][\d\-.a-z]+/i;
 
-const getInaccurateVersions = (packages: unknown): Array<[string, string, string]> => {
-  if (!isObject(packages)) {
+const getInaccurateVersions = (dependencies: unknown): Array<[string, string, string]> => {
+  if (!isObject(dependencies)) {
     return [];
   }
 
-  return objectEntries(packages)
+  return objectEntries(dependencies)
     .filter((value): value is readonly [string, string] => typeof value[1] === 'string')
     .filter(([, version]) => !version.startsWith('file'))
     .filter(([, version]) => !version.startsWith('http'))

@@ -8,11 +8,12 @@ import { Action, LicensePackageInfo } from '../../types';
 import { getNodeModulePaths } from '../../utils/getNodeModulePaths';
 import { getNodePackageInfo } from '../../utils/getNodePackageInfo';
 import { isLicenseCompatible } from '../../utils/isLicenseCompatible';
+import { LicensecheckActionProps } from '../types';
 
-const licensecheckAction: Action<[string[]]> = async (argv, ignorePackages = []) => {
-  const { cwd, log } = argv;
+const licensecheckAction: Action<LicensecheckActionProps> = async (argv, { path = argv.root, ignorePackages = [] }) => {
+  const { log } = argv;
 
-  const projectInfo = await getNodePackageInfo(argv, { packagePath: cwd, ignorePackages: [], licensePackages: {} });
+  const projectInfo = await getNodePackageInfo(argv, { path, ignorePackages: [], licensePackages: {} });
 
   if (!projectInfo) {
     throw new Error('Project package data was not found');
@@ -31,12 +32,12 @@ const licensecheckAction: Action<[string[]]> = async (argv, ignorePackages = [])
 
   log.info('Get the paths of the packages');
 
-  const packagePaths = await getNodeModulePaths(cwd);
+  const packagePaths = await getNodeModulePaths(path);
 
   log.info('Read the license data');
 
   const packageInfos = await Promise.all(
-    packagePaths.map((packagePath) => getNodePackageInfo(argv, { packagePath, ignorePackages, licensePackages })),
+    packagePaths.map((packagePath) => getNodePackageInfo(argv, { path: packagePath, ignorePackages, licensePackages })),
   );
 
   log.info('Validation of the license data');
@@ -49,7 +50,7 @@ const licensecheckAction: Action<[string[]]> = async (argv, ignorePackages = [])
   const incompatibleLicenses: Array<[string, string, string, string, string]> = packageInfos
     .filter((v): v is LicensePackageInfo => v !== undefined)
     .filter((packageInfo) => !isLicenseCompatible({ ...licenseCompatibleProps, packageInfo }))
-    .map(({ name, license, version, path }, index) => [`${index + 1}`, name, license, version, path]);
+    .map((data, index) => [`${index + 1}`, data.name, data.license, data.version, data.path]);
 
   if (incompatibleLicenses.length > 0) {
     incompatibleLicenses.unshift([red('#'), red('Name'), red('License'), red('Version'), red('Path')]);

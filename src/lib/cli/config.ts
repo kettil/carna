@@ -13,8 +13,8 @@ const getDataRecursive = (data: unknown, keys: string[]): unknown => {
   return isObject(data) ? getDataRecursive(data[key], keys) : undefined;
 };
 
-const getConfig = async (cwd: string, keyPath?: string): Promise<unknown> => {
-  const configPath = join(cwd, '.carnarc.json');
+const getConfig = async (path: string, keyPath?: string): Promise<unknown> => {
+  const configPath = join(path, '.carnarc.json');
 
   const hasConfigFile = await access(configPath, 'readable');
 

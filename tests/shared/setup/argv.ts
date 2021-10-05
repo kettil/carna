@@ -4,9 +4,8 @@ import { Arguments } from 'yargs';
 import { PropsGlobal } from '../../../src/lib/types';
 
 const cwd = '/path/to/project';
-
+const root = '/path/to/project';
 const cfg = join(cwd, 'node_modules', 'carna', 'configs');
-const tpl = join(cwd, 'node_modules', 'carna', 'templates');
 
 const getArgv = <T extends Record<string, unknown>>(props: T): Arguments<PropsGlobal & T> => {
   const log = jest.fn((msg: unknown) => {
@@ -17,9 +16,9 @@ const getArgv = <T extends Record<string, unknown>>(props: T): Arguments<PropsGl
     // eslint-disable-next-line @typescript-eslint/naming-convention -- external dependency
     _: [],
     $0: '',
+    root,
     cwd,
     cfg,
-    tpl,
     ci: false,
     vvv: false,
     log: { debug: log, error: log, info: log, log },
@@ -27,4 +26,4 @@ const getArgv = <T extends Record<string, unknown>>(props: T): Arguments<PropsGl
   };
 };
 
-export { cwd, cfg, tpl, getArgv };
+export { cwd, cfg, root, getArgv };
