@@ -5,11 +5,11 @@ import { Action } from '../../types';
 import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
 import { CommitlintActionProps } from '../types';
 
-const commitlintAction: Action<CommitlintActionProps> = async ({ cwd, cfg, log }, { edit }) => {
+const commitlintAction: Action<CommitlintActionProps> = async ({ root, cfg, log }, { edit }) => {
   const configFile = await getFirstExistingFile({
     defaultFile: join(cfg, 'commitlintrc.json'),
     files: commitlintConfigFiles,
-    cwd,
+    cwd: root,
   });
 
   const cmd = './node_modules/.bin/commitlint';
@@ -20,7 +20,7 @@ const commitlintAction: Action<CommitlintActionProps> = async ({ cwd, cfg, log }
   args.push('--config', configFile);
 
   log.info('Run commitlint');
-  await exec({ cmd, args, cwd, log });
+  await exec({ cmd, args, cwd: root, log });
 };
 
 export { commitlintAction };

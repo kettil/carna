@@ -1,11 +1,11 @@
 import { join } from 'path';
-import { cfg, cwd, tpl } from './argv';
+import { cfg, cwd, root } from './argv';
 import { mockFilePackage } from './packageJson';
 
 const getAccessFiles = (files: Record<string, boolean> = {}): Record<string, boolean> => ({
+  [root]: true,
   [cwd]: true,
   [cfg]: true,
-  [tpl]: true,
   [mockFilePackage]: true,
   [join(cwd, '.git')]: false,
   [join(cwd, '.github')]: false,

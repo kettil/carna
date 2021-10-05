@@ -15,6 +15,11 @@ type CoverageActionProps = {
   watermarks?: Partial<Record<keyof Watermarks, CoverageWatermarkThreshold>>;
 };
 
+type DepcheckActionProps = {
+  path: string;
+  ignorePackages?: string[];
+};
+
 type EslintActionProps = {
   write?: boolean;
   files?: string[];
@@ -28,10 +33,19 @@ type JestActionProps = {
   watch?: boolean;
 };
 
+type LicensecheckActionProps = {
+  ignorePackages: string[];
+  path?: string;
+};
+
 type PrettierActionProps = {
   write?: boolean;
   extension?: string;
   files?: string[];
+};
+
+type SemverActionProps = {
+  path?: string;
 };
 
 type TscActionProps = {
@@ -43,8 +57,11 @@ export type {
   CommitlintActionProps,
   CoverageActionProps,
   CoverageWatermarkThreshold,
+  DepcheckActionProps,
   EslintActionProps,
   JestActionProps,
+  LicensecheckActionProps,
   PrettierActionProps,
+  SemverActionProps,
   TscActionProps,
 };

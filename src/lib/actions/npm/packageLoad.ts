@@ -5,12 +5,16 @@ import { Action } from '../../types';
 
 type NpmPackageLoadProps = {
   key?: string;
+  path?: string;
   throwError?: boolean;
 };
 
-const npmPackageLoadAction: Action<NpmPackageLoadProps, unknown> = async ({ cwd, log }, { key, throwError }) => {
-  const path = join(cwd, 'package.json');
-  const isExists = await access(path);
+const npmPackageLoadAction: Action<NpmPackageLoadProps, unknown> = async (
+  { root, log },
+  { key, throwError, path = root },
+) => {
+  const pathPackageJson = join(path, 'package.json');
+  const isExists = await access(pathPackageJson);
 
   if (!isExists) {
     throw new Error('package.json is not found');
@@ -18,7 +22,7 @@ const npmPackageLoadAction: Action<NpmPackageLoadProps, unknown> = async ({ cwd,
 
   log.debug('Read the package.json');
 
-  const config = await readFile(path, true);
+  const config = await readFile(pathPackageJson, true);
 
   if (typeof key === 'undefined') {
     return config;

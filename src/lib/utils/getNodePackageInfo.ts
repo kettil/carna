@@ -10,13 +10,13 @@ import { Action, LicensePackageInfo, LicensePackages } from '../types';
 const regexpFilename = /^(?:copying|licen[cs]e|licen[cs]e-\w+|readme)(?:\.markdown|\.md|\.txt)?$/iu;
 
 const getLicenseFromFiles = async ({
-  packagePath,
+  path,
   data,
 }: {
-  packagePath: string;
+  path: string;
   data: LicensePackageInfo;
 }): Promise<LicensePackageInfo | undefined> => {
-  const entries = await readdir(packagePath);
+  const entries = await readdir(path);
   const files = entries
     .filter((entry) => entry.isFile() && !entry.name.startsWith('.') && regexpFilename.test(entry.name))
     .map((entry) => entry.name)
@@ -25,7 +25,7 @@ const getLicenseFromFiles = async ({
   // eslint-disable-next-line no-restricted-syntax -- the loop should be canceled after the first find
   for (const file of files) {
     // eslint-disable-next-line no-await-in-loop -- the loop should be canceled after the first find
-    const content = await readFile(join(packagePath, file));
+    const content = await readFile(join(path, file));
 
     // eslint-disable-next-line no-restricted-syntax -- the loop should be canceled after the first find
     for (const [aliasLicense, regexp] of objectEntries(licenseHeuristics)) {
@@ -39,10 +39,10 @@ const getLicenseFromFiles = async ({
 };
 
 const getNodePackageInfo: Action<
-  { packagePath: string; ignorePackages: string[]; licensePackages: LicensePackages },
+  { path: string; ignorePackages: string[]; licensePackages: LicensePackages },
   LicensePackageInfo | undefined
-> = async ({ cwd, log }, { packagePath, ignorePackages, licensePackages }) => {
-  const packageJsonPath = join(packagePath, 'package.json');
+> = async ({ cwd, log }, { path, ignorePackages, licensePackages }) => {
+  const packageJsonPath = join(path, 'package.json');
 
   const hasPackageJson = await access(packageJsonPath);
 
@@ -62,7 +62,7 @@ const getNodePackageInfo: Action<
   }
 
   const data = {
-    path: packagePath.slice(Math.max(0, cwd.length + 1)),
+    path: path.slice(Math.max(0, cwd.length + 1)),
     version: typeof version === 'string' ? version : 'UNKNOWN',
     license: 'UNKNOWN',
     name,
@@ -86,7 +86,7 @@ const getNodePackageInfo: Action<
   }
 
   // License from copying|license|readme file
-  const fileLicense = await getLicenseFromFiles({ packagePath, data });
+  const fileLicense = await getLicenseFromFiles({ path, data });
 
   if (fileLicense) {
     return fileLicense;

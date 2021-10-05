@@ -26,7 +26,7 @@ const transformThreshold = (key: number | string, value: unknown): [number | str
 };
 
 const testTask: Task<TestProps> = async (argv, props) => {
-  const configThreshold = await getConfig(argv.cwd, 'test.coverage.threshold');
+  const configThreshold = await getConfig(argv.root, 'test.coverage.threshold');
   const coverageThreshold = isObject(configThreshold) ? objectMap(configThreshold, transformThreshold) : undefined;
 
   await taskHook(argv, { task: 'test', type: 'pre' });

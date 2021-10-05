@@ -11,7 +11,7 @@ import { table } from './table';
 type CommandBuilder<TaskProps = Record<string, unknown>> = (yargs: Argv<PropsGlobal>) => Argv<PropsGlobal & TaskProps>;
 type CommandHandler<TaskProps = Record<string, unknown>> = (argv: Arguments<PropsGlobal & TaskProps>) => Promise<void>;
 
-const globalOptions = ['cwd', 'cfg', 'log', 'vvv', 'ci'] as const;
+const globalOptions = ['root', 'cwd', 'cfg', 'log', 'vvv', 'ci'] as const;
 
 const filterOptions = ([key]: [key: string, value: unknown]) =>
   globalOptions.includes(key as typeof globalOptions[number]);
@@ -58,10 +58,15 @@ const errorHandler = (msg: string, error: Error): void => {
 const createHandler =
   <TaskProps extends Record<string, unknown>>(task: Task<TaskProps>): CommandHandler<TaskProps> =>
     async (argv) => {
-      const [isReadableCwd, isReadableCfg] = await Promise.all([
+      const [isReadableRoot, isReadableCwd, isReadableCfg] = await Promise.all([
+        access(argv.root, 'readable'),
         access(argv.cwd, 'readable'),
         access(argv.cfg, 'readable'),
       ]);
+
+      if (!isReadableRoot) {
+        throw new Error(`The folder ${argv.root} is not readable`);
+      }
 
       if (!isReadableCwd) {
         throw new Error(`The folder ${argv.cwd} is not readable`);
@@ -71,7 +76,7 @@ const createHandler =
         throw new Error(`The folder ${argv.cfg} is not readable`);
       }
 
-      argv.log.debug(['Paths:', `▸ cwd:  ${argv.cwd}`, `▸ cfg:  ${argv.cfg}`, '']);
+      argv.log.debug(['Paths:', `▸ root: ${argv.root}`, `▸ cwd:  ${argv.cwd}`, `▸ cfg:  ${argv.cfg}`, '']);
 
       const options = Object.fromEntries(Object.entries(argv).filter(filterOptions)) as PropsGlobal;
       const props = Object.fromEntries(Object.entries(argv).filter(filterProps)) as TaskProps;

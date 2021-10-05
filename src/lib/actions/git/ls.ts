@@ -5,7 +5,7 @@ const modes = ['modified', 'others'] as const;
 
 type Mode = typeof modes[number] | 'all';
 
-const gitLsAction: Action<{ mode: Mode }, string[]> = async ({ cwd, log }, { mode }) => {
+const gitLsAction: Action<{ mode: Mode }, string[]> = async ({ root, log }, { mode }) => {
   log.info('Get the list of modified or other files');
 
   const args = ['ls-files', '--exclude-standard'];
@@ -16,7 +16,7 @@ const gitLsAction: Action<{ mode: Mode }, string[]> = async ({ cwd, log }, { mod
     args.push(`--${mode}`);
   }
 
-  const { stdout } = await exec({ cmd: 'git', args, cwd, log });
+  const { stdout } = await exec({ cmd: 'git', args, cwd: root, log });
 
   log.info('Return a list of modified or other files');
 

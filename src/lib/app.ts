@@ -7,6 +7,7 @@ import { errorHandler } from './cli/yargs';
 import { PropsGlobal } from './types';
 
 const cwd = process.cwd();
+const root = join(__dirname, '..', '..');
 const cfg = join(__dirname, '..', '..', 'configs');
 
 const epilogue = [
@@ -21,6 +22,7 @@ const app = async (argv: string[]): Promise<void> => {
     .option('ci', { default: env('CI', '') !== '', type: 'boolean', describe: 'Run carna in CI mode' })
     .option('verbose', { default: false, alias: 'v', type: 'boolean', desc: 'Print info messages' })
     .option('vvv', { default: false, type: 'boolean', desc: 'Print info/debug messages' })
+    .option('root', { default: root, type: 'string', hidden: true })
     .option('cwd', { default: cwd, type: 'string', hidden: true })
     .option('cfg', { default: cfg, type: 'string', hidden: true })
     .middleware((argsInterpreted) => ({ log: logger(argsInterpreted) }))

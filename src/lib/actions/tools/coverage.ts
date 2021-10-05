@@ -18,10 +18,10 @@ const watermarkKeys: Array<keyof Watermarks> = ['statements', 'functions', 'bran
 
 const coverageAction: Action<CoverageActionProps> = async (argv, { projects, watermarks = {} }) => {
   const coverageFiles = await existFiles(
-    projects.map((project) => join(getCoverageFolder(argv.cwd, [project]), coverageFileName)),
+    projects.map((project) => join(getCoverageFolder(argv.root, [project]), coverageFileName)),
   );
 
-  const coveragePath = getCoverageFolder(argv.cwd, []);
+  const coveragePath = getCoverageFolder(argv.root, []);
   const coverageMap = createCoverageMap({});
 
   const coverages = await Promise.all(coverageFiles.map((file) => readFile(file, true)));

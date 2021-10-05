@@ -3,6 +3,7 @@ import dependenciesCheck, { Options, parser, detector, special } from 'depcheck'
 import { depcheckIgnorePackages } from '../../../configs/actionConfigs';
 import { DependencyError } from '../../errors/dependencyError';
 import { Action } from '../../types';
+import { DepcheckActionProps } from '../types';
 
 const options: Options = {
   ignoreDirs: ['node_modules'],
@@ -16,8 +17,10 @@ const options: Options = {
   specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky],
 };
 
-const depcheckAction: Action<[string[]]> = async ({ cwd }, ignorePackages = []) => {
-  const result = await dependenciesCheck(cwd, {
+const depcheckAction: Action<DepcheckActionProps> = async ({ log }, { path, ignorePackages = [] }) => {
+  log.debug('Create the dependency list');
+
+  const result = await dependenciesCheck(path, {
     ...options,
     ignoreMatches: [...ignorePackages, ...depcheckIgnorePackages],
   });
