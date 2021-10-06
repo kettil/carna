@@ -1,5 +1,13 @@
 # Changelog
 
+# [5.0.0-beta.2](https://github.com/kettil/carna/compare/5.0.0-beta.1...5.0.0-beta.2) (2021-10-06)
+
+
+### Bug Fixes
+
+* incorrect resolution of the root path ([883b1b4](https://github.com/kettil/carna/commit/883b1b44027958ccca821d5e3b11191cfb63de8f))
+* incorrect resolution of tools paths ([a8db695](https://github.com/kettil/carna/commit/a8db695e33c1fcbf37967723e71cf335c07e3ab5))
+
 # [5.0.0-beta.1](https://github.com/kettil/carna/compare/4.13.0-beta.1...5.0.0-beta.1) (2021-10-05)
 
 
