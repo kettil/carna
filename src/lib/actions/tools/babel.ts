@@ -5,7 +5,7 @@ import { Action } from '../../types';
 import { getBabelConfigPath } from '../../utils/getConfigPath';
 
 const babelAction: Action = async ({ root, cwd, log }) => {
-  const configPath = await getBabelConfigPath({ cwd });
+  const configPath = await getBabelConfigPath({ root, cwd });
 
   const cmd = join(root, babelCommand);
   const args: string[] = [];
