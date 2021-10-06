@@ -1,5 +1,5 @@
 import { join, basename } from 'path';
-import { eslintConfigFiles, eslintExtensions, eslintIgnoreFiles } from '../../../configs/actionConfigs';
+import { eslintCommand, eslintConfigFiles, eslintExtensions, eslintIgnoreFiles } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { existFiles } from '../../cmd/existFiles';
 import { Action } from '../../types';
@@ -10,7 +10,7 @@ const eslintAction: Action<EslintActionProps> = async ({ root, cfg, log }, { wri
 
   configFiles.push(join(cfg, 'eslintrc.json'));
 
-  const cmd = './node_modules/.bin/eslint';
+  const cmd = join(root, eslintCommand);
   const args: string[] = [];
 
   args.push('--color');

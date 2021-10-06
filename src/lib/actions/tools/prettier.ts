@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { prettierConfigFiles, prettierExtensions } from '../../../configs/actionConfigs';
+import { prettierCommand, prettierConfigFiles, prettierExtensions } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { existFiles } from '../../cmd/existFiles';
 import { Action } from '../../types';
@@ -13,7 +13,7 @@ const prettierAction: Action<PrettierActionProps> = async (
 
   configFiles.push(join(cfg, 'prettierrc.json'));
 
-  const cmd = './node_modules/.bin/prettier';
+  const cmd = join(root, prettierCommand);
   const args: string[] = [];
 
   args.push('--config', configFiles[0]);

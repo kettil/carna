@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { commitlintConfigFiles } from '../../../configs/actionConfigs';
+import { commitlintCommand, commitlintConfigFiles } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
@@ -12,7 +12,7 @@ const commitlintAction: Action<CommitlintActionProps> = async ({ root, cfg, log 
     cwd: root,
   });
 
-  const cmd = './node_modules/.bin/commitlint';
+  const cmd = join(root, commitlintCommand);
   const args: string[] = [];
 
   args.push('--color');

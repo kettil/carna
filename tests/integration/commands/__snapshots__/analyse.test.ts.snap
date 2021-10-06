@@ -41,7 +41,7 @@ Object {
     "--write",
     "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
   ],
-  "command": "./node_modules/.bin/prettier",
+  "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
 }
 `;
@@ -59,7 +59,7 @@ Object {
     "\\"js,ts,tsx\\"",
     ".",
   ],
-  "command": "./node_modules/.bin/eslint",
+  "command": "/path/to/project/node_modules/.bin/eslint",
   "cwd": "/path/to/project",
 }
 `;
@@ -75,7 +75,7 @@ Object {
     "--isolatedModules",
     "false",
   ],
-  "command": "./node_modules/.bin/tsc",
+  "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
 }
 `;
@@ -104,7 +104,7 @@ Object {
     "\\"js,ts,tsx\\"",
     ".",
   ],
-  "command": "./node_modules/.bin/eslint",
+  "command": "/path/to/project/node_modules/.bin/eslint",
   "cwd": "/path/to/project",
 }
 `;
@@ -117,7 +117,7 @@ Object {
     "--write",
     "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
   ],
-  "command": "./node_modules/.bin/prettier",
+  "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
 }
 `;
@@ -133,7 +133,7 @@ Object {
     "--isolatedModules",
     "false",
   ],
-  "command": "./node_modules/.bin/tsc",
+  "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
 }
 `;
@@ -146,7 +146,7 @@ Object {
     "--write",
     "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
   ],
-  "command": "./node_modules/.bin/prettier",
+  "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
 }
 `;
@@ -164,7 +164,7 @@ Object {
     "\\"js,ts,tsx\\"",
     ".",
   ],
-  "command": "./node_modules/.bin/eslint",
+  "command": "/path/to/project/node_modules/.bin/eslint",
   "cwd": "/path/to/project",
 }
 `;
@@ -180,7 +180,7 @@ Object {
     "--isolatedModules",
     "false",
   ],
-  "command": "./node_modules/.bin/tsc",
+  "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
 }
 `;
