@@ -5,9 +5,10 @@ import yargs from 'yargs';
 import { logger } from './cli/logger';
 import { errorHandler } from './cli/yargs';
 import { PropsGlobal } from './types';
+import { getPathFromNodeModulesParent } from './utils/getPathFromNodeModulesParent';
 
 const cwd = process.cwd();
-const root = join(__dirname, '..', '..');
+const root = getPathFromNodeModulesParent(__dirname, join(__dirname, '..', '..'));
 const cfg = join(__dirname, '..', '..', 'configs');
 
 const epilogue = [
