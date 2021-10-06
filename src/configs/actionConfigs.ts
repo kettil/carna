@@ -45,7 +45,7 @@ const prettierConfigFiles = [
 
 // typescript
 const typescriptConfigFiles = ['tsconfig.json'];
-const typescriptBuildConfigFiles = ['tsconfig.build.json'];
+const typescriptBuildConfigFiles = ['tsconfig.build.json', 'tsconfig.json'];
 const typescriptCommand = './node_modules/.bin/tsc';
 
 // depcheck

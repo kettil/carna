@@ -7,6 +7,7 @@ const packageJson = {
   license: 'MIT',
   scripts: {},
   dependencies: { package: '0.1.0' },
+  devDependencies: { typescript: '0.1.0' },
 };
 
 export { mockFilePackage, packageJson };
