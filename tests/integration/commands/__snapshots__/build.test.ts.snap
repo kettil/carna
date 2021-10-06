@@ -28,7 +28,7 @@ Object {
     "false",
     "--emitDeclarationOnly",
   ],
-  "command": "./node_modules/.bin/tsc",
+  "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
 }
 `;
@@ -44,7 +44,7 @@ Object {
     ".js,.jsx,.ts,.tsx",
     "src",
   ],
-  "command": "./node_modules/.bin/babel",
+  "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project",
 }
 `;
@@ -71,7 +71,7 @@ Object {
     "false",
     "--emitDeclarationOnly",
   ],
-  "command": "./node_modules/.bin/tsc",
+  "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
 }
 `;
@@ -87,7 +87,7 @@ Object {
     ".js,.jsx,.ts,.tsx",
     "src",
   ],
-  "command": "./node_modules/.bin/babel",
+  "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project",
 }
 `;

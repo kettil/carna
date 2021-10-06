@@ -1,13 +1,14 @@
 import { join } from 'path';
+import { typescriptCommand } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 import { getTypescriptConfigPath } from '../../utils/getTypescriptConfigPath';
 import { TscActionProps } from '../types';
 
-const tscAction: Action<TscActionProps> = async ({ cwd, log }, { mode }) => {
+const tscAction: Action<TscActionProps> = async ({ root, cwd, log }, { mode }) => {
   const configPath = await getTypescriptConfigPath(cwd, mode);
 
-  const cmd = './node_modules/.bin/tsc';
+  const cmd = join(root, typescriptCommand);
   const args: string[] = [];
 
   switch (mode) {

@@ -20,7 +20,7 @@ Object {
     "--config",
     "/path/to/project/node_modules/carna/configs/commitlintrc.json",
   ],
-  "command": "./node_modules/.bin/commitlint",
+  "command": "/path/to/project/node_modules/.bin/commitlint",
   "cwd": "/path/to/project",
 }
 `;
@@ -45,7 +45,7 @@ Object {
     "--config",
     "/path/to/project/node_modules/carna/configs/commitlintrc.json",
   ],
-  "command": "./node_modules/.bin/commitlint",
+  "command": "/path/to/project/node_modules/.bin/commitlint",
   "cwd": "/path/to/project",
 }
 `;

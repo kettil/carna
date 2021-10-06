@@ -12,6 +12,7 @@ const jestAction: Action<JestActionProps> = async ({ root, ci, log }, props) => 
   const coverageFolder = getCoverageFolder(root, props.projects);
   const configFile = await getFirstExistingFile({ cwd: root, files: jestConfigFiles });
 
+  const cmd = join(root, jestCommand);
   const args: string[] = ['--config', configFile, '--colors'];
 
   if (props.projects.length === 1) {
@@ -55,7 +56,7 @@ const jestAction: Action<JestActionProps> = async ({ root, ci, log }, props) => 
 
   log.info('Run test');
 
-  await exec({ cmd: jestCommand, args, cwd: root, log, withInteraction: props.watch, withDirectOutput: true });
+  await exec({ cmd, args, cwd: root, log, withInteraction: props.watch, withDirectOutput: true });
 };
 
 export { jestAction };

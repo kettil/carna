@@ -76,7 +76,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -104,7 +104,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -179,7 +179,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -202,7 +202,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -283,7 +283,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -305,7 +305,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -376,7 +376,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -399,7 +399,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -471,7 +471,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -495,7 +495,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -574,7 +574,7 @@ Object {
     "--coverageReporters",
     "html",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -609,7 +609,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -632,7 +632,7 @@ Object {
     "--coverageThreshold",
     "'{\\"global\\":{\\"statements\\":0,\\"branches\\":0,\\"functions\\":0,\\"lines\\":0}}'",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
