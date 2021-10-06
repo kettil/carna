@@ -1,6 +1,8 @@
+import { basename } from 'path';
 import { promisify } from 'util';
-import { isArray } from '@kettil/tool-lib';
+import { isArray, uniqueArray } from '@kettil/tool-lib';
 import { glob } from 'glob';
+import { MultipleWorkspacesError } from '../../errors/multipleWorkspacesError';
 import { Action } from '../../types';
 import { npmPackageLoadAction } from './packageLoad';
 
@@ -19,7 +21,19 @@ const npmPackageWorkspacesAction: Action<undefined, string[]> = async (argv) => 
       .map((workspace) => globPromise(workspace, { cwd: argv.root, absolute: true })),
   );
 
-  return paths.flat();
+  const workspaceUniques = uniqueArray(paths.flat());
+  const workspaceDuplicateNames = uniqueArray(
+    workspaceUniques
+      .map((workspace) => basename(workspace))
+      .filter((name, index, names) => names.indexOf(name) !== index)
+      .sort(),
+  );
+
+  if (workspaceDuplicateNames.length > 0) {
+    throw new MultipleWorkspacesError(`The Workspaces exist more than once: ${workspaceDuplicateNames.join(', ')}`);
+  }
+
+  return workspaceUniques;
 };
 
 export { npmPackageWorkspacesAction };
