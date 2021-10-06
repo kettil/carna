@@ -1,5 +1,5 @@
 // babel
-const babelExtensions = '.js,.jsx,.ts,.tsx';
+const babelExtensions = '.js,.jsx,.ts,.tsx,.json';
 const babelScriptFiles = ['src/index.ts', 'src/index.js'];
 const babelConfigFiles = ['babel.config.js', 'babel.config.json'];
 const babelCommand = './node_modules/.bin/babel';
