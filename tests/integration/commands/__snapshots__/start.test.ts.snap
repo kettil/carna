@@ -40,7 +40,7 @@ exports[`command start it should work with hooks: child-process 2`] = `
 Object {
   "args": Array [
     "--extensions",
-    ".js,.jsx,.ts,.tsx",
+    ".js,.jsx,.ts,.tsx,.json",
     "--config-file",
     "/path/to/project/babel.config.js",
     "/path/to/project/src/index.ts",
@@ -65,7 +65,7 @@ exports[`command start it should work: child-process 1`] = `
 Object {
   "args": Array [
     "--extensions",
-    ".js,.jsx,.ts,.tsx",
+    ".js,.jsx,.ts,.tsx,.json",
     "--config-file",
     "/path/to/project/babel.config.js",
     "/path/to/project/src/index.ts",
