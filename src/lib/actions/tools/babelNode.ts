@@ -7,7 +7,7 @@ import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
 import { BabelNodeActionProps } from '../types';
 
 const babelNodeAction: Action<BabelNodeActionProps> = async ({ root, cwd, log }, { script, watch }) => {
-  const configPath = await getBabelConfigPath({ cwd });
+  const configPath = await getBabelConfigPath({ root, cwd });
 
   const cmd = join(root, watch ? babelCommandWatch : babelCommandNode);
   const args: string[] = [];

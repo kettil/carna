@@ -27,7 +27,7 @@ const buildTask: Task<BuildProps> = async (argv) => {
   }
 
   try {
-    await getBabelConfigPath({ cwd: argv.cwd });
+    await getBabelConfigPath({ cwd: argv.cwd, root: argv.root });
     await spinnerAction(babelAction(argv), 'Build: Babel');
   } catch (error) {
     if (!(error instanceof FirstExistFileError)) {
