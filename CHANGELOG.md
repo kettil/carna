@@ -1,5 +1,18 @@
 # Changelog
 
+# [5.0.0-beta.3](https://github.com/kettil/carna/compare/5.0.0-beta.2...5.0.0-beta.3) (2021-10-06)
+
+
+### Bug Fixes
+
+* search the babel config in the cwd and root folder ([ae1a0ec](https://github.com/kettil/carna/commit/ae1a0ec5decb28f8cc6f671cd3df51b6817b2ea5))
+
+
+### Features
+
+* extend babel extension list ([d9e35be](https://github.com/kettil/carna/commit/d9e35bee416857bba37f43e6668f9d5b84612a3f))
+* extend build command for monorepo's ([23c4398](https://github.com/kettil/carna/commit/23c4398053f4cd45a56e53cb15d70b5234c2e1e8))
+
 # [5.0.0-beta.2](https://github.com/kettil/carna/compare/5.0.0-beta.1...5.0.0-beta.2) (2021-10-06)
 
 
