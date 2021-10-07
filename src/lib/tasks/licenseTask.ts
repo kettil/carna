@@ -26,16 +26,13 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
   await taskHook(argv, { task: 'license', type: 'pre' });
 
   try {
-    await spinnerAction(licensecheckAction(argv, { ignorePackages }), `License verification (${notice})`);
+    await [argv.root, ...workspacePaths].reduce(
+      (promise, path) =>
+        promise.then(() => {
+          const subTitle = path === argv.root ? ` (${notice})` : `: ${basename(path)}`;
 
-    await workspacePaths.reduce(
-      (promise, workspacePath) =>
-        promise.then(() =>
-          spinnerAction(
-            licensecheckAction(argv, { path: workspacePath, ignorePackages }),
-            `License verification: ${basename(workspacePath)}`,
-          ),
-        ),
+          return spinnerAction(licensecheckAction(argv, { path, ignorePackages }), `License verification${subTitle}`);
+        }),
       Promise.resolve(),
     );
   } catch (error) {
