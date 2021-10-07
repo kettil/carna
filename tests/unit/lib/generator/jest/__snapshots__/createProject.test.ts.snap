@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createProject() it should work with workspaces 1`] = `
+Object {
+  "bail": 10,
+  "clearMocks": true,
+  "displayName": Object {
+    "color": "green",
+    "name": "foo:unit",
+  },
+  "restoreMocks": true,
+  "roots": Array [
+    "/path/to/project/packages/foo/src",
+    "/path/to/project/packages/foo/tests/unit",
+  ],
+  "setupFilesAfterEnv": Array [],
+  "testEnvironment": "node",
+  "testMatch": Array [
+    "**/*.test.{js,ts,tsx}",
+  ],
+  "testPathIgnorePatterns": Array [
+    "/node_modules/",
+    "/src/",
+  ],
+}
+`;
+
+exports[`createProject() it should work without workspaces 1`] = `
+Object {
+  "bail": 10,
+  "clearMocks": true,
+  "displayName": Object {
+    "color": "green",
+    "name": "unit",
+  },
+  "restoreMocks": true,
+  "roots": Array [
+    "<rootDir>/src",
+    "<rootDir>/tests/unit",
+  ],
+  "setupFilesAfterEnv": Array [],
+  "testEnvironment": "node",
+  "testMatch": Array [
+    "**/*.test.{js,ts,tsx}",
+  ],
+  "testPathIgnorePatterns": Array [
+    "/node_modules/",
+    "/src/",
+  ],
+}
+`;

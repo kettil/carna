@@ -1,3 +1,4 @@
+export { createJestConfig, createJestProject } from './lib/generator/jest';
 export { analyseTask } from './lib/tasks/analyseTask';
 export { buildTask } from './lib/tasks/buildTask';
 export { ciTask } from './lib/tasks/ciTask';

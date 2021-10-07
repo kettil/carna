@@ -1,11 +1,10 @@
-const { config, createProject } = require('./configs/jest.config.js');
+const { createJestConfig, createJestProject } = require('./build');
 
-module.exports = Object.assign(config, {
+module.exports = createJestConfig(__dirname, {
   projects: [
-    // createProject('<foldername>', '<color>', { /* extend config */})
     // => colors: red green yellow blue magenta cyan gray
-    createProject('unit', 'cyan', {}),
-    createProject('integration', 'magenta', {}),
+    createJestProject({ testFolder: 'unit', color: 'cyan', customeConfig: {} }),
+    createJestProject({ testFolder: 'integration', color: 'magenta', customeConfig: {} }),
   ],
 
   // extend options for this project
