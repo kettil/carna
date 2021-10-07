@@ -1,3 +1,4 @@
+import { basename } from 'path';
 import { isArray } from '@kettil/tool-lib';
 import { red } from 'chalk';
 import { licenseCompatibilities } from '../../../configs/licenseCompatibilities';
@@ -24,9 +25,11 @@ const licensecheckAction: Action<LicensecheckActionProps> = async (argv, { path 
   const compatibleLicences = licenseCompatibilities[projectLicense];
 
   if (!isArray(compatibleLicences)) {
+    const workspaceContext = path === argv.root ? '' : ` for ${basename(path)}`;
+
     throw new LicenseDisabledError(
       'The project license has no compatibility group',
-      `License verification is disabled (${projectLicense} != ${supportedLicenses.join('|')})`,
+      `License verification${workspaceContext} is disabled (${projectLicense} != ${supportedLicenses.join('|')})`,
     );
   }
 
