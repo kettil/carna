@@ -29,9 +29,9 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
     await [argv.root, ...workspacePaths].reduce(
       (promise, path) =>
         promise.then(() => {
-          const subTitle = path === argv.root ? ` (${notice})` : `: ${basename(path)}`;
+          const subTitle = path === argv.root ? `(${notice})` : `[${basename(path)}]`;
 
-          return spinnerAction(licensecheckAction(argv, { path, ignorePackages }), `License verification${subTitle}`);
+          return spinnerAction(licensecheckAction(argv, { path, ignorePackages }), `License verification ${subTitle}`);
         }),
       Promise.resolve(),
     );

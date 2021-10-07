@@ -35,7 +35,7 @@ const buildTask: Task<BuildProps> = async (argv) => {
 
             return spinnerAction(
               tscAction({ ...argv, cwd: workspacePath }, { mode: 'type-create' }),
-              `Build: Typescript - ${basename(workspacePath)}`,
+              `Build: Typescript [${basename(workspacePath)}]`,
             );
           }),
         Promise.resolve(),
@@ -49,7 +49,7 @@ const buildTask: Task<BuildProps> = async (argv) => {
     await workspacePaths.reduce(
       (promise, workspacePath) =>
         promise.then(() =>
-          spinnerAction(babelAction({ ...argv, cwd: workspacePath }), `Build: Babel - ${basename(workspacePath)}`),
+          spinnerAction(babelAction({ ...argv, cwd: workspacePath }), `Build: Babel [${basename(workspacePath)}]`),
         ),
       Promise.resolve(),
     );
