@@ -10,11 +10,12 @@ const babelCommandWatch = './node_modules/.bin/babel-watch';
 const commitlintConfigFiles = ['commitlint.config.js', '.commitlintrc.js', '.commitlintrc.json', '.commitlintrc.yml'];
 const commitlintCommand = './node_modules/.bin/commitlint';
 
-// jest/coverage
-const coverageDefaultWatermark: [number, number] = [50, 90];
+// jest
 const jestConfigFiles = ['jest.config.js', 'jest.config.ts'];
 const jestCommand = './node_modules/.bin/jest';
 const jestPreOrderProjects = ['unit', 'integration', 'e2e'];
+// coverage
+const coverageDefaultWatermark: [number, number] = [50, 90];
 
 // eslint
 const eslintIgnoreFiles = new Set(['babel.config.js', 'jest.config.js']);
@@ -49,7 +50,7 @@ const typescriptBuildConfigFiles = ['tsconfig.build.json', 'tsconfig.json'];
 const typescriptCommand = './node_modules/.bin/tsc';
 
 // depcheck
-const depcheckIgnorePackages = ['@types/node', 'typescript'] as const;
+const depcheckIgnorePackages = ['@types/node', 'typescript', 'carna'] as const;
 
 export {
   babelCommand,
