@@ -276,6 +276,7 @@ Array [
     "ignoreMatches": Array [
       "@types/node",
       "typescript",
+      "carna",
     ],
     "parsers": Object {
       "**/*.js": [Function],
@@ -489,6 +490,7 @@ Array [
     "ignoreMatches": Array [
       "@types/node",
       "typescript",
+      "carna",
     ],
     "parsers": Object {
       "**/*.js": [Function],
