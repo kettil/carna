@@ -25,7 +25,7 @@ const licensecheckAction: Action<LicensecheckActionProps> = async (argv, { path 
   const compatibleLicences = licenseCompatibilities[projectLicense];
 
   if (!isArray(compatibleLicences)) {
-    const workspaceContext = path === argv.root ? '' : ` for ${basename(path)}`;
+    const workspaceContext = path === argv.root ? '' : ` for "${basename(path)}"`;
 
     throw new LicenseDisabledError(
       'The project license has no compatibility group',

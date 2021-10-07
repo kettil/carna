@@ -24,7 +24,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
     (promise, path) =>
       promise.then(async () => {
         try {
-          const subTitle = path === argv.root ? '' : `(workspace: ${basename(path)})`;
+          const subTitle = path === argv.root ? '' : `[${basename(path)}]`;
 
           await spinnerAction(depcheckAction(argv, { path, ignorePackages }), `Dependency verification ${subTitle}`);
         } catch (error) {
@@ -42,7 +42,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
 
   await workspacePaths.reduce(
     (promise, path) =>
-      promise.then(() => spinnerAction(semverAction(argv, { path }), `Semver check (workspace: ${basename(path)})`)),
+      promise.then(() => spinnerAction(semverAction(argv, { path }), `Semver check [${basename(path)}]`)),
     Promise.resolve(),
   );
 
