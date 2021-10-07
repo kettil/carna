@@ -1,5 +1,17 @@
 # Changelog
 
+# [5.0.0-beta.5](https://github.com/kettil/carna/compare/5.0.0-beta.4...5.0.0-beta.5) (2021-10-07)
+
+
+### Features
+
+* add monorepo support in the jest config ([4a8e24d](https://github.com/kettil/carna/commit/4a8e24d75f78d9b1657915046495264e793be65e))
+
+
+### BREAKING CHANGES
+
+* The jest config file needs to be rewritten because the structure has changed.
+
 # [5.0.0-beta.4](https://github.com/kettil/carna/compare/5.0.0-beta.3...5.0.0-beta.4) (2021-10-07)
 
 
