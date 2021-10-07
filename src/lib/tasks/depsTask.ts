@@ -20,37 +20,29 @@ const depsTask: Task<DepsProps> = async (argv) => {
 
   await taskHook(argv, { task: 'deps', type: 'pre' });
 
-  try {
-    await spinnerAction(depcheckAction(argv, { path: argv.root, ignorePackages }), 'Dependency verification');
+  await [argv.root, ...workspacePaths].reduce(
+    (promise, path) =>
+      promise.then(async () => {
+        try {
+          const subTitle = path === argv.root ? '' : `(workspace: ${basename(path)})`;
 
-    await workspacePaths.reduce(
-      (promise, workspacePath) =>
-        promise.then(() =>
-          spinnerAction(
-            depcheckAction(argv, { path: workspacePath, ignorePackages }),
-            `Dependency verification (workspace: ${basename(workspacePath)})`,
-          ),
-        ),
-      Promise.resolve(),
-    );
-  } catch (error) {
-    if (!(error instanceof DependencyError)) {
-      throw error;
-    }
+          await spinnerAction(depcheckAction(argv, { path, ignorePackages }), `Dependency verification ${subTitle}`);
+        } catch (error) {
+          if (!(error instanceof DependencyError)) {
+            throw error;
+          }
 
-    argv.log.log(error.list);
-  }
+          argv.log.log(error.list);
+        }
+      }),
+    Promise.resolve(),
+  );
 
   await spinnerAction(semverAction(argv, {}), 'Semver check');
 
   await workspacePaths.reduce(
-    (promise, workspacePath) =>
-      promise.then(() =>
-        spinnerAction(
-          semverAction(argv, { path: workspacePath }),
-          `Semver check (workspace: ${basename(workspacePath)})`,
-        ),
-      ),
+    (promise, path) =>
+      promise.then(() => spinnerAction(semverAction(argv, { path }), `Semver check (workspace: ${basename(path)})`)),
     Promise.resolve(),
   );
 
