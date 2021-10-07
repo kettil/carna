@@ -1,5 +1,13 @@
 # Changelog
 
+# [5.0.0-beta.4](https://github.com/kettil/carna/compare/5.0.0-beta.3...5.0.0-beta.4) (2021-10-07)
+
+
+### Bug Fixes
+
+* add carna to the depcheck ignore list ([143a1bf](https://github.com/kettil/carna/commit/143a1bf9ab18a1d499123e98e46fd4d0ac1a7d7b))
+* unclear error message when checking licenses ([16414f4](https://github.com/kettil/carna/commit/16414f436d77a7fe22ff28938c5fd9d66c5973fa))
+
 # [5.0.0-beta.3](https://github.com/kettil/carna/compare/5.0.0-beta.2...5.0.0-beta.3) (2021-10-06)
 
 
