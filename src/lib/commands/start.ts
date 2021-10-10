@@ -18,6 +18,7 @@ const builder = createBuilder<StartProps>(command, (yargs) =>
     script: {
       ...options,
       type: 'string',
+      alias: 's',
       describe: 'Script to be called (default: src/index.[ts|js])',
     },
   }),
