@@ -1,4 +1,10 @@
 import { Watermark, Watermarks } from 'istanbul-lib-report';
+import { SpawnKillHandler } from '../utils/createSpawnKillHandler';
+
+type BabelActionProps = {
+  watch?: boolean;
+  spawnKillHandler?: SpawnKillHandler;
+};
 
 type BabelNodeActionProps = {
   watch: boolean;
@@ -53,6 +59,7 @@ type TscActionProps = {
 };
 
 export type {
+  BabelActionProps,
   BabelNodeActionProps,
   CommitlintActionProps,
   CoverageActionProps,

@@ -150,7 +150,9 @@ Build the application
 
 ### Options
 
-None
+| Options | short | Description                                                                  |
+| ------- | ----- | ---------------------------------------------------------------------------- |
+| --watch | -w    | Watch files for changes and rebuild the changed files (only for monorepo's). |
 
 ### Exit codes
 

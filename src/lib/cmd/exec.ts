@@ -2,12 +2,14 @@ import { spawn, ChildProcessByStdio, ChildProcessWithoutNullStreams } from 'chil
 import { env as processEnvironment } from '@kettil/tool-lib';
 import { Logger } from '../cli/logger';
 import { ExecutableError } from '../errors/executableError';
+import type { SpawnKillHandler } from '../utils/createSpawnKillHandler';
 
 type Options = {
   readonly cmd: string;
   readonly args: readonly string[];
   readonly withInteraction?: boolean;
   readonly withDirectOutput?: boolean;
+  readonly spawnKillHandler?: SpawnKillHandler;
 
   readonly cwd: string;
   readonly env?: NodeJS.ProcessEnv;
@@ -21,6 +23,7 @@ const exec = ({
   args,
   withInteraction,
   withDirectOutput,
+  spawnKillHandler,
   env: envExtend = {},
   log,
 }: Options): Promise<{ stdout: string; stderr: string; output: string }> =>
@@ -28,8 +31,8 @@ const exec = ({
     const command = `${cmd} ${args.join(' ')}`;
     const env = { ...processEnvironment(), ...envExtend };
 
-    log.debug(`\ncwd:  ${cwd}`);
-    log.debug(`exec: ${command}`);
+    log.info(`\ncwd:  ${cwd}`);
+    log.info(`exec: ${command}`);
 
     let stream: ChildProcessByStdio<null, null, null> | ChildProcessWithoutNullStreams;
     let output = '';
@@ -68,6 +71,10 @@ const exec = ({
           log.debug(value);
         });
       }
+    }
+
+    if (spawnKillHandler) {
+      spawnKillHandler.addCallback((signal) => stream.kill(signal));
     }
 
     stream.on('close', (code) => {
