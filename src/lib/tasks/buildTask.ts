@@ -16,44 +16,37 @@ const buildTask: Task<BuildProps> = async (argv) => {
   const workspacePaths = await npmPackageWorkspacesAction(argv);
   const hasTypescript = await hasDependency(argv, { dependency: 'typescript', dependencyType: 'devDependencies' });
 
+  const paths = workspacePaths.length > 0 ? workspacePaths : [argv.cwd];
+
   if (hasTypescript) {
-    if (workspacePaths.length === 0) {
-      const isPrivate = await npmPackageLoadAction(argv, { key: 'private' });
+    await paths.reduce(
+      (promise, path) =>
+        promise.then(async () => {
+          const isPrivate = await npmPackageLoadAction(argv, { key: 'private', path });
+          const subTitle = path === argv.cwd ? '' : `[${basename(path)}]`;
 
-      if (isPrivate !== true) {
-        await spinnerAction(tscAction(argv, { mode: 'type-create' }), 'Build: Typescript');
-      }
-    } else {
-      await workspacePaths.reduce(
-        (promise, workspacePath) =>
-          promise.then(async () => {
-            const isPrivate = await npmPackageLoadAction(argv, { key: 'private', path: workspacePath });
+          if (isPrivate === true) {
+            return Promise.resolve();
+          }
 
-            if (isPrivate === true) {
-              return Promise.resolve();
-            }
-
-            return spinnerAction(
-              tscAction({ ...argv, cwd: workspacePath }, { mode: 'type-create' }),
-              `Build: Typescript [${basename(workspacePath)}]`,
-            );
-          }),
-        Promise.resolve(),
-      );
-    }
-  }
-
-  if (workspacePaths.length === 0) {
-    await spinnerAction(babelAction(argv), 'Build: Babel');
-  } else {
-    await workspacePaths.reduce(
-      (promise, workspacePath) =>
-        promise.then(() =>
-          spinnerAction(babelAction({ ...argv, cwd: workspacePath }), `Build: Babel [${basename(workspacePath)}]`),
-        ),
+          return spinnerAction(
+            tscAction({ ...argv, cwd: path }, { mode: 'type-create' }),
+            `Build: Typescript ${subTitle}`,
+          );
+        }),
       Promise.resolve(),
     );
   }
+
+  await paths.reduce(
+    (promise, path) =>
+      promise.then(async () => {
+        const subTitle = path === argv.cwd ? '' : `[${basename(path)}]`;
+
+        return spinnerAction(babelAction({ ...argv, cwd: path }), `Build: Babel ${subTitle}`);
+      }),
+    Promise.resolve(),
+  );
 
   await taskHook(argv, { task: 'build', type: 'post' });
 };
