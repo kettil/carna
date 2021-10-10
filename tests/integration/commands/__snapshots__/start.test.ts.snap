@@ -4,6 +4,7 @@ exports[`command start it should be create the expected builder: options 1`] = `
 Array [
   Object {
     "script": Object {
+      "alias": "s",
       "describe": "Script to be called (default: src/index.[ts|js])",
       "group": "start-Options",
       "type": "string",
