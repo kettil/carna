@@ -1,5 +1,12 @@
 # Changelog
 
+# [5.0.0-beta.7](https://github.com/kettil/carna/compare/5.0.0-beta.6...5.0.0-beta.7) (2021-10-10)
+
+
+### Features
+
+* add watch mode to the command build ([b7720f1](https://github.com/kettil/carna/commit/b7720f1efae95ad5d32b33eb1872c1aff17ff2bd))
+
 # [5.0.0-beta.6](https://github.com/kettil/carna/compare/5.0.0-beta.5...5.0.0-beta.6) (2021-10-10)
 
 
