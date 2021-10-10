@@ -1,6 +1,9 @@
+import { constants } from 'os';
 import { dummy } from '@kettil/tool-lib';
 import ora from 'ora';
+import { exit } from '../cmd/exit';
 import { SpinnerWarnError } from '../errors/spinnerWarnError';
+import { SpawnKillHandler } from '../utils/createSpawnKillHandler';
 
 type StopTypes = 'fail' | 'info' | 'stop' | 'succeed' | 'warn';
 
@@ -43,6 +46,33 @@ const spinnerAction = <T>(action: Promise<T>, text: string): Promise<T> => {
   return action.then(succeed, fail);
 };
 
+const spinnerWatchAction = <T>(actions: Array<Promise<T>>, spawnKillHandler: SpawnKillHandler): Promise<T[]> => {
+  start('Watch-Mode - exit with "q"');
+
+  process.stdin.setRawMode(true);
+  process.stdin.setEncoding('utf8');
+  process.stdin.resume();
+
+  process.stdin.on('data', (key) => {
+    // ctrl-c ( end of text )
+    if (key.toString() === '\u0003') {
+      process.stdin.setRawMode(false);
+      process.stdin.pause();
+
+      exit();
+    }
+
+    if (key.toString() === 'q') {
+      process.stdin.setRawMode(false);
+      process.stdin.pause();
+
+      spawnKillHandler.kill(constants.signals.SIGINT);
+    }
+  });
+
+  return Promise.all(actions).then(succeed, fail);
+};
+
 const spinnerBreak = (): (() => void) => {
   if (isSpinning()) {
     stop('stop');
@@ -53,4 +83,4 @@ const spinnerBreak = (): (() => void) => {
   return dummy;
 };
 
-export { isSpinning, spinnerAction, spinnerBreak };
+export { isSpinning, spinnerAction, spinnerWatchAction, spinnerBreak };

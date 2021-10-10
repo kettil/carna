@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`command build it should be create the expected builder: options 1`] = `
+Array [
+  Object {
+    "watch": Object {
+      "alias": "w",
+      "default": false,
+      "describe": "Watch files for changes and rebuild the changed files (without type files)",
+      "group": "build-Options",
+      "type": "boolean",
+    },
+  },
+]
+`;
+
 exports[`command build it should be create the expected builder: usage 1`] = `
 Array [
   "Usage: $0 build [options]",
