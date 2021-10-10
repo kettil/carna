@@ -120,10 +120,11 @@ Object {
 exports[`command git with git "commit" hook it should work with hooks: child-process 10`] = `
 Object {
   "args": Array [
-    "run",
-    "precarna:test",
+    "--config",
+    "/path/to/project/jest.config.js",
+    "--showConfig",
   ],
-  "command": "npm",
+  "command": "./node_modules/.bin/jest",
   "cwd": "/path/to/project",
 }
 `;
@@ -131,11 +132,10 @@ Object {
 exports[`command git with git "commit" hook it should work with hooks: child-process 11`] = `
 Object {
   "args": Array [
-    "--config",
-    "/path/to/project/jest.config.js",
-    "--showConfig",
+    "run",
+    "precarna:test",
   ],
-  "command": "./node_modules/.bin/jest",
+  "command": "npm",
   "cwd": "/path/to/project",
 }
 `;

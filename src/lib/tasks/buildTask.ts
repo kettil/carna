@@ -13,12 +13,12 @@ type BuildProps = {
 };
 
 const buildTask: Task<BuildProps> = async (argv, { watch }) => {
-  await taskHook(argv, { task: 'build', type: 'pre' });
-
   const workspacePaths = await npmPackageWorkspacesAction(argv);
   const hasTypescript = await hasDependency(argv, { dependency: 'typescript', dependencyType: 'devDependencies' });
 
   const paths = workspacePaths.length > 0 ? workspacePaths : [argv.cwd];
+
+  await taskHook(argv, { task: 'build', type: 'pre' });
 
   if (watch) {
     if (workspacePaths.length === 0) {
