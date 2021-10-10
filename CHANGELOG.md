@@ -1,5 +1,12 @@
 # Changelog
 
+# [5.0.0-beta.6](https://github.com/kettil/carna/compare/5.0.0-beta.5...5.0.0-beta.6) (2021-10-10)
+
+
+### Features
+
+* show the cwd when calling exec ([a878fef](https://github.com/kettil/carna/commit/a878fef9a8d775a3a77893dfc3cb6296c9b7c50e))
+
 # [5.0.0-beta.5](https://github.com/kettil/carna/compare/5.0.0-beta.4...5.0.0-beta.5) (2021-10-07)
 
 
