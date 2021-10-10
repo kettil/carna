@@ -1,11 +1,12 @@
-import { basename, join, relative } from 'path';
+import { readFileSync } from 'fs';
+import { basename, join, relative, normalize } from 'path';
 import { isArray, isObject, uniqueArray } from '@kettil/tool-lib';
 import { glob } from 'glob';
 
 const getWorkspaces = (root: string): Record<string, string> => {
-  /* eslint-disable-next-line max-len -- see next line */
-  /* eslint-disable-next-line @typescript-eslint/no-var-requires, node/global-require, import/no-dynamic-require -- root path is unknown */
-  const packageJson = require(`./${join(relative(__dirname, root), './package.json')}`) as unknown;
+  const packagePath = normalize(join(__dirname, relative(__dirname, root), './package.json'));
+  const packageData = readFileSync(packagePath, { encoding: 'utf8' });
+  const packageJson = JSON.parse(packageData) as unknown;
 
   if (!isObject(packageJson)) {
     return {};
