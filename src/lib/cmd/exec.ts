@@ -28,7 +28,8 @@ const exec = ({
     const command = `${cmd} ${args.join(' ')}`;
     const env = { ...processEnvironment(), ...envExtend };
 
-    log.debug(`\nexec: ${command}`);
+    log.debug(`\ncwd:  ${cwd}`);
+    log.debug(`exec: ${command}`);
 
     let stream: ChildProcessByStdio<null, null, null> | ChildProcessWithoutNullStreams;
     let output = '';
