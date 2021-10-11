@@ -1,5 +1,18 @@
 # Changelog
 
+# [5.0.0-beta.9](https://github.com/kettil/carna/compare/5.0.0-beta.8...5.0.0-beta.9) (2021-10-11)
+
+
+### Bug Fixes
+
+* remove the double argument --watch ([547b831](https://github.com/kettil/carna/commit/547b8312003e32d7f1a32899ef4e5dc1de030441))
+
+
+### Features
+
+* ignore comments in the files when building by babel ([37577a9](https://github.com/kettil/carna/commit/37577a9dd9b6f0dfa837c8d2607496f254d0060f))
+* improved watching handling at start command ([d380b04](https://github.com/kettil/carna/commit/d380b046e1f7f450b2f9202a1dfaa1a927b04def))
+
 # [5.0.0-beta.8](https://github.com/kettil/carna/compare/5.0.0-beta.7...5.0.0-beta.8) (2021-10-11)
 
 
