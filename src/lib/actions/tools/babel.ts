@@ -23,7 +23,7 @@ const babelAction: Action<BabelActionProps> = async (
     args.push('--watch');
 
     if (skipInitialBuild) {
-      args.push('--watch', '--skip-initial-build');
+      args.push('--skip-initial-build');
     }
   }
 
