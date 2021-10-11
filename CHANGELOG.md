@@ -1,5 +1,13 @@
 # Changelog
 
+# [5.0.0-beta.8](https://github.com/kettil/carna/compare/5.0.0-beta.7...5.0.0-beta.8) (2021-10-11)
+
+
+### Features
+
+* add alias "s" to the start command ([9f90747](https://github.com/kettil/carna/commit/9f907476da22dea755138036e2ed4644a252b548))
+* add argument build-dependencies to the command start ([3de4ee7](https://github.com/kettil/carna/commit/3de4ee7beffa9f2513a3554ad265139e93756bd6))
+
 # [5.0.0-beta.7](https://github.com/kettil/carna/compare/5.0.0-beta.6...5.0.0-beta.7) (2021-10-10)
 
 
