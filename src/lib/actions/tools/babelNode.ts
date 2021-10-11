@@ -1,12 +1,14 @@
 import { join } from 'path';
-import { babelCommandNode, babelCommandWatch, babelExtensions, babelScriptFiles } from '../../../configs/actionConfigs';
+import { babelCommandNode, babelCommandWatch, babelExtensions } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
 import { getBabelConfigPath } from '../../utils/getConfigPath';
-import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
 import { BabelNodeActionProps } from '../types';
 
-const babelNodeAction: Action<BabelNodeActionProps> = async ({ root, cwd, log }, { script, watch }) => {
+const babelNodeAction: Action<BabelNodeActionProps> = async (
+  { root, cwd, log },
+  { script, watch, watchPaths = [] },
+) => {
   const configPath = await getBabelConfigPath({ root, cwd });
 
   const cmd = join(root, watch ? babelCommandWatch : babelCommandNode);
@@ -16,11 +18,15 @@ const babelNodeAction: Action<BabelNodeActionProps> = async ({ root, cwd, log },
   args.push('--extensions', babelExtensions);
   args.push('--config-file', configPath);
 
+  if (watch) {
+    args.push(...watchPaths.flatMap((path) => ['--watch', path]));
+  }
+
   // script
-  args.push(script ?? (await getFirstExistingFile({ cwd, files: babelScriptFiles })));
+  args.push(script);
 
   log.info(`Run babel-${watch ? 'watch' : 'node'}`);
-  await exec({ cmd, args, cwd, log, withInteraction: true, withDirectOutput: true });
+  await exec({ cmd, args, cwd, log, withInteraction: true });
 };
 
 export { babelNodeAction };

@@ -3,6 +3,13 @@
 exports[`command start it should be create the expected builder: options 1`] = `
 Array [
   Object {
+    "build-dependencies": Object {
+      "alias": "b",
+      "default": false,
+      "describe": "In a monorepo, all packages are built beforehand",
+      "group": "start-Options",
+      "type": "boolean",
+    },
     "script": Object {
       "alias": "s",
       "describe": "Script to be called (default: src/index.[ts|js])",
