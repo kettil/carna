@@ -1,5 +1,17 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+
   "prettier.configPath": "./configs/prettierrc.json",
+
+  "eslint.enable": true,
+  "eslint.options": { "overrideConfigFile": "./.eslintrc.json" },
+  "eslint.validate": ["javascript", "typescript"],
 
   "vsicons.associations.files": [
     { "icon": "jest", "extensions": ["jest.ci.js"], "filename": true, "format": "svg" },
