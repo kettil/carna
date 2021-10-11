@@ -167,10 +167,11 @@ Calls the application directly, without build process.
 
 ### Options
 
-| Options  | short | Description                                         |
-| -------- | ----- | --------------------------------------------------- |
-| --script | -s    | Script to be called (default: `src/index.[ts\|js]`) |
-| --watch  | -w    | Watch files for changes and rerun script            |
+| Options              | short | Description                                         |
+| -------------------- | ----- | --------------------------------------------------- |
+| --script             | -s    | Script to be called (default: `src/index.[ts\|js]`) |
+| --watch              | -w    | Watch files for changes and rerun script            |
+| --build-dependencies | -b    | In a monorepo, all packages are built beforehand    |
 
 ### Exit codes
 

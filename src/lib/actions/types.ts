@@ -8,7 +8,8 @@ type BabelActionProps = {
 
 type BabelNodeActionProps = {
   watch: boolean;
-  script?: string;
+  script: string;
+  watchPaths?: string[];
 };
 
 type CommitlintActionProps = {

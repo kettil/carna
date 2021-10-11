@@ -3,12 +3,13 @@ import { FirstExistFileError } from '../errors/firstExistFileError';
 
 type Props = {
   cwd: string;
-  files: string[];
+  files: Array<string | undefined>;
   defaultFile?: string;
 };
 
 const getFirstExistingFile = async ({ cwd, files, defaultFile }: Props): Promise<string> => {
-  const checkedFiles = await existFiles(files, cwd);
+  const filteredFiles = files.filter((file): file is string => typeof file === 'string');
+  const checkedFiles = await existFiles(filteredFiles, cwd);
 
   if (checkedFiles.length === 0) {
     if (typeof defaultFile === 'string') {
