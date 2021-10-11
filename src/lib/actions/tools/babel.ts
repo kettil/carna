@@ -5,7 +5,10 @@ import { Action } from '../../types';
 import { getBabelConfigPath } from '../../utils/getConfigPath';
 import { BabelActionProps } from '../types';
 
-const babelAction: Action<BabelActionProps> = async ({ root, cwd, log }, { watch, spawnKillHandler }) => {
+const babelAction: Action<BabelActionProps> = async (
+  { root, cwd, log },
+  { watch, skipInitialBuild, spawnKillHandler },
+) => {
   const configPath = await getBabelConfigPath({ root, cwd });
 
   const cmd = join(root, babelCommand);
@@ -18,6 +21,10 @@ const babelAction: Action<BabelActionProps> = async ({ root, cwd, log }, { watch
 
   if (watch) {
     args.push('--watch');
+
+    if (skipInitialBuild) {
+      args.push('--watch', '--skip-initial-build');
+    }
   }
 
   // path

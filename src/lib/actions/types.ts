@@ -3,6 +3,7 @@ import { SpawnKillHandler } from '../utils/createSpawnKillHandler';
 
 type BabelActionProps = {
   watch?: boolean;
+  skipInitialBuild?: boolean;
   spawnKillHandler?: SpawnKillHandler;
 };
 
