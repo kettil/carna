@@ -33,19 +33,26 @@ const startTask: Task<StartProps> = async (argv, { buildDependencies, script, wa
     const promises: Array<Promise<void>> = [];
 
     if (buildDependencies && workspaceFilteredPaths.length > 0) {
-      // starts "babel --watch" in the context of dependencies
+      // prebuild of dependencies
+      await workspaceFilteredPaths.reduce(
+        (promise, path) => promise.then(buildBabelTask({ argv, path })),
+        Promise.resolve(),
+      );
+
+      // starts "babel --watch --skip-initial-build" in the context of dependencies
       promises.push(
         ...workspaceFilteredPaths.map<Promise<void>>((path) =>
-          babelAction({ ...argv, cwd: path }, { watch: true, spawnKillHandler }),
+          babelAction({ ...argv, cwd: path }, { watch: true, skipInitialBuild: true, spawnKillHandler }),
         ),
       );
 
-      await delay(1000);
+      // initialization waiting time for babel
+      await delay(250);
     }
 
     await babelNodeAction(argv, { ...props, watchPaths: workspaceFilteredPaths.map((path) => join(path, 'build')) });
 
-    // quits "babel --watch" from the dependencies.
+    // quits "babel --watch --skip-initial-build" from the dependencies.
     spawnKillHandler.kill(constants.signals.SIGINT);
 
     await Promise.all(promises);
