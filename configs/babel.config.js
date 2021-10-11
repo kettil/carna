@@ -1,5 +1,8 @@
 module.exports = {
   presets: [['@babel/env', { modules: 'commonjs', targets: { node: '14' } }], '@babel/preset-typescript'],
+
+  comments: false,
+
   env: {
     test: {
       // extra configuration for process.env.NODE_ENV === 'test'
