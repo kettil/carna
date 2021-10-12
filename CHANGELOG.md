@@ -1,5 +1,12 @@
 # Changelog
 
+# [5.0.0-beta.10](https://github.com/kettil/carna/compare/5.0.0-beta.9...5.0.0-beta.10) (2021-10-12)
+
+
+### Features
+
+* for babel use the config of carna as default ([b29e695](https://github.com/kettil/carna/commit/b29e6956a1a2ad21b4a57e9cc6bd79c9c22511ad))
+
 # [5.0.0-beta.9](https://github.com/kettil/carna/compare/5.0.0-beta.8...5.0.0-beta.9) (2021-10-11)
 
 
