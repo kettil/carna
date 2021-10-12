@@ -10,8 +10,11 @@
   "prettier.configPath": "./configs/prettierrc.json",
 
   "eslint.enable": true,
-  "eslint.options": { "overrideConfigFile": "./.eslintrc.json" },
   "eslint.validate": ["javascript", "typescript"],
+  "eslint.options": {
+    "overrideConfigFile": "./.eslintrc.json",
+    "configFile": "./.eslintrc.json"
+  },
 
   "vsicons.associations.files": [
     { "icon": "jest", "extensions": ["jest.ci.js"], "filename": true, "format": "svg" },
