@@ -2,14 +2,14 @@ import { join } from 'path';
 import { babelCommand, babelExtensions } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
-import { getBabelConfigPath } from '../../utils/getConfigPath';
+import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
 import { BabelActionProps } from '../types';
 
 const babelAction: Action<BabelActionProps> = async (
-  { root, cwd, log },
+  { root, cwd, log, cfg },
   { watch, skipInitialBuild, spawnKillHandler },
 ) => {
-  const configPath = await getBabelConfigPath({ root, cwd });
+  const configPath = await getBabelConfigPath([cwd, root, cfg]);
 
   const cmd = join(root, babelCommand);
   const args: string[] = [];
