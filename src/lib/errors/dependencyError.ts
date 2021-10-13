@@ -1,6 +1,4 @@
-import { SpinnerWarnError } from './spinnerWarnError';
-
-class DependencyError extends SpinnerWarnError {
+class DependencyError extends Error {
   constructor(message: string, readonly list: string[]) {
     super(message);
   }

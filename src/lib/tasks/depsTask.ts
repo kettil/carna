@@ -5,7 +5,7 @@ import { depcheckAction } from '../actions/tools/depcheck';
 import { semverAction } from '../actions/tools/semver';
 import { getConfig } from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
-import { DependencyError } from '../errors/dependencyError';
+import { DependencyWarn } from '../errors/dependencyWarn';
 import { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 
@@ -28,7 +28,7 @@ const depsTask: Task<DepsProps> = async (argv) => {
 
           await spinnerAction(depcheckAction(argv, { path, ignorePackages }), `Dependency verification ${subTitle}`);
         } catch (error) {
-          if (!(error instanceof DependencyError)) {
+          if (!(error instanceof DependencyWarn)) {
             throw error;
           }
 

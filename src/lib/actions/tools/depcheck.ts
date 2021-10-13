@@ -1,7 +1,8 @@
-import { blue, red, yellow } from 'chalk';
+import { red } from 'chalk';
 import dependenciesCheck, { Options, parser, detector, special } from 'depcheck';
 import { depcheckIgnorePackages } from '../../../configs/actionConfigs';
 import { DependencyError } from '../../errors/dependencyError';
+import { DependencyWarn } from '../../errors/dependencyWarn';
 import { Action } from '../../types';
 import { DepcheckActionProps } from '../types';
 
@@ -27,8 +28,8 @@ const depcheckAction: Action<DepcheckActionProps> = async ({ log }, { path, igno
 
   const groups = [
     { title: red('The dependencies are not used'), dependencies: result.dependencies },
-    { title: yellow('The dev-dependencies are not used'), dependencies: result.devDependencies },
-    { title: blue('The dependencies is missing'), dependencies: Object.keys(result.missing) },
+    { title: red('The dev-dependencies are not used'), dependencies: result.devDependencies },
+    { title: red('The dependencies is missing'), dependencies: Object.keys(result.missing) },
   ];
 
   const output = groups
@@ -36,7 +37,12 @@ const depcheckAction: Action<DepcheckActionProps> = async ({ log }, { path, igno
     .flatMap(({ title, dependencies }) => [`▸ ${title}`, ...dependencies.sort().map((v) => `  ∙ ${v}`), '']);
 
   if (output.length > 0) {
-    throw new DependencyError('Depcheck error', output);
+    if (Object.keys(result.missing).length > 0) {
+      // Used dependencies are not installed
+      throw new DependencyError('Depcheck error', output);
+    }
+
+    throw new DependencyWarn('Depcheck warning', output);
   }
 };
 
