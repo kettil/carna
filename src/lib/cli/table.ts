@@ -24,6 +24,7 @@ type Border = typeof defaultBorder;
 type TableBorder = (columnLengths: number[], line: string, first: string, cross: string, last: string) => string;
 type TableRow = (columnLengths: number[], row: string[], separator: string, first: string, last: string) => string;
 
+// eslint-disable-next-line regexp/no-control-character -- control characters should be removed
 const cleanCliValue = (v: string): string => v.replace(/\u{1B}?\[\d{1,2}m/gu, '');
 
 const getMaxColumnLengths = (maxLengths: number[], row: string[]): number[] => {

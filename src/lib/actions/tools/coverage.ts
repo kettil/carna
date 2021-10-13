@@ -36,10 +36,7 @@ const coverageAction: Action<CoverageActionProps> = async (argv, { projects, wat
     // The summarizer to default to (may be overridden by some reports)
     // values can be nested/flat/pkg. Defaults to 'pkg'
     defaultSummarizer: 'pkg',
-    watermarks: watermarkKeys.reduce(
-      (data, key) => Object.assign(data, { [key]: getCoverageWatermark(watermarks[key]) }),
-      {},
-    ),
+    watermarks: Object.fromEntries(watermarkKeys.map((key) => [key, getCoverageWatermark(watermarks[key])])),
   });
 
   const reports: Array<keyof ReportOptions> = ['lcovonly', 'json-summary', 'text-summary'];

@@ -10,8 +10,8 @@ import { depsTask } from '../depsTask';
 import { licenseTask } from '../licenseTask';
 import { testTask } from '../testTask';
 
-const testEslint = new RegExp(`(${eslintExtensions.replace(/,/g, '|')})$`);
-const testPrettier = new RegExp(`(${prettierExtensions.replace(/,/g, '|')})$`);
+const testEslint = new RegExp(`(${eslintExtensions.replace(/,/gu, '|')})$`, 'u');
+const testPrettier = new RegExp(`(${prettierExtensions.replace(/,/gu, '|')})$`, 'u');
 
 const gitCommitTask: Task = async (argv) => {
   const stagedFiles = await gitStagedAction(argv, {});

@@ -29,7 +29,7 @@ const logging =
   (level: string, type: Type): Log =>
     (msg) => {
       const resume = spinnerBreak();
-      const messages = isArray(msg) ? msg : msg.replace(/\n$/, '').split('\n');
+      const messages = isArray(msg) ? msg : msg.replace(/\n$/u, '').split('\n');
 
       messages.forEach((m) => {
         write(type, `[${new Date().toISOString()}] ${level}: ${m}`);

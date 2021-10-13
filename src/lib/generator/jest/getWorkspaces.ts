@@ -21,8 +21,8 @@ const getWorkspaces = (root: string): Record<string, string> => {
   const paths = uniqueArray(
     workspaces
       .filter((workspace): workspace is string => typeof workspace === 'string')
-      .flatMap((workspace) => glob.sync(`${workspace.replace(/\/+$/, '')}/`))
-      .map((path) => path.replace(/\/$/, '').replace(/^\./, '<rootDir>'))
+      .flatMap((workspace) => glob.sync(`${workspace.replace(/\/+$/u, '')}/`))
+      .map((path) => path.replace(/\/$/u, '').replace(/^\./u, '<rootDir>'))
       .sort(),
   );
 
