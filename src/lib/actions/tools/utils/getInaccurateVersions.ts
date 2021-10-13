@@ -1,7 +1,7 @@
 import { isObject, objectEntries } from '@kettil/tool-lib';
 import { coerce } from 'semver';
 
-const regexpPostfix = /\d+\.\d+\.\d+[-.][\d\-.a-z]+/i;
+const regexpPostfix = /\d+\.\d+\.\d+[-.][\d\-.a-z]+/iu;
 
 const getInaccurateVersions = (dependencies: unknown): Array<[string, string, string]> => {
   if (!isObject(dependencies)) {
