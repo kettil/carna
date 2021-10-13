@@ -6,10 +6,10 @@ import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
 import { BabelNodeActionProps } from '../types';
 
 const babelNodeAction: Action<BabelNodeActionProps> = async (
-  { root, cwd, log, cfg },
+  { root, cwd, log },
   { script, watch, watchPaths = [] },
 ) => {
-  const configPath = await getBabelConfigPath([cwd, root, cfg]);
+  const configPath = await getBabelConfigPath([cwd, root]);
 
   const cmd = join(root, watch ? babelCommandWatch : babelCommandNode);
   const args: string[] = [];

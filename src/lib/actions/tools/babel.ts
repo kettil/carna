@@ -6,10 +6,10 @@ import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
 import { BabelActionProps } from '../types';
 
 const babelAction: Action<BabelActionProps> = async (
-  { root, cwd, log, cfg },
+  { root, cwd, log },
   { watch, skipInitialBuild, spawnKillHandler },
 ) => {
-  const configPath = await getBabelConfigPath([cwd, root, cfg]);
+  const configPath = await getBabelConfigPath([cwd, root]);
 
   const cmd = join(root, babelCommand);
   const args: string[] = [];

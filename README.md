@@ -243,12 +243,6 @@ It is possible to overwrite the default config files.
 The following files can be overwritten and must be created in the root folder of the project.
 If the existing configuration is only to be extended, the corresponding code block must be copied into the file.
 
-### `babel.config.js`
-
-```javascript
-module.exports = { extends: './configs/babel.config.js' };
-```
-
 ### `.commitlintrc.json`
 
 ```json
