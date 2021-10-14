@@ -15,62 +15,38 @@
 * **deps:** bump istanbul-reports from 3.0.2 to 3.0.4 ([e7cd390](https://github.com/kettil/carna/commit/e7cd390025a282a065c6cfcf4407feea3e68de67))
 * **deps:** bump istanbul-reports from 3.0.4 to 3.0.5 ([c36b0f2](https://github.com/kettil/carna/commit/c36b0f25dfdb446de6d633cf5f107cf34f49c056))
 * **deps:** bump jest from 27.2.4 to 27.2.5 ([99c5bd2](https://github.com/kettil/carna/commit/99c5bd21e1c1f2813a9f7a87120749a21041329f))
-* add carna to the depcheck ignore list ([11cb5f0](https://github.com/kettil/carna/commit/11cb5f0e991262516cbadccefbb44d962be1ce93))
 * add carna to the depcheck ignore list ([143a1bf](https://github.com/kettil/carna/commit/143a1bf9ab18a1d499123e98e46fd4d0ac1a7d7b))
-* incorrect handling of special characters in getCoverageFolder() ([1556de6](https://github.com/kettil/carna/commit/1556de66313d2ffc3b268766ed0ed69a7024b32c))
 * incorrect handling of special characters in getCoverageFolder() ([dd18d32](https://github.com/kettil/carna/commit/dd18d3295145fb070c9aff6383b7b4eb356b2cd0))
-* incorrect resolution of the root path ([51d761d](https://github.com/kettil/carna/commit/51d761de71cc65a4fa504754f21e01571c11e507))
 * incorrect resolution of the root path ([883b1b4](https://github.com/kettil/carna/commit/883b1b44027958ccca821d5e3b11191cfb63de8f))
-* incorrect resolution of tools paths ([4275975](https://github.com/kettil/carna/commit/42759754e0bda47d05683aa80dc46b8183bde10e))
 * incorrect resolution of tools paths ([a8db695](https://github.com/kettil/carna/commit/a8db695e33c1fcbf37967723e71cf335c07e3ab5))
-* remove the double argument --watch ([3107f86](https://github.com/kettil/carna/commit/3107f867875d0749e5519a9b82bdb11cb91bae8a))
 * remove the double argument --watch ([547b831](https://github.com/kettil/carna/commit/547b8312003e32d7f1a32899ef4e5dc1de030441))
-* search the babel config in the cwd and root folder ([5be87b1](https://github.com/kettil/carna/commit/5be87b154c95f7e8bdb3063a3624117f4abab51d))
 * search the babel config in the cwd and root folder ([ae1a0ec](https://github.com/kettil/carna/commit/ae1a0ec5decb28f8cc6f671cd3df51b6817b2ea5))
-* unclear error message when checking licenses ([27b8a0e](https://github.com/kettil/carna/commit/27b8a0e1e9ea418aa996a0ce7c6d50f0961eda8a))
 * unclear error message when checking licenses ([16414f4](https://github.com/kettil/carna/commit/16414f436d77a7fe22ff28938c5fd9d66c5973fa))
 
 
 ### Features
 
-* add alias "s" to the start command ([8c68be5](https://github.com/kettil/carna/commit/8c68be51321f79ec69b822578db70713dd910af7))
 * add alias "s" to the start command ([9f90747](https://github.com/kettil/carna/commit/9f907476da22dea755138036e2ed4644a252b548))
-* add argument build-dependencies to the command start ([36083aa](https://github.com/kettil/carna/commit/36083aa914ebe3659c130da0dd06298f2c071e97))
 * add argument build-dependencies to the command start ([3de4ee7](https://github.com/kettil/carna/commit/3de4ee7beffa9f2513a3554ad265139e93756bd6))
-* add monorepo support in the jest config ([677a14f](https://github.com/kettil/carna/commit/677a14f747039dec3fe7092a8a78ddbb28c352d5))
 * add monorepo support in the jest config ([4a8e24d](https://github.com/kettil/carna/commit/4a8e24d75f78d9b1657915046495264e793be65e))
-* add support for monorepo's ([263ae1b](https://github.com/kettil/carna/commit/263ae1b02a8a397487fc0ea5fe01b22753ff83b4))
 * add support for monorepo's ([399bf04](https://github.com/kettil/carna/commit/399bf042d0305d709b081f7452abad129836f54f))
-* add watch mode to the command build ([da8085e](https://github.com/kettil/carna/commit/da8085e8bc224964a4dc979caad0c3248c3934af))
 * add watch mode to the command build ([b7720f1](https://github.com/kettil/carna/commit/b7720f1efae95ad5d32b33eb1872c1aff17ff2bd))
-* detection of the test projects based on the jest config ([609a092](https://github.com/kettil/carna/commit/609a0920fc7c80d7548852bc3a40c2d4269450f8))
 * detection of the test projects based on the jest config ([aca3e86](https://github.com/kettil/carna/commit/aca3e86606a67d933175e597d8442d1c3f548891))
-* extend babel extension list ([a908bc2](https://github.com/kettil/carna/commit/a908bc2883077f106e9b9380aeeefd87d4ea9c7e))
 * extend babel extension list ([d9e35be](https://github.com/kettil/carna/commit/d9e35bee416857bba37f43e6668f9d5b84612a3f))
-* extend build command for monorepo's ([d89bc82](https://github.com/kettil/carna/commit/d89bc8270e7eb79a34f434b26c5d5c70d57010fd))
 * extend build command for monorepo's ([23c4398](https://github.com/kettil/carna/commit/23c4398053f4cd45a56e53cb15d70b5234c2e1e8))
-* for babel use the config of carna as default ([a0b3ab6](https://github.com/kettil/carna/commit/a0b3ab6d3fcbbfb92488f500bc27280c5dc5f823))
 * for babel use the config of carna as default ([b29e695](https://github.com/kettil/carna/commit/b29e6956a1a2ad21b4a57e9cc6bd79c9c22511ad))
-* ignore comments in the files when building by babel ([591183a](https://github.com/kettil/carna/commit/591183adf3e64c1288f96f25a5a0e01247bd2fd0))
 * ignore comments in the files when building by babel ([37577a9](https://github.com/kettil/carna/commit/37577a9dd9b6f0dfa837c8d2607496f254d0060f))
-* improved watching handling at start command ([b61f76c](https://github.com/kettil/carna/commit/b61f76ca4c001e19a0f471ca5940438831e97fa3))
 * improved watching handling at start command ([d380b04](https://github.com/kettil/carna/commit/d380b046e1f7f450b2f9202a1dfaa1a927b04def))
 * missing dependencies throw an error and no longer a warning ([afa6d78](https://github.com/kettil/carna/commit/afa6d78cb465744808c1a4ba1cc4424403ae5ff9))
-* remove init command ([4428530](https://github.com/kettil/carna/commit/4428530f0a32b3ce15fceb64dd8d3e348763326d)), closes [#540](https://github.com/kettil/carna/issues/540)
 * remove init command ([d7f8814](https://github.com/kettil/carna/commit/d7f8814168c970c3b69681b23b9a3cc74f14608e)), closes [#540](https://github.com/kettil/carna/issues/540)
 * remove the handling with a global babel config file as default ([44e90fe](https://github.com/kettil/carna/commit/44e90fe8108bf59981e6d8e1dbed6c2f98c8bc60))
-* run babel-watch with --config-file option ([4c8d2fe](https://github.com/kettil/carna/commit/4c8d2feeb8df7364abd12cce449baeb30aeaeba5))
 * run babel-watch with --config-file option ([a5efd29](https://github.com/kettil/carna/commit/a5efd294a6f1149d18dc853ef5deec4a2c2389da))
-* set "analyse" as default command ([50d9cfa](https://github.com/kettil/carna/commit/50d9cfa2658234999508e12164b0cf32cf576e1e))
 * set "analyse" as default command ([7954e9e](https://github.com/kettil/carna/commit/7954e9e2f4e055aa085789765dbdde12d750e14b))
-* show the cwd when calling exec ([ecd9ea8](https://github.com/kettil/carna/commit/ecd9ea828d08a81fe10475e5c0687a6559c34bba))
 * show the cwd when calling exec ([a878fef](https://github.com/kettil/carna/commit/a878fef9a8d775a3a77893dfc3cb6296c9b7c50e))
 
 
 ### BREAKING CHANGES
 
-* The jest config file needs to be rewritten because the structure has changed.
-* The `init` command has been removed and instead Github repo templates have been created.
 * The jest config file needs to be rewritten because the structure has changed.
 * The `init` command has been removed and instead Github repo templates have been created.
 
