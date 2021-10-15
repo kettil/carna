@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.1](https://github.com/kettil/carna/compare/5.0.0...5.0.1) (2021-10-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 3.5.1 to 3.7.0 ([d885060](https://github.com/kettil/carna/commit/d885060ec308b8a342283ea1d1c3ec5ff070d694))
+
 # [5.0.0](https://github.com/kettil/carna/compare/4.12.1...5.0.0) (2021-10-13)
 
 
