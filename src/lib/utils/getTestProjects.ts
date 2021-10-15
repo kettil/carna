@@ -5,11 +5,11 @@ import { Task } from '../types';
 import { getFirstExistingFile } from './getFirstExistingFile';
 import { sortProjectNames } from './sortProjectNames';
 
-const getTestProjects: Task<[string[] | undefined], string[]> = async ({ cwd, log }, selectedProjects) => {
-  const configFile = await getFirstExistingFile({ cwd, files: jestConfigFiles });
+const getTestProjects: Task<[string[] | undefined], string[]> = async ({ root, log }, selectedProjects) => {
+  const configFile = await getFirstExistingFile({ cwd: root, files: jestConfigFiles });
   const args: string[] = ['--config', configFile, '--showConfig'];
 
-  const { stdout } = await exec({ cmd: jestCommand, args, cwd, log });
+  const { stdout } = await exec({ cmd: jestCommand, args, cwd: root, log });
 
   const data = JSON.parse(stdout.trim()) as unknown;
 
