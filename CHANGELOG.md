@@ -1,5 +1,18 @@
 # Changelog
 
+# [5.1.0](https://github.com/kettil/carna/compare/5.0.1...5.1.0) (2021-10-18)
+
+
+### Bug Fixes
+
+* in some cases the jest config file was not found ([eaf4f21](https://github.com/kettil/carna/commit/eaf4f2109b05278e913c8118330dc0e14d78ad6a))
+* **deps:** bump @types/yargs from 17.0.3 to 17.0.4 ([9358c0c](https://github.com/kettil/carna/commit/9358c0c0eb614537c5d4692c300b7d998d8c0013))
+
+
+### Features
+
+* add useUnknownInCatchVariables to the TS config ([a463337](https://github.com/kettil/carna/commit/a4633379c6ab8d8409b94cbaeeecedce97c79e3c))
+
 ## [5.0.1](https://github.com/kettil/carna/compare/5.0.0...5.0.1) (2021-10-15)
 
 
