@@ -1,3 +1,4 @@
+import { isString } from '@kettil/tool-lib';
 import { existFiles } from '../cmd/existFiles';
 import { FirstExistFileError } from '../errors/firstExistFileError';
 
@@ -8,11 +9,11 @@ type Props = {
 };
 
 const getFirstExistingFile = async ({ cwd, files, defaultFile }: Props): Promise<string> => {
-  const filteredFiles = files.filter((file): file is string => typeof file === 'string');
+  const filteredFiles = files.filter(isString);
   const checkedFiles = await existFiles(filteredFiles, cwd);
 
   if (checkedFiles.length === 0) {
-    if (typeof defaultFile === 'string') {
+    if (isString(defaultFile)) {
       return defaultFile;
     }
 

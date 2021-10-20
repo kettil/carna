@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isObject } from '@kettil/tool-lib';
+import { isObject, isString } from '@kettil/tool-lib';
 import { defaultConfig } from './defaultConfig';
 import { getSetupFilesAfterEnvironment } from './getSetupFilesAfterEnvironment';
 
@@ -11,7 +11,7 @@ const createProject =
       }
 
       const { testFolder, workspaceFolder, color, customeConfig = {} } = settings;
-      const hasWorkspace = typeof workspaceFolder === 'string';
+      const hasWorkspace = isString(workspaceFolder);
 
       if (hasWorkspace && !Object.keys(workspaces).includes(workspaceFolder)) {
         throw new TypeError(`Workspace "${workspaceFolder}" is unknown - createProject({ workspaceFolder: "<name>" })`);

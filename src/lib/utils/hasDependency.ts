@@ -1,4 +1,4 @@
-import { isObject } from '@kettil/tool-lib';
+import { isObject, isString } from '@kettil/tool-lib';
 import { npmPackageLoadAction } from '../actions/npm/packageLoad';
 import { PropsGlobal } from '../types';
 
@@ -14,7 +14,7 @@ const hasDependency = async (argv: PropsGlobal, { dependencyType, dependency }: 
     return false;
   }
 
-  return typeof dependencies[dependency] === 'string';
+  return isString(dependencies[dependency]);
 };
 
 export { hasDependency };

@@ -1,4 +1,4 @@
-import { isArray, isObject } from '@kettil/tool-lib';
+import { isArray, isObject, isString } from '@kettil/tool-lib';
 import { jestCommand, jestConfigFiles, jestPreOrderProjects } from '../../configs/actionConfigs';
 import { exec } from '../cmd/exec';
 import { Task } from '../types';
@@ -18,7 +18,7 @@ const getTestProjects: Task<[string[] | undefined], string[]> = async ({ root, l
       ? data.configs
         .filter(isObject)
         .map((config) => (isObject(config.displayName) ? config.displayName.name : config.displayName))
-        .filter((name): name is string => typeof name === 'string')
+        .filter(isString)
         .map((name) => name.split(':').reverse().join(':'))
         .sort(sortProjectNames(jestPreOrderProjects))
         .map((name) => name.split(':').reverse().join(':'))

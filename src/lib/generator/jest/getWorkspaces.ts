@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { basename, join, relative, normalize } from 'path';
-import { isArray, isObject, uniqueArray } from '@kettil/tool-lib';
+import { isArray, isObject, isString, uniqueArray } from '@kettil/tool-lib';
 import { glob } from 'glob';
 
 const getWorkspaces = (root: string): Record<string, string> => {
@@ -20,7 +20,7 @@ const getWorkspaces = (root: string): Record<string, string> => {
 
   const paths = uniqueArray(
     workspaces
-      .filter((workspace): workspace is string => typeof workspace === 'string')
+      .filter(isString)
       .flatMap((workspace) => glob.sync(`${workspace.replace(/\/+$/u, '')}/`))
       .map((path) => path.replace(/\/$/u, '').replace(/^\./u, '<rootDir>'))
       .sort(),

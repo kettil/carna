@@ -1,5 +1,5 @@
 import { basename } from 'path';
-import { isArray } from '@kettil/tool-lib';
+import { isArray, isString } from '@kettil/tool-lib';
 import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { depcheckAction } from '../actions/tools/depcheck';
 import { semverAction } from '../actions/tools/semver';
@@ -14,9 +14,7 @@ type DepsProps = {};
 const depsTask: Task<DepsProps> = async (argv) => {
   const configIgnorePackages = await getConfig(argv.root, 'deps.ignore.packages');
   const workspacePaths = await npmPackageWorkspacesAction(argv);
-  const ignorePackages = isArray(configIgnorePackages)
-    ? configIgnorePackages.filter((v): v is string => typeof v === 'string')
-    : [];
+  const ignorePackages = isArray(configIgnorePackages) ? configIgnorePackages.filter(isString) : [];
 
   await taskHook(argv, { task: 'deps', type: 'pre' });
 

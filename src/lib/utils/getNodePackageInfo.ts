@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isObject, objectEntries } from '@kettil/tool-lib';
+import { isObject, isString, objectEntries } from '@kettil/tool-lib';
 import { licenseHeuristics } from '../../configs/licenseHeuristics';
 import { access } from '../cmd/access';
 import { exec } from '../cmd/exec';
@@ -63,7 +63,7 @@ const getNodePackageInfo: Action<
 
   const data = {
     path: path.slice(Math.max(0, cwd.length + 1)),
-    version: typeof version === 'string' ? version : 'UNKNOWN',
+    version: isString(version) ? version : 'UNKNOWN',
     license: 'UNKNOWN',
     name,
   };
@@ -71,17 +71,17 @@ const getNodePackageInfo: Action<
   // Manual license assignment
   const licensePackage = licensePackages[data.name];
 
-  if (isObject(licensePackage) && typeof licensePackage[data.version] === 'string') {
+  if (isObject(licensePackage) && isString(licensePackage[data.version])) {
     return { ...data, license: licensePackage[data.version] };
   }
 
   // License from the package.json
-  if (typeof license === 'string') {
+  if (isString(license)) {
     return { ...data, license };
   }
 
   // License from the package.json
-  if (isObject(license) && typeof license.type === 'string') {
+  if (isObject(license) && isString(license.type)) {
     return { ...data, license: license.type };
   }
 

@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isObject } from '@kettil/tool-lib';
+import { isObject, isString } from '@kettil/tool-lib';
 import { access } from '../cmd/access';
 import { readFile } from '../cmd/readFile';
 
@@ -25,7 +25,7 @@ const getConfig = async (path: string, keyPath?: string): Promise<unknown> => {
 
   const data = await readFile(configPath, true);
 
-  return typeof keyPath === 'string' ? getDataRecursive(data, keyPath.split('.')) : data;
+  return isString(keyPath) ? getDataRecursive(data, keyPath.split('.')) : data;
 };
 
 export { getConfig };
