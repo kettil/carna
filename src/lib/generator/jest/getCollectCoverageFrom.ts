@@ -1,4 +1,4 @@
-import { isArray } from '@kettil/tool-lib';
+import { isArray, isString } from '@kettil/tool-lib';
 
 const getCollectCoverageFrom = (workspaces: string[], customeCollectCoverageFrom?: unknown): string[] => {
   const workspacePaths = workspaces.flatMap((workspace) => [
@@ -13,9 +13,7 @@ const getCollectCoverageFrom = (workspaces: string[], customeCollectCoverageFrom
     '!<rootDir>/src/index.ts',
 
     ...workspacePaths,
-    ...(isArray(customeCollectCoverageFrom)
-      ? customeCollectCoverageFrom.filter((value): value is string => typeof value === 'string')
-      : []),
+    ...(isArray(customeCollectCoverageFrom) ? customeCollectCoverageFrom.filter(isString) : []),
   ];
 };
 

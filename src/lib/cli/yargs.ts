@@ -1,3 +1,4 @@
+import { isString } from '@kettil/tool-lib';
 import { red } from 'chalk';
 import { Arguments, Argv } from 'yargs';
 import { access } from '../cmd/access';
@@ -20,7 +21,7 @@ const filterProps = ([key]: [key: string, value: unknown]) =>
   ![...globalOptions, '_', '$0'].includes(key as typeof globalOptions[number]);
 
 const errorHandler = (msg: string, error: Error): void => {
-  if (typeof msg === 'string' && typeof error === 'undefined') {
+  if (isString(msg) && typeof error === 'undefined') {
     log(' ');
     log(msg);
     log(' ');
