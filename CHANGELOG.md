@@ -1,5 +1,31 @@
 # Changelog
 
+# [5.2.0-beta.1](https://github.com/kettil/carna/compare/5.1.0...5.2.0-beta.1) (2021-10-22)
+
+
+### Bug Fixes
+
+* wrong representation of the error message at depcheck ([3d888cb](https://github.com/kettil/carna/commit/3d888cbeacbd3e08ba4ae2a92e3556dd7d7e3d34))
+* **deps:** bump @kettil/eslint-config from 3.7.0 to 3.7.1 ([ad662c2](https://github.com/kettil/carna/commit/ad662c265498818937d982a295296fe927e8e812))
+* **deps:** bump @kettil/tool-lib from 3.2.0 to 3.3.1 ([ba8f0fa](https://github.com/kettil/carna/commit/ba8f0fa881e2ae46cfa12e3311fd0722a5325714))
+* **deps:** bump @types/glob from 7.1.4 to 7.2.0 ([7387009](https://github.com/kettil/carna/commit/73870097f16c2dea30dd94972928c5753dc37a5e))
+* **deps:** bump @types/semver from 7.3.8 to 7.3.9 ([ba6eb24](https://github.com/kettil/carna/commit/ba6eb2491d2fbcefb1f19309d15a34b495d4efaf))
+* **deps:** bump babel-jest from 27.2.5 to 27.3.0 ([6825f25](https://github.com/kettil/carna/commit/6825f25175b9b5fa1d6e6f5f0931bea6f015f794))
+* **deps:** bump babel-jest from 27.3.0 to 27.3.1 ([c5f2f02](https://github.com/kettil/carna/commit/c5f2f02ad3c5fbfebff4f9645931ee46eff342f6))
+* **deps:** bump babel-loader from 8.2.2 to 8.2.3 ([4c642f6](https://github.com/kettil/carna/commit/4c642f686cec1af76fdb9b239b5e0dec94bdc240))
+* **deps:** bump babel-watch from 7.5.0 to 7.6.0 ([f161e46](https://github.com/kettil/carna/commit/f161e46889ad01176f2aa3cfc31b91119979f588))
+* **deps:** bump husky from 7.0.2 to 7.0.4 ([241b90c](https://github.com/kettil/carna/commit/241b90cb833add72fc38a105dcf2e9dac0b1c0e2))
+* **deps:** bump istanbul-lib-coverage from 3.0.2 to 3.2.0 ([c7fe528](https://github.com/kettil/carna/commit/c7fe52833873b96d94347bf2f6a4666afa6afdfe))
+* **deps:** bump jest from 27.2.5 to 27.3.0 ([c9c8ad9](https://github.com/kettil/carna/commit/c9c8ad964cce030a57e328345bf16a11cffb049c))
+* **deps:** bump jest from 27.3.0 to 27.3.1 ([9a1a952](https://github.com/kettil/carna/commit/9a1a95292157529406448cf314ed36003e628fdb))
+
+
+### Features
+
+* add a console clean argument ([da1c189](https://github.com/kettil/carna/commit/da1c189d73c3630fa1e7fc7e2ed61dc760053859)), closes [#567](https://github.com/kettil/carna/issues/567)
+* copy the global npmignore file into each workspaces ([d65f648](https://github.com/kettil/carna/commit/d65f6489cc13427b51666c91c064b89a3441f47a)), closes [#555](https://github.com/kettil/carna/issues/555)
+* monitors at start only the needed dependencies (only monorepo) ([abfdc93](https://github.com/kettil/carna/commit/abfdc935ebee5c81e5184622af1f426813d67b7f)), closes [#556](https://github.com/kettil/carna/issues/556)
+
 # [5.1.0](https://github.com/kettil/carna/compare/5.0.1...5.1.0) (2021-10-18)
 
 
