@@ -31,7 +31,7 @@ const npmPackageLoadAction: Action<NpmPackageLoadProps, unknown> = async (
   const value = config[key];
 
   if (throwError && typeof value === 'undefined') {
-    throw new TypeError(`The package.json value "${key}" is undefiend`);
+    throw new TypeError(`The package.json key "${key}" is undefiend`);
   }
 
   return value;

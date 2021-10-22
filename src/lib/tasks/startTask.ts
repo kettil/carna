@@ -9,6 +9,7 @@ import { BabelNodeActionProps } from '../actions/types';
 import { Task } from '../types';
 import { createSpawnKillHandler } from '../utils/createSpawnKillHandler';
 import { getFirstExistingFile } from '../utils/getFirstExistingFile';
+import { getWorkspaceDependencies } from '../utils/getWorkspaceDependencies';
 import { taskHook } from '../utils/taskHook';
 import { buildBabelTask } from './subTasks/buildBabelTask';
 
@@ -19,12 +20,14 @@ type StartProps = {
 };
 
 const startTask: Task<StartProps> = async (argv, { buildDependencies, script, watch }) => {
-  const workspacePaths = await npmPackageWorkspacesAction(argv);
   const props: BabelNodeActionProps = {
     watch,
     script: await getFirstExistingFile({ cwd: argv.cwd, files: [script, ...babelScriptFiles] }),
   };
-  const workspaceFilteredPaths = workspacePaths.filter((path) => !props.script.includes(path));
+
+  const workspacePaths = await npmPackageWorkspacesAction(argv);
+  const workspacePath = workspacePaths.find((path) => props.script.includes(path)) ?? '';
+  const workspaceFilteredPaths = await getWorkspaceDependencies({ argv, workspacePath, workspacePaths });
 
   await taskHook(argv, { task: 'start', type: 'pre' });
 
