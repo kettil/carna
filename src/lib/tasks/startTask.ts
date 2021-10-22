@@ -17,12 +17,14 @@ type StartProps = {
   watch: boolean;
   script?: string;
   buildDependencies?: boolean;
+  clearConsole?: boolean;
 };
 
-const startTask: Task<StartProps> = async (argv, { buildDependencies, script, watch }) => {
+const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConsole, script, watch }) => {
   const props: BabelNodeActionProps = {
     watch,
     script: await getFirstExistingFile({ cwd: argv.cwd, files: [script, ...babelScriptFiles] }),
+    clearConsole,
   };
 
   const workspacePaths = await npmPackageWorkspacesAction(argv);

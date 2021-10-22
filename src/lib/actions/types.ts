@@ -11,6 +11,7 @@ type BabelNodeActionProps = {
   watch: boolean;
   script: string;
   watchPaths?: string[];
+  clearConsole?: boolean;
 };
 
 type CommitlintActionProps = {

@@ -172,6 +172,7 @@ Calls the application directly, without build process.
 | --script             | -s    | Script to be called (default: `src/index.[ts\|js]`) |
 | --watch              | -w    | Watch files for changes and rerun script            |
 | --build-dependencies | -b    | In a monorepo, all packages are built beforehand    |
+| --clear-console      | -c    | Clear console on each restart (only in watch mode)  |
 
 ### Exit codes
 

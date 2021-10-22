@@ -26,6 +26,11 @@ const builder = createBuilder<StartProps>(command, (yargs) =>
       alias: 'b',
       describe: 'In a monorepo, all packages are built beforehand',
     },
+    'clear-console': {
+      ...boolOptions,
+      alias: 'c',
+      describe: 'Clear console on each restart (only with watch mode)',
+    },
   }),
 );
 

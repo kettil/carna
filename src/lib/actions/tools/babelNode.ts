@@ -7,7 +7,7 @@ import { BabelNodeActionProps } from '../types';
 
 const babelNodeAction: Action<BabelNodeActionProps> = async (
   { root, cwd, log },
-  { script, watch, watchPaths = [] },
+  { script, watch, clearConsole, watchPaths = [] },
 ) => {
   const configPath = await getBabelConfigPath([cwd, root]);
 
@@ -20,6 +20,10 @@ const babelNodeAction: Action<BabelNodeActionProps> = async (
 
   if (watch) {
     args.push(...watchPaths.flatMap((path) => ['--watch', path]));
+
+    if (clearConsole) {
+      args.push('--clear-console');
+    }
   }
 
   // script

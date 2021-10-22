@@ -10,6 +10,13 @@ Array [
       "group": "start-Options",
       "type": "boolean",
     },
+    "clear-console": Object {
+      "alias": "c",
+      "default": false,
+      "describe": "Clear console on each restart (only with watch mode)",
+      "group": "start-Options",
+      "type": "boolean",
+    },
     "script": Object {
       "alias": "s",
       "describe": "Script to be called (default: src/index.[ts|js])",
