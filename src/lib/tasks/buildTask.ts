@@ -1,6 +1,8 @@
+import { join } from 'path';
 import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { babelAction } from '../actions/tools/babel';
 import { spinnerWatchAction } from '../cli/spinner';
+import { copyFile } from '../cmd/copyFile';
 import { Task } from '../types';
 import { createSpawnKillHandler } from '../utils/createSpawnKillHandler';
 import { hasDependency } from '../utils/hasDependency';
@@ -38,6 +40,14 @@ const buildTask: Task<BuildProps> = async (argv, { watch }) => {
     }
 
     await paths.reduce((promise, path) => promise.then(buildBabelTask({ argv, path })), Promise.resolve());
+
+    // copy .npmignore to the workspaces
+    await Promise.all(
+      workspacePaths.map(
+        async (workspacePath): Promise<void> =>
+          copyFile({ src: join(argv.root, '.npmignore'), dest: join(workspacePath, '.npmignore') }),
+      ),
+    );
   }
 
   await taskHook(argv, { task: 'build', type: 'post' });

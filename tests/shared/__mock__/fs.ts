@@ -76,12 +76,18 @@ const mkdir = jest.fn(async (path: string, options: unknown): Promise<void> => {
   expect({ path, options }).toMatchSnapshot('fs');
 });
 
+// mkdir
+
+const copyFile = jest.fn(async (source: string, destination: string): Promise<void> => {
+  expect({ src: source, dest: destination }).toMatchSnapshot('fs');
+});
+
 // -
 
 fs.setMockAccessFiles = setMockAccessFiles;
 fs.addMockAccessFile = addMockAccessFile;
 fs.setMockReaddirFiles = setMockReaddirFiles;
 fs.setMockReadFileFiles = setMockReadFileFiles;
-fs.promises = { access, readFile, readdir, writeFile, mkdir };
+fs.promises = { access, readFile, readdir, writeFile, mkdir, copyFile };
 
 module.exports = fs;
