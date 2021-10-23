@@ -18,6 +18,8 @@ describe('command test', () => {
   });
 
   test('it should be create the expected builder', () => {
+    expect.assertions(2);
+
     const yargs = {
       options: jest.fn((...args: unknown[]) => {
         expect(args).toMatchSnapshot('options');
