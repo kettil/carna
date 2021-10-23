@@ -14,7 +14,6 @@
     "test": "node ./build/bin/index.js test --vvv",
     "test:unit": "node ./build/bin/index.js test --vvv -p unit -w",
     "test:integration": "node ./build/bin/index.js test --vvv -p integration -w",
-    "test:e2e": "node ./build/bin/index.js test --vvv -p e2e -w",
     "analyse": "node ./build/bin/index.js analyse --vvv",
     "deps": "node ./build/bin/index.js deps --vvv",
     "license": "node ./build/bin/index.js license --vvv",
