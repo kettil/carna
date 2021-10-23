@@ -1,5 +1,13 @@
 # Changelog
 
+# [5.2.0-beta.2](https://github.com/kettil/carna/compare/5.2.0-beta.1...5.2.0-beta.2) (2021-10-23)
+
+
+### Features
+
+* run script in package in context of package (prepare for [#590](https://github.com/kettil/carna/issues/590)) ([2785430](https://github.com/kettil/carna/commit/2785430871c9ac79ef6465fed5a7e1a53283dc3c))
+* set env variable DOTENV_CONFIG_PATH at the start command ([13a016d](https://github.com/kettil/carna/commit/13a016d05bf71897c0c10094248f15544c1a505f)), closes [#590](https://github.com/kettil/carna/issues/590)
+
 # [5.2.0-beta.1](https://github.com/kettil/carna/compare/5.1.0...5.2.0-beta.1) (2021-10-22)
 
 
