@@ -11,6 +11,7 @@ jest.mock('istanbul-reports', () => require('../shared/__mock__/istanbulReports'
 jest.mock('ora', () => require('../shared/__mock__/ora'));
 jest.mock('semver', () => require('../shared/__mock__/semver'));
 jest.mock('../../src/lib/cmd/exit', () => require('../shared/__mock__/exit'));
+jest.mock('../../src/lib/cli/process', () => require('../shared/__mock__/process'));
 
 beforeEach(() => {
   (fs as any).setMockAccessFiles(getAccessFiles());

@@ -4,6 +4,7 @@ import ora from 'ora';
 import { exit } from '../cmd/exit';
 import { SpinnerWarnError } from '../errors/spinnerWarnError';
 import { SpawnKillHandler } from '../utils/createSpawnKillHandler';
+import { getStdin } from './process';
 
 type StopTypes = 'fail' | 'info' | 'stop' | 'succeed' | 'warn';
 
@@ -49,22 +50,24 @@ const spinnerAction = <T>(action: Promise<T>, text: string): Promise<T> => {
 const spinnerWatchAction = <T>(actions: Array<Promise<T>>, spawnKillHandler: SpawnKillHandler): Promise<T[]> => {
   start('Watch-Mode - exit with "q"');
 
-  process.stdin.setRawMode(true);
-  process.stdin.setEncoding('utf8');
-  process.stdin.resume();
+  const stdin = getStdin();
 
-  process.stdin.on('data', (key) => {
+  stdin.setRawMode(true);
+  stdin.setEncoding('utf8');
+  stdin.resume();
+
+  stdin.on('data', (key) => {
     // ctrl-c ( end of text )
     if (key.toString() === '\u0003') {
-      process.stdin.setRawMode(false);
-      process.stdin.pause();
+      stdin.setRawMode(false);
+      stdin.pause();
 
       exit();
     }
 
     if (key.toString() === 'q') {
-      process.stdin.setRawMode(false);
-      process.stdin.pause();
+      stdin.setRawMode(false);
+      stdin.pause();
 
       spawnKillHandler.kill(constants.signals.SIGINT);
     }

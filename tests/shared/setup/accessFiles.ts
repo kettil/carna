@@ -9,6 +9,7 @@ const getWorkspaceFiles = (name: string, files: Record<string, boolean> = {}) =>
   [join(cwd, `packages/${name}/src/index.js`)]: false,
   [join(cwd, `packages/${name}/src/index.ts`)]: true,
   [join(cwd, `packages/${name}/src/lib/app.ts`)]: true,
+  [join(cwd, `packages/${name}/tsconfig.build.json`)]: false,
   [join(cwd, `packages/${name}/tsconfig.json`)]: true,
   ...files,
 });

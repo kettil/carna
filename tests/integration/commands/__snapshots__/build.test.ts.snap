@@ -74,6 +74,213 @@ Object {
 }
 `;
 
+exports[`command build it should work with workspaces [watch: false]: child-process 1`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/packages/a/build",
+    "--project",
+    "/path/to/project/packages/a/tsconfig.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "/path/to/project/node_modules/.bin/tsc",
+  "cwd": "/path/to/project/packages/a",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: child-process 2`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/packages/b/build",
+    "--project",
+    "/path/to/project/packages/b/tsconfig.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "/path/to/project/node_modules/.bin/tsc",
+  "cwd": "/path/to/project/packages/b",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: child-process 3`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/packages/c/build",
+    "--project",
+    "/path/to/project/packages/c/tsconfig.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "/path/to/project/node_modules/.bin/tsc",
+  "cwd": "/path/to/project/packages/c",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: child-process 4`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/a",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: child-process 5`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/b",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: child-process 6`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/c",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: fs 1`] = `
+Object {
+  "dest": "/path/to/project/packages/a/.npmignore",
+  "src": "/path/to/project/.npmignore",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: fs 2`] = `
+Object {
+  "dest": "/path/to/project/packages/b/.npmignore",
+  "src": "/path/to/project/.npmignore",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: fs 3`] = `
+Object {
+  "dest": "/path/to/project/packages/c/.npmignore",
+  "src": "/path/to/project/.npmignore",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: glob 1`] = `
+Object {
+  "options": Object {
+    "absolute": true,
+    "cwd": "/path/to/project",
+  },
+  "pattern": "packages/*",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: true]: child-process 1`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--watch",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/a",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: true]: child-process 2`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--watch",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/b",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: true]: child-process 3`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--watch",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/c",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: true]: glob 1`] = `
+Object {
+  "options": Object {
+    "absolute": true,
+    "cwd": "/path/to/project",
+  },
+  "pattern": "packages/*",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: true]: process-stdin 1`] = `
+Object {
+  "mode": true,
+}
+`;
+
+exports[`command build it should work with workspaces [watch: true]: process-stdin 2`] = `
+Object {
+  "encoding": "utf8",
+}
+`;
+
+exports[`command build it should work with workspaces [watch: true]: process-stdin 3`] = `
+Object {
+  "callback": [Function],
+  "event": "data",
+}
+`;
+
 exports[`command build it should work: child-process 1`] = `
 Object {
   "args": Array [
