@@ -12,7 +12,8 @@ type Options = {
   readonly spawnKillHandler?: SpawnKillHandler;
 
   readonly cwd: string;
-  readonly env?: NodeJS.ProcessEnv;
+  readonly envPrefix?: NodeJS.ProcessEnv;
+  readonly envSuffix?: NodeJS.ProcessEnv;
 
   readonly log: Logger;
 };
@@ -24,12 +25,13 @@ const exec = ({
   withInteraction,
   withDirectOutput,
   spawnKillHandler,
-  env: envExtend = {},
+  envPrefix = {},
+  envSuffix = {},
   log,
 }: Options): Promise<{ stdout: string; stderr: string; output: string }> =>
   new Promise<{ stdout: string; stderr: string; output: string }>((resolve, reject) => {
     const command = `${cmd} ${args.join(' ')}`;
-    const env = { ...processEnvironment(), ...envExtend };
+    const env = { ...envPrefix, ...processEnvironment(), ...envSuffix };
 
     log.info(`\ncwd:  ${cwd}`);
     log.info(`exec: ${command}`);

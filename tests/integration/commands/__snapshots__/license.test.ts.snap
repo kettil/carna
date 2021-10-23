@@ -14,6 +14,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -25,5 +26,6 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;

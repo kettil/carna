@@ -28,6 +28,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -44,6 +45,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -60,6 +62,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -71,6 +74,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -87,6 +91,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project/packages/a",
+  "env": Object {},
 }
 `;
 
@@ -103,6 +108,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project/packages/b",
+  "env": Object {},
 }
 `;
 
@@ -119,6 +125,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project/packages/c",
+  "env": Object {},
 }
 `;
 
@@ -135,6 +142,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/a",
+  "env": Object {},
 }
 `;
 
@@ -151,6 +159,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/b",
+  "env": Object {},
 }
 `;
 
@@ -167,6 +176,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/c",
+  "env": Object {},
 }
 `;
 
@@ -215,6 +225,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/a",
+  "env": Object {},
 }
 `;
 
@@ -232,6 +243,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/b",
+  "env": Object {},
 }
 `;
 
@@ -249,6 +261,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/c",
+  "env": Object {},
 }
 `;
 
@@ -294,6 +307,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -310,5 +324,6 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;

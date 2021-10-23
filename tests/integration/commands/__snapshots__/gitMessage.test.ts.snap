@@ -8,6 +8,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -22,6 +23,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/commitlint",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -33,6 +35,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -47,5 +50,6 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/commitlint",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;

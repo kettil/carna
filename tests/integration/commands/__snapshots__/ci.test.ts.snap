@@ -14,6 +14,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -25,6 +26,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -41,6 +43,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -57,6 +60,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -68,6 +72,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -79,6 +84,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -92,6 +98,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -111,6 +118,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/eslint",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -127,6 +135,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -138,6 +147,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -150,6 +160,7 @@ Object {
   ],
   "command": "./node_modules/.bin/jest",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -161,6 +172,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -189,6 +201,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -217,6 +230,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -228,6 +242,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -239,6 +254,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -250,6 +266,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -261,6 +278,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -272,6 +290,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -283,6 +302,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -361,6 +381,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -377,6 +398,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -390,6 +412,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -409,6 +432,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/eslint",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -425,6 +449,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -437,6 +462,7 @@ Object {
   ],
   "command": "./node_modules/.bin/jest",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -465,6 +491,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -493,6 +520,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/jest",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 

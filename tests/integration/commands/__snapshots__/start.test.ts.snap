@@ -48,6 +48,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -62,6 +63,9 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel-node",
   "cwd": "/path/to/project",
+  "env": Object {
+    "DOTENV_CONFIG_PATH": ".env",
+  },
 }
 `;
 
@@ -73,6 +77,7 @@ Object {
   ],
   "command": "npm",
   "cwd": "/path/to/project",
+  "env": Object {},
 }
 `;
 
@@ -87,6 +92,9 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel-node",
   "cwd": "/path/to/project/packages/a",
+  "env": Object {
+    "DOTENV_CONFIG_PATH": "../../.env",
+  },
 }
 `;
 
@@ -113,6 +121,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/b",
+  "env": Object {},
 }
 `;
 
@@ -127,6 +136,9 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel-node",
   "cwd": "/path/to/project/packages/a",
+  "env": Object {
+    "DOTENV_CONFIG_PATH": "../../.env",
+  },
 }
 `;
 
@@ -153,6 +165,9 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel-watch",
   "cwd": "/path/to/project/packages/a",
+  "env": Object {
+    "DOTENV_CONFIG_PATH": "../../.env",
+  },
 }
 `;
 
@@ -179,6 +194,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/b",
+  "env": Object {},
 }
 `;
 
@@ -197,6 +213,7 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
   "cwd": "/path/to/project/packages/b",
+  "env": Object {},
 }
 `;
 
@@ -213,6 +230,9 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel-watch",
   "cwd": "/path/to/project/packages/a",
+  "env": Object {
+    "DOTENV_CONFIG_PATH": "../../.env",
+  },
 }
 `;
 
@@ -239,5 +259,8 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/babel-node",
   "cwd": "/path/to/project",
+  "env": Object {
+    "DOTENV_CONFIG_PATH": ".env",
+  },
 }
 `;

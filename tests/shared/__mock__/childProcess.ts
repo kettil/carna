@@ -9,9 +9,12 @@ const spawnKill = jest.fn((signal?: NodeJS.Signals | number) => {
 export const spawn = (
   command: string,
   args: readonly string[] = [],
-  { cwd }: SpawnOptionsWithoutStdio = {},
+  { cwd, env = {} }: SpawnOptionsWithoutStdio = {},
 ): ChildProcessWithoutNullStreams => {
-  expect({ command, args, cwd }).toMatchSnapshot('child-process');
+  const processEnvironmentKeys = Object.keys(process.env);
+  const envFiltered = Object.fromEntries(Object.entries(env).filter(([key]) => !processEnvironmentKeys.includes(key)));
+
+  expect({ command, args, cwd, env: envFiltered }).toMatchSnapshot('child-process');
 
   const eventEmitter = new EventEmitter() as ChildProcessWithoutNullStreams;
 

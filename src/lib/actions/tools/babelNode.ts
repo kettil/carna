@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { join, relative } from 'path';
 import { babelCommandNode, babelCommandWatch, babelExtensions } from '../../../configs/actionConfigs';
 import { exec } from '../../cmd/exec';
 import { Action } from '../../types';
@@ -10,6 +10,10 @@ const babelNodeAction: Action<BabelNodeActionProps> = async (
   { scriptPath, watch, clearConsole, watchPaths = [], executePath = cwd },
 ) => {
   const configPath = await getBabelConfigPath([cwd, root]);
+  const envPrefix: NodeJS.ProcessEnv = {
+    // eslint-disable-next-line @typescript-eslint/naming-convention -- env variable
+    DOTENV_CONFIG_PATH: join(relative(executePath, root), '.env'),
+  };
 
   const cmd = join(root, watch ? babelCommandWatch : babelCommandNode);
   const args: string[] = [];
@@ -30,7 +34,7 @@ const babelNodeAction: Action<BabelNodeActionProps> = async (
   args.push(scriptPath);
 
   log.info(`Run babel-${watch ? 'watch' : 'node'}`);
-  await exec({ log, cmd, args, cwd: executePath, withInteraction: true });
+  await exec({ log, cmd, args, cwd: executePath, envPrefix, withInteraction: true });
 };
 
 export { babelNodeAction };
