@@ -1,4 +1,4 @@
-import { uniqueArray } from '@kettil/tool-lib';
+import { isString, uniqueArray } from '@kettil/tool-lib';
 import { PropsGlobal } from '../types';
 import { getWorkspaceDependencyCompare } from './getWorkspaceDependencyCompare';
 import { getWorkspacePackageNameAndDependencies } from './getWorkspacePackageNameAndDependencies';
@@ -9,9 +9,13 @@ const getWorkspaceDependencies = async ({
   workspacePaths,
 }: {
   argv: PropsGlobal;
-  workspacePath: string;
+  workspacePath?: string;
   workspacePaths: string[];
 }): Promise<string[]> => {
+  if (!isString(workspacePath)) {
+    return [];
+  }
+
   const workspaces = await Promise.all(
     workspacePaths.map((path) => getWorkspacePackageNameAndDependencies(argv, { workspacePath: path })),
   );

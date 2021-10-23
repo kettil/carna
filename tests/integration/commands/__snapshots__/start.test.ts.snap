@@ -76,6 +76,158 @@ Object {
 }
 `;
 
+exports[`command start it should work with workspaces [watch: false, buildDependencies: false]: child-process 1`] = `
+Object {
+  "args": Array [
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "/path/to/project/packages/a/src/index.ts",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel-node",
+  "cwd": "/path/to/project/packages/a",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: false, buildDependencies: false]: glob 1`] = `
+Object {
+  "options": Object {
+    "absolute": true,
+    "cwd": "/path/to/project",
+  },
+  "pattern": "packages/*",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: false, buildDependencies: true]: child-process 1`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/b",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: false, buildDependencies: true]: child-process 2`] = `
+Object {
+  "args": Array [
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "/path/to/project/packages/a/src/index.ts",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel-node",
+  "cwd": "/path/to/project/packages/a",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: false, buildDependencies: true]: glob 1`] = `
+Object {
+  "options": Object {
+    "absolute": true,
+    "cwd": "/path/to/project",
+  },
+  "pattern": "packages/*",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: true, buildDependencies: false]: child-process 1`] = `
+Object {
+  "args": Array [
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--watch",
+    "/path/to/project/packages/b/build",
+    "/path/to/project/packages/a/src/index.ts",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel-watch",
+  "cwd": "/path/to/project/packages/a",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: true, buildDependencies: false]: glob 1`] = `
+Object {
+  "options": Object {
+    "absolute": true,
+    "cwd": "/path/to/project",
+  },
+  "pattern": "packages/*",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: true, buildDependencies: true]: child-process 1`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/b",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: true, buildDependencies: true]: child-process 2`] = `
+Object {
+  "args": Array [
+    "-d",
+    "build",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--watch",
+    "--skip-initial-build",
+    "src",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel",
+  "cwd": "/path/to/project/packages/b",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: true, buildDependencies: true]: child-process 3`] = `
+Object {
+  "args": Array [
+    "--extensions",
+    ".js,.jsx,.ts,.tsx,.json",
+    "--config-file",
+    "/path/to/project/babel.config.js",
+    "--watch",
+    "/path/to/project/packages/b/build",
+    "/path/to/project/packages/a/src/index.ts",
+  ],
+  "command": "/path/to/project/node_modules/.bin/babel-watch",
+  "cwd": "/path/to/project/packages/a",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: true, buildDependencies: true]: glob 1`] = `
+Object {
+  "options": Object {
+    "absolute": true,
+    "cwd": "/path/to/project",
+  },
+  "pattern": "packages/*",
+}
+`;
+
+exports[`command start it should work with workspaces [watch: true, buildDependencies: true]: spawn 1`] = `2`;
+
 exports[`command start it should work: child-process 1`] = `
 Object {
   "args": Array [

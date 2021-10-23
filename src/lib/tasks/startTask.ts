@@ -14,22 +14,24 @@ import { taskHook } from '../utils/taskHook';
 import { buildBabelTask } from './subTasks/buildBabelTask';
 
 type StartProps = {
-  watch: boolean;
+  watch?: boolean;
   script?: string;
   buildDependencies?: boolean;
   clearConsole?: boolean;
 };
 
 const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConsole, script, watch }) => {
-  const props: BabelNodeActionProps = {
-    watch,
-    script: await getFirstExistingFile({ cwd: argv.cwd, files: [script, ...babelScriptFiles] }),
-    clearConsole,
-  };
-
+  const scriptPath = await getFirstExistingFile({ cwd: argv.cwd, files: [script, ...babelScriptFiles] });
   const workspacePaths = await npmPackageWorkspacesAction(argv);
-  const workspacePath = workspacePaths.find((path) => props.script.includes(path)) ?? '';
+  const workspacePath = workspacePaths.find((path) => scriptPath.includes(path));
   const workspaceFilteredPaths = await getWorkspaceDependencies({ argv, workspacePath, workspacePaths });
+
+  const props: BabelNodeActionProps = {
+    watch: !!watch,
+    scriptPath,
+    clearConsole,
+    executePath: workspacePath,
+  };
 
   await taskHook(argv, { task: 'start', type: 'pre' });
 

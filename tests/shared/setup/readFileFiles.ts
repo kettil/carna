@@ -27,34 +27,21 @@ const coverageForE2e = {
 const getReadFileFiles = (files: Record<string, string> = {}): Record<string, string> => ({
   [mockFilePackage]: JSON.stringify(packageJson),
 
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'dependabot.yml')]: 'yaml: file',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'CODEOWNERS')]: '* @username',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'workflows', 'qa.yml')]: 'yml: file',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'workflows', 'release.yml')]: 'yml: file',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'bug.md')]: '# markdown - bug',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'concept.md')]: '# markdown - concept',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'epic.md')]: '# markdown - epic',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'feature.md')]: '# markdown - feature',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'question.md')]: '# markdown - question',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'github', 'ISSUE_TEMPLATE', 'task.md')]: '# markdown - task',
-
-  [join(cwd, 'node_modules', 'carna', 'templates', 'vscode', 'settings.json')]: '{"file":"settings.json"}',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'carnarc.json')]: '{"file":"carnarc.json"}',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'releaserc.json')]: '{"file":"releaserc.json"}',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'typescriptrc.json')]: '{"file":"typescriptrc.json"}',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'typescriptrc.build.json')]: '{"file":"typescriptrc.build.json"}',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'editorconfig')]: 'editorconfig',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'eslintignore')]: 'eslintignore',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'gitignore')]: 'gitignore',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'npmignore')]: 'npmignore',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'prettierignore')]: 'prettierignore',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'src', 'bin', 'index.ts')]: '// index.ts',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'babel.config.js')]: '// babel.config.js',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'jest.config.js')]: '// jest.config.js',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'dummy.test.ts')]: '// dummy.test.ts',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'setupTests.ts')]: '// setupTests.ts',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'pre.ts')]: '// pre.ts',
-  [join(cwd, 'node_modules', 'carna', 'templates', 'tests', 'post.ts')]: '// post.ts',
+  [join(cwd, 'packages/a/package.json')]: JSON.stringify({
+    name: 'workspace-name-a',
+    license: 'MIT',
+    dependencies: {
+      'workspace-name-b': '0.1.0',
+    },
+  }),
+  [join(cwd, 'packages/b/package.json')]: JSON.stringify({
+    name: 'workspace-name-b',
+    license: 'MIT',
+  }),
+  [join(cwd, 'packages/c/package.json')]: JSON.stringify({
+    name: 'workspace-name-c',
+    license: 'MIT',
+  }),
 
   [join(cwd, 'node_modules/module1/package.json')]: JSON.stringify({
     name: 'sub-project-name-1',

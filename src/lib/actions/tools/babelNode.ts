@@ -7,7 +7,7 @@ import { BabelNodeActionProps } from '../types';
 
 const babelNodeAction: Action<BabelNodeActionProps> = async (
   { root, cwd, log },
-  { script, watch, clearConsole, watchPaths = [] },
+  { scriptPath, watch, clearConsole, watchPaths = [], executePath = cwd },
 ) => {
   const configPath = await getBabelConfigPath([cwd, root]);
 
@@ -26,11 +26,11 @@ const babelNodeAction: Action<BabelNodeActionProps> = async (
     }
   }
 
-  // script
-  args.push(script);
+  // scriptPath
+  args.push(scriptPath);
 
   log.info(`Run babel-${watch ? 'watch' : 'node'}`);
-  await exec({ cmd, args, cwd, log, withInteraction: true });
+  await exec({ log, cmd, args, cwd: executePath, withInteraction: true });
 };
 
 export { babelNodeAction };

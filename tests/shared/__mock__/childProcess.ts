@@ -2,6 +2,10 @@ import { SpawnOptionsWithoutStdio, ChildProcessWithoutNullStreams } from 'child_
 import EventEmitter from 'events';
 import { Readable } from 'stream';
 
+const spawnKill = jest.fn((signal?: NodeJS.Signals | number) => {
+  expect(signal).toMatchSnapshot('spawn');
+});
+
 export const spawn = (
   command: string,
   args: readonly string[] = [],
@@ -11,6 +15,7 @@ export const spawn = (
 
   const eventEmitter = new EventEmitter() as ChildProcessWithoutNullStreams;
 
+  eventEmitter.kill = spawnKill as unknown as ChildProcessWithoutNullStreams['kill'];
   eventEmitter.stdout = new Readable({ read: () => true });
   eventEmitter.stderr = new Readable({ read: () => true });
 

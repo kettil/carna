@@ -9,5 +9,9 @@ const packageJson = {
   dependencies: { package: '0.1.0' },
   devDependencies: { typescript: '0.1.0' },
 };
+const packageJsonWithWorkspaces = {
+  ...packageJson,
+  workspaces: ['packages/*'],
+};
 
-export { mockFilePackage, packageJson };
+export { mockFilePackage, packageJson, packageJsonWithWorkspaces };

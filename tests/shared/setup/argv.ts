@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isArray } from '@kettil/tool-lib';
+import { isArray, isString } from '@kettil/tool-lib';
 import { Arguments } from 'yargs';
 import { PropsGlobal } from '../../../src/lib/types';
 
@@ -9,7 +9,7 @@ const cfg = join(cwd, 'node_modules', 'carna', 'configs');
 
 const getArgv = <T extends Record<string, unknown>>(props: T): Arguments<PropsGlobal & T> => {
   const log = jest.fn((msg: unknown) => {
-    expect(typeof msg === 'string' || isArray(msg)).toBeTruthy();
+    expect(isString(msg) || isArray(msg)).toBeTruthy();
   });
 
   return {

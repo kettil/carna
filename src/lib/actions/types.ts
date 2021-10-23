@@ -9,9 +9,10 @@ type BabelActionProps = {
 
 type BabelNodeActionProps = {
   watch: boolean;
-  script: string;
+  scriptPath: string;
   watchPaths?: string[];
   clearConsole?: boolean;
+  executePath?: string;
 };
 
 type CommitlintActionProps = {
