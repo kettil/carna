@@ -1,5 +1,23 @@
 # Changelog
 
+# [5.2.0](https://github.com/kettil/carna/compare/5.1.1...5.2.0) (2021-10-25)
+
+
+### Bug Fixes
+
+* terminate watch mode with ctrl-c ([77de885](https://github.com/kettil/carna/commit/77de88591f98275bba5ce24dfd9c92f12bf8c5b9)), closes [#553](https://github.com/kettil/carna/issues/553)
+* wrong representation of the error message at depcheck ([3d888cb](https://github.com/kettil/carna/commit/3d888cbeacbd3e08ba4ae2a92e3556dd7d7e3d34))
+
+
+### Features
+
+* add a console clean argument ([da1c189](https://github.com/kettil/carna/commit/da1c189d73c3630fa1e7fc7e2ed61dc760053859)), closes [#567](https://github.com/kettil/carna/issues/567)
+* copy the global npmignore file into each workspaces ([d65f648](https://github.com/kettil/carna/commit/d65f6489cc13427b51666c91c064b89a3441f47a)), closes [#555](https://github.com/kettil/carna/issues/555)
+* monitors at start only the needed dependencies (only monorepo) ([abfdc93](https://github.com/kettil/carna/commit/abfdc935ebee5c81e5184622af1f426813d67b7f)), closes [#556](https://github.com/kettil/carna/issues/556)
+* run script in package in context of package (prepare for [#590](https://github.com/kettil/carna/issues/590)) ([2785430](https://github.com/kettil/carna/commit/2785430871c9ac79ef6465fed5a7e1a53283dc3c))
+* set env variable DOTENV_CONFIG_PATH at the start command ([13a016d](https://github.com/kettil/carna/commit/13a016d05bf71897c0c10094248f15544c1a505f)), closes [#590](https://github.com/kettil/carna/issues/590)
+* show as debug message the workspaces ([26a33a8](https://github.com/kettil/carna/commit/26a33a8c39ff491a524392870b165ba614d26d2e))
+
 ## [5.1.1](https://github.com/kettil/carna/compare/5.1.0...5.1.1) (2021-10-25)
 
 
