@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { commitlintCommand, commitlintConfigFiles } from '../../../configs/actionConfigs';
-import { exec } from '../../cmd/exec';
+import { execReturn } from '../../cmd/execReturn';
 import { Action } from '../../types';
 import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
 import { CommitlintActionProps } from '../types';
@@ -20,7 +20,7 @@ const commitlintAction: Action<CommitlintActionProps> = async ({ root, cfg, log 
   args.push('--config', configFile);
 
   log.info('Run commitlint');
-  await exec({ cmd, args, cwd: root, log });
+  await execReturn({ cmd, args, cwd: root, log });
 };
 
 export { commitlintAction };

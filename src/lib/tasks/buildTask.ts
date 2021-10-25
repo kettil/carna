@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { babelAction } from '../actions/tools/babel';
-import { spinnerWatchAction } from '../cli/spinner';
+import { spinnerAction } from '../cli/spinner';
 import { copyFile } from '../cmd/copyFile';
 import { Task } from '../types';
 import { createSpawnKillHandler } from '../utils/createSpawnKillHandler';
@@ -27,13 +27,13 @@ const buildTask: Task<BuildProps> = async (argv, { watch }) => {
       throw new TypeError('The watch mode is only available in a monorepo, use "npx carna start -w" instead');
     }
 
-    const spawnKillHandler = createSpawnKillHandler();
+    const spawnKillHandler = createSpawnKillHandler({ registerStdin: true });
 
     const promises = paths.map<Promise<void>>((path) =>
       babelAction({ ...argv, cwd: path }, { watch: true, spawnKillHandler }),
     );
 
-    await spinnerWatchAction(promises, spawnKillHandler);
+    await spinnerAction(Promise.all(promises), 'Watch-Mode - exit with "ctrl-c"');
   } else {
     if (hasTypescript) {
       await paths.reduce((promise, path) => promise.then(buildTscTask({ argv, path })), Promise.resolve());

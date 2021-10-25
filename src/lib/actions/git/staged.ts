@@ -1,10 +1,10 @@
-import { exec } from '../../cmd/exec';
+import { execReturn } from '../../cmd/execReturn';
 import { Action } from '../../types';
 
 const gitStagedAction: Action<Record<string, undefined>, string[]> = async ({ root, log }) => {
   log.info('Get the list of staged files');
 
-  const { stdout } = await exec({ cmd: 'git', args: ['diff', '--staged', '--name-only'], cwd: root, log });
+  const { stdout } = await execReturn({ cmd: 'git', args: ['diff', '--staged', '--name-only'], cwd: root, log });
 
   if (stdout.trim() === '') {
     log.debug('No staged files were found');

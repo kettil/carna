@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { prettierCommand, prettierConfigFiles, prettierExtensions } from '../../../configs/actionConfigs';
-import { exec } from '../../cmd/exec';
+import { execReturn } from '../../cmd/execReturn';
 import { existFiles } from '../../cmd/existFiles';
 import { Action } from '../../types';
 import { PrettierActionProps } from '../types';
@@ -37,7 +37,7 @@ const prettierAction: Action<PrettierActionProps> = async (
   }
 
   log.info('Run prettier');
-  await exec({ cmd, args, cwd: root, log });
+  await execReturn({ cmd, args, cwd: root, log });
 };
 
 export { prettierAction };

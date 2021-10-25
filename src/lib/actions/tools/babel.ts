@@ -1,6 +1,8 @@
 import { join } from 'path';
 import { babelCommand, babelExtensions } from '../../../configs/actionConfigs';
-import { exec } from '../../cmd/exec';
+import { ExecOptions } from '../../cmd/execA';
+import { execLog } from '../../cmd/execLog';
+import { execReturn } from '../../cmd/execReturn';
 import { Action } from '../../types';
 import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
 import { BabelActionProps } from '../types';
@@ -31,7 +33,14 @@ const babelAction: Action<BabelActionProps> = async (
   args.push('src');
 
   log.info('Run babel');
-  await exec({ cmd, args, cwd, log, withDirectOutput: watch, spawnKillHandler });
+
+  const execOptions: ExecOptions = { cmd, args, cwd, log, spawnKillHandler };
+
+  if (watch) {
+    await execLog(execOptions);
+  } else {
+    await execReturn(execOptions);
+  }
 };
 
 export { babelAction };

@@ -1,6 +1,6 @@
 import { join, basename } from 'path';
 import { eslintCommand, eslintConfigFiles, eslintExtensions, eslintIgnoreFiles } from '../../../configs/actionConfigs';
-import { exec } from '../../cmd/exec';
+import { execReturn } from '../../cmd/execReturn';
 import { existFiles } from '../../cmd/existFiles';
 import { Action } from '../../types';
 import { EslintActionProps } from '../types';
@@ -39,7 +39,7 @@ const eslintAction: Action<EslintActionProps> = async ({ root, cfg, log }, { wri
   }
 
   log.info('Run eslint');
-  await exec({ cmd, args, cwd: root, log });
+  await execReturn({ cmd, args, cwd: root, log });
 };
 
 export { eslintAction };

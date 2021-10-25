@@ -598,6 +598,24 @@ Object {
 }
 `;
 
+exports[`command test it should work with watch mode: process-stdin 1`] = `
+Object {
+  "encoding": "utf8",
+}
+`;
+
+exports[`command test it should work with watch mode: process-stdin 2`] = `
+Object {
+  "mode": true,
+}
+`;
+
+exports[`command test it should work with watch mode: process-stdin 3`] = `
+Object {
+  "mode": false,
+}
+`;
+
 exports[`command test it should work: child-process 1`] = `
 Object {
   "args": Array [

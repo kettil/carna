@@ -1,6 +1,8 @@
 import { join } from 'path';
 import { jestCommand, jestConfigFiles } from '../../../configs/actionConfigs';
-import { exec } from '../../cmd/exec';
+import { ExecOptions } from '../../cmd/execA';
+import { execLog } from '../../cmd/execLog';
+import { execStdio } from '../../cmd/execStdio';
 import { Action } from '../../types';
 import { getCoverageFolder } from '../../utils/getCoverageFolder';
 import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
@@ -56,7 +58,13 @@ const jestAction: Action<JestActionProps> = async ({ root, ci, log }, props) => 
 
   log.info('Run test');
 
-  await exec({ cmd, args, cwd: root, log, withInteraction: props.watch, withDirectOutput: true });
+  const execOptions: ExecOptions = { cmd, args, cwd: root, log };
+
+  if (props.watch) {
+    await execStdio(execOptions, { registerStdin: true });
+  } else {
+    await execLog(execOptions);
+  }
 };
 
 export { jestAction };

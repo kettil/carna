@@ -2,7 +2,7 @@ import { basename, join } from 'path';
 import { Logger } from '../cli/logger';
 import { spinnerAction } from '../cli/spinner';
 import { access } from '../cmd/access';
-import { exec } from '../cmd/exec';
+import { execReturn } from '../cmd/execReturn';
 import { Task } from '../types';
 
 const runHook = async (cwd: string, log: Logger, project: string, path: string): Promise<void> => {
@@ -10,7 +10,7 @@ const runHook = async (cwd: string, log: Logger, project: string, path: string):
   const args: string[] = ['-x', '.js,.ts', '--', path];
 
   log.debug(`Run ${basename(path)} for test project ${project}`);
-  await exec({ cmd, args, cwd, log });
+  await execReturn({ cmd, args, cwd, log });
 };
 
 const testHook: Task<{ project: string; type: 'post' | 'pre' }> = async (argv, { project, type }) => {

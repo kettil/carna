@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { typescriptCommand } from '../../../configs/actionConfigs';
-import { exec } from '../../cmd/exec';
+import { execReturn } from '../../cmd/execReturn';
 import { Action } from '../../types';
 import { getTypescriptConfigPath } from '../../utils/getTypescriptConfigPath';
 import { TscActionProps } from '../types';
@@ -30,7 +30,7 @@ const tscAction: Action<TscActionProps> = async ({ root, cwd, log }, { mode }) =
   }
 
   log.info('Run TypeScript');
-  await exec({ cmd, args, cwd, log });
+  await execReturn({ cmd, args, cwd, log });
 };
 
 export { tscAction };

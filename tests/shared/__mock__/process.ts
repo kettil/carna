@@ -15,6 +15,7 @@ const getStdin = (): unknown => ({
   setEncoding: stdinSetEncoding,
   resume: jest.fn(),
   pause: jest.fn(),
+  pipe: jest.fn(),
   on: stdinOn,
 });
 

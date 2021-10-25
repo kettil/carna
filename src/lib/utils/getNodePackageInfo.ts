@@ -2,7 +2,7 @@ import { join } from 'path';
 import { isObject, isString, objectEntries } from '@kettil/tool-lib';
 import { licenseHeuristics } from '../../configs/licenseHeuristics';
 import { access } from '../cmd/access';
-import { exec } from '../cmd/exec';
+import { execReturn } from '../cmd/execReturn';
 import { readdir } from '../cmd/readdir';
 import { readFile } from '../cmd/readFile';
 import { Action, LicensePackageInfo, LicensePackages } from '../types';
@@ -93,7 +93,7 @@ const getNodePackageInfo: Action<
   }
 
   // License over "npm view"
-  const { stdout: npmViewLicense } = await exec({ cmd: 'npm', args: ['view', name, 'license'], log, cwd });
+  const { stdout: npmViewLicense } = await execReturn({ cmd: 'npm', args: ['view', name, 'license'], log, cwd });
 
   if (npmViewLicense.trim() !== '') {
     return { ...data, license: npmViewLicense.trim() };

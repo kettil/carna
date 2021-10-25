@@ -1,4 +1,4 @@
-import { exec } from '../../cmd/exec';
+import { execReturn } from '../../cmd/execReturn';
 import { Action } from '../../types';
 
 type Props = {
@@ -13,7 +13,14 @@ const gitAddAction: Action<Props> = async ({ root, log }, { files }) => {
   log.info('Add files to the staged:');
   log.info(files.map((file) => `▸ ${file}`));
 
-  await exec({ cmd: 'git', args: ['add', ...files.map((file) => (file === '.' ? '.' : `"${file}"`))], cwd: root, log });
+  const args = ['add', ...files.map((file) => (file === '.' ? '.' : `"${file}"`))];
+
+  await execReturn({
+    cmd: 'git',
+    args,
+    cwd: root,
+    log,
+  });
 };
 
 export { gitAddAction };

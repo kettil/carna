@@ -1,7 +1,8 @@
 import { join, relative } from 'path';
 import { babelCommandNode, babelCommandWatch, babelExtensions } from '../../../configs/actionConfigs';
-import { exec } from '../../cmd/exec';
+import { execStdio } from '../../cmd/execStdio';
 import { Action } from '../../types';
+import { createSpawnKillHandler } from '../../utils/createSpawnKillHandler';
 import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
 import { BabelNodeActionProps } from '../types';
 
@@ -33,8 +34,18 @@ const babelNodeAction: Action<BabelNodeActionProps> = async (
   // scriptPath
   args.push(scriptPath);
 
+  const spawnKillHandler = createSpawnKillHandler({ registerStdin: true });
+
   log.info(`Run babel-${watch ? 'watch' : 'node'}`);
-  await exec({ log, cmd, args, cwd: executePath, envPrefix, withInteraction: true });
+
+  await execStdio({
+    log,
+    cmd,
+    args,
+    cwd: executePath,
+    spawnKillHandler,
+    envPrefix,
+  });
 };
 
 export { babelNodeAction };

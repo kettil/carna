@@ -1,4 +1,4 @@
-import { exec } from '../../cmd/exec';
+import { execReturn } from '../../cmd/execReturn';
 import { Action } from '../../types';
 
 const modes = ['modified', 'others'] as const;
@@ -16,7 +16,7 @@ const gitLsAction: Action<{ mode: Mode }, string[]> = async ({ root, log }, { mo
     args.push(`--${mode}`);
   }
 
-  const { stdout } = await exec({ cmd: 'git', args, cwd: root, log });
+  const { stdout } = await execReturn({ cmd: 'git', args, cwd: root, log });
 
   log.info('Return a list of modified or other files');
 

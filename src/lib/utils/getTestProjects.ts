@@ -1,6 +1,6 @@
 import { isArray, isObject, isString } from '@kettil/tool-lib';
 import { jestCommand, jestConfigFiles, jestPreOrderProjects } from '../../configs/actionConfigs';
-import { exec } from '../cmd/exec';
+import { execReturn } from '../cmd/execReturn';
 import { Task } from '../types';
 import { getFirstExistingFile } from './getFirstExistingFile';
 import { sortProjectNames } from './sortProjectNames';
@@ -9,7 +9,7 @@ const getTestProjects: Task<[string[] | undefined], string[]> = async ({ root, l
   const configFile = await getFirstExistingFile({ cwd: root, files: jestConfigFiles });
   const args: string[] = ['--config', configFile, '--showConfig'];
 
-  const { stdout } = await exec({ cmd: jestCommand, args, cwd: root, log });
+  const { stdout } = await execReturn({ cmd: jestCommand, args, cwd: root, log });
 
   const data = JSON.parse(stdout.trim()) as unknown;
 
