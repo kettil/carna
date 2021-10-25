@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { jestCommand, jestConfigFiles } from '../../../configs/actionConfigs';
-import { ExecOptions } from '../../cmd/execA';
+import { ExecOptions } from '../../cmd/exec';
 import { execLog } from '../../cmd/execLog';
 import { execStdio } from '../../cmd/execStdio';
 import { Action } from '../../types';

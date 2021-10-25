@@ -1,6 +1,6 @@
 import { getStdin } from '../cli/process';
 import { ExecutableError } from '../errors/executableError';
-import { exec, ExecOptions, getExecCommand } from './execA';
+import { exec, ExecOptions, getExecCommand } from './exec';
 
 const execStdio = (props: ExecOptions, { registerStdin = false }: { registerStdin?: boolean } = {}): Promise<void> =>
   new Promise((resolve, reject) => {

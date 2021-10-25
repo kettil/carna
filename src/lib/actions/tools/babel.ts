@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { babelCommand, babelExtensions } from '../../../configs/actionConfigs';
-import { ExecOptions } from '../../cmd/execA';
+import { ExecOptions } from '../../cmd/exec';
 import { execLog } from '../../cmd/execLog';
 import { execReturn } from '../../cmd/execReturn';
 import { Action } from '../../types';

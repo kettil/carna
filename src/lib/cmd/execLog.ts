@@ -1,5 +1,5 @@
 import { ExecutableError } from '../errors/executableError';
-import { exec, ExecOptions, getExecCommand } from './execA';
+import { exec, ExecOptions, getExecCommand } from './exec';
 
 const execLog = (props: ExecOptions): Promise<void> =>
   new Promise((resolve, reject) => {

@@ -1,5 +1,5 @@
 import { ExecutableError } from '../errors/executableError';
-import { exec, ExecOptions, getExecCommand } from './execA';
+import { exec, ExecOptions, getExecCommand } from './exec';
 
 type ExecValueReturn = { stdout: string; stderr: string; output: string };
 
