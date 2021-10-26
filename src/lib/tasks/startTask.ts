@@ -18,6 +18,7 @@ type StartProps = {
   script?: string;
   buildDependencies?: boolean;
   clearConsole?: boolean;
+  pinoPretty?: boolean;
 };
 
 const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConsole, script, watch }) => {

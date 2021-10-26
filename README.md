@@ -167,12 +167,13 @@ Calls the application directly, without build process.
 
 ### Options
 
-| Options              | short | Description                                         |
-| -------------------- | ----- | --------------------------------------------------- |
-| --script             | -s    | Script to be called (default: `src/index.[ts\|js]`) |
-| --watch              | -w    | Watch files for changes and rerun script            |
-| --build-dependencies | -b    | In a monorepo, all packages are built beforehand    |
-| --clear-console      | -c    | Clear console on each restart (only in watch mode)  |
+| Options              | short | Description                                                                 |
+| -------------------- | ----- | --------------------------------------------------------------------------- |
+| --script             | -s    | Script to be called (default: `src/index.[ts\|js]`)                         |
+| --watch              | -w    | Watch files for changes and rerun script                                    |
+| --build-dependencies | -b    | In a monorepo, all packages are built beforehand                            |
+| --clear-console      | -c    | Clear console on each restart (only in watch mode)                          |
+| --pino-pretty        | -p    | Enables the [pino log formatter](https://www.npmjs.com/package/pino-pretty) |
 
 ### Exit codes
 

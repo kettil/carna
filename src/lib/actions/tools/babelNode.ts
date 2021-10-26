@@ -1,6 +1,7 @@
 import { join, relative } from 'path';
 import { babelCommandNode, babelCommandWatch, babelExtensions } from '../../../configs/actionConfigs';
 import { execStdio } from '../../cmd/execStdio';
+import { pinoPretty } from '../../cmd/pinoPretty';
 import { Action } from '../../types';
 import { createSpawnKillHandler } from '../../utils/createSpawnKillHandler';
 import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
@@ -8,8 +9,10 @@ import { BabelNodeActionProps } from '../types';
 
 const babelNodeAction: Action<BabelNodeActionProps> = async (
   { root, cwd, log },
-  { scriptPath, watch, clearConsole, watchPaths = [], executePath = cwd },
+  { scriptPath, watch, clearConsole, watchPaths = [], executePath = cwd, withPinoPretty },
 ) => {
+  const spawnKillHandler = watch ? createSpawnKillHandler({ registerStdin: true }) : undefined;
+  const pipe = withPinoPretty ? pinoPretty({ log, root, cwd: executePath }) : undefined;
   const configPath = await getBabelConfigPath([cwd, root]);
   const envPrefix: NodeJS.ProcessEnv = {
     // eslint-disable-next-line @typescript-eslint/naming-convention -- env variable
@@ -34,18 +37,9 @@ const babelNodeAction: Action<BabelNodeActionProps> = async (
   // scriptPath
   args.push(scriptPath);
 
-  const spawnKillHandler = createSpawnKillHandler({ registerStdin: true });
-
   log.info(`Run babel-${watch ? 'watch' : 'node'}`);
 
-  await execStdio({
-    log,
-    cmd,
-    args,
-    cwd: executePath,
-    spawnKillHandler,
-    envPrefix,
-  });
+  await execStdio({ log, cmd, args, cwd: executePath, spawnKillHandler, envPrefix }, { pipe });
 };
 
 export { babelNodeAction };

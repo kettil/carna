@@ -1,10 +1,18 @@
+import { ChildProcessByStdio } from 'child_process';
+import { Readable, Writable } from 'stream';
 import { getStdin } from '../cli/process';
 import { ExecutableError } from '../errors/executableError';
 import { exec, ExecOptions, getExecCommand } from './exec';
 
-const execStdio = (props: ExecOptions, { registerStdin = false }: { registerStdin?: boolean } = {}): Promise<void> =>
+type PipeType = ChildProcessByStdio<Writable, Readable | null, Readable | null>;
+
+const execStdio = (
+  props: ExecOptions,
+  { registerStdin = false, pipe }: { registerStdin?: boolean; pipe?: PipeType } = {},
+): Promise<void> =>
   new Promise((resolve, reject) => {
-    const { stdout, stderr } = process;
+    const { stderr } = process;
+    const stdout = pipe ? undefined : process.stdout;
     const stdin = registerStdin ? getStdin() : undefined;
 
     if (stdin) {
@@ -14,6 +22,10 @@ const execStdio = (props: ExecOptions, { registerStdin = false }: { registerStdi
     }
 
     const stream = exec(props, { stdin, stdout, stderr });
+
+    if (stream.stdout && pipe) {
+      stream.stdout.pipe(pipe.stdin);
+    }
 
     stream.once('close', (code) => {
       if (stdin) {

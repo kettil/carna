@@ -11,6 +11,7 @@ type BabelNodeActionProps = {
   watch: boolean;
   scriptPath: string;
   watchPaths?: string[];
+  withPinoPretty?: boolean;
   clearConsole?: boolean;
   executePath?: string;
 };

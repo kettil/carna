@@ -17,6 +17,13 @@ Array [
       "group": "start-Options",
       "type": "boolean",
     },
+    "pino-pretty": Object {
+      "alias": "p",
+      "default": false,
+      "describe": "Enables the pino log formatter (pino-pretty)",
+      "group": "start-Options",
+      "type": "boolean",
+    },
     "script": Object {
       "alias": "s",
       "describe": "Script to be called (default: src/index.[ts|js])",
@@ -81,25 +88,6 @@ Object {
 }
 `;
 
-exports[`command start it should work with hooks: process-stdin 1`] = `
-Object {
-  "mode": true,
-}
-`;
-
-exports[`command start it should work with hooks: process-stdin 2`] = `
-Object {
-  "encoding": "utf8",
-}
-`;
-
-exports[`command start it should work with hooks: process-stdin 3`] = `
-Object {
-  "callback": [Function],
-  "event": "data",
-}
-`;
-
 exports[`command start it should work with workspaces [watch: false, buildDependencies: false]: child-process 1`] = `
 Object {
   "args": Array [
@@ -124,25 +112,6 @@ Object {
     "cwd": "/path/to/project",
   },
   "pattern": "packages/*",
-}
-`;
-
-exports[`command start it should work with workspaces [watch: false, buildDependencies: false]: process-stdin 1`] = `
-Object {
-  "mode": true,
-}
-`;
-
-exports[`command start it should work with workspaces [watch: false, buildDependencies: false]: process-stdin 2`] = `
-Object {
-  "encoding": "utf8",
-}
-`;
-
-exports[`command start it should work with workspaces [watch: false, buildDependencies: false]: process-stdin 3`] = `
-Object {
-  "callback": [Function],
-  "event": "data",
 }
 `;
 
@@ -187,25 +156,6 @@ Object {
     "cwd": "/path/to/project",
   },
   "pattern": "packages/*",
-}
-`;
-
-exports[`command start it should work with workspaces [watch: false, buildDependencies: true]: process-stdin 1`] = `
-Object {
-  "mode": true,
-}
-`;
-
-exports[`command start it should work with workspaces [watch: false, buildDependencies: true]: process-stdin 2`] = `
-Object {
-  "encoding": "utf8",
-}
-`;
-
-exports[`command start it should work with workspaces [watch: false, buildDependencies: true]: process-stdin 3`] = `
-Object {
-  "callback": [Function],
-  "event": "data",
 }
 `;
 
@@ -357,24 +307,5 @@ Object {
   "env": Object {
     "DOTENV_CONFIG_PATH": ".env",
   },
-}
-`;
-
-exports[`command start it should work: process-stdin 1`] = `
-Object {
-  "mode": true,
-}
-`;
-
-exports[`command start it should work: process-stdin 2`] = `
-Object {
-  "encoding": "utf8",
-}
-`;
-
-exports[`command start it should work: process-stdin 3`] = `
-Object {
-  "callback": [Function],
-  "event": "data",
 }
 `;

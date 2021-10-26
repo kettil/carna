@@ -5,6 +5,7 @@ const babelConfigFiles = ['babel.config.js', 'babel.config.json'];
 const babelCommand = './node_modules/.bin/babel';
 const babelCommandNode = './node_modules/.bin/babel-node';
 const babelCommandWatch = './node_modules/.bin/babel-watch';
+const babelPinoPretty = './node_modules/.bin/pino-pretty';
 
 // commitlint
 const commitlintConfigFiles = ['commitlint.config.js', '.commitlintrc.js', '.commitlintrc.json', '.commitlintrc.yml'];
@@ -58,6 +59,7 @@ export {
   babelCommandWatch,
   babelConfigFiles,
   babelExtensions,
+  babelPinoPretty,
   babelScriptFiles,
   commitlintCommand,
   commitlintConfigFiles,
