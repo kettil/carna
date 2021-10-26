@@ -31,6 +31,11 @@ const builder = createBuilder<StartProps>(command, (yargs) =>
       alias: 'c',
       describe: 'Clear console on each restart (only with watch mode)',
     },
+    'pino-pretty': {
+      ...boolOptions,
+      alias: 'p',
+      describe: 'Enables the pino log formatter (pino-pretty)',
+    },
   }),
 );
 

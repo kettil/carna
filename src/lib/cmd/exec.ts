@@ -16,35 +16,33 @@ type ExecOptions = {
   readonly log: Logger;
 };
 
-type Stdio<Stdin = Writable | undefined, Stdout = Readable | undefined, Stderr = Readable | undefined> = {
-  stdin?: Stdin;
-  stdout?: Stdout;
-  stderr?: Stderr;
-};
+// internal wrapper
+type U = undefined;
+type N = null;
+type R = Readable;
+type W = Writable;
 
 type Exec = {
   (options: ExecOptions): ChildProcessWithoutNullStreams;
-  (options: ExecOptions, stdio: Stdio<Writable, Readable, Readable>): ChildProcessByStdio<null, null, null>;
-  (options: ExecOptions, stdio: Stdio<Writable, Readable, undefined>): ChildProcessByStdio<null, null, Readable>;
-  (options: ExecOptions, stdio: Stdio<Writable, undefined, Readable>): ChildProcessByStdio<null, Readable, null>;
-  (options: ExecOptions, stdio: Stdio<undefined, Readable, Readable>): ChildProcessByStdio<Writable, null, null>;
-  (options: ExecOptions, stdio: Stdio<Writable, undefined, undefined>): ChildProcessByStdio<null, Readable, Readable>;
-  (options: ExecOptions, stdio: Stdio<undefined, Readable, undefined>): ChildProcessByStdio<Writable, null, Readable>;
-  (options: ExecOptions, stdio: Stdio<undefined, undefined, Readable>): ChildProcessByStdio<Writable, Readable, null>;
-  (options: ExecOptions, stdio: Stdio<undefined, undefined, undefined>): ChildProcessByStdio<
-    Writable,
-    Readable,
-    Readable
-  >;
+  (options: ExecOptions, stdio: { stdin: W; stdout: R; stderr: R }): ChildProcessByStdio<N, N, N>;
+  (options: ExecOptions, stdio: { stdin: W; stdout: R; stderr: U }): ChildProcessByStdio<N, N, R>;
+  (options: ExecOptions, stdio: { stdin: W; stdout: U; stderr: R }): ChildProcessByStdio<N, R, N>;
+  (options: ExecOptions, stdio: { stdin: U; stdout: R; stderr: R }): ChildProcessByStdio<W, N, N>;
+  (options: ExecOptions, stdio: { stdin: W; stdout: U; stderr: U }): ChildProcessByStdio<N, R, R>;
+  (options: ExecOptions, stdio: { stdin: U; stdout: R; stderr: U }): ChildProcessByStdio<W, N, R>;
+  (options: ExecOptions, stdio: { stdin: U; stdout: U; stderr: R }): ChildProcessByStdio<W, R, N>;
+  (options: ExecOptions, stdio: { stdin: U; stdout: U; stderr: U }): ChildProcessByStdio<W, R, R>;
+  (options: ExecOptions, stdio: { stdin: U | W; stdout: R | U; stderr: R }): ChildProcessByStdio<N | W, N | R, N>;
 };
 
 const getExecCommand = ({ cmd, args }: Pick<ExecOptions, 'args' | 'cmd'>): string => `${cmd} ${args.join(' ')}`;
 
-const exec: Exec = (
+const exec: Exec = <Stdin extends U | W, Stdout extends R | U, Stderr extends R | U>(
   { cwd, cmd, args, envPrefix = {}, envSuffix = {}, spawnKillHandler, log }: ExecOptions,
-  { stdin, stdout, stderr }: Stdio = {},
+  stdio?: { stdin: Stdin; stdout: Stdout; stderr: Stderr },
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- overwrite funcs
 ): any => {
+  const { stdin, stdout, stderr } = stdio ?? {};
   const env = { ...envPrefix, ...processEnvironment(), ...envSuffix };
 
   log.info(`\ncwd:  ${cwd}`);
