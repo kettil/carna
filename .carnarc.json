@@ -15,6 +15,7 @@
         "babel-jest",
         "babel-loader",
         "babel-watch",
+        "pino-pretty",
 
         "@types/jest",
         "jest",
