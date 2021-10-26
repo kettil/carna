@@ -77,7 +77,7 @@ const createHandler =
         throw new Error(`The folder ${argv.cfg} is not readable`);
       }
 
-      argv.log.debug(['Paths:', `▸ root: ${argv.root}`, `▸ cwd:  ${argv.cwd}`, `▸ cfg:  ${argv.cfg}`, '']);
+      argv.log.info(['Paths:', `▸ root: ${argv.root}`, `▸ cwd:  ${argv.cwd}`, `▸ cfg:  ${argv.cfg}`, '']);
 
       const options = Object.fromEntries(Object.entries(argv).filter(filterOptions)) as PropsGlobal;
       const props = Object.fromEntries(Object.entries(argv).filter(filterProps)) as TaskProps;

@@ -31,7 +31,7 @@ const npmPackageWorkspacesAction: Action<undefined, string[]> = async (argv) => 
     throw new MultipleWorkspacesError(`The Workspaces exist more than once: ${workspaceDuplicateNames.join(', ')}`);
   }
 
-  argv.log.debug(['Workspaces:', ...workspaceUniques.map((w) => `▸ ${w}`)]);
+  argv.log.info(['Workspaces:', ...workspaceUniques.map((w) => `▸ ${w}`), '']);
 
   return workspaceUniques;
 };
