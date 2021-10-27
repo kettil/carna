@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.3.1](https://github.com/kettil/carna/compare/5.3.0...5.3.1) (2021-10-27)
+
+
+### Bug Fixes
+
+* the argument pino-pretty was not treated ([e03e1b5](https://github.com/kettil/carna/commit/e03e1b5ecc6d1f070a6a4ce61b86774c655e2091))
+
 # [5.3.0](https://github.com/kettil/carna/compare/5.2.0...5.3.0) (2021-10-27)
 
 
