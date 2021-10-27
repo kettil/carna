@@ -1,5 +1,19 @@
 # Changelog
 
+# [5.3.0](https://github.com/kettil/carna/compare/5.2.0...5.3.0) (2021-10-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 3.7.1 to 3.7.2 ([f68e751](https://github.com/kettil/carna/commit/f68e7517bf7bfedf71a48c986898c6869e7a3b15))
+* **deps:** bump semantic-release from 17.4.7 to 18.0.0 ([e143491](https://github.com/kettil/carna/commit/e1434917345d2a88288ce6abccc10fc94cb4b070))
+
+
+### Features
+
+* add log formatter to the start command ([74bf9d6](https://github.com/kettil/carna/commit/74bf9d64c688c3d56069e513405fe07cd4e80bb7)), closes [#588](https://github.com/kettil/carna/issues/588)
+* change the path and workspace output from debug to info ([64c235f](https://github.com/kettil/carna/commit/64c235fbfdd58a729f1bf52a13851986024b9ea1))
+
 # [5.2.0](https://github.com/kettil/carna/compare/5.1.1...5.2.0) (2021-10-25)
 
 
