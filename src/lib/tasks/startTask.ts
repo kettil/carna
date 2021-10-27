@@ -1,11 +1,12 @@
 import { constants } from 'os';
 import { join } from 'path';
-import { delay } from '@kettil/tool-lib';
+import { delay, isArray, isString } from '@kettil/tool-lib';
 import { babelScriptFiles } from '../../configs/actionConfigs';
 import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { babelAction } from '../actions/tools/babel';
 import { babelNodeAction } from '../actions/tools/babelNode';
 import { BabelNodeActionProps } from '../actions/types';
+import { getConfig } from '../cli/config';
 import { Task } from '../types';
 import { createSpawnKillHandler } from '../utils/createSpawnKillHandler';
 import { getFirstExistingFile } from '../utils/getFirstExistingFile';
@@ -22,6 +23,8 @@ type StartProps = {
 };
 
 const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConsole, pinoPretty, script, watch }) => {
+  const configPinoIgnoreKeys = await getConfig(argv.root, 'log.ignore.keys');
+  const pinoIgnoreKeys = isArray(configPinoIgnoreKeys) ? configPinoIgnoreKeys.filter(isString) : [];
   const scriptPath = await getFirstExistingFile({ cwd: argv.cwd, files: [script, ...babelScriptFiles] });
   const workspacePaths = await npmPackageWorkspacesAction(argv);
   const workspacePath = workspacePaths.find((path) => scriptPath.includes(path));
@@ -33,6 +36,7 @@ const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConso
     clearConsole,
     executePath: workspacePath,
     withPinoPretty: pinoPretty,
+    pinoIgnoreKeys,
   };
 
   await taskHook(argv, { task: 'start', type: 'pre' });

@@ -31,6 +31,11 @@
       "packages": []
     }
   },
+  "log": {
+    "ignore": {
+      "keys": []
+    }
+  },
   "test": {
     "coverage": {
       "threshold": {

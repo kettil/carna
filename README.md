@@ -224,6 +224,12 @@ The file is structured as follows
       packages: [],
     },
   },
+  log: {
+    ignore: {
+      // Will be passed 1to1 to --ignore argument from pino-pretty
+      keys: [],
+    },
+  },
   test: {
     coverage: {
       // Overwrites default coverage threshold (value: number or tuple with two numbers)

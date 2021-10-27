@@ -12,6 +12,7 @@ type BabelNodeActionProps = {
   scriptPath: string;
   watchPaths?: string[];
   withPinoPretty?: boolean;
+  pinoIgnoreKeys?: string[];
   clearConsole?: boolean;
   executePath?: string;
 };
