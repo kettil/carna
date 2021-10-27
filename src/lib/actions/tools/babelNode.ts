@@ -11,8 +11,8 @@ const babelNodeAction: Action<BabelNodeActionProps> = async (
   { root, cwd, log },
   { scriptPath, watch, clearConsole, watchPaths = [], executePath = cwd, withPinoPretty },
 ) => {
-  const spawnKillHandler = watch ? createSpawnKillHandler({ registerStdin: true }) : undefined;
-  const pipe = withPinoPretty ? pinoPretty({ log, root, cwd: executePath }) : undefined;
+  const spawnKillHandler = watch === true ? createSpawnKillHandler({ registerStdin: true }) : undefined;
+  const pipe = withPinoPretty === true ? pinoPretty({ log, root, cwd: executePath }) : undefined;
   const configPath = await getBabelConfigPath([cwd, root]);
   const envPrefix: NodeJS.ProcessEnv = {
     // eslint-disable-next-line @typescript-eslint/naming-convention -- env variable

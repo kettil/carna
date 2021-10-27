@@ -21,7 +21,7 @@ type StartProps = {
   pinoPretty?: boolean;
 };
 
-const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConsole, script, watch }) => {
+const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConsole, pinoPretty, script, watch }) => {
   const scriptPath = await getFirstExistingFile({ cwd: argv.cwd, files: [script, ...babelScriptFiles] });
   const workspacePaths = await npmPackageWorkspacesAction(argv);
   const workspacePath = workspacePaths.find((path) => scriptPath.includes(path));
@@ -32,6 +32,7 @@ const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConso
     scriptPath,
     clearConsole,
     executePath: workspacePath,
+    withPinoPretty: pinoPretty,
   };
 
   await taskHook(argv, { task: 'start', type: 'pre' });
