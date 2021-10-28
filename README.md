@@ -221,9 +221,9 @@ The file is structured as follows
 
   license: {
     // Whether to merge or replace the existing list with the list defined here
-    replaceAlisesList: <boolean; default false>,
-    replaceCompatibleList: <boolean; default false>,
-    replaceHeuristicList: <boolean; default false>,
+    replaceAlisesList: false,
+    replaceCompatibleList: false,
+    replaceHeuristicList: false,
 
     // If the license cannot be extracted, a license can be defined here
     aliases:{
