@@ -27,8 +27,8 @@
     }
   },
   "license": {
+    "replaceAliaseList": false,
     "replaceCompatibleList": false,
-    "replaceExemptionList": false,
     "replaceHeuristicList": false,
 
     "aliases": {},

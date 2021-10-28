@@ -221,12 +221,12 @@ The file is structured as follows
 
   license: {
     // Whether to merge or replace the existing list with the list defined here
-    replaceAlisesList: false,
+    replaceAliaseList: false,
     replaceCompatibleList: false,
     replaceHeuristicList: false,
 
     // If the license cannot be extracted, a license can be defined here
-    aliases:{
+    aliases: {
       // <package-name>: { <version>: <existing license name> }
     },
 
@@ -239,7 +239,6 @@ The file is structured as follows
     // Important: The name should **not** be an existing license
     heuristics: {
       // Searches with the regexp in the corresponding files (z.B. license/readme/markdown files)
-
       // <license-name>: /<search-regexp>/u
     },
 

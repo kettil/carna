@@ -24,7 +24,7 @@ const getLicenseConfigs = (licenseOptions: Record<number | string, unknown>): Li
 
   const aliases = getAliasConfig({
     config: licenseOptions,
-    replaceConfig: licenseOptions.replaceAlisesList === true,
+    replaceConfig: licenseOptions.replaceAliaseList === true,
     defaultAliases: licenseAliases,
   });
 
