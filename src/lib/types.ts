@@ -25,20 +25,27 @@ type Task<Props extends PropsTypes = undefined, ActionReturn = void> = Props ext
 
 type LicenseCompatibilities = Record<string, string[]>;
 type LicenseHeuristics = Record<string, RegExp>;
-type LicensePackages = Record<string, Record<string, string>>;
+type LicenseAliases = Record<string, Record<string, string>>;
 type LicensePackageInfo = {
   path: string;
   name: string;
   license: string | 'UNKNOWN';
   version: string | 'UNKNOWN';
 };
+type LicenseConfig = {
+  compatibilities: LicenseCompatibilities;
+  ignorePackages: string[];
+  heuristics: LicenseHeuristics;
+  aliases: LicenseAliases;
+};
 
 export type {
   Action,
+  LicenseAliases,
   LicenseCompatibilities,
+  LicenseConfig,
   LicenseHeuristics,
   LicensePackageInfo,
-  LicensePackages,
   PropsGlobal,
   Task,
 };

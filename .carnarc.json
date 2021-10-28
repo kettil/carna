@@ -27,6 +27,14 @@
     }
   },
   "license": {
+    "replaceCompatibleList": false,
+    "replaceExemptionList": false,
+    "replaceHeuristicList": false,
+
+    "aliases": {},
+    "compatibilities": {},
+    "heuristics": {},
+
     "ignore": {
       "packages": []
     }

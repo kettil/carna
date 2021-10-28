@@ -1,4 +1,5 @@
 import { Watermark, Watermarks } from 'istanbul-lib-report';
+import { LicenseConfig } from '../types';
 import { SpawnKillHandler } from '../utils/createSpawnKillHandler';
 
 type BabelActionProps = {
@@ -46,7 +47,7 @@ type JestActionProps = {
 };
 
 type LicensecheckActionProps = {
-  ignorePackages: string[];
+  licenseConfig: LicenseConfig;
   path?: string;
 };
 

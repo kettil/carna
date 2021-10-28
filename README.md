@@ -218,18 +218,44 @@ The file is structured as follows
       packages: [],
     },
   },
+
   license: {
+    // Whether to merge or replace the existing list with the list defined here
+    replaceAlisesList: <boolean; default false>,
+    replaceCompatibleList: <boolean; default false>,
+    replaceHeuristicList: <boolean; default false>,
+
+    // If the license cannot be extracted, a license can be defined here
+    aliases:{
+      // <package-name>: { <version>: <existing license name> }
+    },
+
+    // List which license is compatible with the other licenses
+    compatibilities: {
+      // <license-name>: ['<compatible license>', '<...>'],
+    },
+
+    // The license name must be entered at the top of the combalitity list
+    // Important: The name should **not** be an existing license
+    heuristics: {
+      // Searches with the regexp in the corresponding files (z.B. license/readme/markdown files)
+
+      // <license-name>: /<search-regexp>/u
+    },
+
     ignore: {
       // The packages are ignored during the license check
       packages: [],
     },
   },
+
   log: {
     ignore: {
       // Will be passed 1to1 to --ignore argument from pino-pretty
       keys: [],
     },
   },
+
   test: {
     coverage: {
       // Overwrites default coverage threshold (value: number or tuple with two numbers)

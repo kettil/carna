@@ -1,8 +1,8 @@
 import { basename } from 'path';
-import { isArray, isString } from '@kettil/tool-lib';
+import { isObject } from '@kettil/tool-lib';
 import { underline } from 'chalk';
 import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
-import { licensecheckAction } from '../actions/tools/licensecheck';
+import { licensecheckAction } from '../actions/tools/licensecheckAction';
 import { getConfig } from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import { table } from '../cli/table';
@@ -11,15 +11,16 @@ import { LicenseDisabledError } from '../errors/licenseDisabledError';
 import { LicenseIncompatibleError } from '../errors/licenseIncompatibleError';
 import { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
+import { getLicenseConfigs } from './license/getLicenseConfigs';
 
 const notice = `the license check(s) is only a suggestion and is ${underline('not')} legal advice`;
 
 type LicenseProps = {};
 
 const licenseTask: Task<LicenseProps> = async (argv) => {
-  const configIgnorePackages = await getConfig(argv.root, 'license.ignore.packages');
   const workspacePaths = await npmPackageWorkspacesAction(argv);
-  const ignorePackages = isArray(configIgnorePackages) ? configIgnorePackages.filter(isString) : [];
+  const config = await getConfig(argv.root, 'license');
+  const licenseConfig = getLicenseConfigs(isObject(config) ? config : {});
 
   await taskHook(argv, { task: 'license', type: 'pre' });
 
@@ -29,7 +30,7 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
         promise.then(() => {
           const subTitle = path === argv.root ? `(${notice})` : `[${basename(path)}]`;
 
-          return spinnerAction(licensecheckAction(argv, { path, ignorePackages }), `License verification ${subTitle}`);
+          return spinnerAction(licensecheckAction(argv, { path, licenseConfig }), `License verification ${subTitle}`);
         }),
       Promise.resolve(),
     );

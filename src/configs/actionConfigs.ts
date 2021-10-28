@@ -56,6 +56,9 @@ const typescriptCommand = './node_modules/.bin/tsc';
 // depcheck
 const depcheckIgnorePackages = ['@types/node', 'typescript', 'carna'] as const;
 
+// license
+const licenseFilenameRegExp = /^(?:copying|licen[cs]e|licen[cs]e-\w+|readme)(?:\.markdown|\.md|\.txt)?$/iu;
+
 export {
   babelCommand,
   babelCommandNode,
@@ -74,6 +77,7 @@ export {
   jestCommand,
   jestConfigFiles,
   jestPreOrderProjects,
+  licenseFilenameRegExp,
   pinoPrettyCommand,
   pinoPrettyIgnoreKeys,
   prettierCiExtensions,

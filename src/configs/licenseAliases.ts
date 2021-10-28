@@ -1,6 +1,6 @@
-import { LicensePackages } from '../lib/types';
+import { LicenseAliases } from '../lib/types';
 
-const licensePackages: LicensePackages = {
+const licenseAliases: LicenseAliases = {
   'json-schema': {
     // https://github.com/kriszyp/json-schema/blob/81ca359daeea643019a4ee81b7a57c06ac53d800/README.md
     '0.2.3': 'BSD-3-Clause',
@@ -14,4 +14,4 @@ const licensePackages: LicensePackages = {
   },
 };
 
-export { licensePackages };
+export { licenseAliases };
