@@ -1,5 +1,13 @@
 # Changelog
 
+# [5.4.0](https://github.com/kettil/carna/compare/5.3.1...5.4.0) (2021-11-01)
+
+
+### Features
+
+* configurability the ignore list of pino-prettier ([84e6f81](https://github.com/kettil/carna/commit/84e6f81e2d2719bcaa29721878a24805c1ca31fe))
+* configurability the license verification settings ([791d79c](https://github.com/kettil/carna/commit/791d79ce9a2f37ccf11307b15e72214fb8e7c389))
+
 ## [5.3.1](https://github.com/kettil/carna/compare/5.3.0...5.3.1) (2021-10-27)
 
 
