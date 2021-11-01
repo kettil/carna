@@ -5,21 +5,27 @@ Array [
   Object {
     "build-dependencies": Object {
       "alias": "b",
-      "default": false,
       "describe": "In a monorepo, all packages are built beforehand",
       "group": "start-Options",
       "type": "boolean",
     },
     "clear-console": Object {
       "alias": "c",
-      "default": false,
+      "conflicts": Array [
+        "pino-pretty",
+      ],
       "describe": "Clear console on each restart (only with watch mode)",
       "group": "start-Options",
+      "implies": Array [
+        "watch",
+      ],
       "type": "boolean",
     },
     "pino-pretty": Object {
       "alias": "p",
-      "default": false,
+      "conflicts": Array [
+        "clear-console",
+      ],
       "describe": "Enables the pino log formatter (pino-pretty)",
       "group": "start-Options",
       "type": "boolean",
@@ -32,7 +38,6 @@ Array [
     },
     "watch": Object {
       "alias": "w",
-      "default": false,
       "describe": "Reload your app on source file changes",
       "group": "start-Options",
       "type": "boolean",
