@@ -1,5 +1,20 @@
 # Changelog
 
+## [5.4.1](https://github.com/kettil/carna/compare/5.4.0...5.4.1) (2021-11-01)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.15.7 to 7.16.0 ([3444181](https://github.com/kettil/carna/commit/3444181b923613aa24a481db77830c6ffaa6ad18))
+* **deps:** bump @babel/core from 7.15.8 to 7.16.0 ([ed70c20](https://github.com/kettil/carna/commit/ed70c20a79c6d049b6dc8441750bda592da66f46))
+* **deps:** bump @babel/node from 7.15.8 to 7.16.0 ([aeac622](https://github.com/kettil/carna/commit/aeac6225272e0bb42b3d2a6acc7e015ce88255ba))
+* **deps:** bump @babel/plugin-transform-runtime from 7.15.8 to 7.16.0 ([6b7d8d2](https://github.com/kettil/carna/commit/6b7d8d25fee36df21368bd91373d17c83f103008))
+* **deps:** bump @babel/preset-env from 7.15.8 to 7.16.0 ([fc814e8](https://github.com/kettil/carna/commit/fc814e8d2362550bd26b618516076cd484a59418))
+* **deps:** bump @babel/preset-typescript from 7.15.0 to 7.16.0 ([774d2b4](https://github.com/kettil/carna/commit/774d2b415f97c8884e5819ec680937f6c94940b8))
+* **deps:** bump @commitlint/cli from 13.2.1 to 14.1.0 ([22e4a72](https://github.com/kettil/carna/commit/22e4a72fd0ae45a50c47926a43affa9ae935762d))
+* **deps:** bump @types/yargs from 17.0.4 to 17.0.5 ([9c3db20](https://github.com/kettil/carna/commit/9c3db20f275c1f72564b9ea21ea53dad5d2ad89d))
+* faulty argument combinations now throw an error ([38525da](https://github.com/kettil/carna/commit/38525daf1eeccee724c88d2383a8622897bd27b5))
+
 # [5.4.0](https://github.com/kettil/carna/compare/5.3.1...5.4.0) (2021-11-01)
 
 
