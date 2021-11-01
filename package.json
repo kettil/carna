@@ -43,7 +43,7 @@
     "carna": "build/bin/index.js"
   },
   "dependencies": {
-    "@babel/cli": "7.15.7",
+    "@babel/cli": "7.16.0",
     "@babel/core": "7.15.8",
     "@babel/node": "7.16.0",
     "@babel/plugin-transform-runtime": "7.15.8",
