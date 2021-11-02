@@ -20,7 +20,7 @@ const eslintAction: Action<EslintActionProps> = async ({ root, cfg, log }, { wri
   if (write) {
     args.push('--fix');
   } else {
-    args.push('--format', 'codeframe');
+    args.push('--format', 'stylish');
   }
 
   if (files) {
