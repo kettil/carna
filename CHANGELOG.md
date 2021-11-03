@@ -1,5 +1,20 @@
 # Changelog
 
+# [6.0.0](https://github.com/kettil/carna/compare/5.4.1...6.0.0) (2021-11-03)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/commitlint-config from 2.0.0 to 2.0.1 ([f940f9b](https://github.com/kettil/carna/commit/f940f9b9ea12d86920229b6065ab8fc1ad0721d8))
+* remove the build task in the ci command ([2595b2f](https://github.com/kettil/carna/commit/2595b2f39fd054d47241c44845f83b01eec5c86a)), closes [#599](https://github.com/kettil/carna/issues/599)
+* replace eslint formatter `codeframe` with `stylish` ([1a8ed66](https://github.com/kettil/carna/commit/1a8ed6669bf624fa99b3d950bca3c676df503390))
+
+
+### BREAKING CHANGES
+
+* In eslint v8 the formatter `codeframe` was removed and therefore changed to `stylish`
+* In the `ci` command the `build` task was removed.
+
 ## [5.4.1](https://github.com/kettil/carna/compare/5.4.0...5.4.1) (2021-11-01)
 
 
