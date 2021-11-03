@@ -35,6 +35,7 @@ The following commands are available:
 | [`license`](#the-license-task) | Checks for incompatible licenses      |
 | [`build`](#the-build-task)     | Build the application                 |
 | [`start`](#the-start-task)     | Run a script                          |
+| [`ci`](#the-ci-tasks)          | Run different Tasks as unit           |
 | [`git`](#the-git-tasks)        | Handler for the git hooks             |
 
 For the help text, execute `npx carna --help` and the individual commands `npx carna <command> --help`.
@@ -174,6 +175,24 @@ Calls the application directly, without build process.
 | --build-dependencies | -b    | In a monorepo, all packages are built beforehand                            |
 | --clear-console      | -c    | Clear console on each restart (only in watch mode)                          |
 | --pino-pretty        | -p    | Enables the [pino log formatter](https://www.npmjs.com/package/pino-pretty) |
+
+### Exit codes
+
+| Exit code | Description |
+| --------- | ----------- |
+| 0         | Success     |
+| 1         | task failed |
+
+## The `ci` task
+
+Run build, analyse, tests, license and deps tasks.
+This command is intended for execution in a CI.
+
+### Options
+
+| Options | short | Description                             |
+| ------- | ----- | --------------------------------------- |
+| --build | -b    | Executes additionally the build process |
 
 ### Exit codes
 

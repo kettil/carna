@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`command ci it should be create the expected builder: options 1`] = `
+Array [
+  Object {
+    "build": Object {
+      "alias": "b",
+      "describe": "Executes additionally the build process",
+      "group": "ci-Options",
+      "type": "boolean",
+    },
+  },
+]
+`;
+
 exports[`command ci it should be create the expected builder: usage 1`] = `
 Array [
   "Usage: $0 ci [options]",
