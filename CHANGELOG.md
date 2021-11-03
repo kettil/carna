@@ -1,5 +1,12 @@
 # Changelog
 
+# [6.1.0](https://github.com/kettil/carna/compare/6.0.0...6.1.0) (2021-11-03)
+
+
+### Features
+
+* add a build option to the ci command ([0fb695c](https://github.com/kettil/carna/commit/0fb695c7a4282cf173c9a8cc49ff1b3c7e1e8deb))
+
 # [6.0.0](https://github.com/kettil/carna/compare/5.4.1...6.0.0) (2021-11-03)
 
 
