@@ -35,8 +35,8 @@ The following commands are available:
 | [`license`](#the-license-task) | Checks for incompatible licenses      |
 | [`build`](#the-build-task)     | Build the application                 |
 | [`start`](#the-start-task)     | Run a script                          |
-| [`ci`](#the-ci-tasks)          | Run different Tasks as unit           |
-| [`git`](#the-git-tasks)        | Handler for the git hooks             |
+| [`ci`](#the-ci-task)           | Run different Tasks as unit           |
+| [`git`](#the-git-task)         | Handler for the git hooks             |
 
 For the help text, execute `npx carna --help` and the individual commands `npx carna <command> --help`.
 
@@ -201,7 +201,7 @@ This command is intended for execution in a CI.
 | 0         | Success     |
 | 1         | task failed |
 
-## The `git` tasks
+## The `git` task
 
 The tasks will be automatically called by husky (via git hooks).
 
