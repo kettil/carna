@@ -32,33 +32,35 @@ const testTask: Task<TestProps> = async (argv, props) => {
 
   await taskHook(argv, { task: 'test', type: 'pre' });
 
-  if (props.watch) {
-    try {
-      await projects.reduce(
-        (promise, project) => promise.then(() => testHook(argv, { project, type: 'pre' })),
-        Promise.resolve(),
-      );
+  if (projects.length > 0) {
+    if (props.watch) {
+      try {
+        await projects.reduce(
+          (promise, project) => promise.then(() => testHook(argv, { project, type: 'pre' })),
+          Promise.resolve(),
+        );
 
-      await jestAction(argv, { ...props, projects });
-    } finally {
-      await allSettledSequence(projects.map((project) => () => testHook(argv, { project, type: 'post' })));
-    }
-  } else {
-    try {
-      await projects.reduce(
-        (promise, project) =>
-          promise.then(async () => {
-            try {
-              await testHook(argv, { project, type: 'pre' });
-              await spinnerAction(jestAction(argv, { ...props, projects: [project] }), `Test: ${project}`);
-            } finally {
-              await testHook(argv, { project, type: 'post' });
-            }
-          }),
-        Promise.resolve(),
-      );
-    } finally {
-      await coverageAction(argv, { projects, watermarks: coverageThreshold });
+        await jestAction(argv, { ...props, projects });
+      } finally {
+        await allSettledSequence(projects.map((project) => () => testHook(argv, { project, type: 'post' })));
+      }
+    } else {
+      try {
+        await projects.reduce(
+          (promise, project) =>
+            promise.then(async () => {
+              try {
+                await testHook(argv, { project, type: 'pre' });
+                await spinnerAction(jestAction(argv, { ...props, projects: [project] }), `Test: ${project}`);
+              } finally {
+                await testHook(argv, { project, type: 'post' });
+              }
+            }),
+          Promise.resolve(),
+        );
+      } finally {
+        await coverageAction(argv, { projects, watermarks: coverageThreshold });
+      }
     }
   }
 
