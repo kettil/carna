@@ -1,6 +1,7 @@
 import { ChildProcessByStdio } from 'child_process';
 import { join } from 'path';
 import { Writable } from 'stream';
+import { uniqueArray } from '@kettil/tool-lib';
 import { pinoPrettyCommand, pinoPrettyIgnoreKeys } from '../../../configs/actionConfigs';
 import { Logger } from '../../cli/logger';
 import { exec } from '../../cmd/exec';
@@ -13,7 +14,7 @@ type Props = {
 };
 
 const pinoPretty = ({ log, root, cwd, pinoIgnoreKeys = [] }: Props): ChildProcessByStdio<Writable, null, null> => {
-  const ignoreKeys = [new Set([...pinoPrettyIgnoreKeys, ...pinoIgnoreKeys])];
+  const ignoreKeys = uniqueArray([...pinoPrettyIgnoreKeys, ...pinoIgnoreKeys]);
 
   return exec(
     {
