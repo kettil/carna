@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.1.1](https://github.com/kettil/carna/compare/6.1.0...6.1.1) (2021-11-05)
+
+
+### Bug Fixes
+
+* **deps:** bump pino-pretty from 7.1.0 to 7.2.0 ([dc9e3e5](https://github.com/kettil/carna/commit/dc9e3e529da17f33c85c6f43b2f249dc601cbb93))
+* incorrect pino-pretty "ignore" argument ([b618363](https://github.com/kettil/carna/commit/b6183631ca0c07457801314d733d7afb34620325))
+
 # [6.1.0](https://github.com/kettil/carna/compare/6.0.0...6.1.0) (2021-11-03)
 
 
