@@ -1,5 +1,12 @@
 # Changelog
 
+# [6.2.0](https://github.com/kettil/carna/compare/6.1.1...6.2.0) (2021-11-08)
+
+
+### Features
+
+* if no jest projects are defined, then the task is skipped ([24ab16c](https://github.com/kettil/carna/commit/24ab16ce1d4d1a2d28bbd80e4d83d81cb4a5133c))
+
 ## [6.1.1](https://github.com/kettil/carna/compare/6.1.0...6.1.1) (2021-11-05)
 
 
