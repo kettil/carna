@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.2](https://github.com/kettil/carna/compare/6.2.1...6.2.2) (2021-11-09)
+
+
+### Bug Fixes
+
+* dependencies were sorted incorrectly ([76b47db](https://github.com/kettil/carna/commit/76b47dbfc91d362379e33c784a1610d862f12105))
+
 ## [6.2.1](https://github.com/kettil/carna/compare/6.2.0...6.2.1) (2021-11-09)
 
 
