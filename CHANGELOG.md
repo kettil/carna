@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.1](https://github.com/kettil/carna/compare/6.2.0...6.2.1) (2021-11-09)
+
+
+### Bug Fixes
+
+* dependency error when building the packages in a monorepo ([79d8832](https://github.com/kettil/carna/commit/79d8832cd8e34c5d8e2808f5db6d478c4e03ac26))
+
 # [6.2.0](https://github.com/kettil/carna/compare/6.1.1...6.2.0) (2021-11-08)
 
 
