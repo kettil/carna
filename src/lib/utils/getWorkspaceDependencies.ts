@@ -1,7 +1,7 @@
 import { isString, uniqueArray } from '@kettil/tool-lib';
 import { PropsGlobal } from '../types';
 import { getWorkspaceDependencyCompare } from './getWorkspaceDependencyCompare';
-import { getWorkspacePackageNameAndDependencies } from './getWorkspacePackageNameAndDependencies';
+import { getWorkspacePackageAndDependencies } from './getWorkspacePackageAndDependencies';
 
 const getWorkspaceDependencies = async ({
   argv,
@@ -16,9 +16,9 @@ const getWorkspaceDependencies = async ({
     return [];
   }
 
-  const workspaces = await Promise.all(
-    workspacePaths.map((path) => getWorkspacePackageNameAndDependencies(argv, { workspacePath: path })),
-  );
+  const promises = workspacePaths.map((path) => getWorkspacePackageAndDependencies(argv, { workspacePath: path }));
+
+  const workspaces = await Promise.all(promises);
   const workspace = workspaces.find((w) => w.path === workspacePath);
 
   return workspace ? uniqueArray(getWorkspaceDependencyCompare({ workspace, workspaces })) : [];

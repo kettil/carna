@@ -1,5 +1,7 @@
 import { Logger } from './cli/logger';
 
+type SortType<T> = (v1: T, v2: T) => number;
+
 type PropsGlobal = {
   readonly root: string;
   readonly cwd: string;
@@ -47,5 +49,6 @@ export type {
   LicenseHeuristics,
   LicensePackageInfo,
   PropsGlobal,
+  SortType,
   Task,
 };

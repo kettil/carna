@@ -1,6 +1,8 @@
+import { SortType } from '../types';
+
 const sortProjectNames =
-  (specialKeys: string[]) =>
-    (valueA: string, valueB: string): number => {
+  (specialKeys: string[]): SortType<string> =>
+    (valueA, valueB) => {
       const normaliseValueA = valueA.toLowerCase();
       const normaliseValueB = valueB.toLowerCase();
 

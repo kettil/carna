@@ -82,23 +82,6 @@ exports[`command build it should work with workspaces [watch: false]: child-proc
 Object {
   "args": Array [
     "--outDir",
-    "/path/to/project/packages/a/build",
-    "--project",
-    "/path/to/project/packages/a/tsconfig.json",
-    "--noEmit",
-    "false",
-    "--emitDeclarationOnly",
-  ],
-  "command": "/path/to/project/node_modules/.bin/tsc",
-  "cwd": "/path/to/project/packages/a",
-  "env": Object {},
-}
-`;
-
-exports[`command build it should work with workspaces [watch: false]: child-process 2`] = `
-Object {
-  "args": Array [
-    "--outDir",
     "/path/to/project/packages/b/build",
     "--project",
     "/path/to/project/packages/b/tsconfig.json",
@@ -108,6 +91,23 @@ Object {
   ],
   "command": "/path/to/project/node_modules/.bin/tsc",
   "cwd": "/path/to/project/packages/b",
+  "env": Object {},
+}
+`;
+
+exports[`command build it should work with workspaces [watch: false]: child-process 2`] = `
+Object {
+  "args": Array [
+    "--outDir",
+    "/path/to/project/packages/a/build",
+    "--project",
+    "/path/to/project/packages/a/tsconfig.json",
+    "--noEmit",
+    "false",
+    "--emitDeclarationOnly",
+  ],
+  "command": "/path/to/project/node_modules/.bin/tsc",
+  "cwd": "/path/to/project/packages/a",
   "env": Object {},
 }
 `;
@@ -141,7 +141,7 @@ Object {
     "src",
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
-  "cwd": "/path/to/project/packages/a",
+  "cwd": "/path/to/project/packages/b",
   "env": Object {},
 }
 `;
@@ -158,7 +158,7 @@ Object {
     "src",
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
-  "cwd": "/path/to/project/packages/b",
+  "cwd": "/path/to/project/packages/a",
   "env": Object {},
 }
 `;
@@ -224,7 +224,7 @@ Object {
     "src",
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
-  "cwd": "/path/to/project/packages/a",
+  "cwd": "/path/to/project/packages/b",
   "env": Object {},
 }
 `;
@@ -242,7 +242,7 @@ Object {
     "src",
   ],
   "command": "/path/to/project/node_modules/.bin/babel",
-  "cwd": "/path/to/project/packages/b",
+  "cwd": "/path/to/project/packages/a",
   "env": Object {},
 }
 `;

@@ -5,6 +5,7 @@ import { spinnerAction } from '../cli/spinner';
 import { copyFile } from '../cmd/copyFile';
 import { Task } from '../types';
 import { createSpawnKillHandler } from '../utils/createSpawnKillHandler';
+import { getWorkspacesOrderByDependencies } from '../utils/getWorkspacesOrderByDependencies';
 import { hasDependency } from '../utils/hasDependency';
 import { taskHook } from '../utils/taskHook';
 import { buildBabelTask } from './subTasks/buildBabelTask';
@@ -19,6 +20,7 @@ const buildTask: Task<BuildProps> = async (argv, { watch }) => {
   const hasTypescript = await hasDependency(argv, { dependency: 'typescript', dependencyType: 'devDependencies' });
 
   const paths = workspacePaths.length > 0 ? workspacePaths : [argv.cwd];
+  const sortedPaths = await getWorkspacesOrderByDependencies({ argv, workspacePaths: paths });
 
   await taskHook(argv, { task: 'build', type: 'pre' });
 
@@ -29,17 +31,17 @@ const buildTask: Task<BuildProps> = async (argv, { watch }) => {
 
     const spawnKillHandler = createSpawnKillHandler({ registerStdin: true });
 
-    const promises = paths.map<Promise<void>>((path) =>
+    const promises = sortedPaths.map<Promise<void>>((path) =>
       babelAction({ ...argv, cwd: path }, { watch: true, spawnKillHandler }),
     );
 
     await spinnerAction(Promise.all(promises), 'Watch-Mode - exit with "ctrl-c"');
   } else {
     if (hasTypescript) {
-      await paths.reduce((promise, path) => promise.then(buildTscTask({ argv, path })), Promise.resolve());
+      await sortedPaths.reduce((promise, path) => promise.then(buildTscTask({ argv, path })), Promise.resolve());
     }
 
-    await paths.reduce((promise, path) => promise.then(buildBabelTask({ argv, path })), Promise.resolve());
+    await sortedPaths.reduce((promise, path) => promise.then(buildBabelTask({ argv, path })), Promise.resolve());
 
     // copy .npmignore to the workspaces
     await Promise.all(

@@ -1,12 +1,12 @@
-import { WorkspacePackageNameAndDependencies } from './getWorkspacePackageNameAndDependencies';
+import { WorkspacePackageAndDependencies } from './getWorkspacePackageAndDependencies';
 
 const getWorkspaceDependencyCompare = ({
   workspace,
   workspaces,
   ignores = [workspace.name],
 }: {
-  workspace: WorkspacePackageNameAndDependencies;
-  workspaces: WorkspacePackageNameAndDependencies[];
+  workspace: WorkspacePackageAndDependencies;
+  workspaces: WorkspacePackageAndDependencies[];
   ignores?: string[];
 }): string[] => {
   const { dependencies } = workspace;
