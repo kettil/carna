@@ -9,7 +9,7 @@ const sortPackagesByDependencies: SortType<[string, string[]]> = ([k1, v1], [k2,
     return -1;
   }
 
-  return k1.localeCompare(k2);
+  return v1.length - v2.length;
 };
 
 export { sortPackagesByDependencies };
