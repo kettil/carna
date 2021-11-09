@@ -52,7 +52,7 @@
     "@commitlint/cli": "14.1.0",
     "@kettil/commitlint-config": "2.0.1",
     "@kettil/eslint-config": "3.7.2",
-    "@kettil/semantic-release-config": "2.0.1",
+    "@kettil/semantic-release-config": "2.0.2",
     "@kettil/tool-lib": "3.3.1",
     "@types/glob": "7.2.0",
     "@types/istanbul-lib-coverage": "2.0.3",
