@@ -1,6 +1,6 @@
 import { PropsGlobal } from '../types';
 import { getWorkspaceDependencies } from './getWorkspaceDependencies';
-import { sortPackagesByDependencies } from './sortPackagesByDependencies';
+import { topologicalSortingFactory } from './topologicalSorting';
 
 const getWorkspacesOrderByDependencies = async ({
   argv,
@@ -13,17 +13,24 @@ const getWorkspacesOrderByDependencies = async ({
     return workspacePaths;
   }
 
-  const promises = workspacePaths.map<Promise<[string, string[]]>>(async (path, _, paths) => {
-    const dependencyPaths = await getWorkspaceDependencies({
-      argv,
-      workspacePath: path,
-      workspacePaths: paths,
-    });
+  const dependencyEdges = await Promise.all(
+    workspacePaths.map<Promise<Array<[string, string]>>>(async (path, _, paths) => {
+      const dependencyPaths = await getWorkspaceDependencies({
+        argv,
+        workspacePath: path,
+        workspacePaths: paths,
+      });
 
-    return [path, dependencyPaths];
-  });
+      // "path" is the direct follower of "dependencyPath" (for topological sorting).
+      return dependencyPaths.map((dependencyPath) => [dependencyPath, path]);
+    }),
+  );
 
-  return (await Promise.all(promises)).sort(sortPackagesByDependencies).map(([k]) => k);
+  const topologicalSorting = topologicalSortingFactory(workspacePaths);
+
+  dependencyEdges.flat().forEach((edge) => topologicalSorting.addEdge(...edge));
+
+  return topologicalSorting.getSortedNode();
 };
 
 export { getWorkspacesOrderByDependencies };
