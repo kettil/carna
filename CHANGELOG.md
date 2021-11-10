@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.3](https://github.com/kettil/carna/compare/6.2.2...6.2.3) (2021-11-10)
+
+
+### Bug Fixes
+
+* changes the sorting algorithm for the order of dependencies ([02838c4](https://github.com/kettil/carna/commit/02838c46b537be8a3db349ed623bbb208d1f793d))
+
 ## [6.2.2](https://github.com/kettil/carna/compare/6.2.1...6.2.2) (2021-11-09)
 
 
