@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.2.4](https://github.com/kettil/carna/compare/6.2.3...6.2.4) (2021-11-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/semantic-release-config from 2.0.1 to 2.0.2 ([d4130e2](https://github.com/kettil/carna/commit/d4130e25344a8b5808157004612fd16bc82f9b9a))
+
 ## [6.2.3](https://github.com/kettil/carna/compare/6.2.2...6.2.3) (2021-11-10)
 
 
