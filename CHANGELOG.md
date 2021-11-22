@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.2.5](https://github.com/kettil/carna/compare/6.2.4...6.2.5) (2021-11-22)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/plugin-transform-runtime from 7.16.0 to 7.16.4 ([d10d4f4](https://github.com/kettil/carna/commit/d10d4f408f2ca2cb44f54ad6cabd49dcc3779aaa))
+* **deps:** bump @babel/preset-env from 7.16.0 to 7.16.4 ([cffb874](https://github.com/kettil/carna/commit/cffb87498005a0363e515b8422bfd43f13189303))
+* **deps:** bump @commitlint/cli from 14.1.0 to 15.0.0 ([f4d35e6](https://github.com/kettil/carna/commit/f4d35e6c82dc56263be23f78ed1c8196024a465d))
+* **deps:** bump @types/jest from 27.0.2 to 27.0.3 ([3cd933c](https://github.com/kettil/carna/commit/3cd933c1adfcdd8af3d08238a6d6a4da683ddd61))
+* **deps:** bump @types/yargs from 17.0.5 to 17.0.7 ([e9e9174](https://github.com/kettil/carna/commit/e9e917411f31c7663045378992b54265a7b9d343))
+
 ## [6.2.4](https://github.com/kettil/carna/compare/6.2.3...6.2.4) (2021-11-15)
 
 
