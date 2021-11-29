@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.2.6](https://github.com/kettil/carna/compare/6.2.5...6.2.6) (2021-11-29)
+
+
+### Bug Fixes
+
+* **deps:** bump prettier from 2.4.1 to 2.5.0 ([6f81137](https://github.com/kettil/carna/commit/6f81137fb00bdb34f3cc0914d8b1bdaa6f8835e9))
+* **deps:** bump semantic-release from 18.0.0 to 18.0.1 ([acbc697](https://github.com/kettil/carna/commit/acbc697d90c0090f10ec62e2e4fe897e71577deb))
+
 ## [6.2.5](https://github.com/kettil/carna/compare/6.2.4...6.2.5) (2021-11-22)
 
 
