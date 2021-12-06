@@ -1,5 +1,13 @@
 # Changelog
 
+## [6.2.7](https://github.com/kettil/carna/compare/6.2.6...6.2.7) (2021-12-06)
+
+
+### Bug Fixes
+
+* **deps:** bump istanbul-reports from 3.0.5 to 3.1.0 ([e044c0e](https://github.com/kettil/carna/commit/e044c0e1aff5314ea30d11fd7d31412f4fa03ce5))
+* **deps:** bump yargs from 17.2.1 to 17.3.0 ([e874ea6](https://github.com/kettil/carna/commit/e874ea6e15a91ddc5f2b78eefb3efa287d275cad))
+
 ## [6.2.6](https://github.com/kettil/carna/compare/6.2.5...6.2.6) (2021-11-29)
 
 
