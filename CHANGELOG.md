@@ -1,5 +1,17 @@
 # Changelog
 
+## [6.2.8](https://github.com/kettil/carna/compare/6.2.7...6.2.8) (2021-12-13)
+
+
+### Bug Fixes
+
+* **deps:** bump babel-jest from 27.3.1 to 27.4.2 ([6f20a4c](https://github.com/kettil/carna/commit/6f20a4c703e5d3a93e7ca6afbffbb1cfe3916119))
+* **deps:** bump babel-jest from 27.4.2 to 27.4.4 ([f149505](https://github.com/kettil/carna/commit/f14950530a0c958ba00c26d6c81a0e50086ec6a2))
+* **deps:** bump istanbul-reports from 3.1.0 to 3.1.1 ([50d2d6c](https://github.com/kettil/carna/commit/50d2d6c1f6d7860441643a9a5d8ae8cf4b04f7a1))
+* **deps:** bump jest from 27.3.1 to 27.4.3 ([009fb34](https://github.com/kettil/carna/commit/009fb34b80adc3cba30053a8610691e211835168))
+* **deps:** bump jest from 27.4.3 to 27.4.4 ([ecbddbe](https://github.com/kettil/carna/commit/ecbddbe7450df6b64ecdc69efd6144a826909962))
+* **deps:** bump prettier from 2.5.0 to 2.5.1 ([f4c0bb7](https://github.com/kettil/carna/commit/f4c0bb72ee04140932d4281a14685e066cdf9320))
+
 ## [6.2.7](https://github.com/kettil/carna/compare/6.2.6...6.2.7) (2021-12-06)
 
 
