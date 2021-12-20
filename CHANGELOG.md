@@ -1,5 +1,20 @@
 # Changelog
 
+## [6.2.9](https://github.com/kettil/carna/compare/6.2.8...6.2.9) (2021-12-20)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.16.0 to 7.16.5 ([de4ce3a](https://github.com/kettil/carna/commit/de4ce3ad4c718d48fb2abc0c106464c19aa0f6dc))
+* **deps:** bump @babel/node from 7.16.0 to 7.16.5 ([48623a0](https://github.com/kettil/carna/commit/48623a0f4f4e559a8a07302054c901da2da0176b))
+* **deps:** bump @babel/plugin-transform-runtime from 7.16.4 to 7.16.5 ([75e3601](https://github.com/kettil/carna/commit/75e360135ae8b3bbbd23c83efab7383ea1d42efa))
+* **deps:** bump @babel/preset-env from 7.16.4 to 7.16.5 ([140faa2](https://github.com/kettil/carna/commit/140faa2d04999fe753d3394ca354306c28aee46b))
+* **deps:** bump @babel/preset-typescript from 7.16.0 to 7.16.5 ([5c6e142](https://github.com/kettil/carna/commit/5c6e142b8c7641a7b3e9189e82f1fa5c5ddf9301))
+* **deps:** bump babel-jest from 27.4.4 to 27.4.5 ([3f3bf03](https://github.com/kettil/carna/commit/3f3bf03902d8c996ef8c63dd2c526a050abdedb3))
+* **deps:** bump babel-watch from 7.6.0 to 7.7.0 ([1cee595](https://github.com/kettil/carna/commit/1cee595ed294e75a6fdc32414018cc082b9e6641))
+* **deps:** bump jest from 27.4.4 to 27.4.5 ([2f20093](https://github.com/kettil/carna/commit/2f2009372e5f3291e958e7f465ef2b8a93a51a19))
+* **deps:** bump pino-pretty from 7.2.0 to 7.3.0 ([933e7e2](https://github.com/kettil/carna/commit/933e7e239ebf4adbb29609c26f9592a261c170bb))
+
 ## [6.2.8](https://github.com/kettil/carna/compare/6.2.7...6.2.8) (2021-12-13)
 
 
