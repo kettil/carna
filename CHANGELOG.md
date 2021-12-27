@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.2.10](https://github.com/kettil/carna/compare/6.2.9...6.2.10) (2021-12-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/istanbul-lib-coverage from 2.0.3 to 2.0.4 ([5b84607](https://github.com/kettil/carna/commit/5b8460714e5023af8a73cf4554b242442345d5e6))
+* **deps:** bump @types/yargs from 17.0.7 to 17.0.8 ([7176182](https://github.com/kettil/carna/commit/71761827fa8c065645bcb494163c5c38a9851785))
+* **deps:** bump istanbul-reports from 3.1.1 to 3.1.2 ([bd9cc23](https://github.com/kettil/carna/commit/bd9cc239bf6cc849bffd751e2a51452545dfb54e))
+* **deps:** bump yargs from 17.3.0 to 17.3.1 ([ad54f09](https://github.com/kettil/carna/commit/ad54f09bc24bfeffb0c0be783f5c0b11ec21970a))
+
 ## [6.2.9](https://github.com/kettil/carna/compare/6.2.8...6.2.9) (2021-12-20)
 
 
