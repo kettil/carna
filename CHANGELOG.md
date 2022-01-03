@@ -1,5 +1,19 @@
 # Changelog
 
+## [6.2.11](https://github.com/kettil/carna/compare/6.2.10...6.2.11) (2022-01-03)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.16.0 to 7.16.7 ([0677a6d](https://github.com/kettil/carna/commit/0677a6dbe34ef0f50798d7b0ef07f17f26644970))
+* **deps:** bump @babel/node from 7.16.5 to 7.16.7 ([01cda6a](https://github.com/kettil/carna/commit/01cda6a2efed3e64ddd4963f828db47927aa3efc))
+* **deps:** bump @babel/plugin-transform-runtime from 7.16.5 to 7.16.7 ([186a9b5](https://github.com/kettil/carna/commit/186a9b5afd440056da2229c64f6bedd10376bc13))
+* **deps:** bump @babel/preset-env from 7.16.5 to 7.16.7 ([556f8cb](https://github.com/kettil/carna/commit/556f8cbc4f377c69887453a7de7341d1ee519798))
+* **deps:** bump @babel/preset-typescript from 7.16.5 to 7.16.7 ([115caba](https://github.com/kettil/carna/commit/115caba3a19ca7c1b5a28fb915ca40d786fe7ca0))
+* **deps:** bump @commitlint/cli from 15.0.0 to 16.0.1 ([6a5172b](https://github.com/kettil/carna/commit/6a5172be58cf2bf0545d841ff1c41103e259683d))
+* **deps:** bump @types/jest from 27.0.3 to 27.4.0 ([f2270da](https://github.com/kettil/carna/commit/f2270da2d13e04f36e90bd066fb0fcf5f1cb0b8e))
+* **deps:** bump istanbul-reports from 3.1.2 to 3.1.3 ([b48e810](https://github.com/kettil/carna/commit/b48e810f18d399cf5a3fae96481a759c8954bcbf))
+
 ## [6.2.10](https://github.com/kettil/carna/compare/6.2.9...6.2.10) (2021-12-27)
 
 
