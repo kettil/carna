@@ -61,7 +61,7 @@
     "@types/jest": "27.4.0",
     "@types/semver": "7.3.9",
     "@types/yargs": "17.0.8",
-    "babel-jest": "27.4.5",
+    "babel-jest": "27.4.6",
     "babel-loader": "8.2.3",
     "babel-watch": "7.7.0",
     "chalk": "4.1.2",
