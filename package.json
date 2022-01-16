@@ -49,7 +49,7 @@
     "@babel/plugin-transform-runtime": "7.16.8",
     "@babel/preset-env": "7.16.8",
     "@babel/preset-typescript": "7.16.7",
-    "@commitlint/cli": "16.0.1",
+    "@commitlint/cli": "16.0.2",
     "@kettil/commitlint-config": "2.0.1",
     "@kettil/eslint-config": "3.7.2",
     "@kettil/semantic-release-config": "2.0.2",
