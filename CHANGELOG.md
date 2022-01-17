@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.2.13](https://github.com/kettil/carna/compare/6.2.12...6.2.13) (2022-01-17)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.16.7 to 7.16.8 ([4986d2f](https://github.com/kettil/carna/commit/4986d2f8eebb2b52c6fb6383b70859382ed08abd))
+* **deps:** bump @babel/plugin-transform-runtime from 7.16.7 to 7.16.8 ([e7c632a](https://github.com/kettil/carna/commit/e7c632aefcd9c3ec0c9db45bde2e59fce04adf32))
+* **deps:** bump @babel/preset-env from 7.16.7 to 7.16.8 ([6c92313](https://github.com/kettil/carna/commit/6c923138dfa0ec8972148de42538ed151ef1a63e))
+* **deps:** bump depcheck from 1.4.2 to 1.4.3 ([8c0970b](https://github.com/kettil/carna/commit/8c0970b12f40fbf28d09edbfa54e26559dc6b327))
+
 ## [6.2.12](https://github.com/kettil/carna/compare/6.2.11...6.2.12) (2022-01-10)
 
 
