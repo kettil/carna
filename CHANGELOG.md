@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.2.14](https://github.com/kettil/carna/compare/6.2.13...6.2.14) (2022-01-24)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.16.7 to 7.16.10 ([e71374b](https://github.com/kettil/carna/commit/e71374ba2a396f0686a14a155a90e2d343b0ab60))
+* **deps:** bump @babel/preset-env from 7.16.8 to 7.16.11 ([67f42ba](https://github.com/kettil/carna/commit/67f42ba9ec2149a6a69e9f6754b915e003df3fd8))
+* **deps:** bump @commitlint/cli from 16.0.1 to 16.1.0 ([26d380c](https://github.com/kettil/carna/commit/26d380c12dc86f93d31a25c919b7fe946e817a58))
+* **deps:** bump pino-pretty from 7.3.0 to 7.5.0 ([0f6fb9d](https://github.com/kettil/carna/commit/0f6fb9d1fdf588e1112a1c677e54c3a8ea1e30d2))
+* **deps:** bump semantic-release from 18.0.1 to 19.0.2 ([6aca803](https://github.com/kettil/carna/commit/6aca8038b9d6a2aa656aa211d0032885a0ac7608))
+
 ## [6.2.13](https://github.com/kettil/carna/compare/6.2.12...6.2.13) (2022-01-17)
 
 
