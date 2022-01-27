@@ -1,5 +1,25 @@
 # Changelog
 
+# [7.0.0](https://github.com/kettil/carna/compare/6.2.14...7.0.0) (2022-01-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.16.10 to 7.16.12 ([9acf02f](https://github.com/kettil/carna/commit/9acf02f3e5dcd79f803bcf5210ed6304c0fdf001))
+* **deps:** bump @babel/node from 7.16.7 to 7.16.8 ([0cdd68b](https://github.com/kettil/carna/commit/0cdd68b44cdda8b8bd09d616dd70a479bde85376))
+* **deps:** bump @babel/plugin-transform-runtime from 7.16.8 to 7.16.10 ([94c66a5](https://github.com/kettil/carna/commit/94c66a512c4abbd9a0bb4afc18fcc84758311bda))
+* **deps:** bump pino-pretty from 7.5.0 to 7.5.1 ([6208c75](https://github.com/kettil/carna/commit/6208c75e0c8707bc54f0a5c922905a828b78669f))
+
+
+### Features
+
+* changing the minimum version of node.js to v16 ([bad12cc](https://github.com/kettil/carna/commit/bad12cc3eb429657c20db882be20b859b8981227))
+
+
+### BREAKING CHANGES
+
+* The minimum requirement of node.js is changed to version 16
+
 ## [6.2.14](https://github.com/kettil/carna/compare/6.2.13...6.2.14) (2022-01-24)
 
 
