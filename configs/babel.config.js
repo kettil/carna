@@ -1,5 +1,5 @@
 module.exports = {
-  presets: [['@babel/env', { modules: 'commonjs', targets: { node: '14' } }], '@babel/preset-typescript'],
+  presets: [['@babel/env', { modules: 'commonjs', targets: { node: '16' } }], '@babel/preset-typescript'],
 
   comments: false,
 
