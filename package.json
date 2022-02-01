@@ -51,7 +51,7 @@
     "@babel/preset-env": "7.16.11",
     "@babel/preset-typescript": "7.16.7",
     "@commitlint/cli": "16.1.0",
-    "@kettil/commitlint-config": "2.0.1",
+    "@kettil/commitlint-config": "2.0.2",
     "@kettil/eslint-config": "3.7.2",
     "@kettil/semantic-release-config": "2.0.2",
     "@kettil/tool-lib": "3.3.1",
