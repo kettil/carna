@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.1](https://github.com/kettil/carna/compare/7.0.0...7.0.1) (2022-02-07)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.16.8 to 7.17.0 ([3d7d346](https://github.com/kettil/carna/commit/3d7d346d0806b81b35a150d8238dd682c49f8f2e))
+* **deps:** bump @babel/core from 7.16.12 to 7.17.0 ([e84302a](https://github.com/kettil/carna/commit/e84302a8f375f015adf13240267c345858653d4c))
+* **deps:** bump @babel/plugin-transform-runtime from 7.16.10 to 7.17.0 ([b6fecfc](https://github.com/kettil/carna/commit/b6fecfc2f24b3f32217f343e77c5ed7556696431))
+* **deps:** bump @kettil/commitlint-config from 2.0.1 to 2.0.2 ([5ac8535](https://github.com/kettil/carna/commit/5ac85354e160305fce8fb32c4da11682c9bc9722))
+* **deps:** bump @kettil/semantic-release-config from 2.0.2 to 2.0.3 ([49e8f10](https://github.com/kettil/carna/commit/49e8f10dbf764d9619ea5726040ca98f9c182b46))
+
 # [7.0.0](https://github.com/kettil/carna/compare/6.2.14...7.0.0) (2022-01-27)
 
 
