@@ -1,5 +1,17 @@
 # Changelog
 
+## [7.0.2](https://github.com/kettil/carna/compare/7.0.1...7.0.2) (2022-02-13)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.17.0 to 7.17.2 ([bc8bce0](https://github.com/kettil/carna/commit/bc8bce0f2c059bdfd8ba0312780495388eb93205))
+* **deps:** bump babel-jest from 27.4.6 to 27.5.0 ([a11e15d](https://github.com/kettil/carna/commit/a11e15da2fce0e1f3efeb59492c7f37df5ad4cb4))
+* **deps:** bump babel-jest from 27.5.0 to 27.5.1 ([4ebf1a9](https://github.com/kettil/carna/commit/4ebf1a9c3bbe7ef7bc9e9633a79cf07977560ce8))
+* **deps:** bump istanbul-reports from 3.1.3 to 3.1.4 ([32b4397](https://github.com/kettil/carna/commit/32b439756307c09d31a22cde713be7d1e4bf69ca))
+* **deps:** bump jest from 27.4.7 to 27.5.0 ([7517284](https://github.com/kettil/carna/commit/75172846cd282fb61ecbdd2fb29822724a6f1791))
+* **deps:** bump jest from 27.5.0 to 27.5.1 ([32e1d46](https://github.com/kettil/carna/commit/32e1d463bebe339a27d7cee352ecd394d92e61f4))
+
 ## [7.0.1](https://github.com/kettil/carna/compare/7.0.0...7.0.1) (2022-02-07)
 
 
