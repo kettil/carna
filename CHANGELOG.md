@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.4](https://github.com/kettil/carna/compare/7.0.3...7.0.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.17.3 to 7.17.6 ([3c48623](https://github.com/kettil/carna/commit/3c486231ed9cc7f957e64ffa1bac82cb61e2c33f))
+
 ## [7.0.3](https://github.com/kettil/carna/compare/7.0.2...7.0.3) (2022-02-21)
 
 
