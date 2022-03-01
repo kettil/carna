@@ -1,5 +1,13 @@
 # Changelog
 
+## [7.0.5](https://github.com/kettil/carna/compare/7.0.4...7.0.5) (2022-03-01)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 3.7.2 to 3.7.12 ([6fa40f5](https://github.com/kettil/carna/commit/6fa40f52fbfc9c1d7bc4f8624501083e5759c07f))
+* **deps:** bump @types/jest from 27.4.0 to 27.4.1 ([f7a9d17](https://github.com/kettil/carna/commit/f7a9d1711384100c0aa58a2a59729718d66d539d))
+
 ## [7.0.4](https://github.com/kettil/carna/compare/7.0.3...7.0.4) (2022-02-28)
 
 
