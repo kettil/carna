@@ -1,5 +1,18 @@
 # Changelog
 
+# [7.1.0](https://github.com/kettil/carna/compare/7.0.5...7.1.0) (2022-03-01)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 3.7.12 to 3.7.13 ([4d55f59](https://github.com/kettil/carna/commit/4d55f598a315621450cb5da11f6f8ec53ddd85ee))
+* **deps:** bump eslint from 7.32.0 to 8.10.0 ([f907697](https://github.com/kettil/carna/commit/f907697b71eccc7381bda6910e18f1b95777d07e))
+
+
+### Features
+
+* add Python-2.0 to the compatibility list of MIT ([75d9e89](https://github.com/kettil/carna/commit/75d9e89a288438991cb87a03b0f194fd53619397))
+
 ## [7.0.5](https://github.com/kettil/carna/compare/7.0.4...7.0.5) (2022-03-01)
 
 
