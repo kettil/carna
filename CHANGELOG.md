@@ -1,5 +1,13 @@
 # Changelog
 
+## [7.1.1](https://github.com/kettil/carna/compare/7.1.0...7.1.1) (2022-03-07)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/yargs from 17.0.8 to 17.0.9 ([e890c01](https://github.com/kettil/carna/commit/e890c01ff86a0a8c904d29656860b1dd428d045c))
+* **deps:** bump pino-pretty from 7.5.1 to 7.5.3 ([05bfbe6](https://github.com/kettil/carna/commit/05bfbe645260f30f967d11d39c094fcf56cd5c9f))
+
 # [7.1.0](https://github.com/kettil/carna/compare/7.0.5...7.1.0) (2022-03-01)
 
 
