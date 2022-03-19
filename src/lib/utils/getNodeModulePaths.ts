@@ -11,11 +11,13 @@ const getNodeModulePaths = async (packagePath: string): Promise<readonly string[
   if (isNodeModulesReadable) {
     const files = await readdir(nodeModulesPath);
 
-    const filePromises = files
-      .filter((file) => file.isDirectory() && !file.name.startsWith('.'))
-      .map((folder) => getNodeModulePaths(join(nodeModulesPath, folder.name)));
+    const paths = await Promise.all(
+      files
+        .filter((file) => file.isDirectory() && !file.name.startsWith('.'))
+        .map(async (folder) => getNodeModulePaths(join(nodeModulesPath, folder.name))),
+    );
 
-    packagePaths.push(...(await Promise.all(filePromises)).flat());
+    packagePaths.push(...paths.flat());
   }
 
   return packagePaths;

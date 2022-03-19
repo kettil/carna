@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { isArray, isString } from '@kettil/tool-lib';
-import { Arguments } from 'yargs';
-import { PropsGlobal } from '../../../src/lib/types';
+import type { Arguments } from 'yargs';
+import type { PropsGlobal } from '../../../src/lib/types';
 
 const cwd = '/path/to/project';
 const root = '/path/to/project';

@@ -1,9 +1,9 @@
-import { ChildProcessByStdio } from 'child_process';
+import type { ChildProcessByStdio } from 'child_process';
 import { join } from 'path';
-import { Writable } from 'stream';
+import type { Writable } from 'stream';
 import { uniqueArray } from '@kettil/tool-lib';
 import { pinoPrettyCommand, pinoPrettyIgnoreKeys } from '../../../configs/actionConfigs';
-import { Logger } from '../../cli/logger';
+import type { Logger } from '../../cli/logger';
 import { exec } from '../../cmd/exec';
 
 type Props = {

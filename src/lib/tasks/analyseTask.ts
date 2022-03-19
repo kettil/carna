@@ -2,9 +2,9 @@ import { prettierCiExtensions } from '../../configs/actionConfigs';
 import { eslintAction } from '../actions/tools/eslint';
 import { prettierAction } from '../actions/tools/prettier';
 import { tscAction } from '../actions/tools/tsc';
-import { EslintActionProps, PrettierActionProps } from '../actions/types';
+import type { EslintActionProps, PrettierActionProps } from '../actions/types';
 import { spinnerAction } from '../cli/spinner';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { hasDependency } from '../utils/hasDependency';
 import { taskHook } from '../utils/taskHook';
 

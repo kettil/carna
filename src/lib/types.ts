@@ -1,4 +1,4 @@
-import { Logger } from './cli/logger';
+import type { Logger } from './cli/logger';
 
 type SortType<T> = (v1: T, v2: T) => number;
 

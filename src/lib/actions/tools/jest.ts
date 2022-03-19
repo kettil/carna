@@ -1,12 +1,12 @@
 import { join } from 'path';
 import { jestCommand, jestConfigFiles } from '../../../configs/actionConfigs';
-import { ExecOptions } from '../../cmd/exec';
+import type { ExecOptions } from '../../cmd/exec';
 import { execLog } from '../../cmd/execLog';
 import { execStdio } from '../../cmd/execStdio';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 import { getCoverageFolder } from '../../utils/getCoverageFolder';
 import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
-import { JestActionProps } from '../types';
+import type { JestActionProps } from '../types';
 
 const options: Array<keyof JestActionProps> = ['updateSnapshot', 'runInBand', 'watch', 'verbose'];
 
@@ -17,9 +17,7 @@ const jestAction: Action<JestActionProps> = async ({ root, ci, log }, props) => 
   const cmd = join(root, jestCommand);
   const args: string[] = ['--config', configFile, '--colors'];
 
-  if (props.projects.length === 1) {
-    args.push('--selectProjects', props.projects[0]);
-  } else if (props.projects.length > 1) {
+  if (props.projects.length > 0) {
     args.push('--selectProjects', ...props.projects);
   }
 
@@ -60,11 +58,7 @@ const jestAction: Action<JestActionProps> = async ({ root, ci, log }, props) => 
 
   const execOptions: ExecOptions = { cmd, args, cwd: root, log };
 
-  if (props.watch) {
-    await execStdio(execOptions, { registerStdin: true });
-  } else {
-    await execLog(execOptions);
-  }
+  await (props.watch ? execStdio(execOptions, { registerStdin: true }) : execLog(execOptions));
 };
 
 export { jestAction };

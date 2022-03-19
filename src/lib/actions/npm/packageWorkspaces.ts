@@ -3,7 +3,7 @@ import { promisify } from 'util';
 import { isArray, isString, uniqueArray } from '@kettil/tool-lib';
 import { glob } from 'glob';
 import { MultipleWorkspacesError } from '../../errors/multipleWorkspacesError';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 import { npmPackageLoadAction } from './packageLoad';
 
 const globPromise = promisify(glob);
@@ -16,7 +16,7 @@ const npmPackageWorkspacesAction: Action<undefined, string[]> = async (argv) => 
   }
 
   const paths = await Promise.all(
-    workspaces.filter(isString).map((workspace) => globPromise(workspace, { cwd: argv.root, absolute: true })),
+    workspaces.filter(isString).map(async (workspace) => globPromise(workspace, { cwd: argv.root, absolute: true })),
   );
 
   const workspaceUniques = uniqueArray(paths.flat());

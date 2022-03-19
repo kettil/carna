@@ -9,7 +9,7 @@ import { table } from '../cli/table';
 import { exit } from '../cmd/exit';
 import { LicenseDisabledError } from '../errors/licenseDisabledError';
 import { LicenseIncompatibleError } from '../errors/licenseIncompatibleError';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 import { getLicenseConfigs } from './license/getLicenseConfigs';
 
@@ -26,15 +26,15 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
 
   try {
     await [argv.root, ...workspacePaths].reduce(
-      (promise, path) =>
-        promise.then(() => {
+      async (promise, path) =>
+        promise.then(async () => {
           const subTitle = path === argv.root ? `(${notice})` : `[${basename(path)}]`;
 
           return spinnerAction(licensecheckAction(argv, { path, licenseConfig }), `License verification ${subTitle}`);
         }),
       Promise.resolve(),
     );
-  } catch (error) {
+  } catch (error: unknown) {
     if (error instanceof LicenseDisabledError) {
       return;
     }

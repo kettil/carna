@@ -3,7 +3,7 @@ import { isObject, isString } from '@kettil/tool-lib';
 import { access } from '../../../cmd/access';
 import { execReturn } from '../../../cmd/execReturn';
 import { readFile } from '../../../cmd/readFile';
-import { Action, LicensePackageInfo, LicenseAliases, LicenseHeuristics } from '../../../types';
+import type { Action, LicensePackageInfo, LicenseAliases, LicenseHeuristics } from '../../../types';
 import { getLicenseFromFiles } from './getLicenseFromFiles';
 
 const getLicensePackageInfo: Action<

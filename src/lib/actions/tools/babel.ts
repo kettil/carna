@@ -1,11 +1,11 @@
 import { join } from 'path';
 import { babelCommand, babelExtensions } from '../../../configs/actionConfigs';
-import { ExecOptions } from '../../cmd/exec';
+import type { ExecOptions } from '../../cmd/exec';
 import { execLog } from '../../cmd/execLog';
 import { execReturn } from '../../cmd/execReturn';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
-import { BabelActionProps } from '../types';
+import type { BabelActionProps } from '../types';
 
 const babelAction: Action<BabelActionProps> = async (
   { root, cwd, log },
@@ -36,11 +36,7 @@ const babelAction: Action<BabelActionProps> = async (
 
   const execOptions: ExecOptions = { cmd, args, cwd, log, spawnKillHandler };
 
-  if (watch) {
-    await execLog(execOptions);
-  } else {
-    await execReturn(execOptions);
-  }
+  await (watch ? execLog(execOptions) : execReturn(execOptions));
 };
 
 export { babelAction };

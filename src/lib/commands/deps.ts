@@ -1,5 +1,6 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import { depsTask, DepsProps } from '../tasks/depsTask';
+import type { DepsProps } from '../tasks/depsTask';
+import { depsTask } from '../tasks/depsTask';
 
 const command = 'deps';
 const desc = 'Run dependency check';

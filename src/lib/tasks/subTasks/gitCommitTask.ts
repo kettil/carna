@@ -4,14 +4,14 @@ import { gitAddAction } from '../../actions/git/add';
 import { gitLsAction } from '../../actions/git/ls';
 import { gitStagedAction } from '../../actions/git/staged';
 import { existFiles } from '../../cmd/existFiles';
-import { Task } from '../../types';
+import type { Task } from '../../types';
 import { analyseTask } from '../analyseTask';
 import { depsTask } from '../depsTask';
 import { licenseTask } from '../licenseTask';
 import { testTask } from '../testTask';
 
-const testEslint = new RegExp(`(${eslintExtensions.replace(/,/gu, '|')})$`, 'u');
-const testPrettier = new RegExp(`(${prettierExtensions.replace(/,/gu, '|')})$`, 'u');
+const testEslint = new RegExp(`(${eslintExtensions.replaceAll(',', '|')})$`, 'u');
+const testPrettier = new RegExp(`(${prettierExtensions.replaceAll(',', '|')})$`, 'u');
 
 const gitCommitTask: Task = async (argv) => {
   const stagedFiles = await gitStagedAction(argv, {});

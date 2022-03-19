@@ -1,4 +1,4 @@
-import { PropsGlobal } from '../types';
+import type { PropsGlobal } from '../types';
 import { getWorkspaceDependencies } from './getWorkspaceDependencies';
 import { topologicalSortingFactory } from './topologicalSorting';
 
@@ -28,7 +28,9 @@ const getWorkspacesOrderByDependencies = async ({
 
   const topologicalSorting = topologicalSortingFactory(workspacePaths);
 
-  dependencyEdges.flat().forEach((edge) => topologicalSorting.addEdge(...edge));
+  dependencyEdges.flat().forEach((edge) => {
+    topologicalSorting.addEdge(...edge);
+  });
 
   return topologicalSorting.getSortedNode();
 };

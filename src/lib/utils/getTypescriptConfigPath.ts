@@ -1,5 +1,5 @@
 import { typescriptBuildConfigFiles, typescriptConfigFiles } from '../../configs/actionConfigs';
-import { TscActionProps } from '../actions/types';
+import type { TscActionProps } from '../actions/types';
 import { getFirstExistingFile } from './getFirstExistingFile';
 
 const getTypescriptConfigPath = async (cwd: string, mode: TscActionProps['mode']): Promise<string> =>

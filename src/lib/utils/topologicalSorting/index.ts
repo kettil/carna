@@ -1,3 +1,1 @@
-import { topologicalSortingFactory } from './topologicalSortingFactory';
-
-export { topologicalSortingFactory };
+export { topologicalSortingFactory } from './topologicalSortingFactory';

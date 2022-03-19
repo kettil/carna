@@ -1,4 +1,5 @@
-import { LicenseAliases } from '../lib/types';
+/* eslint-disable @typescript-eslint/naming-convention -- The keys are package names and versions number */
+import type { LicenseAliases } from '../lib/types';
 
 const licenseAliases: LicenseAliases = {
   'json-schema': {

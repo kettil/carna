@@ -1,9 +1,9 @@
 import { compareTransformAsc, isObject } from '@kettil/tool-lib';
 import { red } from 'chalk';
 import { TableError } from '../../errors/tableError';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 import { npmPackageLoadAction } from '../npm/packageLoad';
-import { SemverActionProps } from '../types';
+import type { SemverActionProps } from '../types';
 import { getInaccurateVersions } from './utils/getInaccurateVersions';
 
 const keys = ['dependencies', 'devDependencies'] as const;

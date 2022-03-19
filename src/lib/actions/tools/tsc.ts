@@ -1,9 +1,9 @@
 import { join } from 'path';
 import { typescriptCommand } from '../../../configs/actionConfigs';
 import { execReturn } from '../../cmd/execReturn';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 import { getTypescriptConfigPath } from '../../utils/getTypescriptConfigPath';
-import { TscActionProps } from '../types';
+import type { TscActionProps } from '../types';
 
 const tscAction: Action<TscActionProps> = async ({ root, cwd, log }, { mode }) => {
   const configPath = await getTypescriptConfigPath(cwd, mode);

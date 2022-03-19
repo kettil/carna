@@ -1,9 +1,9 @@
 import { basename, join } from 'path';
-import { Logger } from '../cli/logger';
+import type { Logger } from '../cli/logger';
 import { spinnerAction } from '../cli/spinner';
 import { access } from '../cmd/access';
 import { execReturn } from '../cmd/execReturn';
-import { Task } from '../types';
+import type { Task } from '../types';
 
 const runHook = async (cwd: string, log: Logger, project: string, path: string): Promise<void> => {
   const cmd = './node_modules/.bin/babel-node';

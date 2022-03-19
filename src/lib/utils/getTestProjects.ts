@@ -1,7 +1,7 @@
 import { isArray, isObject, isString } from '@kettil/tool-lib';
 import { jestCommand, jestConfigFiles, jestPreOrderProjects } from '../../configs/actionConfigs';
 import { execReturn } from '../cmd/execReturn';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { getFirstExistingFile } from './getFirstExistingFile';
 import { sortProjectNames } from './sortProjectNames';
 

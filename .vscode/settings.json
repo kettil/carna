@@ -11,10 +11,6 @@
 
   "eslint.enable": true,
   "eslint.validate": ["javascript", "typescript"],
-  "eslint.options": {
-    "overrideConfigFile": "./.eslintrc.json",
-    "configFile": "./.eslintrc.json"
-  },
 
   "vsicons.associations.files": [
     { "icon": "jest", "extensions": ["jest.ci.js"], "filename": true, "format": "svg" },

@@ -2,7 +2,13 @@
   "extends": "@kettil",
 
   "rules": {
-    "unicorn/no-array-push-push": ["off"]
+    "unicorn/no-array-push-push": ["off"],
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+
+    "@typescript-eslint/method-signature-style": ["off"],
+    "unicorn/import-style": ["error", { "styles": { "path": { "named": true }, "chalk": false } }],
+    "unicorn/no-array-callback-reference": ["off"],
+    "unicorn/no-useless-undefined": ["off"]
   },
 
   "overrides": [
@@ -26,8 +32,20 @@
       }
     },
     {
-      "files": ["*.test.ts"],
-      "rules": { "consistent-function-scoping": ["off"] }
+      "files": ["*.test.ts", "tests/**/*"],
+      "rules": {
+        "@typescript-eslint/no-confusing-void-expression": ["off"],
+        "@typescript-eslint/no-unsafe-assignment": ["off"],
+        "@typescript-eslint/no-unsafe-member-access": ["off"],
+        "consistent-function-scoping": ["off"],
+        "@typescript-eslint/no-unsafe-call": ["off"]
+      }
+    },
+    {
+      "files": ["**/tests/*/setupTests.ts", "**/tests/*/setupTests.js"],
+      "rules": {
+        "jest/require-top-level-describe": ["off"]
+      }
     }
   ]
 }

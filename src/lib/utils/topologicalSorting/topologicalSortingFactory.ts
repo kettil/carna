@@ -1,4 +1,5 @@
-import { TopologicalSortingUtil, topologicalSortingUtil } from './topologicalSortingUtil';
+import type { TopologicalSortingUtil } from './topologicalSortingUtil';
+import { topologicalSortingUtil } from './topologicalSortingUtil';
 
 const topologicalSortingFactory = <T extends number | string>(
   nodes: T[],

@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import yargs from 'yargs';
 import { logger } from './cli/logger';
 import { errorHandler } from './cli/yargs';
-import { PropsGlobal } from './types';
+import type { PropsGlobal } from './types';
 import { getPathFromNodeModulesParent } from './utils/getPathFromNodeModulesParent';
 
 const cwd = process.cwd();
@@ -27,6 +27,7 @@ const app = async (argv: string[]): Promise<void> => {
     .option('cwd', { default: cwd, type: 'string', hidden: true })
     .option('cfg', { default: cfg, type: 'string', hidden: true })
     .middleware((argsInterpreted) => ({ log: logger(argsInterpreted) }))
+    // eslint-disable-next-line @typescript-eslint/naming-convention -- external schema
     .parserConfiguration({ 'strip-aliased': true })
     .commandDir('../lib/commands')
     .demandCommand(1, 1)

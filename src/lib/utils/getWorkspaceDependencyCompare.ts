@@ -1,4 +1,4 @@
-import { WorkspacePackageAndDependencies } from './getWorkspacePackageAndDependencies';
+import type { WorkspacePackageAndDependencies } from './getWorkspacePackageAndDependencies';
 
 const getWorkspaceDependencyCompare = ({
   workspace,

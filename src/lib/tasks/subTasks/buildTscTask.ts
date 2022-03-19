@@ -2,7 +2,7 @@ import { basename } from 'path';
 import { npmPackageLoadAction } from '../../actions/npm/packageLoad';
 import { tscAction } from '../../actions/tools/tsc';
 import { spinnerAction } from '../../cli/spinner';
-import { PropsGlobal } from '../../types';
+import type { PropsGlobal } from '../../types';
 
 const buildTscTask =
   ({ argv, path }: { argv: PropsGlobal; path: string }) =>
@@ -11,10 +11,10 @@ const buildTscTask =
       const subTitle = path === argv.cwd ? '' : `[${basename(path)}]`;
 
       if (isPrivate === true) {
-        return Promise.resolve();
+        return;
       }
 
-      return spinnerAction(tscAction({ ...argv, cwd: path }, { mode: 'type-create' }), `Build: Typescript ${subTitle}`);
+      await spinnerAction(tscAction({ ...argv, cwd: path }, { mode: 'type-create' }), `Build: Typescript ${subTitle}`);
     };
 
 export { buildTscTask };

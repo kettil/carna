@@ -1,4 +1,4 @@
-import { SortType } from '../types';
+import type { SortType } from '../types';
 
 const sortProjectNames =
   (specialKeys: string[]): SortType<string> =>

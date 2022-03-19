@@ -1,6 +1,6 @@
-import { Watermark, Watermarks } from 'istanbul-lib-report';
-import { LicenseConfig } from '../types';
-import { SpawnKillHandler } from '../utils/createSpawnKillHandler';
+import type { Watermark, Watermarks } from 'istanbul-lib-report';
+import type { LicenseConfig } from '../types';
+import type { SpawnKillHandler } from '../utils/createSpawnKillHandler';
 
 type BabelActionProps = {
   watch?: boolean;

@@ -1,10 +1,10 @@
 import { allSettledSequence, isArray, isObject, objectMap } from '@kettil/tool-lib';
 import { coverageAction } from '../actions/tools/coverage';
 import { jestAction } from '../actions/tools/jest';
-import { JestActionProps, CoverageWatermarkThreshold } from '../actions/types';
+import type { JestActionProps, CoverageWatermarkThreshold } from '../actions/types';
 import { getConfig } from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { getTestProjects } from '../utils/getTestProjects';
 import { taskHook } from '../utils/taskHook';
 import { testHook } from '../utils/testHook';
@@ -14,7 +14,7 @@ type TestProps = Omit<JestActionProps, 'projects'> & {
 };
 
 const transformThreshold = (key: number | string, value: unknown): [number | string, CoverageWatermarkThreshold] => {
-  if (isArray(value) && value.length === 2 && typeof value[0] === 'number' && typeof value[1] === 'number') {
+  if (isArray(value) && value.length === 2 && typeof value.at(0) === 'number' && typeof value.at(1) === 'number') {
     return [key, value as unknown as [number, number]];
   }
 
@@ -36,18 +36,18 @@ const testTask: Task<TestProps> = async (argv, props) => {
     if (props.watch) {
       try {
         await projects.reduce(
-          (promise, project) => promise.then(() => testHook(argv, { project, type: 'pre' })),
+          async (promise, project) => promise.then(async () => testHook(argv, { project, type: 'pre' })),
           Promise.resolve(),
         );
 
         await jestAction(argv, { ...props, projects });
       } finally {
-        await allSettledSequence(projects.map((project) => () => testHook(argv, { project, type: 'post' })));
+        await allSettledSequence(projects.map((project) => async () => testHook(argv, { project, type: 'post' })));
       }
     } else {
       try {
         await projects.reduce(
-          (promise, project) =>
+          async (promise, project) =>
             promise.then(async () => {
               try {
                 await testHook(argv, { project, type: 'pre' });

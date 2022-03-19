@@ -1,18 +1,21 @@
 import { red } from 'chalk';
-import dependenciesCheck, { Options, parser, detector, special } from 'depcheck';
+import type { Options } from 'depcheck';
+import dependenciesCheck, { parser, detector, special } from 'depcheck';
 import { depcheckIgnorePackages } from '../../../configs/actionConfigs';
 import { DependencyError } from '../../errors/dependencyError';
 import { DependencyWarn } from '../../errors/dependencyWarn';
-import { Action } from '../../types';
-import { DepcheckActionProps } from '../types';
+import type { Action } from '../../types';
+import type { DepcheckActionProps } from '../types';
 
 const options: Options = {
   ignoreDirs: ['node_modules'],
   parsers: {
+    /* eslint-disable @typescript-eslint/naming-convention -- external schema */
     '**/*.js': parser.es6,
     '**/*.jsx': parser.jsx,
     '**/*.ts': parser.typescript,
     '**/*.tsx': parser.typescript,
+    /* eslint-enable @typescript-eslint/naming-convention -- external schema */
   },
   detectors: [detector.requireCallExpression, detector.importDeclaration],
   specials: [special.babel, special.eslint, special.prettier, special.jest, special.husky],

@@ -2,7 +2,7 @@ import { isObject, isString } from '@kettil/tool-lib';
 import { npmPackageLoadAction } from '../actions/npm/packageLoad';
 import { npmRunAction } from '../actions/npm/run';
 import { spinnerAction } from '../cli/spinner';
-import { Task } from '../types';
+import type { Task } from '../types';
 
 type NpmProps = {
   task: string;

@@ -5,9 +5,9 @@ import { babelScriptFiles } from '../../configs/actionConfigs';
 import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { babelAction } from '../actions/tools/babel';
 import { babelNodeAction } from '../actions/tools/babelNode';
-import { BabelNodeActionProps } from '../actions/types';
+import type { BabelNodeActionProps } from '../actions/types';
 import { getConfig } from '../cli/config';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { createSpawnKillHandler } from '../utils/createSpawnKillHandler';
 import { getFirstExistingFile } from '../utils/getFirstExistingFile';
 import { getWorkspaceDependencies } from '../utils/getWorkspaceDependencies';
@@ -48,13 +48,13 @@ const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConso
     if (buildDependencies && workspaceFilteredPaths.length > 0) {
       // prebuild of dependencies
       await workspaceFilteredPaths.reduce(
-        (promise, path) => promise.then(buildBabelTask({ argv, path })),
+        async (promise, path) => promise.then(buildBabelTask({ argv, path })),
         Promise.resolve(),
       );
 
       // starts "babel --watch --skip-initial-build" in the context of dependencies
       promises.push(
-        ...workspaceFilteredPaths.map<Promise<void>>((path) =>
+        ...workspaceFilteredPaths.map<Promise<void>>(async (path) =>
           babelAction({ ...argv, cwd: path }, { watch: true, skipInitialBuild: true, spawnKillHandler }),
         ),
       );
@@ -72,7 +72,7 @@ const startTask: Task<StartProps> = async (argv, { buildDependencies, clearConso
   } else {
     if (buildDependencies && workspacePaths.length > 0) {
       await workspaceFilteredPaths.reduce(
-        (promise, path) => promise.then(buildBabelTask({ argv, path })),
+        async (promise, path) => promise.then(buildBabelTask({ argv, path })),
         Promise.resolve(),
       );
     }

@@ -1,6 +1,6 @@
 import { commitlintAction } from '../../actions/tools/commitlint';
-import { CommitlintActionProps } from '../../actions/types';
-import { Task } from '../../types';
+import type { CommitlintActionProps } from '../../actions/types';
+import type { Task } from '../../types';
 
 type GitMessageProps = CommitlintActionProps;
 

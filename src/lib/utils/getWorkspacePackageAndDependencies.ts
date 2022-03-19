@@ -1,8 +1,12 @@
 import { isObject, isString } from '@kettil/tool-lib';
 import { npmPackageLoadAction } from '../actions/npm/packageLoad';
-import { Action } from '../types';
+import type { Action } from '../types';
 
-type WorkspacePackageAndDependencies = { name: string; path: string; dependencies: string[] };
+type WorkspacePackageAndDependencies = {
+  name: string;
+  path: string;
+  dependencies: string[];
+};
 
 const getWorkspacePackageAndDependencies: Action<{ workspacePath: string }, WorkspacePackageAndDependencies> = async (
   argv,

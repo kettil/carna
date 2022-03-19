@@ -1,21 +1,23 @@
 import { join, basename } from 'path';
 import { eslintCommand, eslintConfigFiles, eslintExtensions, eslintIgnoreFiles } from '../../../configs/actionConfigs';
 import { execReturn } from '../../cmd/execReturn';
-import { existFiles } from '../../cmd/existFiles';
-import { Action } from '../../types';
-import { EslintActionProps } from '../types';
+import type { Action } from '../../types';
+import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
+import type { EslintActionProps } from '../types';
 
 const eslintAction: Action<EslintActionProps> = async ({ root, cfg, log }, { write, files }) => {
-  const configFiles = await existFiles(eslintConfigFiles, root);
-
-  configFiles.push(join(cfg, 'eslintrc.json'));
+  const configFile = await getFirstExistingFile({
+    cwd: root,
+    files: eslintConfigFiles,
+    defaultFile: join(cfg, 'eslintrc.json'),
+  });
 
   const cmd = join(root, eslintCommand);
   const args: string[] = [];
 
   args.push('--color');
   args.push('--max-warnings', '0');
-  args.push('--config', configFiles[0]);
+  args.push('--config', configFile);
 
   if (write) {
     args.push('--fix');

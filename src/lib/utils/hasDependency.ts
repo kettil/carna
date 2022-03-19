@@ -1,6 +1,6 @@
 import { isObject, isString } from '@kettil/tool-lib';
 import { npmPackageLoadAction } from '../actions/npm/packageLoad';
-import { PropsGlobal } from '../types';
+import type { PropsGlobal } from '../types';
 
 type Props = {
   dependency: string;

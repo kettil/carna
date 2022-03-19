@@ -3,7 +3,7 @@ import { objectEntries } from '@kettil/tool-lib';
 import { licenseFilenameRegExp } from '../../../../configs/actionConfigs';
 import { readdir } from '../../../cmd/readdir';
 import { readFile } from '../../../cmd/readFile';
-import { LicensePackageInfo, LicenseHeuristics } from '../../../types';
+import type { LicensePackageInfo, LicenseHeuristics } from '../../../types';
 
 const getLicenseFromFiles = async ({
   path,
