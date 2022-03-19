@@ -1,5 +1,5 @@
 import { execReturn } from '../../cmd/execReturn';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 
 const gitStagedAction: Action<Record<string, undefined>, string[]> = async ({ root, log }) => {
   log.info('Get the list of staged files');

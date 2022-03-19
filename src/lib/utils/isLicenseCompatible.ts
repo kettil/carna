@@ -1,4 +1,4 @@
-import { LicensePackageInfo } from '../types';
+import type { LicensePackageInfo } from '../types';
 
 type IsLicenseCompatible = (props: {
   packageInfo: LicensePackageInfo;

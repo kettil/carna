@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention -- The keys are license names */
 /* eslint-disable max-len -- The length of the line depends on the regexps */
-import { LicenseHeuristics } from '../lib/types';
+import type { LicenseHeuristics } from '../lib/types';
 
 const licenseHeuristics: LicenseHeuristics = {
   'Apache-2.0*': /Apache License,?\s+Version 2\.0/u,

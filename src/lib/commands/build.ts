@@ -1,5 +1,6 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import { buildTask, BuildProps } from '../tasks/buildTask';
+import type { BuildProps } from '../tasks/buildTask';
+import { buildTask } from '../tasks/buildTask';
 
 const command = 'build';
 const desc = 'Run the build process';

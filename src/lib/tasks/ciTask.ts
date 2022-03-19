@@ -1,4 +1,4 @@
-import { PropsGlobal, Task } from '../types';
+import type { PropsGlobal, Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 import { analyseTask } from './analyseTask';
 import { buildTask } from './buildTask';

@@ -1,17 +1,17 @@
 import { join, relative } from 'path';
 import { babelCommandNode, babelCommandWatch, babelExtensions } from '../../../configs/actionConfigs';
 import { execStdio } from '../../cmd/execStdio';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 import { createSpawnKillHandler } from '../../utils/createSpawnKillHandler';
 import { getBabelConfigPath } from '../../utils/getBabelConfigPath';
-import { BabelNodeActionProps } from '../types';
+import type { BabelNodeActionProps } from '../types';
 import { pinoPretty } from './pinoPretty';
 
 const babelNodeAction: Action<BabelNodeActionProps> = async (
   { root, cwd, log },
   { scriptPath, watch, clearConsole, watchPaths = [], executePath = cwd, withPinoPretty, pinoIgnoreKeys },
 ) => {
-  const spawnKillHandler = watch === true ? createSpawnKillHandler({ registerStdin: true }) : undefined;
+  const spawnKillHandler = watch ? createSpawnKillHandler({ registerStdin: true }) : undefined;
   const pipe = withPinoPretty === true ? pinoPretty({ log, root, cwd: executePath, pinoIgnoreKeys }) : undefined;
   const configPath = await getBabelConfigPath([cwd, root]);
   const envPrefix: NodeJS.ProcessEnv = {

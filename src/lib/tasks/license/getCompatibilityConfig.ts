@@ -1,5 +1,5 @@
 import { isObject, objectEntries } from '@kettil/tool-lib';
-import { LicenseCompatibilities } from '../../types';
+import type { LicenseCompatibilities } from '../../types';
 import { reduceCompatibilityList } from './reduceCompatibilityList';
 
 const getCompatibilityConfig = ({

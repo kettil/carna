@@ -9,7 +9,7 @@ const getInaccurateVersions = (dependencies: unknown): Array<[string, string, st
   }
 
   return objectEntries(dependencies)
-    .filter((value): value is readonly [string, string] => typeof value[1] === 'string')
+    .filter((value): value is readonly [string, string] => typeof value.at(1) === 'string')
     .filter(([, version]) => !version.startsWith('file'))
     .filter(([, version]) => !version.startsWith('http'))
     .filter(([, version]) => !version.startsWith('git'))

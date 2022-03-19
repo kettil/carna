@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import { join } from 'path';
-import { Argv } from 'yargs';
+import type { Argv } from 'yargs';
 import { handler, builder, command, desc } from '../../../src/lib/commands/test';
-import { PropsGlobal } from '../../../src/lib/types';
+import type { PropsGlobal } from '../../../src/lib/types';
 import { cwd, getArgv } from '../../shared/setup/argv';
 import coverageE2E1 from '../../shared/setup/data/coverage-e2e-1.json';
 import coverageUnit1 from '../../shared/setup/data/coverage-unit-1.json';

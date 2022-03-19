@@ -23,7 +23,7 @@ const access = async (path: string, type: 'exists' | 'readable' | 'writable' = '
     await promises.access(path, mode);
 
     return true;
-  } catch (error) {
+  } catch (error: unknown) {
     if (!isObject(error) || (error.code !== 'ENOENT' && error.syscall !== 'access')) {
       throw error;
     }

@@ -1,5 +1,5 @@
 import { isArray, isString } from '@kettil/tool-lib';
-import { LicenseCompatibilities } from '../../types';
+import type { LicenseCompatibilities } from '../../types';
 
 const reduceCompatibilityList = (
   licenseGroups: Partial<LicenseCompatibilities>,

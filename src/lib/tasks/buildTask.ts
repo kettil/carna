@@ -3,7 +3,7 @@ import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { babelAction } from '../actions/tools/babel';
 import { spinnerAction } from '../cli/spinner';
 import { copyFile } from '../cmd/copyFile';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { createSpawnKillHandler } from '../utils/createSpawnKillHandler';
 import { getWorkspacesOrderByDependencies } from '../utils/getWorkspacesOrderByDependencies';
 import { hasDependency } from '../utils/hasDependency';
@@ -31,17 +31,17 @@ const buildTask: Task<BuildProps> = async (argv, { watch }) => {
 
     const spawnKillHandler = createSpawnKillHandler({ registerStdin: true });
 
-    const promises = sortedPaths.map<Promise<void>>((path) =>
+    const promises = sortedPaths.map<Promise<void>>(async (path) =>
       babelAction({ ...argv, cwd: path }, { watch: true, spawnKillHandler }),
     );
 
     await spinnerAction(Promise.all(promises), 'Watch-Mode - exit with "ctrl-c"');
   } else {
     if (hasTypescript) {
-      await sortedPaths.reduce((promise, path) => promise.then(buildTscTask({ argv, path })), Promise.resolve());
+      await sortedPaths.reduce(async (promise, path) => promise.then(buildTscTask({ argv, path })), Promise.resolve());
     }
 
-    await sortedPaths.reduce((promise, path) => promise.then(buildBabelTask({ argv, path })), Promise.resolve());
+    await sortedPaths.reduce(async (promise, path) => promise.then(buildBabelTask({ argv, path })), Promise.resolve());
 
     // copy .npmignore to the workspaces
     await Promise.all(

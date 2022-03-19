@@ -1,5 +1,6 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import { licenseTask, LicenseProps } from '../tasks/licenseTask';
+import type { LicenseProps } from '../tasks/licenseTask';
+import { licenseTask } from '../tasks/licenseTask';
 
 const command = 'license';
 const desc = 'Run license check';

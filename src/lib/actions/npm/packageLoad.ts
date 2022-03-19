@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { access } from '../../cmd/access';
 import { readFile } from '../../cmd/readFile';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 
 type NpmPackageLoadProps = {
   key?: string;

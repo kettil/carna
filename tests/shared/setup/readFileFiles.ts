@@ -31,6 +31,7 @@ const getReadFileFiles = (files: Record<string, string> = {}): Record<string, st
     name: 'workspace-name-a',
     license: 'MIT',
     dependencies: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention -- package name
       'workspace-name-b': '0.1.0',
     },
   }),
@@ -69,6 +70,7 @@ const getReadFileWithHooksFiles = (files: Record<string, string> = {}): Record<s
   [mockFilePackage]: JSON.stringify({
     ...packageJson,
     scripts: {
+      /* eslint-disable @typescript-eslint/naming-convention -- npm package script names */
       'precarna:analyse': 'echo "pre analyse hook is called"',
       'postcarna:analyse': 'echo "post analyse hook is called"',
       'precarna:build': 'echo "pre build hook is called"',
@@ -85,6 +87,7 @@ const getReadFileWithHooksFiles = (files: Record<string, string> = {}): Record<s
       'postcarna:start': 'echo "post start hook is called"',
       'precarna:test': 'echo "pre test hook is called"',
       'postcarna:test': 'echo "post test hook is called"',
+      /* eslint-enable @typescript-eslint/naming-convention -- npm package script names */
     },
   }),
 });

@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { ReaddirMockFiles } from '../__mock__/fs';
+import type { ReaddirMockFiles } from '../__mock__/fs';
 import { cwd } from './argv';
 
 const getReaddirFiles = (files: ReaddirMockFiles = {}): ReaddirMockFiles => ({

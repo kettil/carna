@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return -- mock import */
+/* eslint-disable @typescript-eslint/no-require-imports -- mock import */
 import * as fs from 'fs';
 import { getAccessFiles } from '../shared/setup/accessFiles';
 import { getReaddirFiles } from '../shared/setup/readdirFiles';

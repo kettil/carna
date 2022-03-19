@@ -1,7 +1,7 @@
 import { basename } from 'path';
 import { babelAction } from '../../actions/tools/babel';
 import { spinnerAction } from '../../cli/spinner';
-import { PropsGlobal } from '../../types';
+import type { PropsGlobal } from '../../types';
 
 const buildBabelTask =
   ({ argv, path }: { argv: PropsGlobal; path: string }) =>

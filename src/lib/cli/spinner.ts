@@ -37,7 +37,7 @@ const fail = (error: unknown) => {
   throw error;
 };
 
-const spinnerAction = <T>(action: Promise<T>, text: string): Promise<T> => {
+const spinnerAction = async <T>(action: Promise<T>, text: string): Promise<T> => {
   start(text);
 
   return action.then(succeed, fail);

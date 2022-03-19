@@ -1,9 +1,14 @@
 import { ExecutableError } from '../errors/executableError';
-import { exec, ExecOptions, getExecCommand } from './exec';
+import type { ExecOptions } from './exec';
+import { exec, getExecCommand } from './exec';
 
-type ExecValueReturn = { stdout: string; stderr: string; output: string };
+type ExecValueReturn = {
+  stdout: string;
+  stderr: string;
+  output: string;
+};
 
-const execReturn = (props: ExecOptions): Promise<ExecValueReturn> =>
+const execReturn = async (props: ExecOptions): Promise<ExecValueReturn> =>
   new Promise<ExecValueReturn>((resolve, reject) => {
     const stream = exec(props);
 

@@ -1,5 +1,6 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import { testTask, TestProps } from '../tasks/testTask';
+import type { TestProps } from '../tasks/testTask';
+import { testTask } from '../tasks/testTask';
 
 const command = 'test';
 const desc = 'Run tests';

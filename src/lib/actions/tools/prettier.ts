@@ -1,22 +1,24 @@
 import { join } from 'path';
 import { prettierCommand, prettierConfigFiles, prettierExtensions } from '../../../configs/actionConfigs';
 import { execReturn } from '../../cmd/execReturn';
-import { existFiles } from '../../cmd/existFiles';
-import { Action } from '../../types';
-import { PrettierActionProps } from '../types';
+import type { Action } from '../../types';
+import { getFirstExistingFile } from '../../utils/getFirstExistingFile';
+import type { PrettierActionProps } from '../types';
 
 const prettierAction: Action<PrettierActionProps> = async (
   { root, cfg, log },
   { write, files, extension = prettierExtensions },
 ) => {
-  const configFiles = await existFiles(prettierConfigFiles, root);
-
-  configFiles.push(join(cfg, 'prettierrc.json'));
+  const configFile = await getFirstExistingFile({
+    cwd: root,
+    files: prettierConfigFiles,
+    defaultFile: join(cfg, 'prettierrc.json'),
+  });
 
   const cmd = join(root, prettierCommand);
   const args: string[] = [];
 
-  args.push('--config', configFiles[0]);
+  args.push('--config', configFile);
 
   if (write) {
     args.push('--write');

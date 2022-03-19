@@ -1,5 +1,5 @@
 import { execReturn } from '../../cmd/execReturn';
-import { Action } from '../../types';
+import type { Action } from '../../types';
 
 type Props = {
   script: string;

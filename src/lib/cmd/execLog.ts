@@ -1,7 +1,8 @@
 import { ExecutableError } from '../errors/executableError';
-import { exec, ExecOptions, getExecCommand } from './exec';
+import type { ExecOptions } from './exec';
+import { exec, getExecCommand } from './exec';
 
-const execLog = (props: ExecOptions): Promise<void> =>
+const execLog = async (props: ExecOptions): Promise<void> =>
   new Promise((resolve, reject) => {
     const stream = exec(props);
 

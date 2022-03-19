@@ -1,6 +1,6 @@
 import { bold, red } from 'chalk';
-import { CoverageSummary } from 'istanbul-lib-coverage';
-import { Watermark, Watermarks } from 'istanbul-lib-report';
+import type { CoverageSummary } from 'istanbul-lib-coverage';
+import type { Watermark, Watermarks } from 'istanbul-lib-report';
 import { getCoverageWatermark } from './getCoverageWatermark';
 
 const getCoverageErrorMessage = (

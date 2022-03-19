@@ -1,5 +1,6 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import { ciTask, CiProps } from '../tasks/ciTask';
+import type { CiProps } from '../tasks/ciTask';
+import { ciTask } from '../tasks/ciTask';
 
 const command = 'ci';
 const desc = 'Run build, analyse, tests, license and deps tasks';

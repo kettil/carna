@@ -7,7 +7,7 @@ import { getConfig } from '../cli/config';
 import { spinnerAction } from '../cli/spinner';
 import { DependencyError } from '../errors/dependencyError';
 import { DependencyWarn } from '../errors/dependencyWarn';
-import { Task } from '../types';
+import type { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 
 type DepsProps = {};
@@ -20,13 +20,13 @@ const depsTask: Task<DepsProps> = async (argv) => {
   await taskHook(argv, { task: 'deps', type: 'pre' });
 
   await [argv.root, ...workspacePaths].reduce(
-    (promise, path) =>
+    async (promise, path) =>
       promise.then(async () => {
         try {
           const subTitle = path === argv.root ? '' : `[${basename(path)}]`;
 
           await spinnerAction(depcheckAction(argv, { path, ignorePackages }), `Dependency verification ${subTitle}`);
-        } catch (error) {
+        } catch (error: unknown) {
           if (error instanceof DependencyError) {
             argv.log.log(error.list);
 
@@ -46,8 +46,8 @@ const depsTask: Task<DepsProps> = async (argv) => {
   await spinnerAction(semverAction(argv, {}), 'Semver check');
 
   await workspacePaths.reduce(
-    (promise, path) =>
-      promise.then(() => spinnerAction(semverAction(argv, { path }), `Semver check [${basename(path)}]`)),
+    async (promise, path) =>
+      promise.then(async () => spinnerAction(semverAction(argv, { path }), `Semver check [${basename(path)}]`)),
     Promise.resolve(),
   );
 

@@ -1,7 +1,8 @@
-import { Task } from '../types';
+import type { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 import { gitCommitTask } from './subTasks/gitCommitTask';
-import { gitMessageTask, GitMessageProps } from './subTasks/gitMessageTask';
+import type { GitMessageProps } from './subTasks/gitMessageTask';
+import { gitMessageTask } from './subTasks/gitMessageTask';
 
 type GitProps = {
   edit?: GitMessageProps['edit'];
@@ -27,7 +28,7 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
       break;
 
     default:
-      throw new Error(`The git hook "${hook}" is unknown`);
+      throw new Error(`The git hook "${hook as string}" is unknown`);
   }
 
   await taskHook(argv, { task: 'git', type: 'post' });

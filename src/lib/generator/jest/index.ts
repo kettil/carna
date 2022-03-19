@@ -1,4 +1,2 @@
-import { createConfig } from './createConfig';
-import { createProject } from './createProject';
-
-export { createConfig as createJestConfig, createProject as createJestProject };
+export { createConfig as createJestConfig } from './createConfig';
+export { createProject as createJestProject } from './createProject';

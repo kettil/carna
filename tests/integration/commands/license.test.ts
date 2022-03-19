@@ -1,7 +1,7 @@
 import * as fs from 'fs';
-import { Argv } from 'yargs';
+import type { Argv } from 'yargs';
 import { handler, builder, command, desc } from '../../../src/lib/commands/license';
-import { PropsGlobal } from '../../../src/lib/types';
+import type { PropsGlobal } from '../../../src/lib/types';
 import { getArgv } from '../../shared/setup/argv';
 import { getReadFileWithHooksFiles } from '../../shared/setup/readFileFiles';
 

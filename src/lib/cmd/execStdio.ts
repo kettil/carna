@@ -1,12 +1,13 @@
-import { ChildProcessByStdio } from 'child_process';
-import { Readable, Writable } from 'stream';
+import type { ChildProcessByStdio } from 'child_process';
+import type { Readable, Writable } from 'stream';
 import { getStdin } from '../cli/process';
 import { ExecutableError } from '../errors/executableError';
-import { exec, ExecOptions, getExecCommand } from './exec';
+import type { ExecOptions } from './exec';
+import { exec, getExecCommand } from './exec';
 
 type PipeType = ChildProcessByStdio<Writable, Readable | null, Readable | null>;
 
-const execStdio = (
+const execStdio = async (
   props: ExecOptions,
   { registerStdin = false, pipe }: { registerStdin?: boolean; pipe?: PipeType } = {},
 ): Promise<void> =>

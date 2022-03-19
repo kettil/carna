@@ -3,10 +3,10 @@ import { isArray } from '@kettil/tool-lib';
 import { red } from 'chalk';
 import { LicenseDisabledError } from '../../errors/licenseDisabledError';
 import { LicenseIncompatibleError } from '../../errors/licenseIncompatibleError';
-import { Action, LicensePackageInfo } from '../../types';
+import type { Action, LicensePackageInfo } from '../../types';
 import { getNodeModulePaths } from '../../utils/getNodeModulePaths';
 import { isLicenseCompatible } from '../../utils/isLicenseCompatible';
-import { LicensecheckActionProps } from '../types';
+import type { LicensecheckActionProps } from '../types';
 import { getLicensePackageInfo } from './licensecheck/getLicensePackageInfo';
 
 const licensecheckAction: Action<LicensecheckActionProps> = async (argv, { path = argv.root, licenseConfig }) => {
@@ -44,7 +44,7 @@ const licensecheckAction: Action<LicensecheckActionProps> = async (argv, { path 
   log.info('Read the license data');
 
   const packageInfos = await Promise.all(
-    packagePaths.map((packagePath) =>
+    packagePaths.map(async (packagePath) =>
       getLicensePackageInfo(argv, {
         path: packagePath,
         ignorePackages,

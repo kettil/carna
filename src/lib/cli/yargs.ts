@@ -1,11 +1,11 @@
 import { isString } from '@kettil/tool-lib';
 import { red } from 'chalk';
-import { Arguments, Argv } from 'yargs';
+import type { Arguments, Argv } from 'yargs';
 import { access } from '../cmd/access';
 import { exit } from '../cmd/exit';
 import { MessageError } from '../errors/messageError';
 import { TableError } from '../errors/tableError';
-import { PropsGlobal, Task } from '../types';
+import type { PropsGlobal, Task } from '../types';
 import { log } from './logger';
 import { table } from './table';
 

@@ -11,16 +11,17 @@ type Props = {
 const getFirstExistingFile = async ({ cwd, files, defaultFile }: Props): Promise<string> => {
   const filteredFiles = files.filter(isString);
   const checkedFiles = await existFiles(filteredFiles, cwd);
+  const file = checkedFiles.at(0);
 
-  if (checkedFiles.length === 0) {
-    if (isString(defaultFile)) {
-      return defaultFile;
-    }
-
-    throw new FirstExistFileError(`None of the following files were found: ${files.join(', ')}`);
+  if (isString(file)) {
+    return file;
   }
 
-  return checkedFiles[0];
+  if (isString(defaultFile)) {
+    return defaultFile;
+  }
+
+  throw new FirstExistFileError(`None of the following files were found: ${files.join(', ')}`);
 };
 
 export { getFirstExistingFile };

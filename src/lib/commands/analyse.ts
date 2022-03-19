@@ -1,5 +1,6 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import { analyseServices, AnalyseProps, analyseTask } from '../tasks/analyseTask';
+import type { AnalyseProps } from '../tasks/analyseTask';
+import { analyseServices, analyseTask } from '../tasks/analyseTask';
 
 const command = 'analyse';
 const desc = 'Run code quality tools';

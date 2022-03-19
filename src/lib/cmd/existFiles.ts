@@ -9,7 +9,7 @@ const existFile = async (cwd: string, file: string): Promise<string> => {
 };
 
 const existFiles = async (files: string[], cwd = ''): Promise<string[]> => {
-  const checkedFiles = await Promise.all(files.map((file) => existFile(cwd, file)));
+  const checkedFiles = await Promise.all(files.map(async (file) => existFile(cwd, file)));
 
   return checkedFiles.filter((file) => file !== '');
 };

@@ -12,7 +12,7 @@ const getReadableFileOrUndefined = (
     accessSync(file, constants.R_OK);
 
     return file;
-  } catch (error) {
+  } catch {
     if (extendsions.length > 0) {
       return getReadableFileOrUndefined(path, filename, extendsions);
     }

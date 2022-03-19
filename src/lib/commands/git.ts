@@ -1,5 +1,6 @@
 import { createBuilder, createHandler } from '../cli/yargs';
-import { gitTask, GitProps } from '../tasks/gitTask';
+import type { GitProps } from '../tasks/gitTask';
+import { gitTask } from '../tasks/gitTask';
 
 const command = 'git';
 const desc = 'Handler for the git hooks';
