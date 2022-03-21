@@ -1,5 +1,17 @@
 # Changelog
 
+## [7.1.2](https://github.com/kettil/carna/compare/7.1.1...7.1.2) (2022-03-21)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.17.5 to 7.17.7 ([6c5bc89](https://github.com/kettil/carna/commit/6c5bc89ca36fdd0a967160d36d81af2fe773963e))
+* **deps:** bump @commitlint/cli from 16.2.1 to 16.2.3 ([cfd1fd7](https://github.com/kettil/carna/commit/cfd1fd7b3c0f68d766b9f413d0bcc2228a152946))
+* **deps:** bump @kettil/eslint-config from 3.7.13 to 4.1.0 ([26e7b77](https://github.com/kettil/carna/commit/26e7b772ba751ab13ef96e6fd539d84b97a6065b))
+* **deps:** bump eslint from 8.10.0 to 8.11.0 ([fde48e0](https://github.com/kettil/carna/commit/fde48e07c9d90c54ba91b05fed85bcfe7259f0f0))
+* **deps:** bump pino-pretty from 7.5.3 to 7.5.4 ([95aee3b](https://github.com/kettil/carna/commit/95aee3b1b537d22cdc56887a74b735b34ef0fa40))
+* **deps:** bump prettier from 2.5.1 to 2.6.0 ([8be6735](https://github.com/kettil/carna/commit/8be67351edc2166ea11ae9a630c3dc97ec4c2bbb))
+
 ## [7.1.1](https://github.com/kettil/carna/compare/7.1.0...7.1.1) (2022-03-07)
 
 
