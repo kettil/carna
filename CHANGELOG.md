@@ -1,5 +1,13 @@
 # Changelog
 
+## [7.1.4](https://github.com/kettil/carna/compare/7.1.3...7.1.4) (2022-04-04)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 4.2.0 to 4.2.1 ([36b8c6a](https://github.com/kettil/carna/commit/36b8c6a8ba3fe9e6abaafa0c9449b0d561696bff))
+* **deps:** bump eslint from 8.11.0 to 8.12.0 ([7e3fe97](https://github.com/kettil/carna/commit/7e3fe97f31eebb20749aff9fadb869f4e32196f6))
+
 ## [7.1.3](https://github.com/kettil/carna/compare/7.1.2...7.1.3) (2022-03-28)
 
 
