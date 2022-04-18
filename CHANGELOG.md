@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.1.6](https://github.com/kettil/carna/compare/7.1.5...7.1.6) (2022-04-18)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 4.2.2 to 4.3.0 ([24fb384](https://github.com/kettil/carna/commit/24fb38460f1f9446b1a345c3001fdb0f7101ffe9))
+* **deps:** bump eslint from 8.12.0 to 8.13.0 ([c812559](https://github.com/kettil/carna/commit/c812559778c407c958767e0b9de4d0611cef40d7))
+* **deps:** bump glob from 7.2.0 to 8.0.1 ([57091c6](https://github.com/kettil/carna/commit/57091c6c5c75c223aa9d4f092e9c5dedaa8222cc))
+* **deps:** bump semver from 7.3.6 to 7.3.7 ([9cbea40](https://github.com/kettil/carna/commit/9cbea40412b4d7fd14ab4a79343479188c4ae9e1))
+* **deps:** bump yargs from 17.4.0 to 17.4.1 ([5d57767](https://github.com/kettil/carna/commit/5d5776704f8ed0c1fbc231fa7b358bfa9260b832))
+
 ## [7.1.5](https://github.com/kettil/carna/compare/7.1.4...7.1.5) (2022-04-11)
 
 
