@@ -211,17 +211,13 @@ This command is intended for execution in a CI.
 
 The tasks will be automatically called by husky (via git hooks).
 
-The following hooks exists:
-
-- `commit`: Checks the files in staged with prettier, eslint and typescript (git-hook: `pre-commit`).
-- `msg`: Checks the git commit message for a consistent structure (git-hook: `commit-msg`).
+First the commit message is checked and then the commands `analyse`, `test`, `license` and `deps` are executed.
 
 ### Options
 
-| Options | Description                                          |
-| ------- | ---------------------------------------------------- |
-| --hook  | The git hook to execute (Choices: `commit`, `msg`)   |
-| --edit  | Path to the COMMIT_EDITMSG file (only by `msg` hook) |
+| Options | Description                                |
+| ------- | ------------------------------------------ |
+| --edit  | Path to the COMMIT_EDITMSG file [required] |
 
 ### Exit codes
 

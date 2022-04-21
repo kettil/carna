@@ -1,5 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npm run build:babel
-node ./build/bin/index.js git --hook commit --vvv
