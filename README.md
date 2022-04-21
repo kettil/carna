@@ -71,6 +71,7 @@ If the `.git` folder does not exist, all files are always checked.
 | Options | short | Description                                 |
 | ------- | ----- | ------------------------------------------- |
 | --all   | -a    | Checks all files                            |
+| --path  | -p    | Checks only files in the specified path     |
 | --only  | -o    | Run a single code quality tool              |
 |         |       | Choices: `eslint`, `prettier`, `typescript` |
 

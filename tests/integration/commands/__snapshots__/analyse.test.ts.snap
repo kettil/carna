@@ -5,7 +5,9 @@ Array [
   Object {
     "all": Object {
       "alias": "a",
-      "default": false,
+      "conflicts": Array [
+        "path",
+      ],
       "describe": "All files are checked and not only the changed/new files",
       "group": "analyse-Options",
       "type": "boolean",
@@ -19,6 +21,15 @@ Array [
       ],
       "describe": "Run a single code quality tool",
       "group": "analyse-Options",
+    },
+    "path": Object {
+      "alias": "p",
+      "conflicts": Array [
+        "all",
+      ],
+      "describe": "Checks only files in the specified path",
+      "group": "analyse-Options",
+      "type": "string",
     },
   },
 ]
