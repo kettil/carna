@@ -38,13 +38,14 @@ Array [
       [Function],
       [Function],
     ],
-    "ignoreDirs": Array [
-      "node_modules",
-    ],
     "ignoreMatches": Array [
       "@types/node",
       "typescript",
       "carna",
+    ],
+    "ignorePatterns": Array [
+      "node_modules",
+      "build",
     ],
     "parsers": Object {
       "**/*.js": [Function],
@@ -71,13 +72,14 @@ Array [
       [Function],
       [Function],
     ],
-    "ignoreDirs": Array [
-      "node_modules",
-    ],
     "ignoreMatches": Array [
       "@types/node",
       "typescript",
       "carna",
+    ],
+    "ignorePatterns": Array [
+      "node_modules",
+      "build",
     ],
     "parsers": Object {
       "**/*.js": [Function],
