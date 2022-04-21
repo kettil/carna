@@ -7,7 +7,7 @@ const desc = 'Run code quality tools';
 
 const aliases = ['$0'];
 const options = { group: `${command}-Options` } as const;
-const boolOptions = { ...options, type: 'boolean', default: false } as const;
+const boolOptions = { ...options, type: 'boolean' } as const;
 
 const handler = createHandler<AnalyseProps>(analyseTask);
 const builder = createBuilder<AnalyseProps>(command, (yargs) =>
@@ -15,7 +15,15 @@ const builder = createBuilder<AnalyseProps>(command, (yargs) =>
     all: {
       ...boolOptions,
       alias: 'a',
+      conflicts: ['path'],
       describe: 'All files are checked and not only the changed/new files',
+    },
+    path: {
+      ...options,
+      type: 'string',
+      alias: 'p',
+      conflicts: ['all'],
+      describe: 'Checks only files in the specified path',
     },
     only: {
       ...options,
