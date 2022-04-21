@@ -11,6 +11,7 @@
     { "files": "{*.ts,*.tsx}", "options": { "parser": "typescript" } },
     { "files": "{*.json,.prettierrc}", "options": { "parser": "json" } },
     { "files": "*.md", "options": { "parser": "markdown" } },
+    { "files": "*.css", "options": { "parser": "css" } },
     { "files": "*.scss", "options": { "parser": "scss" } },
     { "files": ["*.yml", "*.yaml"], "options": { "parser": "yaml" } },
     { "files": "*.html", "options": { "parser": "html" } }

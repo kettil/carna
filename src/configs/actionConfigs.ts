@@ -35,7 +35,7 @@ const eslintConfigFiles = [
 ];
 
 // prettier
-const prettierCiExtensions = 'json,md,scss,yml,yaml,html';
+const prettierCiExtensions = 'json,md,css,scss,yml,yaml,html';
 const prettierExtensions = `ts,tsx,js,jsx,${prettierCiExtensions}`;
 const prettierCommand = './node_modules/.bin/prettier';
 const prettierConfigFiles = [
