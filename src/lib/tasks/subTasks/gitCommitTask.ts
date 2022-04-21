@@ -1,17 +1,13 @@
-import { uniqueArray } from '@kettil/tool-lib';
-import { eslintExtensions, prettierExtensions } from '../../../configs/actionConfigs';
 import { gitAddAction } from '../../actions/git/add';
 import { gitLsAction } from '../../actions/git/ls';
 import { gitStagedAction } from '../../actions/git/staged';
 import { existFiles } from '../../cmd/existFiles';
 import type { Task } from '../../types';
+import { cleanAnalyseFiles } from '../../utils/cleanAnalyseFiles';
 import { analyseTask } from '../analyseTask';
 import { depsTask } from '../depsTask';
 import { licenseTask } from '../licenseTask';
 import { testTask } from '../testTask';
-
-const testEslint = new RegExp(`(${eslintExtensions.replaceAll(',', '|')})$`, 'u');
-const testPrettier = new RegExp(`(${prettierExtensions.replaceAll(',', '|')})$`, 'u');
 
 const gitCommitTask: Task = async (argv) => {
   const stagedFiles = await gitStagedAction(argv, {});
@@ -21,10 +17,7 @@ const gitCommitTask: Task = async (argv) => {
   }
 
   const files = await existFiles(stagedFiles, argv.cwd);
-  const eslintFiles = files.filter((file) => testEslint.test(file));
-  const prettierFiles = files.filter((file) => testPrettier.test(file));
-  const mergedFiles = uniqueArray([...prettierFiles, ...eslintFiles]);
-
+  const { eslintFiles, mergedFiles, prettierFiles } = cleanAnalyseFiles(files);
   const unstagedFiles = await gitLsAction(argv, { mode: 'all' });
   const intersectFiles = mergedFiles.filter((file) => unstagedFiles.includes(file));
 
@@ -34,7 +27,7 @@ const gitCommitTask: Task = async (argv) => {
     throw new Error(`The following files were changed after adding:\n${changedFiles}`);
   }
 
-  await analyseTask({ ...argv, ci: false }, { eslintFiles, prettierFiles });
+  await analyseTask({ ...argv, ci: false }, { files: { eslintFiles, prettierFiles } });
 
   await gitAddAction(argv, { files });
 
