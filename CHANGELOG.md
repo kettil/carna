@@ -1,5 +1,27 @@
 # Changelog
 
+# [8.0.0-beta.1](https://github.com/kettil/carna/compare/7.1.6...8.0.0-beta.1) (2022-04-21)
+
+
+### Bug Fixes
+
+* depcheck does not ignore the build folder ([fd8ff41](https://github.com/kettil/carna/commit/fd8ff4199965b1d59474912e2aad1e85d2486602)), closes [#792](https://github.com/kettil/carna/issues/792)
+* **deps:** bump @kettil/eslint-config from 4.3.0 to 4.3.1 ([f002954](https://github.com/kettil/carna/commit/f0029544b2ed80ea2fbabaee08d8d3a9f506c1fb))
+* **deps:** bump babel-loader from 8.2.4 to 8.2.5 ([71c3d29](https://github.com/kettil/carna/commit/71c3d296deb4d1b66bff2252563b0a607772f5d2))
+* prettier ignores css files ([033e001](https://github.com/kettil/carna/commit/033e0013ae1d2d78427b88c8016a9669706e8bbb)), closes [#796](https://github.com/kettil/carna/issues/796)
+
+
+### Features
+
+* add the "path" parameter to the "analyse" command ([b49e5c6](https://github.com/kettil/carna/commit/b49e5c672181c5b0c72e2dcdb27d2799732cede3)), closes [#791](https://github.com/kettil/carna/issues/791)
+* changing the order of checks in the git commit/msg hook ([66edd7b](https://github.com/kettil/carna/commit/66edd7bc0708d30bffeab4e106f855368879917a)), closes [#794](https://github.com/kettil/carna/issues/794)
+* in "analyze" only the changed files are checked by default ([ceeb22f](https://github.com/kettil/carna/commit/ceeb22fd14588d6ce61cae549ad2fb5ecd4e3095)), closes [#793](https://github.com/kettil/carna/issues/793)
+
+
+### BREAKING CHANGES
+
+* The behavior of "analyze" has been changed, as previously all files were always checked.
+
 ## [7.1.6](https://github.com/kettil/carna/compare/7.1.5...7.1.6) (2022-04-18)
 
 
