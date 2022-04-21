@@ -8,7 +8,7 @@ import type { Action } from '../../types';
 import type { DepcheckActionProps } from '../types';
 
 const options: Options = {
-  ignoreDirs: ['node_modules'],
+  ignorePatterns: ['node_modules', 'build'],
   parsers: {
     /* eslint-disable @typescript-eslint/naming-convention -- external schema */
     '**/*.js': parser.es6,
