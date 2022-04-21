@@ -62,12 +62,17 @@ If you add the option `--verbose` when calling a command, all possible hooks wil
 
 Run the code quality tools
 
+When the command is executed, only the changed or new files are checked.
+If all files are to be checked, then the parameter `--all` must be set.
+If the `.git` folder does not exist, all files are always checked.
+
 ### Options
 
-| Options | Description                                 |
-| ------- | ------------------------------------------- |
-| --only  | Run a single code quality tool              |
-|         | Choices: `eslint`, `prettier`, `typescript` |
+| Options | short | Description                                 |
+| ------- | ----- | ------------------------------------------- |
+| --all   | -a    | Checks all files                            |
+| --only  | -o    | Run a single code quality tool              |
+|         |       | Choices: `eslint`, `prettier`, `typescript` |
 
 ### Exit codes
 

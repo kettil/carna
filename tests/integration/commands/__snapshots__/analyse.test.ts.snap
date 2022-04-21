@@ -3,7 +3,15 @@
 exports[`command analyse it should be create the expected builder: options 1`] = `
 Array [
   Object {
+    "all": Object {
+      "alias": "a",
+      "default": false,
+      "describe": "All files are checked and not only the changed/new files",
+      "group": "analyse-Options",
+      "type": "boolean",
+    },
     "only": Object {
+      "alias": "o",
       "choices": Array [
         "eslint",
         "prettier",
@@ -40,7 +48,7 @@ Object {
     "--config",
     "/path/to/project/node_modules/carna/configs/prettierrc.json",
     "--write",
-    "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
+    "\\"./**/*.{ts,tsx,js,jsx,json,md,css,scss,yml,yaml,html}\\"",
   ],
   "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
@@ -121,7 +129,7 @@ Object {
     "--config",
     "/path/to/project/node_modules/carna/configs/prettierrc.json",
     "--write",
-    "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
+    "\\"./**/*.{ts,tsx,js,jsx,json,md,css,scss,yml,yaml,html}\\"",
   ],
   "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
@@ -152,7 +160,7 @@ Object {
     "--config",
     "/path/to/project/node_modules/carna/configs/prettierrc.json",
     "--write",
-    "\\"./**/*.{ts,tsx,js,jsx,json,md,scss,yml,yaml,html}\\"",
+    "\\"./**/*.{ts,tsx,js,jsx,json,md,css,scss,yml,yaml,html}\\"",
   ],
   "command": "/path/to/project/node_modules/.bin/prettier",
   "cwd": "/path/to/project",
