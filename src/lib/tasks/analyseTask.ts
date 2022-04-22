@@ -1,3 +1,4 @@
+import { isArray } from '@kettil/tool-lib';
 import { prettierCiExtensions } from '../../configs/actionConfigs';
 import { eslintAction } from '../actions/tools/eslint';
 import { prettierAction } from '../actions/tools/prettier';
@@ -10,17 +11,26 @@ import { getAnalyseFiles } from '../utils/getAnalyseFiles';
 import { hasDependency } from '../utils/hasDependency';
 import { taskHook } from '../utils/taskHook';
 
-const analyseServices = ['eslint', 'prettier', 'typescript'] as const;
+// The distinction is important for the "git" command.
+const analysePreServices = ['eslint', 'prettier'] as const;
+const analyseSuffixServices = ['typescript'] as const;
 
-const isSelectedService = (value: string | undefined, service: typeof analyseServices[number]): boolean =>
-  typeof value === 'undefined' || value === service;
+const analyseServices = [...analysePreServices, ...analyseSuffixServices] as const;
 
 type AnalyseProps = {
-  only?: typeof analyseServices[number];
+  only?: ReadonlyArray<typeof analyseServices[number]> | typeof analyseServices[number];
   path?: string;
   all?: boolean;
   // internal
   files?: AnalyseFiles;
+};
+
+const isSelectedService = (value: AnalyseProps['only'], service: typeof analyseServices[number]): boolean => {
+  if (isArray(value)) {
+    return value.includes(service);
+  }
+
+  return typeof value === 'undefined' || value === service;
 };
 
 const analyseTask: Task<AnalyseProps> = async (argv, { only, all, path, files }) => {
@@ -59,4 +69,4 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, all, path, files })
 };
 
 export type { AnalyseProps };
-export { analyseTask, analyseServices };
+export { analyseTask, analyseServices, analysePreServices, analyseSuffixServices };
