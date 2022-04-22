@@ -1,4 +1,4 @@
-import { isString } from '@kettil/tool-lib';
+import { join } from 'path';
 import { gitAddAction } from '../actions/git/add';
 import { gitLsAction } from '../actions/git/ls';
 import { gitStagedAction } from '../actions/git/staged';
@@ -8,52 +8,63 @@ import { existFiles } from '../cmd/existFiles';
 import type { Task } from '../types';
 import { cleanAnalyseFiles } from '../utils/cleanAnalyseFiles';
 import { taskHook } from '../utils/taskHook';
-import { analyseTask } from './analyseTask';
+import { analysePreServices, analyseSuffixServices, analyseTask } from './analyseTask';
 import { depsTask } from './depsTask';
 import { licenseTask } from './licenseTask';
 import { testTask } from './testTask';
 
+const hooks = ['msg', 'commit'] as const;
+
 type GitProps = {
   edit?: CommitlintActionProps['edit'];
+  hook: typeof hooks[number];
 };
 
-const gitTask: Task<GitProps> = async (argv, { edit }) => {
+const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
   await taskHook(argv, { task: 'git', type: 'pre' });
 
-
-  if (!isString(edit) || edit.trim() === '') {
-    throw new Error('Argument "edit" is required');
-  }
-
-
-  // check the commit message
-  await commitlintAction(argv, { edit });
-
-
-  // check files
   const stagedFiles = await gitStagedAction(argv, {});
 
-  if (stagedFiles.length > 0) {
-    const files = await existFiles(stagedFiles, argv.cwd);
-    const { eslintFiles, mergedFiles, prettierFiles } = cleanAnalyseFiles(files);
-    const unstagedFiles = await gitLsAction(argv, { mode: 'all' });
-    const intersectFiles = mergedFiles.filter((file) => unstagedFiles.includes(file));
+  const files = await existFiles(stagedFiles, argv.cwd);
+  const { eslintFiles, mergedFiles, prettierFiles } = cleanAnalyseFiles(files);
+  const changedRelativeFiles = await gitLsAction(argv, { mode: 'all' });
+  const changedAbsoluteFiles = new Set(changedRelativeFiles.map((file) => join(argv.root, file)));
+  const intersectFiles = mergedFiles.filter((file) => changedAbsoluteFiles.has(file));
 
-    if (intersectFiles.length > 0) {
-      const changedFiles = intersectFiles.map((file) => `       ▸ ${file}\n`).join('');
+  if (intersectFiles.length > 0) {
+    const changedFiles = intersectFiles.map((file) => `       ▸ ${file}\n`).join('');
 
-      throw new Error(`The following files were changed after adding:\n${changedFiles}`);
-    }
+    throw new Error(`The following files were changed after adding:\n${changedFiles}`);
+  }
 
-    await analyseTask({ ...argv, ci: false }, { files: { eslintFiles, prettierFiles } });
-    await gitAddAction(argv, { files });
-    await testTask({ ...argv, ci: true }, {});
-    await licenseTask(argv, {});
-    await depsTask(argv, {});
+  switch (hook) {
+    case 'commit':
+      if (stagedFiles.length > 0) {
+        await analyseTask({ ...argv, ci: false }, { files: { eslintFiles, prettierFiles }, only: analysePreServices });
+        await gitAddAction(argv, { files });
+      }
+
+      break;
+
+    case 'msg':
+      if (typeof edit !== 'string' || edit.trim() === '') {
+        throw new Error(`Argument "edit" is required at hook "${hook}"`);
+      }
+
+      await commitlintAction(argv, { edit });
+      await analyseTask({ ...argv, ci: false }, { files: { eslintFiles, prettierFiles }, only: analyseSuffixServices });
+      await testTask({ ...argv, ci: true }, {});
+      await licenseTask(argv, {});
+      await depsTask(argv, {});
+
+      break;
+
+    default:
+      throw new Error(`The git hook "${hook as string}" is unknown`);
   }
 
   await taskHook(argv, { task: 'git', type: 'post' });
 };
 
 export type { GitProps };
-export { gitTask };
+export { gitTask, hooks };

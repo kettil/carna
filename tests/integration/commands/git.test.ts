@@ -5,7 +5,6 @@ import type { PropsGlobal } from '../../../src/lib/types';
 import { getArgv } from '../../shared/setup/argv';
 import { getReadFileWithHooksFiles } from '../../shared/setup/readFileFiles';
 
-
 describe('command git', () => {
   test('it should be complete the yargs command structure', () => {
     expect(typeof command).toBe('string');
@@ -37,24 +36,19 @@ describe('command git', () => {
     builder(yargs);
   });
 
+  describe('with unknwon hook', () => {
+    test('it should throw an error', async () => {
+      const promise = handler(getArgv({ hook: 'foo' as any }));
 
-  test('it should work', async () => {
-    const result = await handler(getArgv({ edit: 'path/to/commit.message' }));
+      await expect(promise).rejects.toThrow('The git hook "foo" is unknown');
+    });
 
-    expect(result).toBeUndefined();
-  }, 15_000);
+    test('it should throw an error with hooks', async () => {
+      (fs as any).setMockReadFileFiles(getReadFileWithHooksFiles());
 
-  test('it should work with hooks', async () => {
-    (fs as any).setMockReadFileFiles(getReadFileWithHooksFiles());
+      const promise = handler(getArgv({ hook: 'foo' as any, edit: 'path/to/commit.message' }));
 
-    const result = await handler(getArgv({ edit: 'path/to/commit.message' }));
-
-    expect(result).toBeUndefined();
-  }, 15_000);
-
-  test('it should throw an error why "edit" is empty', async () => {
-    const promise = handler(getArgv({ edit: '' }));
-
-    await expect(promise).rejects.toThrow('Argument "edit" is required');
+      await expect(promise).rejects.toThrow('The git hook "foo" is unknown');
+    });
   });
 });

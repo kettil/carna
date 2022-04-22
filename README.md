@@ -211,13 +211,20 @@ This command is intended for execution in a CI.
 
 The tasks will be automatically called by husky (via git hooks).
 
-First the commit message is checked and then the commands `analyse`, `test`, `license` and `deps` are executed.
+The following hooks exists:
+
+- `commit`: Checks the files in staged with a part of
+  [analyse](#the-analyse-task) command (git-hook: `pre-commit`).
+- `msg`: Checks the git commit message and run the other part of
+  [analyse](#the-analyse-task) and [test](#the-test-task),
+  [license](#the-license-task) and [deps](#the-deps-task) (git-hook: `commit-msg`).
 
 ### Options
 
-| Options | Description                                |
-| ------- | ------------------------------------------ |
-| --edit  | Path to the COMMIT_EDITMSG file [required] |
+| Options | Description                                          |
+| ------- | ---------------------------------------------------- |
+| --hook  | The git hook to execute (Choices: `commit`, `msg`)   |
+| --edit  | Path to the COMMIT_EDITMSG file (only by `msg` hook) |
 
 ### Exit codes
 
