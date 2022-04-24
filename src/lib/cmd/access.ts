@@ -1,5 +1,5 @@
 import { constants, promises } from 'fs';
-import { isObject } from '@kettil/tool-lib';
+import { isObject } from '@kettil/tools';
 
 const access = async (path: string, type: 'exists' | 'readable' | 'writable' = 'exists'): Promise<boolean> => {
   let mode;

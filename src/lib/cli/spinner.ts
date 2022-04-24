@@ -1,4 +1,4 @@
-import { dummy } from '@kettil/tool-lib';
+import { noop } from '@kettil/tools';
 import ora from 'ora';
 import { SpinnerWarnError } from '../errors/spinnerWarnError';
 
@@ -50,7 +50,7 @@ const spinnerBreak = (): (() => void) => {
     return () => instance.start();
   }
 
-  return dummy;
+  return noop;
 };
 
 export { isSpinning, spinnerAction, spinnerBreak };

@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { promisify } from 'util';
-import { isString, uniqueArray } from '@kettil/tool-lib';
+import { isString, uniqueArray } from '@kettil/tools';
 import { glob } from 'glob';
 import { gitLsAction } from '../actions/git/ls';
 import { gitStagedAction } from '../actions/git/staged';

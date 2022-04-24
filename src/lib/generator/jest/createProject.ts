@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isObject, isString } from '@kettil/tool-lib';
+import { isObject, isString } from '@kettil/tools';
 import { defaultConfig } from './defaultConfig';
 import { getSetupFilesAfterEnvironment } from './getSetupFilesAfterEnvironment';
 

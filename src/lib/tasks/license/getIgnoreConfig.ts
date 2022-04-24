@@ -1,4 +1,4 @@
-import { isArray, isObject, isString } from '@kettil/tool-lib';
+import { isArray, isObject, isString } from '@kettil/tools';
 
 const isArrayString = (values: unknown[]): values is string[] => values.every((value) => isString(value));
 

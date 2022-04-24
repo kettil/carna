@@ -1,4 +1,4 @@
-import { isArray, isString } from '@kettil/tool-lib';
+import { isArray, isString } from '@kettil/tools';
 import type { LicenseCompatibilities } from '../../types';
 
 const reduceCompatibilityList = (

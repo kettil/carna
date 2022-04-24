@@ -1,5 +1,5 @@
 import { basename } from 'path';
-import { isArray } from '@kettil/tool-lib';
+import { isArray } from '@kettil/tools';
 import { red } from 'chalk';
 import { LicenseDisabledError } from '../../errors/licenseDisabledError';
 import { LicenseIncompatibleError } from '../../errors/licenseIncompatibleError';

@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { objectEntries } from '@kettil/tool-lib';
+import { objectEntries } from '@kettil/tools';
 import { licenseFilenameRegExp } from '../../../../configs/actionConfigs';
 import { readdir } from '../../../cmd/readdir';
 import { readFile } from '../../../cmd/readFile';

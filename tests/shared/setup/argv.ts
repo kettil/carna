@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isArray, isString } from '@kettil/tool-lib';
+import { isArray, isString } from '@kettil/tools';
 import type { Arguments } from 'yargs';
 import type { PropsGlobal } from '../../../src/lib/types';
 

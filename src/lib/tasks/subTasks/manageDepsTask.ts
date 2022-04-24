@@ -1,5 +1,5 @@
 import { basename } from 'path';
-import { isArray, isString } from '@kettil/tool-lib';
+import { isArray, isString } from '@kettil/tools';
 import { depcheckAction } from '../../actions/tools/depcheck';
 import { getConfig } from '../../cli/config';
 import { spinnerAction } from '../../cli/spinner';

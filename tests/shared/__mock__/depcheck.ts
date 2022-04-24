@@ -1,22 +1,22 @@
-import { dummy } from '@kettil/tool-lib';
+import { noop } from '@kettil/tools';
 
 export const parser = {
-  es6: dummy,
-  jsx: dummy,
-  typescript: dummy,
+  es6: noop,
+  jsx: noop,
+  typescript: noop,
 };
 
 export const detector = {
-  requireCallExpression: dummy,
-  importDeclaration: dummy,
+  requireCallExpression: noop,
+  importDeclaration: noop,
 };
 
 export const special = {
-  babel: dummy,
-  eslint: dummy,
-  prettier: dummy,
-  jest: dummy,
-  husky: dummy,
+  babel: noop,
+  eslint: noop,
+  prettier: noop,
+  jest: noop,
+  husky: noop,
 };
 
 const depcheck = async (...args: unknown[]): Promise<unknown> => {

@@ -1,5 +1,5 @@
 import { basename } from 'path';
-import { isObject } from '@kettil/tool-lib';
+import { isObject } from '@kettil/tools';
 import { underline } from 'chalk';
 import { licensecheckAction } from '../../actions/tools/licensecheckAction';
 import { getConfig } from '../../cli/config';

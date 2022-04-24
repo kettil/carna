@@ -1,4 +1,4 @@
-import { uniqueArray } from '@kettil/tool-lib';
+import { uniqueArray } from '@kettil/tools';
 import { eslintExtensions, prettierExtensions } from '../../configs/actionConfigs';
 
 const testEslint = new RegExp(`(${eslintExtensions.replaceAll(',', '|')})$`, 'u');

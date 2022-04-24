@@ -1,4 +1,4 @@
-import { isString } from '@kettil/tool-lib';
+import { isString } from '@kettil/tools';
 import { getReadableFileOrUndefined } from './getReadableFileOrUndefined';
 
 const getSetupFilesAfterEnvironment = (path: string, filenames: string[]): string[] =>

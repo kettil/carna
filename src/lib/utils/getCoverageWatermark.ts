@@ -1,4 +1,4 @@
-import { isArray } from '@kettil/tool-lib';
+import { isArray } from '@kettil/tools';
 import type { Watermark } from 'istanbul-lib-report';
 import { coverageDefaultWatermark } from '../../configs/actionConfigs';
 

@@ -1,6 +1,6 @@
 import { basename } from 'path';
 import { promisify } from 'util';
-import { isArray, isString, uniqueArray } from '@kettil/tool-lib';
+import { isArray, isString, uniqueArray } from '@kettil/tools';
 import { glob } from 'glob';
 import { MultipleWorkspacesError } from '../../errors/multipleWorkspacesError';
 import type { Action } from '../../types';

@@ -1,4 +1,4 @@
-import { isString } from '@kettil/tool-lib';
+import { isString } from '@kettil/tools';
 import { existFiles } from '../cmd/existFiles';
 import { FirstExistFileError } from '../errors/firstExistFileError';
 

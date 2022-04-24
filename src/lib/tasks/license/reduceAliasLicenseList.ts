@@ -1,4 +1,4 @@
-import { isString } from '@kettil/tool-lib';
+import { isString } from '@kettil/tools';
 
 type Versions = Record<string, string>;
 

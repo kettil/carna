@@ -1,4 +1,4 @@
-import { isArray, dummy } from '@kettil/tool-lib';
+import { isArray, noop } from '@kettil/tools';
 import chalk from 'chalk';
 import { spinnerBreak, isSpinning } from './spinner';
 
@@ -58,10 +58,10 @@ const logger = ({ verbose, vvv }: { verbose: boolean; vvv: boolean }): Logger =>
   }
 
   if (verbose) {
-    return { log, error, info, debug: dummy };
+    return { log, error, info, debug: noop };
   }
 
-  return { log, error: dummy, info: dummy, debug: dummy };
+  return { log, error: noop, info: noop, debug: noop };
 };
 
 export type { Logger };

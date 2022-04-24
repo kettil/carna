@@ -1,7 +1,7 @@
 import type { ChildProcessByStdio } from 'child_process';
 import { join } from 'path';
 import type { Writable } from 'stream';
-import { uniqueArray } from '@kettil/tool-lib';
+import { uniqueArray } from '@kettil/tools';
 import { pinoPrettyCommand, pinoPrettyIgnoreKeys } from '../../../configs/actionConfigs';
 import type { Logger } from '../../cli/logger';
 import { exec } from '../../cmd/exec';

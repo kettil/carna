@@ -1,4 +1,4 @@
-import { isObject } from '@kettil/tool-lib';
+import { isObject } from '@kettil/tools';
 
 export const create = jest.fn((...args: unknown[]) => {
   expect(args).toMatchSnapshot('istanbul-reports');
