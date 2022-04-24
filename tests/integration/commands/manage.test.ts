@@ -37,7 +37,7 @@ describe('command manage', () => {
   });
 
   test('it should work', async () => {
-    await handler(getArgv({ hook: 'msg', edit: 'path/to/commit.message' }));
+    await handler(getArgv({}));
 
     expect(true).toBeTruthy();
   });
@@ -45,7 +45,7 @@ describe('command manage', () => {
   test('it should work with hooks', async () => {
     (fs as any).setMockReadFileFiles(getReadFileWithHooksFiles());
 
-    await handler(getArgv({ hook: 'msg', edit: 'path/to/commit.message' }));
+    await handler(getArgv({}));
 
     expect(true).toBeTruthy();
   });

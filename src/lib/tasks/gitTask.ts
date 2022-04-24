@@ -9,7 +9,6 @@ import type { Task } from '../types';
 import { cleanAnalyseFiles } from '../utils/cleanAnalyseFiles';
 import { taskHook } from '../utils/taskHook';
 import { analysePreServices, analyseSuffixServices, analyseTask } from './analyseTask';
-import { licenseTask } from './licenseTask';
 import { manageTask } from './manageTask';
 import { testTask } from './testTask';
 
@@ -55,7 +54,6 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
       await analyseTask({ ...argv, ci: false }, { files: { eslintFiles, prettierFiles }, only: analyseSuffixServices });
       await testTask({ ...argv, ci: true }, {});
       await manageTask(argv, {});
-      await licenseTask(argv, {});
 
       break;
 
