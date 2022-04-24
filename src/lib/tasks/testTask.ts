@@ -1,4 +1,4 @@
-import { allSettledSequence, isArray, isObject, objectMap } from '@kettil/tool-lib';
+import { allSettledSequence, isArray, isObject, objectMap } from '@kettil/tools';
 import { coverageAction } from '../actions/tools/coverage';
 import { jestAction } from '../actions/tools/jest';
 import type { JestActionProps, CoverageWatermarkThreshold } from '../actions/types';

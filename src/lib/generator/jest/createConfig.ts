@@ -1,4 +1,4 @@
-import { isArray, isObject } from '@kettil/tool-lib';
+import { isArray, isObject } from '@kettil/tools';
 import { defaultConfig } from './defaultConfig';
 import { getCollectCoverageFrom } from './getCollectCoverageFrom';
 import { getWorkspaces } from './getWorkspaces';

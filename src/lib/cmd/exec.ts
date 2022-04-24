@@ -1,7 +1,7 @@
 import type { ChildProcessWithoutNullStreams, ChildProcessByStdio } from 'child_process';
 import { spawn } from 'child_process';
 import type { Readable, Writable } from 'stream';
-import { env as processEnvironment } from '@kettil/tool-lib';
+import { env as processEnvironment } from '@kettil/tools';
 import type { Logger } from '../cli/logger';
 import type { SpawnKillHandler } from '../utils/createSpawnKillHandler';
 

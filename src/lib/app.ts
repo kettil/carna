@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { env } from '@kettil/tool-lib';
+import { env } from '@kettil/tools';
 import chalk from 'chalk';
 import yargs from 'yargs';
 import { logger } from './cli/logger';

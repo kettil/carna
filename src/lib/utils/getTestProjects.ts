@@ -1,4 +1,4 @@
-import { isArray, isObject, isString } from '@kettil/tool-lib';
+import { isArray, isObject, isString } from '@kettil/tools';
 import { jestCommand, jestConfigFiles, jestPreOrderProjects } from '../../configs/actionConfigs';
 import { execReturn } from '../cmd/execReturn';
 import type { Task } from '../types';

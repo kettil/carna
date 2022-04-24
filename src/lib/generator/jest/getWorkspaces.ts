@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { basename, join, relative, normalize } from 'path';
-import { isArray, isObject, isString, uniqueArray } from '@kettil/tool-lib';
+import { isArray, isObject, isString, uniqueArray } from '@kettil/tools';
 import { glob } from 'glob';
 
 const getWorkspaces = (root: string): Record<string, string> => {

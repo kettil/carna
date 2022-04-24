@@ -1,4 +1,4 @@
-import { isString, uniqueArray } from '@kettil/tool-lib';
+import { isString, uniqueArray } from '@kettil/tools';
 import type { PropsGlobal } from '../types';
 import { getWorkspaceDependencyCompare } from './getWorkspaceDependencyCompare';
 import { getWorkspacePackageAndDependencies } from './getWorkspacePackageAndDependencies';

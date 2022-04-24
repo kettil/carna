@@ -1,4 +1,4 @@
-import { isString } from '@kettil/tool-lib';
+import { isString } from '@kettil/tools';
 import { red } from 'chalk';
 import type { Arguments, Argv } from 'yargs';
 import { access } from '../cmd/access';

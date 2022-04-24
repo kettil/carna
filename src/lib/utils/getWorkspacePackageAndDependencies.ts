@@ -1,4 +1,4 @@
-import { isObject, isString } from '@kettil/tool-lib';
+import { isObject, isString } from '@kettil/tools';
 import { npmPackageLoadAction } from '../actions/npm/packageLoad';
 import type { Action } from '../types';
 

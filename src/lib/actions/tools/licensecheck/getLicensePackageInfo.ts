@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isObject, isString } from '@kettil/tool-lib';
+import { isObject, isString } from '@kettil/tools';
 import { access } from '../../../cmd/access';
 import { execReturn } from '../../../cmd/execReturn';
 import { readFile } from '../../../cmd/readFile';

@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { isString } from '@kettil/tool-lib';
+import { isString } from '@kettil/tools';
 import type { JestActionProps } from '../actions/types';
 
 const getCoverageFolder = (path: string, projects: JestActionProps['projects']): string => {

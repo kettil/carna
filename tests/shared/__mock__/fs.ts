@@ -1,4 +1,4 @@
-import { isArray } from '@kettil/tool-lib';
+import { isArray } from '@kettil/tools';
 
 const fs: any = jest.createMockFromModule('fs');
 

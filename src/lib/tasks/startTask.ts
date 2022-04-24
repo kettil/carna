@@ -1,6 +1,6 @@
 import { constants } from 'os';
 import { join } from 'path';
-import { delay, isArray, isString } from '@kettil/tool-lib';
+import { delay, isArray, isString } from '@kettil/tools';
 import { babelScriptFiles } from '../../configs/actionConfigs';
 import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
 import { babelAction } from '../actions/tools/babel';

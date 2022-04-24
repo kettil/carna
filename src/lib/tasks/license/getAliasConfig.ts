@@ -1,4 +1,4 @@
-import { isObject, objectEntries } from '@kettil/tool-lib';
+import { isObject, objectEntries } from '@kettil/tools';
 import type { LicenseAliases } from '../../types';
 import { reduceAliasList } from './reduceAliasList';
 
