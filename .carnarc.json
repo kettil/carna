@@ -2,9 +2,10 @@
   "deps": {
     "ignore": {
       "packages": [
-        "@kettil/commitlint-config",
-        "@kettil/semantic-release-config",
         "@commitlint/cli",
+        "@kettil/commitlint-config",
+        "@kettil/npm-package-json-lint-config",
+        "@kettil/semantic-release-config",
         "eslint",
         "husky",
         "prettier",
