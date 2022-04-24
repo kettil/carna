@@ -4,7 +4,7 @@ import { getConfig } from '../cli/config';
 import type { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 import { taskIsDiasbled } from '../utils/taskIsDiasbled';
-import { manageDepsTask } from './subTasks/managedepsTask';
+import { manageDepsTask } from './subTasks/manageDepsTask';
 import { manageLicenseTask } from './subTasks/manageLicenseTask';
 import { managePackageLintTask } from './subTasks/managePackageLintTask';
 
