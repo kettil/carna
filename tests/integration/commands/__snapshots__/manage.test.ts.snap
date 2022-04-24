@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`command manage it should be create the expected builder: usage 1`] = `
+Array [
+  "Usage: $0 manage [options]",
+]
+`;

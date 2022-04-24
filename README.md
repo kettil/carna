@@ -35,6 +35,7 @@ The following commands are available:
 | [`license`](#the-license-task) | Checks for incompatible licenses      |
 | [`build`](#the-build-task)     | Build the application                 |
 | [`start`](#the-start-task)     | Run a script                          |
+| [`manage`](#the-manage-task)   | Run general conditions check          |
 | [`ci`](#the-ci-task)           | Run different Tasks as unit           |
 | [`git`](#the-git-task)         | Handler for the git hooks             |
 
@@ -189,6 +190,25 @@ Calls the application directly, without build process.
 | 0         | Success     |
 | 1         | task failed |
 
+## The `manage` task
+
+The task analyzes...
+
+- ...the structure of package.json.
+
+  In the [carna config file](#carna-config-file) the check can be deactivated under the point `packageLint`.
+
+### Options
+
+None
+
+### Exit codes
+
+| Exit code | Description |
+| --------- | ----------- |
+| 0         | Success     |
+| 1         | task failed |
+
 ## The `ci` task
 
 Run build, analyse, tests, license and deps tasks.
@@ -275,6 +295,11 @@ The file is structured as follows
       packages: [],
     },
   },
+
+  packageLint: {
+    // Disables the verification
+    disable: false,
+  }
 
   log: {
     ignore: {

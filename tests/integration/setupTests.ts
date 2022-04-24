@@ -12,6 +12,7 @@ jest.mock('glob', () => require('../shared/__mock__/glob'));
 jest.mock('istanbul-reports', () => require('../shared/__mock__/istanbulReports'));
 jest.mock('ora', () => require('../shared/__mock__/ora'));
 jest.mock('semver', () => require('../shared/__mock__/semver'));
+jest.mock('npm-package-json-lint', () => require('../shared/__mock__/npmPackageJsonLint'));
 jest.mock('../../src/lib/cmd/exit', () => require('../shared/__mock__/exit'));
 jest.mock('../../src/lib/cli/process', () => require('../shared/__mock__/process'));
 
