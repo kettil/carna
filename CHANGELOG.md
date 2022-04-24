@@ -1,5 +1,19 @@
 # Changelog
 
+# [8.0.0-beta.2](https://github.com/kettil/carna/compare/8.0.0-beta.1...8.0.0-beta.2) (2022-04-24)
+
+
+### Bug Fixes
+
+* changes made by "analyse" were no longer applied during the commit ([f7de867](https://github.com/kettil/carna/commit/f7de86791ca766b1234d36eb6618ade8b91cb588)), closes [#794](https://github.com/kettil/carna/issues/794)
+* when running "analysis" gestaged files were ignored ([1a3fd50](https://github.com/kettil/carna/commit/1a3fd5070cece1e78362a982b0df97e9358d8909))
+
+
+### Features
+
+* add "npm-package-json-lint" linter with the new "manage" command ([b5945a4](https://github.com/kettil/carna/commit/b5945a49233e13e0e701f3b86426806588927d00)), closes [#795](https://github.com/kettil/carna/issues/795)
+* change the jest default "bail" value from 10 to 1 ([1433c52](https://github.com/kettil/carna/commit/1433c52a87923092326bb50f14ebb35c4b2430c2))
+
 # [8.0.0-beta.1](https://github.com/kettil/carna/compare/7.1.6...8.0.0-beta.1) (2022-04-21)
 
 
