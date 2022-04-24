@@ -9,7 +9,7 @@ import { exit } from '../../cmd/exit';
 import { LicenseDisabledError } from '../../errors/licenseDisabledError';
 import { LicenseIncompatibleError } from '../../errors/licenseIncompatibleError';
 import type { Task } from '../../types';
-import { getLicenseConfigs } from '../license/getLicenseConfigs';
+import { getLicenseConfigs } from './license/getLicenseConfigs';
 
 const notice = `the license check(s) is only a suggestion and is ${underline('not')} legal advice`;
 

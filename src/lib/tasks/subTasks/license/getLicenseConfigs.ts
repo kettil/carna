@@ -1,7 +1,7 @@
-import { licenseAliases } from '../../../configs/licenseAliases';
-import { licenseCompatibilities } from '../../../configs/licenseCompatibilities';
-import { licenseHeuristics } from '../../../configs/licenseHeuristics';
-import type { LicenseConfig } from '../../types';
+import { licenseAliases } from '../../../../configs/licenseAliases';
+import { licenseCompatibilities } from '../../../../configs/licenseCompatibilities';
+import { licenseHeuristics } from '../../../../configs/licenseHeuristics';
+import type { LicenseConfig } from '../../../types';
 import { getAliasConfig } from './getAliasConfig';
 import { getCompatibilityConfig } from './getCompatibilityConfig';
 import { getHeuristicConfig } from './getHeuristicConfig';
