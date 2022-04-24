@@ -1,4 +1,3 @@
-import { isArray } from '@kettil/tools';
 import { prettierCiExtensions } from '../../configs/actionConfigs';
 import { eslintAction } from '../actions/tools/eslint';
 import { prettierAction } from '../actions/tools/prettier';
@@ -9,6 +8,7 @@ import type { Task } from '../types';
 import type { AnalyseFiles } from '../utils/getAnalyseFiles';
 import { getAnalyseFiles } from '../utils/getAnalyseFiles';
 import { hasDependency } from '../utils/hasDependency';
+import { isSelectedService } from '../utils/isSelectedService';
 import { taskHook } from '../utils/taskHook';
 
 // The distinction is important for the "git" command.
@@ -25,20 +25,12 @@ type AnalyseProps = {
   files?: AnalyseFiles;
 };
 
-const isSelectedService = (value: AnalyseProps['only'], service: typeof analyseServices[number]): boolean => {
-  if (isArray(value)) {
-    return value.includes(service);
-  }
-
-  return typeof value === 'undefined' || value === service;
-};
-
 const analyseTask: Task<AnalyseProps> = async (argv, { only, all, path, files }) => {
   await taskHook(argv, { task: 'analyse', type: 'pre' });
 
   const { eslintFiles, prettierFiles } = (await getAnalyseFiles(argv, { all, files, path })) ?? {};
 
-  if (isSelectedService(only, 'prettier')) {
+  if (isSelectedService<typeof analyseServices[number]>(only, 'prettier')) {
     const prettierOptions: PrettierActionProps = {
       write: !argv.ci,
       extension: argv.ci ? prettierCiExtensions : undefined,
@@ -48,7 +40,7 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, all, path, files })
     await spinnerAction(prettierAction(argv, prettierOptions), 'Analyse: Prettier');
   }
 
-  if (isSelectedService(only, 'eslint')) {
+  if (isSelectedService<typeof analyseServices[number]>(only, 'eslint')) {
     const eslintOptions: EslintActionProps = {
       write: !argv.ci,
       files: eslintFiles,
@@ -57,7 +49,7 @@ const analyseTask: Task<AnalyseProps> = async (argv, { only, all, path, files })
     await spinnerAction(eslintAction(argv, eslintOptions), 'Analyse: ESLint');
   }
 
-  if (isSelectedService(only, 'typescript')) {
+  if (isSelectedService<typeof analyseServices[number]>(only, 'typescript')) {
     const hasTypescript = await hasDependency(argv, { dependency: 'typescript', dependencyType: 'devDependencies' });
 
     if (hasTypescript) {

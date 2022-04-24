@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`command manage it should be create the expected builder: options 1`] = `
+Array [
+  Object {
+    "only": Object {
+      "alias": "o",
+      "choices": Array [
+        "package",
+        "dependency",
+        "license",
+      ],
+      "describe": "Run a single condition check",
+      "group": "manage-Options",
+    },
+  },
+]
+`;
+
 exports[`command manage it should be create the expected builder: usage 1`] = `
 Array [
   "Usage: $0 manage [options]",
