@@ -30,6 +30,8 @@
     }
   },
   "license": {
+    "disable": false,
+
     "replaceAliaseList": false,
     "replaceCompatibleList": false,
     "replaceHeuristicList": false,

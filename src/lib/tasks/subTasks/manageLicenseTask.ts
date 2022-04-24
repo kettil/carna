@@ -1,28 +1,25 @@
 import { basename } from 'path';
 import { isObject } from '@kettil/tool-lib';
 import { underline } from 'chalk';
-import { npmPackageWorkspacesAction } from '../actions/npm/packageWorkspaces';
-import { licensecheckAction } from '../actions/tools/licensecheckAction';
-import { getConfig } from '../cli/config';
-import { spinnerAction } from '../cli/spinner';
-import { table } from '../cli/table';
-import { exit } from '../cmd/exit';
-import { LicenseDisabledError } from '../errors/licenseDisabledError';
-import { LicenseIncompatibleError } from '../errors/licenseIncompatibleError';
-import type { Task } from '../types';
-import { taskHook } from '../utils/taskHook';
-import { getLicenseConfigs } from './license/getLicenseConfigs';
+import { licensecheckAction } from '../../actions/tools/licensecheckAction';
+import { getConfig } from '../../cli/config';
+import { spinnerAction } from '../../cli/spinner';
+import { table } from '../../cli/table';
+import { exit } from '../../cmd/exit';
+import { LicenseDisabledError } from '../../errors/licenseDisabledError';
+import { LicenseIncompatibleError } from '../../errors/licenseIncompatibleError';
+import type { Task } from '../../types';
+import { getLicenseConfigs } from '../license/getLicenseConfigs';
 
 const notice = `the license check(s) is only a suggestion and is ${underline('not')} legal advice`;
 
-type LicenseProps = {};
+type LicenseProps = {
+  workspacePaths: string[];
+};
 
-const licenseTask: Task<LicenseProps> = async (argv) => {
-  const workspacePaths = await npmPackageWorkspacesAction(argv);
+const manageLicenseTask: Task<LicenseProps> = async (argv, { workspacePaths }) => {
   const config = await getConfig(argv.root, 'license');
   const licenseConfig = getLicenseConfigs(isObject(config) ? config : {});
-
-  await taskHook(argv, { task: 'license', type: 'pre' });
 
   try {
     await [argv.root, ...workspacePaths].reduce(
@@ -49,9 +46,6 @@ const licenseTask: Task<LicenseProps> = async (argv) => {
 
     throw error;
   }
-
-  await taskHook(argv, { task: 'license', type: 'post' });
 };
 
-export type { LicenseProps };
-export { licenseTask };
+export { manageLicenseTask };

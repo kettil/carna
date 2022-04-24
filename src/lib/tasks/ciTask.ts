@@ -2,7 +2,6 @@ import type { PropsGlobal, Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 import { analyseTask } from './analyseTask';
 import { buildTask } from './buildTask';
-import { licenseTask } from './licenseTask';
 import { manageTask } from './manageTask';
 import { testTask } from './testTask';
 
@@ -22,7 +21,6 @@ const ciTask: Task<CiProps> = async (argv, { build }) => {
   await analyseTask(extendArgv, { all: true });
   await testTask(extendArgv, { verbose: true, runInBand: true });
   await manageTask(extendArgv, {});
-  await licenseTask(extendArgv, {});
 
   await taskHook(argv, { task: 'ci', type: 'post' });
 };

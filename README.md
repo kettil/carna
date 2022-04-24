@@ -114,27 +114,6 @@ If there is an `setupTests.[js|ts]` file in the test project folder, then the fi
 | 0         | Success     |
 | 1         | task failed |
 
-## The `license` task
-
-Carna checks the license compatibility of each dependency. The license is read from the `package.json` or from [another source](./src/lib/actions/tools/helpers/getPackageInfo.ts) from the dependency. The [compatibility list](./src/configs/licenseCompatibilities.ts) is used to validate the license for compatibility.
-
-If you think that an assignment is incorrect or can be added, please submit a pull request with the change in the [compatibility list](./src/configs/licenseCompatibilities.ts) or [license list](./src/configs/licensePackages.ts).
-
-If the project uses an unknown license, the compatibility check will be disabled.
-
-**_Note: License compatibility checking is only a suggestion and it is not legal advice. If you would like to have a legally binding assessment, please contact a lawyer._**
-
-### Options
-
-None
-
-### Exit codes
-
-| Exit code | Description |
-| --------- | ----------- |
-| 0         | Success     |
-| 1         | task failed |
-
 ## The `build` task
 
 Build the application
@@ -182,6 +161,17 @@ The task analyzes...
 
 - ...if there are orphaned packages.
   In the [carna config file](#carna-config-file) the subtask can be configured under the point `deps`.
+
+- ...the license compatibility of each dependency.
+  In the [carna config file](#carna-config-file) the subtask can be configured under the point `license`.
+  The license is read from the `package.json` or from [another source](./src/lib/actions/tools/helpers/getPackageInfo.ts) from the dependency.
+  The [compatibility list](./src/configs/licenseCompatibilities.ts) is used to validate the license for compatibility.
+
+  If you think that an assignment is incorrect or can be added, please submit a pull request with the change in the [compatibility list](./src/configs/licenseCompatibilities.ts) or [license list](./src/configs/licensePackages.ts).
+
+  If the project uses an unknown license, the compatibility check will be disabled.
+
+  **_Note: License compatibility checking is only a suggestion and it is not legal advice. If you would like to have a legally binding assessment, please contact a lawyer._**
 
 ### Options
 
@@ -256,6 +246,9 @@ The file is structured as follows
   },
 
   license: {
+    // Disables the verification
+    disable: false,
+
     // Whether to merge or replace the existing list with the list defined here
     replaceAliaseList: false,
     replaceCompatibleList: false,

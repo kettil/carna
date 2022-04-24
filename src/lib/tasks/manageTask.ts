@@ -5,6 +5,7 @@ import type { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 import { taskIsDiasbled } from '../utils/taskIsDiasbled';
 import { manageDepsTask } from './subTasks/managedepsTask';
+import { manageLicenseTask } from './subTasks/manageLicenseTask';
 import { managePackageLintTask } from './subTasks/managePackageLintTask';
 
 type ManageProps = {};
@@ -12,6 +13,7 @@ type ManageProps = {};
 const manageTask: Task<ManageProps> = async (argv) => {
   const packageLintDisable = await getConfig(argv.root, 'packageLint.disable');
   const depsDisable = await getConfig(argv.root, 'deps.disable');
+  const licenseDisable = await getConfig(argv.root, 'license.disable');
   const workspacePaths = await npmPackageWorkspacesAction(argv);
 
   await taskHook(argv, { task: 'manage', type: 'pre' });
@@ -28,6 +30,13 @@ const manageTask: Task<ManageProps> = async (argv) => {
     await taskIsDiasbled('Dependency verification is disabled');
   } else {
     await manageDepsTask(argv, { workspacePaths });
+  }
+
+  // check licenses
+  if (licenseDisable === true) {
+    await taskIsDiasbled('License verification is disabled');
+  } else {
+    await manageLicenseTask(argv, { workspacePaths });
   }
 
   await taskHook(argv, { task: 'manage', type: 'post' });
