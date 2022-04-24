@@ -4,12 +4,14 @@ import { getConfig } from '../cli/config';
 import type { Task } from '../types';
 import { taskHook } from '../utils/taskHook';
 import { taskIsDiasbled } from '../utils/taskIsDiasbled';
+import { manageDepsTask } from './subTasks/managedepsTask';
 import { managePackageLintTask } from './subTasks/managePackageLintTask';
 
 type ManageProps = {};
 
 const manageTask: Task<ManageProps> = async (argv) => {
   const packageLintDisable = await getConfig(argv.root, 'packageLint.disable');
+  const depsDisable = await getConfig(argv.root, 'deps.disable');
   const workspacePaths = await npmPackageWorkspacesAction(argv);
 
   await taskHook(argv, { task: 'manage', type: 'pre' });
@@ -19,6 +21,13 @@ const manageTask: Task<ManageProps> = async (argv) => {
     await taskIsDiasbled('package.json verification is disabled');
   } else {
     await managePackageLintTask(argv, { workspacePaths });
+  }
+
+  // check dependecies
+  if (depsDisable === true) {
+    await taskIsDiasbled('Dependency verification is disabled');
+  } else {
+    await manageDepsTask(argv, { workspacePaths });
   }
 
   await taskHook(argv, { task: 'manage', type: 'post' });

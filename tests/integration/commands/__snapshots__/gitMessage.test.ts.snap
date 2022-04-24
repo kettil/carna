@@ -245,30 +245,6 @@ exports[`command git with git "msg" hook it should work with hooks: child-proces
 Object {
   "args": Array [
     "run",
-    "precarna:deps",
-  ],
-  "command": "npm",
-  "cwd": "/path/to/project",
-  "env": Object {},
-}
-`;
-
-exports[`command git with git "msg" hook it should work with hooks: child-process 16`] = `
-Object {
-  "args": Array [
-    "run",
-    "postcarna:deps",
-  ],
-  "command": "npm",
-  "cwd": "/path/to/project",
-  "env": Object {},
-}
-`;
-
-exports[`command git with git "msg" hook it should work with hooks: child-process 17`] = `
-Object {
-  "args": Array [
-    "run",
     "postcarna:git",
   ],
   "command": "npm",

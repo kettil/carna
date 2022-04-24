@@ -229,30 +229,6 @@ exports[`command ci it should work with hooks: child-process 14`] = `
 Object {
   "args": Array [
     "run",
-    "precarna:deps",
-  ],
-  "command": "npm",
-  "cwd": "/path/to/project",
-  "env": Object {},
-}
-`;
-
-exports[`command ci it should work with hooks: child-process 15`] = `
-Object {
-  "args": Array [
-    "run",
-    "postcarna:deps",
-  ],
-  "command": "npm",
-  "cwd": "/path/to/project",
-  "env": Object {},
-}
-`;
-
-exports[`command ci it should work with hooks: child-process 16`] = `
-Object {
-  "args": Array [
-    "run",
     "postcarna:ci",
   ],
   "command": "npm",
