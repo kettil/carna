@@ -1,7 +1,6 @@
 import { basename } from 'path';
 import { isArray, isString } from '@kettil/tool-lib';
 import { depcheckAction } from '../../actions/tools/depcheck';
-import { semverAction } from '../../actions/tools/semver';
 import { getConfig } from '../../cli/config';
 import { spinnerAction } from '../../cli/spinner';
 import { DependencyError } from '../../errors/dependencyError';
@@ -37,14 +36,6 @@ const manageDepsTask: Task<ManageDepsProps> = async (argv, { workspacePaths }) =
           argv.log.log(error.list);
         }
       }),
-    Promise.resolve(),
-  );
-
-  await spinnerAction(semverAction(argv, {}), 'Semver check');
-
-  await workspacePaths.reduce(
-    async (promise, path) =>
-      promise.then(async () => spinnerAction(semverAction(argv, { path }), `Semver check [${basename(path)}]`)),
     Promise.resolve(),
   );
 };

@@ -57,10 +57,6 @@ type PrettierActionProps = {
   files?: string[];
 };
 
-type SemverActionProps = {
-  path?: string;
-};
-
 type TscActionProps = {
   mode: 'type-check' | 'type-create';
 };
@@ -76,6 +72,5 @@ export type {
   JestActionProps,
   LicensecheckActionProps,
   PrettierActionProps,
-  SemverActionProps,
   TscActionProps,
 };
