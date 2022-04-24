@@ -14,7 +14,7 @@ describe('command manage', () => {
   });
 
   test('it should be create the expected builder', () => {
-    expect.assertions(1);
+    expect.assertions(2);
 
     const yargs = {
       options: jest.fn((...args: unknown[]) => {
