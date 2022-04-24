@@ -48,6 +48,15 @@ const prettierConfigFiles = [
   'prettier.config.js',
 ];
 
+// npm-package-json-lint
+const packageLintCommonFiles = ['.npmpackagejsonlintrc.json', 'npmpackagejsonlint.config.js'];
+const packageLintFiles = {
+  app: ['.npmpackagejsonlintrc.app.json', ...packageLintCommonFiles],
+  cli: ['.npmpackagejsonlintrc.cli.json', ...packageLintCommonFiles],
+  lib: ['.npmpackagejsonlintrc.lib.json', ...packageLintCommonFiles],
+  monorepo: ['.npmpackagejsonlintrc.monorepo.json', ...packageLintCommonFiles],
+};
+
 // typescript
 const typescriptConfigFiles = ['tsconfig.json'];
 const typescriptBuildConfigFiles = ['tsconfig.build.json', 'tsconfig.json'];
@@ -78,6 +87,7 @@ export {
   jestConfigFiles,
   jestPreOrderProjects,
   licenseFilenameRegExp,
+  packageLintFiles,
   pinoPrettyCommand,
   pinoPrettyIgnoreKeys,
   prettierCiExtensions,

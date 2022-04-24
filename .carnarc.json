@@ -39,6 +39,9 @@
       "packages": []
     }
   },
+  "packageLint": {
+    "disable": false
+  },
   "log": {
     "ignore": {
       "keys": []

@@ -1,0 +1,3 @@
+{
+  "extends": "@kettil/npm-package-json-lint-config/cli"
+}

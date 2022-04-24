@@ -11,6 +11,7 @@ import { taskHook } from '../utils/taskHook';
 import { analysePreServices, analyseSuffixServices, analyseTask } from './analyseTask';
 import { depsTask } from './depsTask';
 import { licenseTask } from './licenseTask';
+import { manageTask } from './manageTask';
 import { testTask } from './testTask';
 
 const hooks = ['msg', 'commit'] as const;
@@ -54,6 +55,7 @@ const gitTask: Task<GitProps> = async (argv, { edit, hook }) => {
       await commitlintAction(argv, { edit });
       await analyseTask({ ...argv, ci: false }, { files: { eslintFiles, prettierFiles }, only: analyseSuffixServices });
       await testTask({ ...argv, ci: true }, {});
+      await manageTask(argv, {});
       await licenseTask(argv, {});
       await depsTask(argv, {});
 

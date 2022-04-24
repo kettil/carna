@@ -1,47 +1,41 @@
 {
   "name": "carna",
   "version": "8.0.0-beta.1",
-  "description": "Global management of the config files",
+  "description": "Global management of the config files.",
+  "license": "MIT",
+  "private": false,
+  "contributors": [
+    {
+      "name": "Kjell Dießel",
+      "email": "development@kettil.de"
+    }
+  ],
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "scripts": {
-    "start": "node ./build/bin/index.js",
-    "watch": "npm run build:babel -- --watch",
-    "build": "npm run build:types && npm run build:babel",
-    "build:types": "tsc --outDir ./build --project ./tsconfig.build.json --noEmit false --emitDeclarationOnly",
-    "build:babel": "babel -d build --extensions .ts,.tsx src",
-    "prebuild": "rm -rf ./build",
-    "test": "node ./build/bin/index.js test --vvv",
-    "test:unit": "node ./build/bin/index.js test --vvv -p unit -w",
-    "test:integration": "node ./build/bin/index.js test --vvv -p integration -w",
-    "analyse": "node ./build/bin/index.js analyse --vvv",
-    "deps": "node ./build/bin/index.js deps --vvv",
-    "license": "node ./build/bin/index.js license --vvv",
-    "pretest": "npm run build:babel",
-    "pretest:unit": "npm run build:babel",
-    "pretest:integration": "npm run build:babel",
-    "pretest:e2e": "npm run build:babel",
-    "preanalyse": "npm run build:babel",
-    "predeps": "npm run build:babel",
-    "prelicense": "npm run build:babel",
-    "prepare": "[ \"$CI\" != \"\" ] || husky install"
-  },
-  "keywords": [],
-  "author": "Kjell Dießel <development@kettil.de>",
-  "license": "MIT",
-  "engines": {
-    "node": ">= 16.10",
-    "npm": ">= 8"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kettil/carna"
-  },
-  "bugs": {
-    "url": "https://github.com/kettil/carna/issues/new"
-  },
   "bin": {
     "carna": "build/bin/index.js"
+  },
+  "scripts": {
+    "analyse": "node ./build/bin/index.js analyse --vvv",
+    "build": "npm run build:types && npm run build:babel",
+    "build:babel": "babel -d build --extensions .ts,.tsx src",
+    "build:types": "tsc --outDir ./build --project ./tsconfig.build.json --noEmit false --emitDeclarationOnly",
+    "deps": "node ./build/bin/index.js deps --vvv",
+    "license": "node ./build/bin/index.js license --vvv",
+    "preanalyse": "npm run build:babel",
+    "prebuild": "rm -rf ./build",
+    "predeps": "npm run build:babel",
+    "prelicense": "npm run build:babel",
+    "prepare": "[ \"$CI\" != \"\" ] || husky install",
+    "pretest": "npm run build:babel",
+    "pretest:e2e": "npm run build:babel",
+    "pretest:integration": "npm run build:babel",
+    "pretest:unit": "npm run build:babel",
+    "start": "node ./build/bin/index.js",
+    "test": "node ./build/bin/index.js test --vvv",
+    "test:integration": "node ./build/bin/index.js test --vvv -p integration -w",
+    "test:unit": "node ./build/bin/index.js test --vvv -p unit -w",
+    "watch": "npm run build:babel -- --watch"
   },
   "dependencies": {
     "@babel/cli": "7.17.6",
@@ -53,6 +47,7 @@
     "@commitlint/cli": "16.2.3",
     "@kettil/commitlint-config": "2.0.2",
     "@kettil/eslint-config": "4.3.1",
+    "@kettil/npm-package-json-lint-config": "1.0.0",
     "@kettil/semantic-release-config": "2.0.3",
     "@kettil/tool-lib": "3.3.1",
     "@types/glob": "7.2.0",
@@ -74,6 +69,7 @@
     "istanbul-lib-report": "3.0.0",
     "istanbul-reports": "3.1.4",
     "jest": "27.5.1",
+    "npm-package-json-lint": "6.3.0",
     "ora": "5.4.1",
     "pino-pretty": "7.6.1",
     "prettier": "2.6.2",
@@ -85,5 +81,21 @@
     "@types/node": "17.0.25",
     "eslint-plugin-jest": "26.1.4",
     "typescript": "4.6.3"
+  },
+  "homepage": "https://github.com/kettil/carna/tree/main#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kettil/carna"
+  },
+  "bugs": {
+    "url": "https://github.com/kettil/carna/issues/new"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">= 16.10",
+    "npm": ">= 8"
   }
 }
