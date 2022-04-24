@@ -27,17 +27,16 @@ npx carna
 
 The following commands are available:
 
-| Commands                       | Description                           |
-| ------------------------------ | ------------------------------------- |
-| [`analyse`](#the-analyse-task) | Run the code quality tools            |
-| [`test`](#the-test-task)       | Run the tests                         |
-| [`deps`](#the-deps-task)       | Checks if there are orphaned packages |
-| [`license`](#the-license-task) | Checks for incompatible licenses      |
-| [`build`](#the-build-task)     | Build the application                 |
-| [`start`](#the-start-task)     | Run a script                          |
-| [`manage`](#the-manage-task)   | Run general conditions check          |
-| [`ci`](#the-ci-task)           | Run different Tasks as unit           |
-| [`git`](#the-git-task)         | Handler for the git hooks             |
+| Commands                       | Description                      |
+| ------------------------------ | -------------------------------- |
+| [`analyse`](#the-analyse-task) | Run the code quality tools       |
+| [`test`](#the-test-task)       | Run the tests                    |
+| [`license`](#the-license-task) | Checks for incompatible licenses |
+| [`build`](#the-build-task)     | Build the application            |
+| [`start`](#the-start-task)     | Run a script                     |
+| [`manage`](#the-manage-task)   | Run general conditions check     |
+| [`ci`](#the-ci-task)           | Run different Tasks as unit      |
+| [`git`](#the-git-task)         | Handler for the git hooks        |
 
 For the help text, execute `npx carna --help` and the individual commands `npx carna <command> --help`.
 
@@ -115,22 +114,6 @@ If there is an `setupTests.[js|ts]` file in the test project folder, then the fi
 | 0         | Success     |
 | 1         | task failed |
 
-## The `deps` task
-
-Checks if there are orphaned packages
-
-Packages that are no longer to be listed can be defined in the `.depsignore` file (in the project directory), directly or with a wildcard (e.g. `babel-*`).
-
-### Options
-
-None
-
-### Exit codes
-
-| Exit code | Description |
-| --------- | ----------- |
-| 0         | Success     |
-
 ## The `license` task
 
 Carna checks the license compatibility of each dependency. The license is read from the `package.json` or from [another source](./src/lib/actions/tools/helpers/getPackageInfo.ts) from the dependency. The [compatibility list](./src/configs/licenseCompatibilities.ts) is used to validate the license for compatibility.
@@ -195,8 +178,10 @@ Calls the application directly, without build process.
 The task analyzes...
 
 - ...the structure of package.json.
+  In the [carna config file](#carna-config-file) the subtask can be configured under the point `packageLint`.
 
-  In the [carna config file](#carna-config-file) the check can be deactivated under the point `packageLint`.
+- ...if there are orphaned packages.
+  In the [carna config file](#carna-config-file) the subtask can be configured under the point `deps`.
 
 ### Options
 
@@ -261,6 +246,9 @@ The file is structured as follows
 ```json5
 {
   deps: {
+    // Disables the verification
+    disable: false,
+
     ignore: {
       // Ignores the packets when checking whether a packet is used or not
       packages: [],

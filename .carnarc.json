@@ -1,5 +1,7 @@
 {
   "deps": {
+    "disable": false,
+
     "ignore": {
       "packages": [
         "@commitlint/cli",

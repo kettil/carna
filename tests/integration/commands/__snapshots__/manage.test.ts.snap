@@ -5,3 +5,71 @@ Array [
   "Usage: $0 manage [options]",
 ]
 `;
+
+exports[`command manage it should work with hooks: depcheck 1`] = `
+Array [
+  "/path/to/project",
+  Object {
+    "detectors": Array [
+      [Function],
+      [Function],
+    ],
+    "ignoreMatches": Array [
+      "@types/node",
+      "typescript",
+      "carna",
+    ],
+    "ignorePatterns": Array [
+      "node_modules",
+      "build",
+    ],
+    "parsers": Object {
+      "**/*.js": [Function],
+      "**/*.jsx": [Function],
+      "**/*.ts": [Function],
+      "**/*.tsx": [Function],
+    },
+    "specials": Array [
+      [Function],
+      [Function],
+      [Function],
+      [Function],
+      [Function],
+    ],
+  },
+]
+`;
+
+exports[`command manage it should work: depcheck 1`] = `
+Array [
+  "/path/to/project",
+  Object {
+    "detectors": Array [
+      [Function],
+      [Function],
+    ],
+    "ignoreMatches": Array [
+      "@types/node",
+      "typescript",
+      "carna",
+    ],
+    "ignorePatterns": Array [
+      "node_modules",
+      "build",
+    ],
+    "parsers": Object {
+      "**/*.js": [Function],
+      "**/*.jsx": [Function],
+      "**/*.ts": [Function],
+      "**/*.tsx": [Function],
+    },
+    "specials": Array [
+      [Function],
+      [Function],
+      [Function],
+      [Function],
+      [Function],
+    ],
+  },
+]
+`;
