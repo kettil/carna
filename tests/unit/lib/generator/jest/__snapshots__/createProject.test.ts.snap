@@ -2,7 +2,7 @@
 
 exports[`createProject() it should work with workspaces 1`] = `
 Object {
-  "bail": 10,
+  "bail": 1,
   "clearMocks": true,
   "displayName": Object {
     "color": "green",
@@ -27,7 +27,7 @@ Object {
 
 exports[`createProject() it should work without workspaces 1`] = `
 Object {
-  "bail": 10,
+  "bail": 1,
   "clearMocks": true,
   "displayName": Object {
     "color": "green",

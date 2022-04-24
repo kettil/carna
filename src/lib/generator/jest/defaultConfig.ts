@@ -1,5 +1,5 @@
 const defaultConfig = {
-  bail: 10,
+  bail: 1,
 
   testEnvironment: 'node',
 
