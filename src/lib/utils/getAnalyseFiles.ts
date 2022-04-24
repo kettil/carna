@@ -1,8 +1,9 @@
 import { join } from 'path';
 import { promisify } from 'util';
-import { isString } from '@kettil/tool-lib';
+import { isString, uniqueArray } from '@kettil/tool-lib';
 import { glob } from 'glob';
 import { gitLsAction } from '../actions/git/ls';
+import { gitStagedAction } from '../actions/git/staged';
 import { access } from '../cmd/access';
 import { existFiles } from '../cmd/existFiles';
 import type { Task } from '../types';
@@ -37,8 +38,12 @@ const getAnalyseFiles: Task<{ path?: string; all?: boolean; files?: AnalyseFiles
     return undefined;
   }
 
-  const changedFiles = await gitLsAction(argv, { mode: 'all' });
-  const changedAndExistFiles = await existFiles(changedFiles, argv.root);
+  const [changedFiles, stagedFiles] = await Promise.all([
+    gitLsAction(argv, { mode: 'all' }),
+    gitStagedAction(argv, {}),
+  ]);
+
+  const changedAndExistFiles = await existFiles(uniqueArray([...changedFiles, ...stagedFiles]), argv.root);
 
   return cleanAnalyseFiles(changedAndExistFiles);
 };
