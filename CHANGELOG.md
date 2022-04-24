@@ -1,5 +1,24 @@
 # Changelog
 
+# [8.0.0-beta.3](https://github.com/kettil/carna/compare/8.0.0-beta.2...8.0.0-beta.3) (2022-04-24)
+
+
+### Features
+
+* add the parameter "only" to the command "manage" ([5d5f3c3](https://github.com/kettil/carna/commit/5d5f3c3c204b96eb7f35df82a0a4c7d68c77fc86))
+* export the manage task ([80f56f8](https://github.com/kettil/carna/commit/80f56f8eda151e07256d8b7bca36f6c97779b86e))
+* integration of the "deps" command into "manage" command ([e2e9cc9](https://github.com/kettil/carna/commit/e2e9cc92bb1ae72a85e33fdf5fa6742d778411ad))
+* integration of the "license" command into "manage" command ([96f0cee](https://github.com/kettil/carna/commit/96f0cee61894f24477dee6c970a9158c308e884c))
+* remove the "semver" action, since functionality is already present ([35242c5](https://github.com/kettil/carna/commit/35242c552db323cce950e3dcc447fc4cd9959bf2))
+* replace the package @kettil/tool-lib with @kettil/tools ([d476902](https://github.com/kettil/carna/commit/d47690270891e0d4686fbbd6953b26d86c1efe22))
+
+
+### BREAKING CHANGES
+
+* The "semver" action has been removed because it is integrated in the packageLint.
+* The "license" command was removed and the functionality was integrated in the "manage" command.
+* The "deps" command was removed and the functionality was integrated in the "manage" command.
+
 # [8.0.0-beta.2](https://github.com/kettil/carna/compare/8.0.0-beta.1...8.0.0-beta.2) (2022-04-24)
 
 
