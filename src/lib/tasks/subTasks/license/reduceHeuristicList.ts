@@ -1,5 +1,5 @@
 import { isString } from '@kettil/tools';
-import type { LicenseHeuristics } from '../../types';
+import type { LicenseHeuristics } from '../../../types';
 
 const reduceHeuristicList = (
   regexps: LicenseHeuristics,

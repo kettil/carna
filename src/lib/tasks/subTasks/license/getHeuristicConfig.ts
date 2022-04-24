@@ -1,5 +1,5 @@
 import { isObject, objectEntries } from '@kettil/tools';
-import type { LicenseHeuristics } from '../../types';
+import type { LicenseHeuristics } from '../../../types';
 import { reduceHeuristicList } from './reduceHeuristicList';
 
 const getHeuristicConfig = ({

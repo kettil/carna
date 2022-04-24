@@ -1,5 +1,5 @@
 import { isObject, objectEntries } from '@kettil/tools';
-import type { LicenseAliases } from '../../types';
+import type { LicenseAliases } from '../../../types';
 import { reduceAliasList } from './reduceAliasList';
 
 const getAliasConfig = ({
