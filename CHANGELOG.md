@@ -1,5 +1,41 @@
 # Changelog
 
+# [8.0.0](https://github.com/kettil/carna/compare/7.1.6...8.0.0) (2022-04-25)
+
+
+### Bug Fixes
+
+* bump @kettil/npm-package-json-lint-config from 1.0.0 to 1.1.0 ([bb9d434](https://github.com/kettil/carna/commit/bb9d4348f1db9f8213feb5d5716739e9ef64da6b))
+* changes made by "analyse" were no longer applied during the commit ([6af6782](https://github.com/kettil/carna/commit/6af67822bda1e4d984de154d278ff1559e251797)), closes [#794](https://github.com/kettil/carna/issues/794)
+* depcheck does not ignore the build folder ([73b80c9](https://github.com/kettil/carna/commit/73b80c9c103a94114347c5980c70e1deaf829e9b)), closes [#792](https://github.com/kettil/carna/issues/792)
+* **deps:** bump @kettil/eslint-config from 4.3.0 to 4.3.1 ([f002954](https://github.com/kettil/carna/commit/f0029544b2ed80ea2fbabaee08d8d3a9f506c1fb))
+* **deps:** bump babel-loader from 8.2.4 to 8.2.5 ([71c3d29](https://github.com/kettil/carna/commit/71c3d296deb4d1b66bff2252563b0a607772f5d2))
+* prettier ignores css files ([22d5793](https://github.com/kettil/carna/commit/22d579372a0e19a2dba8e8f5bf2e2a847ec0ad9f)), closes [#796](https://github.com/kettil/carna/issues/796)
+* when running "analysis" gestaged files were ignored ([70ab4c5](https://github.com/kettil/carna/commit/70ab4c55d9f233b5d8b11ce533ffad3b17276711))
+
+
+### Features
+
+* add "npm-package-json-lint" linter with the new "manage" command ([9b5ad76](https://github.com/kettil/carna/commit/9b5ad769b41d6f9ff7e34b61b71b4dedb00589c2)), closes [#795](https://github.com/kettil/carna/issues/795)
+* add the "path" parameter to the "analyse" command ([b232fd7](https://github.com/kettil/carna/commit/b232fd78084e8cba79371fd10e93777b0e221e8c)), closes [#791](https://github.com/kettil/carna/issues/791)
+* add the parameter "only" to the command "manage" ([f067e3c](https://github.com/kettil/carna/commit/f067e3ccfef7167332aedeac4feb3a9f0b19a701))
+* change the jest default "bail" value from 10 to 1 ([f5eb2a2](https://github.com/kettil/carna/commit/f5eb2a289d8a7be17cb1cce4bef53a6d5cce803c))
+* changing the order of checks in the git commit/msg hook ([0049968](https://github.com/kettil/carna/commit/0049968a957f56c03f6af1d4742bd26a27d19ded)), closes [#794](https://github.com/kettil/carna/issues/794)
+* export the manage task ([18c4df4](https://github.com/kettil/carna/commit/18c4df4dc758e50cf5f3994f6c475ec69a991763))
+* in "analyze" only the changed files are checked by default ([f6f45bf](https://github.com/kettil/carna/commit/f6f45bfe886a4ed4de137a8e8b080a246b85afd1)), closes [#793](https://github.com/kettil/carna/issues/793)
+* integration of the "deps" command into "manage" command ([1ab422a](https://github.com/kettil/carna/commit/1ab422a7a86b20989b563a40646a1558c364f0a2))
+* integration of the "license" command into "manage" command ([e7cc529](https://github.com/kettil/carna/commit/e7cc529a254ebd9b4ad35b213ea7058cbee82261))
+* remove the "semver" action, since functionality is already present ([6e1a9e5](https://github.com/kettil/carna/commit/6e1a9e5774568174f45dd42bbbc58fec418dffae))
+* replace the package @kettil/tool-lib with @kettil/tools ([a3c4f04](https://github.com/kettil/carna/commit/a3c4f0475527d9dc271ad4fe76b2c942368cc392))
+
+
+### BREAKING CHANGES
+
+* The "semver" action has been removed because it is integrated in the packageLint.
+* The "license" command was removed and the functionality was integrated in the "manage" command.
+* The "deps" command was removed and the functionality was integrated in the "manage" command.
+* The behavior of "analyze" has been changed, as previously all files were always checked.
+
 # [8.0.0-beta.3](https://github.com/kettil/carna/compare/8.0.0-beta.2...8.0.0-beta.3) (2022-04-24)
 
 
