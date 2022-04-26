@@ -31,8 +31,8 @@ type LicenseAliases = Record<string, Record<string, string>>;
 type LicensePackageInfo = {
   path: string;
   name: string;
-  license: string | 'UNKNOWN';
-  version: string | 'UNKNOWN';
+  license: string;
+  version: string;
 };
 type LicenseConfig = {
   compatibilities: LicenseCompatibilities;
