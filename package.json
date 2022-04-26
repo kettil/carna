@@ -80,6 +80,9 @@
     "eslint-plugin-jest": "26.1.5",
     "typescript": "4.6.3"
   },
+  "bundledDependencies": [
+    "@kettil/tools"
+  ],
   "homepage": "https://github.com/kettil/carna/tree/main#readme",
   "repository": {
     "type": "git",
