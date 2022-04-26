@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.2](https://github.com/kettil/carna/compare/8.0.1...8.0.2) (2022-04-26)
+
+
+### Bug Fixes
+
+* chicken and egg problem with an internal package ([2261523](https://github.com/kettil/carna/commit/2261523b8d84d486045e687ae618f63fc1e4db9b))
+
 ## [8.0.2-beta.1](https://github.com/kettil/carna/compare/8.0.1...8.0.2-beta.1) (2022-04-26)
 
 
