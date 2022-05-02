@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.0.3](https://github.com/kettil/carna/compare/8.0.2...8.0.3) (2022-05-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/cli from 16.2.3 to 16.2.4 ([66f7802](https://github.com/kettil/carna/commit/66f780205f0d34612ae7d370eaab64956971a5a6))
+* **deps:** bump @kettil/eslint-config from 4.3.3 to 4.4.0 ([358dbe3](https://github.com/kettil/carna/commit/358dbe3d601812e3cdb19fa5e7109001f1df36f4))
+* **deps:** bump babel-jest from 28.0.0 to 28.0.1 ([db4615b](https://github.com/kettil/carna/commit/db4615b9df2a3ca15d102c67122a8b120d2d6515))
+* **deps:** bump babel-jest from 28.0.1 to 28.0.2 ([4ed1a17](https://github.com/kettil/carna/commit/4ed1a170567f8025899835f8dc286440bf9a7b6a))
+* **deps:** bump jest from 28.0.0 to 28.0.1 ([0419f83](https://github.com/kettil/carna/commit/0419f838829f4749f01d1adab72346272e9e8447))
+* **deps:** bump jest from 28.0.1 to 28.0.2 ([28f522c](https://github.com/kettil/carna/commit/28f522cb21d2b1719a5c18d1c3c0198f70d98421))
+
 ## [8.0.2](https://github.com/kettil/carna/compare/8.0.1...8.0.2) (2022-04-26)
 
 
