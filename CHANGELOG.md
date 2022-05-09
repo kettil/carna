@@ -1,5 +1,20 @@
 # Changelog
 
+## [8.0.4](https://github.com/kettil/carna/compare/8.0.3...8.0.4) (2022-05-09)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.17.6 to 7.17.10 ([edc1a43](https://github.com/kettil/carna/commit/edc1a436a57453340a45c83a9b4e7c708bdc3de9))
+* **deps:** bump @babel/core from 7.17.9 to 7.17.10 ([e43439c](https://github.com/kettil/carna/commit/e43439cbf644ec9b217a5eb16b471a1323febdc5))
+* **deps:** bump @babel/node from 7.16.8 to 7.17.10 ([1bee198](https://github.com/kettil/carna/commit/1bee198dc8d8d81afbc5e94bf8ec39aad74404aa))
+* **deps:** bump @babel/plugin-transform-runtime from 7.17.0 to 7.17.10 ([3cbe05a](https://github.com/kettil/carna/commit/3cbe05a28f861e7cdc2b6c927476e4d91b99aad2))
+* **deps:** bump @babel/preset-env from 7.16.11 to 7.17.10 ([92f42c4](https://github.com/kettil/carna/commit/92f42c40f4735f574c786ae28e0b989f2707cb20))
+* **deps:** bump @kettil/eslint-config from 4.4.0 to 4.4.1 ([1bfa5f0](https://github.com/kettil/carna/commit/1bfa5f0811032ecd347c34352ed5ffd460267908))
+* **deps:** bump @types/jest from 27.4.1 to 27.5.0 ([a3f4cd8](https://github.com/kettil/carna/commit/a3f4cd86c536af82088ffa72ade35ab80d56e82b))
+* **deps:** bump babel-jest from 28.0.2 to 28.0.3 ([eb7b50e](https://github.com/kettil/carna/commit/eb7b50e165492f8fa42144a0fcbb4a41cc83fdce))
+* **deps:** bump jest from 28.0.2 to 28.0.3 ([116a6e6](https://github.com/kettil/carna/commit/116a6e6d4615ab4711dab337c7ed0be037d95268))
+
 ## [8.0.3](https://github.com/kettil/carna/compare/8.0.2...8.0.3) (2022-05-02)
 
 
