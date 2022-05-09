@@ -24,6 +24,9 @@ npm-debug.log
 /tsconfig*
 /webpack*
 
+# map files
+**/build/**/*.ts.map
+
 # test files
 **/*.test.js
 **/*.test.ts

@@ -5,6 +5,7 @@
     "lib": ["DOM", "ESNext"],
     "jsx": "react",
     "declaration": true,
+    "declarationMap": true,
     "isolatedModules": true,
     "noEmit": true,
 
