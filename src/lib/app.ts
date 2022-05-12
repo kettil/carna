@@ -26,7 +26,14 @@ const app = async (argv: string[]): Promise<void> => {
     .option('root', { default: root, type: 'string', hidden: true })
     .option('cwd', { default: cwd, type: 'string', hidden: true })
     .option('cfg', { default: cfg, type: 'string', hidden: true })
-    .middleware((argsInterpreted) => ({ log: logger(argsInterpreted) }))
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment -- is specified by yargs
+    // @ts-expect-error
+    .middleware((argsInterpreted) => {
+      // eslint-disable-next-line no-param-reassign -- is specified by yargs
+      argsInterpreted.log = logger(argsInterpreted);
+
+      return argsInterpreted;
+    })
     // eslint-disable-next-line @typescript-eslint/naming-convention -- external schema
     .parserConfiguration({ 'strip-aliased': true })
     .commandDir('../lib/commands')
