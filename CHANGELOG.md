@@ -1,5 +1,27 @@
 # Changelog
 
+# [8.1.0](https://github.com/kettil/carna/compare/8.0.4...8.1.0) (2022-05-16)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 4.4.1 to 4.5.0 ([3ac1685](https://github.com/kettil/carna/commit/3ac168577598797f072e566c17165c753f503755))
+* **deps:** bump @types/jest from 27.5.0 to 27.5.1 ([d87ad78](https://github.com/kettil/carna/commit/d87ad780da89ca9cdd613be1860602b1a63b84b4))
+* **deps:** bump @types/yargs from 17.0.9 to 17.0.10 ([5589f34](https://github.com/kettil/carna/commit/5589f345e626ee9116709b78a6787255460ffcfc))
+* **deps:** bump babel-jest from 28.0.3 to 28.1.0 ([126028b](https://github.com/kettil/carna/commit/126028b54c6c7a4b1ce8e974ca1f046414bea483))
+* **deps:** bump eslint from 8.14.0 to 8.15.0 ([2e01c8b](https://github.com/kettil/carna/commit/2e01c8b2b0461c70f62facb7dac791fa9500e7bf))
+* **deps:** bump glob from 8.0.1 to 8.0.2 ([e6a94b2](https://github.com/kettil/carna/commit/e6a94b297ee7ab290e6e284f562f8df608d34d5a))
+* **deps:** bump husky from 7.0.4 to 8.0.0 ([ed6c8b3](https://github.com/kettil/carna/commit/ed6c8b35494409b5c96a3ac51d31974e373e4b58))
+* **deps:** bump husky from 8.0.0 to 8.0.1 ([4d7a534](https://github.com/kettil/carna/commit/4d7a534d478fa797cb9af99e1165dca82d8fcee3))
+* **deps:** bump jest from 28.0.3 to 28.1.0 ([e83b084](https://github.com/kettil/carna/commit/e83b0848a2369fc2cc999b03bf1a072c88ad373a))
+* **deps:** bump yargs from 17.4.1 to 17.5.0 ([5af029f](https://github.com/kettil/carna/commit/5af029f806b2054f47171a24710d26acbb87e24a))
+* fix yargs typescript error ([35e0382](https://github.com/kettil/carna/commit/35e0382cf4d078475a161fdd8c8140b0794e5577))
+
+
+### Features
+
+* enable "declarationMap" in the typescript config ([c396dcf](https://github.com/kettil/carna/commit/c396dcff03e90980cd15eca1379b5c863aeb0d44))
+
 ## [8.0.4](https://github.com/kettil/carna/compare/8.0.3...8.0.4) (2022-05-09)
 
 
