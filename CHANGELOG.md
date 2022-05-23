@@ -1,5 +1,23 @@
 # Changelog
 
+## [8.1.1](https://github.com/kettil/carna/compare/8.1.0...8.1.1) (2022-05-23)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.17.10 to 7.17.12 ([b0a75b0](https://github.com/kettil/carna/commit/b0a75b0c1e89b2300d5a8567cc1740bc70951ecb))
+* **deps:** bump @babel/core from 7.17.12 to 7.18.0 ([aa5269f](https://github.com/kettil/carna/commit/aa5269f0296ce85aca751659ca896fb8576fe9d6))
+* **deps:** bump @babel/plugin-transform-runtime from 7.17.10 to 7.17.12 ([0c8f1e5](https://github.com/kettil/carna/commit/0c8f1e5110827621f666d3013a58c6956dfa45a9))
+* **deps:** bump @babel/plugin-transform-runtime from 7.17.12 to 7.18.0 ([f38a1f2](https://github.com/kettil/carna/commit/f38a1f2282434213e2de05c805853e4c0f35c8de))
+* **deps:** bump @babel/preset-env from 7.17.10 to 7.17.12 ([d4a1589](https://github.com/kettil/carna/commit/d4a15898ca694d04459ff82f39181489dd63a35e))
+* **deps:** bump @babel/preset-env from 7.17.12 to 7.18.0 ([d010e50](https://github.com/kettil/carna/commit/d010e5094a397cb4c226c635345d920e812d2e0f))
+* **deps:** bump @babel/preset-typescript from 7.16.7 to 7.17.12 ([35fc624](https://github.com/kettil/carna/commit/35fc6242237a15325305338b9e024b3eb9b44924))
+* **deps:** bump @commitlint/cli from 16.2.4 to 16.3.0 ([c4ebbc3](https://github.com/kettil/carna/commit/c4ebbc31ce2e9940533dec01208e5777b1539e81))
+* **deps:** bump @commitlint/cli from 16.3.0 to 17.0.0 ([5bf1410](https://github.com/kettil/carna/commit/5bf14107853ebcc2f6590527141b00239fd33102))
+* **deps:** bump @kettil/eslint-config from 4.5.0 to 4.5.1 ([e037ade](https://github.com/kettil/carna/commit/e037ade47767ef486c60f189cf1c9f60e99656e7))
+* **deps:** bump glob from 8.0.2 to 8.0.3 ([876212d](https://github.com/kettil/carna/commit/876212d41b95edaae300effc1872819dfbfe161b))
+* **deps:** bump yargs from 17.5.0 to 17.5.1 ([e799f51](https://github.com/kettil/carna/commit/e799f51c9c433b714491b5a060afb89f7f9d3db3))
+
 # [8.1.0](https://github.com/kettil/carna/compare/8.0.4...8.1.0) (2022-05-16)
 
 
