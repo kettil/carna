@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.1.2](https://github.com/kettil/carna/compare/8.1.1...8.1.2) (2022-05-23)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint from 8.15.0 to 8.16.0 ([4baa0d0](https://github.com/kettil/carna/commit/4baa0d0e65b1dd4a7eb58cd50ce76313f4195d92))
+
 ## [8.1.1](https://github.com/kettil/carna/compare/8.1.0...8.1.1) (2022-05-23)
 
 
