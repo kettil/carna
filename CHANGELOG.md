@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.1.4](https://github.com/kettil/carna/compare/8.1.3...8.1.4) (2022-06-01)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/cli from 17.0.1 to 17.0.2 ([158f8e4](https://github.com/kettil/carna/commit/158f8e4a1771b4e23700df7aa49b099e1e391b30))
+* **deps:** bump pino-pretty from 7.6.1 to 8.0.0 ([5eaf1ee](https://github.com/kettil/carna/commit/5eaf1ee6fff18bf82e6fdc69428f0878d0e08ae7))
+
 ## [8.1.3](https://github.com/kettil/carna/compare/8.1.2...8.1.3) (2022-05-30)
 
 
