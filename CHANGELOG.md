@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.1.5](https://github.com/kettil/carna/compare/8.1.4...8.1.5) (2022-06-06)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/jest from 27.5.1 to 28.1.0 ([86d3a35](https://github.com/kettil/carna/commit/86d3a357e55cd8fcffe50ed4d355bdfe226dd36c))
+* **deps:** bump eslint from 8.16.0 to 8.17.0 ([0294320](https://github.com/kettil/carna/commit/029432084d1898b56dc9a5d0da076d46e475c154))
+
 ## [8.1.4](https://github.com/kettil/carna/compare/8.1.3...8.1.4) (2022-06-01)
 
 
