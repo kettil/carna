@@ -22,13 +22,13 @@ const builder = createBuilder<StartProps>(command, (yargs) =>
       alias: 's',
       describe: 'Script to be called (default: src/index.[ts|js])',
     },
-    // eslint-disable-next-line @typescript-eslint/naming-convention -- terminal name schema
+
     'build-dependencies': {
       ...boolOptions,
       alias: 'b',
       describe: 'In a monorepo, all packages are built beforehand',
     },
-    // eslint-disable-next-line @typescript-eslint/naming-convention -- terminal name schema
+
     'clear-console': {
       ...boolOptions,
       alias: 'c',
@@ -36,7 +36,7 @@ const builder = createBuilder<StartProps>(command, (yargs) =>
       conflicts: ['pino-pretty'],
       describe: 'Clear console on each restart (only with watch mode)',
     },
-    // eslint-disable-next-line @typescript-eslint/naming-convention -- terminal name schema
+
     'pino-pretty': {
       ...boolOptions,
       alias: 'p',

@@ -31,7 +31,6 @@ const getReadFileFiles = (files: Record<string, string> = {}): Record<string, st
     name: 'workspace-name-a',
     license: 'MIT',
     dependencies: {
-      // eslint-disable-next-line @typescript-eslint/naming-convention -- package name
       'workspace-name-b': '0.1.0',
     },
   }),

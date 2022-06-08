@@ -34,7 +34,7 @@ const app = async (argv: string[]): Promise<void> => {
 
       return argsInterpreted;
     })
-    // eslint-disable-next-line @typescript-eslint/naming-convention -- external schema
+
     .parserConfiguration({ 'strip-aliased': true })
     .commandDir('../lib/commands')
     .demandCommand(1, 1)
