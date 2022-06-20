@@ -1,6 +1,6 @@
 {
   "name": "carna",
-  "version": "8.1.6",
+  "version": "8.1.7",
   "description": "Global management of the config files.",
   "license": "MIT",
   "private": false,

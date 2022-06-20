@@ -1,5 +1,16 @@
 # Changelog
 
+## [8.1.7](https://github.com/kettil/carna/compare/8.1.6...8.1.7) (2022-06-20)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.18.2 to 7.18.5 ([956d3c5](https://github.com/kettil/carna/commit/956d3c5037e1e073029b47f510c8934a44981e90))
+* **deps:** bump @babel/node from 7.17.10 to 7.18.5 ([4a614b0](https://github.com/kettil/carna/commit/4a614b09b63fe29b556ddfd645746b5566a52919))
+* **deps:** bump @babel/plugin-transform-runtime from 7.18.2 to 7.18.5 ([428852a](https://github.com/kettil/carna/commit/428852a4e204d1e7b3f459b2e1676ae6eb6b2492))
+* **deps:** bump prettier from 2.6.2 to 2.7.0 ([fe6ebdf](https://github.com/kettil/carna/commit/fe6ebdf238f781016e1040bdbbf9bd913d418137))
+* **deps:** bump prettier from 2.7.0 to 2.7.1 ([de0658b](https://github.com/kettil/carna/commit/de0658b812a0eaf475fa48dfe3590d2d35544040))
+
 ## [8.1.6](https://github.com/kettil/carna/compare/8.1.5...8.1.6) (2022-06-13)
 
 
