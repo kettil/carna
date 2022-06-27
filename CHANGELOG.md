@@ -1,5 +1,15 @@
 # Changelog
 
+## [8.1.8](https://github.com/kettil/carna/compare/8.1.7...8.1.8) (2022-06-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/jest from 28.1.1 to 28.1.2 ([2154a3f](https://github.com/kettil/carna/commit/2154a3fd94f3393dfe3c6458323bf4bb83903434))
+* **deps:** bump @types/jest from 28.1.2 to 28.1.3 ([4a9a416](https://github.com/kettil/carna/commit/4a9a416877f8203085978f201224cf515df96e81))
+* **deps:** bump eslint from 8.17.0 to 8.18.0 ([8dd30d4](https://github.com/kettil/carna/commit/8dd30d49de30a3e94ee664d7f15aa2358c045cc2))
+* **deps:** bump pino-pretty from 8.0.0 to 8.1.0 ([9925c0e](https://github.com/kettil/carna/commit/9925c0e91d33a71d9701449d3921ae2214a21bbf))
+
 ## [8.1.7](https://github.com/kettil/carna/compare/8.1.6...8.1.7) (2022-06-20)
 
 
