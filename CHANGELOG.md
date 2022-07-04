@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.1.9](https://github.com/kettil/carna/compare/8.1.8...8.1.9) (2022-07-04)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/cli from 17.0.2 to 17.0.3 ([3119930](https://github.com/kettil/carna/commit/3119930f0b6ba4d12792b6f8c48c559c12b80eb5))
+
 ## [8.1.8](https://github.com/kettil/carna/compare/8.1.7...8.1.8) (2022-06-27)
 
 
