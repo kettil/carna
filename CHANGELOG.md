@@ -1,5 +1,15 @@
 # Changelog
 
+## [8.1.11](https://github.com/kettil/carna/compare/8.1.10...8.1.11) (2022-07-18)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/jest from 28.1.4 to 28.1.5 ([20b88e3](https://github.com/kettil/carna/commit/20b88e3a8b6a9a600d2fd61d01485fdfc548e419))
+* **deps:** bump babel-jest from 28.1.2 to 28.1.3 ([0a2a156](https://github.com/kettil/carna/commit/0a2a15673016ea67dd4a87dec2548a7b188e0b31))
+* **deps:** bump istanbul-reports from 3.1.4 to 3.1.5 ([07e4fb2](https://github.com/kettil/carna/commit/07e4fb22ab5d5499074bc9b83dd058b3364798f8))
+* **deps:** bump jest from 28.1.2 to 28.1.3 ([1659e1e](https://github.com/kettil/carna/commit/1659e1e9e29b426facb76a0ab853ab165089e6cf))
+
 ## [8.1.10](https://github.com/kettil/carna/compare/8.1.9...8.1.10) (2022-07-11)
 
 
