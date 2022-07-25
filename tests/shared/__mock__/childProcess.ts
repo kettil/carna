@@ -16,6 +16,7 @@ export const spawn = (
 
   expect({ command, args, cwd, env: envFiltered }).toMatchSnapshot('child-process');
 
+  // eslint-disable-next-line unicorn/prefer-event-target -- mock function
   const eventEmitter = new EventEmitter() as ChildProcessWithoutNullStreams;
 
   eventEmitter.kill = spawnKill as unknown as ChildProcessWithoutNullStreams['kill'];
