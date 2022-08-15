@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.1.15](https://github.com/kettil/carna/compare/8.1.14...8.1.15) (2022-08-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 4.10.1 to 4.10.2 ([a730203](https://github.com/kettil/carna/commit/a730203cae9b924ddb621ed3ba520a5a2fc1eae1))
+* **deps:** bump pino-pretty from 8.1.0 to 9.0.0 ([37143c8](https://github.com/kettil/carna/commit/37143c890882c1c2670986bae832b6f8ad58ef36))
+
 ## [8.1.14](https://github.com/kettil/carna/compare/8.1.13...8.1.14) (2022-08-08)
 
 
