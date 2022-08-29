@@ -1,5 +1,14 @@
 # Changelog
 
+## [8.1.17](https://github.com/kettil/carna/compare/8.1.16...8.1.17) (2022-08-29)
+
+
+### Bug Fixes
+
+* **deps:** bump @types/jest from 28.1.7 to 28.1.8 ([f22e4a8](https://github.com/kettil/carna/commit/f22e4a8956ee5a9ac695fb77cf94f106fb1b411f))
+* **deps:** bump pino-pretty from 9.0.1 to 9.1.0 ([e4efd9d](https://github.com/kettil/carna/commit/e4efd9d4b206cd0893182d90029217bea6837199))
+* **deps:** bump semantic-release from 19.0.3 to 19.0.5 ([9edb5e5](https://github.com/kettil/carna/commit/9edb5e5ad858bb46c4fda78663e89eec979f802e))
+
 ## [8.1.16](https://github.com/kettil/carna/compare/8.1.15...8.1.16) (2022-08-22)
 
 
