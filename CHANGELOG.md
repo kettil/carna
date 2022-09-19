@@ -1,5 +1,16 @@
 # Changelog
 
+## [8.1.19](https://github.com/kettil/carna/compare/8.1.18...8.1.19) (2022-09-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/node from 7.18.10 to 7.19.1 ([5e6fc2b](https://github.com/kettil/carna/commit/5e6fc2b83a1721f06613ebf030b17baa6a148efc))
+* **deps:** bump @babel/plugin-transform-runtime from 7.18.10 to 7.19.1 ([54a5367](https://github.com/kettil/carna/commit/54a536766d3b9b22074e1ccb5f6859240bd14940))
+* **deps:** bump @babel/preset-env from 7.18.10 to 7.19.1 ([844dbb3](https://github.com/kettil/carna/commit/844dbb3d91986acd9c511cbb196556a410db21c1))
+* **deps:** bump @kettil/eslint-config from 4.10.3 to 4.10.5 ([ca072c5](https://github.com/kettil/carna/commit/ca072c5323cd57768879233910c4a3cfc0cedf53))
+* **deps:** bump eslint from 8.22.0 to 8.23.1 ([27c5419](https://github.com/kettil/carna/commit/27c5419e021c3aaf4233168084f8e60e5804c8c5))
+
 ## [8.1.18](https://github.com/kettil/carna/compare/8.1.17...8.1.18) (2022-09-19)
 
 
