@@ -78,7 +78,7 @@
   "devDependencies": {
     "@types/node": "18.7.18",
     "eslint-plugin-jest": "26.8.3",
-    "typescript": "4.7.4"
+    "typescript": "4.8.3"
   },
   "bundledDependencies": [
     "@kettil/tools"
