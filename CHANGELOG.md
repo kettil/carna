@@ -1,5 +1,16 @@
 # Changelog
 
+## [8.1.18](https://github.com/kettil/carna/compare/8.1.17...8.1.18) (2022-09-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.18.10 to 7.19.1 ([bbc2ccc](https://github.com/kettil/carna/commit/bbc2ccc7dfb637e62475e641a95e4dbfcb0175c9))
+* **deps:** bump @commitlint/cli from 17.0.3 to 17.1.2 ([0cf3700](https://github.com/kettil/carna/commit/0cf3700935b8c594592ebd4dabc1cde6b0a9b897))
+* **deps:** bump @types/glob from 7.2.0 to 8.0.0 ([20ceddf](https://github.com/kettil/carna/commit/20ceddf2a609d0d54ce1e4e1c40a8b4b83d81e2c))
+* **deps:** bump @types/yargs from 17.0.11 to 17.0.12 ([0718b6f](https://github.com/kettil/carna/commit/0718b6f5759afc9813a8d334ed2184f1de202d38))
+* **deps:** bump babel-jest from 28.1.3 to 29.0.3 ([c571710](https://github.com/kettil/carna/commit/c5717105cd649fefe4b11e5a3bf67b6b8215d77f))
+
 ## [8.1.17](https://github.com/kettil/carna/compare/8.1.16...8.1.17) (2022-08-29)
 
 
