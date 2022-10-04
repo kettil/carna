@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@types/node": "18.7.23",
-    "eslint-plugin-jest": "26.8.3",
+    "eslint-plugin-jest": "27.1.0",
     "typescript": "4.8.3"
   },
   "bundledDependencies": [
