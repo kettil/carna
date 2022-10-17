@@ -1,5 +1,19 @@
 # Changelog
 
+## [8.1.22](https://github.com/kettil/carna/compare/8.1.21...8.1.22) (2022-10-17)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.18.10 to 7.19.3 ([c370d8d](https://github.com/kettil/carna/commit/c370d8da92cfb3467ac20b3288c4a17ddd92233d))
+* **deps:** bump @babel/core from 7.19.1 to 7.19.3 ([2ac7977](https://github.com/kettil/carna/commit/2ac79776a07bf5a23e2c83d644b827d8189fd513))
+* **deps:** bump @babel/preset-env from 7.19.1 to 7.19.4 ([e60ce1d](https://github.com/kettil/carna/commit/e60ce1d57bcaeb38a7f1df68eec6c5ac2f3892b0))
+* **deps:** bump @kettil/eslint-config from 4.10.7 to 4.10.8 ([598c653](https://github.com/kettil/carna/commit/598c65324143c56ca4dca517e2cc892027ecec34))
+* **deps:** bump babel-jest from 29.0.3 to 29.1.2 ([6742357](https://github.com/kettil/carna/commit/6742357c8e7ebd1ab977b22f18cd6b087ec24382))
+* **deps:** bump eslint from 8.23.1 to 8.25.0 ([1c46a8d](https://github.com/kettil/carna/commit/1c46a8d5d9252463775d5626dc7d37e4525fc2de))
+* **deps:** bump pino-pretty from 9.1.0 to 9.1.1 ([a60c9ac](https://github.com/kettil/carna/commit/a60c9ac1c607bc54e6be731a81047012cfcd0795))
+* **deps:** bump yargs from 17.5.1 to 17.6.0 ([6a31125](https://github.com/kettil/carna/commit/6a31125f4815ac4921c5555623e4813e62d79e25))
+
 ## [8.1.21](https://github.com/kettil/carna/compare/8.1.20...8.1.21) (2022-10-03)
 
 
