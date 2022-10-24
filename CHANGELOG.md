@@ -1,5 +1,14 @@
 # Changelog
 
+## [8.1.23](https://github.com/kettil/carna/compare/8.1.22...8.1.23) (2022-10-24)
+
+
+### Bug Fixes
+
+* **deps:** bump @kettil/eslint-config from 4.10.8 to 4.10.9 ([f8ab936](https://github.com/kettil/carna/commit/f8ab9360d0a2e7d4b8bc398a0b06b19372c26c04))
+* **deps:** bump babel-jest from 29.1.2 to 29.2.0 ([2ac2ae9](https://github.com/kettil/carna/commit/2ac2ae949cd7329f94cccf2d9e9ce8773aee0511))
+* **deps:** bump babel-jest from 29.2.0 to 29.2.1 ([2506695](https://github.com/kettil/carna/commit/25066955ec66a7e1f3447b86a48202d4c8522da2))
+
 ## [8.1.22](https://github.com/kettil/carna/compare/8.1.21...8.1.22) (2022-10-17)
 
 
