@@ -1,5 +1,15 @@
 # Changelog
 
+## [8.1.24](https://github.com/kettil/carna/compare/8.1.23...8.1.24) (2022-10-31)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.19.3 to 7.19.6 ([262d367](https://github.com/kettil/carna/commit/262d367641c24140b27134ef65572430bb10f226))
+* **deps:** bump @babel/plugin-transform-runtime from 7.19.1 to 7.19.6 ([ee273e1](https://github.com/kettil/carna/commit/ee273e1aee41a265abe0a933de5ae8a106b112ae))
+* **deps:** bump @kettil/eslint-config from 4.10.9 to 4.10.10 ([d4f2239](https://github.com/kettil/carna/commit/d4f22398ea1609a501de29d310048b4093bcbce1))
+* **deps:** bump babel-jest from 29.2.1 to 29.2.2 ([94c798d](https://github.com/kettil/carna/commit/94c798dc1c1d2900a194cc561eda2bf1e53be83c))
+
 ## [8.1.23](https://github.com/kettil/carna/compare/8.1.22...8.1.23) (2022-10-24)
 
 
