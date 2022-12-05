@@ -1,5 +1,22 @@
 # Changelog
 
+## [8.1.25](https://github.com/kettil/carna/compare/8.1.24...8.1.25) (2022-12-05)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/core from 7.19.6 to 7.20.5 ([acfa81f](https://github.com/kettil/carna/commit/acfa81f5a7690a3f69c1df589da519b467f4f21f))
+* **deps:** bump @babel/node from 7.19.1 to 7.20.2 ([50ed585](https://github.com/kettil/carna/commit/50ed5858c05167c58a0d199cb78acb60e5061f61))
+* **deps:** bump @babel/preset-env from 7.19.4 to 7.20.2 ([7e612ef](https://github.com/kettil/carna/commit/7e612ef9a0ce947e14db0a2c0d6dad09e85b364b))
+* **deps:** bump @commitlint/cli from 17.1.2 to 17.3.0 ([ea6db5f](https://github.com/kettil/carna/commit/ea6db5ff957d5004ac5036ddc995b4df6a562e10))
+* **deps:** bump @kettil/eslint-config from 4.10.10 to 4.10.11 ([293fb31](https://github.com/kettil/carna/commit/293fb312a08ec1eebe801663de16fb58341c7829))
+* **deps:** bump babel-jest from 29.2.2 to 29.3.1 ([2099177](https://github.com/kettil/carna/commit/209917781a5acd4706cc368e5e3d61c46ea0c08f))
+* **deps:** bump babel-loader from 8.2.5 to 9.1.0 ([9ff345c](https://github.com/kettil/carna/commit/9ff345c347552ce6ea1a5b0f9aad067479114438))
+* **deps:** bump eslint from 8.25.0 to 8.28.0 ([0044637](https://github.com/kettil/carna/commit/0044637bc1a9b03a8e8066d47460fd8b3d22f50a))
+* **deps:** bump husky from 8.0.1 to 8.0.2 ([6b12b2e](https://github.com/kettil/carna/commit/6b12b2e9adff0205b69dce61d8e4b1ac1ac09258))
+* **deps:** bump npm-package-json-lint from 6.3.0 to 6.4.0 ([08db623](https://github.com/kettil/carna/commit/08db6232217b4c7a8291ddc539028f4f035dca92))
+* **deps:** bump yargs and @types/yargs ([3a363a6](https://github.com/kettil/carna/commit/3a363a667f9d47267c982f0961b9b5273442df7b))
+
 ## [8.1.24](https://github.com/kettil/carna/compare/8.1.23...8.1.24) (2022-10-31)
 
 
