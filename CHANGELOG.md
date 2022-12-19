@@ -1,5 +1,15 @@
 # Changelog
 
+## [8.1.26](https://github.com/kettil/carna/compare/8.1.25...8.1.26) (2022-12-19)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/node from 7.20.2 to 7.20.5 ([0e759e2](https://github.com/kettil/carna/commit/0e759e2a4167256159b318e759d26f0db5541f51))
+* **deps:** bump @types/yargs from 17.0.14 to 17.0.17 ([1a1f2a8](https://github.com/kettil/carna/commit/1a1f2a8c1bfcbf004ef85d5194dd117557bdfa2d))
+* **deps:** bump babel-watch from 7.7.0 to 7.7.2 ([620edc7](https://github.com/kettil/carna/commit/620edc7f899bfb8c64b0fdc34538f38b0593170e))
+* **deps:** bump prettier from 2.7.1 to 2.8.1 ([52ec893](https://github.com/kettil/carna/commit/52ec893d250a16a51cabbb9d48174e1fd96f1f8d))
+
 ## [8.1.25](https://github.com/kettil/carna/compare/8.1.24...8.1.25) (2022-12-05)
 
 
