@@ -46,7 +46,7 @@
     "@babel/preset-typescript": "7.18.6",
     "@commitlint/cli": "17.3.0",
     "@kettil/commitlint-config": "2.0.2",
-    "@kettil/eslint-config": "4.10.11",
+    "@kettil/eslint-config": "4.10.12",
     "@kettil/npm-package-json-lint-config": "1.1.0",
     "@kettil/semantic-release-config": "2.0.4",
     "@kettil/tools": "4.1.0",
