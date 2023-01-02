@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.1.27](https://github.com/kettil/carna/compare/8.1.26...8.1.27) (2023-01-02)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.19.3 to 7.20.7 ([4421b76](https://github.com/kettil/carna/commit/4421b761f4f6f3fa3ee5741cec84ee6bd5876b75))
+* **deps:** bump @babel/core from 7.20.5 to 7.20.7 ([dc447eb](https://github.com/kettil/carna/commit/dc447eb496faf3741118dcbab700a1db3b918569))
+* **deps:** bump @babel/node from 7.20.5 to 7.20.7 ([ff6908a](https://github.com/kettil/carna/commit/ff6908a609ff574e3d360a1ce4ed1a1a1fe99fb1))
+* **deps:** bump @kettil/semantic-release-config from 2.0.3 to 2.0.4 ([c211cc8](https://github.com/kettil/carna/commit/c211cc8ab635876409f5d98c08dc79f21ff4086a))
+* **deps:** bump @types/yargs from 17.0.17 to 17.0.18 ([904108f](https://github.com/kettil/carna/commit/904108fd131f23f6c65dfec616b9f650cc0400a5))
+* **deps:** bump eslint from 8.28.0 to 8.31.0 ([b397fc6](https://github.com/kettil/carna/commit/b397fc6ad7f0aa412e9082ebc3507e18d3093171))
+
 ## [8.1.26](https://github.com/kettil/carna/compare/8.1.25...8.1.26) (2022-12-19)
 
 
