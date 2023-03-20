@@ -71,7 +71,7 @@
     "npm-package-json-lint": "6.4.0",
     "ora": "5.4.1",
     "pino-pretty": "9.1.1",
-    "prettier": "2.8.1",
+    "prettier": "2.8.5",
     "semantic-release": "19.0.5",
     "yargs": "17.6.2"
   },
