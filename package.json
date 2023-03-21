@@ -55,7 +55,7 @@
     "@types/istanbul-lib-report": "3.0.0",
     "@types/istanbul-reports": "3.0.1",
     "@types/jest": "28.1.8",
-    "@types/yargs": "17.0.18",
+    "@types/yargs": "17.0.23",
     "babel-jest": "29.3.1",
     "babel-loader": "9.1.0",
     "babel-watch": "7.7.2",
@@ -73,7 +73,7 @@
     "pino-pretty": "9.1.1",
     "prettier": "2.8.1",
     "semantic-release": "19.0.5",
-    "yargs": "17.6.2"
+    "yargs": "17.7.1"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
