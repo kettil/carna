@@ -1,5 +1,32 @@
 # Changelog
 
+## [8.1.28](https://github.com/kettil/carna/compare/8.1.27...8.1.28) (2023-08-21)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/cli from 7.20.7 to 7.22.10 ([cc5bdc5](https://github.com/kettil/carna/commit/cc5bdc570fd8ce914809d97815422373679f5b52))
+* **deps:** bump @babel/core from 7.20.7 to 7.22.9 ([e5cc10c](https://github.com/kettil/carna/commit/e5cc10cc622fed78cb23ab7c042f7392d050e7cc))
+* **deps:** bump @babel/core from 7.22.9 to 7.22.10 ([1f607b3](https://github.com/kettil/carna/commit/1f607b388616cf460e7241340a54ba41f4dc17d9))
+* **deps:** bump @babel/node from 7.20.7 to 7.22.6 ([40dec78](https://github.com/kettil/carna/commit/40dec78fea0f954db3f657e236c6a8af7a4353f9))
+* **deps:** bump @babel/node from 7.22.6 to 7.22.10 ([cd40393](https://github.com/kettil/carna/commit/cd40393208c48db1cc4863e32df14ca089e7a3de))
+* **deps:** bump @babel/plugin-transform-runtime from 7.19.6 to 7.22.10 ([d9636c5](https://github.com/kettil/carna/commit/d9636c509bb9e6a33e3c17e4d335ba7623182d91))
+* **deps:** bump @babel/preset-typescript from 7.18.6 to 7.22.5 ([a8e68cf](https://github.com/kettil/carna/commit/a8e68cf8a9eff3d5813b40a976f6507cea9fefd8))
+* **deps:** bump @commitlint/cli from 17.3.0 to 17.6.6 ([e626440](https://github.com/kettil/carna/commit/e626440b3331997323bc7f02c4433ad7611ab262))
+* **deps:** bump @commitlint/cli from 17.6.6 to 17.7.1 ([a95e686](https://github.com/kettil/carna/commit/a95e6864100376b027e9b571c00bafdf7db66c25))
+* **deps:** bump @kettil/eslint-config from 4.10.11 to 4.10.13 ([d8c5078](https://github.com/kettil/carna/commit/d8c5078bc74826483568daa4e348700d0dde4fdd))
+* **deps:** bump babel-jest from 29.3.1 to 29.6.2 ([9be7e26](https://github.com/kettil/carna/commit/9be7e26636b0e4e758bdf4c169b68145964e32dd))
+* **deps:** bump babel-loader from 9.1.0 to 9.1.3 ([6b0b7a1](https://github.com/kettil/carna/commit/6b0b7a1321b868743a46f15dff65b69c2e50b40b))
+* **deps:** bump babel-watch from 7.7.2 to 7.8.1 ([92803dd](https://github.com/kettil/carna/commit/92803dd41188a4d6bafd34923e68ba3d32454829))
+* **deps:** bump husky from 8.0.2 to 8.0.3 ([63dc7d9](https://github.com/kettil/carna/commit/63dc7d96b55298cbf4bebf23bd88c8053eef6b88))
+* **deps:** bump istanbul-reports from 3.1.5 to 3.1.6 ([23cdeaf](https://github.com/kettil/carna/commit/23cdeafe25861028697b43bd224a0d00fe746bc8))
+* **deps:** bump npm-package-json-lint from 6.4.0 to 7.0.0 ([8f9f81a](https://github.com/kettil/carna/commit/8f9f81a853a7576d2a6cf5ee47691c9c22f24d66))
+* **deps:** bump prettier from 2.8.1 to 2.8.7 ([ef3fc82](https://github.com/kettil/carna/commit/ef3fc82fb9e65a53fd8000a643df373e2d16c05e))
+* **deps:** bump prettier from 2.8.7 to 3.0.1 ([29d4f26](https://github.com/kettil/carna/commit/29d4f266c894a12a8dcea0e876bdd4569fbb1bb0))
+* **deps:** bump prettier from 3.0.1 to 3.0.2 ([336cfbc](https://github.com/kettil/carna/commit/336cfbcfca185f110eab7725a012181e5b622a79))
+* **deps:** bump yargs and @types/yargs ([39ba349](https://github.com/kettil/carna/commit/39ba349c85ee489fa21d0f5fa383abd1edca4851))
+* **deps:** bump yargs and @types/yargs ([cf5286c](https://github.com/kettil/carna/commit/cf5286c9f3a27f383e785b4496bcd53e8f8f80ba))
+
 ## [8.1.27](https://github.com/kettil/carna/compare/8.1.26...8.1.27) (2023-01-02)
 
 
