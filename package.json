@@ -72,7 +72,7 @@
     "ora": "5.4.1",
     "pino-pretty": "9.1.1",
     "prettier": "3.0.2",
-    "semantic-release": "19.0.5",
+    "semantic-release": "21.1.0",
     "yargs": "17.7.2"
   },
   "devDependencies": {
