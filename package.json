@@ -51,7 +51,7 @@
     "@kettil/semantic-release-config": "2.0.4",
     "@kettil/tools": "4.1.0",
     "@types/glob": "8.0.0",
-    "@types/istanbul-lib-coverage": "2.0.4",
+    "@types/istanbul-lib-coverage": "2.0.5",
     "@types/istanbul-lib-report": "3.0.0",
     "@types/istanbul-reports": "3.0.1",
     "@types/jest": "28.1.8",
