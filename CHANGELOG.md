@@ -1,5 +1,14 @@
 # Changelog
 
+## [8.1.29](https://github.com/kettil/carna/compare/8.1.28...8.1.29) (2023-10-23)
+
+
+### Bug Fixes
+
+* **deps:** bump @babel/preset-env from 7.20.2 to 7.23.2 ([ef194cf](https://github.com/kettil/carna/commit/ef194cf6646e4f341bc030a09efc774e4e081fc0))
+* **deps:** bump istanbul-lib-report from 3.0.0 to 3.0.1 ([a72e2ee](https://github.com/kettil/carna/commit/a72e2eeb78ca5c31f8b744ba7c2520b1c0bc0103))
+* **deps:** bump pino-pretty from 9.1.1 to 10.2.3 ([49dd82a](https://github.com/kettil/carna/commit/49dd82af36a4b7625eb30bcb623875e721b40181))
+
 ## [8.1.28](https://github.com/kettil/carna/compare/8.1.27...8.1.28) (2023-08-21)
 
 
